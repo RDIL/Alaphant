@@ -1,0 +1,102 @@
+plugins {
+    id "java"
+}
+
+group "com.charlesproxy"
+version "1.0-SNAPSHOT"
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+    mavenCentral()
+
+    maven {
+        name = "spongepowered"
+        url = "https://repo.spongepowered.org/repository/maven-public"
+    }
+
+    maven {
+        name = "jitpack"
+        url = "https://jitpack.io"
+    }
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
+
+    // Add everything from the libraries to the runtime classpath
+    runtimeClasspath(fileTree(dir: "libs", include: "*.jar", exclude: "*-sources.jar"))
+
+    // Add Charles dependencies that can be fetched from Maven central to the runtime classpath
+    runtimeClasspath("com.google.errorprone:error_prone_annotations:2.3.4")
+    runtimeClasspath("org.mozilla:rhino:1.7.13")
+    runtimeClasspath("com.google.guava:failureaccess:1.0.1")
+    runtimeClasspath("org.xhtmlrenderer:flying-saucer-core:9.0.8")
+    runtimeClasspath("org.checkerframework:checker-compat-qual:2.5.5")
+    runtimeClasspath("javax.activation:activation:1.1.1")
+    runtimeClasspath("org.jclarion:image4j:0.7")
+    runtimeClasspath("com.twitter:hpack:1.0.2")
+    runtimeClasspath("com.google.code.findbugs:jsr305:3.0.2")
+    runtimeClasspath("org.jfree:jfreechart:1.5.3")
+    runtimeClasspath("org.brotli:dec:0.1.2")
+    runtimeClasspath("javax.servlet:javax.servlet-api:3.1.0")
+    runtimeClasspath("de.sciss:syntaxpane:1.2.0")
+    runtimeClasspath("com.google.protobuf:protobuf-java:3.16.1") // intentionally changed from 3.15.3 -> 3.16.1 to fix security issue
+    runtimeClasspath("com.google.protobuf:protobuf-java-util:3.16.1") // intentionally changed from 3.15.3 -> 3.16.1 to fix security issue
+    runtimeClasspath("com.miglayout:miglayout-core:5.3")
+    runtimeClasspath("com.miglayout:miglayout-swing:5.3")
+    runtimeClasspath("jcifs:jcifs:1.3.17")
+    runtimeClasspath("com.google.j2objc:j2objc-annotations:1.3")
+    runtimeClasspath("com.thoughtworks.xstream:xstream:1.4.19") // intentionally changed from 1.4.15 -> 1.4.19 to fix security issues
+    runtimeClasspath("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
+    runtimeClasspath("org.json:json:20201115")
+    runtimeClasspath("org.jasypt:jasypt:1.9.3")
+    runtimeClasspath("com.google.guava:guava:30.0-jre")
+
+    // charles core
+    implementation(fileTree(dir: "libs", include: "charles.jar"))
+
+    // runtime patching library (from the minecraft ecosystem, but should be fine)
+    implementation("com.github.McModLauncher:modlauncher:main-8.1.x-SNAPSHOT")
+
+    // modlauncher needs these
+    implementation("net.sf.jopt-simple:jopt-simple:5.0.4")
+    implementation("org.apache.logging.log4j:log4j-api:2.17.2")
+    implementation("org.apache.logging.log4j:log4j-core:2.17.2")
+    implementation("org.ow2.asm:asm:9.2")
+    implementation("org.ow2.asm:asm-tree:9.2")
+    implementation("org.ow2.asm:asm-commons:9.2")
+    implementation("org.ow2.asm:asm-util:9.2")
+    implementation(fileTree(dir: "libs/modlauncher", include: "grossjava9hacks-1.3.3.jar"))
+
+    // mixin deps
+    implementation("com.google.code.gson:gson:2.8.6") // note: charles needs this one too
+    implementation("com.google.guava:guava:30.0-jre")
+
+    // the bytecode weaving framework being used
+    implementation("org.spongepowered:mixin:0.8.5")
+
+    // finally, our dependencies
+    implementation("com.auth0:java-jwt:3.19.0")
+}
+
+jar {
+    manifest.attributes(
+            "MixinConfigs": "mixin.charles.json",
+            "Main-Class": "launch.Alaphant",
+            "Manifest-Version": 1.0,
+    )
+}
+
+var path = System.getProperty("java.library.path")
+
+task run(type: JavaExec) {
+    dependsOn(jar)
+    group("run")
+    description("Run Charles with the plugin.")
+    classpath(sourceSets.main.runtimeClasspath)
+    mainClass = "launch.Alaphant"
+    jvmArgs "-Dmixin.debug=true"
+    jvmArgs "-Djava.library.path=$path;${file("libs").getAbsolutePath()}"
+}

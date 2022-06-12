@@ -1,0 +1,17 @@
+{
+    "required": true,
+    "package": "charles.alaphant.mixin",
+    "mixins": [
+        "MixinMainWithClassLoader",
+        "auth.MixinAuthorizationUtilsGenericAuthorization"
+    ],
+    "compatibilityLevel": "JAVA_11",
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "overwrites": {
+        "requireAnnotations": true
+    },
+    "minVersion": "0.8.1",
+    "verbose": true
+}
