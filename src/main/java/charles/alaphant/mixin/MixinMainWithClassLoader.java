@@ -11,6 +11,6 @@ public class MixinMainWithClassLoader {
      */
     @Overwrite
     public static void main(String[] args) {
-        com.xk72.lib.a.method_2940("com.xk72.charles.gui.Main", args, Thread.currentThread().getContextClassLoader());
+        com.xk72.lib.a.callMainWithClassLoader("com.xk72.charles.gui.Main", args, Thread.currentThread().getContextClassLoader());
     }
 }

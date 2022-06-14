@@ -3,7 +3,8 @@
     "package": "charles.alaphant.mixin",
     "mixins": [
         "MixinMainWithClassLoader",
-        "auth.MixinAuthorizationUtilsGenericAuthorization"
+        "auth.MixinAuthorizationUtilsGenericAuthorization",
+        "macos.MixinMacOSManager"
     ],
     "compatibilityLevel": "JAVA_11",
     "injectors": {
