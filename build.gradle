@@ -1,3 +1,16 @@
+buildscript {
+    repositories {
+        maven {
+            name = "fabric"
+            url = "https://maven.fabricmc.net"
+        }
+    }
+
+    dependencies {
+        classpath "net.fabricmc:tiny-remapper:0.8.4"
+    }
+}
+
 plugins {
     id "java"
 }
@@ -22,11 +35,58 @@ repositories {
     }
 }
 
-dependencies {
-    implementation 'org.jetbrains:annotations:20.1.0'
+def chlsOfficial = file("libs/charles.jar")
+def chlsMapped = file("build/charles_MAPPED.jar")
+def chlsMappings = file("mappings/mappings.tiny")
 
+import net.fabricmc.tinyremapper.TinyRemapper
+import net.fabricmc.tinyremapper.TinyUtils
+import net.fabricmc.tinyremapper.OutputConsumerPath
+
+static void mapJar(File output, File input, File mappings, String from, String to) {
+    if (output.exists()) {
+        output.delete()
+    }
+
+    def remapperBuilder = TinyRemapper.newRemapper()
+            .withMappings(TinyUtils.createTinyMappingProvider(mappings.toPath(), from, to))
+            .renameInvalidLocals(true)
+            .rebuildSourceFilenames(true)
+            .invalidLvNamePattern(~/\$\$\d+/)
+            .inferNameFromSameLvIndex(true)
+
+    def remapper = remapperBuilder.build()
+
+    remapper.readInputs(mappings.toPath())
+
+    def outputConsumerBuilder = new OutputConsumerPath.Builder(output.toPath())
+    // expose output consumer builder to function if there is need in the future
+    def outputConsumer = outputConsumerBuilder.build()
+    outputConsumer.addNonClassFiles(input.toPath())
+    remapper.readInputs(input.toPath())
+
+    remapper.readClassPath(mappings.toPath())
+
+    remapper.apply(outputConsumer)
+    outputConsumer.close()
+    remapper.finish()
+}
+
+task remapJar() {
+    group = "mappings"
+    inputs.files chlsMappings
+    inputs.files chlsOfficial
+    outputs.file chlsMapped
+
+    doLast {
+        logger.lifecycle(":mapping charles")
+        mapJar(chlsMapped, chlsOfficial, chlsMappings, "official", "intermediary")
+    }
+}
+
+dependencies {
     // Add everything from the libraries to the runtime classpath
-    runtimeClasspath(fileTree(dir: "libs", include: "*.jar", exclude: "*-sources.jar"))
+    runtimeClasspath(fileTree(dir: "libs", include: "*.jar"))
 
     // Add Charles dependencies that can be fetched from Maven central to the runtime classpath
     runtimeClasspath("com.google.errorprone:error_prone_annotations:2.3.4")
@@ -53,9 +113,17 @@ dependencies {
     runtimeClasspath("org.json:json:20201115")
     runtimeClasspath("org.jasypt:jasypt:1.9.3")
     runtimeClasspath("com.google.guava:guava:30.0-jre")
+    runtimeClasspath(group: "org.eclipse.mylyn.github", name: "org.eclipse.egit.github.core", version: "2.1.5")
 
     // charles core
-    implementation(fileTree(dir: "libs", include: "charles.jar"))
+    if (!chlsMapped.exists()) {
+        // we don't have the mapped version set up yet
+        project.logger.warn("Using unmapped Charles version... things WILL NOT WORK until the `remapJar` task is run.")
+
+        implementation(fileTree(dir: "libs", include: "charles.jar"))
+    } else {
+        implementation(fileTree(dir: "build", include: "charles_MAPPED.jar"))
+    }
 
     // runtime patching library (from the minecraft ecosystem, but should be fine)
     implementation("com.github.McModLauncher:modlauncher:main-8.1.x-SNAPSHOT")
@@ -79,6 +147,7 @@ dependencies {
 
     // finally, our dependencies
     implementation("com.auth0:java-jwt:3.19.0")
+    implementation(group: "org.jetbrains", name: "annotations", version: "23.0.0")
 }
 
 jar {
@@ -89,14 +158,14 @@ jar {
     )
 }
 
-var path = System.getProperty("java.library.path")
-
 task run(type: JavaExec) {
-    dependsOn(jar)
-    group("run")
-    description("Run Charles with the plugin.")
+    dependsOn jar
+    group = "run"
+    description = "Run Charles with the plugin."
     classpath(sourceSets.main.runtimeClasspath)
     mainClass = "launch.Alaphant"
     jvmArgs "-Dmixin.debug=true"
-    jvmArgs "-Djava.library.path=$path;${file("libs").getAbsolutePath()}"
+    jvmArgs "-Djava.net.preferIPv4Stack=false"
+    jvmArgs "-Djava.net.preferIPv6Addresses=true"
+    jvmArgs "-Djava.library.path=lib"
 }
