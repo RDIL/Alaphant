@@ -167,5 +167,5 @@ task run(type: JavaExec) {
     jvmArgs "-Dmixin.debug=true"
     jvmArgs "-Djava.net.preferIPv4Stack=false"
     jvmArgs "-Djava.net.preferIPv6Addresses=true"
-    jvmArgs "-Djava.library.path=lib"
+    jvmArgs "-Djava.library.path=$path;${file("libs").getAbsolutePath()}"
 }
