@@ -43,9 +43,5 @@ bin/
 
 logs
 target
+!target/.gitkeep
 .mixin.out
-
-# proprietary, UNCOMMITABLE files
-libs/charles.dll
-libs/charles_win32.dll
-libs/charles.jar

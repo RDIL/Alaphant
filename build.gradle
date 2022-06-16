@@ -35,7 +35,7 @@ repositories {
     }
 }
 
-def chlsOfficial = file("libs/charles.jar")
+def chlsOfficial = file("target/charles.jar")
 def chlsMapped = file("build/charles_MAPPED.jar")
 def chlsMappings = file("mappings/mappings.tiny")
 
@@ -74,6 +74,7 @@ static void mapJar(File output, File input, File mappings, String from, String t
 
 task remapJar() {
     group = "mappings"
+    description = "Create a version of the Charles Jar with human-readable names."
     inputs.files chlsMappings
     inputs.files chlsOfficial
     outputs.file chlsMapped
@@ -84,43 +85,48 @@ task remapJar() {
     }
 }
 
+compileJava {
+    dependsOn remapJar
+}
+
 dependencies {
     // Add everything from the libraries to the runtime classpath
-    runtimeClasspath(fileTree(dir: "libs", include: "*.jar"))
+    runtimeOnly(fileTree(dir: "libs", include: "*.jar"))
 
     // Add Charles dependencies that can be fetched from Maven central to the runtime classpath
-    runtimeClasspath("com.google.errorprone:error_prone_annotations:2.3.4")
-    runtimeClasspath("org.mozilla:rhino:1.7.13")
-    runtimeClasspath("com.google.guava:failureaccess:1.0.1")
-    runtimeClasspath("org.xhtmlrenderer:flying-saucer-core:9.0.8")
-    runtimeClasspath("org.checkerframework:checker-compat-qual:2.5.5")
-    runtimeClasspath("javax.activation:activation:1.1.1")
-    runtimeClasspath("org.jclarion:image4j:0.7")
-    runtimeClasspath("com.twitter:hpack:1.0.2")
-    runtimeClasspath("com.google.code.findbugs:jsr305:3.0.2")
-    runtimeClasspath("org.jfree:jfreechart:1.5.3")
-    runtimeClasspath("org.brotli:dec:0.1.2")
-    runtimeClasspath("javax.servlet:javax.servlet-api:3.1.0")
-    runtimeClasspath("de.sciss:syntaxpane:1.2.0")
-    runtimeClasspath("com.google.protobuf:protobuf-java:3.16.1") // intentionally changed from 3.15.3 -> 3.16.1 to fix security issue
-    runtimeClasspath("com.google.protobuf:protobuf-java-util:3.16.1") // intentionally changed from 3.15.3 -> 3.16.1 to fix security issue
-    runtimeClasspath("com.miglayout:miglayout-core:5.3")
-    runtimeClasspath("com.miglayout:miglayout-swing:5.3")
-    runtimeClasspath("jcifs:jcifs:1.3.17")
-    runtimeClasspath("com.google.j2objc:j2objc-annotations:1.3")
-    runtimeClasspath("com.thoughtworks.xstream:xstream:1.4.19") // intentionally changed from 1.4.15 -> 1.4.19 to fix security issues
-    runtimeClasspath("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
-    runtimeClasspath("org.json:json:20201115")
-    runtimeClasspath("org.jasypt:jasypt:1.9.3")
-    runtimeClasspath("com.google.guava:guava:30.0-jre")
-    runtimeClasspath(group: "org.eclipse.mylyn.github", name: "org.eclipse.egit.github.core", version: "2.1.5")
+    runtimeOnly("com.google.errorprone:error_prone_annotations:2.3.4")
+    runtimeOnly("org.mozilla:rhino:1.7.13")
+    runtimeOnly("com.google.guava:failureaccess:1.0.1")
+    runtimeOnly("org.xhtmlrenderer:flying-saucer-core:9.0.8")
+    runtimeOnly("org.checkerframework:checker-compat-qual:2.5.5")
+    runtimeOnly("javax.activation:activation:1.1.1")
+    runtimeOnly("org.jclarion:image4j:0.7")
+    runtimeOnly("com.twitter:hpack:1.0.2")
+    runtimeOnly("com.google.code.findbugs:jsr305:3.0.2")
+    runtimeOnly("org.jfree:jfreechart:1.5.3")
+    runtimeOnly("org.brotli:dec:0.1.2")
+    runtimeOnly("javax.servlet:javax.servlet-api:3.1.0")
+    runtimeOnly("de.sciss:syntaxpane:1.2.0")
+    runtimeOnly("com.google.protobuf:protobuf-java:3.16.1") // intentionally changed from 3.15.3 -> 3.16.1 to fix security issue
+    runtimeOnly("com.google.protobuf:protobuf-java-util:3.16.1") // intentionally changed from 3.15.3 -> 3.16.1 to fix security issue
+    runtimeOnly("com.miglayout:miglayout-core:5.3")
+    runtimeOnly("com.miglayout:miglayout-swing:5.3")
+    runtimeOnly("jcifs:jcifs:1.3.17")
+    runtimeOnly("com.google.j2objc:j2objc-annotations:1.3")
+    runtimeOnly("com.thoughtworks.xstream:xstream:1.4.19") // intentionally changed from 1.4.15 -> 1.4.19 to fix security issues
+    runtimeOnly("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
+    runtimeOnly("org.json:json:20201115")
+    runtimeOnly("org.jasypt:jasypt:1.9.3")
+    runtimeOnly(group: "org.eclipse.mylyn.github", name: "org.eclipse.egit.github.core", version: "2.1.5")
+    runtimeOnly(group: "org.bouncycastle", name: "bcpkix-jdk15on", version: "1.68")
+    runtimeOnly(group: "org.bouncycastle", name: "bcprov-jdk15on", version: "1.69") // intentionally changed from 1.68 -> 1.69 to fix security issues
 
     // charles core
     if (!chlsMapped.exists()) {
         // we don't have the mapped version set up yet
         project.logger.warn("Using unmapped Charles version... things WILL NOT WORK until the `remapJar` task is run.")
 
-        implementation(fileTree(dir: "libs", include: "charles.jar"))
+        implementation(fileTree(dir: "target", include: "charles.jar"))
     } else {
         implementation(fileTree(dir: "build", include: "charles_MAPPED.jar"))
     }
@@ -132,10 +138,10 @@ dependencies {
     implementation("net.sf.jopt-simple:jopt-simple:5.0.4")
     implementation("org.apache.logging.log4j:log4j-api:2.17.2")
     implementation("org.apache.logging.log4j:log4j-core:2.17.2")
-    implementation("org.ow2.asm:asm:9.2")
-    implementation("org.ow2.asm:asm-tree:9.2")
-    implementation("org.ow2.asm:asm-commons:9.2")
-    implementation("org.ow2.asm:asm-util:9.2")
+    implementation("org.ow2.asm:asm:9.3")
+    implementation("org.ow2.asm:asm-tree:9.3")
+    implementation("org.ow2.asm:asm-commons:9.3")
+    implementation("org.ow2.asm:asm-util:9.3")
     implementation(fileTree(dir: "libs/modlauncher", include: "grossjava9hacks-1.3.3.jar"))
 
     // mixin deps
@@ -146,7 +152,7 @@ dependencies {
     implementation("org.spongepowered:mixin:0.8.5")
 
     // finally, our dependencies
-    implementation("com.auth0:java-jwt:3.19.0")
+    implementation(group: "com.auth0", name: "java-jwt", version: "3.19.2")
     implementation(group: "org.jetbrains", name: "annotations", version: "23.0.0")
 }
 
@@ -158,6 +164,9 @@ jar {
     )
 }
 
+def projectLibsDir = file("libs").getAbsolutePath()
+def projectTargetDir = file("target").getAbsolutePath()
+
 task run(type: JavaExec) {
     dependsOn jar
     group = "run"
@@ -167,5 +176,7 @@ task run(type: JavaExec) {
     jvmArgs "-Dmixin.debug=true"
     jvmArgs "-Djava.net.preferIPv4Stack=false"
     jvmArgs "-Djava.net.preferIPv6Addresses=true"
-    jvmArgs "-Djava.library.path=$path;${file("libs").getAbsolutePath()}"
+    jvmArgs "-Djava.library.path=$path;$projectLibsDir;$projectTargetDir"
 }
+
+defaultTasks "remapJar", "build"
