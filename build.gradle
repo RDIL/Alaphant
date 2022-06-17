@@ -120,6 +120,7 @@ dependencies {
     runtimeOnly(group: "org.eclipse.mylyn.github", name: "org.eclipse.egit.github.core", version: "2.1.5")
     runtimeOnly(group: "org.bouncycastle", name: "bcpkix-jdk15on", version: "1.68")
     runtimeOnly(group: "org.bouncycastle", name: "bcprov-jdk15on", version: "1.69") // intentionally changed from 1.68 -> 1.69 to fix security issues
+    runtimeOnly(group: "org.jasypt", name: "jasypt", version: "1.9.3")
 
     // charles core
     if (!chlsMapped.exists()) {
