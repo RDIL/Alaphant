@@ -1,6 +1,6 @@
 # Alaphant
 
-Alaphant (pronounced "al-a-phant") [Charles](https://charlesproxy.com) modification with the goal of adding some helpful features.
+Alaphant (pronounced "al-a-phant") is a [Charles](https://charlesproxy.com) modification with the goal of adding some helpful features.
 
 *Note: please support the developer of Charles and buy a license!*
 (This project is *not owned or operated by the Charles developer*. It is being developed by Charles users who like the product and want to add extra features to it.)
