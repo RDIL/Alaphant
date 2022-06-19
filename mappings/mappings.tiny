@@ -512,7 +512,7 @@ FIELD	com/xk72/charles/CharlesContext	Lcom/xk72/charles/n;	l	fileManager
 FIELD	com/xk72/charles/CharlesContext	Ljava/util/ResourceBundle;	m	stringsBundle
 FIELD	com/xk72/charles/CharlesContext	Z	n	field_160
 FIELD	com/xk72/charles/CharlesContext	Ljava/util/List;	o	field_161
-FIELD	com/xk72/charles/CharlesContext	Lcom/xk72/charles/ssl/j;	p	field_162
+FIELD	com/xk72/charles/CharlesContext	Lcom/xk72/charles/ssl/j;	p	sslManager
 FIELD	com/xk72/charles/CharlesContext	Lcom/xk72/charles/store/e;	q	field_163
 FIELD	com/xk72/charles/CharlesContext	Lcom/xk72/charles/store/b;	r	field_164
 METHOD	com/xk72/charles/CharlesContext	()Lcom/xk72/charles/n;	a	method_188
@@ -947,12 +947,12 @@ METHOD	com/xk72/charles/config/ConfigLegacyListAdapter$ThrottleHostConfigationLe
 CLASS	com/xk72/charles/config/Configuration	com/xk72/charles/config/Configuration
 METHOD	com/xk72/charles/config/Configuration	(Lcom/xk72/charles/config/CharlesConfiguration;)V	init	init
 CLASS	com/xk72/charles/config/ConfigurationImportExport	com/xk72/charles/config/ConfigurationImportExport
-FIELD	com/xk72/charles/config/ConfigurationImportExport	Ljava/util/logging/Logger;	a	field_237
-FIELD	com/xk72/charles/config/ConfigurationImportExport	Lcom/xk72/charles/config/ConfigurationImportExport;	b	field_238
+FIELD	com/xk72/charles/config/ConfigurationImportExport	Ljava/util/logging/Logger;	a	LOGGER
+FIELD	com/xk72/charles/config/ConfigurationImportExport	Lcom/xk72/charles/config/ConfigurationImportExport;	b	instance
 FIELD	com/xk72/charles/config/ConfigurationImportExport	[Lcom/xk72/charles/config/ConfigurationImportExport$Option;	c	field_239
 FIELD	com/xk72/charles/config/ConfigurationImportExport	Ljava/lang/String;	d	field_240
 FIELD	com/xk72/charles/config/ConfigurationImportExport	Ljava/lang/String;	e	field_241
-METHOD	com/xk72/charles/config/ConfigurationImportExport	()Lcom/xk72/charles/config/ConfigurationImportExport;	a	method_281
+METHOD	com/xk72/charles/config/ConfigurationImportExport	()Lcom/xk72/charles/config/ConfigurationImportExport;	a	getInstance
 METHOD	com/xk72/charles/config/ConfigurationImportExport	(Lcom/xk72/charles/config/CharlesConfiguration;Lcom/xk72/charles/config/ConfigurationImportExport$CharlesExport;Lcom/xk72/charles/config/ConfigurationImportExport$Option;)V	a	method_282
 METHOD	com/xk72/charles/config/ConfigurationImportExport	(Lcom/xk72/charles/config/CharlesConfiguration;Lcom/xk72/charles/config/ConfigurationImportExport$CharlesExport;Ljava/util/Collection;)V	a	method_283
 METHOD	com/xk72/charles/config/ConfigurationImportExport	(Lcom/xk72/charles/config/CharlesConfiguration;Ljava/io/File;)V	a	method_284
@@ -1839,8 +1839,8 @@ METHOD	com/xk72/charles/export/pcap/e	(Ljava/util/List;J)Ljava/util/Date;	b	meth
 CLASS	com/xk72/charles/export/pcap/f	com/xk72/charles/export/pcap/f
 FIELD	com/xk72/charles/export/pcap/f	Ljava/net/InetAddress;	a	field_329
 FIELD	com/xk72/charles/export/pcap/f	Ljava/net/InetAddress;	b	field_330
-FIELD	com/xk72/charles/export/pcap/f	I	c	field_331
-FIELD	com/xk72/charles/export/pcap/f	I	d	field_332
+FIELD	com/xk72/charles/export/pcap/f	I	c	sourcePort
+FIELD	com/xk72/charles/export/pcap/f	I	d	targetPort
 METHOD	com/xk72/charles/export/pcap/f	()Lcom/xk72/charles/export/pcap/f;	a	method_451
 METHOD	com/xk72/charles/export/pcap/f	(Ljava/lang/Object;)Z	equals	equals
 METHOD	com/xk72/charles/export/pcap/f	()I	hashCode	hashCode
@@ -2152,8 +2152,8 @@ FIELD	com/xk72/charles/gui/Q	Lcom/xk72/charles/gui/C;	b	field_431
 METHOD	com/xk72/charles/gui/Q	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/R	com/xk72/charles/gui/R
 METHOD	com/xk72/charles/gui/R	()Ljavax/swing/JPopupMenu;	a	method_513
-CLASS	com/xk72/charles/gui/S	com/xk72/charles/gui/S
-FIELD	com/xk72/charles/gui/S	Ljava/util/logging/Logger;	a	field_432
+CLASS	com/xk72/charles/gui/S	com/xk72/charles/gui/IconManager
+FIELD	com/xk72/charles/gui/S	Ljava/util/logging/Logger;	a	LOGGER
 FIELD	com/xk72/charles/gui/S	Ljava/util/Properties;	b	field_433
 METHOD	com/xk72/charles/gui/S	(Lcom/xk72/charles/model/Host;)Ljava/lang/String;	a	method_514
 METHOD	com/xk72/charles/gui/S	(Lcom/xk72/charles/model/ModelNode;)Ljava/lang/String;	a	method_515
@@ -2161,7 +2161,7 @@ METHOD	com/xk72/charles/gui/S	(Lcom/xk72/charles/model/Transaction;)Ljava/lang/S
 METHOD	com/xk72/charles/gui/S	(Ljava/lang/String;)Ljava/lang/String;	a	method_517
 CLASS	com/xk72/charles/gui/SplashWindow	com/xk72/charles/gui/SplashWindow
 FIELD	com/xk72/charles/gui/SplashWindow	I	bgHeight	bgHeight
-FIELD	com/xk72/charles/gui/SplashWindow	Ljava/awt/Image;	bg	field_434
+FIELD	com/xk72/charles/gui/SplashWindow	Ljava/awt/Image;	bg	splashImage
 FIELD	com/xk72/charles/gui/SplashWindow	I	bgWidth	bgWidth
 FIELD	com/xk72/charles/gui/SplashWindow	I	delay	delay
 FIELD	com/xk72/charles/gui/SplashWindow	Ljava/lang/String;	status	status
@@ -2210,7 +2210,7 @@ METHOD	com/xk72/charles/gui/StatusPanelLabel	(Z)V	setEtched	setEtched
 METHOD	com/xk72/charles/gui/StatusPanelLabel	(Z)V	setProminent	setProminent
 CLASS	com/xk72/charles/gui/T	com/xk72/charles/gui/T
 FIELD	com/xk72/charles/gui/T	[I	a	field_436
-CLASS	com/xk72/charles/gui/U	com/xk72/charles/gui/U
+CLASS	com/xk72/charles/gui/U	com/xk72/charles/gui/CharlesGUIFileManager
 FIELD	com/xk72/charles/gui/U	Lcom/xk72/charles/CharlesContext;	a	context
 FIELD	com/xk72/charles/gui/U	Lcom/xk72/charles/gui/Main;	b	field_438
 METHOD	com/xk72/charles/gui/U	()V	run	run
@@ -2236,18 +2236,18 @@ METHOD	com/xk72/charles/gui/Z	()V	run	run
 CLASS	com/xk72/charles/gui/a	com/xk72/charles/gui/ActionSwitchboard
 FIELD	com/xk72/charles/gui/a	Lcom/xk72/charles/gui/menus/ViewMenu;	A	field_448
 FIELD	com/xk72/charles/gui/a	Lcom/xk72/charles/gui/CharlesFrame;	E	field_449
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	a	field_450
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	b	field_451
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	c	field_452
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	d	field_453
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	e	field_454
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	f	field_455
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	g	field_456
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	h	field_457
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	i	field_458
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	j	field_459
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	k	field_460
-FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	l	field_461
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	a	ACTION_CLEAR
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	b	ACTION_EXPORT
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	c	ACTION_FIND
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	d	ACTION_COMPOSE
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	e	ACTION_COMPOSENEW
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	f	ACTION_FINDNEXT
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	g	ACTION_FINDPREVIOUS
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	h	ACTION_REPEATTRANSACTIONACTION
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	i	ACTION_ADVANCEDREPEATTRANSACTIONACTION
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	j	ACTION_VALIDATETRANSACTIONACTION
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	k	ACTION_PUBLISHTRANSACTIONACTION
+FIELD	com/xk72/charles/gui/a	Ljava/lang/String;	l	ACTION_VIEW
 FIELD	com/xk72/charles/gui/a	Lcom/xk72/charles/gui/lib/av;	m	field_462
 FIELD	com/xk72/charles/gui/a	Lcom/xk72/charles/gui/lib/av;	n	field_463
 FIELD	com/xk72/charles/gui/a	Lcom/xk72/charles/gui/lib/av;	o	field_464
@@ -3856,9 +3856,9 @@ METHOD	com/xk72/charles/gui/lib/an	(ILjava/lang/Object;)V	setRowAt	setRowAt
 METHOD	com/xk72/charles/gui/lib/an	(Ljava/util/List;)V	setRows	setRows
 CLASS	com/xk72/charles/gui/lib/ao	com/xk72/charles/gui/lib/ao
 FIELD	com/xk72/charles/gui/lib/ao	Z	a	field_836
-FIELD	com/xk72/charles/gui/lib/ao	Lcom/xk72/charles/gui/lib/SavableJInternalFrame;	b	field_837
+FIELD	com/xk72/charles/gui/lib/ao	Lcom/xk72/charles/gui/lib/SavableJInternalFrame;	b	savableFrame
 CLASS	com/xk72/charles/gui/lib/ap	com/xk72/charles/gui/lib/ap
-FIELD	com/xk72/charles/gui/lib/ap	Lcom/xk72/charles/gui/lib/SavableJInternalFrame;	a	field_838
+FIELD	com/xk72/charles/gui/lib/ap	Lcom/xk72/charles/gui/lib/SavableJInternalFrame;	a	savableFrame
 METHOD	com/xk72/charles/gui/lib/ap	(Ljava/beans/PropertyChangeEvent;)V	vetoableChange	vetoableChange
 CLASS	com/xk72/charles/gui/lib/aq	com/xk72/charles/gui/lib/aq
 FIELD	com/xk72/charles/gui/lib/aq	Z	a	field_839
@@ -4486,12 +4486,10 @@ METHOD	com/xk72/charles/gui/menus/s	(Ljava/beans/PropertyChangeEvent;)V	property
 CLASS	com/xk72/charles/gui/n	com/xk72/charles/gui/n
 FIELD	com/xk72/charles/gui/n	Lcom/xk72/charles/gui/CharlesFrame;	a	field_976
 METHOD	com/xk72/charles/gui/n	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
-CLASS	com/xk72/charles/gui/navigator/NavigatorJTable	com/xk72/charles/gui/navigator/NavigatorJTable
 CLASS	com/xk72/charles/gui/navigator/NavigatorJTable$1	com/xk72/charles/gui/navigator/NavigatorJTable$1
 FIELD	com/xk72/charles/gui/navigator/NavigatorJTable$1	Lcom/xk72/charles/gui/navigator/e;	this$0	this$0
 METHOD	com/xk72/charles/gui/navigator/NavigatorJTable$1	(ILjavax/swing/table/TableCellRenderer;Ljava/lang/Object;)I	a	method_1031
 METHOD	com/xk72/charles/gui/navigator/NavigatorJTable$1	(II)Z	contains	contains
-CLASS	com/xk72/charles/gui/navigator/NavigatorJTree	com/xk72/charles/gui/navigator/NavigatorJTree
 CLASS	com/xk72/charles/gui/navigator/NavigatorJTree$1	com/xk72/charles/gui/navigator/NavigatorJTree$1
 FIELD	com/xk72/charles/gui/navigator/NavigatorJTree$1	Lcom/xk72/charles/gui/navigator/h;	this$0	this$0
 METHOD	com/xk72/charles/gui/navigator/NavigatorJTree$1	()Ljavax/swing/event/TreeModelListener;	createTreeModelListener	createTreeModelListener
@@ -4546,7 +4544,7 @@ METHOD	com/xk72/charles/gui/navigator/c	(Ljava/lang/Object;)V	a	method_1055
 CLASS	com/xk72/charles/gui/navigator/d	com/xk72/charles/gui/navigator/d
 METHOD	com/xk72/charles/gui/navigator/d	(Lcom/xk72/charles/gui/navigator/m;)V	a	method_1056
 METHOD	com/xk72/charles/gui/navigator/d	(Lcom/xk72/charles/gui/navigator/m;)V	b	method_1057
-CLASS	com/xk72/charles/gui/navigator/e	com/xk72/charles/gui/navigator/e
+CLASS	com/xk72/charles/gui/navigator/e	com/xk72/charles/gui/navigator/NavigatorJTable
 FIELD	com/xk72/charles/gui/navigator/e	Lcom/xk72/charles/gui/lib/MemoryJTable;	d	field_989
 FIELD	com/xk72/charles/gui/navigator/e	Lcom/xk72/charles/gui/navigator/o;	e	field_990
 FIELD	com/xk72/charles/gui/navigator/e	[I	f	field_991
@@ -4569,7 +4567,7 @@ CLASS	com/xk72/charles/gui/navigator/g	com/xk72/charles/gui/navigator/g
 FIELD	com/xk72/charles/gui/navigator/g	I	a	field_1003
 FIELD	com/xk72/charles/gui/navigator/g	Lcom/xk72/charles/gui/navigator/e;	b	field_1004
 METHOD	com/xk72/charles/gui/navigator/g	()V	run	run
-CLASS	com/xk72/charles/gui/navigator/h	com/xk72/charles/gui/navigator/h
+CLASS	com/xk72/charles/gui/navigator/h	com/xk72/charles/gui/navigator/NavigatorJTree
 FIELD	com/xk72/charles/gui/navigator/h	Lcom/xk72/charles/gui/lib/tree/HighlightTree;	d	field_1005
 FIELD	com/xk72/charles/gui/navigator/h	Lcom/xk72/charles/gui/navigator/r;	e	field_1006
 FIELD	com/xk72/charles/gui/navigator/h	Ljava/lang/Class;	f	field_1007
@@ -4628,13 +4626,13 @@ CLASS	com/xk72/charles/gui/r	com/xk72/charles/gui/r
 FIELD	com/xk72/charles/gui/r	Lcom/xk72/charles/gui/CharlesFrame;	a	field_1021
 FIELD	com/xk72/charles/gui/r	J	b	field_1022
 METHOD	com/xk72/charles/gui/r	()V	run	run
-CLASS	com/xk72/charles/gui/s	com/xk72/charles/gui/s
-FIELD	com/xk72/charles/gui/s	Ljava/util/logging/Logger;	d	field_1023
+CLASS	com/xk72/charles/gui/s	com/xk72/charles/gui/CharlesGUIContext
+FIELD	com/xk72/charles/gui/s	Ljava/util/logging/Logger;	d	LOGGER
 FIELD	com/xk72/charles/gui/s	Lcom/xk72/charles/gui/SplashWindow;	e	field_1024
 FIELD	com/xk72/charles/gui/s	Lcom/xk72/charles/gui/session/v;	f	field_1025
 FIELD	com/xk72/charles/gui/s	Lcom/xk72/charles/gui/session/y;	g	field_1026
 FIELD	com/xk72/charles/gui/s	Ljava/lang/Object;	h	field_1027
-METHOD	com/xk72/charles/gui/s	()Lcom/xk72/charles/gui/s;	g	method_1068
+METHOD	com/xk72/charles/gui/s	()Lcom/xk72/charles/gui/s;	g	getInstance
 METHOD	com/xk72/charles/gui/s	()V	h	method_1069
 METHOD	com/xk72/charles/gui/s	()V	i	method_1070
 METHOD	com/xk72/charles/gui/s	()Lcom/xk72/charles/gui/SplashWindow;	j	method_1071
@@ -4791,7 +4789,7 @@ FIELD	com/xk72/charles/gui/session/E	Ljava/util/WeakHashMap;	a	field_1043
 METHOD	com/xk72/charles/gui/session/E	(Lcom/xk72/charles/model/Transaction;)Ljava/lang/Object;	a	method_1098
 METHOD	com/xk72/charles/gui/session/E	(Lcom/xk72/charles/model/Transaction;)Ljava/lang/Object;	b	method_1099
 CLASS	com/xk72/charles/gui/session/SessionFrame	com/xk72/charles/gui/session/SessionFrame
-FIELD	com/xk72/charles/gui/session/SessionFrame	I	c	field_1044
+FIELD	com/xk72/charles/gui/session/SessionFrame	I	c	sessionNumber
 FIELD	com/xk72/charles/gui/session/SessionFrame	Lcom/xk72/charles/gui/transaction/frames/h;	editableTransactionViewPanel	editableTransactionViewPanel
 FIELD	com/xk72/charles/gui/session/SessionFrame	Lcom/xk72/charles/gui/transaction/frames/l;	pathViewPanel	pathViewPanel
 FIELD	com/xk72/charles/gui/session/SessionFrame	Lcom/xk72/charles/gui/transaction/frames/m;	summaryViewPanel	summaryViewPanel
@@ -7425,7 +7423,6 @@ METHOD	com/xk72/charles/gui/transaction/f	(Lcom/xk72/charles/model/Transaction;I
 METHOD	com/xk72/charles/gui/transaction/f	(Ljava/awt/event/MouseListener;)V	a	method_1433
 METHOD	com/xk72/charles/gui/transaction/f	()I	e	method_1434
 METHOD	com/xk72/charles/gui/transaction/f	()I	f	method_1435
-CLASS	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame
 CLASS	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame$2	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame$2
 FIELD	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame$2	Lcom/xk72/charles/gui/transaction/frames/d;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame$2	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
@@ -7435,7 +7432,6 @@ METHOD	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame$3	(L
 CLASS	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame$4	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame$4
 FIELD	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame$4	Lcom/xk72/charles/gui/transaction/frames/d;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame$4	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/transaction/frames/TransactionViewFrame	com/xk72/charles/gui/transaction/frames/TransactionViewFrame
 CLASS	com/xk72/charles/gui/transaction/frames/TransactionViewFrame$3	com/xk72/charles/gui/transaction/frames/TransactionViewFrame$3
 FIELD	com/xk72/charles/gui/transaction/frames/TransactionViewFrame$3	Lcom/xk72/charles/gui/transaction/frames/n;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/frames/TransactionViewFrame$3	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
@@ -7451,13 +7447,13 @@ FIELD	com/xk72/charles/gui/transaction/frames/a	Z	b	field_1663
 FIELD	com/xk72/charles/gui/transaction/frames/a	Z	c	field_1664
 METHOD	com/xk72/charles/gui/transaction/frames/a	([Lcom/xk72/charles/model/ModelNode;)V	a	method_1436
 METHOD	com/xk72/charles/gui/transaction/frames/a	([Lcom/xk72/charles/model/ModelNode;)V	b	method_1437
-METHOD	com/xk72/charles/gui/transaction/frames/a	()V	c	method_1438
+METHOD	com/xk72/charles/gui/transaction/frames/a	()V	c	react
 CLASS	com/xk72/charles/gui/transaction/frames/b	com/xk72/charles/gui/transaction/frames/b
 FIELD	com/xk72/charles/gui/transaction/frames/b	Lcom/xk72/charles/gui/transaction/frames/a;	a	field_1665
 METHOD	com/xk72/charles/gui/transaction/frames/b	()V	run	run
 CLASS	com/xk72/charles/gui/transaction/frames/c	com/xk72/charles/gui/transaction/frames/c
 METHOD	com/xk72/charles/gui/transaction/frames/c	()Lcom/xk72/charles/gui/transaction/general/c;	d	method_1439
-CLASS	com/xk72/charles/gui/transaction/frames/d	com/xk72/charles/gui/transaction/frames/d
+CLASS	com/xk72/charles/gui/transaction/frames/d	com/xk72/charles/gui/transaction/frames/AbstractTabbedModelViewFrame
 FIELD	com/xk72/charles/gui/transaction/frames/d	Lcom/xk72/charles/gui/transaction/chart/h;	a	field_1666
 FIELD	com/xk72/charles/gui/transaction/frames/d	Ljavax/swing/JTabbedPane;	b	field_1667
 FIELD	com/xk72/charles/gui/transaction/frames/d	Lcom/xk72/charles/gui/transaction/general/a;	c	field_1668
@@ -7482,7 +7478,7 @@ FIELD	com/xk72/charles/gui/transaction/frames/f	Ljava/lang/Object;	f	field_1679
 FIELD	com/xk72/charles/gui/transaction/frames/f	Lcom/xk72/charles/gui/session/a/e;	h	field_1680
 METHOD	com/xk72/charles/gui/transaction/frames/f	()V	a	method_1444
 METHOD	com/xk72/charles/gui/transaction/frames/f	(Lcom/xk72/charles/gui/menus/ViewMenu;)V	a	method_1445
-METHOD	com/xk72/charles/gui/transaction/frames/f	(Ljava/lang/Object;)Z	a	method_1446
+METHOD	com/xk72/charles/gui/transaction/frames/f	(Ljava/lang/Object;)Z	a	isJavaList
 METHOD	com/xk72/charles/gui/transaction/frames/f	(Ljava/lang/String;)V	a	method_1447
 METHOD	com/xk72/charles/gui/transaction/frames/f	()Z	b	method_1448
 METHOD	com/xk72/charles/gui/transaction/frames/f	(Ljava/lang/Object;)V	b	method_1449
@@ -7495,7 +7491,7 @@ METHOD	com/xk72/charles/gui/transaction/frames/f	()Ljava/lang/Object;	j	method_1
 CLASS	com/xk72/charles/gui/transaction/frames/g	com/xk72/charles/gui/transaction/frames/g
 FIELD	com/xk72/charles/gui/transaction/frames/g	Lcom/xk72/charles/gui/transaction/frames/f;	a	field_1681
 METHOD	com/xk72/charles/gui/transaction/frames/g	()V	run	run
-CLASS	com/xk72/charles/gui/transaction/frames/h	com/xk72/charles/gui/transaction/frames/h
+CLASS	com/xk72/charles/gui/transaction/frames/h	com/xk72/charles/gui/transaction/frames/EditableTransactionViewPanel
 FIELD	com/xk72/charles/gui/transaction/frames/h	Ljavax/swing/JPanel;	a	field_1682
 FIELD	com/xk72/charles/gui/transaction/frames/h	Lcom/xk72/charles/gui/transaction/f;	i	field_1683
 CLASS	com/xk72/charles/gui/transaction/frames/i	com/xk72/charles/gui/transaction/frames/i
@@ -7507,11 +7503,11 @@ METHOD	com/xk72/charles/gui/transaction/frames/j	(Ljava/awt/event/ActionEvent;)V
 CLASS	com/xk72/charles/gui/transaction/frames/k	com/xk72/charles/gui/transaction/frames/k
 FIELD	com/xk72/charles/gui/transaction/frames/k	Lcom/xk72/charles/gui/transaction/frames/h;	a	field_1686
 METHOD	com/xk72/charles/gui/transaction/frames/k	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/transaction/frames/l	com/xk72/charles/gui/transaction/frames/l
+CLASS	com/xk72/charles/gui/transaction/frames/l	com/xk72/charles/gui/transaction/frames/PathViewPanel
 METHOD	com/xk72/charles/gui/transaction/frames/l	()Lcom/xk72/charles/gui/transaction/general/g;	k	method_1456
-CLASS	com/xk72/charles/gui/transaction/frames/m	com/xk72/charles/gui/transaction/frames/m
+CLASS	com/xk72/charles/gui/transaction/frames/m	com/xk72/charles/gui/transaction/frames/SummaryViewPanel
 METHOD	com/xk72/charles/gui/transaction/frames/m	()Lcom/xk72/charles/gui/transaction/general/g;	k	method_1457
-CLASS	com/xk72/charles/gui/transaction/frames/n	com/xk72/charles/gui/transaction/frames/n
+CLASS	com/xk72/charles/gui/transaction/frames/n	com/xk72/charles/gui/transaction/frames/TransactionViewFrame
 FIELD	com/xk72/charles/gui/transaction/frames/n	Lcom/xk72/charles/gui/transaction/viewers/websocket/f;	a	field_1687
 FIELD	com/xk72/charles/gui/transaction/frames/n	Lcom/xk72/charles/gui/transaction/b;	i	field_1688
 FIELD	com/xk72/charles/gui/transaction/frames/n	Lcom/xk72/charles/gui/transaction/e;	j	field_1689
@@ -7549,7 +7545,7 @@ METHOD	com/xk72/charles/gui/transaction/general/b	(Ljava/awt/event/MouseEvent;)V
 METHOD	com/xk72/charles/gui/transaction/general/b	(Ljava/awt/event/MouseEvent;)V	mousePressed	mousePressed
 METHOD	com/xk72/charles/gui/transaction/general/b	(Ljava/awt/event/MouseEvent;)V	mouseReleased	mouseReleased
 CLASS	com/xk72/charles/gui/transaction/general/c	com/xk72/charles/gui/transaction/general/c
-FIELD	com/xk72/charles/gui/transaction/general/c	Lcom/xk72/charles/lib/j;	a	field_1700
+FIELD	com/xk72/charles/gui/transaction/general/c	Lcom/xk72/charles/lib/j;	a	formatter
 METHOD	com/xk72/charles/gui/transaction/general/c	()V	a	method_1468
 METHOD	com/xk72/charles/gui/transaction/general/c	(JJ)Ljava/lang/String;	a	method_1469
 METHOD	com/xk72/charles/gui/transaction/general/c	(Ljava/util/Date;)Ljava/lang/String;	a	method_1470
@@ -7968,7 +7964,7 @@ FIELD	com/xk72/charles/gui/transaction/summary/a	Lcom/xk72/charles/gui/transacti
 FIELD	com/xk72/charles/gui/transaction/summary/a	Ljavax/swing/JComponent;	b	field_1902
 CLASS	com/xk72/charles/gui/transaction/t	com/xk72/charles/gui/transaction/t
 FIELD	com/xk72/charles/gui/transaction/t	Ljava/lang/String;	c	myClientProperty
-METHOD	com/xk72/charles/gui/transaction/t	()Ljava/lang/String;	a	method_1621
+METHOD	com/xk72/charles/gui/transaction/t	()Ljava/lang/String;	a	getDisplayName
 METHOD	com/xk72/charles/gui/transaction/t	([Lcom/xk72/charles/model/ModelNode;)V	a	method_1622
 METHOD	com/xk72/charles/gui/transaction/t	()Ljava/awt/Component;	a_	method_1623
 METHOD	com/xk72/charles/gui/transaction/t	()V	c	method_1624
@@ -8073,7 +8069,6 @@ METHOD	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeMana
 CLASS	com/xk72/charles/gui/transaction/viewers/a	com/xk72/charles/gui/transaction/viewers/a
 METHOD	com/xk72/charles/gui/transaction/viewers/a	(Lcom/xk72/charles/gui/transaction/viewers/d;)V	a	method_1642
 METHOD	com/xk72/charles/gui/transaction/viewers/a	(Lcom/xk72/charles/gui/transaction/viewers/d;)V	b	method_1643
-CLASS	com/xk72/charles/gui/transaction/viewers/amf/AMFBodyViewer	com/xk72/charles/gui/transaction/viewers/amf/AMFBodyViewer
 CLASS	com/xk72/charles/gui/transaction/viewers/amf/AMFBodyViewer$1	com/xk72/charles/gui/transaction/viewers/amf/AMFBodyViewer$1
 FIELD	com/xk72/charles/gui/transaction/viewers/amf/AMFBodyViewer$1	Lcom/xk72/charles/gui/transaction/viewers/amf/a;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/viewers/amf/AMFBodyViewer$1	()V	doLayout	doLayout
@@ -8091,7 +8086,7 @@ METHOD	com/xk72/charles/gui/transaction/viewers/amf/DiffAMFBodyViewer$1	()V	doLa
 CLASS	com/xk72/charles/gui/transaction/viewers/amf/DiffAMFBodyViewer$2	com/xk72/charles/gui/transaction/viewers/amf/DiffAMFBodyViewer$2
 FIELD	com/xk72/charles/gui/transaction/viewers/amf/DiffAMFBodyViewer$2	Lcom/xk72/charles/gui/transaction/viewers/amf/g;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/viewers/amf/DiffAMFBodyViewer$2	()V	doLayout	doLayout
-CLASS	com/xk72/charles/gui/transaction/viewers/amf/a	com/xk72/charles/gui/transaction/viewers/amf/a
+CLASS	com/xk72/charles/gui/transaction/viewers/amf/a	com/xk72/charles/gui/transaction/viewers/amf/AMFBodyViewer
 METHOD	com/xk72/charles/gui/transaction/viewers/amf/a	(Lcom/xk72/amf/s;Lcom/xk72/charles/model/Transaction;)Lcom/xk72/charles/gui/transaction/viewers/lib/f;	a	method_1644
 METHOD	com/xk72/charles/gui/transaction/viewers/amf/a	(Lcom/xk72/charles/gui/lib/treetable/JTreeTable;Lcom/xk72/charles/gui/transaction/viewers/amf/e;Lcom/xk72/charles/model/Transaction;)V	a	method_1645
 METHOD	com/xk72/charles/gui/transaction/viewers/amf/a	(Ljava/lang/Object;Lcom/xk72/charles/model/Transaction;)Lcom/xk72/charles/gui/transaction/viewers/lib/f;	a	method_1646
@@ -8187,7 +8182,6 @@ METHOD	com/xk72/charles/gui/transaction/viewers/gen/CookieViewer$CookieTableMode
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/CookieViewer$CookieTableModel	()Ljava/util/List;	getCookies	getCookies
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/CookieViewer$CookieTableModel	()I	getRowCount	getRowCount
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/CookieViewer$CookieTableModel	(II)Ljava/lang/Object;	getValueAt	getValueAt
-CLASS	com/xk72/charles/gui/transaction/viewers/gen/FLVBodyViewer	com/xk72/charles/gui/transaction/viewers/gen/FLVBodyViewer
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/FLVBodyViewer$1	com/xk72/charles/gui/transaction/viewers/gen/FLVBodyViewer$1
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/FLVBodyViewer$1	Lcom/xk72/charles/gui/transaction/viewers/gen/g;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/FLVBodyViewer$1	(II)Z	isCellEditable	isCellEditable
@@ -8209,15 +8203,12 @@ CLASS	com/xk72/charles/gui/transaction/viewers/gen/HexBodyViewer	com/xk72/charle
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/HexBodyViewer$1	com/xk72/charles/gui/transaction/viewers/gen/HexBodyViewer$1
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/HexBodyViewer$1	Lcom/xk72/charles/gui/transaction/viewers/gen/h;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/HexBodyViewer$1	(Ljava/awt/Rectangle;)V	scrollRectToVisible	scrollRectToVisible
-CLASS	com/xk72/charles/gui/transaction/viewers/gen/OldCookieViewer	com/xk72/charles/gui/transaction/viewers/gen/OldCookieViewer
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/OldCookieViewer$1	com/xk72/charles/gui/transaction/viewers/gen/OldCookieViewer$1
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/OldCookieViewer$1	Lcom/xk72/charles/gui/transaction/viewers/gen/n;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/OldCookieViewer$1	()V	doLayout	doLayout
-CLASS	com/xk72/charles/gui/transaction/viewers/gen/SWFBodyViewer	com/xk72/charles/gui/transaction/viewers/gen/SWFBodyViewer
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/SWFBodyViewer$1	com/xk72/charles/gui/transaction/viewers/gen/SWFBodyViewer$1
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/SWFBodyViewer$1	Lcom/xk72/charles/gui/transaction/viewers/gen/p;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/SWFBodyViewer$1	()V	doLayout	doLayout
-CLASS	com/xk72/charles/gui/transaction/viewers/gen/SetCookieViewer	com/xk72/charles/gui/transaction/viewers/gen/SetCookieViewer
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/SetCookieViewer$1	com/xk72/charles/gui/transaction/viewers/gen/SetCookieViewer$1
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/SetCookieViewer$1	Lcom/xk72/charles/gui/transaction/viewers/gen/q;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/SetCookieViewer$1	()V	doLayout	doLayout
@@ -8244,8 +8235,8 @@ CLASS	com/xk72/charles/gui/transaction/viewers/gen/d	com/xk72/charles/gui/transa
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/e	com/xk72/charles/gui/transaction/viewers/gen/e
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/f	com/xk72/charles/gui/transaction/viewers/gen/f
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/f	Lcom/xk72/charles/gui/transaction/lib/HexAsciiTextPane;	e	field_1963
-CLASS	com/xk72/charles/gui/transaction/viewers/gen/g	com/xk72/charles/gui/transaction/viewers/gen/g
-FIELD	com/xk72/charles/gui/transaction/viewers/gen/g	Ljava/util/logging/Logger;	e	field_1964
+CLASS	com/xk72/charles/gui/transaction/viewers/gen/g	com/xk72/charles/gui/transaction/viewers/gen/FLVBodyViewer
+FIELD	com/xk72/charles/gui/transaction/viewers/gen/g	Ljava/util/logging/Logger;	e	LOGGER
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/g	Ljavax/swing/JTable;	f	field_1965
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/g	Lcom/xk72/charles/lib/j;	g	field_1966
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/h	com/xk72/charles/gui/transaction/viewers/gen/h
@@ -8261,7 +8252,7 @@ METHOD	com/xk72/charles/gui/transaction/viewers/gen/k	()Ljavax/imageio/ImageRead
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/k	(Lcom/xk72/charles/model/Transaction;I)Z	f	method_1686
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/l	com/xk72/charles/gui/transaction/viewers/gen/l
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/m	com/xk72/charles/gui/transaction/viewers/gen/m
-CLASS	com/xk72/charles/gui/transaction/viewers/gen/n	com/xk72/charles/gui/transaction/viewers/gen/n
+CLASS	com/xk72/charles/gui/transaction/viewers/gen/n	com/xk72/charles/gui/transaction/viewers/gen/OldCookieViewer
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/n	Ljava/lang/String;	e	field_1970
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/n	Ljava/lang/String;	f	field_1971
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/n	Ljava/lang/String;	g	field_1972
@@ -8270,11 +8261,11 @@ METHOD	com/xk72/charles/gui/transaction/viewers/gen/n	(Lcom/xk72/charles/gui/lib
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/n	(Lcom/xk72/charles/gui/lib/treetable/DefaultTreeTableNode;Ljava/util/List;)V	a	method_1688
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/o	com/xk72/charles/gui/transaction/viewers/gen/o
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/o	Lcom/xk72/charles/gui/lib/BetterTextArea;	e	field_1974
-CLASS	com/xk72/charles/gui/transaction/viewers/gen/p	com/xk72/charles/gui/transaction/viewers/gen/p
-FIELD	com/xk72/charles/gui/transaction/viewers/gen/p	Ljava/util/logging/Logger;	e	field_1975
+CLASS	com/xk72/charles/gui/transaction/viewers/gen/p	com/xk72/charles/gui/transaction/viewers/gen/SWFBodyViewer
+FIELD	com/xk72/charles/gui/transaction/viewers/gen/p	Ljava/util/logging/Logger;	e	LOGGER
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/p	Lcom/xk72/charles/gui/lib/treetable/JTreeTable;	f	field_1976
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/p	Lcom/xk72/charles/lib/j;	g	field_1977
-CLASS	com/xk72/charles/gui/transaction/viewers/gen/q	com/xk72/charles/gui/transaction/viewers/gen/q
+CLASS	com/xk72/charles/gui/transaction/viewers/gen/q	com/xk72/charles/gui/transaction/viewers/gen/SetCookieViewer
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/q	Lcom/xk72/charles/gui/lib/treetable/JTreeTable;	e	field_1978
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/q	(Lcom/xk72/charles/gui/lib/treetable/DefaultTreeTableNode;Ljava/lang/String;Ljava/lang/String;)V	a	method_1689
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/q	(Lcom/xk72/charles/gui/lib/treetable/DefaultTreeTableNode;Ljava/util/List;)V	a	method_1690
@@ -8296,7 +8287,6 @@ METHOD	com/xk72/charles/gui/transaction/viewers/i	(Ljava/awt/event/ItemEvent;)V	
 CLASS	com/xk72/charles/gui/transaction/viewers/j	com/xk72/charles/gui/transaction/viewers/j
 FIELD	com/xk72/charles/gui/transaction/viewers/j	Lcom/xk72/charles/gui/transaction/viewers/g;	a	field_1986
 METHOD	com/xk72/charles/gui/transaction/viewers/j	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/transaction/viewers/json/AbstractJSONTreeViewer	com/xk72/charles/gui/transaction/viewers/json/AbstractJSONTreeViewer
 CLASS	com/xk72/charles/gui/transaction/viewers/json/AbstractJSONTreeViewer$1	com/xk72/charles/gui/transaction/viewers/json/AbstractJSONTreeViewer$1
 FIELD	com/xk72/charles/gui/transaction/viewers/json/AbstractJSONTreeViewer$1	Lcom/xk72/charles/gui/transaction/viewers/json/a;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/viewers/json/AbstractJSONTreeViewer$1	()V	doLayout	doLayout
@@ -8305,7 +8295,7 @@ CLASS	com/xk72/charles/gui/transaction/viewers/json/JSONRPCBodyViewer	com/xk72/c
 CLASS	com/xk72/charles/gui/transaction/viewers/json/JSONRPCBodyViewer$1	com/xk72/charles/gui/transaction/viewers/json/JSONRPCBodyViewer$1
 FIELD	com/xk72/charles/gui/transaction/viewers/json/JSONRPCBodyViewer$1	Lcom/xk72/charles/gui/transaction/viewers/json/e;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/viewers/json/JSONRPCBodyViewer$1	()V	doLayout	doLayout
-CLASS	com/xk72/charles/gui/transaction/viewers/json/a	com/xk72/charles/gui/transaction/viewers/json/a
+CLASS	com/xk72/charles/gui/transaction/viewers/json/a	com/xk72/charles/gui/transaction/viewers/json/AbstractJSONTreeViewer
 METHOD	com/xk72/charles/gui/transaction/viewers/json/a	(Lcom/xk72/charles/gui/transaction/viewers/json/i;Lcom/xk72/charles/model/Transaction;)Lcom/xk72/charles/gui/lib/treetable/JTreeTable;	a	method_1693
 METHOD	com/xk72/charles/gui/transaction/viewers/json/a	(Lcom/xk72/charles/model/Transaction;ILjava/lang/String;)Lcom/xk72/charles/gui/transaction/viewers/lib/f;	a	method_1694
 CLASS	com/xk72/charles/gui/transaction/viewers/json/b	com/xk72/charles/gui/transaction/viewers/json/b
@@ -8316,14 +8306,14 @@ METHOD	com/xk72/charles/gui/transaction/viewers/json/b	(Ljava/lang/String;Lcom/x
 METHOD	com/xk72/charles/gui/transaction/viewers/json/b	(Ljava/lang/String;)Ljava/lang/Object;	b	method_1698
 METHOD	com/xk72/charles/gui/transaction/viewers/json/b	(Ljava/lang/String;)Ljava/lang/String;	e	method_1699
 METHOD	com/xk72/charles/gui/transaction/viewers/json/b	(Ljava/lang/String;)Ljava/lang/String;	f	method_1700
-CLASS	com/xk72/charles/gui/transaction/viewers/json/c	com/xk72/charles/gui/transaction/viewers/json/c
+CLASS	com/xk72/charles/gui/transaction/viewers/json/c	com/xk72/charles/gui/transaction/viewers/json/JSONTextViewer
 FIELD	com/xk72/charles/gui/transaction/viewers/json/c	Lcom/xk72/charles/gui/transaction/viewers/b;	e	field_1988
 CLASS	com/xk72/charles/gui/transaction/viewers/json/d	com/xk72/charles/gui/transaction/viewers/json/d
 FIELD	com/xk72/charles/gui/transaction/viewers/json/d	Lcom/xk72/charles/gui/find/ModelNodeHit;	a	field_1989
 FIELD	com/xk72/charles/gui/transaction/viewers/json/d	Lcom/xk72/charles/gui/transaction/viewers/json/c;	b	field_1990
 METHOD	com/xk72/charles/gui/transaction/viewers/json/d	()V	run	run
 CLASS	com/xk72/charles/gui/transaction/viewers/json/e	com/xk72/charles/gui/transaction/viewers/json/e
-CLASS	com/xk72/charles/gui/transaction/viewers/json/f	com/xk72/charles/gui/transaction/viewers/json/f
+CLASS	com/xk72/charles/gui/transaction/viewers/json/f	com/xk72/charles/gui/transaction/viewers/json/JSONRPCMethodViewer
 CLASS	com/xk72/charles/gui/transaction/viewers/json/g	com/xk72/charles/gui/transaction/viewers/json/g
 CLASS	com/xk72/charles/gui/transaction/viewers/json/h	com/xk72/charles/gui/transaction/viewers/json/h
 FIELD	com/xk72/charles/gui/transaction/viewers/json/h	Ljava/lang/String;	e	field_1991
@@ -8362,7 +8352,7 @@ METHOD	com/xk72/charles/gui/transaction/viewers/json/k	(Ljava/lang/String;)V	a	m
 METHOD	com/xk72/charles/gui/transaction/viewers/json/k	(Ljava/util/List;)V	a	method_1720
 METHOD	com/xk72/charles/gui/transaction/viewers/json/k	()Ljava/lang/String;	b	method_1721
 METHOD	com/xk72/charles/gui/transaction/viewers/json/k	(Ljava/lang/Object;)V	b	method_1722
-METHOD	com/xk72/charles/gui/transaction/viewers/json/k	()Ljava/lang/String;	c	method_1723
+METHOD	com/xk72/charles/gui/transaction/viewers/json/k	()Ljava/lang/String;	c	getDisplayName
 METHOD	com/xk72/charles/gui/transaction/viewers/json/k	(I)V	c	method_1724
 METHOD	com/xk72/charles/gui/transaction/viewers/json/k	(Ljava/lang/Object;)V	c	method_1725
 METHOD	com/xk72/charles/gui/transaction/viewers/json/k	()Ljava/lang/Object;	d	method_1726
@@ -8388,7 +8378,7 @@ METHOD	com/xk72/charles/gui/transaction/viewers/json/m	()Lcom/xk72/e/a;	a	getJso
 METHOD	com/xk72/charles/gui/transaction/viewers/json/m	(Ljava/lang/String;ILjava/lang/Object;)V	a	method_1740
 METHOD	com/xk72/charles/gui/transaction/viewers/json/m	(Ljava/lang/String;Ljava/lang/Object;)V	a	method_1741
 CLASS	com/xk72/charles/gui/transaction/viewers/json/n	com/xk72/charles/gui/transaction/viewers/json/n
-FIELD	com/xk72/charles/gui/transaction/viewers/json/n	Ljava/lang/String;	a	field_2005
+FIELD	com/xk72/charles/gui/transaction/viewers/json/n	Ljava/lang/String;	a	displayName
 FIELD	com/xk72/charles/gui/transaction/viewers/json/n	Lcom/xk72/charles/gui/transaction/viewers/json/i;	d	field_2006
 FIELD	com/xk72/charles/gui/transaction/viewers/json/n	Ljava/lang/Object;	e	field_2007
 CLASS	com/xk72/charles/gui/transaction/viewers/json/o	com/xk72/charles/gui/transaction/viewers/json/o
@@ -9195,12 +9185,12 @@ METHOD	com/xk72/charles/j	(Lcom/xk72/charles/config/CharlesConfiguration;)Lcom/x
 METHOD	com/xk72/charles/j	(Ljava/io/File;)Lcom/xk72/charles/config/CharlesConfiguration;	b	loadXmlConfiguration
 METHOD	com/xk72/charles/j	(Ljava/lang/String;)Ljava/io/File;	b	method_2029
 METHOD	com/xk72/charles/j	()Lcom/xk72/charles/config/CharlesConfiguration;	c	method_2030
-METHOD	com/xk72/charles/j	(Ljava/io/File;)V	c	method_2031
+METHOD	com/xk72/charles/j	(Ljava/io/File;)V	c	loadConfigBackup
 METHOD	com/xk72/charles/j	(Ljava/lang/String;)V	c	method_2032
 METHOD	com/xk72/charles/j	()Ljava/util/List;	d	method_2033
 METHOD	com/xk72/charles/j	(Ljava/lang/String;)Ljava/lang/String;	d	method_2034
 METHOD	com/xk72/charles/j	()Ljava/lang/String;	e	method_2035
-METHOD	com/xk72/charles/j	(Ljava/lang/String;)Ljava/lang/String;	e	method_2036
+METHOD	com/xk72/charles/j	(Ljava/lang/String;)Ljava/lang/String;	e	addRealUserHome
 METHOD	com/xk72/charles/j	()Ljava/util/List;	f	method_2037
 CLASS	com/xk72/charles/k	com/xk72/charles/k
 FIELD	com/xk72/charles/k	Lcom/xk72/charles/config/CharlesConfiguration;	a	field_2251
@@ -9380,7 +9370,7 @@ FIELD	com/xk72/charles/lib/UrlUtil	Ljava/net/URLStreamHandler;	a	field_2269
 METHOD	com/xk72/charles/lib/UrlUtil	(Ljava/lang/String;)Ljava/net/URL;	a	method_2083
 METHOD	com/xk72/charles/lib/UrlUtil	(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Ljava/net/URL;	a	method_2084
 METHOD	com/xk72/charles/lib/UrlUtil	(Ljava/net/URI;)Ljava/net/URL;	a	method_2085
-METHOD	com/xk72/charles/lib/UrlUtil	(Ljava/net/URL;)I	a	method_2086
+METHOD	com/xk72/charles/lib/UrlUtil	(Ljava/net/URL;)I	a	getDefaultPortForProtocol
 CLASS	com/xk72/charles/lib/UrlUtil$DummyHandler	com/xk72/charles/lib/UrlUtil$DummyHandler
 METHOD	com/xk72/charles/lib/UrlUtil$DummyHandler	()I	getDefaultPort	getDefaultPort
 METHOD	com/xk72/charles/lib/UrlUtil$DummyHandler	(Ljava/net/URL;)Ljava/net/URLConnection;	openConnection	openConnection
@@ -9634,7 +9624,7 @@ METHOD	com/xk72/charles/lib/multipart/c	(I)V	a	setCount
 METHOD	com/xk72/charles/lib/multipart/c	(I)B	b	byteAt
 CLASS	com/xk72/charles/lib/n	com/xk72/charles/lib/n
 FIELD	com/xk72/charles/lib/n	Ljava/nio/charset/Charset;	a	UTF_8
-METHOD	com/xk72/charles/lib/n	(Ljava/lang/String;)Z	B	method_2234
+METHOD	com/xk72/charles/lib/n	(Ljava/lang/String;)Z	B	allArePathSafe
 METHOD	com/xk72/charles/lib/n	(C)Z	a	isPathSafe
 METHOD	com/xk72/charles/lib/n	(Ljava/lang/Class;)Ljava/lang/String;	a	formatException
 METHOD	com/xk72/charles/lib/n	(Ljava/lang/Exception;)Ljava/lang/String;	a	formatException
@@ -9707,12 +9697,12 @@ FIELD	com/xk72/charles/macos/MacOSNative$MacOSProxyHelperException	J	serialVersi
 CLASS	com/xk72/charles/macos/a	com/xk72/charles/macos/a
 METHOD	com/xk72/charles/macos/a	(IILjava/util/List;)V	a	method_2266
 METHOD	com/xk72/charles/macos/a	(Lcom/xk72/charles/macos/b;)Lcom/xk72/charles/macos/f;	a	method_2267
-METHOD	com/xk72/charles/macos/a	(Lcom/xk72/charles/macos/f;)V	a	method_2268
+METHOD	com/xk72/charles/macos/a	(Lcom/xk72/charles/macos/f;)V	a	removeSystemEventListener
 METHOD	com/xk72/charles/macos/a	(Ljava/awt/Window;)Ljavax/swing/Action;	a	method_2269
 METHOD	com/xk72/charles/macos/a	(Ljava/awt/Window;Lcom/xk72/charles/config/StartupConfiguration;)V	a	method_2270
-METHOD	com/xk72/charles/macos/a	(Ljava/beans/PropertyChangeListener;)V	a	method_2271
-METHOD	com/xk72/charles/macos/a	(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V	a	method_2272
-METHOD	com/xk72/charles/macos/a	()V	b	method_2273
+METHOD	com/xk72/charles/macos/a	(Ljava/beans/PropertyChangeListener;)V	a	addPropertyChangeListener
+METHOD	com/xk72/charles/macos/a	(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V	a	addPropertyChangeListener
+METHOD	com/xk72/charles/macos/a	()V	b	restoreSystemProxySettings
 METHOD	com/xk72/charles/macos/a	()Z	b_	isMacOS
 METHOD	com/xk72/charles/macos/a	()Z	c	isProxyEnabled
 CLASS	com/xk72/charles/macos/b	com/xk72/charles/macos/b
@@ -9720,9 +9710,9 @@ METHOD	com/xk72/charles/macos/b	(Ljava/util/EventObject;)V	a	method_2276
 METHOD	com/xk72/charles/macos/b	(Ljava/util/EventObject;)V	b	method_2277
 CLASS	com/xk72/charles/macos/c	com/xk72/charles/macos/MacOSImpl
 FIELD	com/xk72/charles/macos/c	Ljava/util/logging/Logger;	a	LOGGER
-FIELD	com/xk72/charles/macos/c	Ljava/lang/String;	b	field_2340
+FIELD	com/xk72/charles/macos/c	Ljava/lang/String;	b	systemProxySettings
 FIELD	com/xk72/charles/macos/c	Z	c	proxyEnabled
-FIELD	com/xk72/charles/macos/c	Ljava/beans/PropertyChangeSupport;	d	field_2342
+FIELD	com/xk72/charles/macos/c	Ljava/beans/PropertyChangeSupport;	d	propertyChangeSupport
 METHOD	com/xk72/charles/macos/c	(Lcom/xk72/charles/config/StartupConfiguration;Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;	a	method_2278
 METHOD	com/xk72/charles/macos/c	(Ljava/util/List;)Ljava/lang/String;	a	method_2279
 METHOD	com/xk72/charles/macos/c	(Z)V	a	setProxyEnabled
@@ -9741,7 +9731,7 @@ CLASS	com/xk72/charles/macos/e	com/xk72/charles/macos/e
 FIELD	com/xk72/charles/macos/e	Ljava/awt/Window;	a	field_2345
 FIELD	com/xk72/charles/macos/e	Lcom/xk72/charles/macos/c;	b	field_2346
 METHOD	com/xk72/charles/macos/e	()V	run	run
-CLASS	com/xk72/charles/macos/f	com/xk72/charles/macos/f
+CLASS	com/xk72/charles/macos/f	com/xk72/charles/macos/SystemEventListenerContainer
 FIELD	com/xk72/charles/macos/f	Ljava/awt/desktop/SystemEventListener;	a	systemEventListener
 METHOD	com/xk72/charles/macos/f	()Ljava/awt/desktop/SystemEventListener;	a	getSystemEventListener
 CLASS	com/xk72/charles/macos/g	com/xk72/charles/macos/MacOSManager
@@ -9752,12 +9742,12 @@ METHOD	com/xk72/charles/macos/g	()Lcom/xk72/charles/macos/a;	b	method_2289
 CLASS	com/xk72/charles/macos/gui/Main	com/xk72/charles/macos/gui/Main
 METHOD	com/xk72/charles/macos/gui/Main	([Ljava/lang/String;)V	main	main
 CLASS	com/xk72/charles/macos/gui/a	com/xk72/charles/macos/gui/a
-METHOD	com/xk72/charles/macos/gui/a	()Z	a	method_2290
+METHOD	com/xk72/charles/macos/gui/a	()Z	a	isHidden
 METHOD	com/xk72/charles/macos/gui/a	(Lcom/xk72/charles/gui/CharlesFrame;)V	a	method_2291
-METHOD	com/xk72/charles/macos/gui/a	(Z)V	a	method_2292
+METHOD	com/xk72/charles/macos/gui/a	(Z)V	a	requestForeground
 CLASS	com/xk72/charles/macos/gui/b	com/xk72/charles/macos/gui/MacOSGUIImpl
 FIELD	com/xk72/charles/macos/gui/b	Ljava/util/logging/Logger;	a	LOGGER
-FIELD	com/xk72/charles/macos/gui/b	Z	b	isHidden
+FIELD	com/xk72/charles/macos/gui/b	Z	b	hidden
 CLASS	com/xk72/charles/macos/gui/c	com/xk72/charles/macos/gui/c
 FIELD	com/xk72/charles/macos/gui/c	Lcom/xk72/charles/macos/gui/b;	a	field_2352
 METHOD	com/xk72/charles/macos/gui/c	(Ljava/awt/desktop/AppHiddenEvent;)V	appHidden	appHidden
@@ -10332,12 +10322,12 @@ CLASS	com/xk72/charles/model/g	com/xk72/charles/model/ICharlesModelListener
 METHOD	com/xk72/charles/model/g	(Lcom/xk72/charles/model/ModelEvent;)V	modelChanged	modelChanged
 METHOD	com/xk72/charles/model/g	(Lcom/xk72/charles/model/ModelEvent;)V	modelChildAdded	modelChildAdded
 METHOD	com/xk72/charles/model/g	(Lcom/xk72/charles/model/ModelEvent;)V	modelChildRemoved	modelChildRemoved
-CLASS	com/xk72/charles/model/h	com/xk72/charles/model/ModelChildAddedListener
+CLASS	com/xk72/charles/model/h	com/xk72/charles/model/ModelChildAddedListener_CharlesModelListener_modelChildAdded
 CLASS	com/xk72/charles/model/i	com/xk72/charles/model/i
 CLASS	com/xk72/charles/model/j	com/xk72/charles/model/j
 CLASS	com/xk72/charles/model/k	com/xk72/charles/model/k
 CLASS	com/xk72/charles/model/l	com/xk72/charles/model/l
-CLASS	com/xk72/charles/model/m	com/xk72/charles/model/m
+CLASS	com/xk72/charles/model/m	com/xk72/charles/model/ModelChildAddedListener_ModelDecendentContainer_modelDescendantChanged
 CLASS	com/xk72/charles/model/n	com/xk72/charles/model/n
 METHOD	com/xk72/charles/model/n	(Lcom/xk72/charles/model/ModelNode;Lcom/xk72/charles/model/ModelNode;)I	a	method_2386
 METHOD	com/xk72/charles/model/n	(Ljava/lang/Object;Ljava/lang/Object;)I	compare	compare
@@ -10421,7 +10411,7 @@ METHOD	com/xk72/charles/n	(Ljava/io/File;)Lcom/xk72/charles/model/Session;	a	met
 METHOD	com/xk72/charles/n	(Ljava/util/List;)Ljava/util/Collection;	a	method_2423
 METHOD	com/xk72/charles/n	(Lcom/xk72/charles/o;)V	b	method_2424
 CLASS	com/xk72/charles/nativesupport/NativeUtils	com/xk72/charles/nativesupport/NativeUtils
-METHOD	com/xk72/charles/nativesupport/NativeUtils	(Ljava/lang/String;)Ljava/lang/String;	a	method_2425
+METHOD	com/xk72/charles/nativesupport/NativeUtils	(Ljava/lang/String;)Ljava/lang/String;	a	getenvXCall
 METHOD	com/xk72/charles/nativesupport/NativeUtils	(Ljava/lang/String;)Ljava/lang/String;	getenvX	getenvX
 CLASS	com/xk72/charles/nativesupport/a	com/xk72/charles/nativesupport/NativeLoader
 FIELD	com/xk72/charles/nativesupport/a	Z	a	nativeLibLoaded
@@ -10461,7 +10451,7 @@ FIELD	com/xk72/charles/p	I	Y	field_2458
 FIELD	com/xk72/charles/p	I	Z	field_2459
 FIELD	com/xk72/charles/p	Ljava/lang/String;	a	GREETING_TO_CODE_EXPLORERS
 FIELD	com/xk72/charles/p	I	aa	field_2461
-FIELD	com/xk72/charles/p	Lcom/xk72/charles/p;	ab	field_2462
+FIELD	com/xk72/charles/p	Lcom/xk72/charles/p;	ab	instance
 FIELD	com/xk72/charles/p	Z	ac	registered
 FIELD	com/xk72/charles/p	Ljava/lang/String;	ad	licenseTypeString
 FIELD	com/xk72/charles/p	I	ae	field_2465
@@ -10503,10 +10493,10 @@ FIELD	com/xk72/charles/p	I	w	field_2500
 FIELD	com/xk72/charles/p	I	x	field_2501
 FIELD	com/xk72/charles/p	I	y	field_2502
 FIELD	com/xk72/charles/p	I	z	field_2503
-METHOD	com/xk72/charles/p	()Z	a	method_2432
+METHOD	com/xk72/charles/p	()Z	a	isInstanceRegistered
 METHOD	com/xk72/charles/p	(I)Ljava/lang/String;	a	method_2433
 METHOD	com/xk72/charles/p	(J)Z	a	method_2434
-METHOD	com/xk72/charles/p	(Lcom/xk72/charles/p;)V	a	method_2435
+METHOD	com/xk72/charles/p	(Lcom/xk72/charles/p;)V	a	setInstance
 METHOD	com/xk72/charles/p	(Ljava/lang/String;)Ljava/lang/String;	a	method_2436
 METHOD	com/xk72/charles/p	(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;	a	method_2437
 METHOD	com/xk72/charles/p	(Ljava/lang/String;Ljava/lang/String;I)Z	a	method_2438
@@ -10516,7 +10506,7 @@ METHOD	com/xk72/charles/p	(J)I	b	method_2441
 METHOD	com/xk72/charles/p	(Ljava/lang/String;)J	b	method_2442
 METHOD	com/xk72/charles/p	(Ljava/lang/String;Ljava/lang/String;I)J	b	method_2443
 METHOD	com/xk72/charles/p	([B)[B	b	method_2444
-METHOD	com/xk72/charles/p	()Ljava/lang/String;	c	method_2445
+METHOD	com/xk72/charles/p	()Ljava/lang/String;	c	getLicenseOwnerName
 METHOD	com/xk72/charles/p	(J)J	c	method_2446
 METHOD	com/xk72/charles/p	(Ljava/lang/String;)I	c	method_2447
 METHOD	com/xk72/charles/p	([B)[B	c	method_2448
@@ -10727,7 +10717,7 @@ METHOD	com/xk72/charles/ssl/CertificateConfiguration	(Ljava/lang/String;)V	setFi
 METHOD	com/xk72/charles/ssl/CertificateConfiguration	(Ljava/lang/String;)V	setName	setName
 METHOD	com/xk72/charles/ssl/CertificateConfiguration	(Ljava/lang/String;)V	setStoreAlias	setStoreAlias
 CLASS	com/xk72/charles/ssl/SSLCertificateStore	com/xk72/charles/ssl/SSLCertificateStore
-FIELD	com/xk72/charles/ssl/SSLCertificateStore	Ljava/util/logging/Logger;	a	field_2583
+FIELD	com/xk72/charles/ssl/SSLCertificateStore	Ljava/util/logging/Logger;	a	LOGGER
 FIELD	com/xk72/charles/ssl/SSLCertificateStore	Ljava/util/List;	b	field_2584
 FIELD	com/xk72/charles/ssl/SSLCertificateStore	Ljava/util/List;	c	field_2585
 FIELD	com/xk72/charles/ssl/SSLCertificateStore	Ljava/io/File;	d	field_2586
@@ -10811,10 +10801,10 @@ CLASS	com/xk72/charles/ssl/g	com/xk72/charles/ssl/g
 METHOD	com/xk72/charles/ssl/g	(Lcom/xk72/b/a;)V	a	method_2570
 METHOD	com/xk72/charles/ssl/g	(Lcom/xk72/b/a;)V	b	method_2571
 CLASS	com/xk72/charles/ssl/h	com/xk72/charles/ssl/h
-FIELD	com/xk72/charles/ssl/h	Lcom/xk72/charles/store/e;	a	field_2605
+FIELD	com/xk72/charles/ssl/h	Lcom/xk72/charles/store/e;	a	passwordStore
 METHOD	com/xk72/charles/ssl/h	(Ljava/io/File;)[C	a	method_2572
 METHOD	com/xk72/charles/ssl/h	(Ljava/io/File;ZZ)[C	a	method_2573
-METHOD	com/xk72/charles/ssl/h	(Ljava/io/File;[C)V	a	method_2574
+METHOD	com/xk72/charles/ssl/h	(Ljava/io/File;[C)V	a	storePassword
 CLASS	com/xk72/charles/ssl/i	com/xk72/charles/ssl/i
 METHOD	com/xk72/charles/ssl/i	(Lcom/xk72/charles/ssl/SSLCertificateStore$State;)V	a	method_2575
 CLASS	com/xk72/charles/ssl/j	com/xk72/charles/ssl/SSLManager
@@ -10854,7 +10844,7 @@ METHOD	com/xk72/charles/ssl/k	(Ljava/beans/PropertyChangeEvent;)V	propertyChange
 CLASS	com/xk72/charles/ssl/l	com/xk72/charles/ssl/l
 FIELD	com/xk72/charles/ssl/l	Lcom/xk72/charles/ssl/j;	a	field_2621
 CLASS	com/xk72/charles/ssl/m	com/xk72/charles/ssl/m
-FIELD	com/xk72/charles/ssl/m	Lcom/xk72/charles/ssl/j;	a	field_2622
+FIELD	com/xk72/charles/ssl/m	Lcom/xk72/charles/ssl/j;	a	sslManager
 CLASS	com/xk72/charles/ssl/n	com/xk72/charles/ssl/n
 METHOD	com/xk72/charles/ssl/n	(Lcom/xk72/net/Location;)Z	a	method_2592
 METHOD	com/xk72/charles/ssl/n	(Lcom/xk72/net/Location;)Z	b	method_2593
@@ -10874,9 +10864,9 @@ FIELD	com/xk72/charles/ssl/p	Ljava/security/cert/Certificate;	a	certificate
 METHOD	com/xk72/charles/ssl/p	()Ljava/security/cert/Certificate;	a	getCertificate
 METHOD	com/xk72/charles/ssl/p	(Ljava/security/cert/Certificate;)V	a	setCertificate
 METHOD	com/xk72/charles/ssl/p	()Lcom/xk72/charles/ssl/o;	b	method_2601
-METHOD	com/xk72/charles/ssl/p	(Ljava/security/cert/Certificate;)Lcom/xk72/charles/ssl/p;	b	method_2602
+METHOD	com/xk72/charles/ssl/p	(Ljava/security/cert/Certificate;)Lcom/xk72/charles/ssl/p;	b	withCertificate
 METHOD	com/xk72/charles/ssl/p	(Ljava/security/cert/Certificate;)Ljava/lang/String;	c	getSha1
-METHOD	com/xk72/charles/ssl/p	(Ljava/security/cert/Certificate;)Ljava/lang/String;	d	method_2604
+METHOD	com/xk72/charles/ssl/p	(Ljava/security/cert/Certificate;)Ljava/lang/String;	d	getSha256
 CLASS	com/xk72/charles/store/CharlesPasswordStoreException	com/xk72/charles/store/CharlesPasswordStoreException
 FIELD	com/xk72/charles/store/CharlesPasswordStoreException	J	serialVersionUID	serialVersionUID
 CLASS	com/xk72/charles/store/a	com/xk72/charles/store/a
@@ -10890,17 +10880,17 @@ METHOD	com/xk72/charles/store/b	(Ljava/lang/String;)Z	b	method_2608
 CLASS	com/xk72/charles/store/c	com/xk72/charles/store/c
 FIELD	com/xk72/charles/store/c	Ljava/lang/String;	a	field_2631
 FIELD	com/xk72/charles/store/c	[C	b	field_2632
-FIELD	com/xk72/charles/store/c	Ljava/io/File;	c	field_2633
+FIELD	com/xk72/charles/store/c	Ljava/io/File;	c	file
 FIELD	com/xk72/charles/store/c	Ljava/security/KeyStore;	d	field_2634
-FIELD	com/xk72/charles/store/c	Ljavax/crypto/SecretKeyFactory;	e	field_2635
+FIELD	com/xk72/charles/store/c	Ljavax/crypto/SecretKeyFactory;	e	secretKeyFactory
 METHOD	com/xk72/charles/store/c	()V	a	method_2609
 METHOD	com/xk72/charles/store/c	(Ljava/io/File;)V	a	method_2610
 METHOD	com/xk72/charles/store/c	(Ljava/io/File;[CZ)Ljava/security/KeyStore;	a	method_2611
 METHOD	com/xk72/charles/store/c	(Ljava/security/KeyStore;Ljava/io/File;[C)V	a	method_2612
-METHOD	com/xk72/charles/store/c	()Ljava/io/File;	b	method_2613
+METHOD	com/xk72/charles/store/c	()Ljava/io/File;	b	getFile
 CLASS	com/xk72/charles/store/d	com/xk72/charles/store/d
 FIELD	com/xk72/charles/store/d	Ljava/util/Map;	a	field_2636
-CLASS	com/xk72/charles/store/e	com/xk72/charles/store/e
+CLASS	com/xk72/charles/store/e	com/xk72/charles/store/ICharlesPasswordStore
 METHOD	com/xk72/charles/store/e	(Ljava/lang/String;)[C	a	method_2614
 METHOD	com/xk72/charles/store/e	(Ljava/lang/String;[C)V	a	method_2615
 CLASS	com/xk72/charles/t	com/xk72/charles/JarFileFilter
@@ -12742,7 +12732,7 @@ METHOD	com/xk72/net/c	(Lcom/xk72/net/Location;Ljava/util/Collection;Z)Lcom/xk72/
 METHOD	com/xk72/net/c	(Lcom/xk72/net/Location;Ljava/util/Collection;ZZ)Lcom/xk72/net/a;	b	method_2991
 METHOD	com/xk72/net/c	(Lcom/xk72/net/Location;ZLjava/lang/String;)Ljava/lang/String;	b	method_2992
 METHOD	com/xk72/net/c	(Ljava/lang/String;)Ljava/util/regex/Pattern;	b	method_2993
-METHOD	com/xk72/net/c	(Lcom/xk72/net/Location;)Ljava/lang/String;	c	method_2994
+METHOD	com/xk72/net/c	(Lcom/xk72/net/Location;)Ljava/lang/String;	c	urlPatternStringToJPattern
 METHOD	com/xk72/net/c	(Lcom/xk72/net/Location;Ljava/util/Collection;)Ljava/util/Collection;	c	method_2995
 METHOD	com/xk72/net/c	(Lcom/xk72/net/Location;)Ljava/util/regex/Pattern;	d	method_2996
 CLASS	com/xk72/protobuf/NoSuchMessageTypeException	com/xk72/protobuf/NoSuchMessageTypeException
@@ -14420,7 +14410,7 @@ CLASS	com/xk72/proxy/n	com/xk72/proxy/n
 FIELD	com/xk72/proxy/n	Ljava/util/List;	a	field_3553
 METHOD	com/xk72/proxy/n	(Lcom/xk72/proxy/ProxyListener;)V	a	method_3489
 METHOD	com/xk72/proxy/n	(Lcom/xk72/proxy/ProxyListener;)V	b	method_3490
-METHOD	com/xk72/proxy/n	(Lcom/xk72/proxy/ProxyListener;)Z	c	method_3491
+METHOD	com/xk72/proxy/n	(Lcom/xk72/proxy/ProxyListener;)Z	c	contains
 CLASS	com/xk72/proxy/o	com/xk72/proxy/INonTrustedConnectionBroker
 METHOD	com/xk72/proxy/o	(Ljava/net/InetAddress;)Z	a	shouldAllowConnectionFromNonTrusted
 CLASS	com/xk72/proxy/p	com/xk72/proxy/p
@@ -14678,7 +14668,7 @@ METHOD	com/xk72/proxy/ssl/Q	(Lcom/xk72/proxy/ssl/Q;)V	a	method_3613
 METHOD	com/xk72/proxy/ssl/Q	()V	b	method_3614
 METHOD	com/xk72/proxy/ssl/Q	()Ljava/lang/String;	toString	toString
 CLASS	com/xk72/proxy/ssl/SSLContextFactory	com/xk72/proxy/ssl/SSLContextFactory
-FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/lang/String;	a	field_3634
+FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/lang/String;	a	RSA
 FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/lang/Object;	b	field_3635
 FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/lang/String;	c	field_3636
 FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/util/logging/Logger;	d	LOGGER
@@ -14689,12 +14679,12 @@ FIELD	com/xk72/proxy/ssl/SSLContextFactory	[C	h	field_3641
 FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/util/Map;	i	field_3642
 FIELD	com/xk72/proxy/ssl/SSLContextFactory	Z	j	field_3643
 FIELD	com/xk72/proxy/ssl/SSLContextFactory	J	k	field_3644
-FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/security/SecureRandom;	l	field_3645
+FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/security/SecureRandom;	l	secureRandom
 FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljavax/net/ssl/SSLContext;	m	field_3646
 FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/security/cert/X509Certificate;	n	field_3647
 FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/security/PrivateKey;	o	field_3648
 FIELD	com/xk72/proxy/ssl/SSLContextFactory	Lcom/xk72/proxy/ssl/g;	p	field_3649
-FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/lang/String;	q	field_3650
+FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/lang/String;	q	activeAlgorithm
 FIELD	com/xk72/proxy/ssl/SSLContextFactory	Ljava/io/File;	r	field_3651
 METHOD	com/xk72/proxy/ssl/SSLContextFactory	()Ljava/lang/String;	a	method_3615
 METHOD	com/xk72/proxy/ssl/SSLContextFactory	(Lcom/xk72/b/a;)V	a	method_3616
@@ -14721,7 +14711,7 @@ METHOD	com/xk72/proxy/ssl/SSLContextFactory	(Ljavax/security/auth/x500/X500Princ
 METHOD	com/xk72/proxy/ssl/SSLContextFactory	()Z	c	method_3637
 METHOD	com/xk72/proxy/ssl/SSLContextFactory	()Ljavax/net/ssl/SSLContext;	d	method_3638
 METHOD	com/xk72/proxy/ssl/SSLContextFactory	()Ljavax/net/ssl/SSLContext;	e	method_3639
-METHOD	com/xk72/proxy/ssl/SSLContextFactory	()[Ljavax/net/ssl/TrustManager;	f	method_3640
+METHOD	com/xk72/proxy/ssl/SSLContextFactory	()[Ljavax/net/ssl/TrustManager;	f	getTrustManagers
 METHOD	com/xk72/proxy/ssl/SSLContextFactory	([Ljava/lang/String;)V	main	main
 CLASS	com/xk72/proxy/ssl/SSLExtension	com/xk72/proxy/ssl/SSLExtension
 FIELD	com/xk72/proxy/ssl/SSLExtension	[B	data	data

@@ -4,6 +4,7 @@
     "mixins": [
         "MixinMainWithClassLoader",
         "auth.MixinAuthorizationUtilsGenericAuthorization",
+        "gui.settings.MixinHighlightSettingsPanel",
         "macos.MixinMacOSManager"
     ],
     "compatibilityLevel": "JAVA_11",
