@@ -2,7 +2,7 @@ package alaphant.mixin.auth;
 
 import alaphant.util.JwtUtil;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.xk72.charles.lib.AuthorizationUtils_GenericAuthorization;
+import com.xk72.charles.lib.AuthorizationUtils$GenericAuthorization;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(AuthorizationUtils_GenericAuthorization.class)
-public abstract class MixinAuthorizationUtils_GenericAuthorization {
+@Mixin(AuthorizationUtils$GenericAuthorization.class)
+public abstract class MixinAuthorizationUtilsGenericAuthorization {
     @Shadow
     public abstract void addParameter(String name, String value);
 
