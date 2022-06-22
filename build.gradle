@@ -39,6 +39,10 @@ def chlsOfficial = file("target/charles.jar")
 def chlsMapped = file("build/charles_MAPPED.jar")
 def chlsMappings = file("mappings/mappings.tiny")
 
+if (!chlsOfficial.exists()) {
+    throw new Error("No Charles official Jar found. Please copy it into the target directory from your Charles install!")
+}
+
 import net.fabricmc.tinyremapper.TinyRemapper
 import net.fabricmc.tinyremapper.TinyUtils
 import net.fabricmc.tinyremapper.OutputConsumerPath

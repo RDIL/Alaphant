@@ -23,7 +23,7 @@ public class MixinMacOSManager {
      * Repair reflection under remapped environment.
      */
     @Contract(pure = true)
-    @ModifyArg(method = "method_2289", at = @At(value = "INVOKE", target = "Ljava/lang/Class;forName(Ljava/lang/String;)Ljava/lang/Class;"), slice = @Slice(from = @At(value = "INVOKE", target = "Ljava/util/logging/Logger;log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V")))
+    @ModifyArg(method = "getMacOSImpl", at = @At(value = "INVOKE", target = "Ljava/lang/Class;forName(Ljava/lang/String;)Ljava/lang/Class;"), slice = @Slice(from = @At(value = "INVOKE", target = "Ljava/util/logging/Logger;log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V")))
     private static @NotNull String classForName2(String clazz) {
         return "com.xk72.charles.macos.MacOSImpl";
     }
@@ -32,7 +32,7 @@ public class MixinMacOSManager {
      * Repair reflection under remapped environment.
      */
     @Contract(pure = true)
-    @ModifyArg(method = "method_2289", at = @At(value = "INVOKE", target = "Ljava/lang/Class;forName(Ljava/lang/String;)Ljava/lang/Class;"), slice = @Slice(to = @At(value = "INVOKE", target = "Ljava/util/logging/Logger;log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V")))
+    @ModifyArg(method = "getMacOSImpl", at = @At(value = "INVOKE", target = "Ljava/lang/Class;forName(Ljava/lang/String;)Ljava/lang/Class;"), slice = @Slice(to = @At(value = "INVOKE", target = "Ljava/util/logging/Logger;log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V")))
     private static @NotNull String classForName3(String clazz) {
         return "com.xk72.charles.macos.gui.MacOSGUIImpl";
     }
