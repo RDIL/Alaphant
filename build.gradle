@@ -162,10 +162,17 @@ dependencies {
 }
 
 jar {
+    from "LICENSE"
     manifest.attributes(
             "MixinConfigs": "mixin.charles.json",
             "Main-Class": "alaphant.launch.Alaphant",
             "Manifest-Version": 1.0,
+            "Specification-Title": "Charles",
+            "Specification-Version": "4.8.2",
+            "Specification-Vendor": "XK72 Ltd",
+            "Implementation-Title": "Alaphant",
+            "Implementation-Version": rootProject.version,
+            "Implementation-Vendor": "Reece Dunham",
     )
 }
 
@@ -197,6 +204,9 @@ final String[] shadowJarExclusionPackages = [
         "com/jgoodies",
         "com/thoughtworks",
         "com/sun",
+        "com/edankert",
+        "org/jclarion",
+        "com/miglayout",
         "io",
         "de",
         "org/mozilla",
@@ -218,9 +228,9 @@ final String[] shadowJarExclusionPackages = [
         "org/jasypt",
         "com/google/protobuf",
         "google/protobuf",
-        "javax/servlet",
-        "javax/activation",
-        "javax/annotation"
+        "javax",
+        "org/json",
+        "META-INF/versions/11/org/bouncycastle",
 ]
 
 final String[] shadowJarExclusionFiles = [
@@ -234,17 +244,24 @@ final String[] shadowJarExclusionFiles = [
         "META-INF/charles*",
         "META-INF/mailcap.default",
         "jsyntaxpane-dark.properties",
+        "iconmap.properties",
+        "XMLPULL_1_1_3_1_VERSION",
+        "XPP3_1.1.4c_MIN_VERSION",
         // licenses for excluded packages
         "META-INF/NOTICE.txt",
         "META-INF/LICENSE",
         "LICENSE.txt",
+        "META-INF/mime.types",
+        "META-INF/mimetypes.default",
+        "META-INF/services/java.security.Provider",
 ]
 
 shadowJar {
+    from "LICENSE"
     shadowJarExclusionPackages.each {
         exclude "${it}/**/*"
-        exclude "META-INF/services/${it}*"
-        exclude "META-INF/maven/${it}*/**/*"
+        exclude "META-INF/services/${it.replace("/", ".")}*"
+        exclude "META-INF/maven/${it.replace("/", ".")}*/**/*"
     }
     shadowJarExclusionFiles.each {
         exclude it
@@ -254,4 +271,9 @@ shadowJar {
 artifacts {
     archives jar
     archives shadowJar
+}
+
+tasks.withType(AbstractArchiveTask) {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
 }

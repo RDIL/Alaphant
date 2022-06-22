@@ -5206,7 +5206,7 @@ CLASS	com/xk72/charles/gui/session/tables/a	com/xk72/charles/gui/session/tables/
 METHOD	com/xk72/charles/gui/session/tables/a	(Lcom/xk72/charles/gui/navigator/b;Ljava/lang/Object;Lcom/xk72/charles/model/ModelNode;)Z	a	method_1137
 CLASS	com/xk72/charles/gui/session/tables/b	com/xk72/charles/gui/session/tables/b
 FIELD	com/xk72/charles/gui/session/tables/b	Lcom/xk72/charles/gui/session/tables/SessionSequenceTableModel;	b	field_1165
-METHOD	com/xk72/charles/gui/session/tables/b	(Lcom/xk72/charles/model/ModelNode;)I	c	indexOf
+METHOD	com/xk72/charles/gui/session/tables/b	(Lcom/xk72/charles/model/ModelNode;)I	c	indexOf_renamed_to_avoid_conflict
 CLASS	com/xk72/charles/gui/session/tables/c	com/xk72/charles/gui/session/tables/c
 FIELD	com/xk72/charles/gui/session/tables/c	[I	a	field_1166
 CLASS	com/xk72/charles/gui/session/tables/d	com/xk72/charles/gui/session/tables/d
