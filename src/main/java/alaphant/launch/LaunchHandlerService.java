@@ -1,4 +1,4 @@
-package launch;
+package alaphant.launch;
 
 import cpw.mods.gross.Java9ClassLoaderUtil;
 import cpw.mods.modlauncher.api.ILaunchHandlerService;

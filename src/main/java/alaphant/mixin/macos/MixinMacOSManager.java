@@ -1,4 +1,4 @@
-package charles.alaphant.mixin.macos;
+package alaphant.mixin.macos;
 
 import com.xk72.charles.macos.MacOSManager;
 import org.jetbrains.annotations.Contract;

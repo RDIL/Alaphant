@@ -1,4 +1,4 @@
-package launch;
+package alaphant.launch;
 
 import cpw.mods.modlauncher.Launcher;
 

@@ -1,4 +1,4 @@
-package charles.alaphant.mixin;
+package alaphant.mixin;
 
 import com.xk72.charles.gui.MainWithClassLoader;
 import com.xk72.lib.ReflectionUtil;

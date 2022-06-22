@@ -1,6 +1,6 @@
 {
     "required": true,
-    "package": "charles.alaphant.mixin",
+    "package": "alaphant.mixin",
     "mixins": [
         "MixinMainWithClassLoader",
         "auth.MixinAuthorizationUtils_GenericAuthorization",

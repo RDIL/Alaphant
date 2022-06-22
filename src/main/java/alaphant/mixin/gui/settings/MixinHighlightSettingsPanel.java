@@ -1,4 +1,4 @@
-package charles.alaphant.mixin.gui.settings;
+package alaphant.mixin.gui.settings;
 
 import com.xk72.charles.gui.settings.HighlightSettingsPanel;
 import org.spongepowered.asm.mixin.Final;

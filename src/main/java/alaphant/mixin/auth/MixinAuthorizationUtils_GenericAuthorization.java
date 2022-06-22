@@ -1,6 +1,6 @@
-package charles.alaphant.mixin.auth;
+package alaphant.mixin.auth;
 
-import charles.alaphant.util.JwtUtil;
+import alaphant.util.JwtUtil;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.xk72.charles.lib.AuthorizationUtils_GenericAuthorization;
 import org.jetbrains.annotations.Nullable;
