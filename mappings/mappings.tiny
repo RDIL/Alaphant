@@ -2432,11 +2432,11 @@ CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$11	com/xk72/charles/gui/find/
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog$11	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	this$0	this$0
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog$11	(Ljava/lang/Object;ZZZIZ)Ljava/lang/String;	convertValueToText	convertValueToText
 CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$12	com/xk72/charles/gui/find/AdvancedFindDialog_12
-CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$12$1	com/xk72/charles/gui/find/AdvancedFindDialog_12_1
+CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$12$1	com/xk72/charles/gui/find/AdvancedFindDialog_12$1
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog$12$1	Lcom/xk72/charles/gui/find/c;	this$1	this$1
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog$12$1	Ljavax/swing/tree/TreePath;	val$clickedPath	val$clickedPath
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog$12$1	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$12$2	com/xk72/charles/gui/find/AdvancedFindDialog_12_2
+CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$12$2	com/xk72/charles/gui/find/AdvancedFindDialog_12$2
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog$12$2	Lcom/xk72/charles/gui/find/c;	this$1	this$1
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog$12$2	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$13	com/xk72/charles/gui/find/AdvancedFindDialog_13
@@ -2638,11 +2638,11 @@ METHOD	com/xk72/charles/gui/frames/ActiveConnectionsFrame	()Lcom/xk72/proxy/Prox
 METHOD	com/xk72/charles/gui/frames/ActiveConnectionsFrame	()V	shutdown	shutdown
 CLASS	com/xk72/charles/gui/frames/ActiveConnectionsFrame$3	com/xk72/charles/gui/frames/ActiveConnectionsFrame_3
 FIELD	com/xk72/charles/gui/frames/ActiveConnectionsFrame$3	Lcom/xk72/charles/gui/frames/ActiveConnectionsFrame;	this$0	this$0
-CLASS	com/xk72/charles/gui/frames/ActiveConnectionsFrame$4$1	com/xk72/charles/gui/frames/ActiveConnectionsFrame_4_1
+CLASS	com/xk72/charles/gui/frames/ActiveConnectionsFrame$4$1	com/xk72/charles/gui/frames/ActiveConnectionsFrame_4$1
 FIELD	com/xk72/charles/gui/frames/ActiveConnectionsFrame$4$1	Lcom/xk72/charles/gui/frames/k;	this$1	this$1
 FIELD	com/xk72/charles/gui/frames/ActiveConnectionsFrame$4$1	Lcom/xk72/proxy/Connection;	val$channel	val$channel
 METHOD	com/xk72/charles/gui/frames/ActiveConnectionsFrame$4$1	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/frames/ActiveConnectionsFrame$4$2	com/xk72/charles/gui/frames/ActiveConnectionsFrame_4_2
+CLASS	com/xk72/charles/gui/frames/ActiveConnectionsFrame$4$2	com/xk72/charles/gui/frames/ActiveConnectionsFrame_4$2
 FIELD	com/xk72/charles/gui/frames/ActiveConnectionsFrame$4$2	Lcom/xk72/charles/gui/frames/k;	this$1	this$1
 FIELD	com/xk72/charles/gui/frames/ActiveConnectionsFrame$4$2	Lcom/xk72/proxy/Connection;	val$channel	val$channel
 METHOD	com/xk72/charles/gui/frames/ActiveConnectionsFrame$4$2	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
@@ -3249,19 +3249,19 @@ METHOD	com/xk72/charles/gui/lib/MemoryJTable	()V	resetColumns	resetColumns
 METHOD	com/xk72/charles/gui/lib/MemoryJTable	(I)V	scrollRowToVisible	scrollRowToVisible
 METHOD	com/xk72/charles/gui/lib/MemoryJTable	(Ljavax/swing/event/TableModelEvent;)V	tableChanged	tableChanged
 CLASS	com/xk72/charles/gui/lib/MemoryJTable$4	com/xk72/charles/gui/lib/MemoryJTable_4
-CLASS	com/xk72/charles/gui/lib/MemoryJTable$4$1	com/xk72/charles/gui/lib/MemoryJTable_4_1
+CLASS	com/xk72/charles/gui/lib/MemoryJTable$4$1	com/xk72/charles/gui/lib/MemoryJTable_4$1
 FIELD	com/xk72/charles/gui/lib/MemoryJTable$4$1	Lcom/xk72/charles/gui/lib/ac;	this$1	this$1
 METHOD	com/xk72/charles/gui/lib/MemoryJTable$4$1	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/lib/MemoryJTable$4$2	com/xk72/charles/gui/lib/MemoryJTable_4_2
+CLASS	com/xk72/charles/gui/lib/MemoryJTable$4$2	com/xk72/charles/gui/lib/MemoryJTable_4$2
 FIELD	com/xk72/charles/gui/lib/MemoryJTable$4$2	Lcom/xk72/charles/gui/lib/ac;	this$1	this$1
 FIELD	com/xk72/charles/gui/lib/MemoryJTable$4$2	Lcom/xk72/charles/gui/session/tables/ExtensibleSessionSequenceTableModel;	val$etm	val$etm
 METHOD	com/xk72/charles/gui/lib/MemoryJTable$4$2	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/lib/MemoryJTable$4$3	com/xk72/charles/gui/lib/MemoryJTable_4_3
+CLASS	com/xk72/charles/gui/lib/MemoryJTable$4$3	com/xk72/charles/gui/lib/MemoryJTable_4$3
 FIELD	com/xk72/charles/gui/lib/MemoryJTable$4$3	Lcom/xk72/charles/gui/lib/ac;	this$1	this$1
 FIELD	com/xk72/charles/gui/lib/MemoryJTable$4$3	I	val$column	val$column
 FIELD	com/xk72/charles/gui/lib/MemoryJTable$4$3	Lcom/xk72/charles/gui/session/tables/ExtensibleSessionSequenceTableModel;	val$etm	val$etm
 METHOD	com/xk72/charles/gui/lib/MemoryJTable$4$3	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/lib/MemoryJTable$4$4	com/xk72/charles/gui/lib/MemoryJTable_4_4
+CLASS	com/xk72/charles/gui/lib/MemoryJTable$4$4	com/xk72/charles/gui/lib/MemoryJTable_4$4
 FIELD	com/xk72/charles/gui/lib/MemoryJTable$4$4	Lcom/xk72/charles/gui/lib/ac;	this$1	this$1
 METHOD	com/xk72/charles/gui/lib/MemoryJTable$4$4	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/lib/MemoryJTable$ColumnStates	com/xk72/charles/gui/lib/MemoryJTable_ColumnStates
@@ -3472,17 +3472,17 @@ CLASS	com/xk72/charles/gui/lib/TabbedDesktopPane$MyJTabbedPane	com/xk72/charles/
 METHOD	com/xk72/charles/gui/lib/TabbedDesktopPane$MyJTabbedPane	(Ljava/awt/Font;)V	setFont	setFont
 CLASS	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu	com/xk72/charles/gui/lib/TabbedDesktopPane_TabPopupMenu
 FIELD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu	Lcom/xk72/charles/gui/lib/TabbedDesktopPane;	this$0	this$0
-CLASS	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$1	com/xk72/charles/gui/lib/TabbedDesktopPane_TabPopupMenu_1
+CLASS	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$1	com/xk72/charles/gui/lib/TabbedDesktopPane_TabPopupMenu$1
 FIELD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$1	Lcom/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu;	this$1	this$1
 FIELD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$1	Lcom/xk72/charles/gui/lib/aD;	val$frame	val$frame
 FIELD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$1	Lcom/xk72/charles/gui/lib/TabbedDesktopPane;	val$this$0	val$this$0
 METHOD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$1	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$2	com/xk72/charles/gui/lib/TabbedDesktopPane_TabPopupMenu_2
+CLASS	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$2	com/xk72/charles/gui/lib/TabbedDesktopPane_TabPopupMenu$2
 FIELD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$2	Lcom/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu;	this$1	this$1
 FIELD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$2	Lcom/xk72/charles/gui/lib/aD;	val$frame	val$frame
 FIELD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$2	Lcom/xk72/charles/gui/lib/TabbedDesktopPane;	val$this$0	val$this$0
 METHOD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$2	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$3	com/xk72/charles/gui/lib/TabbedDesktopPane_TabPopupMenu_3
+CLASS	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$3	com/xk72/charles/gui/lib/TabbedDesktopPane_TabPopupMenu$3
 FIELD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$3	Lcom/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu;	this$1	this$1
 FIELD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$3	Lcom/xk72/charles/gui/lib/TabbedDesktopPane;	val$this$0	val$this$0
 METHOD	com/xk72/charles/gui/lib/TabbedDesktopPane$TabPopupMenu$3	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
@@ -4315,7 +4315,7 @@ FIELD	com/xk72/charles/gui/menus/HelpMenu$5	Lcom/xk72/charles/gui/CharlesFrame;	
 METHOD	com/xk72/charles/gui/menus/HelpMenu$5	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/menus/HelpMenu$6	com/xk72/charles/gui/menus/HelpMenu_6
 FIELD	com/xk72/charles/gui/menus/HelpMenu$6	Lcom/xk72/charles/gui/menus/HelpMenu;	this$0	this$0
-CLASS	com/xk72/charles/gui/menus/HelpMenu$6$1	com/xk72/charles/gui/menus/HelpMenu_6_1
+CLASS	com/xk72/charles/gui/menus/HelpMenu$6$1	com/xk72/charles/gui/menus/HelpMenu_6$1
 FIELD	com/xk72/charles/gui/menus/HelpMenu$6$1	Lcom/xk72/charles/gui/menus/HelpMenu$6;	this$1	this$1
 FIELD	com/xk72/charles/gui/menus/HelpMenu$6$1	Ljava/util/List;	val$addresses	val$addresses
 METHOD	com/xk72/charles/gui/menus/HelpMenu$6$1	(I)Ljava/lang/Class;	getColumnClass	getColumnClass
@@ -5231,9 +5231,9 @@ CLASS	com/xk72/charles/gui/session/trees/SessionSequenceTreeBuilder	com/xk72/cha
 CLASS	com/xk72/charles/gui/session/trees/SessionSequenceTreeBuilder$1	com/xk72/charles/gui/session/trees/SessionSequenceTreeBuilder_1
 FIELD	com/xk72/charles/gui/session/trees/SessionSequenceTreeBuilder$1	Lcom/xk72/charles/gui/session/trees/i;	this$0	this$0
 METHOD	com/xk72/charles/gui/session/trees/SessionSequenceTreeBuilder$1	()Z	isLeaf	isLeaf
-CLASS	com/xk72/charles/gui/session/trees/SessionStructureTreeBuilder$SessionTreeModel$1	com/xk72/charles/gui/session/trees/SessionStructureTreeBuilder_SessionTreeModel_1
+CLASS	com/xk72/charles/gui/session/trees/SessionStructureTreeBuilder$SessionTreeModel$1	com/xk72/charles/gui/session/trees/SessionStructureTreeBuilder_SessionTreeModel$1
 FIELD	com/xk72/charles/gui/session/trees/SessionStructureTreeBuilder$SessionTreeModel$1	Lcom/xk72/charles/gui/session/trees/o;	this$0	this$0
-CLASS	com/xk72/charles/gui/session/trees/SessionStructureTreeBuilder$SessionTreeModel$2	com/xk72/charles/gui/session/trees/SessionStructureTreeBuilder_SessionTreeModel_2
+CLASS	com/xk72/charles/gui/session/trees/SessionStructureTreeBuilder$SessionTreeModel$2	com/xk72/charles/gui/session/trees/SessionStructureTreeBuilder_SessionTreeModel$2
 FIELD	com/xk72/charles/gui/session/trees/SessionStructureTreeBuilder$SessionTreeModel$2	Lcom/xk72/charles/gui/session/trees/o;	this$0	this$0
 CLASS	com/xk72/charles/gui/session/trees/SessionTreeCellRenderer	com/xk72/charles/gui/session/trees/SessionTreeCellRenderer
 CLASS	com/xk72/charles/gui/session/trees/a	com/xk72/charles/gui/session/trees/AbstractSessionTreeModel
@@ -5429,10 +5429,10 @@ FIELD	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPan
 METHOD	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel	(Lcom/xk72/b/a;)V	a	method_1196
 METHOD	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel	()Lcom/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$ClientCertificate;	getValue	getValue
 METHOD	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel	(Lcom/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$ClientCertificate;)V	setValue	setValue
-CLASS	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel$1	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel_MyFormPanel_1
+CLASS	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel$1	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel_MyFormPanel$1
 FIELD	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel$1	Lcom/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel;	this$0	this$0
 METHOD	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel$1	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel$2	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel_MyFormPanel_2
+CLASS	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel$2	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel_MyFormPanel$2
 FIELD	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel$2	Lcom/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel;	this$0	this$0
 METHOD	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyFormPanel$2	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel$MyTableModel	com/xk72/charles/gui/settings/ClientSSLCertificatesSettingsPanel_MyTableModel
@@ -5573,7 +5573,7 @@ FIELD	com/xk72/charles/gui/settings/HighlightSettingsPanel$CategoryPanel	Lcom/xk
 FIELD	com/xk72/charles/gui/settings/HighlightSettingsPanel$CategoryPanel	Lcom/xk72/charles/config/CategoryConfiguration$Category;	value	value
 METHOD	com/xk72/charles/gui/settings/HighlightSettingsPanel$CategoryPanel	()Lcom/xk72/charles/config/CategoryConfiguration$Category;	getValue	getValue
 METHOD	com/xk72/charles/gui/settings/HighlightSettingsPanel$CategoryPanel	(Lcom/xk72/charles/config/CategoryConfiguration$Category;)V	setValue	setValue
-CLASS	com/xk72/charles/gui/settings/HighlightSettingsPanel$CategoryPanel$2	com/xk72/charles/gui/settings/HighlightSettingsPanel_CategoryPanel_2
+CLASS	com/xk72/charles/gui/settings/HighlightSettingsPanel$CategoryPanel$2	com/xk72/charles/gui/settings/HighlightSettingsPanel_CategoryPanel$2
 FIELD	com/xk72/charles/gui/settings/HighlightSettingsPanel$CategoryPanel$2	Lcom/xk72/charles/gui/settings/HighlightSettingsPanel$CategoryPanel;	this$0	this$0
 METHOD	com/xk72/charles/gui/settings/HighlightSettingsPanel$CategoryPanel$2	(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;	getListCellRendererComponent	getListCellRendererComponent
 CLASS	com/xk72/charles/gui/settings/HighlightSettingsPanel$CategoryTableModel	com/xk72/charles/gui/settings/HighlightSettingsPanel_CategoryTableModel
@@ -5666,7 +5666,7 @@ METHOD	com/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel	(Lco
 METHOD	com/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel	([Ljava/security/cert/Certificate;)V	a	method_1220
 METHOD	com/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel	()V	checkPrivateKey	checkPrivateKey
 METHOD	com/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel	()Lcom/xk72/b/a;	getCertificate	getCertificate
-CLASS	com/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType	com/xk72/charles/gui/settings/ImportCertificateHelper_ImportPemPanel_ErrorType
+CLASS	com/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType	com/xk72/charles/gui/settings/ImportCertificateHelper_ImportPemPanel$ErrorType
 FIELD	com/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType	Lcom/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType;	a	field_1240
 FIELD	com/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType	Lcom/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType;	b	field_1241
 FIELD	com/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType	[Lcom/xk72/charles/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType;	c	field_1242
@@ -5785,7 +5785,7 @@ CLASS	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel	com/xk72/
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel	Ljavax/swing/JCheckBox;	bCacheProtobufDescriptors	bCacheProtobufDescriptors
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel	Ljavax/swing/JTextField;	fCacheTTL	fCacheTTL
 METHOD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel	(Ljavax/swing/JCheckBox;Ljava/awt/Component;)V	a	method_1232
-CLASS	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel$1	com/xk72/charles/gui/settings/ProtobufSettingsPanel_CachingPanel_1
+CLASS	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel$1	com/xk72/charles/gui/settings/ProtobufSettingsPanel_CachingPanel$1
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel$1	Lcom/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel;	this$0	this$0
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel$1	Lcom/xk72/util/r;	val$cache	val$cache
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel$1	Lcom/xk72/charles/gui/lib/EnableAwareJLabel;	val$cacheSize	val$cacheSize
@@ -5795,7 +5795,7 @@ FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel$1	Lcom/xk
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel$1	Lcom/xk72/charles/gui/settings/ProtobufSettingsPanel$CacheLocationsTableModel;	val$tableModel	val$tableModel
 METHOD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$CachingPanel$1	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel	com/xk72/charles/gui/settings/ProtobufSettingsPanel_RegistryPanel
-CLASS	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$MessagesTableModel	com/xk72/charles/gui/settings/ProtobufSettingsPanel_RegistryPanel_MessagesTableModel
+CLASS	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$MessagesTableModel	com/xk72/charles/gui/settings/ProtobufSettingsPanel_RegistryPanel$MessagesTableModel
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$MessagesTableModel	Ljava/lang/String;	filter	filter
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$MessagesTableModel	Ljava/util/List;	messages	messages
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$MessagesTableModel	Lcom/xk72/protobuf/d;	registry	registry
@@ -5807,7 +5807,7 @@ METHOD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$Message
 METHOD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$MessagesTableModel	(II)Ljava/lang/Object;	getValueAt	getValueAt
 METHOD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$MessagesTableModel	()V	refresh	refresh
 METHOD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$MessagesTableModel	(Ljava/lang/String;)V	setFilter	setFilter
-CLASS	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$RegistryTableModel	com/xk72/charles/gui/settings/ProtobufSettingsPanel_RegistryPanel_RegistryTableModel
+CLASS	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$RegistryTableModel	com/xk72/charles/gui/settings/ProtobufSettingsPanel_RegistryPanel$RegistryTableModel
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$RegistryTableModel	[Lcom/xk72/protobuf/k;	descriptors	descriptors
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$RegistryTableModel	Lcom/xk72/protobuf/d;	registry	registry
 FIELD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$RegistryTableModel	Lcom/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel;	this$0	this$0
@@ -5988,7 +5988,7 @@ CLASS	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel$1	com/xk7
 FIELD	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel$1	Lcom/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel;	this$0	this$0
 METHOD	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel$1	()V	doLayout	doLayout
 CLASS	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel$2	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel_2
-CLASS	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel$2$1	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel_2_1
+CLASS	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel$2$1	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel_2$1
 FIELD	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel$2$1	Lcom/xk72/charles/gui/settings/S;	this$1	this$1
 FIELD	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel$2$1	Lcom/xk72/b/a;	val$cert	val$cert
 FIELD	com/xk72/charles/gui/settings/ServerSSLCertificatesSettingsPanel$2$1	Ljava/awt/event/MouseEvent;	val$e	val$e
@@ -6113,11 +6113,11 @@ METHOD	com/xk72/charles/gui/settings/ThrottleSettingsPanel	(Lcom/xk72/charles/co
 METHOD	com/xk72/charles/gui/settings/ThrottleSettingsPanel	()Lcom/xk72/charles/config/ThrottlingConfiguration;	newConfiguration	newConfiguration
 METHOD	com/xk72/charles/gui/settings/ThrottleSettingsPanel	(Lcom/xk72/charles/config/ThrottlingConfiguration;)V	setPanelConfiguration	setPanelConfiguration
 CLASS	com/xk72/charles/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel	com/xk72/charles/gui/settings/ThrottleSettingsPanel_ThrottleConfigurationPanel
-CLASS	com/xk72/charles/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$3	com/xk72/charles/gui/settings/ThrottleSettingsPanel_ThrottleConfigurationPanel_3
+CLASS	com/xk72/charles/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$3	com/xk72/charles/gui/settings/ThrottleSettingsPanel_ThrottleConfigurationPanel$3
 FIELD	com/xk72/charles/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$3	Lcom/xk72/charles/gui/settings/ah;	this$1	this$1
 FIELD	com/xk72/charles/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$3	Lcom/xk72/charles/gui/settings/ThrottleSettingsPanel;	val$this$0	val$this$0
 METHOD	com/xk72/charles/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$3	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$4	com/xk72/charles/gui/settings/ThrottleSettingsPanel_ThrottleConfigurationPanel_4
+CLASS	com/xk72/charles/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$4	com/xk72/charles/gui/settings/ThrottleSettingsPanel_ThrottleConfigurationPanel$4
 FIELD	com/xk72/charles/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$4	Lcom/xk72/charles/gui/settings/ah;	this$1	this$1
 FIELD	com/xk72/charles/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$4	Lcom/xk72/charles/gui/settings/ThrottleSettingsPanel;	val$this$0	val$this$0
 METHOD	com/xk72/charles/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$4	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
@@ -6596,10 +6596,10 @@ METHOD	com/xk72/charles/gui/transaction/chart/ChartJTable	()Ljava/awt/image/Buff
 METHOD	com/xk72/charles/gui/transaction/chart/ChartJTable	()V	export	export
 METHOD	com/xk72/charles/gui/transaction/chart/ChartJTable	(Ljava/awt/event/MouseEvent;)Ljava/lang/String;	getToolTipText	getToolTipText
 CLASS	com/xk72/charles/gui/transaction/chart/ChartJTable$1	com/xk72/charles/gui/transaction/chart/ChartJTable_1
-CLASS	com/xk72/charles/gui/transaction/chart/ChartJTable$1$1	com/xk72/charles/gui/transaction/chart/ChartJTable_1_1
+CLASS	com/xk72/charles/gui/transaction/chart/ChartJTable$1$1	com/xk72/charles/gui/transaction/chart/ChartJTable_1$1
 FIELD	com/xk72/charles/gui/transaction/chart/ChartJTable$1$1	Lcom/xk72/charles/gui/transaction/chart/e;	this$1	this$1
 METHOD	com/xk72/charles/gui/transaction/chart/ChartJTable$1$1	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/transaction/chart/ChartJTable$1$2	com/xk72/charles/gui/transaction/chart/ChartJTable_1_2
+CLASS	com/xk72/charles/gui/transaction/chart/ChartJTable$1$2	com/xk72/charles/gui/transaction/chart/ChartJTable_1$2
 FIELD	com/xk72/charles/gui/transaction/chart/ChartJTable$1$2	Lcom/xk72/charles/gui/transaction/chart/e;	this$1	this$1
 CLASS	com/xk72/charles/gui/transaction/chart/ChartJTable$ThreeCol	com/xk72/charles/gui/transaction/chart/ChartJTable_ThreeCol
 CLASS	com/xk72/charles/gui/transaction/chart/ChartJTable$TwoCol	com/xk72/charles/gui/transaction/chart/ChartJTable_TwoCol
@@ -6929,21 +6929,21 @@ CLASS	com/xk72/charles/gui/transaction/editors/CookieEditor	com/xk72/charles/gui
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor	Lcom/xk72/charles/model/Transaction;	f	field_1548
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor	I	g	field_1549
 CLASS	com/xk72/charles/gui/transaction/editors/CookieEditor$1	com/xk72/charles/gui/transaction/editors/CookieEditor_1
-CLASS	com/xk72/charles/gui/transaction/editors/CookieEditor$1$1	com/xk72/charles/gui/transaction/editors/CookieEditor_1_1
+CLASS	com/xk72/charles/gui/transaction/editors/CookieEditor$1$1	com/xk72/charles/gui/transaction/editors/CookieEditor_1$1
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$1	Lcom/xk72/charles/gui/transaction/editors/h;	this$1	this$1
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$1	Lcom/xk72/charles/gui/transaction/editors/CookieEditor$EditableCookieTableModel;	val$tableModel	val$tableModel
 METHOD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$1	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/transaction/editors/CookieEditor$1$2	com/xk72/charles/gui/transaction/editors/CookieEditor_1_2
+CLASS	com/xk72/charles/gui/transaction/editors/CookieEditor$1$2	com/xk72/charles/gui/transaction/editors/CookieEditor_1$2
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$2	Lcom/xk72/charles/gui/transaction/editors/h;	this$1	this$1
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$2	I	val$row	val$row
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$2	Lcom/xk72/charles/gui/transaction/editors/CookieEditor$EditableCookieTableModel;	val$tableModel	val$tableModel
 METHOD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$2	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/transaction/editors/CookieEditor$1$3	com/xk72/charles/gui/transaction/editors/CookieEditor_1_3
+CLASS	com/xk72/charles/gui/transaction/editors/CookieEditor$1$3	com/xk72/charles/gui/transaction/editors/CookieEditor_1$3
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$3	Lcom/xk72/charles/gui/transaction/editors/h;	this$1	this$1
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$3	I	val$row	val$row
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$3	Lcom/xk72/charles/gui/transaction/editors/CookieEditor$EditableCookieTableModel;	val$tableModel	val$tableModel
 METHOD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$3	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/transaction/editors/CookieEditor$1$4	com/xk72/charles/gui/transaction/editors/CookieEditor_1_4
+CLASS	com/xk72/charles/gui/transaction/editors/CookieEditor$1$4	com/xk72/charles/gui/transaction/editors/CookieEditor_1$4
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$4	Lcom/xk72/charles/gui/transaction/editors/h;	this$1	this$1
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$4	I	val$row	val$row
 FIELD	com/xk72/charles/gui/transaction/editors/CookieEditor$1$4	Lcom/xk72/charles/gui/transaction/editors/CookieEditor$EditableCookieTableModel;	val$tableModel	val$tableModel
@@ -6956,21 +6956,21 @@ METHOD	com/xk72/charles/gui/transaction/editors/CookieEditor$EditableCookieTable
 CLASS	com/xk72/charles/gui/transaction/editors/EditorException	com/xk72/charles/gui/transaction/editors/EditorException
 CLASS	com/xk72/charles/gui/transaction/editors/SetCookieEditor	com/xk72/charles/gui/transaction/editors/SetCookieEditor
 CLASS	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1	com/xk72/charles/gui/transaction/editors/SetCookieEditor_1
-CLASS	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$1	com/xk72/charles/gui/transaction/editors/SetCookieEditor_1_1
+CLASS	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$1	com/xk72/charles/gui/transaction/editors/SetCookieEditor_1$1
 FIELD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$1	Lcom/xk72/charles/gui/transaction/editors/o;	this$1	this$1
 FIELD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$1	Lcom/xk72/charles/gui/transaction/editors/p;	val$tableModel	val$tableModel
 METHOD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$1	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$2	com/xk72/charles/gui/transaction/editors/SetCookieEditor_1_2
+CLASS	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$2	com/xk72/charles/gui/transaction/editors/SetCookieEditor_1$2
 FIELD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$2	Lcom/xk72/charles/gui/transaction/editors/o;	this$1	this$1
 FIELD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$2	Lcom/xk72/charles/lib/cookies/d;	val$cookie	val$cookie
 FIELD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$2	Lcom/xk72/charles/gui/transaction/editors/p;	val$tableModel	val$tableModel
 METHOD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$2	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$3	com/xk72/charles/gui/transaction/editors/SetCookieEditor_1_3
+CLASS	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$3	com/xk72/charles/gui/transaction/editors/SetCookieEditor_1$3
 FIELD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$3	Lcom/xk72/charles/gui/transaction/editors/o;	this$1	this$1
 FIELD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$3	Lcom/xk72/charles/lib/cookies/d;	val$cookie	val$cookie
 FIELD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$3	Lcom/xk72/charles/gui/transaction/editors/p;	val$tableModel	val$tableModel
 METHOD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$3	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$4	com/xk72/charles/gui/transaction/editors/SetCookieEditor_1_4
+CLASS	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$4	com/xk72/charles/gui/transaction/editors/SetCookieEditor_1$4
 FIELD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$4	Lcom/xk72/charles/gui/transaction/editors/o;	this$1	this$1
 FIELD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$4	Lcom/xk72/charles/lib/cookies/d;	val$cookie	val$cookie
 FIELD	com/xk72/charles/gui/transaction/editors/SetCookieEditor$1$4	Lcom/xk72/charles/gui/transaction/editors/p;	val$tableModel	val$tableModel
@@ -8013,7 +8013,7 @@ METHOD	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeMana
 METHOD	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$SettingsPanel	(Lcom/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$ViewerContentTypeMappingConfiguration;)V	importConfiguration	importConfiguration
 METHOD	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$SettingsPanel	()Lcom/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$ViewerContentTypeMappingConfiguration;	newConfiguration	newConfiguration
 METHOD	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$SettingsPanel	(Lcom/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$ViewerContentTypeMappingConfiguration;)V	populate	populate
-CLASS	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$SettingsPanel$ViewerContentTypeMappingTableModel	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager_SettingsPanel_ViewerContentTypeMappingTableModel
+CLASS	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$SettingsPanel$ViewerContentTypeMappingTableModel	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager_SettingsPanel$ViewerContentTypeMappingTableModel
 FIELD	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$SettingsPanel$ViewerContentTypeMappingTableModel	Lcom/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$SettingsPanel;	this$0	this$0
 METHOD	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$SettingsPanel$ViewerContentTypeMappingTableModel	(I)Ljava/lang/Class;	getColumnClass	getColumnClass
 METHOD	com/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$SettingsPanel$ViewerContentTypeMappingTableModel	()I	getColumnCount	getColumnCount
@@ -8673,7 +8673,7 @@ METHOD	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeBody
 METHOD	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeBodyViewer$1	(Ljavax/swing/table/TableCellRenderer;II)Ljava/awt/Component;	prepareRenderer	prepareRenderer
 CLASS	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel
 CLASS	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel$MessageNode	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel_MessageNode
-CLASS	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel$MessageNode$1	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel_MessageNode_1
+CLASS	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel$MessageNode$1	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel_MessageNode$1
 FIELD	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel$MessageNode$1	Lcom/xk72/charles/gui/transaction/viewers/protobuf/D;	this$1	this$1
 METHOD	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel$MessageNode$1	(Lcom/xk72/charles/gui/transaction/viewers/protobuf/G;)Z	add	add
 METHOD	com/xk72/charles/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel$MessageNode$1	(Ljava/lang/Object;)Z	add	add
@@ -8931,7 +8931,7 @@ METHOD	com/xk72/charles/gui/transaction/viewers/websocket/WebSocketBodyViewer$We
 CLASS	com/xk72/charles/gui/transaction/viewers/websocket/WebSocketPanel	com/xk72/charles/gui/transaction/viewers/websocket/WebSocketPanel
 CLASS	com/xk72/charles/gui/transaction/viewers/websocket/WebSocketPanel$2	com/xk72/charles/gui/transaction/viewers/websocket/WebSocketPanel_2
 FIELD	com/xk72/charles/gui/transaction/viewers/websocket/WebSocketPanel$2	Lcom/xk72/charles/gui/transaction/viewers/websocket/f;	this$0	this$0
-CLASS	com/xk72/charles/gui/transaction/viewers/websocket/WebSocketPanel$2$1	com/xk72/charles/gui/transaction/viewers/websocket/WebSocketPanel_2_1
+CLASS	com/xk72/charles/gui/transaction/viewers/websocket/WebSocketPanel$2$1	com/xk72/charles/gui/transaction/viewers/websocket/WebSocketPanel_2$1
 FIELD	com/xk72/charles/gui/transaction/viewers/websocket/WebSocketPanel$2$1	Lcom/xk72/charles/gui/transaction/viewers/websocket/WebSocketPanel$2;	this$1	this$1
 CLASS	com/xk72/charles/gui/transaction/viewers/websocket/a	com/xk72/charles/gui/transaction/viewers/websocket/a
 METHOD	com/xk72/charles/gui/transaction/viewers/websocket/a	(Ljava/util/List;)Lcom/xk72/charles/gui/transaction/viewers/lib/f;	a	method_1966
@@ -9325,7 +9325,7 @@ METHOD	com/xk72/charles/lib/IPRange	(Ljava/lang/String;)Lcom/xk72/charles/lib/IP
 METHOD	com/xk72/charles/lib/IPRange	([I)V	setIp	setIp
 METHOD	com/xk72/charles/lib/IPRange	([I)V	setMask	setMask
 METHOD	com/xk72/charles/lib/IPRange	()Ljava/lang/String;	toString	toString
-CLASS	com/xk72/charles/lib/IPRange$IPRangeFormatException	com/xk72/charles/lib/IPRange_IPRange_IPRangeFormatException
+CLASS	com/xk72/charles/lib/IPRange$IPRangeFormatException	com/xk72/charles/lib/IPRange_IPRange$IPRangeFormatException
 FIELD	com/xk72/charles/lib/IPRange$IPRangeFormatException	J	serialVersionUID	serialVersionUID
 CLASS	com/xk72/charles/lib/SomewhatSortedArrayList	com/xk72/charles/lib/SomewhatSortedArrayList
 FIELD	com/xk72/charles/lib/SomewhatSortedArrayList	Ljava/util/Comparator;	comparator	comparator
@@ -10995,7 +10995,7 @@ CLASS	com/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration	com/xk72/c
 FIELD	com/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration	Ljava/util/List;	spoofs	spoofs
 METHOD	com/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration	()Ljava/util/List;	getSpoofs	getSpoofs
 METHOD	com/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration	(Ljava/util/List;)V	setSpoofs	setSpoofs
-CLASS	com/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration$DNSSpoof	com/xk72/charles/tools/DNSSpoofingTool_DNSSpoofingConfiguration_DNSSpoof
+CLASS	com/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration$DNSSpoof	com/xk72/charles/tools/DNSSpoofingTool_DNSSpoofingConfiguration$DNSSpoof
 FIELD	com/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration$DNSSpoof	Ljava/lang/String;	address	address
 FIELD	com/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration$DNSSpoof	Z	enabled	enabled
 FIELD	com/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration$DNSSpoof	Lcom/xk72/net/Location;	location	location
@@ -11012,14 +11012,14 @@ METHOD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel	()Lcom/xk72/charle
 METHOD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel	(Lcom/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration;)V	importConfiguration	importConfiguration
 METHOD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel	()Lcom/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration;	newConfiguration	newConfiguration
 METHOD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel	(Lcom/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration;)V	populate	populate
-CLASS	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofFormPanel	com/xk72/charles/tools/DNSSpoofingTool_MySettingsPanel_DNSSpoofFormPanel
+CLASS	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofFormPanel	com/xk72/charles/tools/DNSSpoofingTool_MySettingsPanel$DNSSpoofFormPanel
 FIELD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofFormPanel	Ljavax/swing/JTextField;	destAddress	destAddress
 FIELD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofFormPanel	Lcom/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration$DNSSpoof;	dnsSpoof	dnsSpoof
 FIELD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofFormPanel	Ljavax/swing/JTextField;	sourceDomain	sourceDomain
 FIELD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofFormPanel	Lcom/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel;	this$1	this$1
 METHOD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofFormPanel	()Lcom/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration$DNSSpoof;	getValue	getValue
 METHOD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofFormPanel	(Lcom/xk72/charles/tools/DNSSpoofingTool$DNSSpoofingConfiguration$DNSSpoof;)V	setValue	setValue
-CLASS	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofingTableModel	com/xk72/charles/tools/DNSSpoofingTool_MySettingsPanel_DNSSpoofingTableModel
+CLASS	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofingTableModel	com/xk72/charles/tools/DNSSpoofingTool_MySettingsPanel$DNSSpoofingTableModel
 FIELD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofingTableModel	Lcom/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel;	this$1	this$1
 METHOD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofingTableModel	(I)Ljava/lang/Class;	getColumnClass	getColumnClass
 METHOD	com/xk72/charles/tools/DNSSpoofingTool$MySettingsPanel$DNSSpoofingTableModel	()I	getColumnCount	getColumnCount
@@ -11053,7 +11053,7 @@ CLASS	com/xk72/charles/tools/MapLocalTool$MapLocalConfiguration	com/xk72/charles
 FIELD	com/xk72/charles/tools/MapLocalTool$MapLocalConfiguration	Ljava/util/List;	mappings	mappings
 METHOD	com/xk72/charles/tools/MapLocalTool$MapLocalConfiguration	()Ljava/util/List;	getMappings	getMappings
 METHOD	com/xk72/charles/tools/MapLocalTool$MapLocalConfiguration	(Ljava/util/List;)V	setMappings	setMappings
-CLASS	com/xk72/charles/tools/MapLocalTool$MapLocalConfiguration$MapLocalMapping	com/xk72/charles/tools/MapLocalTool_MapLocalConfiguration_MapLocalMapping
+CLASS	com/xk72/charles/tools/MapLocalTool$MapLocalConfiguration$MapLocalMapping	com/xk72/charles/tools/MapLocalTool_MapLocalConfiguration$MapLocalMapping
 FIELD	com/xk72/charles/tools/MapLocalTool$MapLocalConfiguration$MapLocalMapping	Z	caseSensitive	caseSensitive
 FIELD	com/xk72/charles/tools/MapLocalTool$MapLocalConfiguration$MapLocalMapping	Ljava/lang/String;	dest	dest
 FIELD	com/xk72/charles/tools/MapLocalTool$MapLocalConfiguration$MapLocalMapping	Z	enabled	enabled
@@ -11081,7 +11081,7 @@ METHOD	com/xk72/charles/tools/MapLocalTool$MySettingsPanel	()Lcom/xk72/charles/t
 METHOD	com/xk72/charles/tools/MapLocalTool$MySettingsPanel	(Lcom/xk72/charles/tools/MapLocalTool$MapLocalConfiguration;)V	importConfiguration	importConfiguration
 METHOD	com/xk72/charles/tools/MapLocalTool$MySettingsPanel	()Lcom/xk72/charles/tools/MapLocalTool$MapLocalConfiguration;	newConfiguration	newConfiguration
 METHOD	com/xk72/charles/tools/MapLocalTool$MySettingsPanel	(Lcom/xk72/charles/tools/MapLocalTool$MapLocalConfiguration;)V	populate	populate
-CLASS	com/xk72/charles/tools/MapLocalTool$MySettingsPanel$MapLocalMappingTableModel	com/xk72/charles/tools/MapLocalTool_MySettingsPanel_MapLocalMappingTableModel
+CLASS	com/xk72/charles/tools/MapLocalTool$MySettingsPanel$MapLocalMappingTableModel	com/xk72/charles/tools/MapLocalTool_MySettingsPanel$MapLocalMappingTableModel
 FIELD	com/xk72/charles/tools/MapLocalTool$MySettingsPanel$MapLocalMappingTableModel	Lcom/xk72/charles/tools/MapLocalTool$MySettingsPanel;	this$1	this$1
 METHOD	com/xk72/charles/tools/MapLocalTool$MySettingsPanel$MapLocalMappingTableModel	(I)Ljava/lang/Class;	getColumnClass	getColumnClass
 METHOD	com/xk72/charles/tools/MapLocalTool$MySettingsPanel$MapLocalMappingTableModel	()I	getColumnCount	getColumnCount
@@ -11097,7 +11097,7 @@ CLASS	com/xk72/charles/tools/MapTool$MapConfiguration	com/xk72/charles/tools/Map
 FIELD	com/xk72/charles/tools/MapTool$MapConfiguration	Ljava/util/List;	mappings	mappings
 METHOD	com/xk72/charles/tools/MapTool$MapConfiguration	()Ljava/util/List;	getMappings	getMappings
 METHOD	com/xk72/charles/tools/MapTool$MapConfiguration	(Ljava/util/List;)V	setMappings	setMappings
-CLASS	com/xk72/charles/tools/MapTool$MapConfiguration$MapMapping	com/xk72/charles/tools/MapTool_MapConfiguration_MapMapping
+CLASS	com/xk72/charles/tools/MapTool$MapConfiguration$MapMapping	com/xk72/charles/tools/MapTool_MapConfiguration$MapMapping
 FIELD	com/xk72/charles/tools/MapTool$MapConfiguration$MapMapping	Lcom/xk72/net/Location;	destLocation	destLocation
 FIELD	com/xk72/charles/tools/MapTool$MapConfiguration$MapMapping	Z	enabled	enabled
 FIELD	com/xk72/charles/tools/MapTool$MapConfiguration$MapMapping	Z	preserveHostHeader	preserveHostHeader
@@ -11127,7 +11127,7 @@ METHOD	com/xk72/charles/tools/MapTool$MySettingsPanel	()Lcom/xk72/charles/tools/
 METHOD	com/xk72/charles/tools/MapTool$MySettingsPanel	(Lcom/xk72/charles/tools/MapTool$MapConfiguration;)V	importConfiguration	importConfiguration
 METHOD	com/xk72/charles/tools/MapTool$MySettingsPanel	()Lcom/xk72/charles/tools/MapTool$MapConfiguration;	newConfiguration	newConfiguration
 METHOD	com/xk72/charles/tools/MapTool$MySettingsPanel	(Lcom/xk72/charles/tools/MapTool$MapConfiguration;)V	populate	populate
-CLASS	com/xk72/charles/tools/MapTool$MySettingsPanel$MapMappingTableModel	com/xk72/charles/tools/MapTool_MySettingsPanel_MapMappingTableModel
+CLASS	com/xk72/charles/tools/MapTool$MySettingsPanel$MapMappingTableModel	com/xk72/charles/tools/MapTool_MySettingsPanel$MapMappingTableModel
 FIELD	com/xk72/charles/tools/MapTool$MySettingsPanel$MapMappingTableModel	Lcom/xk72/charles/tools/MapTool$MySettingsPanel;	this$1	this$1
 METHOD	com/xk72/charles/tools/MapTool$MySettingsPanel$MapMappingTableModel	(I)Ljava/lang/Class;	getColumnClass	getColumnClass
 METHOD	com/xk72/charles/tools/MapTool$MySettingsPanel$MapMappingTableModel	()I	getColumnCount	getColumnCount
@@ -11179,7 +11179,7 @@ METHOD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel	()Lcom/xk72/cha
 METHOD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel	(Lcom/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration;)V	getPanelConfiguration	getPanelConfiguration
 METHOD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel	()Lcom/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration;	newConfiguration	newConfiguration
 METHOD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel	(Lcom/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration;)V	setPanelConfiguration	setPanelConfiguration
-CLASS	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingFormPanel	com/xk72/charles/tools/PortForwardingTool_MySettingsPanel_PortForwardingFormPanel
+CLASS	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingFormPanel	com/xk72/charles/tools/PortForwardingTool_MySettingsPanel$PortForwardingFormPanel
 FIELD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingFormPanel	Ljavax/swing/JTextField;	destHost	destHost
 FIELD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingFormPanel	Ljavax/swing/JTextField;	destPort	destPort
 FIELD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingFormPanel	Ljavax/swing/JTextField;	endPort	endPort
@@ -11191,7 +11191,7 @@ FIELD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingFo
 FIELD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingFormPanel	Ljavax/swing/JComboBox;	type	type
 METHOD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingFormPanel	()Lcom/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration$PortForwarding;	getValue	getValue
 METHOD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingFormPanel	(Lcom/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration$PortForwarding;)V	setValue	setValue
-CLASS	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingTableModel	com/xk72/charles/tools/PortForwardingTool_MySettingsPanel_PortForwardingTableModel
+CLASS	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingTableModel	com/xk72/charles/tools/PortForwardingTool_MySettingsPanel$PortForwardingTableModel
 FIELD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingTableModel	[Ljava/lang/Class;	COL_CLASSES	COL_CLASSES
 FIELD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingTableModel	[Ljava/lang/String;	COL_NAMES	COL_NAMES
 FIELD	com/xk72/charles/tools/PortForwardingTool$MySettingsPanel$PortForwardingTableModel	I	a	field_2679
@@ -11212,7 +11212,7 @@ METHOD	com/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration	()L
 METHOD	com/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration	()Z	isActive	isActive
 METHOD	com/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration	(Z)V	setActive	setActive
 METHOD	com/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration	(Ljava/util/List;)V	setPortForwardings	setPortForwardings
-CLASS	com/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration$PortForwarding	com/xk72/charles/tools/PortForwardingTool_PortForwardingConfiguration_PortForwarding
+CLASS	com/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration$PortForwarding	com/xk72/charles/tools/PortForwardingTool_PortForwardingConfiguration$PortForwarding
 FIELD	com/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration$PortForwarding	Ljava/lang/String;	TCP	TCP
 FIELD	com/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration$PortForwarding	Ljava/lang/String;	UDP	UDP
 FIELD	com/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration$PortForwarding	Ljava/lang/String;	destHost	destHost
@@ -11239,7 +11239,7 @@ METHOD	com/xk72/charles/tools/PortForwardingTool$PortForwardingConfiguration$Por
 CLASS	com/xk72/charles/tools/RefererEnhancementTool	com/xk72/charles/tools/RefererEnhancementTool
 FIELD	com/xk72/charles/tools/RefererEnhancementTool	I	b	field_2684
 FIELD	com/xk72/charles/tools/RefererEnhancementTool	Ljava/util/logging/Logger;	e	LOGGER
-CLASS	com/xk72/charles/tools/RefererEnhancementTool$RefererEnhancementFilter$1	com/xk72/charles/tools/RefererEnhancementTool_RefererEnhancementFilter_1
+CLASS	com/xk72/charles/tools/RefererEnhancementTool$RefererEnhancementFilter$1	com/xk72/charles/tools/RefererEnhancementTool_RefererEnhancementFilter$1
 FIELD	com/xk72/charles/tools/RefererEnhancementTool$RefererEnhancementFilter$1	I	a	field_2686
 FIELD	com/xk72/charles/tools/RefererEnhancementTool$RefererEnhancementFilter$1	Lcom/xk72/charles/tools/C;	this$1	this$1
 METHOD	com/xk72/charles/tools/RefererEnhancementTool$RefererEnhancementFilter$1	(Ljava/util/Map$Entry;)Z	removeEldestEntry	removeEldestEntry
@@ -11258,7 +11258,7 @@ METHOD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel	()Lcom/xk72/cha
 METHOD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel	(Lcom/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration;)V	getPanelConfiguration	getPanelConfiguration
 METHOD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel	()Lcom/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration;	newConfiguration	newConfiguration
 METHOD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel	(Lcom/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration;)V	setPanelConfiguration	setPanelConfiguration
-CLASS	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyFormPanel	com/xk72/charles/tools/ReverseProxiesTool_MySettingsPanel_ReverseProxyFormPanel
+CLASS	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyFormPanel	com/xk72/charles/tools/ReverseProxiesTool_MySettingsPanel$ReverseProxyFormPanel
 FIELD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyFormPanel	Ljavax/swing/JTextField;	destHost	destHost
 FIELD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyFormPanel	Ljavax/swing/JTextField;	destPort	destPort
 FIELD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyFormPanel	Ljavax/swing/JCheckBox;	preserveHostHeader	preserveHostHeader
@@ -11270,7 +11270,7 @@ FIELD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyForm
 FIELD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyFormPanel	Lcom/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel;	this$1	this$1
 METHOD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyFormPanel	()Lcom/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration$ReverseProxy;	getValue	getValue
 METHOD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyFormPanel	(Lcom/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration$ReverseProxy;)V	setValue	setValue
-CLASS	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyTableModel	com/xk72/charles/tools/ReverseProxiesTool_MySettingsPanel_ReverseProxyTableModel
+CLASS	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyTableModel	com/xk72/charles/tools/ReverseProxiesTool_MySettingsPanel$ReverseProxyTableModel
 FIELD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyTableModel	Lcom/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel;	this$1	this$1
 METHOD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyTableModel	(I)Ljava/lang/Class;	getColumnClass	getColumnClass
 METHOD	com/xk72/charles/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyTableModel	()I	getColumnCount	getColumnCount
@@ -11284,7 +11284,7 @@ METHOD	com/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration	()L
 METHOD	com/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration	()Z	isActive	isActive
 METHOD	com/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration	(Z)V	setActive	setActive
 METHOD	com/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration	(Ljava/util/List;)V	setReverseProxies	setReverseProxies
-CLASS	com/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration$ReverseProxy	com/xk72/charles/tools/ReverseProxiesTool_ReverseProxiesConfiguration_ReverseProxy
+CLASS	com/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration$ReverseProxy	com/xk72/charles/tools/ReverseProxiesTool_ReverseProxiesConfiguration$ReverseProxy
 FIELD	com/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration$ReverseProxy	I	DEFAULT_DEST_PORT	DEFAULT_DEST_PORT
 FIELD	com/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration$ReverseProxy	Ljava/lang/String;	destHost	destHost
 FIELD	com/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesConfiguration$ReverseProxy	Ljava/lang/Integer;	destPort	destPort
@@ -11361,7 +11361,7 @@ METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfigurati
 METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration	()Ljava/util/List;	getBreakpoints	getBreakpoints
 METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration	(Lcom/xk72/net/Location;)Z	selectLocation	selectLocation
 METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration	(Ljava/util/List;)V	setBreakpoints	setBreakpoints
-CLASS	com/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration$Breakpoint	com/xk72/charles/tools/breakpoints/BreakpointsTool_BreakpointsConfiguration_Breakpoint
+CLASS	com/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration$Breakpoint	com/xk72/charles/tools/breakpoints/BreakpointsTool_BreakpointsConfiguration$Breakpoint
 FIELD	com/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration$Breakpoint	Z	enabled	enabled
 FIELD	com/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration$Breakpoint	Lcom/xk72/net/Location;	location	location
 FIELD	com/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration$Breakpoint	Z	request	request
@@ -11384,7 +11384,7 @@ METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel	()Lcom
 METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel	(Lcom/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration;)V	importConfiguration	importConfiguration
 METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel	()Lcom/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration;	newConfiguration	newConfiguration
 METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel	(Lcom/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration;)V	populate	populate
-CLASS	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointFormPanel	com/xk72/charles/tools/breakpoints/BreakpointsTool_MySettingsPanel_BreakpointFormPanel
+CLASS	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointFormPanel	com/xk72/charles/tools/breakpoints/BreakpointsTool_MySettingsPanel$BreakpointFormPanel
 FIELD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointFormPanel	Lcom/xk72/charles/gui/lib/W;	location	location
 FIELD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointFormPanel	Ljavax/swing/JCheckBox;	request	request
 FIELD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointFormPanel	Ljavax/swing/JCheckBox;	response	response
@@ -11393,7 +11393,7 @@ FIELD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$Breakpo
 FIELD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointFormPanel	Lcom/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration$Breakpoint;	value	value
 METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointFormPanel	()Lcom/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration$Breakpoint;	getValue	getValue
 METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointFormPanel	(Lcom/xk72/charles/tools/breakpoints/BreakpointsTool$BreakpointsConfiguration$Breakpoint;)V	setValue	setValue
-CLASS	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointsTableModel	com/xk72/charles/tools/breakpoints/BreakpointsTool_MySettingsPanel_BreakpointsTableModel
+CLASS	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointsTableModel	com/xk72/charles/tools/breakpoints/BreakpointsTool_MySettingsPanel$BreakpointsTableModel
 FIELD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointsTableModel	Lcom/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel;	this$1	this$1
 METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointsTableModel	(I)Ljava/lang/Class;	getColumnClass	getColumnClass
 METHOD	com/xk72/charles/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointsTableModel	()I	getColumnCount	getColumnCount
@@ -11861,15 +11861,15 @@ FIELD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel	Lcom/xk72/charl
 FIELD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel	Lcom/xk72/charles/tools/rewrite/RewriteTool;	this$0	this$0
 METHOD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel	()Z	a	method_2730
 METHOD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel	(Ljavax/swing/JPanel;)V	a	method_2731
-CLASS	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$1$1	com/xk72/charles/tools/rewrite/RewriteTool_MySettingsPanel_1_1
+CLASS	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$1$1	com/xk72/charles/tools/rewrite/RewriteTool_MySettingsPanel$1$1
 FIELD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$1$1	J	serialVersionUID	serialVersionUID
 FIELD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$1$1	Lcom/xk72/charles/tools/rewrite/m;	this$2	this$2
 METHOD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$1$1	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$1$2	com/xk72/charles/tools/rewrite/RewriteTool_MySettingsPanel_1_2
+CLASS	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$1$2	com/xk72/charles/tools/rewrite/RewriteTool_MySettingsPanel$1$2
 FIELD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$1$2	J	serialVersionUID	serialVersionUID
 FIELD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$1$2	Lcom/xk72/charles/tools/rewrite/m;	this$2	this$2
 METHOD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$1$2	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$RewriteSetsTableModel	com/xk72/charles/tools/rewrite/RewriteTool_MySettingsPanel_RewriteSetsTableModel
+CLASS	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$RewriteSetsTableModel	com/xk72/charles/tools/rewrite/RewriteTool_MySettingsPanel$RewriteSetsTableModel
 FIELD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$RewriteSetsTableModel	J	serialVersionUID	serialVersionUID
 FIELD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$RewriteSetsTableModel	Lcom/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel;	this$1	this$1
 METHOD	com/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel$RewriteSetsTableModel	(I)Ljava/lang/Class;	getColumnClass	getColumnClass
@@ -11988,7 +11988,7 @@ FIELD	com/xk72/charles/tools/rewrite/l	I	a	field_2836
 FIELD	com/xk72/charles/tools/rewrite/l	Lcom/xk72/charles/tools/rewrite/RewriteRule;	b	field_2837
 FIELD	com/xk72/charles/tools/rewrite/l	Lcom/xk72/charles/tools/rewrite/RewriteSetPanel;	c	field_2838
 METHOD	com/xk72/charles/tools/rewrite/l	(Ljavax/swing/event/ChangeEvent;)V	stateChanged	stateChanged
-CLASS	com/xk72/charles/tools/rewrite/m	com/xk72/charles/tools/rewrite/RewriteTool_MySettingsPanel_1
+CLASS	com/xk72/charles/tools/rewrite/m	com/xk72/charles/tools/rewrite/RewriteTool_MySettingsPanel$1
 FIELD	com/xk72/charles/tools/rewrite/m	Lcom/xk72/charles/tools/rewrite/RewriteTool;	i	field_2839
 FIELD	com/xk72/charles/tools/rewrite/m	Lcom/xk72/charles/tools/rewrite/RewriteTool$MySettingsPanel;	j	field_2840
 CLASS	com/xk72/charles/tools/rewrite/n	com/xk72/charles/tools/rewrite/n
@@ -12839,12 +12839,12 @@ FIELD	com/xk72/proxy/Connection$Route	[Lcom/xk72/proxy/Connection$Route;	g	field
 METHOD	com/xk72/proxy/Connection$Route	(Lcom/xk72/proxy/Connection;)Ljava/lang/String;	getDisplayName	getDisplayName
 METHOD	com/xk72/proxy/Connection$Route	(Ljava/lang/String;)Lcom/xk72/proxy/Connection$Route;	valueOf	valueOf
 METHOD	com/xk72/proxy/Connection$Route	()[Lcom/xk72/proxy/Connection$Route;	values	values
-CLASS	com/xk72/proxy/Connection$Route$1	com/xk72/proxy/Connection_Route_1
-CLASS	com/xk72/proxy/Connection$Route$2	com/xk72/proxy/Connection_Route_2
-CLASS	com/xk72/proxy/Connection$Route$3	com/xk72/proxy/Connection_Route_3
-CLASS	com/xk72/proxy/Connection$Route$4	com/xk72/proxy/Connection_Route_4
-CLASS	com/xk72/proxy/Connection$Route$5	com/xk72/proxy/Connection_Route_5
-CLASS	com/xk72/proxy/Connection$Route$6	com/xk72/proxy/Connection_Route_6
+CLASS	com/xk72/proxy/Connection$Route$1	com/xk72/proxy/Connection_Route$1
+CLASS	com/xk72/proxy/Connection$Route$2	com/xk72/proxy/Connection_Route$2
+CLASS	com/xk72/proxy/Connection$Route$3	com/xk72/proxy/Connection_Route$3
+CLASS	com/xk72/proxy/Connection$Route$4	com/xk72/proxy/Connection_Route$4
+CLASS	com/xk72/proxy/Connection$Route$5	com/xk72/proxy/Connection_Route$5
+CLASS	com/xk72/proxy/Connection$Route$6	com/xk72/proxy/Connection_Route$6
 CLASS	com/xk72/proxy/Connection$Type	com/xk72/proxy/Connection_Type
 FIELD	com/xk72/proxy/Connection$Type	Lcom/xk72/proxy/Connection$Type;	a	field_3080
 FIELD	com/xk72/proxy/Connection$Type	Lcom/xk72/proxy/Connection$Type;	b	field_3081
@@ -12858,14 +12858,14 @@ FIELD	com/xk72/proxy/Connection$Type	[Lcom/xk72/proxy/Connection$Type;	i	field_3
 METHOD	com/xk72/proxy/Connection$Type	(Lcom/xk72/proxy/Connection;)Ljava/lang/String;	getDisplayName	getDisplayName
 METHOD	com/xk72/proxy/Connection$Type	(Ljava/lang/String;)Lcom/xk72/proxy/Connection$Type;	valueOf	valueOf
 METHOD	com/xk72/proxy/Connection$Type	()[Lcom/xk72/proxy/Connection$Type;	values	values
-CLASS	com/xk72/proxy/Connection$Type$1	com/xk72/proxy/Connection_Type_1
-CLASS	com/xk72/proxy/Connection$Type$2	com/xk72/proxy/Connection_Type_2
-CLASS	com/xk72/proxy/Connection$Type$3	com/xk72/proxy/Connection_Type_3
-CLASS	com/xk72/proxy/Connection$Type$4	com/xk72/proxy/Connection_Type_4
-CLASS	com/xk72/proxy/Connection$Type$5	com/xk72/proxy/Connection_Type_5
-CLASS	com/xk72/proxy/Connection$Type$6	com/xk72/proxy/Connection_Type_6
-CLASS	com/xk72/proxy/Connection$Type$7	com/xk72/proxy/Connection_Type_7
-CLASS	com/xk72/proxy/Connection$Type$8	com/xk72/proxy/Connection_Type_8
+CLASS	com/xk72/proxy/Connection$Type$1	com/xk72/proxy/Connection_Type$1
+CLASS	com/xk72/proxy/Connection$Type$2	com/xk72/proxy/Connection_Type$2
+CLASS	com/xk72/proxy/Connection$Type$3	com/xk72/proxy/Connection_Type$3
+CLASS	com/xk72/proxy/Connection$Type$4	com/xk72/proxy/Connection_Type$4
+CLASS	com/xk72/proxy/Connection$Type$5	com/xk72/proxy/Connection_Type$5
+CLASS	com/xk72/proxy/Connection$Type$6	com/xk72/proxy/Connection_Type$6
+CLASS	com/xk72/proxy/Connection$Type$7	com/xk72/proxy/Connection_Type$7
+CLASS	com/xk72/proxy/Connection$Type$8	com/xk72/proxy/Connection_Type$8
 CLASS	com/xk72/proxy/Fields	com/xk72/proxy/Fields
 FIELD	com/xk72/proxy/Fields	Ljava/nio/charset/Charset;	a	CHARSET_ISO_8859_1
 FIELD	com/xk72/proxy/Fields	[B	b	field_3090
@@ -13901,7 +13901,7 @@ METHOD	com/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint	()I	l	method_3325
 METHOD	com/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint	()V	m	method_3326
 METHOD	com/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint	()V	n	method_3327
 METHOD	com/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint	()Ljava/lang/String;	toString	toString
-CLASS	com/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint$EndPointType	com/xk72/proxy/http2/Http2ProxyHandler_Http2EndPoint_EndPointType
+CLASS	com/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint$EndPointType	com/xk72/proxy/http2/Http2ProxyHandler_Http2EndPoint$EndPointType
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint$EndPointType	Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint$EndPointType;	a	field_3386
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint$EndPointType	Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint$EndPointType;	b	field_3387
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint$EndPointType	[Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint$EndPointType;	c	field_3388
