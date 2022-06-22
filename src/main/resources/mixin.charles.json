@@ -3,7 +3,7 @@
     "package": "charles.alaphant.mixin",
     "mixins": [
         "MixinMainWithClassLoader",
-        "auth.MixinAuthorizationUtilsGenericAuthorization",
+        "auth.MixinAuthorizationUtils_GenericAuthorization",
         "gui.settings.MixinHighlightSettingsPanel",
         "macos.MixinMacOSManager"
     ],
