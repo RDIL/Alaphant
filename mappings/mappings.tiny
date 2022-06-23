@@ -1673,48 +1673,48 @@ METHOD	com/xk72/charles/export/SessionTraceImporter	([BZLjava/lang/String;)Lcom/
 METHOD	com/xk72/charles/export/SessionTraceImporter	(Ljava/lang/String;)Ljava/lang/Exception;	b	method_366
 METHOD	com/xk72/charles/export/SessionTraceImporter	([Ljava/lang/String;)V	main	main
 CLASS	com/xk72/charles/export/a	com/xk72/charles/export/a
-METHOD	com/xk72/charles/export/a	(J)Ljava/lang/String;	a	method_367
+METHOD	com/xk72/charles/export/a	(J)Ljava/lang/String;	a	longToString
 METHOD	com/xk72/charles/export/a	(Ljava/lang/Long;)Ljava/lang/String;	a	method_368
 METHOD	com/xk72/charles/export/a	(Ljava/lang/String;)Z	a	method_369
-METHOD	com/xk72/charles/export/a	(Ljava/net/InetAddress;)Ljava/lang/String;	a	method_370
+METHOD	com/xk72/charles/export/a	(Ljava/net/InetAddress;)Ljava/lang/String;	a	netAddressToString
 METHOD	com/xk72/charles/export/a	(Ljava/util/Date;)Ljava/lang/String;	a	method_371
 METHOD	com/xk72/charles/export/a	(Ljava/lang/Long;)Ljava/lang/String;	b	method_372
-METHOD	com/xk72/charles/export/a	(Ljava/util/Date;)Ljava/lang/String;	b	method_373
-METHOD	com/xk72/charles/export/a	(Ljava/util/Date;)Ljava/lang/Long;	c	method_374
-CLASS	com/xk72/charles/export/b	com/xk72/charles/export/b
-METHOD	com/xk72/charles/export/b	(Ljava/lang/String;)I	a	method_375
-METHOD	com/xk72/charles/export/b	(Ljava/lang/String;)Ljava/net/InetAddress;	b	method_376
-METHOD	com/xk72/charles/export/b	(Ljava/lang/String;)Ljava/util/Date;	c	method_377
-METHOD	com/xk72/charles/export/b	(Ljava/lang/String;)Ljava/util/Date;	d	method_378
-METHOD	com/xk72/charles/export/b	(Ljava/lang/String;)Ljava/lang/Long;	e	method_379
+METHOD	com/xk72/charles/export/a	(Ljava/util/Date;)Ljava/lang/String;	b	dateToString
+METHOD	com/xk72/charles/export/a	(Ljava/util/Date;)Ljava/lang/Long;	c	dateToTimeLong
+CLASS	com/xk72/charles/export/b	com/xk72/charles/export/AbstractCharlesSessionFileImporter
+METHOD	com/xk72/charles/export/b	(Ljava/lang/String;)I	a	parseInt
+METHOD	com/xk72/charles/export/b	(Ljava/lang/String;)Ljava/net/InetAddress;	b	parseNetAddress
+METHOD	com/xk72/charles/export/b	(Ljava/lang/String;)Ljava/util/Date;	c	parseDate
+METHOD	com/xk72/charles/export/b	(Ljava/lang/String;)Ljava/util/Date;	d	parseDateStoredAsLong
+METHOD	com/xk72/charles/export/b	(Ljava/lang/String;)Ljava/lang/Long;	e	parseLong
 CLASS	com/xk72/charles/export/c	com/xk72/charles/export/c
-CLASS	com/xk72/charles/export/d	com/xk72/charles/export/d
-METHOD	com/xk72/charles/export/d	(Ljava/lang/String;)Ljava/util/Date;	a	method_380
-METHOD	com/xk72/charles/export/d	(Ljava/util/Date;)Ljava/lang/String;	a	method_381
-METHOD	com/xk72/charles/export/d	(Ljava/util/Date;Ljava/time/ZoneId;)Ljava/lang/String;	a	method_382
-CLASS	com/xk72/charles/export/e	com/xk72/charles/export/e
-FIELD	com/xk72/charles/export/e	Ljava/lang/String;	a	field_274
+CLASS	com/xk72/charles/export/d	com/xk72/charles/export/DateTimeUtils
+METHOD	com/xk72/charles/export/d	(Ljava/lang/String;)Ljava/util/Date;	a	dateFromOffsetString
+METHOD	com/xk72/charles/export/d	(Ljava/util/Date;)Ljava/lang/String;	a	getTimeInSystemZone
+METHOD	com/xk72/charles/export/d	(Ljava/util/Date;Ljava/time/ZoneId;)Ljava/lang/String;	a	getTimeInZone
+CLASS	com/xk72/charles/export/e	com/xk72/charles/export/CharlesSessionFileExporter
+FIELD	com/xk72/charles/export/e	Ljava/lang/String;	a	FILE_TYPE_DESCRIPTION
 FIELD	com/xk72/charles/export/e	Ljava/lang/String;	b	CHARLES_SESSION_FILE_EXTENSION
 CLASS	com/xk72/charles/export/f	com/xk72/charles/export/f
 CLASS	com/xk72/charles/export/g	com/xk72/charles/export/SerializedSessionImporter
 FIELD	com/xk72/charles/export/g	Ljava/util/logging/Logger;	a	LOGGER
 METHOD	com/xk72/charles/export/g	()Ljava/io/ObjectStreamClass;	readClassDescriptor	readClassDescriptor
-CLASS	com/xk72/charles/export/h	com/xk72/charles/export/h
-FIELD	com/xk72/charles/export/h	Ljava/lang/String;	a	field_277
-FIELD	com/xk72/charles/export/h	Ljava/lang/String;	b	field_278
+CLASS	com/xk72/charles/export/h	com/xk72/charles/export/CSVSessionExporter
+FIELD	com/xk72/charles/export/h	Ljava/lang/String;	a	CSV
+FIELD	com/xk72/charles/export/h	Ljava/lang/String;	b	CSV_DESCRIPTION
 FIELD	com/xk72/charles/export/h	Ljava/text/DateFormat;	c	field_279
 FIELD	com/xk72/charles/export/h	Lcom/xk72/charles/lib/j;	d	field_280
 METHOD	com/xk72/charles/export/h	(Lcom/xk72/charles/model/Transaction;Lcom/xk72/d/d;)V	a	method_383
 METHOD	com/xk72/charles/export/h	(Ljava/util/Date;)Ljava/lang/Object;	d	method_384
-CLASS	com/xk72/charles/export/i	com/xk72/charles/export/i
-METHOD	com/xk72/charles/export/i	()Ljava/lang/String;	a	method_385
+CLASS	com/xk72/charles/export/i	com/xk72/charles/export/ISessionExporter
+METHOD	com/xk72/charles/export/i	()Ljava/lang/String;	a	getFileNameForCurrentDateTime
 METHOD	com/xk72/charles/export/i	(Lcom/xk72/charles/model/Session;Ljava/io/File;)V	a	method_386
 METHOD	com/xk72/charles/export/i	(Lcom/xk72/charles/model/Session;Ljava/io/OutputStream;)V	a	method_387
-METHOD	com/xk72/charles/export/i	()Ljava/lang/String;	b	method_388
-METHOD	com/xk72/charles/export/i	()Ljava/lang/String;	c	method_389
-CLASS	com/xk72/charles/export/j	com/xk72/charles/export/j
-FIELD	com/xk72/charles/export/j	Ljava/lang/String;	a	field_281
-FIELD	com/xk72/charles/export/j	Ljava/lang/String;	b	field_282
+METHOD	com/xk72/charles/export/i	()Ljava/lang/String;	b	getFileExtension
+METHOD	com/xk72/charles/export/i	()Ljava/lang/String;	c	getDescription
+CLASS	com/xk72/charles/export/j	com/xk72/charles/export/HttpArchiveSessionExporter
+FIELD	com/xk72/charles/export/j	Ljava/lang/String;	a	HAR
+FIELD	com/xk72/charles/export/j	Ljava/lang/String;	b	HAR_DESCRIPTION
 FIELD	com/xk72/charles/export/j	Ljava/lang/String;	c	field_283
 METHOD	com/xk72/charles/export/j	(Lcom/xk72/charles/lib/multipart/b;Lorg/json/JSONWriter;)V	a	method_390
 METHOD	com/xk72/charles/export/j	(Lcom/xk72/charles/lib/r;Lorg/json/JSONWriter;)V	a	method_391
@@ -1747,9 +1747,9 @@ FIELD	com/xk72/charles/export/l	Ljava/lang/Long;	a	field_285
 FIELD	com/xk72/charles/export/l	Ljava/lang/Long;	b	field_286
 FIELD	com/xk72/charles/export/l	Ljava/lang/Long;	c	field_287
 METHOD	com/xk72/charles/export/l	(Lcom/xk72/charles/model/Transaction;)V	a	method_414
-CLASS	com/xk72/charles/export/m	com/xk72/charles/export/m
-METHOD	com/xk72/charles/export/m	(Ljava/io/File;Lcom/xk72/charles/model/Session;)Lcom/xk72/charles/model/Session;	a	method_415
-CLASS	com/xk72/charles/export/n	com/xk72/charles/export/n
+CLASS	com/xk72/charles/export/m	com/xk72/charles/export/ISessionImporter
+METHOD	com/xk72/charles/export/m	(Ljava/io/File;Lcom/xk72/charles/model/Session;)Lcom/xk72/charles/model/Session;	a	importSession
+CLASS	com/xk72/charles/export/n	com/xk72/charles/export/CharlesJsonSessionExporter
 FIELD	com/xk72/charles/export/n	Ljava/lang/String;	a	field_288
 FIELD	com/xk72/charles/export/n	Ljava/lang/String;	b	field_289
 FIELD	com/xk72/charles/export/n	Lcom/google/gson/stream/JsonWriter;	c	field_290
@@ -1758,8 +1758,8 @@ METHOD	com/xk72/charles/export/n	(Lcom/xk72/proxy/Fields;)V	a	method_417
 METHOD	com/xk72/charles/export/n	([BLjava/lang/String;Z)V	a	method_418
 METHOD	com/xk72/charles/export/n	()V	d	method_419
 METHOD	com/xk72/charles/export/n	()V	e	method_420
-CLASS	com/xk72/charles/export/o	com/xk72/charles/export/o
-FIELD	com/xk72/charles/export/o	Ljava/util/logging/Logger;	a	field_291
+CLASS	com/xk72/charles/export/o	com/xk72/charles/export/SessionJSONImporter
+FIELD	com/xk72/charles/export/o	Ljava/util/logging/Logger;	a	LOGGER
 METHOD	com/xk72/charles/export/o	(Lcom/xk72/lib/c;)Lcom/xk72/charles/model/Transaction;	a	method_421
 METHOD	com/xk72/charles/export/o	(Lcom/xk72/lib/c;Lcom/xk72/charles/model/Transaction;)V	a	method_422
 METHOD	com/xk72/charles/export/o	(Lcom/xk72/lib/c;Lcom/xk72/proxy/Fields;)V	a	method_423
@@ -1844,7 +1844,7 @@ METHOD	com/xk72/charles/export/pcap/f	()Lcom/xk72/charles/export/pcap/f;	a	metho
 METHOD	com/xk72/charles/export/pcap/f	(Ljava/lang/Object;)Z	equals	equals
 METHOD	com/xk72/charles/export/pcap/f	()I	hashCode	hashCode
 METHOD	com/xk72/charles/export/pcap/f	()Ljava/lang/String;	toString	toString
-CLASS	com/xk72/charles/export/q	com/xk72/charles/export/q
+CLASS	com/xk72/charles/export/q	com/xk72/charles/export/CharlesJsonSummaryExporter
 FIELD	com/xk72/charles/export/q	Ljava/lang/String;	d	field_333
 CLASS	com/xk72/charles/export/r	com/xk72/charles/export/r
 FIELD	com/xk72/charles/export/r	Lcom/xk72/charles/export/SessionSazImporter$FiddlerSession;	a	field_334
@@ -1881,7 +1881,7 @@ FIELD	com/xk72/charles/export/s	Ljava/lang/String;	w	field_361
 FIELD	com/xk72/charles/export/s	Ljava/lang/String;	x	field_362
 FIELD	com/xk72/charles/export/s	Ljava/lang/String;	y	field_363
 FIELD	com/xk72/charles/export/s	Ljava/lang/String;	z	field_364
-CLASS	com/xk72/charles/export/t	com/xk72/charles/export/t
+CLASS	com/xk72/charles/export/t	com/xk72/charles/export/HttpTraceSessionExporter
 FIELD	com/xk72/charles/export/t	Ljava/lang/String;	a	field_365
 FIELD	com/xk72/charles/export/t	Ljava/lang/String;	b	field_366
 FIELD	com/xk72/charles/export/t	Ljava/io/PrintStream;	c	field_367
@@ -1898,7 +1898,7 @@ METHOD	com/xk72/charles/export/t	(Ljava/lang/String;Z)V	a	method_461
 METHOD	com/xk72/charles/export/t	(Ljava/lang/String;[B)V	a	method_462
 METHOD	com/xk72/charles/export/t	([B)Ljava/lang/String;	a	method_463
 METHOD	com/xk72/charles/export/t	(Ljava/lang/String;)V	b	method_464
-CLASS	com/xk72/charles/export/u	com/xk72/charles/export/u
+CLASS	com/xk72/charles/export/u	com/xk72/charles/export/CharlesXMLSessionExporter
 FIELD	com/xk72/charles/export/u	Ljava/lang/String;	a	field_369
 FIELD	com/xk72/charles/export/u	Ljava/lang/String;	b	field_370
 FIELD	com/xk72/charles/export/u	Ljava/lang/String;	c	field_371
@@ -1908,7 +1908,7 @@ METHOD	com/xk72/charles/export/u	(Lcom/xk72/proxy/Fields;)V	a	method_466
 METHOD	com/xk72/charles/export/u	([BLjava/lang/String;Z)V	a	method_467
 METHOD	com/xk72/charles/export/u	()V	d	method_468
 METHOD	com/xk72/charles/export/u	()V	e	method_469
-CLASS	com/xk72/charles/export/v	com/xk72/charles/export/v
+CLASS	com/xk72/charles/export/v	com/xk72/charles/export/XMLSessionImporter
 CLASS	com/xk72/charles/export/w	com/xk72/charles/export/w
 FIELD	com/xk72/charles/export/w	Lcom/xk72/charles/export/v;	a	field_373
 FIELD	com/xk72/charles/export/w	Lcom/xk72/charles/model/Session;	b	field_374
@@ -1923,7 +1923,7 @@ FIELD	com/xk72/charles/export/w	Ljava/lang/String;	j	field_382
 FIELD	com/xk72/charles/export/w	Ljava/lang/String;	k	field_383
 FIELD	com/xk72/charles/export/w	Ljava/lang/String;	l	field_384
 FIELD	com/xk72/charles/export/w	Z	m	field_385
-CLASS	com/xk72/charles/export/x	com/xk72/charles/export/x
+CLASS	com/xk72/charles/export/x	com/xk72/charles/export/CharlesXMLSummaryExporter
 FIELD	com/xk72/charles/export/x	Ljava/lang/String;	e	field_386
 CLASS	com/xk72/charles/export/y	com/xk72/charles/export/y
 METHOD	com/xk72/charles/export/y	(Lcom/xk72/charles/model/D;Ljava/io/File;)V	a	method_470
@@ -9789,7 +9789,7 @@ METHOD	com/xk72/charles/model/C	()V	f	method_2306
 METHOD	com/xk72/charles/model/C	()V	g	softFlush
 METHOD	com/xk72/charles/model/C	()Ljava/io/File;	h	getTempFolder
 METHOD	com/xk72/charles/model/C	()Ljava/io/File;	i	createTransactionBodyTempFile
-CLASS	com/xk72/charles/model/D	com/xk72/charles/model/D
+CLASS	com/xk72/charles/model/D	com/xk72/charles/model/UniqueTransactionListContainer
 FIELD	com/xk72/charles/model/D	Ljava/util/List;	a	transactions
 FIELD	com/xk72/charles/model/D	Ljava/util/Set;	b	uniqueTransactions
 METHOD	com/xk72/charles/model/D	()Ljava/util/List;	a	getTransactions
@@ -12539,7 +12539,7 @@ CLASS	com/xk72/lib/b	com/xk72/lib/CharlesClassLoader
 METHOD	com/xk72/lib/b	(Ljava/lang/String;)Z	a	canLoad
 METHOD	com/xk72/lib/b	(Ljava/lang/String;)Ljava/net/URL;	getResource	getResource
 METHOD	com/xk72/lib/b	(Ljava/lang/String;Z)Ljava/lang/Class;	loadClass	loadClass
-CLASS	com/xk72/lib/c	com/xk72/lib/c
+CLASS	com/xk72/lib/c	com/xk72/lib/CharlesJsonReader
 METHOD	com/xk72/lib/c	()Ljava/lang/String;	a	getFirstStringOrNull
 METHOD	com/xk72/lib/c	(I)I	a	getFirstIntElse
 METHOD	com/xk72/lib/c	()Ljava/lang/Integer;	b	getFirstIntOrNull
@@ -15480,26 +15480,26 @@ METHOD	com/xk72/util/L	(Ljava/lang/String;)Ljava/lang/String;	x	method_3893
 METHOD	com/xk72/util/L	(Ljava/lang/String;)Ljava/lang/String;	y	method_3894
 METHOD	com/xk72/util/L	(Ljava/lang/String;)Ljava/lang/String;	z	method_3895
 CLASS	com/xk72/util/M	com/xk72/util/XMLUtils
-FIELD	com/xk72/util/M	Ljava/lang/String;	a	field_3949
+FIELD	com/xk72/util/M	Ljava/lang/String;	a	COM_XK72_CHARLES
 FIELD	com/xk72/util/M	Ljava/util/logging/Logger;	b	LOGGER
-FIELD	com/xk72/util/M	Ljava/lang/String;	c	field_3951
-FIELD	com/xk72/util/M	Ljava/nio/charset/Charset;	d	field_3952
-FIELD	com/xk72/util/M	Lcom/thoughtworks/xstream/XStream;	e	field_3953
-FIELD	com/xk72/util/M	Ljavax/xml/parsers/DocumentBuilderFactory;	f	field_3954
+FIELD	com/xk72/util/M	Ljava/lang/String;	c	SERIALIZATION_HEADER
+FIELD	com/xk72/util/M	Ljava/nio/charset/Charset;	d	UTF_8
+FIELD	com/xk72/util/M	Lcom/thoughtworks/xstream/XStream;	e	XSTREAM
+FIELD	com/xk72/util/M	Ljavax/xml/parsers/DocumentBuilderFactory;	f	documentBuilderFactory
 METHOD	com/xk72/util/M	(Ljava/io/File;)Ljava/lang/Object;	a	method_3896
-METHOD	com/xk72/util/M	(Ljava/io/File;Ljava/lang/Object;)V	a	method_3897
-METHOD	com/xk72/util/M	(Ljava/io/InputStream;)Ljava/lang/Object;	a	method_3898
-METHOD	com/xk72/util/M	(Ljava/io/OutputStream;Ljava/lang/Object;)V	a	method_3899
+METHOD	com/xk72/util/M	(Ljava/io/File;Ljava/lang/Object;)V	a	writeXmlToFile
+METHOD	com/xk72/util/M	(Ljava/io/InputStream;)Ljava/lang/Object;	a	doReadDocument
+METHOD	com/xk72/util/M	(Ljava/io/OutputStream;Ljava/lang/Object;)V	a	writeXmlToOutStream
 METHOD	com/xk72/util/M	(Ljava/lang/Object;)Ljava/lang/String;	a	method_3900
-METHOD	com/xk72/util/M	(Ljava/lang/String;)Ljava/lang/String;	a	method_3901
-METHOD	com/xk72/util/M	(Lorg/w3c/dom/Element;)Ljava/lang/Object;	a	method_3902
-METHOD	com/xk72/util/M	(Ljava/io/InputStream;)Lorg/w3c/dom/Document;	b	method_3903
-METHOD	com/xk72/util/M	(Ljava/lang/String;)Ljava/lang/String;	b	method_3904
-METHOD	com/xk72/util/M	(Ljava/io/InputStream;)Ljava/lang/String;	c	method_3905
-METHOD	com/xk72/util/M	(Ljava/lang/String;)Ljava/lang/Object;	c	method_3906
-METHOD	com/xk72/util/M	(Ljava/io/InputStream;)Ljava/lang/Object;	d	method_3907
-METHOD	com/xk72/util/M	(Ljava/io/InputStream;)Ljava/lang/Object;	e	method_3908
-CLASS	com/xk72/util/N	com/xk72/util/N
+METHOD	com/xk72/util/M	(Ljava/lang/String;)Ljava/lang/String;	a	makeXmlSafe
+METHOD	com/xk72/util/M	(Lorg/w3c/dom/Element;)Ljava/lang/Object;	a	unmarshal
+METHOD	com/xk72/util/M	(Ljava/io/InputStream;)Lorg/w3c/dom/Document;	b	documentFromInputStream
+METHOD	com/xk72/util/M	(Ljava/lang/String;)Ljava/lang/String;	b	removeAddedXmlCharSafety
+METHOD	com/xk72/util/M	(Ljava/io/InputStream;)Ljava/lang/String;	c	utf8StreamRead
+METHOD	com/xk72/util/M	(Ljava/lang/String;)Ljava/lang/Object;	c	tryReadUtf8Document
+METHOD	com/xk72/util/M	(Ljava/io/InputStream;)Ljava/lang/Object;	d	fromXML
+METHOD	com/xk72/util/M	(Ljava/io/InputStream;)Ljava/lang/Object;	e	readXMLObject
+CLASS	com/xk72/util/N	com/xk72/util/CharlesMapConverterExtension
 METHOD	com/xk72/util/N	(Lcom/thoughtworks/xstream/io/HierarchicalStreamReader;Lcom/thoughtworks/xstream/converters/UnmarshallingContext;Ljava/util/Map;Ljava/util/Map;)V	putCurrentEntryIntoMap	putCurrentEntryIntoMap
 CLASS	com/xk72/util/O	com/xk72/util/JavaLoggingLevelValueConverter
 METHOD	com/xk72/util/O	(Ljava/lang/Class;)Z	canConvert	canConvert
