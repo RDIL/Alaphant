@@ -142,7 +142,8 @@ public class MappingAnalysisHelper implements MappingVisitor {
     private static @NotNull ObfuscatedPath checkPathObfuscation(@NotNull final String name) {
         final String[] split = name.split("/");
 
-        final boolean classNameObf = split[split.length - 1].length() <= 3;
+        final String className = split[split.length - 1];
+        final boolean classNameObf = className.length() <= 3 || className.startsWith("uclass");
         boolean packageNameObf = false;
         final StringBuilder packageNameBuilder = new StringBuilder();
 
