@@ -1,6 +1,5 @@
 plugins {
     id "java"
-    id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
 wrapper {
@@ -25,6 +24,12 @@ repositories {
         name = "jitpack"
         url = "https://jitpack.io"
     }
+}
+
+configurations {
+    shadow
+    shadow.description = "Dependencies included in the all Jar."
+    implementation.extendsFrom(shadow)
 }
 
 import alaphant.build.AnalyzeMappingsTask
@@ -86,6 +91,7 @@ dependencies {
     implementation("org.bouncycastle:bcpkix-jdk15on:1.68")
     implementation("org.bouncycastle:bcprov-jdk15on:1.69") // intentionally changed from 1.68 -> 1.69 to fix security issues
     implementation("org.jasypt:jasypt:1.9.3")
+    implementation("org.violetlib:vaqua:9")
 
     // charles core
     if (!chlsMapped.exists()) {
@@ -96,28 +102,28 @@ dependencies {
     }
 
     // runtime patching library (from the minecraft ecosystem, but should be fine)
-    implementation("com.github.McModLauncher:modlauncher:main-8.1.x-SNAPSHOT")
+    shadow("com.github.McModLauncher:modlauncher:main-8.1.x-SNAPSHOT")
 
     // modlauncher needs these
-    implementation("net.sf.jopt-simple:jopt-simple:5.0.4")
-    implementation("org.apache.logging.log4j:log4j-api:2.17.2")
-    implementation("org.apache.logging.log4j:log4j-core:2.17.2")
-    implementation("org.ow2.asm:asm:9.3")
-    implementation("org.ow2.asm:asm-tree:9.3")
-    implementation("org.ow2.asm:asm-commons:9.3")
-    implementation("org.ow2.asm:asm-util:9.3")
-    implementation(fileTree(dir: "libs/modlauncher", include: "grossjava9hacks-1.3.3.jar"))
+    shadow("net.sf.jopt-simple:jopt-simple:5.0.4")
+    shadow("org.apache.logging.log4j:log4j-api:2.17.2")
+    shadow("org.apache.logging.log4j:log4j-core:2.17.2")
+    shadow("org.ow2.asm:asm:9.3")
+    shadow("org.ow2.asm:asm-tree:9.3")
+    shadow("org.ow2.asm:asm-commons:9.3")
+    shadow("org.ow2.asm:asm-util:9.3")
+    shadow(fileTree(dir: "libs/modlauncher", include: "grossjava9hacks-1.3.3.jar"))
 
     // mixin deps
-    implementation("com.google.code.gson:gson:2.8.6") // note: charles needs this one too
-    implementation("com.google.guava:guava:30.0-jre")
+    shadow("com.google.code.gson:gson:2.8.6") // note: charles needs this one too
+    shadow("com.google.guava:guava:30.0-jre")
 
     // the bytecode weaving framework being used
-    implementation("org.spongepowered:mixin:0.8.5")
+    shadow("org.spongepowered:mixin:0.8.5")
 
     // finally, our dependencies
-    implementation("com.auth0:java-jwt:3.19.2")
-    implementation("org.jetbrains:annotations:23.0.0")
+    shadow("com.auth0:java-jwt:3.19.2")
+    shadow("org.jetbrains:annotations:23.0.0")
 }
 
 jar {
@@ -150,81 +156,17 @@ task run(type: JavaExec) {
     jvmArgs "-Djava.library.path=$path;$projectLibsDir;$projectTargetDir"
 }
 
-// We do this because it's better then trying to fix classpath issues with configurations.
+task shadowJar(type: Jar, dependsOn: remapJar) {
+    group = "build"
+    description = "Create a Jar containing all internal dependencies (does not include Charles)."
+    archiveClassifier = "all"
 
-final String[] shadowJarExclusionPackages = [
-        "resources",
-        "icons",
-        "control",
-        "jsbeautifier",
-        "com/xk72",
-        "com/twitter",
-        "com/fasterxml",
-        "com/jgoodies",
-        "com/thoughtworks",
-        "com/sun",
-        "com/edankert",
-        "org/jclarion",
-        "com/miglayout",
-        "io",
-        "de",
-        "org/mozilla",
-        "org/xhtmlrenderer",
-        "org/xmlpull",
-        "org/brotli",
-        "net/sf",
-        "net/miginfocom",
-        "org/bounce",
-        "org/bouncycastle",
-        "META-INF/versions/15",
-        "META-INF/versions/9",
-        "com/luciad",
-        "jcifs",
-        "org/eclipse",
-        "org/incava",
-        "org/jfree",
-        "org/swfx",
-        "org/jasypt",
-        "com/google/protobuf",
-        "google/protobuf",
-        "javax",
-        "org/json",
-        "META-INF/versions/11/org/bouncycastle",
-]
-
-final String[] shadowJarExclusionFiles = [
-        "charles-session-*.dtd",
-        "charles-logging.properties",
-        "error.html",
-        "errors.properties",
-        "sample.webp",
-        "splash.png",
-        "splash@2x.png",
-        "META-INF/charles*",
-        "META-INF/mailcap.default",
-        "jsyntaxpane-dark.properties",
-        "iconmap.properties",
-        "XMLPULL_1_1_3_1_VERSION",
-        "XPP3_1.1.4c_MIN_VERSION",
-        // licenses for excluded packages
-        "META-INF/NOTICE.txt",
-        "META-INF/LICENSE",
-        "LICENSE.txt",
-        "META-INF/mime.types",
-        "META-INF/mimetypes.default",
-        "META-INF/services/java.security.Provider",
-]
-
-shadowJar {
     from "LICENSE"
-    shadowJarExclusionPackages.each {
-        exclude "${it}/**/*"
-        exclude "META-INF/services/${it.replace("/", ".")}*"
-        exclude "META-INF/maven/${it.replace("/", ".")}*/**/*"
+    from configurations.shadow.collect {
+        it.isDirectory() ? it : zipTree(it)
     }
-    shadowJarExclusionFiles.each {
-        exclude it
-    }
+
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
 
 artifacts {
