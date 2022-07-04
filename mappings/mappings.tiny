@@ -2454,7 +2454,7 @@ METHOD	com/xk72/charles/gui/find/AdvancedFindDialog$6	(Ljava/awt/event/ActionEve
 CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$MyCompactCheckBox	com/xk72/charles/gui/find/AdvancedFindDialog$MyCompactCheckBox
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog$MyCompactCheckBox	(Ljava/awt/Font;)V	setFont	setFont
 CLASS	com/xk72/charles/gui/find/FindOptions	com/xk72/charles/gui/find/FindOptions
-FIELD	com/xk72/charles/gui/find/FindOptions	Z	a	field_530
+FIELD	com/xk72/charles/gui/find/FindOptions	Z	a	caseSensitive
 FIELD	com/xk72/charles/gui/find/FindOptions	Z	b	wholeWords
 FIELD	com/xk72/charles/gui/find/FindOptions	Z	c	regex
 FIELD	com/xk72/charles/gui/find/FindOptions	I	d	bitFlags
@@ -2471,9 +2471,9 @@ METHOD	com/xk72/charles/gui/find/FindOptions	()Lcom/xk72/charles/gui/find/FindOp
 METHOD	com/xk72/charles/gui/find/FindOptions	()Ljava/lang/String;	g	getText
 METHOD	com/xk72/charles/gui/find/FindOptions	()I	hashCode	hashCode
 CLASS	com/xk72/charles/gui/find/FindOptions$Scope	com/xk72/charles/gui/find/FindOptions$Scope
-FIELD	com/xk72/charles/gui/find/FindOptions$Scope	Lcom/xk72/charles/gui/find/FindOptions$Scope;	a	field_537
-FIELD	com/xk72/charles/gui/find/FindOptions$Scope	Lcom/xk72/charles/gui/find/FindOptions$Scope;	b	field_538
-FIELD	com/xk72/charles/gui/find/FindOptions$Scope	Lcom/xk72/charles/gui/find/FindOptions$Scope;	c	field_539
+FIELD	com/xk72/charles/gui/find/FindOptions$Scope	Lcom/xk72/charles/gui/find/FindOptions$Scope;	a	SCOPE_SESSION
+FIELD	com/xk72/charles/gui/find/FindOptions$Scope	Lcom/xk72/charles/gui/find/FindOptions$Scope;	b	SCOPE_SELECTION
+FIELD	com/xk72/charles/gui/find/FindOptions$Scope	Lcom/xk72/charles/gui/find/FindOptions$Scope;	c	SCOPE_PATH
 FIELD	com/xk72/charles/gui/find/FindOptions$Scope	[Lcom/xk72/charles/gui/find/FindOptions$Scope;	d	field_540
 METHOD	com/xk72/charles/gui/find/FindOptions$Scope	(Ljava/lang/String;)Lcom/xk72/charles/gui/find/FindOptions$Scope;	valueOf	valueOf
 METHOD	com/xk72/charles/gui/find/FindOptions$Scope	()[Lcom/xk72/charles/gui/find/FindOptions$Scope;	values	values
@@ -2510,7 +2510,7 @@ CLASS	com/xk72/charles/gui/find/a	com/xk72/charles/gui/find/AdvancedFindDialogCo
 FIELD	com/xk72/charles/gui/find/a	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	findDialog
 METHOD	com/xk72/charles/gui/find/a	(Ljava/awt/event/ComponentEvent;)V	componentHidden	componentHidden
 CLASS	com/xk72/charles/gui/find/b	com/xk72/charles/gui/find/b
-FIELD	com/xk72/charles/gui/find/b	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	field_549
+FIELD	com/xk72/charles/gui/find/b	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	advancedFindDialog
 METHOD	com/xk72/charles/gui/find/b	()Z	a	method_561
 METHOD	com/xk72/charles/gui/find/b	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/find/c	com/xk72/charles/gui/find/AdvancedFindDialog$12
@@ -2527,7 +2527,7 @@ METHOD	com/xk72/charles/gui/find/d	(Ljavax/swing/event/PopupMenuEvent;)V	popupMe
 METHOD	com/xk72/charles/gui/find/d	(Ljavax/swing/event/PopupMenuEvent;)V	popupMenuWillBecomeInvisible	popupMenuWillBecomeInvisible
 METHOD	com/xk72/charles/gui/find/d	(Ljavax/swing/event/PopupMenuEvent;)V	popupMenuWillBecomeVisible	popupMenuWillBecomeVisible
 CLASS	com/xk72/charles/gui/find/e	com/xk72/charles/gui/find/e
-FIELD	com/xk72/charles/gui/find/e	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	findDialog
+FIELD	com/xk72/charles/gui/find/e	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	advancedFindDialog
 FIELD	com/xk72/charles/gui/find/e	Lcom/xk72/charles/gui/find/FindOptions;	b	findOptions
 FIELD	com/xk72/charles/gui/find/e	I	c	field_555
 FIELD	com/xk72/charles/gui/find/e	I	d	field_556
@@ -2540,14 +2540,14 @@ FIELD	com/xk72/charles/gui/find/f	Ljava/util/List;	a	field_560
 FIELD	com/xk72/charles/gui/find/f	Lcom/xk72/charles/gui/find/e;	b	field_561
 METHOD	com/xk72/charles/gui/find/f	()V	run	run
 CLASS	com/xk72/charles/gui/find/g	com/xk72/charles/gui/find/g
-FIELD	com/xk72/charles/gui/find/g	Lcom/xk72/charles/gui/find/FindOptions;	a	field_562
+FIELD	com/xk72/charles/gui/find/g	Lcom/xk72/charles/gui/find/FindOptions;	a	findOptions
 FIELD	com/xk72/charles/gui/find/g	I	b	field_563
 FIELD	com/xk72/charles/gui/find/g	Lcom/xk72/charles/gui/find/e;	c	field_564
 METHOD	com/xk72/charles/gui/find/g	()V	run	run
 CLASS	com/xk72/charles/gui/find/h	com/xk72/charles/gui/find/h
 FIELD	com/xk72/charles/gui/find/h	Lcom/xk72/charles/model/ModelNode;	a	field_565
 FIELD	com/xk72/charles/gui/find/h	Lcom/xk72/charles/model/ModelNode;	b	field_566
-FIELD	com/xk72/charles/gui/find/h	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	c	field_567
+FIELD	com/xk72/charles/gui/find/h	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	c	advancedFindDialog
 METHOD	com/xk72/charles/gui/find/h	()V	run	run
 CLASS	com/xk72/charles/gui/find/i	com/xk72/charles/gui/find/i
 FIELD	com/xk72/charles/gui/find/i	[I	a	field_568
@@ -2584,7 +2584,7 @@ METHOD	com/xk72/charles/gui/find/p	()Ljava/lang/String;	toString	toString
 CLASS	com/xk72/charles/gui/find/q	com/xk72/charles/gui/find/q
 METHOD	com/xk72/charles/gui/find/q	(Lcom/xk72/charles/model/ModelNode;Lcom/xk72/charles/model/ModelNode;)I	a	method_571
 METHOD	com/xk72/charles/gui/find/q	(Ljava/lang/Object;Ljava/lang/Object;)I	compare	compare
-CLASS	com/xk72/charles/gui/find/r	com/xk72/charles/gui/find/r
+CLASS	com/xk72/charles/gui/find/r	com/xk72/charles/gui/find/HitsTreeModel
 FIELD	com/xk72/charles/gui/find/r	Ljava/util/Comparator;	c	field_577
 FIELD	com/xk72/charles/gui/find/r	J	d	field_578
 METHOD	com/xk72/charles/gui/find/r	()J	a	method_572
@@ -2777,7 +2777,7 @@ METHOD	com/xk72/charles/gui/frames/q	(Ljava/awt/event/ActionEvent;)V	actionPerfo
 CLASS	com/xk72/charles/gui/frames/r	com/xk72/charles/gui/frames/r
 FIELD	com/xk72/charles/gui/frames/r	Lcom/xk72/charles/gui/frames/RegisterFrame;	a	registerFrame
 METHOD	com/xk72/charles/gui/frames/r	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/frames/s	com/xk72/charles/gui/frames/s
+CLASS	com/xk72/charles/gui/frames/s	com/xk72/charles/gui/frames/ICharlesGuiBaseFrame
 CLASS	com/xk72/charles/gui/g	com/xk72/charles/gui/g
 FIELD	com/xk72/charles/gui/g	Lcom/xk72/charles/gui/CharlesFrame;	a	frame
 METHOD	com/xk72/charles/gui/g	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
@@ -2894,7 +2894,7 @@ METHOD	com/xk72/charles/gui/lib/D	(Ljava/awt/event/ActionEvent;)V	actionPerforme
 CLASS	com/xk72/charles/gui/lib/DialogUtils$3	com/xk72/charles/gui/lib/DialogUtils$3
 FIELD	com/xk72/charles/gui/lib/DialogUtils$3	Ljavax/swing/JDialog;	val$dialog	val$dialog
 METHOD	com/xk72/charles/gui/lib/DialogUtils$3	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/lib/E	com/xk72/charles/gui/lib/E
+CLASS	com/xk72/charles/gui/lib/E	com/xk72/charles/gui/lib/IDirtyModel
 METHOD	com/xk72/charles/gui/lib/E	()Z	isDirty	isDirty
 METHOD	com/xk72/charles/gui/lib/E	()V	setDirty	setDirty
 METHOD	com/xk72/charles/gui/lib/E	(Z)V	setDirty	setDirty
@@ -10561,8 +10561,8 @@ FIELD	com/xk72/charles/repeat/d	I	b	field_2532
 FIELD	com/xk72/charles/repeat/d	I	c	field_2533
 FIELD	com/xk72/charles/repeat/d	Ljava/util/Random;	d	random
 METHOD	com/xk72/charles/repeat/d	()I	a	method_2485
-CLASS	com/xk72/charles/repeat/e	com/xk72/charles/repeat/e
-FIELD	com/xk72/charles/repeat/e	Lcom/xk72/proxy/b/a;	a	field_2535
+CLASS	com/xk72/charles/repeat/e	com/xk72/charles/repeat/RepeatContext
+FIELD	com/xk72/charles/repeat/e	Lcom/xk72/proxy/b/a;	a	proxyServer
 FIELD	com/xk72/charles/repeat/e	I	b	field_2536
 FIELD	com/xk72/charles/repeat/e	I	c	field_2537
 FIELD	com/xk72/charles/repeat/e	Ljava/util/List;	d	field_2538
@@ -10574,9 +10574,9 @@ METHOD	com/xk72/charles/repeat/e	(Lcom/xk72/proxy/http/k;)V	a	method_2488
 METHOD	com/xk72/charles/repeat/e	(Lcom/xk72/proxy/http/k;Z)V	a	method_2489
 METHOD	com/xk72/charles/repeat/e	(Lcom/xk72/proxy/ProxyEvent;)Lcom/xk72/proxy/http/k;	b	method_2490
 CLASS	com/xk72/charles/repeat/f	com/xk72/charles/repeat/f
-FIELD	com/xk72/charles/repeat/f	Lcom/xk72/proxy/http/k;	a	field_2541
-FIELD	com/xk72/charles/repeat/f	Lcom/xk72/charles/repeat/e;	b	field_2542
-METHOD	com/xk72/charles/repeat/f	()Lcom/xk72/charles/repeat/e;	a	method_2491
+FIELD	com/xk72/charles/repeat/f	Lcom/xk72/proxy/http/k;	a	remoteConnection
+FIELD	com/xk72/charles/repeat/f	Lcom/xk72/charles/repeat/e;	b	repeatContext
+METHOD	com/xk72/charles/repeat/f	()Lcom/xk72/charles/repeat/e;	a	getRepeatContext
 METHOD	com/xk72/charles/repeat/f	()Lcom/xk72/proxy/http/k;	b	method_2492
 CLASS	com/xk72/charles/repeat/g	com/xk72/charles/repeat/g
 FIELD	com/xk72/charles/repeat/g	[B	a	field_2543
@@ -10616,18 +10616,18 @@ METHOD	com/xk72/charles/repeat/n	()Lcom/xk72/proxy/http2/s;	a	method_2499
 METHOD	com/xk72/charles/repeat/n	()Lcom/xk72/proxy/http2/s;	b	method_2500
 CLASS	com/xk72/charles/repeat/o	com/xk72/charles/repeat/o
 FIELD	com/xk72/charles/repeat/o	Lcom/xk72/proxy/http2/v;	a	field_2563
-FIELD	com/xk72/charles/repeat/o	Lcom/xk72/proxy/http2/f;	b	field_2564
-FIELD	com/xk72/charles/repeat/o	Lcom/xk72/proxy/http2/Http2OutputStream;	c	field_2565
+FIELD	com/xk72/charles/repeat/o	Lcom/xk72/proxy/http2/f;	b	http2InputStream
+FIELD	com/xk72/charles/repeat/o	Lcom/xk72/proxy/http2/Http2OutputStream;	c	http2OutputStream
 METHOD	com/xk72/charles/repeat/o	()Lcom/xk72/proxy/http2/v;	a	method_2501
-METHOD	com/xk72/charles/repeat/o	()Lcom/xk72/proxy/http2/f;	b	method_2502
-METHOD	com/xk72/charles/repeat/o	()Lcom/xk72/proxy/http2/Http2OutputStream;	c	method_2503
-METHOD	com/xk72/charles/repeat/o	()V	d	method_2504
+METHOD	com/xk72/charles/repeat/o	()Lcom/xk72/proxy/http2/f;	b	getHttp2InputStream
+METHOD	com/xk72/charles/repeat/o	()Lcom/xk72/proxy/http2/Http2OutputStream;	c	getHttp2OutputStream
+METHOD	com/xk72/charles/repeat/o	()V	d	close
 CLASS	com/xk72/charles/repeat/p	com/xk72/charles/repeat/p
 FIELD	com/xk72/charles/repeat/p	I	a	field_2566
 FIELD	com/xk72/charles/repeat/p	Lcom/xk72/proxy/b/d;	b	field_2567
 FIELD	com/xk72/charles/repeat/p	Z	c	field_2568
 FIELD	com/xk72/charles/repeat/p	Z	d	field_2569
-FIELD	com/xk72/charles/repeat/p	Ljava/util/Map;	e	field_2570
+FIELD	com/xk72/charles/repeat/p	Ljava/util/Map;	e	contextMap
 FIELD	com/xk72/charles/repeat/p	Ljava/util/Map;	f	field_2571
 METHOD	com/xk72/charles/repeat/p	()V	a	method_2505
 METHOD	com/xk72/charles/repeat/p	(Lcom/xk72/charles/repeat/f;Z)V	a	method_2506
@@ -10648,7 +10648,7 @@ METHOD	com/xk72/charles/repeat/q	(Ljava/util/concurrent/ExecutorService;Lcom/xk7
 METHOD	com/xk72/charles/repeat/q	(Lcom/xk72/charles/model/Transaction;Lcom/xk72/charles/repeat/p;)Lcom/xk72/proxy/ProxyEvent;	c	method_2518
 METHOD	com/xk72/charles/repeat/q	()I	h	transactionCount
 CLASS	com/xk72/charles/repeat/r	com/xk72/charles/repeat/r
-FIELD	com/xk72/charles/repeat/r	Ljava/util/concurrent/ExecutorService;	a	field_2574
+FIELD	com/xk72/charles/repeat/r	Ljava/util/concurrent/ExecutorService;	a	executorService
 FIELD	com/xk72/charles/repeat/r	Lcom/xk72/charles/repeat/p;	b	field_2575
 FIELD	com/xk72/charles/repeat/r	Lcom/xk72/charles/repeat/q;	c	field_2576
 METHOD	com/xk72/charles/repeat/r	()V	run	run
@@ -13474,24 +13474,24 @@ CLASS	com/xk72/proxy/http/a	com/xk72/proxy/http/a
 FIELD	com/xk72/proxy/http/a	Ljava/util/List;	a	field_3206
 FIELD	com/xk72/proxy/http/a	Ljava/lang/String;	b	field_3207
 FIELD	com/xk72/proxy/http/a	[Lcom/xk72/proxy/ssl/b;	c	field_3208
-FIELD	com/xk72/proxy/http/a	Ljava/lang/String;	d	field_3209
-FIELD	com/xk72/proxy/http/a	Lcom/xk72/proxy/ssl/f;	e	field_3210
-FIELD	com/xk72/proxy/http/a	Ljava/lang/String;	f	field_3211
+FIELD	com/xk72/proxy/http/a	Ljava/lang/String;	d	cipherSuite
+FIELD	com/xk72/proxy/http/a	Lcom/xk72/proxy/ssl/f;	e	sslVersion
+FIELD	com/xk72/proxy/http/a	Ljava/lang/String;	f	protocol
 FIELD	com/xk72/proxy/http/a	Ljava/lang/String;	g	field_3212
 METHOD	com/xk72/proxy/http/a	()Ljava/util/List;	a	method_3149
 METHOD	com/xk72/proxy/http/a	(Lcom/xk72/proxy/http/a;)V	a	method_3150
-METHOD	com/xk72/proxy/http/a	(Lcom/xk72/proxy/ssl/f;)V	a	method_3151
+METHOD	com/xk72/proxy/http/a	(Lcom/xk72/proxy/ssl/f;)V	a	setSslVersion
 METHOD	com/xk72/proxy/http/a	(Ljava/lang/String;)V	a	method_3152
 METHOD	com/xk72/proxy/http/a	(Ljava/util/List;)V	a	method_3153
 METHOD	com/xk72/proxy/http/a	([Lcom/xk72/proxy/ssl/b;)V	a	method_3154
 METHOD	com/xk72/proxy/http/a	()Ljava/lang/String;	b	method_3155
-METHOD	com/xk72/proxy/http/a	(Ljava/lang/String;)V	b	method_3156
+METHOD	com/xk72/proxy/http/a	(Ljava/lang/String;)V	b	setCipherSuite
 METHOD	com/xk72/proxy/http/a	()[Lcom/xk72/proxy/ssl/b;	c	method_3157
-METHOD	com/xk72/proxy/http/a	(Ljava/lang/String;)V	c	method_3158
-METHOD	com/xk72/proxy/http/a	()Ljava/lang/String;	d	method_3159
+METHOD	com/xk72/proxy/http/a	(Ljava/lang/String;)V	c	setProtocol
+METHOD	com/xk72/proxy/http/a	()Ljava/lang/String;	d	getCipherSuite
 METHOD	com/xk72/proxy/http/a	(Ljava/lang/String;)V	d	method_3160
-METHOD	com/xk72/proxy/http/a	()Lcom/xk72/proxy/ssl/f;	e	method_3161
-METHOD	com/xk72/proxy/http/a	()Ljava/lang/String;	f	method_3162
+METHOD	com/xk72/proxy/http/a	()Lcom/xk72/proxy/ssl/f;	e	getSslVersion
+METHOD	com/xk72/proxy/http/a	()Ljava/lang/String;	f	getProtocol
 METHOD	com/xk72/proxy/http/a	()Ljava/lang/String;	g	method_3163
 METHOD	com/xk72/proxy/http/a	()Ljava/lang/String;	toString	toString
 CLASS	com/xk72/proxy/http/b	com/xk72/proxy/http/b
@@ -13690,8 +13690,8 @@ METHOD	com/xk72/proxy/http/q	()Lcom/xk72/proxy/http/HttpFields;	a	method_3252
 METHOD	com/xk72/proxy/http/q	()Z	b	method_3253
 METHOD	com/xk72/proxy/http/q	()Z	c	method_3254
 CLASS	com/xk72/proxy/http2/A	com/xk72/proxy/http2/A
-FIELD	com/xk72/proxy/http2/A	Lcom/xk72/proxy/http2/f;	a	field_3299
-FIELD	com/xk72/proxy/http2/A	Lcom/xk72/proxy/http2/Http2OutputStream;	b	field_3300
+FIELD	com/xk72/proxy/http2/A	Lcom/xk72/proxy/http2/f;	a	http2InputStream
+FIELD	com/xk72/proxy/http2/A	Lcom/xk72/proxy/http2/Http2OutputStream;	b	http2OutputStream
 CLASS	com/xk72/proxy/http2/Frame	com/xk72/proxy/http2/Frame
 FIELD	com/xk72/proxy/http2/Frame	I	a	field_3301
 FIELD	com/xk72/proxy/http2/Frame	I	b	field_3302
@@ -13701,7 +13701,7 @@ FIELD	com/xk72/proxy/http2/Frame	B	e	field_3305
 FIELD	com/xk72/proxy/http2/Frame	B	f	field_3306
 FIELD	com/xk72/proxy/http2/Frame	B	g	field_3307
 FIELD	com/xk72/proxy/http2/Frame	Ljava/util/logging/Logger;	h	LOGGER
-FIELD	com/xk72/proxy/http2/Frame	[C	i	field_3309
+FIELD	com/xk72/proxy/http2/Frame	[C	i	chars
 FIELD	com/xk72/proxy/http2/Frame	Lcom/xk72/proxy/http2/Frame$Type;	j	type
 FIELD	com/xk72/proxy/http2/Frame	B	k	field_3311
 FIELD	com/xk72/proxy/http2/Frame	I	l	field_3312
@@ -13768,7 +13768,7 @@ METHOD	com/xk72/proxy/http2/Http2Fields	(I)V	setStatus	setStatus
 CLASS	com/xk72/proxy/http2/Http2OutputStream	com/xk72/proxy/http2/Http2OutputStream
 FIELD	com/xk72/proxy/http2/Http2OutputStream	Lcom/xk72/proxy/http2/x;	a	field_3335
 FIELD	com/xk72/proxy/http2/Http2OutputStream	I	b	field_3336
-FIELD	com/xk72/proxy/http2/Http2OutputStream	Lcom/xk72/proxy/http2/f;	c	field_3337
+FIELD	com/xk72/proxy/http2/Http2OutputStream	Lcom/xk72/proxy/http2/f;	c	http2InputStream
 FIELD	com/xk72/proxy/http2/Http2OutputStream	Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint;	d	field_3338
 FIELD	com/xk72/proxy/http2/Http2OutputStream	Lcom/xk72/proxy/http2/Http2OutputStream$State;	e	status
 FIELD	com/xk72/proxy/http2/Http2OutputStream	J	f	field_3340
@@ -13780,7 +13780,7 @@ METHOD	com/xk72/proxy/http2/Http2OutputStream	(I)V	a	method_3275
 METHOD	com/xk72/proxy/http2/Http2OutputStream	(II)Z	a	method_3276
 METHOD	com/xk72/proxy/http2/Http2OutputStream	(Lcom/xk72/proxy/Fields;)Lcom/xk72/proxy/Fields;	a	method_3277
 METHOD	com/xk72/proxy/http2/Http2OutputStream	([B)[B	a	method_3278
-METHOD	com/xk72/proxy/http2/Http2OutputStream	()I	b	method_3279
+METHOD	com/xk72/proxy/http2/Http2OutputStream	()I	b	getStreamId
 METHOD	com/xk72/proxy/http2/Http2OutputStream	(I)V	b	method_3280
 METHOD	com/xk72/proxy/http2/Http2OutputStream	(Ljava/lang/String;)Z	b	method_3281
 METHOD	com/xk72/proxy/http2/Http2OutputStream	()Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint;	c	method_3282
@@ -13810,20 +13810,20 @@ FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Ljava/lang/String;	a	disablePushPro
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Ljava/util/concurrent/atomic/AtomicBoolean;	b	field_3350
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/b/i;	c	socketProxyServer
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/http/f;	d	httpProxyHandler
-FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/ProxyEvent;	e	field_3353
+FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/ProxyEvent;	e	proxyEvent
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/Connection;	f	field_3354
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/i;	g	field_3355
-FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/http/ConnectRemoteConnection;	h	field_3356
+FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/http/ConnectRemoteConnection;	h	remoteConnection
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint;	i	field_3357
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint;	j	field_3358
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/http2/y;	k	field_3359
-FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Ljava/lang/String;	l	field_3360
+FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Ljava/lang/String;	l	pushPromiseDisabled
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/http2/x;	m	field_3361
 FIELD	com/xk72/proxy/http2/Http2ProxyHandler	Lcom/xk72/proxy/http2/x;	n	field_3362
 METHOD	com/xk72/proxy/http2/Http2ProxyHandler	()V	a	method_3292
 METHOD	com/xk72/proxy/http2/Http2ProxyHandler	(I)Lcom/xk72/proxy/http2/t;	a	method_3293
 METHOD	com/xk72/proxy/http2/Http2ProxyHandler	(II)Lcom/xk72/proxy/http2/t;	a	method_3294
-METHOD	com/xk72/proxy/http2/Http2ProxyHandler	(Lcom/xk72/proxy/ProxyEvent;)V	a	method_3295
+METHOD	com/xk72/proxy/http2/Http2ProxyHandler	(Lcom/xk72/proxy/ProxyEvent;)V	a	setPushProxyDisabledAttribute
 METHOD	com/xk72/proxy/http2/Http2ProxyHandler	(Lcom/xk72/proxy/ProxyEvent;Ljava/util/Collection;Ljava/lang/String;)V	a	method_3296
 METHOD	com/xk72/proxy/http2/Http2ProxyHandler	()V	b	method_3297
 CLASS	com/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint	com/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint
@@ -13917,18 +13917,18 @@ METHOD	com/xk72/proxy/http2/d	()Lcom/xk72/proxy/http2/Http2Fields;	a	method_3338
 METHOD	com/xk72/proxy/http2/d	([B)Ljava/lang/String;	a	method_3339
 METHOD	com/xk72/proxy/http2/d	([B[BZ)V	addHeader	addHeader
 CLASS	com/xk72/proxy/http2/e	com/xk72/proxy/http2/e
-FIELD	com/xk72/proxy/http2/e	Ljava/nio/charset/Charset;	a	field_3401
-FIELD	com/xk72/proxy/http2/e	[B	b	field_3402
-FIELD	com/xk72/proxy/http2/e	[B	c	field_3403
-FIELD	com/xk72/proxy/http2/e	[B	d	field_3404
-FIELD	com/xk72/proxy/http2/e	[B	e	field_3405
-FIELD	com/xk72/proxy/http2/e	[B	f	field_3406
-FIELD	com/xk72/proxy/http2/e	[B	g	field_3407
-FIELD	com/xk72/proxy/http2/e	[B	h	field_3408
+FIELD	com/xk72/proxy/http2/e	Ljava/nio/charset/Charset;	a	ASCII
+FIELD	com/xk72/proxy/http2/e	[B	b	METHOD_ASCII
+FIELD	com/xk72/proxy/http2/e	[B	c	SCHEME_ASCII
+FIELD	com/xk72/proxy/http2/e	[B	d	AUTHORITY_ASCII
+FIELD	com/xk72/proxy/http2/e	[B	e	PATH_ASCII
+FIELD	com/xk72/proxy/http2/e	[B	f	STATUS_ASCII
+FIELD	com/xk72/proxy/http2/e	[B	g	HOST_ASCII
+FIELD	com/xk72/proxy/http2/e	[B	h	COOKIE_ASCII
 FIELD	com/xk72/proxy/http2/e	[B	i	field_3409
 FIELD	com/xk72/proxy/http2/e	[B	j	field_3410
 FIELD	com/xk72/proxy/http2/e	Z	k	field_3411
-CLASS	com/xk72/proxy/http2/f	com/xk72/proxy/http2/f
+CLASS	com/xk72/proxy/http2/f	com/xk72/proxy/http2/Http2InputStream
 FIELD	com/xk72/proxy/http2/f	Lcom/xk72/proxy/http2/g;	b	field_3412
 FIELD	com/xk72/proxy/http2/f	Lcom/xk72/proxy/c/c;	c	field_3413
 FIELD	com/xk72/proxy/http2/f	I	d	field_3414
@@ -13976,8 +13976,8 @@ FIELD	com/xk72/proxy/http2/h	Lcom/xk72/proxy/http2/f;	b	field_3429
 FIELD	com/xk72/proxy/http2/h	Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint;	c	field_3430
 CLASS	com/xk72/proxy/http2/i	com/xk72/proxy/http2/i
 FIELD	com/xk72/proxy/http2/i	Lcom/xk72/proxy/i;	a	field_3431
-FIELD	com/xk72/proxy/http2/i	Lcom/xk72/proxy/http2/f;	b	field_3432
-FIELD	com/xk72/proxy/http2/i	Lcom/xk72/proxy/http2/Http2OutputStream;	c	field_3433
+FIELD	com/xk72/proxy/http2/i	Lcom/xk72/proxy/http2/f;	b	http2InputStream
+FIELD	com/xk72/proxy/http2/i	Lcom/xk72/proxy/http2/Http2OutputStream;	c	http2OutputStream
 METHOD	com/xk72/proxy/http2/i	()Lcom/xk72/proxy/http2/f;	j	method_3363
 METHOD	com/xk72/proxy/http2/i	()Lcom/xk72/proxy/http2/Http2OutputStream;	k	method_3364
 CLASS	com/xk72/proxy/http2/j	com/xk72/proxy/http2/j
@@ -14002,7 +14002,7 @@ FIELD	com/xk72/proxy/http2/q	Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoi
 FIELD	com/xk72/proxy/http2/q	Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint;	e	field_3445
 FIELD	com/xk72/proxy/http2/q	Lcom/xk72/proxy/http2/u;	f	field_3446
 FIELD	com/xk72/proxy/http2/q	Lcom/xk72/proxy/http2/r;	g	field_3447
-METHOD	com/xk72/proxy/http2/q	()Ljava/io/IOException;	a	method_3365
+METHOD	com/xk72/proxy/http2/q	()Ljava/io/IOException;	a	getFrameHandlerError
 METHOD	com/xk72/proxy/http2/q	(Lcom/xk72/proxy/http2/Frame;)Lcom/xk72/proxy/http2/Frame;	a	method_3366
 METHOD	com/xk72/proxy/http2/q	(Lcom/xk72/proxy/http2/Frame;Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint;)V	a	method_3367
 METHOD	com/xk72/proxy/http2/q	()V	run	run
@@ -14019,12 +14019,12 @@ CLASS	com/xk72/proxy/http2/t	com/xk72/proxy/http2/Http2ProxyHandler$StreamHandle
 FIELD	com/xk72/proxy/http2/t	Ljava/util/logging/Logger;	a	LOGGER
 FIELD	com/xk72/proxy/http2/t	Ljava/lang/String;	b	field_3449
 FIELD	com/xk72/proxy/http2/t	Lcom/xk72/proxy/http2/y;	c	field_3450
-FIELD	com/xk72/proxy/http2/t	Lcom/xk72/proxy/http/f;	d	field_3451
+FIELD	com/xk72/proxy/http2/t	Lcom/xk72/proxy/http/f;	d	proxyHandler
 FIELD	com/xk72/proxy/http2/t	I	e	field_3452
 FIELD	com/xk72/proxy/http2/t	Lcom/xk72/proxy/http2/i;	f	field_3453
 FIELD	com/xk72/proxy/http2/t	Lcom/xk72/proxy/http2/v;	g	field_3454
 FIELD	com/xk72/proxy/http2/t	Lcom/xk72/proxy/Connection;	h	connection
-METHOD	com/xk72/proxy/http2/t	()V	a	method_3375
+METHOD	com/xk72/proxy/http2/t	()V	a	enqueue
 METHOD	com/xk72/proxy/http2/t	()I	b	method_3376
 METHOD	com/xk72/proxy/http2/t	()Lcom/xk72/proxy/http2/i;	c	method_3377
 METHOD	com/xk72/proxy/http2/t	()Lcom/xk72/proxy/http2/v;	d	method_3378
@@ -14036,18 +14036,18 @@ METHOD	com/xk72/proxy/http2/u	(II)Lcom/xk72/proxy/http2/s;	a	method_3381
 METHOD	com/xk72/proxy/http2/u	(I)Lcom/xk72/proxy/http2/s;	b	method_3382
 METHOD	com/xk72/proxy/http2/u	(I)Lcom/xk72/proxy/http2/s;	c	method_3383
 CLASS	com/xk72/proxy/http2/v	com/xk72/proxy/http2/v
-FIELD	com/xk72/proxy/http2/v	Lcom/xk72/proxy/r;	a	field_3456
-FIELD	com/xk72/proxy/http2/v	Lcom/xk72/proxy/ProxyEvent;	b	field_3457
+FIELD	com/xk72/proxy/http2/v	Lcom/xk72/proxy/r;	a	remoteConnection
+FIELD	com/xk72/proxy/http2/v	Lcom/xk72/proxy/ProxyEvent;	b	proxyEvent
 FIELD	com/xk72/proxy/http2/v	Z	c	field_3458
-FIELD	com/xk72/proxy/http2/v	Lcom/xk72/proxy/http2/f;	d	field_3459
-FIELD	com/xk72/proxy/http2/v	Lcom/xk72/proxy/http2/Http2OutputStream;	e	field_3460
+FIELD	com/xk72/proxy/http2/v	Lcom/xk72/proxy/http2/f;	d	h2InputStream
+FIELD	com/xk72/proxy/http2/v	Lcom/xk72/proxy/http2/Http2OutputStream;	e	h2OutputStream
 FIELD	com/xk72/proxy/http2/v	Lcom/xk72/proxy/http2/w;	f	field_3461
-FIELD	com/xk72/proxy/http2/v	Z	g	field_3462
+FIELD	com/xk72/proxy/http2/v	Z	g	active
 METHOD	com/xk72/proxy/http2/v	(Ljava/lang/StringBuilder;Ljava/lang/String;I)Ljava/lang/StringBuilder;	a	method_3384
 METHOD	com/xk72/proxy/http2/v	([I)Ljava/lang/String;	a	method_3385
 METHOD	com/xk72/proxy/http2/v	(Lcom/xk72/proxy/ProxyEvent;)V	d	method_3386
-METHOD	com/xk72/proxy/http2/v	()Lcom/xk72/proxy/http2/f;	j	method_3387
-METHOD	com/xk72/proxy/http2/v	()Lcom/xk72/proxy/http2/Http2OutputStream;	k	method_3388
+METHOD	com/xk72/proxy/http2/v	()Lcom/xk72/proxy/http2/f;	j	getHttp2InputStream
+METHOD	com/xk72/proxy/http2/v	()Lcom/xk72/proxy/http2/Http2OutputStream;	k	getHttp2OutputStream
 CLASS	com/xk72/proxy/http2/w	com/xk72/proxy/http2/w
 METHOD	com/xk72/proxy/http2/w	(Lcom/xk72/proxy/ProxyEvent;)V	a	method_3389
 CLASS	com/xk72/proxy/http2/x	com/xk72/proxy/http2/x
@@ -14416,7 +14416,7 @@ METHOD	com/xk72/proxy/q	(Ljava/net/InetSocketAddress;)V	a	connect
 METHOD	com/xk72/proxy/q	()Ljava/util/List;	c	getExternalNetAddresses
 CLASS	com/xk72/proxy/r	com/xk72/proxy/IProxyRemoteConnection
 METHOD	com/xk72/proxy/r	()V	a	close
-METHOD	com/xk72/proxy/r	(Lcom/xk72/proxy/ProxyEvent;)V	a_	method_3532
+METHOD	com/xk72/proxy/r	(Lcom/xk72/proxy/ProxyEvent;)V	a_	reconnect
 METHOD	com/xk72/proxy/r	()Z	b	isSocketInitialized
 METHOD	com/xk72/proxy/r	(Lcom/xk72/proxy/ProxyEvent;)Z	b	method_3534
 METHOD	com/xk72/proxy/r	(Lcom/xk72/proxy/ProxyEvent;)V	c	method_3535
@@ -14463,8 +14463,8 @@ CLASS	com/xk72/proxy/reverse/d	com/xk72/proxy/reverse/d
 FIELD	com/xk72/proxy/reverse/d	Lcom/xk72/proxy/reverse/ReverseProxyServer;	a	reverseProxyServer
 CLASS	com/xk72/proxy/reverse/e	com/xk72/proxy/reverse/e
 FIELD	com/xk72/proxy/reverse/e	Ljava/lang/String;	a	field_3563
-FIELD	com/xk72/proxy/reverse/e	Lcom/xk72/net/Location;	b	field_3564
-FIELD	com/xk72/proxy/reverse/e	Lcom/xk72/net/Location;	c	field_3565
+FIELD	com/xk72/proxy/reverse/e	Lcom/xk72/net/Location;	b	sourceLocation
+FIELD	com/xk72/proxy/reverse/e	Lcom/xk72/net/Location;	c	destLocation
 FIELD	com/xk72/proxy/reverse/e	Lcom/xk72/proxy/reverse/d;	d	field_3566
 CLASS	com/xk72/proxy/s	com/xk72/proxy/CharlesExtendedSocket
 FIELD	com/xk72/proxy/s	Z	a	canReset
@@ -14526,12 +14526,12 @@ METHOD	com/xk72/proxy/socks/server/a	(Ljava/io/DataOutputStream;Ljava/net/InetAd
 METHOD	com/xk72/proxy/socks/server/a	(Lcom/xk72/proxy/i;Ljava/io/DataInputStream;Ljava/io/DataOutputStream;)V	b	method_3590
 METHOD	com/xk72/proxy/socks/server/a	(Lcom/xk72/proxy/i;Ljava/io/DataInputStream;Ljava/io/DataOutputStream;Ljava/lang/String;Ljava/net/InetAddress;II)V	b	method_3591
 CLASS	com/xk72/proxy/socks/server/b	com/xk72/proxy/socks/server/b
-FIELD	com/xk72/proxy/socks/server/b	Ljava/io/DataOutputStream;	a	field_3593
+FIELD	com/xk72/proxy/socks/server/b	Ljava/io/DataOutputStream;	a	dataOutputStream
 FIELD	com/xk72/proxy/socks/server/b	I	b	field_3594
 FIELD	com/xk72/proxy/socks/server/b	Lcom/xk72/proxy/socks/server/a;	c	field_3595
 CLASS	com/xk72/proxy/ssl/A	com/xk72/proxy/ssl/A
-FIELD	com/xk72/proxy/ssl/A	Lcom/xk72/proxy/ssl/w;	a	field_3596
-FIELD	com/xk72/proxy/ssl/A	Lcom/xk72/proxy/ProxyEvent;	b	field_3597
+FIELD	com/xk72/proxy/ssl/A	Lcom/xk72/proxy/ssl/w;	a	sslRemoteConnection
+FIELD	com/xk72/proxy/ssl/A	Lcom/xk72/proxy/ProxyEvent;	b	proxyEvent
 FIELD	com/xk72/proxy/ssl/A	Lcom/xk72/proxy/http/a;	c	field_3598
 FIELD	com/xk72/proxy/ssl/A	Z	d	field_3599
 METHOD	com/xk72/proxy/ssl/A	()Z	a	method_3592
@@ -14542,11 +14542,11 @@ CLASS	com/xk72/proxy/ssl/C	com/xk72/proxy/ssl/C
 FIELD	com/xk72/proxy/ssl/C	Lcom/xk72/proxy/ProxyEvent;	a	proxyEvent
 FIELD	com/xk72/proxy/ssl/C	Lcom/xk72/proxy/ssl/B;	b	field_3602
 CLASS	com/xk72/proxy/ssl/D	com/xk72/proxy/ssl/D
-FIELD	com/xk72/proxy/ssl/D	Lcom/xk72/proxy/ssl/SSLRecordParser;	a	field_3603
+FIELD	com/xk72/proxy/ssl/D	Lcom/xk72/proxy/ssl/SSLRecordParser;	a	sslRecordParser
 CLASS	com/xk72/proxy/ssl/E	com/xk72/proxy/ssl/E
 FIELD	com/xk72/proxy/ssl/E	Lcom/xk72/proxy/ProxyEvent;	a	field_3604
 FIELD	com/xk72/proxy/ssl/E	Lcom/xk72/proxy/ssl/D;	b	field_3605
-CLASS	com/xk72/proxy/ssl/F	com/xk72/proxy/ssl/F
+CLASS	com/xk72/proxy/ssl/F	com/xk72/proxy/ssl/ClientHello
 FIELD	com/xk72/proxy/ssl/F	Lcom/xk72/proxy/ssl/f;	a	field_3606
 FIELD	com/xk72/proxy/ssl/F	[B	b	clientProposedSslSessionID
 FIELD	com/xk72/proxy/ssl/F	[Lcom/xk72/proxy/ssl/b;	c	clientProposedCipherSuites
@@ -14567,16 +14567,16 @@ FIELD	com/xk72/proxy/ssl/G	I	d	field_3615
 FIELD	com/xk72/proxy/ssl/G	I	e	field_3616
 METHOD	com/xk72/proxy/ssl/G	(Lcom/xk72/proxy/io/m;)V	a	method_3599
 CLASS	com/xk72/proxy/ssl/H	com/xk72/proxy/ssl/H
-FIELD	com/xk72/proxy/ssl/H	Lcom/xk72/proxy/ssl/F;	a	field_3617
+FIELD	com/xk72/proxy/ssl/H	Lcom/xk72/proxy/ssl/F;	a	clientHello
 CLASS	com/xk72/proxy/ssl/I	com/xk72/proxy/ssl/I
 FIELD	com/xk72/proxy/ssl/I	Z	b	field_3618
 CLASS	com/xk72/proxy/ssl/J	com/xk72/proxy/ssl/J
-FIELD	com/xk72/proxy/ssl/J	Lcom/xk72/proxy/ssl/f;	a	field_3619
+FIELD	com/xk72/proxy/ssl/J	Lcom/xk72/proxy/ssl/f;	a	sslVersion
 FIELD	com/xk72/proxy/ssl/J	[B	b	sslSessionId
 FIELD	com/xk72/proxy/ssl/J	Ljava/lang/String;	c	alpnProtocol
 FIELD	com/xk72/proxy/ssl/J	Ljava/lang/String;	d	cipherSuite
 FIELD	com/xk72/proxy/ssl/J	Ljava/util/List;	e	serverExtensions
-METHOD	com/xk72/proxy/ssl/J	()Lcom/xk72/proxy/ssl/f;	a	method_3600
+METHOD	com/xk72/proxy/ssl/J	()Lcom/xk72/proxy/ssl/f;	a	getSslVersion
 METHOD	com/xk72/proxy/ssl/J	()[B	b	getSslSessionId
 METHOD	com/xk72/proxy/ssl/J	()Ljava/lang/String;	c	getAlpnProtocol
 METHOD	com/xk72/proxy/ssl/J	()Ljava/lang/String;	d	getCipherSuite
@@ -14584,12 +14584,12 @@ METHOD	com/xk72/proxy/ssl/J	()Ljava/util/List;	e	getServerExtensions
 CLASS	com/xk72/proxy/ssl/K	com/xk72/proxy/ssl/K
 METHOD	com/xk72/proxy/ssl/K	()Z	e	method_3605
 CLASS	com/xk72/proxy/ssl/L	com/xk72/proxy/ssl/L
-FIELD	com/xk72/proxy/ssl/L	Lcom/xk72/proxy/ssl/SSLRecordParser;	a	field_3624
+FIELD	com/xk72/proxy/ssl/L	Lcom/xk72/proxy/ssl/SSLRecordParser;	a	sslRecordParser
 METHOD	com/xk72/proxy/ssl/L	()I	read	read
 METHOD	com/xk72/proxy/ssl/L	([B)I	read	read
 METHOD	com/xk72/proxy/ssl/L	([BII)I	read	read
 CLASS	com/xk72/proxy/ssl/M	com/xk72/proxy/ssl/M
-FIELD	com/xk72/proxy/ssl/M	Lcom/xk72/proxy/ssl/SSLRecordParser;	a	field_3625
+FIELD	com/xk72/proxy/ssl/M	Lcom/xk72/proxy/ssl/SSLRecordParser;	a	sslRecordParser
 METHOD	com/xk72/proxy/ssl/M	(I)V	write	write
 METHOD	com/xk72/proxy/ssl/M	([B)V	write	write
 METHOD	com/xk72/proxy/ssl/M	([BII)V	write	write
@@ -14619,9 +14619,9 @@ METHOD	com/xk72/proxy/ssl/P	(Lcom/xk72/proxy/ssl/N;)Z	a	method_3609
 METHOD	com/xk72/proxy/ssl/P	(Lcom/xk72/proxy/ssl/Q;)V	a	method_3610
 METHOD	com/xk72/proxy/ssl/P	(Lcom/xk72/proxy/ssl/N;)V	b	method_3611
 CLASS	com/xk72/proxy/ssl/Q	com/xk72/proxy/ssl/Q
-FIELD	com/xk72/proxy/ssl/Q	I	a	field_3631
-FIELD	com/xk72/proxy/ssl/Q	I	b	field_3632
-FIELD	com/xk72/proxy/ssl/Q	Z	c	field_3633
+FIELD	com/xk72/proxy/ssl/Q	I	a	cipher
+FIELD	com/xk72/proxy/ssl/Q	I	b	protocol
+FIELD	com/xk72/proxy/ssl/Q	Z	c	v2Hello
 METHOD	com/xk72/proxy/ssl/Q	()Lcom/xk72/proxy/ssl/Q;	a	method_3612
 METHOD	com/xk72/proxy/ssl/Q	(Lcom/xk72/proxy/ssl/Q;)V	a	method_3613
 METHOD	com/xk72/proxy/ssl/Q	()V	b	method_3614
@@ -14691,7 +14691,7 @@ FIELD	com/xk72/proxy/ssl/SSLHandshakeParser	Z	g	field_3658
 FIELD	com/xk72/proxy/ssl/SSLHandshakeParser	J	h	field_3659
 METHOD	com/xk72/proxy/ssl/SSLHandshakeParser	()J	a	method_3641
 METHOD	com/xk72/proxy/ssl/SSLHandshakeParser	(B[B)V	a	method_3642
-METHOD	com/xk72/proxy/ssl/SSLHandshakeParser	(Lcom/xk72/proxy/ssl/F;)V	a	method_3643
+METHOD	com/xk72/proxy/ssl/SSLHandshakeParser	(Lcom/xk72/proxy/ssl/F;)V	a	setClientHello
 METHOD	com/xk72/proxy/ssl/SSLHandshakeParser	(Lcom/xk72/proxy/ssl/J;)V	a	method_3644
 METHOD	com/xk72/proxy/ssl/SSLHandshakeParser	(Ljava/util/List;)V	a	setServerCertificates
 METHOD	com/xk72/proxy/ssl/SSLHandshakeParser	(J)V	b	method_3646
@@ -14841,19 +14841,19 @@ METHOD	com/xk72/proxy/ssl/c	()I	hashCode	hashCode
 CLASS	com/xk72/proxy/ssl/d	com/xk72/proxy/ssl/d
 METHOD	com/xk72/proxy/ssl/d	()V	a	method_3685
 METHOD	com/xk72/proxy/ssl/d	()V	b	method_3686
-CLASS	com/xk72/proxy/ssl/e	com/xk72/proxy/ssl/e
+CLASS	com/xk72/proxy/ssl/e	com/xk72/proxy/ssl/DefaultX509TrustManager
 METHOD	com/xk72/proxy/ssl/e	([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V	checkClientTrusted	checkClientTrusted
 METHOD	com/xk72/proxy/ssl/e	([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V	checkServerTrusted	checkServerTrusted
 METHOD	com/xk72/proxy/ssl/e	()[Ljava/security/cert/X509Certificate;	getAcceptedIssuers	getAcceptedIssuers
-CLASS	com/xk72/proxy/ssl/f	com/xk72/proxy/ssl/f
-FIELD	com/xk72/proxy/ssl/f	[Lcom/xk72/proxy/ssl/f;	a	field_3733
-FIELD	com/xk72/proxy/ssl/f	I	b	field_3734
-FIELD	com/xk72/proxy/ssl/f	I	c	field_3735
+CLASS	com/xk72/proxy/ssl/f	com/xk72/proxy/ssl/SSLVersion
+FIELD	com/xk72/proxy/ssl/f	[Lcom/xk72/proxy/ssl/f;	a	VERSIONS
+FIELD	com/xk72/proxy/ssl/f	I	b	major
+FIELD	com/xk72/proxy/ssl/f	I	c	minor
 FIELD	com/xk72/proxy/ssl/f	Ljava/lang/String;	d	name
 METHOD	com/xk72/proxy/ssl/f	()Ljava/lang/String;	a	getName
-METHOD	com/xk72/proxy/ssl/f	(II)Lcom/xk72/proxy/ssl/f;	a	method_3688
-METHOD	com/xk72/proxy/ssl/f	(Lcom/xk72/proxy/ssl/f;)I	a	method_3689
-METHOD	com/xk72/proxy/ssl/f	(Ljava/lang/String;)Lcom/xk72/proxy/ssl/f;	a	method_3690
+METHOD	com/xk72/proxy/ssl/f	(II)Lcom/xk72/proxy/ssl/f;	a	fromVersionNumbers
+METHOD	com/xk72/proxy/ssl/f	(Lcom/xk72/proxy/ssl/f;)I	a	compareTo
+METHOD	com/xk72/proxy/ssl/f	(Ljava/lang/String;)Lcom/xk72/proxy/ssl/f;	a	fromVersionName
 METHOD	com/xk72/proxy/ssl/f	(Ljava/lang/Object;)I	compareTo	compareTo
 METHOD	com/xk72/proxy/ssl/f	()Ljava/lang/String;	toString	toString
 CLASS	com/xk72/proxy/ssl/g	com/xk72/proxy/ssl/g
@@ -15075,8 +15075,8 @@ FIELD	com/xk72/proxy/websocket/d	Lcom/xk72/proxy/websocket/c;	c	responseCopier
 CLASS	com/xk72/proxy/websocket/e	com/xk72/proxy/websocket/e
 METHOD	com/xk72/proxy/websocket/e	()Lcom/xk72/proxy/websocket/m;	a	method_3737
 METHOD	com/xk72/proxy/websocket/e	()Lcom/xk72/proxy/websocket/m;	b	method_3738
-METHOD	com/xk72/proxy/websocket/e	()Lcom/xk72/proxy/websocket/m;	c	method_3739
-METHOD	com/xk72/proxy/websocket/e	()Lcom/xk72/proxy/websocket/m;	d	method_3740
+METHOD	com/xk72/proxy/websocket/e	()Lcom/xk72/proxy/websocket/m;	c	getClientInflater
+METHOD	com/xk72/proxy/websocket/e	()Lcom/xk72/proxy/websocket/m;	d	getServerInflater
 CLASS	com/xk72/proxy/websocket/f	com/xk72/proxy/websocket/f
 FIELD	com/xk72/proxy/websocket/f	[Lcom/xk72/proxy/websocket/e;	a	field_3827
 METHOD	com/xk72/proxy/websocket/f	(Lcom/xk72/proxy/websocket/g;)Lcom/xk72/proxy/websocket/e;	a	method_3741
@@ -15381,7 +15381,7 @@ FIELD	com/xk72/util/HttpCache$1	J	serialVersionUID	serialVersionUID
 FIELD	com/xk72/util/HttpCache$1	Lcom/xk72/util/r;	this$0	this$0
 FIELD	com/xk72/util/HttpCache$1	I	val$cacheLimit	val$cacheLimit
 METHOD	com/xk72/util/HttpCache$1	(Ljava/util/Map$Entry;)Z	removeEldestEntry	removeEldestEntry
-CLASS	com/xk72/util/I	com/xk72/util/I
+CLASS	com/xk72/util/I	com/xk72/util/RegexUtils
 FIELD	com/xk72/util/I	I	a	field_3937
 FIELD	com/xk72/util/I	Ljava/util/Map;	b	field_3938
 METHOD	com/xk72/util/I	(C)Z	a	method_3836
@@ -15484,7 +15484,6 @@ METHOD	com/xk72/util/N	(Lcom/thoughtworks/xstream/io/HierarchicalStreamReader;Lc
 CLASS	com/xk72/util/O	com/xk72/util/JavaLoggingLevelValueConverter
 METHOD	com/xk72/util/O	(Ljava/lang/Class;)Z	canConvert	canConvert
 METHOD	com/xk72/util/O	(Ljava/lang/String;)Ljava/lang/Object;	fromString	fromString
-CLASS	com/xk72/util/RegexUtils	com/xk72/util/RegexUtils
 CLASS	com/xk72/util/RegexUtils$1	com/xk72/util/RegexUtils$1
 FIELD	com/xk72/util/RegexUtils$1	J	serialVersionUID	serialVersionUID
 METHOD	com/xk72/util/RegexUtils$1	(Ljava/util/Map$Entry;)Z	removeEldestEntry	removeEldestEntry
