@@ -7903,12 +7903,12 @@ METHOD	com/xk72/charles/gui/transaction/q	(Ljava/beans/PropertyChangeEvent;)V	pr
 CLASS	com/xk72/charles/gui/transaction/r	com/xk72/charles/gui/transaction/r
 METHOD	com/xk72/charles/gui/transaction/r	(Lcom/xk72/charles/gui/transaction/viewers/TransactionViewer;Lcom/xk72/charles/gui/transaction/viewers/TransactionViewer;)I	a	method_1612
 METHOD	com/xk72/charles/gui/transaction/r	(Ljava/lang/Object;Ljava/lang/Object;)I	compare	compare
-CLASS	com/xk72/charles/gui/transaction/s	com/xk72/charles/gui/transaction/s
-METHOD	com/xk72/charles/gui/transaction/s	()Ljava/util/List;	a	getHeaderBasedViewers
+CLASS	com/xk72/charles/gui/transaction/s	com/xk72/charles/gui/transaction/TransactionViewersRegistry
+METHOD	com/xk72/charles/gui/transaction/s	()Ljava/util/List;	a	getRequestHeaderBasedViewers
 METHOD	com/xk72/charles/gui/transaction/s	(Z)Ljava/util/List;	a	method_1614
-METHOD	com/xk72/charles/gui/transaction/s	()Ljava/util/List;	b	method_1615
-METHOD	com/xk72/charles/gui/transaction/s	()Ljava/util/List;	c	method_1616
-METHOD	com/xk72/charles/gui/transaction/s	()Ljava/util/List;	d	method_1617
+METHOD	com/xk72/charles/gui/transaction/s	()Ljava/util/List;	b	getResponseHeaderBasedViewers
+METHOD	com/xk72/charles/gui/transaction/s	()Ljava/util/List;	c	getRequestBodyViewers
+METHOD	com/xk72/charles/gui/transaction/s	()Ljava/util/List;	d	getResponseBodyViewers
 METHOD	com/xk72/charles/gui/transaction/s	()Ljava/util/List;	e	method_1618
 METHOD	com/xk72/charles/gui/transaction/s	()Ljava/util/List;	f	method_1619
 METHOD	com/xk72/charles/gui/transaction/s	()Ljava/util/List;	g	method_1620
@@ -8209,16 +8209,16 @@ CLASS	com/xk72/charles/gui/transaction/viewers/gen/f	com/xk72/charles/gui/transa
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/f	Lcom/xk72/charles/gui/transaction/lib/HexAsciiTextPane;	e	textPane
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/g	com/xk72/charles/gui/transaction/viewers/gen/FLVBodyViewer
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/g	Ljava/util/logging/Logger;	e	LOGGER
-FIELD	com/xk72/charles/gui/transaction/viewers/gen/g	Ljavax/swing/JTable;	f	field_1965
-FIELD	com/xk72/charles/gui/transaction/viewers/gen/g	Lcom/xk72/charles/lib/j;	g	field_1966
+FIELD	com/xk72/charles/gui/transaction/viewers/gen/g	Ljavax/swing/JTable;	f	table
+FIELD	com/xk72/charles/gui/transaction/viewers/gen/g	Lcom/xk72/charles/lib/j;	g	formatter
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/h	com/xk72/charles/gui/transaction/viewers/gen/HexBodyViewer
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/h	Lcom/xk72/charles/gui/transaction/lib/HexAsciiTextPane;	e	hexAsciiTextPane
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/i	com/xk72/charles/gui/transaction/viewers/gen/HTMLBodyViewer
-CLASS	com/xk72/charles/gui/transaction/viewers/gen/j	com/xk72/charles/gui/transaction/viewers/gen/j
+CLASS	com/xk72/charles/gui/transaction/viewers/gen/j	com/xk72/charles/gui/transaction/viewers/gen/HTMLEditorPaneHelper
 CLASS	com/xk72/charles/gui/transaction/viewers/gen/k	com/xk72/charles/gui/transaction/viewers/gen/ImageBodyViewer
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/k	Ljava/util/logging/Logger;	e	LOGGER
 FIELD	com/xk72/charles/gui/transaction/viewers/gen/k	Ljavax/imageio/ImageReader;	f	imageReader
-METHOD	com/xk72/charles/gui/transaction/viewers/gen/k	(Ljavax/imageio/ImageReader;Ljava/io/InputStream;)Ljava/awt/image/BufferedImage;	a	method_1683
+METHOD	com/xk72/charles/gui/transaction/viewers/gen/k	(Ljavax/imageio/ImageReader;Ljava/io/InputStream;)Ljava/awt/image/BufferedImage;	a	readImage
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/k	(Lcom/xk72/charles/model/Transaction;)Z	b	method_1684
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/k	()Ljavax/imageio/ImageReader;	f	createImageReader
 METHOD	com/xk72/charles/gui/transaction/viewers/gen/k	(Lcom/xk72/charles/model/Transaction;I)Z	f	method_1686
@@ -13636,8 +13636,8 @@ METHOD	com/xk72/proxy/http/k	()Ljava/lang/String;	l	toString
 CLASS	com/xk72/proxy/http/l	com/xk72/proxy/http/l
 FIELD	com/xk72/proxy/http/l	[I	a	CONNECTION_ROUTE_ORDINALS
 CLASS	com/xk72/proxy/http/m	com/xk72/proxy/http/m
-FIELD	com/xk72/proxy/http/m	Ljava/lang/String;	N	field_3277
-FIELD	com/xk72/proxy/http/m	Ljava/lang/String;	O	field_3278
+FIELD	com/xk72/proxy/http/m	Ljava/lang/String;	N	NEGOTIATE
+FIELD	com/xk72/proxy/http/m	Ljava/lang/String;	O	NTLM
 FIELD	com/xk72/proxy/http/m	I	P	field_3279
 METHOD	com/xk72/proxy/http/m	(Lcom/xk72/proxy/Fields;)Z	a	method_3228
 METHOD	com/xk72/proxy/http/m	(Lcom/xk72/proxy/Fields;Lcom/xk72/proxy/c;)Lcom/xk72/proxy/http/n;	a	method_3229
