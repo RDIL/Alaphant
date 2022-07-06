@@ -169,9 +169,19 @@ task shadowJar(type: Jar, dependsOn: remapJar) {
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
 
+task mappingsJar(type: Jar, dependsOn: remapJar) {
+    group = "build"
+    description = "Create a Jar containing only the Charles mappings (no sources/classes included)."
+    archiveClassifier = "mappings"
+
+    from "LICENSE"
+    from "mappings/mappings.tiny"
+}
+
 artifacts {
     archives jar
     archives shadowJar
+    archives mappingsJar
 }
 
 tasks.withType(AbstractArchiveTask) {
