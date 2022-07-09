@@ -162,6 +162,7 @@ task shadowJar(type: Jar, dependsOn: remapJar) {
     archiveClassifier = "all"
 
     from "LICENSE"
+    from compileJava.outputs
     from configurations.shadow.collect {
         it.isDirectory() ? it : zipTree(it)
     }

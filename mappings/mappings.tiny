@@ -3,9 +3,9 @@ CLASS	com/google/protobuf/a	com/google/protobuf/a
 METHOD	com/google/protobuf/a	(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Ljava/lang/Object;	a	method_1
 METHOD	com/google/protobuf/a	(Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Ljava/lang/String;	a	method_2
 METHOD	com/google/protobuf/a	(Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/String;)Ljava/lang/Object;	a	method_3
-CLASS	com/google/protobuf/b	com/google/protobuf/b
-FIELD	com/google/protobuf/b	[I	a	field_1
-FIELD	com/google/protobuf/b	[I	b	field_2
+CLASS	com/google/protobuf/b	com/google/protobuf/Descriptor_Type_Ordinals
+FIELD	com/google/protobuf/b	[I	a	JAVATYPE_ORDINALS
+FIELD	com/google/protobuf/b	[I	b	ORDINALS
 CLASS	com/xk72/a/a	com/xk72/a/a
 FIELD	com/xk72/a/a	Ljava/util/concurrent/locks/ReentrantLock;	a	field_3
 FIELD	com/xk72/a/a	Ljava/util/Map;	b	field_4
@@ -1951,14 +1951,14 @@ METHOD	com/xk72/charles/gui/B	()Ljava/lang/String;	getID	getID
 METHOD	com/xk72/charles/gui/B	()Ljava/lang/String;	getName	getName
 METHOD	com/xk72/charles/gui/B	()Z	isNativeLookAndFeel	isNativeLookAndFeel
 METHOD	com/xk72/charles/gui/B	()Z	isSupportedLookAndFeel	isSupportedLookAndFeel
-CLASS	com/xk72/charles/gui/C	com/xk72/charles/gui/C
-FIELD	com/xk72/charles/gui/C	Ljava/lang/String;	a	field_397
-FIELD	com/xk72/charles/gui/C	Z	b	field_398
-METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/CharlesContext;)Ljavax/swing/AbstractButton;	a	method_473
-METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/gui/CharlesFrame;)Ljavax/swing/JToolBar;	a	method_474
-METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/gui/CharlesFrame;Lcom/xk72/charles/u;)Ljavax/swing/AbstractButton;	a	method_475
+CLASS	com/xk72/charles/gui/C	com/xk72/charles/gui/CharlesToolbar
+FIELD	com/xk72/charles/gui/C	Ljava/lang/String;	a	toolbarId
+FIELD	com/xk72/charles/gui/C	Z	b	aquaDarkTheme
+METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/CharlesContext;)Ljavax/swing/AbstractButton;	a	getToolsButton
+METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/gui/CharlesFrame;)Ljavax/swing/JToolBar;	a	createToolbar
+METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/gui/CharlesFrame;Lcom/xk72/charles/u;)Ljavax/swing/AbstractButton;	a	getRecordingButton
 METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/gui/R;Ljava/lang/String;Ljava/lang/String;)Ljavax/swing/AbstractButton;	a	method_476
-METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/u;)Ljavax/swing/AbstractButton;	a	method_477
+METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/u;)Ljavax/swing/AbstractButton;	a	getThrottlingButton
 METHOD	com/xk72/charles/gui/C	(Ljava/awt/event/ItemListener;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Ljavax/swing/AbstractButton;	a	method_478
 METHOD	com/xk72/charles/gui/C	(Ljavax/swing/AbstractButton;Ljava/lang/String;)V	a	method_479
 METHOD	com/xk72/charles/gui/C	(Ljavax/swing/AbstractButton;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljavax/swing/AbstractButton;	a	method_480
@@ -1966,9 +1966,9 @@ METHOD	com/xk72/charles/gui/C	(Ljavax/swing/AbstractButton;Ljavax/swing/Icon;Lja
 METHOD	com/xk72/charles/gui/C	(Ljavax/swing/Action;Ljava/lang/String;Ljava/lang/String;)Ljavax/swing/AbstractButton;	a	method_482
 METHOD	com/xk72/charles/gui/C	(Ljavax/swing/Action;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljavax/swing/AbstractButton;	a	method_483
 METHOD	com/xk72/charles/gui/C	(Ljavax/swing/JToolBar;)V	a	addSeparator
-METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/CharlesContext;)Ljavax/swing/AbstractButton;	b	method_485
-METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/gui/CharlesFrame;)Ljavax/swing/AbstractButton;	b	method_486
-METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/u;)Ljavax/swing/AbstractButton;	b	method_487
+METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/CharlesContext;)Ljavax/swing/AbstractButton;	b	getBreakpointsButton
+METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/gui/CharlesFrame;)Ljavax/swing/AbstractButton;	b	getSettingsButton
+METHOD	com/xk72/charles/gui/C	(Lcom/xk72/charles/u;)Ljavax/swing/AbstractButton;	b	getSslProxyingButton
 METHOD	com/xk72/charles/gui/C	(Ljavax/swing/AbstractButton;Ljavax/swing/Icon;Ljavax/swing/Icon;Ljavax/swing/event/ChangeEvent;)V	b	method_488
 CLASS	com/xk72/charles/gui/CharlesFrame	com/xk72/charles/gui/CharlesFrame
 FIELD	com/xk72/charles/gui/CharlesFrame	Ljava/awt/Dimension;	a	MIN_SIZE
@@ -2072,24 +2072,24 @@ CLASS	com/xk72/charles/gui/CharlesFrame$30	com/xk72/charles/gui/CharlesFrame$Abo
 FIELD	com/xk72/charles/gui/CharlesFrame$30	Lcom/xk72/charles/gui/CharlesFrame;	this$0	this$0
 CLASS	com/xk72/charles/gui/D	com/xk72/charles/gui/D
 FIELD	com/xk72/charles/gui/D	Lcom/xk72/charles/CharlesContext;	a	chlsContext
-FIELD	com/xk72/charles/gui/D	Lcom/xk72/charles/gui/C;	b	field_401
+FIELD	com/xk72/charles/gui/D	Lcom/xk72/charles/gui/C;	b	charlesToolbar
 CLASS	com/xk72/charles/gui/E	com/xk72/charles/gui/CharlesToolActivationToggleListener
 FIELD	com/xk72/charles/gui/E	Lcom/xk72/charles/tools/lib/CharlesTool;	a	tool
 FIELD	com/xk72/charles/gui/E	Lcom/xk72/charles/gui/D;	b	field_403
 METHOD	com/xk72/charles/gui/E	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
 CLASS	com/xk72/charles/gui/F	com/xk72/charles/gui/F
 FIELD	com/xk72/charles/gui/F	Lcom/xk72/charles/config/ProxyConfiguration;	a	proxyConfig
-FIELD	com/xk72/charles/gui/F	Lcom/xk72/charles/u;	b	field_405
-FIELD	com/xk72/charles/gui/F	Lcom/xk72/charles/gui/C;	c	field_406
+FIELD	com/xk72/charles/gui/F	Lcom/xk72/charles/u;	b	proxyManager
+FIELD	com/xk72/charles/gui/F	Lcom/xk72/charles/gui/C;	c	charlesToolbar
 METHOD	com/xk72/charles/gui/F	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
-CLASS	com/xk72/charles/gui/G	com/xk72/charles/gui/G
-FIELD	com/xk72/charles/gui/G	Ljavax/swing/AbstractButton;	a	field_407
-FIELD	com/xk72/charles/gui/G	Lcom/xk72/charles/gui/C;	b	field_408
+CLASS	com/xk72/charles/gui/G	com/xk72/charles/gui/DecryptSSLPropertyChangeListener
+FIELD	com/xk72/charles/gui/G	Ljavax/swing/AbstractButton;	a	button
+FIELD	com/xk72/charles/gui/G	Lcom/xk72/charles/gui/C;	b	charlesToolbar
 METHOD	com/xk72/charles/gui/G	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/H	com/xk72/charles/gui/H
-FIELD	com/xk72/charles/gui/H	Lcom/xk72/charles/gui/R;	a	field_409
-FIELD	com/xk72/charles/gui/H	Ljavax/swing/JToggleButton;	b	field_410
-FIELD	com/xk72/charles/gui/H	Lcom/xk72/charles/gui/C;	c	field_411
+FIELD	com/xk72/charles/gui/H	Lcom/xk72/charles/gui/R;	a	popupProvider
+FIELD	com/xk72/charles/gui/H	Ljavax/swing/JToggleButton;	b	toggleButton
+FIELD	com/xk72/charles/gui/H	Lcom/xk72/charles/gui/C;	c	charlesToolbar
 METHOD	com/xk72/charles/gui/H	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
 CLASS	com/xk72/charles/gui/HelpJDialog	com/xk72/charles/gui/HelpJDialog
 FIELD	com/xk72/charles/gui/HelpJDialog	Ljava/lang/String;	body	body
@@ -2116,7 +2116,7 @@ CLASS	com/xk72/charles/gui/K	com/xk72/charles/gui/K
 FIELD	com/xk72/charles/gui/K	Lcom/xk72/charles/tools/breakpoints/IBreakpointsTool;	a	breakpointsTool
 FIELD	com/xk72/charles/gui/K	Lcom/xk72/charles/gui/C;	b	field_416
 METHOD	com/xk72/charles/gui/K	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
-CLASS	com/xk72/charles/gui/L	com/xk72/charles/gui/L
+CLASS	com/xk72/charles/gui/L	com/xk72/charles/gui/BreakpointsToolListener
 FIELD	com/xk72/charles/gui/L	Ljavax/swing/AbstractButton;	a	field_417
 FIELD	com/xk72/charles/gui/L	Lcom/xk72/charles/gui/C;	b	field_418
 CLASS	com/xk72/charles/gui/M	com/xk72/charles/gui/ProxyManagerIsThrottlingChangeListener
@@ -2133,24 +2133,24 @@ CLASS	com/xk72/charles/gui/MainWithClassLoader	com/xk72/charles/gui/MainWithClas
 METHOD	com/xk72/charles/gui/MainWithClassLoader	([Ljava/lang/String;)V	main	main
 CLASS	com/xk72/charles/gui/N	com/xk72/charles/gui/ToggleThrottlingListener
 FIELD	com/xk72/charles/gui/N	Ljavax/swing/AbstractButton;	a	field_423
-FIELD	com/xk72/charles/gui/N	Lcom/xk72/charles/gui/C;	b	field_424
+FIELD	com/xk72/charles/gui/N	Lcom/xk72/charles/gui/C;	b	charlesToolbar
 METHOD	com/xk72/charles/gui/N	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/NoCharlesFrameException	com/xk72/charles/gui/NoCharlesFrameException
 CLASS	com/xk72/charles/gui/O	com/xk72/charles/gui/O
-FIELD	com/xk72/charles/gui/O	Lcom/xk72/charles/gui/CharlesFrame;	a	field_425
-FIELD	com/xk72/charles/gui/O	Lcom/xk72/charles/u;	b	field_426
-FIELD	com/xk72/charles/gui/O	Lcom/xk72/charles/gui/C;	c	field_427
+FIELD	com/xk72/charles/gui/O	Lcom/xk72/charles/gui/CharlesFrame;	a	charlesFrame
+FIELD	com/xk72/charles/gui/O	Lcom/xk72/charles/u;	b	proxyManager
+FIELD	com/xk72/charles/gui/O	Lcom/xk72/charles/gui/C;	c	charlesToolbar
 METHOD	com/xk72/charles/gui/O	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
-CLASS	com/xk72/charles/gui/P	com/xk72/charles/gui/P
-FIELD	com/xk72/charles/gui/P	Ljavax/swing/AbstractButton;	a	field_428
-FIELD	com/xk72/charles/gui/P	Lcom/xk72/charles/gui/C;	b	field_429
+CLASS	com/xk72/charles/gui/P	com/xk72/charles/gui/RecordingSessionPropertyChangeListener
+FIELD	com/xk72/charles/gui/P	Ljavax/swing/AbstractButton;	a	button
+FIELD	com/xk72/charles/gui/P	Lcom/xk72/charles/gui/C;	b	charlesToolbar
 METHOD	com/xk72/charles/gui/P	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
-CLASS	com/xk72/charles/gui/Q	com/xk72/charles/gui/Q
-FIELD	com/xk72/charles/gui/Q	Ljavax/swing/AbstractButton;	a	field_430
-FIELD	com/xk72/charles/gui/Q	Lcom/xk72/charles/gui/C;	b	field_431
+CLASS	com/xk72/charles/gui/Q	com/xk72/charles/gui/SelectedFramePropertyChangeListener
+FIELD	com/xk72/charles/gui/Q	Ljavax/swing/AbstractButton;	a	button
+FIELD	com/xk72/charles/gui/Q	Lcom/xk72/charles/gui/C;	b	charlesToolbar
 METHOD	com/xk72/charles/gui/Q	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
-CLASS	com/xk72/charles/gui/R	com/xk72/charles/gui/R
-METHOD	com/xk72/charles/gui/R	()Ljavax/swing/JPopupMenu;	a	method_513
+CLASS	com/xk72/charles/gui/R	com/xk72/charles/gui/IPopupMenuProvider
+METHOD	com/xk72/charles/gui/R	()Ljavax/swing/JPopupMenu;	a	getPopupMenu
 CLASS	com/xk72/charles/gui/S	com/xk72/charles/gui/IconManager
 FIELD	com/xk72/charles/gui/S	Ljava/util/logging/Logger;	a	LOGGER
 FIELD	com/xk72/charles/gui/S	Ljava/util/Properties;	b	field_433
@@ -10475,7 +10475,7 @@ METHOD	com/xk72/charles/p	(Ljava/lang/String;)I	c	method_2447
 METHOD	com/xk72/charles/p	([B)[B	c	method_2448
 METHOD	com/xk72/charles/p	()Z	d	isRegistered
 METHOD	com/xk72/charles/p	(J)V	d	method_2450
-METHOD	com/xk72/charles/p	()Ljava/lang/String;	e	method_2451
+METHOD	com/xk72/charles/p	()Ljava/lang/String;	e	getDisplayType
 METHOD	com/xk72/charles/p	()I	f	method_2452
 METHOD	com/xk72/charles/p	()Lcom/xk72/charles/LicenseType;	g	getLicenseType
 CLASS	com/xk72/charles/publish/PublishTool	com/xk72/charles/publish/PublishTool
@@ -10512,8 +10512,8 @@ METHOD	com/xk72/charles/publish/f	(Lcom/xk72/charles/model/Transaction;)Ljava/la
 METHOD	com/xk72/charles/publish/f	(Ljava/lang/StringBuilder;Ljava/util/SortedSet;)V	a	addAndText
 METHOD	com/xk72/charles/publish/f	()Z	b	isOnlyOne
 METHOD	com/xk72/charles/publish/f	()Ljava/util/Map;	c	getTransactionTree
-CLASS	com/xk72/charles/q	com/xk72/charles/q
-FIELD	com/xk72/charles/q	[I	a	field_2520
+CLASS	com/xk72/charles/q	com/xk72/charles/LicenseType_Ordinals
+FIELD	com/xk72/charles/q	[I	a	ORDINALS
 CLASS	com/xk72/charles/r	com/xk72/charles/r
 FIELD	com/xk72/charles/r	Lcom/xk72/charles/Main;	a	field_2521
 METHOD	com/xk72/charles/r	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
