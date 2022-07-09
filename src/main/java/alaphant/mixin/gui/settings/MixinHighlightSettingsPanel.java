@@ -13,11 +13,11 @@ import java.awt.*;
 
 @Mixin(HighlightSettingsPanel.class)
 public abstract class MixinHighlightSettingsPanel {
-    private static @Shadow @Final @Mutable Color[] field_1233;
+    private static @Shadow @Final @Mutable Color[] HIGHLIGHT_COLORS;
 
     @Inject(method = "<clinit>", at = @At("TAIL"))
     private static void clinit(CallbackInfo ci) {
-        MixinHighlightSettingsPanel.field_1233 = new Color[]{
+        MixinHighlightSettingsPanel.HIGHLIGHT_COLORS = new Color[]{
                 null,
                 new Color(11789005),
                 new Color(16633260),
