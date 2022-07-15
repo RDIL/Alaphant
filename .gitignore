@@ -44,5 +44,6 @@ bin/
 logs
 target
 !target/.gitkeep
+!target/macos_jvm_args.txt
 .mixin.out
 charles.ico

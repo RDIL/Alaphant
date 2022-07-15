@@ -2,6 +2,7 @@
     "required": true,
     "package": "alaphant.mixin",
     "mixins": [
+        "MixinCharlesContext",
         "MixinMainWithClassLoader",
         "auth.MixinAuthorizationUtilsGenericAuthorization",
         "gui.settings.MixinHighlightSettingsPanel",
