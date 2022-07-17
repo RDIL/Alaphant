@@ -2112,20 +2112,20 @@ METHOD	com/xk72/charles/gui/I	(Ljavax/swing/event/PopupMenuEvent;)V	popupMenuWil
 CLASS	com/xk72/charles/gui/J	com/xk72/charles/gui/J
 FIELD	com/xk72/charles/gui/J	Lcom/xk72/charles/gui/CharlesFrame;	a	charlesFrame
 FIELD	com/xk72/charles/gui/J	Lcom/xk72/charles/gui/C;	b	field_414
-CLASS	com/xk72/charles/gui/K	com/xk72/charles/gui/K
+CLASS	com/xk72/charles/gui/K	com/xk72/charles/gui/ToolbarBreakpointsToggleListener
 FIELD	com/xk72/charles/gui/K	Lcom/xk72/charles/tools/breakpoints/IBreakpointsTool;	a	breakpointsTool
-FIELD	com/xk72/charles/gui/K	Lcom/xk72/charles/gui/C;	b	field_416
+FIELD	com/xk72/charles/gui/K	Lcom/xk72/charles/gui/C;	b	charlesToolbar
 METHOD	com/xk72/charles/gui/K	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
 CLASS	com/xk72/charles/gui/L	com/xk72/charles/gui/BreakpointsToolListener
 FIELD	com/xk72/charles/gui/L	Ljavax/swing/AbstractButton;	a	field_417
-FIELD	com/xk72/charles/gui/L	Lcom/xk72/charles/gui/C;	b	field_418
+FIELD	com/xk72/charles/gui/L	Lcom/xk72/charles/gui/C;	b	charlesToolbar
 CLASS	com/xk72/charles/gui/M	com/xk72/charles/gui/ProxyManagerIsThrottlingChangeListener
 FIELD	com/xk72/charles/gui/M	Lcom/xk72/charles/u;	a	proxyManager
-FIELD	com/xk72/charles/gui/M	Lcom/xk72/charles/gui/C;	b	field_420
+FIELD	com/xk72/charles/gui/M	Lcom/xk72/charles/gui/C;	b	charlesToolbar
 METHOD	com/xk72/charles/gui/M	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
 CLASS	com/xk72/charles/gui/Main	com/xk72/charles/gui/Main
 FIELD	com/xk72/charles/gui/Main	[Ljava/lang/String;	c	field_421
-FIELD	com/xk72/charles/gui/Main	Lcom/xk72/charles/gui/CharlesFrame;	d	field_422
+FIELD	com/xk72/charles/gui/Main	Lcom/xk72/charles/gui/CharlesFrame;	d	frame
 METHOD	com/xk72/charles/gui/Main	(Lcom/xk72/charles/gui/Main;Lcom/xk72/charles/CharlesContext;)V	a	method_511
 METHOD	com/xk72/charles/gui/Main	(Lcom/xk72/charles/gui/Main;Lcom/xk72/charles/CharlesContext;Ljava/util/List;)V	a	method_512
 METHOD	com/xk72/charles/gui/Main	([Ljava/lang/String;)V	main	main
@@ -2208,7 +2208,7 @@ METHOD	com/xk72/charles/gui/StatusPanelLabel	(Z)V	setAlt	setAlt
 METHOD	com/xk72/charles/gui/StatusPanelLabel	(Z)V	setEtched	setEtched
 METHOD	com/xk72/charles/gui/StatusPanelLabel	(Z)V	setProminent	setProminent
 CLASS	com/xk72/charles/gui/T	com/xk72/charles/gui/T
-FIELD	com/xk72/charles/gui/T	[I	a	field_436
+FIELD	com/xk72/charles/gui/T	[I	a	ORDINALS
 CLASS	com/xk72/charles/gui/U	com/xk72/charles/gui/CharlesGUIFileManager
 FIELD	com/xk72/charles/gui/U	Lcom/xk72/charles/CharlesContext;	a	context
 FIELD	com/xk72/charles/gui/U	Lcom/xk72/charles/gui/Main;	b	field_438
@@ -2221,16 +2221,16 @@ CLASS	com/xk72/charles/gui/W	com/xk72/charles/gui/W
 FIELD	com/xk72/charles/gui/W	Lcom/xk72/charles/gui/V;	a	field_441
 METHOD	com/xk72/charles/gui/W	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/X	com/xk72/charles/gui/X
-FIELD	com/xk72/charles/gui/X	Lcom/xk72/charles/gui/Main;	a	field_442
+FIELD	com/xk72/charles/gui/X	Lcom/xk72/charles/gui/Main;	a	main
 METHOD	com/xk72/charles/gui/X	()V	run	run
 CLASS	com/xk72/charles/gui/Y	com/xk72/charles/gui/Y
-FIELD	com/xk72/charles/gui/Y	Lcom/xk72/charles/gui/SplashWindow;	a	field_443
-FIELD	com/xk72/charles/gui/Y	Lcom/xk72/charles/gui/Main;	b	field_444
+FIELD	com/xk72/charles/gui/Y	Lcom/xk72/charles/gui/SplashWindow;	a	splashWindow
+FIELD	com/xk72/charles/gui/Y	Lcom/xk72/charles/gui/Main;	b	main
 METHOD	com/xk72/charles/gui/Y	()V	run	run
 CLASS	com/xk72/charles/gui/Z	com/xk72/charles/gui/Z
 FIELD	com/xk72/charles/gui/Z	Lcom/xk72/charles/CharlesContext;	a	context
 FIELD	com/xk72/charles/gui/Z	Ljava/util/List;	b	field_446
-FIELD	com/xk72/charles/gui/Z	Lcom/xk72/charles/gui/Main;	c	field_447
+FIELD	com/xk72/charles/gui/Z	Lcom/xk72/charles/gui/Main;	c	main
 METHOD	com/xk72/charles/gui/Z	()V	run	run
 CLASS	com/xk72/charles/gui/a	com/xk72/charles/gui/ActionSwitchboard
 FIELD	com/xk72/charles/gui/a	Lcom/xk72/charles/gui/menus/ViewMenu;	A	viewMenu
@@ -2368,8 +2368,8 @@ FIELD	com/xk72/charles/gui/aw	Ljava/awt/TrayIcon;	c	trayIcon
 METHOD	com/xk72/charles/gui/aw	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/ax	com/xk72/charles/gui/ax
 FIELD	com/xk72/charles/gui/ax	Ljava/awt/CheckboxMenuItem;	a	checkboxItem
-FIELD	com/xk72/charles/gui/ax	Lcom/xk72/charles/gui/ae;	b	field_518
-FIELD	com/xk72/charles/gui/ax	Ljava/awt/TrayIcon;	c	field_519
+FIELD	com/xk72/charles/gui/ax	Lcom/xk72/charles/gui/ae;	b	trayIconUtils
+FIELD	com/xk72/charles/gui/ax	Ljava/awt/TrayIcon;	c	trayIcon
 METHOD	com/xk72/charles/gui/ax	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/ay	com/xk72/charles/gui/TrayIconContainer
 FIELD	com/xk72/charles/gui/ay	Ljava/awt/TrayIcon;	a	trayIcon
@@ -2711,27 +2711,27 @@ FIELD	com/xk72/charles/gui/frames/d	Lcom/xk72/proxy/Connection;	a	field_602
 FIELD	com/xk72/charles/gui/frames/d	Lcom/xk72/charles/gui/frames/b;	b	field_603
 METHOD	com/xk72/charles/gui/frames/d	()V	run	run
 CLASS	com/xk72/charles/gui/frames/e	com/xk72/charles/gui/frames/e
-FIELD	com/xk72/charles/gui/frames/e	Lcom/xk72/proxy/ProxyEvent;	a	field_604
+FIELD	com/xk72/charles/gui/frames/e	Lcom/xk72/proxy/ProxyEvent;	a	proxyEvent
 FIELD	com/xk72/charles/gui/frames/e	Lcom/xk72/charles/gui/frames/b;	b	field_605
 METHOD	com/xk72/charles/gui/frames/e	()V	run	run
 CLASS	com/xk72/charles/gui/frames/f	com/xk72/charles/gui/frames/f
-FIELD	com/xk72/charles/gui/frames/f	Lcom/xk72/proxy/ProxyEvent;	a	field_606
+FIELD	com/xk72/charles/gui/frames/f	Lcom/xk72/proxy/ProxyEvent;	a	proxyEvent
 FIELD	com/xk72/charles/gui/frames/f	Lcom/xk72/charles/gui/frames/b;	b	field_607
 METHOD	com/xk72/charles/gui/frames/f	()V	run	run
 CLASS	com/xk72/charles/gui/frames/g	com/xk72/charles/gui/frames/g
-FIELD	com/xk72/charles/gui/frames/g	Lcom/xk72/proxy/ProxyEvent;	a	field_608
+FIELD	com/xk72/charles/gui/frames/g	Lcom/xk72/proxy/ProxyEvent;	a	proxyEvent
 FIELD	com/xk72/charles/gui/frames/g	Lcom/xk72/charles/gui/frames/b;	b	field_609
 METHOD	com/xk72/charles/gui/frames/g	()V	run	run
 CLASS	com/xk72/charles/gui/frames/h	com/xk72/charles/gui/frames/h
-FIELD	com/xk72/charles/gui/frames/h	Lcom/xk72/proxy/ProxyEvent;	a	field_610
+FIELD	com/xk72/charles/gui/frames/h	Lcom/xk72/proxy/ProxyEvent;	a	proxyEvent
 FIELD	com/xk72/charles/gui/frames/h	Lcom/xk72/charles/gui/frames/b;	b	field_611
 METHOD	com/xk72/charles/gui/frames/h	()V	run	run
 CLASS	com/xk72/charles/gui/frames/i	com/xk72/charles/gui/frames/i
-FIELD	com/xk72/charles/gui/frames/i	Lcom/xk72/proxy/ProxyEvent;	a	field_612
+FIELD	com/xk72/charles/gui/frames/i	Lcom/xk72/proxy/ProxyEvent;	a	proxyEvent
 FIELD	com/xk72/charles/gui/frames/i	Lcom/xk72/charles/gui/frames/b;	b	field_613
 METHOD	com/xk72/charles/gui/frames/i	()V	run	run
 CLASS	com/xk72/charles/gui/frames/j	com/xk72/charles/gui/frames/j
-FIELD	com/xk72/charles/gui/frames/j	Lcom/xk72/proxy/ProxyEvent;	a	field_614
+FIELD	com/xk72/charles/gui/frames/j	Lcom/xk72/proxy/ProxyEvent;	a	proxyEvent
 FIELD	com/xk72/charles/gui/frames/j	Lcom/xk72/charles/gui/frames/b;	b	field_615
 METHOD	com/xk72/charles/gui/frames/j	()V	run	run
 CLASS	com/xk72/charles/gui/frames/k	com/xk72/charles/gui/frames/ActiveConnectionsFrame$4
@@ -2740,7 +2740,7 @@ METHOD	com/xk72/charles/gui/frames/k	(Ljava/awt/event/MouseEvent;)V	a	mouseEvent
 METHOD	com/xk72/charles/gui/frames/k	(Ljava/awt/event/MouseEvent;)V	mousePressed	mousePressed
 METHOD	com/xk72/charles/gui/frames/k	(Ljava/awt/event/MouseEvent;)V	mouseReleased	mouseReleased
 CLASS	com/xk72/charles/gui/frames/l	com/xk72/charles/gui/frames/l
-FIELD	com/xk72/charles/gui/frames/l	Lcom/xk72/proxy/Connection;	a	field_617
+FIELD	com/xk72/charles/gui/frames/l	Lcom/xk72/proxy/Connection;	a	connection
 FIELD	com/xk72/charles/gui/frames/l	I	b	field_618
 FIELD	com/xk72/charles/gui/frames/l	Ljava/util/Date;	c	field_619
 FIELD	com/xk72/charles/gui/frames/l	Ljava/net/InetSocketAddress;	d	field_620
@@ -2765,11 +2765,11 @@ METHOD	com/xk72/charles/gui/frames/n	(Ljava/awt/event/MouseEvent;)V	a	onMouse
 METHOD	com/xk72/charles/gui/frames/n	(Ljava/awt/event/MouseEvent;)V	mousePressed	mousePressed
 METHOD	com/xk72/charles/gui/frames/n	(Ljava/awt/event/MouseEvent;)V	mouseReleased	mouseReleased
 CLASS	com/xk72/charles/gui/frames/o	com/xk72/charles/gui/frames/LogFrameOutputStream
-FIELD	com/xk72/charles/gui/frames/o	Lcom/xk72/charles/gui/frames/LogFrame;	a	field_633
+FIELD	com/xk72/charles/gui/frames/o	Lcom/xk72/charles/gui/frames/LogFrame;	a	logFrame
 FIELD	com/xk72/charles/gui/frames/o	Ljava/lang/StringBuffer;	b	logBuffer
 METHOD	com/xk72/charles/gui/frames/o	(I)V	write	write
 CLASS	com/xk72/charles/gui/frames/p	com/xk72/charles/gui/frames/p
-FIELD	com/xk72/charles/gui/frames/p	Lcom/xk72/charles/gui/frames/o;	a	field_635
+FIELD	com/xk72/charles/gui/frames/p	Lcom/xk72/charles/gui/frames/o;	a	logFrameOutputStream
 METHOD	com/xk72/charles/gui/frames/p	()V	run	run
 CLASS	com/xk72/charles/gui/frames/q	com/xk72/charles/gui/frames/RegisterFrameOnActionDisposer
 FIELD	com/xk72/charles/gui/frames/q	Lcom/xk72/charles/gui/frames/RegisterFrame;	a	registerFrame
@@ -2781,8 +2781,8 @@ CLASS	com/xk72/charles/gui/frames/s	com/xk72/charles/gui/frames/ICharlesGuiBaseF
 CLASS	com/xk72/charles/gui/g	com/xk72/charles/gui/g
 FIELD	com/xk72/charles/gui/g	Lcom/xk72/charles/gui/CharlesFrame;	a	frame
 METHOD	com/xk72/charles/gui/g	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
-CLASS	com/xk72/charles/gui/h	com/xk72/charles/gui/h
-FIELD	com/xk72/charles/gui/h	Ljava/lang/String;	a	field_639
+CLASS	com/xk72/charles/gui/h	com/xk72/charles/gui/SetStatusLabelTextTask
+FIELD	com/xk72/charles/gui/h	Ljava/lang/String;	a	status
 FIELD	com/xk72/charles/gui/h	Lcom/xk72/charles/gui/CharlesFrame;	b	frame
 METHOD	com/xk72/charles/gui/h	()V	run	run
 CLASS	com/xk72/charles/gui/i	com/xk72/charles/gui/CharlesToolActivationFrameNotifyingListener
@@ -3670,7 +3670,7 @@ CLASS	com/xk72/charles/gui/lib/a	com/xk72/charles/gui/lib/a
 FIELD	com/xk72/charles/gui/lib/a	Lcom/xk72/charles/gui/lib/AbstractSettingsFormPanel;	a	field_791
 METHOD	com/xk72/charles/gui/lib/a	(Ljavax/swing/event/ChangeEvent;)V	stateChanged	stateChanged
 CLASS	com/xk72/charles/gui/lib/aA	com/xk72/charles/gui/lib/aA
-FIELD	com/xk72/charles/gui/lib/aA	Lcom/xk72/charles/gui/lib/TabbedDesktopPane;	a	field_792
+FIELD	com/xk72/charles/gui/lib/aA	Lcom/xk72/charles/gui/lib/TabbedDesktopPane;	a	tabbedDesktopPane
 FIELD	com/xk72/charles/gui/lib/aA	Ljavax/swing/JTabbedPane;	b	tabbedPane
 FIELD	com/xk72/charles/gui/lib/aA	Ljava/beans/PropertyChangeListener;	c	titleListener
 METHOD	com/xk72/charles/gui/lib/aA	(Lcom/xk72/charles/gui/lib/aD;)V	a	method_882
@@ -3681,8 +3681,8 @@ CLASS	com/xk72/charles/gui/lib/aB	com/xk72/charles/gui/lib/TitlePropertyChangeLi
 FIELD	com/xk72/charles/gui/lib/aB	Lcom/xk72/charles/gui/lib/aA;	a	field_795
 METHOD	com/xk72/charles/gui/lib/aB	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/lib/aC	com/xk72/charles/gui/lib/aC
-FIELD	com/xk72/charles/gui/lib/aC	Lcom/xk72/charles/gui/lib/TabbedDesktopPane;	a	field_796
-METHOD	com/xk72/charles/gui/lib/aC	(Ljava/awt/event/MouseEvent;)V	a	method_884
+FIELD	com/xk72/charles/gui/lib/aC	Lcom/xk72/charles/gui/lib/TabbedDesktopPane;	a	tabbedDesktopPane
+METHOD	com/xk72/charles/gui/lib/aC	(Ljava/awt/event/MouseEvent;)V	a	onMouseEvent
 METHOD	com/xk72/charles/gui/lib/aC	(Ljava/awt/event/MouseEvent;Ljavax/swing/JTabbedPane;I)V	a	method_885
 METHOD	com/xk72/charles/gui/lib/aC	(Ljava/awt/event/MouseEvent;)V	mousePressed	mousePressed
 METHOD	com/xk72/charles/gui/lib/aC	(Ljava/awt/event/MouseEvent;)V	mouseReleased	mouseReleased
@@ -3701,7 +3701,7 @@ CLASS	com/xk72/charles/gui/lib/aE	com/xk72/charles/gui/lib/aE
 METHOD	com/xk72/charles/gui/lib/aE	(ILcom/xk72/charles/gui/lib/an;)V	editRow	editRow
 METHOD	com/xk72/charles/gui/lib/aE	(Ljava/lang/Object;Lcom/xk72/charles/gui/lib/an;)V	newRow	newRow
 CLASS	com/xk72/charles/gui/lib/aF	com/xk72/charles/gui/lib/aF
-FIELD	com/xk72/charles/gui/lib/aF	Ljavax/swing/JTable;	a	field_797
+FIELD	com/xk72/charles/gui/lib/aF	Ljavax/swing/JTable;	a	table
 FIELD	com/xk72/charles/gui/lib/aF	Lcom/xk72/charles/gui/lib/TableSorter;	b	field_798
 FIELD	com/xk72/charles/gui/lib/aF	Lcom/xk72/charles/gui/lib/TableSorter;	c	field_799
 FIELD	com/xk72/charles/gui/lib/aF	I	d	field_800
@@ -3714,7 +3714,7 @@ CLASS	com/xk72/charles/gui/lib/aH	com/xk72/charles/gui/lib/aH
 FIELD	com/xk72/charles/gui/lib/aH	Ljavax/swing/JTree;	a	tree
 FIELD	com/xk72/charles/gui/lib/aH	Ljavax/swing/JTable;	b	table
 METHOD	com/xk72/charles/gui/lib/aH	(Ljava/awt/event/MouseEvent;)V	a	method_886
-METHOD	com/xk72/charles/gui/lib/aH	(Ljava/awt/event/MouseEvent;)V	b	method_887
+METHOD	com/xk72/charles/gui/lib/aH	(Ljava/awt/event/MouseEvent;)V	b	onMouseEvent
 METHOD	com/xk72/charles/gui/lib/aH	(Ljava/awt/event/MouseEvent;)V	mousePressed	mousePressed
 METHOD	com/xk72/charles/gui/lib/aH	(Ljava/awt/event/MouseEvent;)V	mouseReleased	mouseReleased
 CLASS	com/xk72/charles/gui/lib/aI	com/xk72/charles/gui/lib/aI
@@ -3738,7 +3738,7 @@ METHOD	com/xk72/charles/gui/lib/aK	(Ljavax/swing/JTree;ZILcom/xk72/charles/gui/l
 METHOD	com/xk72/charles/gui/lib/aK	(Ljavax/swing/JTree;ZLcom/xk72/charles/gui/lib/aN;)V	a	method_901
 METHOD	com/xk72/charles/gui/lib/aK	(Ljavax/swing/tree/TreePath;)Z	a	method_902
 METHOD	com/xk72/charles/gui/lib/aK	(Ljavax/swing/tree/TreePath;Ljavax/swing/JTree;Ljavax/swing/JTree;)Ljavax/swing/tree/TreePath;	a	method_903
-METHOD	com/xk72/charles/gui/lib/aK	([ZLjavax/swing/JTree;)V	a	method_904
+METHOD	com/xk72/charles/gui/lib/aK	([ZLjavax/swing/JTree;)V	a	toggleAll
 METHOD	com/xk72/charles/gui/lib/aK	(Ljavax/swing/tree/TreePath;Ljavax/swing/JTree;Ljavax/swing/JTree;)Ljavax/swing/tree/TreePath;	b	method_905
 CLASS	com/xk72/charles/gui/lib/aL	com/xk72/charles/gui/lib/aL
 FIELD	com/xk72/charles/gui/lib/aL	Z	a	field_806
@@ -3770,15 +3770,15 @@ FIELD	com/xk72/charles/gui/lib/aQ	Z	a	field_812
 CLASS	com/xk72/charles/gui/lib/aR	com/xk72/charles/gui/lib/ActiveWindowUtil
 METHOD	com/xk72/charles/gui/lib/aR	()Ljava/awt/Window;	a	getActiveWindow
 CLASS	com/xk72/charles/gui/lib/aa	com/xk72/charles/gui/lib/aa
-FIELD	com/xk72/charles/gui/lib/aa	Lcom/xk72/charles/gui/lib/MemoryJTable;	a	field_813
+FIELD	com/xk72/charles/gui/lib/aa	Lcom/xk72/charles/gui/lib/MemoryJTable;	a	memoryJTable
 CLASS	com/xk72/charles/gui/lib/ab	com/xk72/charles/gui/lib/ab
 FIELD	com/xk72/charles/gui/lib/ab	Ljavax/swing/RowSorter;	a	field_814
-FIELD	com/xk72/charles/gui/lib/ab	Lcom/xk72/charles/gui/lib/MemoryJTable;	b	field_815
+FIELD	com/xk72/charles/gui/lib/ab	Lcom/xk72/charles/gui/lib/MemoryJTable;	b	memoryJTable
 FIELD	com/xk72/charles/gui/lib/ab	Z	c	field_816
 METHOD	com/xk72/charles/gui/lib/ab	(Ljavax/swing/event/RowSorterEvent;)V	sorterChanged	sorterChanged
 CLASS	com/xk72/charles/gui/lib/ac	com/xk72/charles/gui/lib/MemoryJTable$4
 FIELD	com/xk72/charles/gui/lib/ac	Ljavax/swing/RowSorter;	a	field_817
-FIELD	com/xk72/charles/gui/lib/ac	Lcom/xk72/charles/gui/lib/MemoryJTable;	b	field_818
+FIELD	com/xk72/charles/gui/lib/ac	Lcom/xk72/charles/gui/lib/MemoryJTable;	b	memoryJTable
 METHOD	com/xk72/charles/gui/lib/ac	(Ljava/awt/event/MouseEvent;)V	a	method_914
 METHOD	com/xk72/charles/gui/lib/ac	(Ljava/awt/event/MouseEvent;)V	mousePressed	mousePressed
 METHOD	com/xk72/charles/gui/lib/ac	(Ljava/awt/event/MouseEvent;)V	mouseReleased	mouseReleased
@@ -3792,22 +3792,22 @@ FIELD	com/xk72/charles/gui/lib/actions/ExpandPathAction	Ljavax/swing/JTree;	tree
 METHOD	com/xk72/charles/gui/lib/actions/ExpandPathAction	(Ljavax/swing/JTree;[Ljavax/swing/tree/TreePath;)Z	a	method_915
 METHOD	com/xk72/charles/gui/lib/actions/ExpandPathAction	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/lib/ad	com/xk72/charles/gui/lib/ad
-FIELD	com/xk72/charles/gui/lib/ad	Ljavax/swing/JComboBox;	a	field_819
-FIELD	com/xk72/charles/gui/lib/ad	Ljavax/swing/JTextField;	b	field_820
+FIELD	com/xk72/charles/gui/lib/ad	Ljavax/swing/JComboBox;	a	comboBox
+FIELD	com/xk72/charles/gui/lib/ad	Ljavax/swing/JTextField;	b	textField
 FIELD	com/xk72/charles/gui/lib/ad	Lcom/xk72/charles/gui/lib/MemoryJTable$4$2;	c	field_821
 METHOD	com/xk72/charles/gui/lib/ad	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/lib/ae	com/xk72/charles/gui/lib/ae
-FIELD	com/xk72/charles/gui/lib/ae	Ljavax/swing/table/TableColumnModel;	a	field_822
-FIELD	com/xk72/charles/gui/lib/ae	Ljavax/swing/table/TableColumn;	b	field_823
+FIELD	com/xk72/charles/gui/lib/ae	Ljavax/swing/table/TableColumnModel;	a	tableColumnModel
+FIELD	com/xk72/charles/gui/lib/ae	Ljavax/swing/table/TableColumn;	b	tableColumn
 FIELD	com/xk72/charles/gui/lib/ae	Lcom/xk72/charles/gui/lib/ac;	c	field_824
 METHOD	com/xk72/charles/gui/lib/ae	(I)I	a	method_916
 METHOD	com/xk72/charles/gui/lib/ae	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
 CLASS	com/xk72/charles/gui/lib/af	com/xk72/charles/gui/lib/af
-FIELD	com/xk72/charles/gui/lib/af	Ljavax/swing/table/TableColumn;	a	field_825
-FIELD	com/xk72/charles/gui/lib/af	Lcom/xk72/charles/gui/lib/MemoryJTable;	b	field_826
+FIELD	com/xk72/charles/gui/lib/af	Ljavax/swing/table/TableColumn;	a	tableColumn
+FIELD	com/xk72/charles/gui/lib/af	Lcom/xk72/charles/gui/lib/MemoryJTable;	b	memoryTable
 METHOD	com/xk72/charles/gui/lib/af	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
-CLASS	com/xk72/charles/gui/lib/ag	com/xk72/charles/gui/lib/ag
-FIELD	com/xk72/charles/gui/lib/ag	[I	a	field_827
+CLASS	com/xk72/charles/gui/lib/ag	com/xk72/charles/gui/lib/RowSorterEvent_Type_Ordinals
+FIELD	com/xk72/charles/gui/lib/ag	[I	a	ORDINALS
 CLASS	com/xk72/charles/gui/lib/ah	com/xk72/charles/gui/lib/ah
 METHOD	com/xk72/charles/gui/lib/ah	(Ljavax/swing/table/TableColumnModel;)V	a	method_917
 CLASS	com/xk72/charles/gui/lib/ai	com/xk72/charles/gui/lib/ai
@@ -3833,7 +3833,7 @@ METHOD	com/xk72/charles/gui/lib/al	(Ljava/lang/String;)I	a	method_923
 METHOD	com/xk72/charles/gui/lib/al	(Ljava/awt/Component;)V	b	method_924
 METHOD	com/xk72/charles/gui/lib/al	(Ljava/awt/event/MouseEvent;)V	mouseClicked	mouseClicked
 CLASS	com/xk72/charles/gui/lib/am	com/xk72/charles/gui/lib/am
-FIELD	com/xk72/charles/gui/lib/am	Ljava/lang/Boolean;	a	field_835
+FIELD	com/xk72/charles/gui/lib/am	Ljava/lang/Boolean;	a	isBigBoi
 METHOD	com/xk72/charles/gui/lib/am	()Z	a	method_925
 METHOD	com/xk72/charles/gui/lib/am	(Ljava/lang/String;)Ljava/lang/String;	a	method_926
 METHOD	com/xk72/charles/gui/lib/am	()Z	b	isBiggerThan1xNormalScale
@@ -4025,7 +4025,7 @@ METHOD	com/xk72/charles/gui/lib/tree/HighlightTree	(Z)V	setHighlightingEnabled	s
 CLASS	com/xk72/charles/gui/lib/tree/a	com/xk72/charles/gui/lib/tree/a
 METHOD	com/xk72/charles/gui/lib/tree/a	(Ljavax/swing/event/TreeModelEvent;)V	a	method_967
 CLASS	com/xk72/charles/gui/lib/tree/b	com/xk72/charles/gui/lib/tree/b
-FIELD	com/xk72/charles/gui/lib/tree/b	Lcom/xk72/charles/gui/lib/tree/HighlightTree;	a	field_897
+FIELD	com/xk72/charles/gui/lib/tree/b	Lcom/xk72/charles/gui/lib/tree/HighlightTree;	a	highlightTree
 METHOD	com/xk72/charles/gui/lib/tree/b	(Ljavax/swing/event/TreeModelEvent;)V	treeNodesChanged	treeNodesChanged
 METHOD	com/xk72/charles/gui/lib/tree/b	(Ljavax/swing/event/TreeModelEvent;)V	treeNodesInserted	treeNodesInserted
 METHOD	com/xk72/charles/gui/lib/tree/b	(Ljavax/swing/event/TreeModelEvent;)V	treeNodesRemoved	treeNodesRemoved
@@ -4096,11 +4096,11 @@ METHOD	com/xk72/charles/gui/lib/treetable/TreeTableModelAdapter	(II)Ljava/lang/O
 METHOD	com/xk72/charles/gui/lib/treetable/TreeTableModelAdapter	(II)Z	isCellEditable	isCellEditable
 METHOD	com/xk72/charles/gui/lib/treetable/TreeTableModelAdapter	(I)Ljava/lang/Object;	nodeForRow	nodeForRow
 METHOD	com/xk72/charles/gui/lib/treetable/TreeTableModelAdapter	(Ljava/lang/Object;II)V	setValueAt	setValueAt
-CLASS	com/xk72/charles/gui/lib/treetable/a	com/xk72/charles/gui/lib/treetable/a
-FIELD	com/xk72/charles/gui/lib/treetable/a	Ljavax/swing/event/EventListenerList;	a	field_903
-METHOD	com/xk72/charles/gui/lib/treetable/a	()V	a	method_972
+CLASS	com/xk72/charles/gui/lib/treetable/a	com/xk72/charles/gui/lib/treetable/ExtendedTreeTableCellEditor
+FIELD	com/xk72/charles/gui/lib/treetable/a	Ljavax/swing/event/EventListenerList;	a	eventListeners
+METHOD	com/xk72/charles/gui/lib/treetable/a	()V	a	onEditingCellStopped
 METHOD	com/xk72/charles/gui/lib/treetable/a	(Ljavax/swing/event/CellEditorListener;)V	addCellEditorListener	addCellEditorListener
-METHOD	com/xk72/charles/gui/lib/treetable/a	()V	b	method_973
+METHOD	com/xk72/charles/gui/lib/treetable/a	()V	b	onEditingCellCanceled
 METHOD	com/xk72/charles/gui/lib/treetable/a	()V	cancelCellEditing	cancelCellEditing
 METHOD	com/xk72/charles/gui/lib/treetable/a	()Ljava/lang/Object;	getCellEditorValue	getCellEditorValue
 METHOD	com/xk72/charles/gui/lib/treetable/a	(Ljava/util/EventObject;)Z	isCellEditable	isCellEditable
@@ -4111,11 +4111,11 @@ CLASS	com/xk72/charles/gui/lib/treetable/b	com/xk72/charles/gui/lib/treetable/b
 FIELD	com/xk72/charles/gui/lib/treetable/b	Ljava/lang/Object;	a	rootObject
 FIELD	com/xk72/charles/gui/lib/treetable/b	Ljavax/swing/event/EventListenerList;	b	eventHandlers
 METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljava/lang/Object;[Ljava/lang/Object;[I[Ljava/lang/Object;)V	a	method_974
-METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljava/lang/Object;[Ljava/lang/Object;[I[Ljava/lang/Object;Z)V	a	method_975
+METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljava/lang/Object;[Ljava/lang/Object;[I[Ljava/lang/Object;Z)V	a	onTreeNodesRemoved
 METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljavax/swing/event/TreeModelListener;)V	addTreeModelListener	addTreeModelListener
-METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljava/lang/Object;[Ljava/lang/Object;[I[Ljava/lang/Object;)V	b	method_976
+METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljava/lang/Object;[Ljava/lang/Object;[I[Ljava/lang/Object;)V	b	onTreeNodesInserted
 METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljava/lang/Object;[Ljava/lang/Object;[I[Ljava/lang/Object;)V	c	method_977
-METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljava/lang/Object;[Ljava/lang/Object;[I[Ljava/lang/Object;)V	d	method_978
+METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljava/lang/Object;[Ljava/lang/Object;[I[Ljava/lang/Object;)V	d	onTreeStructureChanged
 METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljava/lang/Object;Ljava/lang/Object;)I	getIndexOfChild	getIndexOfChild
 METHOD	com/xk72/charles/gui/lib/treetable/b	()Ljava/lang/Object;	getRoot	getRoot
 METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljava/lang/Object;)Z	isLeaf	isLeaf
@@ -4134,27 +4134,27 @@ METHOD	com/xk72/charles/gui/lib/treetable/c	(Lcom/xk72/charles/gui/lib/treetable
 METHOD	com/xk72/charles/gui/lib/treetable/c	()V	c	method_986
 METHOD	com/xk72/charles/gui/lib/treetable/c	(Ljava/lang/Object;I)Ljava/lang/Object;	getChild	getChild
 METHOD	com/xk72/charles/gui/lib/treetable/c	(Ljava/lang/Object;)I	getChildCount	getChildCount
-CLASS	com/xk72/charles/gui/lib/treetable/d	com/xk72/charles/gui/lib/treetable/d
+CLASS	com/xk72/charles/gui/lib/treetable/d	com/xk72/charles/gui/lib/treetable/TreeTableMouseEventDispatcher
 FIELD	com/xk72/charles/gui/lib/treetable/d	Lcom/xk72/charles/gui/lib/treetable/JTreeTable;	a	field_908
-METHOD	com/xk72/charles/gui/lib/treetable/d	(Ljava/awt/event/MouseEvent;)V	a	method_987
+METHOD	com/xk72/charles/gui/lib/treetable/d	(Ljava/awt/event/MouseEvent;)V	a	handleMouseEvent
 METHOD	com/xk72/charles/gui/lib/treetable/d	(Ljava/awt/event/MouseEvent;)V	mouseClicked	mouseClicked
 METHOD	com/xk72/charles/gui/lib/treetable/d	(Ljava/awt/event/MouseEvent;)V	mouseEntered	mouseEntered
 METHOD	com/xk72/charles/gui/lib/treetable/d	(Ljava/awt/event/MouseEvent;)V	mouseExited	mouseExited
 METHOD	com/xk72/charles/gui/lib/treetable/d	(Ljava/awt/event/MouseEvent;)V	mousePressed	mousePressed
 METHOD	com/xk72/charles/gui/lib/treetable/d	(Ljava/awt/event/MouseEvent;)V	mouseReleased	mouseReleased
-CLASS	com/xk72/charles/gui/lib/treetable/e	com/xk72/charles/gui/lib/treetable/e
-FIELD	com/xk72/charles/gui/lib/treetable/e	Lcom/xk72/charles/gui/lib/treetable/JTreeTable;	a	field_909
+CLASS	com/xk72/charles/gui/lib/treetable/e	com/xk72/charles/gui/lib/treetable/TreeTableKeyDispatcherListener
+FIELD	com/xk72/charles/gui/lib/treetable/e	Lcom/xk72/charles/gui/lib/treetable/JTreeTable;	a	jTreeTable
 METHOD	com/xk72/charles/gui/lib/treetable/e	(Ljava/awt/event/KeyEvent;)V	keyPressed	keyPressed
 METHOD	com/xk72/charles/gui/lib/treetable/e	(Ljava/awt/event/KeyEvent;)V	keyReleased	keyReleased
 METHOD	com/xk72/charles/gui/lib/treetable/e	(Ljava/awt/event/KeyEvent;)V	keyTyped	keyTyped
-CLASS	com/xk72/charles/gui/lib/treetable/f	com/xk72/charles/gui/lib/treetable/f
-FIELD	com/xk72/charles/gui/lib/treetable/f	Lcom/xk72/charles/gui/lib/treetable/JTreeTable$ListToTreeSelectionModelWrapper;	a	field_910
+CLASS	com/xk72/charles/gui/lib/treetable/f	com/xk72/charles/gui/lib/treetable/SelectedUpdaterListSelectionListener
+FIELD	com/xk72/charles/gui/lib/treetable/f	Lcom/xk72/charles/gui/lib/treetable/JTreeTable$ListToTreeSelectionModelWrapper;	a	listToTreeSelectionModelWrapper
 METHOD	com/xk72/charles/gui/lib/treetable/f	(Ljavax/swing/event/ListSelectionEvent;)V	valueChanged	valueChanged
 CLASS	com/xk72/charles/gui/lib/treetable/g	com/xk72/charles/gui/lib/treetable/g
-FIELD	com/xk72/charles/gui/lib/treetable/g	Lcom/xk72/charles/gui/lib/treetable/JTreeTable;	b	field_911
+FIELD	com/xk72/charles/gui/lib/treetable/g	Lcom/xk72/charles/gui/lib/treetable/JTreeTable;	b	jTreeTable
 METHOD	com/xk72/charles/gui/lib/treetable/g	(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;	getTableCellEditorComponent	getTableCellEditorComponent
 CLASS	com/xk72/charles/gui/lib/treetable/h	com/xk72/charles/gui/lib/treetable/h
-FIELD	com/xk72/charles/gui/lib/treetable/h	Lcom/xk72/charles/gui/lib/treetable/JTreeTable$TreeTableCellRenderer;	a	field_912
+FIELD	com/xk72/charles/gui/lib/treetable/h	Lcom/xk72/charles/gui/lib/treetable/JTreeTable$TreeTableCellRenderer;	a	treeTableCellRenderer
 METHOD	com/xk72/charles/gui/lib/treetable/h	(Ljavax/swing/event/TreeModelEvent;)V	treeNodesInserted	treeNodesInserted
 METHOD	com/xk72/charles/gui/lib/treetable/h	(Ljavax/swing/event/TreeModelEvent;)V	treeNodesRemoved	treeNodesRemoved
 METHOD	com/xk72/charles/gui/lib/treetable/h	(Ljavax/swing/event/TreeModelEvent;)V	treeStructureChanged	treeStructureChanged
@@ -4167,18 +4167,18 @@ METHOD	com/xk72/charles/gui/lib/treetable/j	(Ljava/lang/Object;Ljava/lang/Object
 METHOD	com/xk72/charles/gui/lib/treetable/j	(I)Ljava/lang/String;	b	get
 METHOD	com/xk72/charles/gui/lib/treetable/j	(Ljava/lang/Object;I)Ljava/lang/Object;	b	getPrevious
 CLASS	com/xk72/charles/gui/lib/treetable/k	com/xk72/charles/gui/lib/treetable/k
-FIELD	com/xk72/charles/gui/lib/treetable/k	Ljavax/swing/JTree;	a	field_913
-FIELD	com/xk72/charles/gui/lib/treetable/k	Lcom/xk72/charles/gui/lib/treetable/TreeTableModelAdapter;	b	field_914
+FIELD	com/xk72/charles/gui/lib/treetable/k	Ljavax/swing/JTree;	a	tree
+FIELD	com/xk72/charles/gui/lib/treetable/k	Lcom/xk72/charles/gui/lib/treetable/TreeTableModelAdapter;	b	treeModelAdapter
 METHOD	com/xk72/charles/gui/lib/treetable/k	(Ljavax/swing/event/TreeExpansionEvent;)V	treeCollapsed	treeCollapsed
 METHOD	com/xk72/charles/gui/lib/treetable/k	(Ljavax/swing/event/TreeExpansionEvent;)V	treeExpanded	treeExpanded
-CLASS	com/xk72/charles/gui/lib/treetable/l	com/xk72/charles/gui/lib/treetable/l
-FIELD	com/xk72/charles/gui/lib/treetable/l	Lcom/xk72/charles/gui/lib/treetable/TreeTableModelAdapter;	a	field_915
+CLASS	com/xk72/charles/gui/lib/treetable/l	com/xk72/charles/gui/lib/treetable/DelayedFireTableDataChangedListener
+FIELD	com/xk72/charles/gui/lib/treetable/l	Lcom/xk72/charles/gui/lib/treetable/TreeTableModelAdapter;	a	treeModelAdapter
 METHOD	com/xk72/charles/gui/lib/treetable/l	(Ljavax/swing/event/TreeModelEvent;)V	treeNodesChanged	treeNodesChanged
 METHOD	com/xk72/charles/gui/lib/treetable/l	(Ljavax/swing/event/TreeModelEvent;)V	treeNodesInserted	treeNodesInserted
 METHOD	com/xk72/charles/gui/lib/treetable/l	(Ljavax/swing/event/TreeModelEvent;)V	treeNodesRemoved	treeNodesRemoved
 METHOD	com/xk72/charles/gui/lib/treetable/l	(Ljavax/swing/event/TreeModelEvent;)V	treeStructureChanged	treeStructureChanged
-CLASS	com/xk72/charles/gui/lib/treetable/m	com/xk72/charles/gui/lib/treetable/m
-FIELD	com/xk72/charles/gui/lib/treetable/m	Lcom/xk72/charles/gui/lib/treetable/TreeTableModelAdapter;	a	field_916
+CLASS	com/xk72/charles/gui/lib/treetable/m	com/xk72/charles/gui/lib/treetable/TreeTableModelAdapterFireChangeTask
+FIELD	com/xk72/charles/gui/lib/treetable/m	Lcom/xk72/charles/gui/lib/treetable/TreeTableModelAdapter;	a	treeModelAdapter
 METHOD	com/xk72/charles/gui/lib/treetable/m	()V	run	run
 CLASS	com/xk72/charles/gui/lib/treetable/n	com/xk72/charles/gui/lib/treetable/ITreeTableNode
 METHOD	com/xk72/charles/gui/lib/treetable/n	(Ljavax/swing/tree/MutableTreeNode;)Z	contains	contains
@@ -4208,25 +4208,25 @@ METHOD	com/xk72/charles/gui/lib/wrapping/XMLEditorKit	()Ljavax/swing/text/ViewFa
 METHOD	com/xk72/charles/gui/lib/wrapping/XMLEditorKit	()Z	isLineWrapping	isLineWrapping
 METHOD	com/xk72/charles/gui/lib/wrapping/XMLEditorKit	(Z)V	setLineWrappingEnabled	setLineWrappingEnabled
 CLASS	com/xk72/charles/gui/lib/wrapping/a	com/xk72/charles/gui/lib/wrapping/a
-FIELD	com/xk72/charles/gui/lib/wrapping/a	Ljavax/swing/text/Style;	a	field_920
+FIELD	com/xk72/charles/gui/lib/wrapping/a	Ljavax/swing/text/Style;	a	namedStyle
 FIELD	com/xk72/charles/gui/lib/wrapping/a	Ljava/awt/Color;	b	field_921
-FIELD	com/xk72/charles/gui/lib/wrapping/a	Lorg/bounce/text/SyntaxHighlightingScanner;	c	field_922
-FIELD	com/xk72/charles/gui/lib/wrapping/a	Ljavax/swing/text/StyleContext;	d	field_923
+FIELD	com/xk72/charles/gui/lib/wrapping/a	Lorg/bounce/text/SyntaxHighlightingScanner;	c	syntaxHighlightingScanner
+FIELD	com/xk72/charles/gui/lib/wrapping/a	Ljavax/swing/text/StyleContext;	d	styleContext
 METHOD	com/xk72/charles/gui/lib/wrapping/a	()Z	a	isErrorHighlighting
-METHOD	com/xk72/charles/gui/lib/wrapping/a	(Ljava/awt/Graphics;IIII)V	a	method_997
+METHOD	com/xk72/charles/gui/lib/wrapping/a	(Ljava/awt/Graphics;IIII)V	a	drawPolyline
 METHOD	com/xk72/charles/gui/lib/wrapping/a	(Ljavax/swing/text/Style;)I	a	method_998
 METHOD	com/xk72/charles/gui/lib/wrapping/a	(Lorg/bounce/text/SyntaxHighlightingScanner;Ljava/awt/Graphics;IIIZ)V	a	method_999
-METHOD	com/xk72/charles/gui/lib/wrapping/a	(Lorg/bounce/text/SyntaxHighlightingScanner;Ljavax/swing/text/Document;II)V	a	method_1000
+METHOD	com/xk72/charles/gui/lib/wrapping/a	(Lorg/bounce/text/SyntaxHighlightingScanner;Ljavax/swing/text/Document;II)V	a	applyHighlighting
 METHOD	com/xk72/charles/gui/lib/wrapping/a	(Ljava/awt/Graphics;IIII)I	drawSelectedText	drawSelectedText
 METHOD	com/xk72/charles/gui/lib/wrapping/a	(Ljava/awt/Graphics;IIII)I	drawUnselectedText	drawUnselectedText
 METHOD	com/xk72/charles/gui/lib/wrapping/a	(Ljava/awt/Graphics;Ljava/awt/Shape;)V	paint	paint
-CLASS	com/xk72/charles/gui/lib/wrapping/b	com/xk72/charles/gui/lib/wrapping/b
+CLASS	com/xk72/charles/gui/lib/wrapping/b	com/xk72/charles/gui/lib/wrapping/XMLEditorKitViewFactory
 FIELD	com/xk72/charles/gui/lib/wrapping/b	Lcom/xk72/charles/gui/lib/wrapping/XMLEditorKit;	a	xmlEditorKit
 METHOD	com/xk72/charles/gui/lib/wrapping/b	(Ljavax/swing/text/Element;)Ljavax/swing/text/View;	create	create
 CLASS	com/xk72/charles/gui/lib/wrapping/c	com/xk72/charles/gui/lib/wrapping/c
-CLASS	com/xk72/charles/gui/lib/wrapping/d	com/xk72/charles/gui/lib/wrapping/d
-METHOD	com/xk72/charles/gui/lib/wrapping/d	(Ljavax/swing/text/Document;I)I	a	method_1001
-METHOD	com/xk72/charles/gui/lib/wrapping/d	(Lorg/bounce/text/SyntaxHighlightingScanner;Ljavax/swing/text/Document;II)V	a	method_1002
+CLASS	com/xk72/charles/gui/lib/wrapping/d	com/xk72/charles/gui/lib/wrapping/HighlightAdapter
+METHOD	com/xk72/charles/gui/lib/wrapping/d	(Ljavax/swing/text/Document;I)I	a	getEndOfRange
+METHOD	com/xk72/charles/gui/lib/wrapping/d	(Lorg/bounce/text/SyntaxHighlightingScanner;Ljavax/swing/text/Document;II)V	a	applyHighlighting
 CLASS	com/xk72/charles/gui/lib/x	com/xk72/charles/gui/lib/x
 METHOD	com/xk72/charles/gui/lib/x	(Lcom/xk72/charles/gui/lib/CharlesTreeCellRenderer;Ljavax/swing/JComponent;)V	a	method_1003
 CLASS	com/xk72/charles/gui/lib/y	com/xk72/charles/gui/lib/y
@@ -4245,7 +4245,7 @@ CLASS	com/xk72/charles/gui/lib/z	com/xk72/charles/gui/lib/z
 FIELD	com/xk72/charles/gui/lib/z	Lcom/xk72/charles/gui/lib/y;	a	field_929
 METHOD	com/xk72/charles/gui/lib/z	()V	run	run
 CLASS	com/xk72/charles/gui/m	com/xk72/charles/gui/m
-FIELD	com/xk72/charles/gui/m	Lcom/xk72/charles/gui/CharlesFrame;	a	field_930
+FIELD	com/xk72/charles/gui/m	Lcom/xk72/charles/gui/CharlesFrame;	a	frame
 METHOD	com/xk72/charles/gui/m	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/menus/AbstractWindowMenu	com/xk72/charles/gui/menus/AbstractWindowMenu
 FIELD	com/xk72/charles/gui/menus/AbstractWindowMenu	Ljava/util/HashMap;	menuItems	menuItems
@@ -4479,7 +4479,7 @@ FIELD	com/xk72/charles/gui/menus/s	Ljavax/swing/JCheckBoxMenuItem;	a	checkBoxIte
 FIELD	com/xk72/charles/gui/menus/s	Lcom/xk72/charles/gui/menus/ViewMenu;	b	viewMenu
 METHOD	com/xk72/charles/gui/menus/s	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/n	com/xk72/charles/gui/n
-FIELD	com/xk72/charles/gui/n	Lcom/xk72/charles/gui/CharlesFrame;	a	field_976
+FIELD	com/xk72/charles/gui/n	Lcom/xk72/charles/gui/CharlesFrame;	a	frame
 METHOD	com/xk72/charles/gui/n	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/navigator/NavigatorJTable$1	com/xk72/charles/gui/navigator/NavigatorJTable$1
 FIELD	com/xk72/charles/gui/navigator/NavigatorJTable$1	Lcom/xk72/charles/gui/navigator/e;	this$0	this$0
@@ -4610,15 +4610,15 @@ CLASS	com/xk72/charles/gui/navigator/r	com/xk72/charles/gui/navigator/r
 METHOD	com/xk72/charles/gui/navigator/r	()Ljavax/swing/tree/TreeModel;	a	getTreeModel
 METHOD	com/xk72/charles/gui/navigator/r	(Ljava/lang/Object;)Ljavax/swing/tree/TreePath;	a	method_1067
 CLASS	com/xk72/charles/gui/o	com/xk72/charles/gui/o
-FIELD	com/xk72/charles/gui/o	Lcom/xk72/charles/gui/CharlesFrame;	a	field_1018
+FIELD	com/xk72/charles/gui/o	Lcom/xk72/charles/gui/CharlesFrame;	a	frame
 METHOD	com/xk72/charles/gui/o	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/p	com/xk72/charles/gui/p
-FIELD	com/xk72/charles/gui/p	Lcom/xk72/charles/gui/CharlesFrame;	a	field_1019
+FIELD	com/xk72/charles/gui/p	Lcom/xk72/charles/gui/CharlesFrame;	a	frame
 CLASS	com/xk72/charles/gui/q	com/xk72/charles/gui/q
-FIELD	com/xk72/charles/gui/q	Lcom/xk72/charles/gui/CharlesFrame;	a	field_1020
+FIELD	com/xk72/charles/gui/q	Lcom/xk72/charles/gui/CharlesFrame;	a	frame
 METHOD	com/xk72/charles/gui/q	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/r	com/xk72/charles/gui/MemoryWatcherThread
-FIELD	com/xk72/charles/gui/r	Lcom/xk72/charles/gui/CharlesFrame;	a	charlesFrame
+FIELD	com/xk72/charles/gui/r	Lcom/xk72/charles/gui/CharlesFrame;	a	frame
 FIELD	com/xk72/charles/gui/r	J	b	field_1022
 METHOD	com/xk72/charles/gui/r	()V	run	run
 CLASS	com/xk72/charles/gui/s	com/xk72/charles/gui/CharlesGUIContext
@@ -9065,12 +9065,12 @@ CLASS	com/xk72/charles/gui/u	com/xk72/charles/gui/DestroySplashWindowTask
 FIELD	com/xk72/charles/gui/u	Lcom/xk72/charles/gui/s;	a	chlsGuiContext
 METHOD	com/xk72/charles/gui/u	()V	run	run
 CLASS	com/xk72/charles/gui/v	com/xk72/charles/gui/v
-FIELD	com/xk72/charles/gui/v	Lcom/xk72/charles/gui/s;	a	field_2212
+FIELD	com/xk72/charles/gui/v	Lcom/xk72/charles/gui/s;	a	guiContext
 METHOD	com/xk72/charles/gui/v	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
 CLASS	com/xk72/charles/gui/w	com/xk72/charles/gui/w
-FIELD	com/xk72/charles/gui/w	Lcom/xk72/charles/gui/s;	a	field_2213
+FIELD	com/xk72/charles/gui/w	Lcom/xk72/charles/gui/s;	a	guiContext
 METHOD	com/xk72/charles/gui/w	(Ljava/beans/PropertyChangeEvent;)V	propertyChange	propertyChange
-CLASS	com/xk72/charles/gui/x	com/xk72/charles/gui/x
+CLASS	com/xk72/charles/gui/x	com/xk72/charles/gui/ShowErrorTask
 FIELD	com/xk72/charles/gui/x	Ljava/lang/String;	a	field_2214
 FIELD	com/xk72/charles/gui/x	Ljava/lang/Throwable;	b	error
 FIELD	com/xk72/charles/gui/x	Ljava/lang/String;	c	field_2216
@@ -9079,7 +9079,7 @@ METHOD	com/xk72/charles/gui/x	()V	run	run
 CLASS	com/xk72/charles/gui/y	com/xk72/charles/gui/y
 FIELD	com/xk72/charles/gui/y	Ljava/lang/String;	a	field_2218
 FIELD	com/xk72/charles/gui/y	Ljava/lang/String;	b	field_2219
-FIELD	com/xk72/charles/gui/y	Lcom/xk72/charles/gui/s;	c	field_2220
+FIELD	com/xk72/charles/gui/y	Lcom/xk72/charles/gui/s;	c	guiContext
 METHOD	com/xk72/charles/gui/y	()V	run	run
 CLASS	com/xk72/charles/gui/z	com/xk72/charles/gui/ShowMessageTask
 FIELD	com/xk72/charles/gui/z	Ljava/lang/String;	a	message
@@ -12426,35 +12426,35 @@ METHOD	com/xk72/d/d	()Lcom/xk72/d/d;	a	method_2887
 METHOD	com/xk72/d/d	(Ljava/lang/Object;)Lcom/xk72/d/d;	a	method_2888
 METHOD	com/xk72/d/d	(Ljava/lang/String;)Lcom/xk72/d/d;	a	method_2889
 METHOD	com/xk72/d/d	()Lcom/xk72/d/d;	b	method_2890
-METHOD	com/xk72/d/d	()Lcom/xk72/d/d;	c	method_2891
+METHOD	com/xk72/d/d	()Lcom/xk72/d/d;	c	nextRow
 CLASS	com/xk72/d/e	com/xk72/d/e
 FIELD	com/xk72/d/e	Ljava/lang/String;	a	SINGLE_QUOTE
 FIELD	com/xk72/d/e	Ljava/lang/String;	b	field_2972
 FIELD	com/xk72/d/e	C	c	BACKSLASH_R
 FIELD	com/xk72/d/e	C	d	NEW_LINE
-FIELD	com/xk72/d/e	Ljava/lang/String;	e	field_2975
-FIELD	com/xk72/d/e	Ljava/lang/String;	f	field_2976
+FIELD	com/xk72/d/e	Ljava/lang/String;	e	WINDOWS_STYLE_NEWLINE
+FIELD	com/xk72/d/e	Ljava/lang/String;	f	sep
 FIELD	com/xk72/d/e	Ljava/lang/String;	g	field_2977
 FIELD	com/xk72/d/e	Ljava/lang/String;	h	field_2978
-FIELD	com/xk72/d/e	Ljava/lang/String;	i	field_2979
+FIELD	com/xk72/d/e	Ljava/lang/String;	i	lineEnding
 FIELD	com/xk72/d/e	Ljava/io/PrintWriter;	j	printWriter
-FIELD	com/xk72/d/e	Z	k	field_2981
+FIELD	com/xk72/d/e	Z	k	addSep
 METHOD	com/xk72/d/e	(Ljava/lang/Object;)Lcom/xk72/d/e;	b	method_2892
 METHOD	com/xk72/d/e	(Ljava/lang/String;)Lcom/xk72/d/e;	b	method_2893
 METHOD	com/xk72/d/e	(Ljava/lang/String;)Ljava/lang/String;	c	method_2894
-METHOD	com/xk72/d/e	()Lcom/xk72/d/e;	d	method_2895
+METHOD	com/xk72/d/e	()Lcom/xk72/d/e;	d	nextLine
 METHOD	com/xk72/d/e	(Ljava/lang/String;)Z	d	method_2896
 METHOD	com/xk72/d/e	()Lcom/xk72/d/e;	e	method_2897
-METHOD	com/xk72/d/e	(Ljava/lang/String;)V	e	method_2898
+METHOD	com/xk72/d/e	(Ljava/lang/String;)V	e	setSep
 METHOD	com/xk72/d/e	()Lcom/xk72/d/e;	f	method_2899
 METHOD	com/xk72/d/e	(Ljava/lang/String;)V	f	method_2900
 METHOD	com/xk72/d/e	()V	g	close
 METHOD	com/xk72/d/e	(Ljava/lang/String;)V	g	method_2902
-METHOD	com/xk72/d/e	()Ljava/lang/String;	h	method_2903
-METHOD	com/xk72/d/e	(Ljava/lang/String;)V	h	method_2904
+METHOD	com/xk72/d/e	()Ljava/lang/String;	h	getSep
+METHOD	com/xk72/d/e	(Ljava/lang/String;)V	h	setLineEnding
 METHOD	com/xk72/d/e	()Ljava/lang/String;	i	method_2905
 METHOD	com/xk72/d/e	()Ljava/lang/String;	j	method_2906
-METHOD	com/xk72/d/e	()Ljava/lang/String;	k	method_2907
+METHOD	com/xk72/d/e	()Ljava/lang/String;	k	getLineEnding
 CLASS	com/xk72/d/f	com/xk72/d/ReadInputStreamFullyTask
 FIELD	com/xk72/d/f	Ljava/io/InputStream;	a	inStream
 METHOD	com/xk72/d/f	(Ljava/io/InputStream;)V	a	executeInBackground
@@ -12481,7 +12481,7 @@ METHOD	com/xk72/e/c	(Lorg/json/JSONArray;)Ljava/util/List;	a	getInnerArrayList
 METHOD	com/xk72/e/c	(Lorg/json/JSONArray;I)V	a	method_2916
 METHOD	com/xk72/e/c	(Lorg/json/JSONArray;II)V	a	method_2917
 METHOD	com/xk72/e/c	(Lorg/json/JSONArray;ILjava/lang/Object;)V	a	method_2918
-METHOD	com/xk72/e/c	(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V	a	method_2919
+METHOD	com/xk72/e/c	(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V	a	setJsonValue
 CLASS	com/xk72/lib/XMLPrintWriter	com/xk72/lib/XMLPrintWriter
 FIELD	com/xk72/lib/XMLPrintWriter	Ljava/lang/String;	a	field_2985
 FIELD	com/xk72/lib/XMLPrintWriter	Ljava/lang/String;	b	ENCODING_UTF8
