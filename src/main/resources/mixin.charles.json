@@ -6,7 +6,8 @@
         "MixinMainWithClassLoader",
         "auth.MixinAuthorizationUtilsGenericAuthorization",
         "gui.settings.MixinHighlightSettingsPanel",
-        "macos.MixinMacOSManager"
+        "macos.MixinMacOSManager",
+        "util.MixinCssSyntaxKit"
     ],
     "compatibilityLevel": "JAVA_11",
     "injectors": {
