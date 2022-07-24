@@ -6,7 +6,7 @@ wrapper {
     version = "7.4"
 }
 
-group "com.charlesproxy"
+group "alaphant"
 version "1.0-SNAPSHOT"
 
 sourceCompatibility = 11
@@ -34,10 +34,11 @@ configurations {
 
 import alaphant.build.AnalyzeMappingsTask
 import alaphant.build.RemapJarTask
+import java.nio.file.Files
 
-def chlsOfficial = file("target/charles.jar")
-def chlsMapped = file("build/charles_MAPPED.jar")
-def chlsMappings = file("mappings/mappings.tiny")
+final def chlsOfficial = file("target/charles.jar")
+final def chlsMapped = file("build/charles_MAPPED.jar")
+final def chlsMappings = file("mappings/mappings.tiny")
 
 if (!chlsOfficial.exists()) {
     throw new Error("No Charles official Jar found. Please copy it into the target directory from your Charles install!")
@@ -88,10 +89,9 @@ dependencies {
     implementation("org.json:json:20201115")
     implementation("org.jasypt:jasypt:1.9.3")
     implementation("org.eclipse.mylyn.github:org.eclipse.egit.github.core:2.1.5")
-    implementation("org.bouncycastle:bcpkix-jdk15on:1.68")
+    implementation("org.bouncycastle:bcpkix-jdk15on:1.69")
     implementation("org.bouncycastle:bcprov-jdk15on:1.69") // intentionally changed from 1.68 -> 1.69 to fix security issues
     implementation("org.jasypt:jasypt:1.9.3")
-    implementation("org.violetlib:vaqua:9")
 
     // charles core
     if (!chlsMapped.exists()) {
@@ -145,6 +145,12 @@ def projectLibsDir = file("libs").getAbsolutePath()
 def projectTargetDir = file("target").getAbsolutePath()
 
 task run(type: JavaExec) {
+    final def paths = []
+
+    paths.add path
+    paths.add projectLibsDir
+    paths.add projectTargetDir
+
     dependsOn jar
     group = "run"
     description = "Run Charles with the plugin."
@@ -153,7 +159,15 @@ task run(type: JavaExec) {
     jvmArgs "-Dmixin.debug=true"
     jvmArgs "-Djava.net.preferIPv4Stack=false"
     jvmArgs "-Djava.net.preferIPv6Addresses=true"
-    jvmArgs "-Djava.library.path=$path;$projectLibsDir;$projectTargetDir"
+    jvmArgs "-Djava.library.path=${paths.join(File.pathSeparator)}"
+
+    // macOS
+    if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+        final def macJvmArgs = file("target/macos_jvm_args.txt")
+        Files.readAllLines(macJvmArgs.toPath()).each {
+            jvmArgs it
+        }
+    }
 }
 
 task shadowJar(type: Jar, dependsOn: remapJar) {

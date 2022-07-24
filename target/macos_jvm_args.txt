@@ -1,0 +1,8 @@
+-Dcom.apple.mrj.application.live-resize=true
+-Dapple.laf.useScreenMenuBar=true
+-Dapple.mrj.application.growbox.intrudes=true
+-Dcom.apple.hwaccel=true
+-Dswing.aatext=true
+-Dapple.awt.graphics.UseQuartz=true
+-Dcom.apple.mrj.application.apple.menu.about.name=Charles
+-Dapple.awt.application.appearance=system
