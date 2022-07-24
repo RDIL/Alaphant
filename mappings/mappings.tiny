@@ -2445,10 +2445,10 @@ CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$14	com/xk72/charles/gui/find/
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog$14	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	this$0	this$0
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog$14	Lcom/xk72/charles/gui/CharlesFrame;	val$owner	val$owner
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog$14	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$5	com/xk72/charles/gui/find/AdvancedFindDialog$5
+CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$5	com/xk72/charles/gui/find/AdvancedFindDialog$NextAction
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog$5	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	this$0	this$0
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog$5	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$6	com/xk72/charles/gui/find/AdvancedFindDialog$6
+CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$6	com/xk72/charles/gui/find/AdvancedFindDialog$PreviousAction
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog$6	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	this$0	this$0
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog$6	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$MyCompactCheckBox	com/xk72/charles/gui/find/AdvancedFindDialog$MyCompactCheckBox
@@ -2557,19 +2557,19 @@ METHOD	com/xk72/charles/gui/find/j	()Ljavax/swing/JTextField;	createEditorCompon
 METHOD	com/xk72/charles/gui/find/j	()Ljava/lang/Object;	getItem	getItem
 METHOD	com/xk72/charles/gui/find/j	(Ljava/lang/Object;)V	setItem	setItem
 CLASS	com/xk72/charles/gui/find/k	com/xk72/charles/gui/find/k
-FIELD	com/xk72/charles/gui/find/k	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	field_570
+FIELD	com/xk72/charles/gui/find/k	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	advancedFindDialog
 METHOD	com/xk72/charles/gui/find/k	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
 CLASS	com/xk72/charles/gui/find/l	com/xk72/charles/gui/find/l
-FIELD	com/xk72/charles/gui/find/l	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	field_571
+FIELD	com/xk72/charles/gui/find/l	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	advancedFindDialog
 METHOD	com/xk72/charles/gui/find/l	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
 CLASS	com/xk72/charles/gui/find/m	com/xk72/charles/gui/find/m
-FIELD	com/xk72/charles/gui/find/m	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	field_572
+FIELD	com/xk72/charles/gui/find/m	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	advancedFindDialog
 METHOD	com/xk72/charles/gui/find/m	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/find/n	com/xk72/charles/gui/find/n
-FIELD	com/xk72/charles/gui/find/n	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	field_573
+FIELD	com/xk72/charles/gui/find/n	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	advancedFindDialog
 METHOD	com/xk72/charles/gui/find/n	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/find/o	com/xk72/charles/gui/find/o
-FIELD	com/xk72/charles/gui/find/o	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	field_574
+FIELD	com/xk72/charles/gui/find/o	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	advancedFindDialog
 METHOD	com/xk72/charles/gui/find/o	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/find/p	com/xk72/charles/gui/find/p
 FIELD	com/xk72/charles/gui/find/p	Lcom/xk72/charles/gui/find/FindOptions;	a	options
@@ -2581,7 +2581,7 @@ METHOD	com/xk72/charles/gui/find/p	(Ljava/lang/String;Ljava/lang/String;Ljava/la
 METHOD	com/xk72/charles/gui/find/p	()Lcom/xk72/charles/gui/find/FindOptions;	b	getFindOptions
 METHOD	com/xk72/charles/gui/find/p	(I)Ljava/lang/String;	b	method_570
 METHOD	com/xk72/charles/gui/find/p	()Ljava/lang/String;	toString	toString
-CLASS	com/xk72/charles/gui/find/q	com/xk72/charles/gui/find/q
+CLASS	com/xk72/charles/gui/find/q	com/xk72/charles/gui/find/ModelNodeWhereComparator
 METHOD	com/xk72/charles/gui/find/q	(Lcom/xk72/charles/model/ModelNode;Lcom/xk72/charles/model/ModelNode;)I	a	method_571
 METHOD	com/xk72/charles/gui/find/q	(Ljava/lang/Object;Ljava/lang/Object;)I	compare	compare
 CLASS	com/xk72/charles/gui/find/r	com/xk72/charles/gui/find/HitsTreeModel
@@ -2598,7 +2598,7 @@ FIELD	com/xk72/charles/gui/find/s	I	a	field_579
 FIELD	com/xk72/charles/gui/find/s	Ljava/util/concurrent/ExecutorService;	b	field_580
 FIELD	com/xk72/charles/gui/find/s	Ljava/util/concurrent/Semaphore;	c	field_581
 FIELD	com/xk72/charles/gui/find/s	Lcom/xk72/charles/gui/find/u;	d	field_582
-FIELD	com/xk72/charles/gui/find/s	Lcom/xk72/charles/gui/find/FindOptions;	e	field_583
+FIELD	com/xk72/charles/gui/find/s	Lcom/xk72/charles/gui/find/FindOptions;	e	findOptions
 FIELD	com/xk72/charles/gui/find/s	Lcom/xk72/charles/model/ModelNode;	f	field_584
 METHOD	com/xk72/charles/gui/find/s	()V	a	method_578
 METHOD	com/xk72/charles/gui/find/s	(Ljava/lang/String;ZZZ)Ljava/util/regex/Pattern;	a	method_579
@@ -5819,11 +5819,11 @@ METHOD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$Registr
 METHOD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$RegistryTableModel	()Ljava/io/File;	newRow	newRow
 METHOD	com/xk72/charles/gui/settings/ProtobufSettingsPanel$RegistryPanel$RegistryTableModel	(ILjava/io/File;)V	setRowAt	setRowAt
 CLASS	com/xk72/charles/gui/settings/ProxySettingsPanel	com/xk72/charles/gui/settings/ProxySettingsPanel
-FIELD	com/xk72/charles/gui/settings/ProxySettingsPanel	Lcom/xk72/charles/gui/settings/ProxySettingsPanel$ProxiesPanel;	a	field_1255
-FIELD	com/xk72/charles/gui/settings/ProxySettingsPanel	Lcom/xk72/charles/gui/settings/ProxySettingsPanel$OptionsPanel;	b	field_1256
-FIELD	com/xk72/charles/gui/settings/ProxySettingsPanel	Lcom/xk72/charles/gui/settings/ProxySettingsPanel$WindowsPanel;	c	field_1257
-FIELD	com/xk72/charles/gui/settings/ProxySettingsPanel	Lcom/xk72/charles/gui/settings/ProxySettingsPanel$MacOSXPanel;	d	field_1258
-FIELD	com/xk72/charles/gui/settings/ProxySettingsPanel	Lcom/xk72/charles/gui/settings/ProxySettingsPanel$MozillaFirefoxPanel;	e	field_1259
+FIELD	com/xk72/charles/gui/settings/ProxySettingsPanel	Lcom/xk72/charles/gui/settings/ProxySettingsPanel$ProxiesPanel;	a	proxiesPanel
+FIELD	com/xk72/charles/gui/settings/ProxySettingsPanel	Lcom/xk72/charles/gui/settings/ProxySettingsPanel$OptionsPanel;	b	optionsPanel
+FIELD	com/xk72/charles/gui/settings/ProxySettingsPanel	Lcom/xk72/charles/gui/settings/ProxySettingsPanel$WindowsPanel;	c	winPanel
+FIELD	com/xk72/charles/gui/settings/ProxySettingsPanel	Lcom/xk72/charles/gui/settings/ProxySettingsPanel$MacOSXPanel;	d	macPanel
+FIELD	com/xk72/charles/gui/settings/ProxySettingsPanel	Lcom/xk72/charles/gui/settings/ProxySettingsPanel$MozillaFirefoxPanel;	e	firefoxPanel
 METHOD	com/xk72/charles/gui/settings/ProxySettingsPanel	()[Lcom/xk72/charles/gui/settings/SettingsPanel;	a	method_1234
 METHOD	com/xk72/charles/gui/settings/ProxySettingsPanel	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 METHOD	com/xk72/charles/gui/settings/ProxySettingsPanel	()Z	b	method_1235
@@ -7696,8 +7696,8 @@ METHOD	com/xk72/charles/gui/transaction/general/i	(Ljava/lang/Object;)Ljava/lang
 METHOD	com/xk72/charles/gui/transaction/general/i	(Ljava/net/InetAddress;)Ljava/lang/String;	a	trimTrailingSlash
 METHOD	com/xk72/charles/gui/transaction/general/i	(Lcom/xk72/charles/model/Transaction;)Ljava/lang/String;	b	method_1525
 METHOD	com/xk72/charles/gui/transaction/general/i	()V	c	initNodes
-CLASS	com/xk72/charles/gui/transaction/h	com/xk72/charles/gui/transaction/h
-CLASS	com/xk72/charles/gui/transaction/i	com/xk72/charles/gui/transaction/i
+CLASS	com/xk72/charles/gui/transaction/h	com/xk72/charles/gui/transaction/RequestTransactionCombinedPanel
+CLASS	com/xk72/charles/gui/transaction/i	com/xk72/charles/gui/transaction/ResponseTransactionCombinedPanel
 CLASS	com/xk72/charles/gui/transaction/j	com/xk72/charles/gui/transaction/j
 METHOD	com/xk72/charles/gui/transaction/j	(Lcom/xk72/charles/gui/find/ModelNodeHit;)V	a	method_1527
 CLASS	com/xk72/charles/gui/transaction/k	com/xk72/charles/gui/transaction/k
@@ -10962,8 +10962,8 @@ METHOD	com/xk72/charles/tools/CharlesToolProvider	()Ljava/util/List;	getTools	ge
 CLASS	com/xk72/charles/tools/ClientProcessTool	com/xk72/charles/tools/ClientProcessTool
 FIELD	com/xk72/charles/tools/ClientProcessTool	I	b	field_2653
 FIELD	com/xk72/charles/tools/ClientProcessTool	Ljava/util/logging/Logger;	e	LOGGER
-METHOD	com/xk72/charles/tools/ClientProcessTool	(Ljava/lang/String;)Ljava/lang/String;	a	method_2630
-METHOD	com/xk72/charles/tools/ClientProcessTool	(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;	a	method_2631
+METHOD	com/xk72/charles/tools/ClientProcessTool	(Ljava/lang/String;)Ljava/lang/String;	a	runLsofCommand
+METHOD	com/xk72/charles/tools/ClientProcessTool	(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;	a	runNetstatCommand
 CLASS	com/xk72/charles/tools/ComposeNewTool	com/xk72/charles/tools/ComposeNewTool
 CLASS	com/xk72/charles/tools/ComposeTool	com/xk72/charles/tools/ComposeTool
 CLASS	com/xk72/charles/tools/D	com/xk72/charles/tools/ReverseProxiesTool$ReverseProxiesProxyManagerClient
@@ -14125,7 +14125,7 @@ FIELD	com/xk72/proxy/io/e	J	b	field_3483
 FIELD	com/xk72/proxy/io/e	J	c	field_3484
 METHOD	com/xk72/proxy/io/e	()J	a	method_3421
 METHOD	com/xk72/proxy/io/e	(I)V	a	method_3422
-METHOD	com/xk72/proxy/io/e	(Ljava/io/InputStream;)Lcom/xk72/proxy/io/e;	a	method_3423
+METHOD	com/xk72/proxy/io/e	(Ljava/io/InputStream;)Lcom/xk72/proxy/io/e;	a	recursiveGetInputStream
 METHOD	com/xk72/proxy/io/e	()V	b	method_3424
 METHOD	com/xk72/proxy/io/e	()J	c	method_3425
 METHOD	com/xk72/proxy/io/e	()J	d	method_3426
@@ -15834,7 +15834,7 @@ FIELD	org/swfx/b/a	I	b	field_4078
 FIELD	org/swfx/b/a	I	c	field_4079
 METHOD	org/swfx/b/a	()Z	a	method_4065
 METHOD	org/swfx/b/a	(I)V	a	method_4066
-METHOD	org/swfx/b/a	([BII)V	a	method_4067
+METHOD	org/swfx/b/a	([BII)V	a	readFully
 METHOD	org/swfx/b/a	()V	b	method_4068
 METHOD	org/swfx/b/a	(I)J	b	method_4069
 METHOD	org/swfx/b/a	()I	c	method_4070
