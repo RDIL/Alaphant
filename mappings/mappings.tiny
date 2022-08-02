@@ -6,30 +6,30 @@ METHOD	com/google/protobuf/a	(Lcom/google/protobuf/Descriptors$FieldDescriptor;L
 CLASS	com/google/protobuf/b	com/google/protobuf/Descriptor_Type_Ordinals
 FIELD	com/google/protobuf/b	[I	a	JAVATYPE_ORDINALS
 FIELD	com/google/protobuf/b	[I	b	ORDINALS
-CLASS	com/xk72/a/a	com/xk72/a/a
-FIELD	com/xk72/a/a	Ljava/util/concurrent/locks/ReentrantLock;	a	field_3
+CLASS	com/xk72/a/a	com/xk72/cache/a
+FIELD	com/xk72/a/a	Ljava/util/concurrent/locks/ReentrantLock;	a	lock
 FIELD	com/xk72/a/a	Ljava/util/Map;	b	field_4
-FIELD	com/xk72/a/a	Ljava/util/Deque;	c	field_5
+FIELD	com/xk72/a/a	Ljava/util/Deque;	c	deque
 FIELD	com/xk72/a/a	I	d	field_6
-METHOD	com/xk72/a/a	()Ljava/lang/Object;	d	method_4
+METHOD	com/xk72/a/a	()Ljava/lang/Object;	d	getAndRemoveLast
 METHOD	com/xk72/a/a	(Ljava/lang/Object;)V	e	method_5
 METHOD	com/xk72/a/a	(Ljava/lang/Object;)V	f	method_6
 METHOD	com/xk72/a/a	(Ljava/lang/Object;)V	g	method_7
 METHOD	com/xk72/a/a	()Ljava/lang/String;	toString	toString
-CLASS	com/xk72/a/b	com/xk72/a/b
-FIELD	com/xk72/a/b	Ljava/util/Map;	a	field_7
-CLASS	com/xk72/a/c	com/xk72/a/c
+CLASS	com/xk72/a/b	com/xk72/cache/BasicMapCache
+FIELD	com/xk72/a/b	Ljava/util/Map;	a	map
+CLASS	com/xk72/a/c	com/xk72/cache/c
 FIELD	com/xk72/a/c	Ljava/util/Map;	a	field_8
 FIELD	com/xk72/a/c	J	b	field_9
 FIELD	com/xk72/a/c	Lcom/xk72/a/m;	c	field_10
-CLASS	com/xk72/a/d	com/xk72/a/d
-FIELD	com/xk72/a/d	J	a	field_11
-FIELD	com/xk72/a/d	Ljava/lang/Object;	b	field_12
-METHOD	com/xk72/a/d	()Ljava/lang/Object;	a	method_8
-CLASS	com/xk72/a/e	com/xk72/a/e
+CLASS	com/xk72/a/d	com/xk72/cache/ValueWithExpiration
+FIELD	com/xk72/a/d	J	a	expiration
+FIELD	com/xk72/a/d	Ljava/lang/Object;	b	value
+METHOD	com/xk72/a/d	()Ljava/lang/Object;	a	getValue
+CLASS	com/xk72/a/e	com/xk72/cache/e
 METHOD	com/xk72/a/e	(Ljava/lang/Object;)Ljava/lang/Object;	c	method_9
-CLASS	com/xk72/a/f	com/xk72/a/f
-CLASS	com/xk72/a/g	com/xk72/a/g
+CLASS	com/xk72/a/f	com/xk72/cache/NoopCacheImpl
+CLASS	com/xk72/a/g	com/xk72/cache/ICache
 METHOD	com/xk72/a/g	()I	a	size
 METHOD	com/xk72/a/g	(Ljava/lang/Object;)Z	a	containsKey
 METHOD	com/xk72/a/g	(Ljava/lang/Object;Ljava/lang/Object;)V	a	put
@@ -37,34 +37,34 @@ METHOD	com/xk72/a/g	()V	b	clear
 METHOD	com/xk72/a/g	(Ljava/lang/Object;)Ljava/lang/Object;	b	get
 METHOD	com/xk72/a/g	()Ljava/util/Set;	c	keySet
 METHOD	com/xk72/a/g	(Ljava/lang/Object;)Ljava/lang/Object;	d	remove
-CLASS	com/xk72/a/h	com/xk72/a/h
-CLASS	com/xk72/a/i	com/xk72/a/i
-CLASS	com/xk72/a/j	com/xk72/a/j
-FIELD	com/xk72/a/j	Ljava/util/Map;	a	field_13
-CLASS	com/xk72/a/k	com/xk72/a/k
+CLASS	com/xk72/a/h	com/xk72/cache/ExtendedMapCache
+CLASS	com/xk72/a/i	com/xk72/cache/i
+CLASS	com/xk72/a/j	com/xk72/cache/SoftReferenceCache
+FIELD	com/xk72/a/j	Ljava/util/Map;	a	map
+CLASS	com/xk72/a/k	com/xk72/cache/k
 FIELD	com/xk72/a/k	Ljava/util/Map;	a	field_14
 FIELD	com/xk72/a/k	J	b	field_15
 FIELD	com/xk72/a/k	Lcom/xk72/a/m;	c	field_16
-CLASS	com/xk72/a/l	com/xk72/a/l
-FIELD	com/xk72/a/l	J	a	field_17
+CLASS	com/xk72/a/l	com/xk72/cache/SoftReferenceWithExpiration
+FIELD	com/xk72/a/l	J	a	expiration
 METHOD	com/xk72/a/l	()Ljava/lang/Object;	get	get
-CLASS	com/xk72/a/m	com/xk72/a/m
+CLASS	com/xk72/a/m	com/xk72/cache/m
 FIELD	com/xk72/a/m	J	a	field_18
 FIELD	com/xk72/a/m	J	b	field_19
-FIELD	com/xk72/a/m	Ljava/lang/Thread;	c	field_20
+FIELD	com/xk72/a/m	Ljava/lang/Thread;	c	maintenanceThread
 FIELD	com/xk72/a/m	Lcom/xk72/a/p;	d	field_21
 METHOD	com/xk72/a/m	()V	a	method_17
 METHOD	com/xk72/a/m	()V	b	method_18
-METHOD	com/xk72/a/m	()V	c	method_19
-METHOD	com/xk72/a/m	()V	d	method_20
-CLASS	com/xk72/a/n	com/xk72/a/n
+METHOD	com/xk72/a/m	()V	c	performCleanup
+METHOD	com/xk72/a/m	()V	d	startMaintenanceThread
+CLASS	com/xk72/a/n	com/xk72/cache/ExpiryMaintenanceThread
 FIELD	com/xk72/a/n	Lcom/xk72/a/m;	a	field_22
 METHOD	com/xk72/a/n	()V	run	run
-CLASS	com/xk72/a/o	com/xk72/a/o
+CLASS	com/xk72/a/o	com/xk72/cache/o
 FIELD	com/xk72/a/o	Lcom/xk72/a/g;	a	field_23
 FIELD	com/xk72/a/o	J	b	field_24
 FIELD	com/xk72/a/o	Lcom/xk72/a/m;	c	field_25
-CLASS	com/xk72/a/p	com/xk72/a/p
+CLASS	com/xk72/a/p	com/xk72/cache/p
 METHOD	com/xk72/a/p	(Ljava/lang/Object;Ljava/lang/Object;J)V	a	method_21
 METHOD	com/xk72/a/p	()J	d	method_22
 CLASS	com/xk72/amf/A	com/xk72/amf/IAMFType
@@ -461,14 +461,14 @@ METHOD	com/xk72/c/b	([Ljava/net/InetAddress;)Ljava/net/InetAddress;	a	method_172
 METHOD	com/xk72/c/b	(Ljava/lang/String;)[Ljava/net/InetAddress;	c	getAllByName
 CLASS	com/xk72/c/c	com/xk72/dns/ExternalCapableDNSResolver
 FIELD	com/xk72/c/c	Ljava/util/logging/Logger;	c	LOGGER
-FIELD	com/xk72/c/c	[Ljava/net/InetAddress;	d	field_132
+FIELD	com/xk72/c/c	[Ljava/net/InetAddress;	d	EMPTY_NET_ADDRESS
 FIELD	com/xk72/c/c	Ljavax/naming/directory/DirContext;	e	dnsService
 FIELD	com/xk72/c/c	Ljava/lang/String;	f	namingProviderUrl
-FIELD	com/xk72/c/c	Ljava/util/List;	g	field_135
+FIELD	com/xk72/c/c	Ljava/util/List;	g	selectedLocations
 FIELD	com/xk72/c/c	Z	h	fallbackAllowed
 FIELD	com/xk72/c/c	J	i	ttl
 FIELD	com/xk72/c/c	J	j	negativeTtl
-FIELD	com/xk72/c/c	Lcom/xk72/a/p;	k	field_139
+FIELD	com/xk72/c/c	Lcom/xk72/a/p;	k	netAddressLookupCache
 FIELD	com/xk72/c/c	Z	l	field_140
 METHOD	com/xk72/c/c	(J)V	a	setTtl
 METHOD	com/xk72/c/c	(Ljava/lang/String;Ljava/lang/String;)Ljava/net/InetAddress;	a	tryGetByAddress
@@ -2416,9 +2416,9 @@ FIELD	com/xk72/charles/gui/find/AdvancedFindDialog	Ljavax/swing/JCheckBox;	where
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog	Ljavax/swing/JCheckBox;	whereURL	whereURL
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog	Ljavax/swing/JCheckBox;	wholeWords	wholeWords
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog	()Lcom/xk72/charles/gui/find/FindOptions;	a	getFindOptions
-METHOD	com/xk72/charles/gui/find/AdvancedFindDialog	(Lcom/xk72/charles/gui/find/FindOptions;)V	a	method_545
+METHOD	com/xk72/charles/gui/find/AdvancedFindDialog	(Lcom/xk72/charles/gui/find/FindOptions;)V	a	setFindOptions
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog	(Lcom/xk72/charles/gui/find/FindOptions;I)V	a	method_546
-METHOD	com/xk72/charles/gui/find/AdvancedFindDialog	(Lcom/xk72/charles/gui/find/ModelNodeHit;)V	a	method_547
+METHOD	com/xk72/charles/gui/find/AdvancedFindDialog	(Lcom/xk72/charles/gui/find/ModelNodeHit;)V	a	selectHit
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog	(Ljavax/swing/tree/TreeModel;Ljavax/swing/tree/TreePath;)Ljavax/swing/tree/TreePath;	a	method_548
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog	()Lcom/xk72/charles/gui/find/ModelNodeHit;	b	method_549
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog	(Ljavax/swing/tree/TreeModel;Ljavax/swing/tree/TreePath;)Ljavax/swing/tree/TreePath;	b	method_550
@@ -2438,7 +2438,7 @@ METHOD	com/xk72/charles/gui/find/AdvancedFindDialog$12$1	(Ljava/awt/event/Action
 CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$12$2	com/xk72/charles/gui/find/AdvancedFindDialog$12$2
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog$12$2	Lcom/xk72/charles/gui/find/c;	this$1	this$1
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog$12$2	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$13	com/xk72/charles/gui/find/AdvancedFindDialog$13
+CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$13	com/xk72/charles/gui/find/AdvancedFindDialog$CloseAction
 FIELD	com/xk72/charles/gui/find/AdvancedFindDialog$13	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	this$0	this$0
 METHOD	com/xk72/charles/gui/find/AdvancedFindDialog$13	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/find/AdvancedFindDialog$14	com/xk72/charles/gui/find/AdvancedFindDialog$14
@@ -2458,12 +2458,12 @@ FIELD	com/xk72/charles/gui/find/FindOptions	Z	a	caseSensitive
 FIELD	com/xk72/charles/gui/find/FindOptions	Z	b	wholeWords
 FIELD	com/xk72/charles/gui/find/FindOptions	Z	c	regex
 FIELD	com/xk72/charles/gui/find/FindOptions	I	d	bitFlags
-FIELD	com/xk72/charles/gui/find/FindOptions	Ljava/lang/String;	e	field_534
+FIELD	com/xk72/charles/gui/find/FindOptions	Ljava/lang/String;	e	searchQuery
 FIELD	com/xk72/charles/gui/find/FindOptions	Lcom/xk72/charles/gui/find/FindOptions$Scope;	f	findScope
-FIELD	com/xk72/charles/gui/find/FindOptions	Ljava/lang/String;	g	text
+FIELD	com/xk72/charles/gui/find/FindOptions	Ljava/lang/String;	g	scopeValue
 METHOD	com/xk72/charles/gui/find/FindOptions	()Z	a	isCaseSensitive
 METHOD	com/xk72/charles/gui/find/FindOptions	()Z	b	getRegex
-METHOD	com/xk72/charles/gui/find/FindOptions	()Ljava/lang/String;	c	method_554
+METHOD	com/xk72/charles/gui/find/FindOptions	()Ljava/lang/String;	c	getSearchQuery
 METHOD	com/xk72/charles/gui/find/FindOptions	()Z	d	isWholeWords
 METHOD	com/xk72/charles/gui/find/FindOptions	()I	e	getBitFlags
 METHOD	com/xk72/charles/gui/find/FindOptions	(Ljava/lang/Object;)Z	equals	equals
@@ -2509,7 +2509,7 @@ METHOD	com/xk72/charles/gui/find/ModelNodeHit	()I	getWhere	getWhere
 CLASS	com/xk72/charles/gui/find/a	com/xk72/charles/gui/find/AdvancedFindDialogComponentAdapter
 FIELD	com/xk72/charles/gui/find/a	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	findDialog
 METHOD	com/xk72/charles/gui/find/a	(Ljava/awt/event/ComponentEvent;)V	componentHidden	componentHidden
-CLASS	com/xk72/charles/gui/find/b	com/xk72/charles/gui/find/b
+CLASS	com/xk72/charles/gui/find/b	com/xk72/charles/gui/find/AdvancedFindDialog$FindButtonListener
 FIELD	com/xk72/charles/gui/find/b	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	advancedFindDialog
 METHOD	com/xk72/charles/gui/find/b	()Z	a	method_561
 METHOD	com/xk72/charles/gui/find/b	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
@@ -2526,7 +2526,7 @@ FIELD	com/xk72/charles/gui/find/d	Lcom/xk72/charles/gui/find/c;	a	field_552
 METHOD	com/xk72/charles/gui/find/d	(Ljavax/swing/event/PopupMenuEvent;)V	popupMenuCanceled	popupMenuCanceled
 METHOD	com/xk72/charles/gui/find/d	(Ljavax/swing/event/PopupMenuEvent;)V	popupMenuWillBecomeInvisible	popupMenuWillBecomeInvisible
 METHOD	com/xk72/charles/gui/find/d	(Ljavax/swing/event/PopupMenuEvent;)V	popupMenuWillBecomeVisible	popupMenuWillBecomeVisible
-CLASS	com/xk72/charles/gui/find/e	com/xk72/charles/gui/find/e
+CLASS	com/xk72/charles/gui/find/e	com/xk72/charles/gui/find/AdvancedFindDialog$FindCallback
 FIELD	com/xk72/charles/gui/find/e	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	advancedFindDialog
 FIELD	com/xk72/charles/gui/find/e	Lcom/xk72/charles/gui/find/FindOptions;	b	findOptions
 FIELD	com/xk72/charles/gui/find/e	I	c	field_555
@@ -2541,22 +2541,22 @@ FIELD	com/xk72/charles/gui/find/f	Lcom/xk72/charles/gui/find/e;	b	field_561
 METHOD	com/xk72/charles/gui/find/f	()V	run	run
 CLASS	com/xk72/charles/gui/find/g	com/xk72/charles/gui/find/g
 FIELD	com/xk72/charles/gui/find/g	Lcom/xk72/charles/gui/find/FindOptions;	a	findOptions
-FIELD	com/xk72/charles/gui/find/g	I	b	field_563
-FIELD	com/xk72/charles/gui/find/g	Lcom/xk72/charles/gui/find/e;	c	field_564
+FIELD	com/xk72/charles/gui/find/g	I	b	resultCount
+FIELD	com/xk72/charles/gui/find/g	Lcom/xk72/charles/gui/find/e;	c	findCallback
 METHOD	com/xk72/charles/gui/find/g	()V	run	run
 CLASS	com/xk72/charles/gui/find/h	com/xk72/charles/gui/find/h
 FIELD	com/xk72/charles/gui/find/h	Lcom/xk72/charles/model/ModelNode;	a	field_565
 FIELD	com/xk72/charles/gui/find/h	Lcom/xk72/charles/model/ModelNode;	b	field_566
 FIELD	com/xk72/charles/gui/find/h	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	c	advancedFindDialog
 METHOD	com/xk72/charles/gui/find/h	()V	run	run
-CLASS	com/xk72/charles/gui/find/i	com/xk72/charles/gui/find/i
-FIELD	com/xk72/charles/gui/find/i	[I	a	field_568
-CLASS	com/xk72/charles/gui/find/j	com/xk72/charles/gui/find/j
-FIELD	com/xk72/charles/gui/find/j	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	field_569
+CLASS	com/xk72/charles/gui/find/i	com/xk72/charles/gui/find/FindScopeOrdinals
+FIELD	com/xk72/charles/gui/find/i	[I	a	ORDINALS
+CLASS	com/xk72/charles/gui/find/j	com/xk72/charles/gui/find/AdvancedFindDialog$ComboBoxEditor
+FIELD	com/xk72/charles/gui/find/j	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	advancedFindDialog
 METHOD	com/xk72/charles/gui/find/j	()Ljavax/swing/JTextField;	createEditorComponent	createEditorComponent
 METHOD	com/xk72/charles/gui/find/j	()Ljava/lang/Object;	getItem	getItem
 METHOD	com/xk72/charles/gui/find/j	(Ljava/lang/Object;)V	setItem	setItem
-CLASS	com/xk72/charles/gui/find/k	com/xk72/charles/gui/find/k
+CLASS	com/xk72/charles/gui/find/k	com/xk72/charles/gui/find/AdvancedFindDialog$ItemListener
 FIELD	com/xk72/charles/gui/find/k	Lcom/xk72/charles/gui/find/AdvancedFindDialog;	a	advancedFindDialog
 METHOD	com/xk72/charles/gui/find/k	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
 CLASS	com/xk72/charles/gui/find/l	com/xk72/charles/gui/find/l
@@ -2574,12 +2574,12 @@ METHOD	com/xk72/charles/gui/find/o	(Ljava/awt/event/ActionEvent;)V	actionPerform
 CLASS	com/xk72/charles/gui/find/p	com/xk72/charles/gui/find/p
 FIELD	com/xk72/charles/gui/find/p	Lcom/xk72/charles/gui/find/FindOptions;	a	options
 FIELD	com/xk72/charles/gui/find/p	I	b	field_576
-METHOD	com/xk72/charles/gui/find/p	()Ljava/lang/String;	a	method_565
+METHOD	com/xk72/charles/gui/find/p	()Ljava/lang/String;	a	getSearchQuery
 METHOD	com/xk72/charles/gui/find/p	(I)Ljava/lang/String;	a	getResultCountDisplay
 METHOD	com/xk72/charles/gui/find/p	(Lcom/xk72/charles/gui/find/FindOptions$Scope;Ljava/lang/String;)Ljava/lang/String;	a	getScopeDisplay
 METHOD	com/xk72/charles/gui/find/p	(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;	a	method_568
 METHOD	com/xk72/charles/gui/find/p	()Lcom/xk72/charles/gui/find/FindOptions;	b	getFindOptions
-METHOD	com/xk72/charles/gui/find/p	(I)Ljava/lang/String;	b	method_570
+METHOD	com/xk72/charles/gui/find/p	(I)Ljava/lang/String;	b	whereMaskToString
 METHOD	com/xk72/charles/gui/find/p	()Ljava/lang/String;	toString	toString
 CLASS	com/xk72/charles/gui/find/q	com/xk72/charles/gui/find/ModelNodeWhereComparator
 METHOD	com/xk72/charles/gui/find/q	(Lcom/xk72/charles/model/ModelNode;Lcom/xk72/charles/model/ModelNode;)I	a	method_571
@@ -2597,7 +2597,7 @@ CLASS	com/xk72/charles/gui/find/s	com/xk72/charles/gui/find/s
 FIELD	com/xk72/charles/gui/find/s	I	a	field_579
 FIELD	com/xk72/charles/gui/find/s	Ljava/util/concurrent/ExecutorService;	b	field_580
 FIELD	com/xk72/charles/gui/find/s	Ljava/util/concurrent/Semaphore;	c	field_581
-FIELD	com/xk72/charles/gui/find/s	Lcom/xk72/charles/gui/find/u;	d	field_582
+FIELD	com/xk72/charles/gui/find/s	Lcom/xk72/charles/gui/find/u;	d	findCallback
 FIELD	com/xk72/charles/gui/find/s	Lcom/xk72/charles/gui/find/FindOptions;	e	findOptions
 FIELD	com/xk72/charles/gui/find/s	Lcom/xk72/charles/model/ModelNode;	f	field_584
 METHOD	com/xk72/charles/gui/find/s	()V	a	method_578
@@ -12478,7 +12478,7 @@ FIELD	com/xk72/e/c	Ljava/lang/reflect/Field;	a	myArrayListField
 METHOD	com/xk72/e/c	(Ljava/lang/Object;)Ljava/lang/String;	a	stringifyNumber
 METHOD	com/xk72/e/c	(Ljava/lang/String;)Ljava/lang/Object;	a	method_2914
 METHOD	com/xk72/e/c	(Lorg/json/JSONArray;)Ljava/util/List;	a	getInnerArrayList
-METHOD	com/xk72/e/c	(Lorg/json/JSONArray;I)V	a	method_2916
+METHOD	com/xk72/e/c	(Lorg/json/JSONArray;I)V	a	removeFromArrayAtIndex
 METHOD	com/xk72/e/c	(Lorg/json/JSONArray;II)V	a	method_2917
 METHOD	com/xk72/e/c	(Lorg/json/JSONArray;ILjava/lang/Object;)V	a	method_2918
 METHOD	com/xk72/e/c	(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V	a	setJsonValue
