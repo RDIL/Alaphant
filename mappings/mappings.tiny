@@ -4121,7 +4121,7 @@ METHOD	com/xk72/charles/gui/lib/treetable/b	()Ljava/lang/Object;	getRoot	getRoot
 METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljava/lang/Object;)Z	isLeaf	isLeaf
 METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljavax/swing/event/TreeModelListener;)V	removeTreeModelListener	removeTreeModelListener
 METHOD	com/xk72/charles/gui/lib/treetable/b	(Ljavax/swing/tree/TreePath;Ljava/lang/Object;)V	valueForPathChanged	valueForPathChanged
-CLASS	com/xk72/charles/gui/lib/treetable/c	com/xk72/charles/gui/lib/treetable/c
+CLASS	com/xk72/charles/gui/lib/treetable/c	com/xk72/charles/gui/lib/treetable/CharlesExtendedTreeTable
 FIELD	com/xk72/charles/gui/lib/treetable/c	Ljava/util/List;	c	field_906
 FIELD	com/xk72/charles/gui/lib/treetable/c	Ljava/util/List;	d	classes
 METHOD	com/xk72/charles/gui/lib/treetable/c	(Lcom/xk72/charles/gui/lib/treetable/DefaultTreeTableNode;)V	a	method_979
@@ -6377,7 +6377,7 @@ CLASS	com/xk72/charles/gui/transaction/actions/CopyToClipboardAction	com/xk72/ch
 METHOD	com/xk72/charles/gui/transaction/actions/CopyToClipboardAction	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 METHOD	com/xk72/charles/gui/transaction/actions/CopyToClipboardAction	()Ljava/awt/datatransfer/Transferable;	getBody	getBody
 CLASS	com/xk72/charles/gui/transaction/actions/CopyToClipboardAction$CurlCommand	com/xk72/charles/gui/transaction/actions/CopyToClipboardAction$CurlCommand
-FIELD	com/xk72/charles/gui/transaction/actions/CopyToClipboardAction$CurlCommand	Ljava/util/Set;	a	field_1369
+FIELD	com/xk72/charles/gui/transaction/actions/CopyToClipboardAction$CurlCommand	Ljava/util/Set;	a	defaultHeaders
 FIELD	com/xk72/charles/gui/transaction/actions/CopyToClipboardAction$CurlCommand	Lcom/xk72/charles/model/Transaction;	transaction	transaction
 METHOD	com/xk72/charles/gui/transaction/actions/CopyToClipboardAction$CurlCommand	(Ljava/lang/String;)Ljava/lang/String;	a	method_1295
 METHOD	com/xk72/charles/gui/transaction/actions/CopyToClipboardAction$CurlCommand	(Ljava/lang/StringBuilder;Ljava/lang/String;)V	a	method_1296
@@ -6472,65 +6472,65 @@ FIELD	com/xk72/charles/gui/transaction/actions/ViewAsTypeAction	I	mode	mode
 METHOD	com/xk72/charles/gui/transaction/actions/ViewAsTypeAction	(Lcom/xk72/charles/model/Transaction;Lcom/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$ViewerContentTypeConfig;)V	a	method_1311
 METHOD	com/xk72/charles/gui/transaction/actions/ViewAsTypeAction	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/transaction/actions/ViewAsTypeMenu	com/xk72/charles/gui/transaction/actions/ViewAsTypeMenu
-METHOD	com/xk72/charles/gui/transaction/actions/ViewAsTypeMenu	(Lcom/xk72/charles/gui/transaction/actions/m;)Ljavax/swing/JMenuItem;	a	method_1312
+METHOD	com/xk72/charles/gui/transaction/actions/ViewAsTypeMenu	(Lcom/xk72/charles/gui/transaction/actions/m;)Ljavax/swing/JMenuItem;	a	createViewRequestAsButton
 METHOD	com/xk72/charles/gui/transaction/actions/ViewAsTypeMenu	(Lcom/xk72/charles/gui/transaction/actions/m;ILcom/xk72/charles/gui/transaction/viewers/TransactionViewer$ViewerContentType;)Z	a	method_1313
-METHOD	com/xk72/charles/gui/transaction/actions/ViewAsTypeMenu	(Lcom/xk72/charles/gui/transaction/actions/m;)Ljavax/swing/JMenuItem;	b	method_1314
+METHOD	com/xk72/charles/gui/transaction/actions/ViewAsTypeMenu	(Lcom/xk72/charles/gui/transaction/actions/m;)Ljavax/swing/JMenuItem;	b	createViewResponseAsButton
 CLASS	com/xk72/charles/gui/transaction/actions/a	com/xk72/charles/gui/transaction/actions/a
-FIELD	com/xk72/charles/gui/transaction/actions/a	Lcom/xk72/charles/gui/transaction/actions/AdvancedRepeatAction;	b	field_1378
+FIELD	com/xk72/charles/gui/transaction/actions/a	Lcom/xk72/charles/gui/transaction/actions/AdvancedRepeatAction;	b	advancedRepeatAction
 FIELD	com/xk72/charles/gui/transaction/actions/a	Ljavax/swing/JTextArea;	c	field_1379
-FIELD	com/xk72/charles/gui/transaction/actions/a	Lcom/xk72/charles/gui/transaction/actions/AdvancedRepeatAction$MySettingsPanel;	d	field_1380
+FIELD	com/xk72/charles/gui/transaction/actions/a	Lcom/xk72/charles/gui/transaction/actions/AdvancedRepeatAction$MySettingsPanel;	d	advancedRepeatActionSettings
 CLASS	com/xk72/charles/gui/transaction/actions/b	com/xk72/charles/gui/transaction/actions/b
-FIELD	com/xk72/charles/gui/transaction/actions/b	Lcom/xk72/charles/gui/transaction/actions/AdvancedRepeatAction;	a	field_1381
-FIELD	com/xk72/charles/gui/transaction/actions/b	Ljavax/swing/JLabel;	b	field_1382
-FIELD	com/xk72/charles/gui/transaction/actions/b	Ljavax/swing/JLabel;	c	field_1383
-FIELD	com/xk72/charles/gui/transaction/actions/b	Lcom/xk72/charles/gui/transaction/actions/AdvancedRepeatAction$MySettingsPanel;	d	field_1384
+FIELD	com/xk72/charles/gui/transaction/actions/b	Lcom/xk72/charles/gui/transaction/actions/AdvancedRepeatAction;	a	advancedRepeatAction
+FIELD	com/xk72/charles/gui/transaction/actions/b	Ljavax/swing/JLabel;	b	maxRequestDelay
+FIELD	com/xk72/charles/gui/transaction/actions/b	Ljavax/swing/JLabel;	c	maxRepeatDelay
+FIELD	com/xk72/charles/gui/transaction/actions/b	Lcom/xk72/charles/gui/transaction/actions/AdvancedRepeatAction$MySettingsPanel;	d	advancedRepeatActionSettings
 METHOD	com/xk72/charles/gui/transaction/actions/b	(Ljava/awt/event/ItemEvent;)V	itemStateChanged	itemStateChanged
 CLASS	com/xk72/charles/gui/transaction/actions/c	com/xk72/charles/gui/transaction/actions/ImageTransferable
 FIELD	com/xk72/charles/gui/transaction/actions/c	[B	a	imageData
 METHOD	com/xk72/charles/gui/transaction/actions/c	(Ljava/awt/datatransfer/DataFlavor;)Ljava/lang/Object;	getTransferData	getTransferData
 METHOD	com/xk72/charles/gui/transaction/actions/c	()[Ljava/awt/datatransfer/DataFlavor;	getTransferDataFlavors	getTransferDataFlavors
 METHOD	com/xk72/charles/gui/transaction/actions/c	(Ljava/awt/datatransfer/DataFlavor;)Z	isDataFlavorSupported	isDataFlavorSupported
-CLASS	com/xk72/charles/gui/transaction/actions/d	com/xk72/charles/gui/transaction/actions/d
-FIELD	com/xk72/charles/gui/transaction/actions/d	Ljava/util/List;	a	field_1386
-FIELD	com/xk72/charles/gui/transaction/actions/d	Ljavax/swing/ProgressMonitor;	b	field_1387
-FIELD	com/xk72/charles/gui/transaction/actions/d	Ljava/util/Map;	c	field_1388
+CLASS	com/xk72/charles/gui/transaction/actions/d	com/xk72/charles/gui/transaction/actions/SaveAllAction
+FIELD	com/xk72/charles/gui/transaction/actions/d	Ljava/util/List;	a	filesList
+FIELD	com/xk72/charles/gui/transaction/actions/d	Ljavax/swing/ProgressMonitor;	b	progressMonitor
+FIELD	com/xk72/charles/gui/transaction/actions/d	Ljava/util/Map;	c	transactionsMap
 FIELD	com/xk72/charles/gui/transaction/actions/d	Ljava/awt/event/ActionEvent;	d	field_1389
-FIELD	com/xk72/charles/gui/transaction/actions/d	Lcom/xk72/charles/gui/transaction/actions/SaveTransactionsAction;	e	field_1390
+FIELD	com/xk72/charles/gui/transaction/actions/d	Lcom/xk72/charles/gui/transaction/actions/SaveTransactionsAction;	e	saveTransactionsAction
 METHOD	com/xk72/charles/gui/transaction/actions/d	()V	run	run
-CLASS	com/xk72/charles/gui/transaction/actions/e	com/xk72/charles/gui/transaction/actions/e
-FIELD	com/xk72/charles/gui/transaction/actions/e	Ljava/io/IOException;	a	field_1391
-FIELD	com/xk72/charles/gui/transaction/actions/e	Lcom/xk72/charles/gui/transaction/actions/d;	b	field_1392
+CLASS	com/xk72/charles/gui/transaction/actions/e	com/xk72/charles/gui/transaction/actions/SaveAllIOExceptionNotificationTask
+FIELD	com/xk72/charles/gui/transaction/actions/e	Ljava/io/IOException;	a	ioException
+FIELD	com/xk72/charles/gui/transaction/actions/e	Lcom/xk72/charles/gui/transaction/actions/d;	b	saveAllAction
 METHOD	com/xk72/charles/gui/transaction/actions/e	()V	run	run
-CLASS	com/xk72/charles/gui/transaction/actions/f	com/xk72/charles/gui/transaction/actions/f
-FIELD	com/xk72/charles/gui/transaction/actions/f	Lcom/xk72/charles/gui/transaction/actions/d;	a	field_1393
+CLASS	com/xk72/charles/gui/transaction/actions/f	com/xk72/charles/gui/transaction/actions/NoSavableTransactionsFoundNotificationTask
+FIELD	com/xk72/charles/gui/transaction/actions/f	Lcom/xk72/charles/gui/transaction/actions/d;	a	saveAllAction
 METHOD	com/xk72/charles/gui/transaction/actions/f	()V	run	run
 CLASS	com/xk72/charles/gui/transaction/actions/g	com/xk72/charles/gui/transaction/actions/g
 FIELD	com/xk72/charles/gui/transaction/actions/g	Ljava/util/List;	a	field_1394
-FIELD	com/xk72/charles/gui/transaction/actions/g	Ljavax/swing/ProgressMonitor;	b	field_1395
+FIELD	com/xk72/charles/gui/transaction/actions/g	Ljavax/swing/ProgressMonitor;	b	progressMonitor
 FIELD	com/xk72/charles/gui/transaction/actions/g	Ljava/awt/event/ActionEvent;	c	field_1396
-FIELD	com/xk72/charles/gui/transaction/actions/g	Lcom/xk72/charles/gui/transaction/actions/SaveWebSocketMessagesAction;	d	field_1397
+FIELD	com/xk72/charles/gui/transaction/actions/g	Lcom/xk72/charles/gui/transaction/actions/SaveWebSocketMessagesAction;	d	saveWebSocketMessagesAction
 METHOD	com/xk72/charles/gui/transaction/actions/g	()V	run	run
 CLASS	com/xk72/charles/gui/transaction/actions/h	com/xk72/charles/gui/transaction/actions/h
-FIELD	com/xk72/charles/gui/transaction/actions/h	Ljava/io/IOException;	a	field_1398
+FIELD	com/xk72/charles/gui/transaction/actions/h	Ljava/io/IOException;	a	ioException
 FIELD	com/xk72/charles/gui/transaction/actions/h	Lcom/xk72/charles/gui/transaction/actions/g;	b	field_1399
 METHOD	com/xk72/charles/gui/transaction/actions/h	()V	run	run
-CLASS	com/xk72/charles/gui/transaction/actions/i	com/xk72/charles/gui/transaction/actions/i
-FIELD	com/xk72/charles/gui/transaction/actions/i	[I	a	field_1400
-FIELD	com/xk72/charles/gui/transaction/actions/i	[I	b	field_1401
+CLASS	com/xk72/charles/gui/transaction/actions/i	com/xk72/charles/gui/transaction/actions/WebSocketMessageOrdinals
+FIELD	com/xk72/charles/gui/transaction/actions/i	[I	a	SOURCE_ORDINALS
+FIELD	com/xk72/charles/gui/transaction/actions/i	[I	b	TYPE_ORDINALS
 CLASS	com/xk72/charles/gui/transaction/actions/j	com/xk72/charles/gui/transaction/actions/j
 FIELD	com/xk72/charles/gui/transaction/actions/j	Ljava/io/File;	a	field_1402
-FIELD	com/xk72/charles/gui/transaction/actions/j	Lcom/xk72/proxy/websocket/WebSocketMessage;	b	field_1403
+FIELD	com/xk72/charles/gui/transaction/actions/j	Lcom/xk72/proxy/websocket/WebSocketMessage;	b	webSocketMessage
 CLASS	com/xk72/charles/gui/transaction/actions/k	com/xk72/charles/gui/transaction/actions/k
-FIELD	com/xk72/charles/gui/transaction/actions/k	Lcom/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$ViewerContentTypeConfig;	a	field_1404
+FIELD	com/xk72/charles/gui/transaction/actions/k	Lcom/xk72/charles/gui/transaction/viewers/TransactionViewerContentTypeManager$ViewerContentTypeConfig;	a	viewerContentTypeConfig
 FIELD	com/xk72/charles/gui/transaction/actions/k	Lcom/xk72/charles/gui/transaction/viewers/g;	b	field_1405
-FIELD	com/xk72/charles/gui/transaction/actions/k	Lcom/xk72/charles/model/Transaction;	c	field_1406
-FIELD	com/xk72/charles/gui/transaction/actions/k	Lcom/xk72/charles/gui/transaction/actions/ViewAsTypeAction;	d	field_1407
+FIELD	com/xk72/charles/gui/transaction/actions/k	Lcom/xk72/charles/model/Transaction;	c	transaction
+FIELD	com/xk72/charles/gui/transaction/actions/k	Lcom/xk72/charles/gui/transaction/actions/ViewAsTypeAction;	d	viewAsTypeAction
 METHOD	com/xk72/charles/gui/transaction/actions/k	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
 CLASS	com/xk72/charles/gui/transaction/actions/l	com/xk72/charles/gui/transaction/actions/l
 FIELD	com/xk72/charles/gui/transaction/actions/l	[Ljavax/swing/JCheckBoxMenuItem;	a	field_1408
-FIELD	com/xk72/charles/gui/transaction/actions/l	Lcom/xk72/charles/gui/transaction/actions/m;	b	field_1409
+FIELD	com/xk72/charles/gui/transaction/actions/l	Lcom/xk72/charles/gui/transaction/actions/m;	b	transactionProvider
 FIELD	com/xk72/charles/gui/transaction/actions/l	I	c	field_1410
-FIELD	com/xk72/charles/gui/transaction/actions/l	Lcom/xk72/charles/gui/transaction/actions/ViewAsTypeMenu;	d	field_1411
+FIELD	com/xk72/charles/gui/transaction/actions/l	Lcom/xk72/charles/gui/transaction/actions/ViewAsTypeMenu;	d	viewAsTypeMenu
 METHOD	com/xk72/charles/gui/transaction/actions/l	(Ljavax/swing/event/MenuEvent;)V	menuCanceled	menuCanceled
 METHOD	com/xk72/charles/gui/transaction/actions/l	(Ljavax/swing/event/MenuEvent;)V	menuDeselected	menuDeselected
 METHOD	com/xk72/charles/gui/transaction/actions/l	(Ljavax/swing/event/MenuEvent;)V	menuSelected	menuSelected
@@ -7728,9 +7728,9 @@ FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	J	A	field_1815
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	J	B	field_1816
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	J	C	field_1817
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	J	D	field_1818
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	E	field_1819
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	F	field_1820
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	G	field_1821
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	E	dnsCount
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	F	connectsCount
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	G	tlsHandshakeCount
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	Ljava/util/Date;	H	transactionStartTime
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	Ljava/util/Date;	I	transactionEndTime
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	Ljava/util/Date;	J	requestBeginTime
@@ -7746,12 +7746,12 @@ FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	Lcom/xk72/charles/
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	Lcom/xk72/charles/gui/transaction/lib/a;	T	field_1834
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	Ljava/util/Set;	a	transactions
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	Ljava/util/Set;	b	protocols
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	c	field_1837
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	d	field_1838
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	e	field_1839
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	f	field_1840
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	g	field_1841
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	h	field_1842
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	c	requestsCount
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	d	completedCount
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	e	incompleteCount
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	f	failedCount
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	g	blockedCount
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	I	h	keepAliveCount
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	[J	i	field_1843
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	[[J	j	field_1844
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary	[[J	k	field_1845
@@ -7784,12 +7784,12 @@ METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	K	method_1547
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	L	method_1548
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	M	method_1549
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	N	method_1550
-METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	O	method_1551
-METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	P	method_1552
+METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	O	getDnsCount
+METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	P	getConnectsCount
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	Q	getSslDuration
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	R	method_1554
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	S	method_1555
-METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	T	method_1556
+METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	T	getTlsHandshakeCount
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()Ljava/util/Set;	U	getProtocols
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	a	method_1558
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	(J[JZZ)V	a	method_1559
@@ -7812,21 +7812,21 @@ METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()F	m	method_1575
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()Ljava/util/Date;	n	getTransitionStartTime
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()Ljava/util/Date;	o	getRequestBeginTime
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()Ljava/util/Date;	p	getResponseBeginTime
-METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	q	method_1579
-METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	r	method_1580
-METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	s	method_1581
-METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	t	method_1582
-METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	u	method_1583
-METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	v	method_1584
+METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	q	getRequestsCount
+METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	r	getCompletedCount
+METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	s	getFailedCount
+METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	t	getBlockedCount
+METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	u	getKeepAliveCount
+METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()I	v	getIncompleteCount
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	w	method_1585
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	x	method_1586
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	y	method_1587
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary	()J	z	method_1588
 CLASS	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	Lcom/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension;	a	field_1861
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	Lcom/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension;	b	field_1862
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	Lcom/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension;	c	field_1863
-FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	Lcom/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension;	d	field_1864
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	Lcom/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension;	a	TLS_HANDSHAKES
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	Lcom/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension;	b	HEADERS
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	Lcom/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension;	c	CONTENT
+FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	Lcom/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension;	d	TOTAL
 FIELD	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	[Lcom/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension;	e	field_1865
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	(Ljava/lang/String;)Lcom/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension;	valueOf	valueOf
 METHOD	com/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension	()[Lcom/xk72/charles/gui/transaction/lib/TransactionSummary$Dimension;	values	values
@@ -8123,11 +8123,11 @@ FIELD	com/xk72/charles/gui/transaction/viewers/g	Ljavax/swing/JLabel;	l	msgTypeL
 METHOD	com/xk72/charles/gui/transaction/viewers/g	()Z	a	isMsgTypeLabelVisible
 METHOD	com/xk72/charles/gui/transaction/viewers/g	(Ljava/lang/Boolean;)V	a	method_1663
 METHOD	com/xk72/charles/gui/transaction/viewers/g	(Ljava/lang/String;)V	a	method_1664
-METHOD	com/xk72/charles/gui/transaction/viewers/g	(Ljavax/swing/JPanel;)V	a	method_1665
+METHOD	com/xk72/charles/gui/transaction/viewers/g	(Ljavax/swing/JPanel;)V	a	addComponentsToPanel
 METHOD	com/xk72/charles/gui/transaction/viewers/g	(Z)V	a	method_1666
 METHOD	com/xk72/charles/gui/transaction/viewers/g	([Ljava/lang/String;)V	a	method_1667
 METHOD	com/xk72/charles/gui/transaction/viewers/g	()Ljava/lang/String;	b	getSelectedOption
-METHOD	com/xk72/charles/gui/transaction/viewers/g	(Ljava/lang/String;)V	b	method_1669
+METHOD	com/xk72/charles/gui/transaction/viewers/g	(Ljava/lang/String;)V	b	setIcon
 METHOD	com/xk72/charles/gui/transaction/viewers/g	(Z)V	b	setJsonRadioButtonSelected
 METHOD	com/xk72/charles/gui/transaction/viewers/g	()Z	c	isJsonRadioButtonSelected
 METHOD	com/xk72/charles/gui/transaction/viewers/g	(Ljava/lang/String;)Z	c	method_1672
@@ -9524,7 +9524,7 @@ METHOD	com/xk72/charles/lib/j	(Ljava/util/Date;)Ljava/lang/String;	a	formatDate
 METHOD	com/xk72/charles/lib/j	()Z	b	isPreferBytes
 METHOD	com/xk72/charles/lib/j	(F)Ljava/lang/String;	b	formatActiveSpeedBits
 METHOD	com/xk72/charles/lib/j	(J)Ljava/lang/String;	b	formatFileSize
-METHOD	com/xk72/charles/lib/j	(JJ)Ljava/lang/String;	b	method_2199
+METHOD	com/xk72/charles/lib/j	(JJ)Ljava/lang/String;	b	getProperPercentage
 METHOD	com/xk72/charles/lib/j	(Ljava/util/Date;)Ljava/lang/String;	b	formatInDayTime
 METHOD	com/xk72/charles/lib/j	()Z	c	isPreferMilliseconds
 METHOD	com/xk72/charles/lib/j	(J)Ljava/lang/String;	c	formatFileSizeShort
