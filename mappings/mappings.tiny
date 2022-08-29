@@ -12569,7 +12569,7 @@ CLASS	com/xk72/lib/j	com/xk72/lib/CharlesImageObserver
 FIELD	com/xk72/lib/j	Z	a	field_3007
 METHOD	com/xk72/lib/j	()Z	a	method_2961
 METHOD	com/xk72/lib/j	(Ljava/awt/Image;IIIII)Z	imageUpdate	imageUpdate
-CLASS	com/xk72/lib/k	com/xk72/lib/k
+CLASS	com/xk72/lib/k	com/xk72/lib/WeakReferencedPropertyChangeListener
 FIELD	com/xk72/lib/k	Lcom/xk72/charles/config/AbstractConfiguration;	a	abstractConfig
 FIELD	com/xk72/lib/k	Ljava/lang/ref/WeakReference;	b	weakRef
 METHOD	com/xk72/lib/k	(Ljava/lang/Object;Ljava/beans/PropertyChangeEvent;)V	a	method_2962
@@ -12739,7 +12739,7 @@ METHOD	com/xk72/protobuf/f	(Lcom/xk72/protobuf/i;ZJLjava/lang/String;)Lcom/xk72/
 METHOD	com/xk72/protobuf/f	(Ljava/lang/String;)[Ljava/net/URI;	a	method_3020
 METHOD	com/xk72/protobuf/f	(ZJLjava/lang/String;)Lcom/xk72/protobuf/i;	a	method_3021
 METHOD	com/xk72/protobuf/f	()Lcom/xk72/protobuf/i;	b	method_3022
-CLASS	com/xk72/protobuf/g	com/xk72/protobuf/g
+CLASS	com/xk72/protobuf/g	com/xk72/protobuf/ProtobufInputStreamConsumer
 FIELD	com/xk72/protobuf/g	Lcom/xk72/protobuf/f;	a	field_3046
 METHOD	com/xk72/protobuf/g	(Ljava/io/InputStream;)Lcom/google/protobuf/DescriptorProtos$FileDescriptorSet;	a	descriptorSetFromInputStream
 CLASS	com/xk72/protobuf/h	com/xk72/protobuf/h
@@ -15376,7 +15376,7 @@ METHOD	com/xk72/util/H	([Ljava/lang/Object;Ljava/lang/Object;)Z	a	anyMemberEqual
 METHOD	com/xk72/util/H	(Ljava/lang/Object;Ljava/lang/Object;)V	b	getSetterMethod
 METHOD	com/xk72/util/H	(Ljava/util/List;)Ljava/util/List;	b	method_3835
 CLASS	com/xk72/util/r	com/xk72/util/HttpCache
-CLASS	com/xk72/util/HttpCache$1	com/xk72/util/HttpCache$1
+CLASS	com/xk72/util/HttpCache$1	com/xk72/util/HttpCache$CacheMap
 FIELD	com/xk72/util/HttpCache$1	J	serialVersionUID	serialVersionUID
 FIELD	com/xk72/util/HttpCache$1	Lcom/xk72/util/r;	this$0	this$0
 FIELD	com/xk72/util/HttpCache$1	I	val$cacheLimit	val$cacheLimit
@@ -15678,34 +15678,34 @@ METHOD	com/xk72/util/q	(Ljava/lang/String;)Ljava/awt/Color;	f	method_3975
 FIELD	com/xk72/util/r	I	a	field_4030
 FIELD	com/xk72/util/r	Ljava/util/Map;	b	cache
 FIELD	com/xk72/util/r	Lcom/xk72/util/s;	c	fetcher
-FIELD	com/xk72/util/r	Lcom/xk72/util/t;	d	field_4033
-FIELD	com/xk72/util/r	I	e	field_4034
-FIELD	com/xk72/util/r	I	f	field_4035
-FIELD	com/xk72/util/r	I	g	field_4036
-METHOD	com/xk72/util/r	()V	a	method_3976
+FIELD	com/xk72/util/r	Lcom/xk72/util/t;	d	inStreamConsumer
+FIELD	com/xk72/util/r	I	e	hits
+FIELD	com/xk72/util/r	I	f	misses
+FIELD	com/xk72/util/r	I	g	notModifiedCount
+METHOD	com/xk72/util/r	()V	a	clear
 METHOD	com/xk72/util/r	(Lcom/xk72/util/u;)Z	a	method_3977
-METHOD	com/xk72/util/r	(Lcom/xk72/util/v;)Ljava/util/List;	a	method_3978
+METHOD	com/xk72/util/r	(Lcom/xk72/util/v;)Ljava/util/List;	a	getCacheControlValues
 METHOD	com/xk72/util/r	(Lcom/xk72/util/v;Ljava/lang/Object;JJJ)Lcom/xk72/util/u;	a	method_3979
 METHOD	com/xk72/util/r	(Ljava/net/URI;Lcom/xk72/util/u;J)Lcom/xk72/util/u;	a	method_3980
 METHOD	com/xk72/util/r	(Ljava/net/URI;ZJ)Ljava/lang/Object;	a	method_3981
-METHOD	com/xk72/util/r	(Ljava/util/List;)J	a	method_3982
-METHOD	com/xk72/util/r	()I	b	method_3983
-METHOD	com/xk72/util/r	()I	c	method_3984
-METHOD	com/xk72/util/r	()I	d	method_3985
+METHOD	com/xk72/util/r	(Ljava/util/List;)J	a	getMaxAge
+METHOD	com/xk72/util/r	()I	b	getHitsCount
+METHOD	com/xk72/util/r	()I	c	getMissesCount
+METHOD	com/xk72/util/r	()I	d	get304sCount
 METHOD	com/xk72/util/r	()I	e	getCacheSize
 METHOD	com/xk72/util/r	()Ljava/util/List;	f	getCacheKeys
 CLASS	com/xk72/util/s	com/xk72/util/ICharlesNetworkFetcher
 METHOD	com/xk72/util/s	(Ljava/net/URI;JLjava/lang/String;)Lcom/xk72/util/v;	a	fetchWithTimeout
-CLASS	com/xk72/util/t	com/xk72/util/t
-METHOD	com/xk72/util/t	(Ljava/io/InputStream;)Ljava/lang/Object;	b	method_3989
-CLASS	com/xk72/util/u	com/xk72/util/u
-FIELD	com/xk72/util/u	Ljava/lang/Object;	a	field_4037
-FIELD	com/xk72/util/u	Ljava/lang/String;	b	field_4038
-FIELD	com/xk72/util/u	J	c	field_4039
+CLASS	com/xk72/util/t	com/xk72/util/IInputStreamConsumer
+METHOD	com/xk72/util/t	(Ljava/io/InputStream;)Ljava/lang/Object;	b	withInputStream
+CLASS	com/xk72/util/u	com/xk72/util/HttpCacheEntry
+FIELD	com/xk72/util/u	Ljava/lang/Object;	a	response
+FIELD	com/xk72/util/u	Ljava/lang/String;	b	etag
+FIELD	com/xk72/util/u	J	c	lastModified
 FIELD	com/xk72/util/u	J	d	field_4040
-METHOD	com/xk72/util/u	()Ljava/lang/Object;	a	method_3990
-METHOD	com/xk72/util/u	()Ljava/lang/String;	b	method_3991
-METHOD	com/xk72/util/u	()J	c	method_3992
+METHOD	com/xk72/util/u	()Ljava/lang/Object;	a	getResponse
+METHOD	com/xk72/util/u	()Ljava/lang/String;	b	getEtag
+METHOD	com/xk72/util/u	()J	c	getLastModified
 METHOD	com/xk72/util/u	()J	d	method_3993
 CLASS	com/xk72/util/v	com/xk72/util/ICharlesNetworkResponse
 METHOD	com/xk72/util/v	()V	a	disconnect
@@ -15870,12 +15870,12 @@ METHOD	org/swfx/c/a	(ZJJJJJJJJ)I	a	method_4089
 CLASS	org/swfx/swf/SwfMovie	org/swfx/swf/SwfMovie
 FIELD	org/swfx/swf/SwfMovie	Lorg/swfx/swf/m;	a	field_4082
 FIELD	org/swfx/swf/SwfMovie	Lorg/swfx/swf/l;	b	field_4083
-FIELD	org/swfx/swf/SwfMovie	Lorg/swfx/swf/j;	c	field_4084
+FIELD	org/swfx/swf/SwfMovie	Lorg/swfx/swf/j;	c	tagRegistry
 FIELD	org/swfx/swf/SwfMovie	Lorg/swfx/swf/k;	d	field_4085
 METHOD	org/swfx/swf/SwfMovie	()Lorg/swfx/swf/m;	a	method_4090
 METHOD	org/swfx/swf/SwfMovie	(I)Lorg/swfx/swf/e;	a	method_4091
-METHOD	org/swfx/swf/SwfMovie	(Ljava/io/InputStream;)V	a	method_4092
-METHOD	org/swfx/swf/SwfMovie	(Lorg/swfx/swf/j;)V	a	method_4093
+METHOD	org/swfx/swf/SwfMovie	(Ljava/io/InputStream;)V	a	fromInputStream
+METHOD	org/swfx/swf/SwfMovie	(Lorg/swfx/swf/j;)V	a	setTagRegistry
 METHOD	org/swfx/swf/SwfMovie	(Lorg/swfx/swf/k;)V	a	method_4094
 METHOD	org/swfx/swf/SwfMovie	(Lorg/swfx/swf/l;)V	a	method_4095
 METHOD	org/swfx/swf/SwfMovie	(Lorg/swfx/swf/m;)V	a	method_4096
@@ -15883,12 +15883,12 @@ METHOD	org/swfx/swf/SwfMovie	(Lorg/swfx/swf/o;)V	a	method_4097
 METHOD	org/swfx/swf/SwfMovie	()Lorg/swfx/swf/l;	b	method_4098
 METHOD	org/swfx/swf/SwfMovie	(I)Z	b	method_4099
 METHOD	org/swfx/swf/SwfMovie	(Ljava/io/InputStream;)Lorg/swfx/b/b;	b	method_4100
-METHOD	org/swfx/swf/SwfMovie	()Lorg/swfx/swf/j;	c	method_4101
+METHOD	org/swfx/swf/SwfMovie	()Lorg/swfx/swf/j;	c	getTagRegistry
 METHOD	org/swfx/swf/SwfMovie	()Lorg/swfx/swf/k;	d	method_4102
 METHOD	org/swfx/swf/SwfMovie	()V	e	method_4103
 METHOD	org/swfx/swf/SwfMovie	([Ljava/lang/String;)V	main	main
-CLASS	org/swfx/swf/a	org/swfx/swf/a
-FIELD	org/swfx/swf/a	Ljava/lang/Integer;	a	field_4086
+CLASS	org/swfx/swf/a	org/swfx/swf/AbstractSwfTagWithId
+FIELD	org/swfx/swf/a	Ljava/lang/Integer;	a	tagId
 METHOD	org/swfx/swf/a	(Lorg/swfx/b/b;)V	b	method_4104
 CLASS	org/swfx/swf/b	org/swfx/swf/AbstractSwfTag
 FIELD	org/swfx/swf/b	I	a	id
@@ -15907,9 +15907,9 @@ METHOD	org/swfx/swf/b	()I	d	getLength
 METHOD	org/swfx/swf/b	()Ljava/lang/String;	toString	toString
 CLASS	org/swfx/swf/c	org/swfx/swf/c
 CLASS	org/swfx/swf/d	org/swfx/swf/d
-CLASS	org/swfx/swf/e	org/swfx/swf/e
-METHOD	org/swfx/swf/e	()Ljava/lang/Integer;	a	method_4115
-METHOD	org/swfx/swf/e	(Ljava/lang/Integer;)V	a	method_4116
+CLASS	org/swfx/swf/e	org/swfx/swf/ISwfTagIdProvider
+METHOD	org/swfx/swf/e	()Ljava/lang/Integer;	a	getTagId
+METHOD	org/swfx/swf/e	(Ljava/lang/Integer;)V	a	setTagId
 CLASS	org/swfx/swf/f	org/swfx/swf/ISWFConstants
 FIELD	org/swfx/swf/f	I	A	field_4090
 FIELD	org/swfx/swf/f	I	B	field_4091
@@ -16051,7 +16051,7 @@ FIELD	org/swfx/swf/f	I	w	field_4226
 FIELD	org/swfx/swf/f	I	x	field_4227
 FIELD	org/swfx/swf/f	I	y	field_4228
 FIELD	org/swfx/swf/f	I	z	field_4229
-CLASS	org/swfx/swf/g	org/swfx/swf/g
+CLASS	org/swfx/swf/g	org/swfx/swf/GlyphCountSwfTag
 FIELD	org/swfx/swf/g	I	bM	glyphCount
 METHOD	org/swfx/swf/g	(I)V	c	setGlyphCount
 METHOD	org/swfx/swf/g	()I	e	getGlyphCount
@@ -16107,15 +16107,15 @@ METHOD	org/swfx/swf/h	()Z	u	isShiftJis
 METHOD	org/swfx/swf/h	()Z	v	isAnsi
 METHOD	org/swfx/swf/h	()Ljava/lang/Integer;	w	method_4149
 CLASS	org/swfx/swf/i	org/swfx/swf/i
-CLASS	org/swfx/swf/j	org/swfx/swf/j
-FIELD	org/swfx/swf/j	Ljava/util/HashMap;	a	field_4250
-METHOD	org/swfx/swf/j	()Ljava/util/HashMap;	a	method_4150
-METHOD	org/swfx/swf/j	(I)Lorg/swfx/swf/e;	a	method_4151
-METHOD	org/swfx/swf/j	(Ljava/lang/Integer;)Lorg/swfx/swf/e;	a	method_4152
-METHOD	org/swfx/swf/j	(Lorg/swfx/swf/e;)V	a	method_4153
+CLASS	org/swfx/swf/j	org/swfx/swf/SwfTagIdRegistry
+FIELD	org/swfx/swf/j	Ljava/util/HashMap;	a	idToTagMap
+METHOD	org/swfx/swf/j	()Ljava/util/HashMap;	a	getIdToTagMap
+METHOD	org/swfx/swf/j	(I)Lorg/swfx/swf/e;	a	getTag
+METHOD	org/swfx/swf/j	(Ljava/lang/Integer;)Lorg/swfx/swf/e;	a	getTag
+METHOD	org/swfx/swf/j	(Lorg/swfx/swf/e;)V	a	registerTagClass
 METHOD	org/swfx/swf/j	()Ljava/lang/Integer;	b	method_4154
-METHOD	org/swfx/swf/j	(Ljava/lang/Integer;)V	b	method_4155
-METHOD	org/swfx/swf/j	(Lorg/swfx/swf/e;)V	b	method_4156
+METHOD	org/swfx/swf/j	(Ljava/lang/Integer;)V	b	removeTag
+METHOD	org/swfx/swf/j	(Lorg/swfx/swf/e;)V	b	removeTag
 CLASS	org/swfx/swf/k	org/swfx/swf/k
 METHOD	org/swfx/swf/k	(II)Lorg/swfx/swf/b;	a	method_4157
 CLASS	org/swfx/swf/l	org/swfx/swf/l
