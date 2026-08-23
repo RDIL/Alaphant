@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/gui/remote/class_191 com/charlesproxy/gui/remote/RemoteControlProxyListenerWithSession
+	COMMENT The GUI's remote-control listener, and the only subclass of RemoteControlProxyListener in the jar: it points the control.charles commands at the frontmost session window rather than at a session of its own. Charles 4 had the same one-subclass shape at com/xk72/charles/gui/remote/RemoteControlProxyListenerWithSession.
+	COMMENT The package name is recovered in mappings/package-names.txt rather than here. No Lombok literal states it; this class is the whole of the package, and Charles 4 called the equivalent one remote.
+	METHOD method_18 getTargetSession ()Lcom/charlesproxy/model/class_943;
+		COMMENT super's recordingSession, or the session of the selected SessionFrame when nothing is recording. Null when there is no Charles window (NoCharlesFrameException).
+	METHOD method_19 startRecording ()V
+		COMMENT Sets the selected SessionFrame's session as the recording session, so /recording/start records into the window the user is looking at. Falls back to super, a fresh session, when there is no Charles window.

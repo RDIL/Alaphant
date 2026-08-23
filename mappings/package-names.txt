@@ -7,14 +7,19 @@
 # turns package-private references into `IllegalAccessError`. Recovering it here moves the whole
 # package at once, and `checkLinkage` proves the result still links.
 #
-# Every name below comes from the fully-qualified class names Charles' Lombok `@Slf4j` loggers
+# Most names below come from the fully-qualified class names Charles' Lombok `@Slf4j` loggers
 # leave in the constant pool, and every literal in the package agreed. The count is how many said
-# so. Add an entry only on that kind of evidence: a wrong package name is a rename of every class
-# in it.
+# so. That is the strongest evidence there is, and the first thing to look for.
+#
+# A package holding no literal can still be named, on the weaker basis that its whole contents are
+# identified and a real word serves a reader better than `pkg_N` -- the comment then says what was
+# known instead of a count. Keep that to packages small enough to be certain about, and say so in
+# the comment: a wrong name here is a rename of every class in the package.
 #
 # One entry per segment: `<official package path> = <real segment name>`.
 
 com/charlesproxy/export/MkAr          = pcap      # 3 literal(s) -> com/charlesproxy/export/pcap
+com/charlesproxy/gui/MkAr             = remote    # sole class is the GUI's RemoteControlProxyListener subclass
 com/charlesproxy/gui/transaction/xvJk = viewers   # 1 literal(s) -> com/charlesproxy/gui/transaction/viewers
 com/charlesproxy/macos/MkAr           = gui       # 1 literal(s) -> com/charlesproxy/macos/gui
 com/charlesproxy/Jpqc                 = proxy     # 4 literal(s) -> com/charlesproxy/proxy

@@ -1946,7 +1946,7 @@ c	com/charlesproxy/gui/MUmM	com/charlesproxy/gui/class_189
 c	com/charlesproxy/gui/MfQD	com/charlesproxy/gui/class_190
 	f	Ljava/awt/CheckboxMenuItem;	EHwQ	field_764
 	f	Lcom/charlesproxy/gui/tools/breakpoints/IBreakpointsTool;	iScI	field_765
-c	com/charlesproxy/gui/MkAr/kRuY	com/charlesproxy/gui/pkg_4/class_191
+c	com/charlesproxy/gui/MkAr/kRuY	com/charlesproxy/gui/remote/class_191
 	m	()Lcom/charlesproxy/model/OmAF;	EHwQ	method_18
 	m	()V	iScI	method_19
 c	com/charlesproxy/gui/Mtqz	com/charlesproxy/gui/class_192
