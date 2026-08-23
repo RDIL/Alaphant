@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/config/class_120 com/charlesproxy/config/MaybeUserInterfaceProperty
+	COMMENT [inferred] empty marker interface; it is the upper bound on values stored in UserInterfaceConfiguration.properties

@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/config/class_104 com/charlesproxy/config/MaybeThrottlePresetSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1480 and serializes class_77 under the wire element name "throttlePreset"
+	METHOD method_157 newInstance ()Ljava/lang/Object;
+	METHOD method_158 getName ()Ljava/lang/String;

@@ -1,0 +1,36 @@
+CLASS com/charlesproxy/config/class_108 com/charlesproxy/config/MaybeThrottleSettings
+	COMMENT [inferred] the bare throttle parameter bundle (bandwidth, utilisation, latency, reliability, mtu, quality, stability); ThrottlingConfiguration copies all eleven out of it and MaybeThrottlePreset extends it
+	FIELD field_592 bandwidthUp D
+	FIELD field_593 reliabilityBlocksize I
+	FIELD field_594 latency I
+	FIELD field_595 mtu I
+	FIELD field_596 stability I
+	FIELD field_597 bandwidthDown D
+	FIELD field_598 utilisationDown I
+	FIELD field_599 utilisationUp I
+	FIELD field_600 reliability I
+	FIELD field_601 highQuality I
+	FIELD field_602 lowQuality I
+	METHOD method_350 canEqual (Ljava/lang/Object;)Z
+	METHOD method_502 getBandwidthDown ()D
+	METHOD method_503 setBandwidthUp (D)V
+	METHOD method_504 setUtilisationUp (I)V
+	METHOD method_505 getReliability ()I
+	METHOD method_506 setLowQuality (I)V
+	METHOD method_507 getUtilisationUp ()I
+	METHOD method_508 setReliabilityBlocksize (I)V
+	METHOD method_509 getReliabilityBlocksize ()I
+	METHOD method_510 setHighQuality (I)V
+	METHOD method_511 getHighQuality ()I
+	METHOD method_512 setBandwidthDown (D)V
+	METHOD method_513 setUtilisationDown (I)V
+	METHOD method_514 getBandwidthUp ()D
+	METHOD method_515 setLatency (I)V
+	METHOD method_516 getUtilisationDown ()I
+	METHOD method_517 setReliability (I)V
+	METHOD method_518 getStability ()I
+	METHOD method_519 getLatency ()I
+	METHOD method_520 setMtu (I)V
+	METHOD method_521 getLowQuality ()I
+	METHOD method_522 getMtu ()I
+	METHOD method_523 setStability (I)V

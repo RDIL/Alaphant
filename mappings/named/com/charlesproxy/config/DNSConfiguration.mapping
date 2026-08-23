@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/config/class_113 com/charlesproxy/config/DNSConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_609 preferIPv6addresses Z
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_537 isPreferIPv6addresses ()Z
+	METHOD method_538 setPreferIPv6addresses (Z)V

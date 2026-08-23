@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/config/class_70 com/charlesproxy/config/MaybeThrottleSettingsSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes class_108
+	METHOD method_157 newInstance ()Ljava/lang/Object;
+	METHOD method_296 maybeConfigureThrottleProperties (Lcom/xk72/serialization/class_1444;Lcom/charlesproxy/config/class_108;)V
+		COMMENT [inferred] static; registers MaybeThrottleSettings' eleven properties, shared with the throttlePreset serializer

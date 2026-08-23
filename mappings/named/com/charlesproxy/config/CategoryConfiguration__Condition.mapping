@@ -1,0 +1,23 @@
+CLASS com/charlesproxy/config/class_106 com/charlesproxy/config/CategoryConfiguration__Condition
+	COMMENT [inferred] a highlight condition held in CategoryConfiguration__Category.conditions; its wire element name is "condition" and its type field is CategoryConfiguration$ConditionType, so it is CategoryConfiguration's nested Condition
+	FIELD field_561 name Ljava/lang/String;
+	FIELD field_562 negate Z
+	FIELD field_563 caseSensitive Z
+	FIELD field_564 type Lcom/charlesproxy/config/CategoryConfiguration$ConditionType;
+	FIELD field_565 value Ljava/lang/String;
+	FIELD field_566 regex Z
+	FIELD field_567 matchWholeValue Z
+	METHOD method_428 getName ()Ljava/lang/String;
+	METHOD method_429 setValue (Ljava/lang/String;)V
+	METHOD method_430 setCaseSensitive (Z)V
+	METHOD method_431 isNegate ()Z
+	METHOD method_432 isCaseSensitive ()Z
+	METHOD method_433 getType ()Lcom/charlesproxy/config/CategoryConfiguration$ConditionType;
+	METHOD method_434 setType (Lcom/charlesproxy/config/CategoryConfiguration$ConditionType;)V
+	METHOD method_435 setName (Ljava/lang/String;)V
+	METHOD method_436 setRegex (Z)V
+	METHOD method_437 getValue ()Ljava/lang/String;
+	METHOD method_438 setMatchWholeValue (Z)V
+	METHOD method_439 isRegex ()Z
+	METHOD method_440 setNegate (Z)V
+	METHOD method_441 isMatchWholeValue ()Z

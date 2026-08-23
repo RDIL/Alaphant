@@ -1,0 +1,16 @@
+CLASS com/charlesproxy/config/class_126 com/charlesproxy/config/CategoryConfiguration__Category
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_627 color Ljava/awt/Color;
+	FIELD field_628 enabled Z
+	FIELD field_629 location Lcom/xk72/common/net/Location;
+	FIELD field_630 conditions Ljava/util/List;
+	METHOD method_530 copy ()Lcom/xk72/common/net/class_1229;
+	METHOD method_531 isEnabled ()Z
+	METHOD method_534 setEnabled (Z)V
+	METHOD method_535 getLocation ()Lcom/xk72/common/net/Location;
+	METHOD method_574 getColor ()Ljava/awt/Color;
+	METHOD method_575 setLocation (Lcom/xk72/common/net/Location;)V
+	METHOD method_576 setColor (Ljava/awt/Color;)V
+	METHOD method_577 setConditions (Ljava/util/List;)V
+	METHOD method_578 getConditions ()Ljava/util/List;
+	METHOD method_579 copy ()Lcom/charlesproxy/config/class_126;

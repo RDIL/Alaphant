@@ -1,2 +1,6 @@
 CLASS com/charlesproxy/config/class_72 com/charlesproxy/config/ConfigLegacyListAdapter
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.config.ConfigLegacyListAdapter"
+	FIELD field_486 list Ljava/util/List;
+	METHOD method_175 getList ()Ljava/util/List;
+	METHOD method_176 setList (Ljava/util/List;)V
+	METHOD method_297 canEqual (Ljava/lang/Object;)Z

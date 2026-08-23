@@ -1,4 +1,9 @@
 CLASS com/charlesproxy/config/class_47 com/charlesproxy/config/ToolConfiguration
 	FIELD field_421 configs Ljava/util/Map;
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_162 maybeRegisterConfig (Ljava/lang/String;Lcom/charlesproxy/config/class_61;)V
+		COMMENT [inferred] puts and throws IllegalStateException("Tool configuration already existed.") if one was there
 	METHOD method_163 getConfigs ()Ljava/util/Map;
+	METHOD method_164 getConfig (Ljava/lang/String;)Lcom/charlesproxy/config/class_61;
+	METHOD method_165 setConfig (Ljava/lang/String;Lcom/charlesproxy/config/class_61;)V
 	METHOD method_166 setConfigs (Ljava/util/Map;)V

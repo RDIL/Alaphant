@@ -1,0 +1,36 @@
+CLASS com/charlesproxy/config/class_116 com/charlesproxy/config/StartupConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_610 throttling Z
+	FIELD field_611 currentDirectory Ljava/lang/String;
+	FIELD field_612 fullscreen Z
+	FIELD field_613 lastCheckUpdates Ljava/util/Date;
+	FIELD field_614 acceptedEulaVersion Ljava/lang/String;
+	FIELD field_615 newSession Z
+	FIELD field_616 checkUpdates Z
+	FIELD field_617 maximised Z
+	FIELD field_618 mainWindow Lcom/charlesproxy/config/class_57;
+	FIELD field_619 loggingLevel Ljava/util/logging/Level;
+	FIELD field_620 currentProfile Ljava/lang/String;
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_539 isThrottling ()Z
+	METHOD method_540 setCurrentProfile (Ljava/lang/String;)V
+	METHOD method_541 setThrottling (Z)V
+	METHOD method_542 getCurrentDirectory ()Ljava/lang/String;
+	METHOD method_543 isFullscreen ()Z
+	METHOD method_544 setFullscreen (Z)V
+	METHOD method_545 getLastCheckUpdates ()Ljava/util/Date;
+	METHOD method_546 getAcceptedEulaVersion ()Ljava/lang/String;
+	METHOD method_547 isNewSession ()Z
+	METHOD method_548 setMainWindow (Lcom/charlesproxy/config/class_57;)V
+	METHOD method_549 setCurrentDirectory (Ljava/lang/String;)V
+	METHOD method_550 setLastCheckUpdates (Ljava/util/Date;)V
+	METHOD method_551 setLoggingLevel (Ljava/util/logging/Level;)V
+	METHOD method_552 setNewSession (Z)V
+	METHOD method_553 isCheckUpdates ()Z
+	METHOD method_554 setAcceptedEulaVersion (Ljava/lang/String;)V
+	METHOD method_555 setCheckUpdates (Z)V
+	METHOD method_556 isMaximised ()Z
+	METHOD method_557 setMaximised (Z)V
+	METHOD method_558 getMainWindow ()Lcom/charlesproxy/config/class_57;
+	METHOD method_559 getLoggingLevel ()Ljava/util/logging/Level;
+	METHOD method_560 getCurrentProfile ()Ljava/lang/String;

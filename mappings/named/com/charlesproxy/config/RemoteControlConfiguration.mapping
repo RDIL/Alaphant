@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/config/class_129 com/charlesproxy/config/RemoteControlConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_634 allowAnonymous Z
+	FIELD field_635 enabled Z
+	FIELD field_636 users Ljava/util/List;
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_582 isAllowAnonymous ()Z
+	METHOD method_583 setAllowAnonymous (Z)V
+	METHOD method_584 isEnabled ()Z
+	METHOD method_585 setUsers (Ljava/util/List;)V
+	METHOD method_586 setEnabled (Z)V
+	METHOD method_587 getUsers ()Ljava/util/List;

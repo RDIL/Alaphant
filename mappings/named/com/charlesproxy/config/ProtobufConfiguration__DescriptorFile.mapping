@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/config/class_105 com/charlesproxy/config/ProtobufConfiguration__DescriptorFile
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_559 desc [B
+	FIELD field_560 name Ljava/lang/String;
+	METHOD method_424 getDesc ()[B
+	METHOD method_425 getName ()Ljava/lang/String;
+	METHOD method_426 setName (Ljava/lang/String;)V
+	METHOD method_427 setDesc ([B)V

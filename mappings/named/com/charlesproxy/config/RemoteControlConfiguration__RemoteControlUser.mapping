@@ -5,4 +5,7 @@ CLASS com/charlesproxy/config/class_50 com/charlesproxy/config/RemoteControlConf
 		ARG 1 username
 		ARG 2 password
 	METHOD method_177 getPassword ()Ljava/lang/String;
+	METHOD method_178 setPassword (Ljava/lang/String;)V
 	METHOD method_179 getUsername ()Ljava/lang/String;
+	METHOD method_180 setUsername (Ljava/lang/String;)V
+	METHOD method_181 copy ()Lcom/charlesproxy/config/class_50;

@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_65 com/charlesproxy/config/MaybeGistIntegrationConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes GistIntegrationConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

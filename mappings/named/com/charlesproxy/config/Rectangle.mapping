@@ -1,0 +1,14 @@
+CLASS com/charlesproxy/config/class_57 com/charlesproxy/config/Rectangle
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_444 y I
+	FIELD field_445 x I
+	FIELD field_446 width I
+	FIELD field_447 height I
+	METHOD method_215 getY ()I
+	METHOD method_216 setY (I)V
+	METHOD method_217 getX ()I
+	METHOD method_218 setX (I)V
+	METHOD method_219 getWidth ()I
+	METHOD method_220 setWidth (I)V
+	METHOD method_221 getHeight ()I
+	METHOD method_222 setHeight (I)V

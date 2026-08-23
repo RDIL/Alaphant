@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/config/class_66 com/charlesproxy/config/MaybeClientSSLCertificateSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1480 and serializes ClientSSLCertificatesConfiguration__ClientSSLCertificate under the wire element name "clientCertificate"
+	METHOD method_157 newInstance ()Ljava/lang/Object;
+	METHOD method_158 getName ()Ljava/lang/String;

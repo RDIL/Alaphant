@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_62 com/charlesproxy/config/MaybeDNSConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes DNSConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

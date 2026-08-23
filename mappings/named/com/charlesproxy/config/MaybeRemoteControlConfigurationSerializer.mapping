@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_60 com/charlesproxy/config/MaybeRemoteControlConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes RemoteControlConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

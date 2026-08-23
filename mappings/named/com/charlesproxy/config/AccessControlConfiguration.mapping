@@ -1,0 +1,9 @@
+CLASS com/charlesproxy/config/class_110 com/charlesproxy/config/AccessControlConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_604 ipRanges Ljava/util/List;
+	FIELD field_605 warn Z
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_525 isWarn ()Z
+	METHOD method_526 getIpRanges ()Ljava/util/List;
+	METHOD method_527 setIpRanges (Ljava/util/List;)V
+	METHOD method_528 setWarn (Z)V

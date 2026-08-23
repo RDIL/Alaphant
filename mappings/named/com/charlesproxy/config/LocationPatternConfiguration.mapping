@@ -1,4 +1,14 @@
 CLASS com/charlesproxy/config/class_76 com/charlesproxy/config/LocationPatternConfiguration
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.config.LocationPatternConfiguration"
-	METHOD method_344 (Ljava/util/List;)V
+	FIELD field_508 locationPatterns Ljava/util/List;
+	METHOD method_340 maybeHasEnabledPattern ()Z
+		COMMENT [inferred] true when any pattern in the list is enabled
+	METHOD method_341 contains (Lcom/xk72/common/net/class_1229;)Z
+	METHOD method_342 maybeRemoveInvalid ()V
+		COMMENT [inferred] drops null entries and entries with no location; ProxyConfiguration.init calls it on sslLocations
+	METHOD method_343 add (Lcom/xk72/common/net/class_1229;)Lcom/charlesproxy/config/class_76;
+	METHOD method_344 setLocationPatterns (Ljava/util/List;)V
 		ARG 1 locationPatterns
+	METHOD method_345 copy ()Lcom/charlesproxy/config/class_76;
+	METHOD method_346 remove (Lcom/xk72/common/net/class_1229;)Z
+	METHOD method_347 getLocationPatterns ()Ljava/util/List;

@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_111 com/charlesproxy/config/MaybeFocusConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes FocusConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

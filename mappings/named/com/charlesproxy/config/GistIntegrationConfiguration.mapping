@@ -1,2 +1,29 @@
 CLASS com/charlesproxy/config/class_80 com/charlesproxy/config/GistIntegrationConfiguration
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.config.GistIntegrationConfiguration"
+	FIELD field_512 publishLimit I
+	FIELD field_513 enterpriseGitHub Z
+	FIELD field_514 encryptedAuthToken Ljava/lang/String;
+	FIELD field_515 enterpriseURL Ljava/lang/String;
+	FIELD field_516 log Lorg/slf4j/Logger;
+	FIELD field_517 secret Z
+	FIELD field_518 authToken Ljava/lang/String;
+	FIELD field_519 openGist Z
+	FIELD field_520 enterpriseURI Ljava/net/URI;
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_356 getEnterpriseURI ()Ljava/net/URI;
+	METHOD method_357 setEnterpriseURL (Ljava/lang/String;)V
+	METHOD method_358 setOpenGist (Z)V
+	METHOD method_359 isEnterpriseGitHub ()Z
+	METHOD method_360 getEncryptedAuthToken ()Ljava/lang/String;
+	METHOD method_361 getEnterpriseURL ()Ljava/lang/String;
+	METHOD method_362 getAuthToken ()Ljava/lang/String;
+	METHOD method_363 setPublishLimit (I)V
+	METHOD method_364 setAuthToken (Ljava/lang/String;)V
+	METHOD method_365 setSecret (Z)V
+	METHOD method_366 getPublishLimit ()I
+	METHOD method_367 maybeParseURI (Ljava/lang/String;)Ljava/net/URI;
+		COMMENT [inferred] static; wraps a bare host in a URI, otherwise parses the string as one
+	METHOD method_368 setEnterpriseGitHub (Z)V
+	METHOD method_369 isSecret ()Z
+	METHOD method_370 setEncryptedAuthToken (Ljava/lang/String;)V
+	METHOD method_371 isOpenGist ()Z

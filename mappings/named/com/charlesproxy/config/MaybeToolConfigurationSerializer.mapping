@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_68 com/charlesproxy/config/MaybeToolConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes ToolConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

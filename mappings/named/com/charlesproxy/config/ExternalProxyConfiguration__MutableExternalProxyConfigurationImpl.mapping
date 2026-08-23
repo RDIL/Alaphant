@@ -1,0 +1,28 @@
+CLASS com/charlesproxy/config/class_55 com/charlesproxy/config/ExternalProxyConfiguration__MutableExternalProxyConfigurationImpl
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_436 requiresAuthentication Z
+	FIELD field_437 decryptedPassword Ljava/lang/String;
+	FIELD field_438 domain Ljava/lang/String;
+	FIELD field_439 encryptedPassword Ljava/lang/String;
+	FIELD field_440 active Z
+	FIELD field_441 host Ljava/lang/String;
+	FIELD field_442 port I
+	FIELD field_443 username Ljava/lang/String;
+	METHOD method_198 getPassword ()Ljava/lang/String;
+	METHOD method_199 setHost (Ljava/lang/String;)V
+	METHOD method_200 setRequiresAuthentication (Z)V
+	METHOD method_201 getDomain ()Ljava/lang/String;
+	METHOD method_202 getHost ()Ljava/lang/String;
+	METHOD method_203 setEncryptedPassword (Ljava/lang/String;)V
+	METHOD method_204 getUsername ()Ljava/lang/String;
+	METHOD method_205 maybeCopy ()Lcom/xk72/proxy/class_1410;
+		COMMENT [inferred] declared on com.xk72.proxy.class_1408; wraps Object.clone()
+	METHOD method_206 setPort (I)V
+	METHOD method_207 setPassword (Ljava/lang/String;)V
+	METHOD method_208 setActive (Z)V
+	METHOD method_209 isActive ()Z
+	METHOD method_210 setDomain (Ljava/lang/String;)V
+	METHOD method_211 isRequiresAuthentication ()Z
+	METHOD method_212 setUsername (Ljava/lang/String;)V
+	METHOD method_213 getPort ()I
+	METHOD method_214 getEncryptedPassword ()Ljava/lang/String;

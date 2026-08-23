@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/config/class_54 com/charlesproxy/config/ProxyConfiguration__IntegrationConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_433 useSOCKS Z
+	FIELD field_434 useHTTP Z
+	FIELD field_435 enableAtStartup Z
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_192 isUseSOCKS ()Z
+	METHOD method_193 setUseSOCKS (Z)V
+	METHOD method_194 isUseHTTP ()Z
+	METHOD method_195 setUseHTTP (Z)V
+	METHOD method_196 isEnableAtStartup ()Z
+	METHOD method_197 setEnableAtStartup (Z)V

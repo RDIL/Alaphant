@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_73 com/charlesproxy/config/MaybeUserInterfaceConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes UserInterfaceConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

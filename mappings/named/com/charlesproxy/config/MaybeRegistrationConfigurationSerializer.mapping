@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_44 com/charlesproxy/config/MaybeRegistrationConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes RegistrationConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

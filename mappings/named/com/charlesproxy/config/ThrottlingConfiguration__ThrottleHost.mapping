@@ -1,0 +1,10 @@
+CLASS com/charlesproxy/config/class_128 com/charlesproxy/config/ThrottlingConfiguration__ThrottleHost
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_632 enabled Z
+	FIELD field_633 location Lcom/xk72/common/net/Location;
+	METHOD method_530 copy ()Lcom/xk72/common/net/class_1229;
+	METHOD method_531 isEnabled ()Z
+	METHOD method_534 setEnabled (Z)V
+	METHOD method_535 getLocation ()Lcom/xk72/common/net/Location;
+	METHOD method_580 copy ()Lcom/charlesproxy/config/class_128;
+	METHOD method_581 setLocation (Lcom/xk72/common/net/Location;)V

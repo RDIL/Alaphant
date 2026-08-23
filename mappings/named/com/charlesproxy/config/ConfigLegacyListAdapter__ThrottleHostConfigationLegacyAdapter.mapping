@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_115 com/charlesproxy/config/ConfigLegacyListAdapter__ThrottleHostConfigationLegacyAdapter
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	METHOD method_297 canEqual (Ljava/lang/Object;)Z

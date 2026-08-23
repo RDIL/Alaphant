@@ -1,2 +1,18 @@
 CLASS com/charlesproxy/config/class_118 com/charlesproxy/config/ExternalProxyConfiguration
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.config.ExternalProxyConfiguration"
+	FIELD field_621 configurations Ljava/util/Map;
+	FIELD field_622 alwaysBypassLocalhost Z
+	FIELD field_623 log Lorg/slf4j/Logger;
+	FIELD field_624 bypassDomains Ljava/util/List;
+	FIELD field_625 enabled Z
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_561 getBypassDomains ()Ljava/util/List;
+	METHOD method_562 setAlwaysBypassLocalhost (Z)V
+	METHOD method_563 getConfigurations ()Ljava/util/Map;
+	METHOD method_564 getConfiguration (Ljava/lang/String;)Lcom/xk72/proxy/class_1408;
+	METHOD method_565 setConfiguration (Ljava/lang/String;Lcom/xk72/proxy/class_1408;)V
+	METHOD method_566 setBypassDomains (Ljava/util/List;)V
+	METHOD method_567 setConfigurations (Ljava/util/Map;)V
+	METHOD method_568 setEnabled (Z)V
+	METHOD method_569 isEnabled ()Z
+	METHOD method_570 isAlwaysBypassLocalhost ()Z

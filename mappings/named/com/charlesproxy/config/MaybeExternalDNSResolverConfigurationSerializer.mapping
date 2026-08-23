@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_64 com/charlesproxy/config/MaybeExternalDNSResolverConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes ExternalDNSResolverConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

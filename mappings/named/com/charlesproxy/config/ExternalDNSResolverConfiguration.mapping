@@ -1,0 +1,19 @@
+CLASS com/charlesproxy/config/class_67 com/charlesproxy/config/ExternalDNSResolverConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_480 selectedLocations Z
+	FIELD field_481 ttl Ljava/lang/Long;
+	FIELD field_482 enabled Z
+	FIELD field_483 externalResolverAddress Ljava/lang/String;
+	FIELD field_484 locations Lcom/charlesproxy/config/class_76;
+	FIELD field_485 negativeTtl Ljava/lang/Long;
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_286 isSelectedLocations ()Z
+	METHOD method_287 setSelectedLocations (Z)V
+	METHOD method_288 getTtl ()Ljava/lang/Long;
+	METHOD method_289 isEnabled ()Z
+	METHOD method_290 setLocations (Lcom/charlesproxy/config/class_76;)V
+	METHOD method_291 setExternalResolverAddress (Ljava/lang/String;)V
+	METHOD method_292 setEnabled (Z)V
+	METHOD method_293 getExternalResolverAddress ()Ljava/lang/String;
+	METHOD method_294 getLocations ()Lcom/charlesproxy/config/class_76;
+	METHOD method_295 getNegativeTtl ()Ljava/lang/Long;

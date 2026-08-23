@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_78 com/charlesproxy/config/MaybeCategoryConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes CategoryConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

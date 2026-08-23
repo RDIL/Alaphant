@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_43 com/charlesproxy/config/MaybeStartupConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes StartupConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

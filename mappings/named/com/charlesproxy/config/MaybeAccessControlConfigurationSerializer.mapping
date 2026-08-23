@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_125 com/charlesproxy/config/MaybeAccessControlConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes AccessControlConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

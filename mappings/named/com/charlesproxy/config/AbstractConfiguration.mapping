@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/config/class_109 com/charlesproxy/config/AbstractConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_603 propertyChangeSupport Ljava/beans/PropertyChangeSupport;
+	METHOD addPropertyChangeListener addPropertyChangeListener (Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 1 other
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_524 firePropertyChange (Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V

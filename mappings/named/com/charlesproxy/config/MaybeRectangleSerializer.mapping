@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_51 com/charlesproxy/config/MaybeRectangleSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes Rectangle
+	METHOD method_157 newInstance ()Ljava/lang/Object;

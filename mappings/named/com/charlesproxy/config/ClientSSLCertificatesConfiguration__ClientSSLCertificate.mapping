@@ -1,0 +1,13 @@
+CLASS com/charlesproxy/config/class_112 com/charlesproxy/config/ClientSSLCertificatesConfiguration__ClientSSLCertificate
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_606 enabled Z
+	FIELD field_607 location Lcom/xk72/common/net/Location;
+	FIELD field_608 certificate Lcom/charlesproxy/ssl/class_999;
+	METHOD method_529 getCertificate ()Lcom/charlesproxy/ssl/class_999;
+	METHOD method_530 copy ()Lcom/xk72/common/net/class_1229;
+	METHOD method_531 isEnabled ()Z
+	METHOD method_532 setCertificate (Lcom/charlesproxy/ssl/class_999;)V
+	METHOD method_533 setLocation (Lcom/xk72/common/net/Location;)V
+	METHOD method_534 setEnabled (Z)V
+	METHOD method_535 getLocation ()Lcom/xk72/common/net/Location;
+	METHOD method_536 copy ()Lcom/charlesproxy/config/class_112;

@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/config/class_56 com/charlesproxy/config/MaybeMutableExternalProxyConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1480 and serializes class_1408 under the wire element name "mutableExternalProxyConfiguration"
+	METHOD method_157 newInstance ()Ljava/lang/Object;
+	METHOD method_158 getName ()Ljava/lang/String;

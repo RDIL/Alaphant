@@ -1,2 +1,15 @@
 CLASS com/charlesproxy/config/class_48 com/charlesproxy/config/ProtobufConfiguration
 	COMMENT [bootstrap] matched to Charles 4's ProtobufConfiguration on 9 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_422 cacheDescriptors Z
+	FIELD field_423 hideUnvaluedFields Z
+	FIELD field_424 heuristicTTL J
+	FIELD field_425 descriptors Ljava/util/List;
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_167 isCacheDescriptors ()Z
+	METHOD method_168 setCacheDescriptors (Z)V
+	METHOD method_169 isHideUnvaluedFields ()Z
+	METHOD method_170 setHeuristicTTL (J)V
+	METHOD method_171 setDescriptors (Ljava/util/List;)V
+	METHOD method_172 setHideUnvaluedFields (Z)V
+	METHOD method_173 getHeuristicTTL ()J
+	METHOD method_174 getDescriptors ()Ljava/util/List;

@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/config/class_103 com/charlesproxy/config/MaybeThrottleHostListSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes ThrottlingConfiguration__ThrottleHost
+	METHOD method_157 newInstance ()Ljava/lang/Object;
+	METHOD method_422 maybeGetLegacyClassAttribute ()Ljava/lang/String;
+		COMMENT [inferred] static lambda target for the legacy "class" attribute; returns the constant "listAdapter"
+	METHOD method_423 maybeSetLegacyClassAttribute (Ljava/lang/String;)V
+		COMMENT [inferred] static lambda target that discards the incoming legacy "class" attribute

@@ -1,9 +1,48 @@
 CLASS com/charlesproxy/config/class_63 com/charlesproxy/config/ThrottlingConfiguration
 	COMMENT [bootstrap] matched to Charles 4's ThrottlingConfiguration on 39 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_465 selectedHosts Z
 	FIELD field_466 bandwidthDown D
+	FIELD field_467 reliability I
+	FIELD field_468 utilisationUp I
+	FIELD field_469 reliabilityBlocksize I
+	FIELD field_470 highQuality I
+	FIELD field_471 customPresets Ljava/util/List;
 	FIELD field_472 PRESETS [Lcom/charlesproxy/config/class_114;
 	FIELD field_473 bandwidthUp D
+	FIELD field_474 utilisationDown I
+	FIELD field_475 stability I
+	FIELD field_476 hosts Lcom/charlesproxy/config/class_49;
+	FIELD field_477 latency I
+	FIELD field_478 lowQuality I
+	FIELD field_479 mtu I
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
 	METHOD method_257 getBandwidthUp ()D
 	METHOD method_258 setBandwidthUp (D)V
+	METHOD method_259 setUtilisationUp (I)V
+	METHOD method_260 getReliabilityBlocksize ()I
+	METHOD method_261 setLowQuality (I)V
+	METHOD method_262 getLatency ()I
+	METHOD method_263 setReliabilityBlocksize (I)V
+	METHOD method_264 getMtu ()I
+	METHOD method_265 setHighQuality (I)V
+	METHOD method_266 getStability ()I
+	METHOD method_267 getHosts ()Lcom/charlesproxy/config/class_49;
 	METHOD method_268 getBandwidthDown ()D
 	METHOD method_269 setBandwidthDown (D)V
+	METHOD method_270 setUtilisationDown (I)V
+	METHOD method_271 setHosts (Lcom/charlesproxy/config/class_49;)V
+	METHOD method_272 maybeApplySettings (Lcom/charlesproxy/config/class_108;)V
+		COMMENT [inferred] copies all eleven throttle parameters out of a MaybeThrottleSettings into this configuration
+	METHOD method_273 setCustomPresets (Ljava/util/List;)V
+	METHOD method_274 setSelectedHosts (Z)V
+	METHOD method_275 getUtilisationDown ()I
+	METHOD method_276 setLatency (I)V
+	METHOD method_277 getUtilisationUp ()I
+	METHOD method_278 setReliability (I)V
+	METHOD method_279 getCustomPresets ()Ljava/util/List;
+	METHOD method_280 isSelectedHosts ()Z
+	METHOD method_281 getReliability ()I
+	METHOD method_282 setMtu (I)V
+	METHOD method_283 getHighQuality ()I
+	METHOD method_284 getLowQuality ()I
+	METHOD method_285 setStability (I)V

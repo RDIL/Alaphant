@@ -1,0 +1,13 @@
+CLASS com/charlesproxy/config/CategoryConfiguration com/charlesproxy/config/CategoryConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_414 categories Ljava/util/List;
+	METHOD method_159 getCategories ()Ljava/util/List;
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_161 setCategories (Ljava/util/List;)V
+	CLASS ConditionType
+		FIELD field_415 RESPONSE_CODE Lcom/charlesproxy/config/CategoryConfiguration$ConditionType;
+		FIELD field_416 TAG Lcom/charlesproxy/config/CategoryConfiguration$ConditionType;
+		FIELD field_417 REQUEST_METHOD Lcom/charlesproxy/config/CategoryConfiguration$ConditionType;
+		FIELD field_418 REQUEST_HEADER Lcom/charlesproxy/config/CategoryConfiguration$ConditionType;
+		FIELD field_419 RESPONSE_HEADER Lcom/charlesproxy/config/CategoryConfiguration$ConditionType;
+		FIELD field_420 $VALUES [Lcom/charlesproxy/config/CategoryConfiguration$ConditionType;

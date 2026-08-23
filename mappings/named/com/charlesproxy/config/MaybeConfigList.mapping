@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/config/class_49 com/charlesproxy/config/MaybeConfigList
+	COMMENT [inferred] getList/setList over a config list; ConfigLegacyListAdapter is its only implementation
+	METHOD method_175 getList ()Ljava/util/List;
+	METHOD method_176 setList (Ljava/util/List;)V

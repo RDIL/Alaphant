@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_124 com/charlesproxy/config/MaybeLocationPatternConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes LocationPatternConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

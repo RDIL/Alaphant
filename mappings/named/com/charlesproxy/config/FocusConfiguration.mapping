@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/config/class_119 com/charlesproxy/config/FocusConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_626 hosts Lcom/charlesproxy/config/class_76;
+	METHOD method_160 canEqual (Ljava/lang/Object;)Z
+	METHOD method_571 getHosts ()Lcom/charlesproxy/config/class_76;
+	METHOD method_572 setHosts (Lcom/charlesproxy/config/class_76;)V

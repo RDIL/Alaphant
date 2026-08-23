@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_81 com/charlesproxy/config/MaybeThrottlingConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 and serializes ThrottlingConfiguration
+	METHOD method_157 newInstance ()Ljava/lang/Object;

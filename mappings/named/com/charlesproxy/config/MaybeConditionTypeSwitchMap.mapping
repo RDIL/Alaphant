@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_127 com/charlesproxy/config/MaybeConditionTypeSwitchMap
+	COMMENT [inferred] compiler-synthesized holder for the switch map over CategoryConfiguration$ConditionType; javac emits one of these per class that switches on the enum, and its field name is the real generated name
+	FIELD field_631 $SwitchMap$com$charlesproxy$config$CategoryConfiguration$ConditionType [I

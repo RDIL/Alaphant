@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/config/class_123 com/charlesproxy/config/MaybeRemoteControlUserSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1480 and serializes RemoteControlConfiguration__RemoteControlUser under the wire element name "remoteControlUser"
+	METHOD method_157 newInstance ()Ljava/lang/Object;
+	METHOD method_158 getName ()Ljava/lang/String;
