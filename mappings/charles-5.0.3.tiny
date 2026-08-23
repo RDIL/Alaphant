@@ -1,9 +1,0 @@
-tiny	2	0	official	intermediary	named
-c	com/charlesproxy/gui/settings/HighlightSettingsPanel	com/charlesproxy/gui/settings/HighlightSettingsPanel	com/charlesproxy/gui/settings/HighlightSettingsPanel
-	f	[Ljava/awt/Color;	iScI	field_1	HIGHLIGHT_COLORS
-c	com/charlesproxy/macos/vQtF	com/charlesproxy/macos/class_1	com/charlesproxy/macos/MacOSImpl
-c	com/charlesproxy/macos/MkAr/kmft	com/charlesproxy/macos/pkg_1/class_2	com/charlesproxy/macos/gui/MacOSGUIImpl
-c	com/charlesproxy/config/export/vgcf	com/charlesproxy/config/export/class_3	com/charlesproxy/config/export/ConfigurationDiscovery
-		c	Service interface declared in module-info; its only provider is CharlesGUIConfigurationDiscovery, which names it.
-c	com/xk72/serialization/xLtN	com/xk72/serialization/class_4	
-		c	Service interface declared in module-info, implemented by CharlesConfigSerialization, CharlesGUISerialization and ToolsSerialization.
