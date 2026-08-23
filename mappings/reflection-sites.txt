@@ -1,0 +1,9 @@
+# Class-name literals that a mixin rewrites for the remapped environment.
+#
+# Remapping renames classes but not string constants, so a `Class.forName("…vQtF")` in the remapped
+# jar looks for a class that no longer exists. `checkReflectionSites` fails on any literal that names
+# a renamed class and is not listed here, which is how a Charles upgrade that adds a fourth such site
+# gets noticed at build time instead of at run time.
+#
+# Only list a literal once a mixin actually substitutes it. An entry here with no mixin behind it is
+# worse than no entry at all.

@@ -8,22 +8,23 @@ import javax.xml.parsers.DocumentBuilderFactory
 /**
  * Minimal reader for the JVM configuration in `Charles.app/Contents/Info.plist`.
  */
-internal object InfoPlist {
+object InfoPlist {
     data class Config(
         val jvmOptions: List<String>,
         val mainModuleAndClass: String?,
         val version: String?,
     )
 
-    fun read(plist: File, appRoot: File): Config {
-        if (!plist.isFile) return Config(emptyList(), null, null)
+    fun read(plist: File, appRoot: File): Config =
+        if (plist.isFile) parse(plist.readText(), appRoot) else Config(emptyList(), null, null)
 
+    fun parse(xml: String, appRoot: File): Config {
         val factory = DocumentBuilderFactory.newInstance().apply {
             // These are local, trusted files, but there is no reason to resolve anything external.
             setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false)
             isExpandEntityReferences = false
         }
-        val root = factory.newDocumentBuilder().parse(plist).documentElement
+        val root = factory.newDocumentBuilder().parse(xml.byteInputStream()).documentElement
         val dict = root.childElements().firstOrNull { it.tagName == "dict" }
             ?: return Config(emptyList(), null, null)
 

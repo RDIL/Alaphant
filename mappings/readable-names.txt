@@ -1,0 +1,97 @@
+# Short official Charles names that are real identifiers, not obfuscator output.
+#
+# The obfuscator emits four-letter names drawn from a small pool, plus a short tail
+# (`a_`, `b_`, `b`). Four letters is also a perfectly good length for a real
+# identifier -- `read`, `size`, `Mode` -- and case shape alone cannot tell `kmft`
+# from `kmft`-shaped English (`fluh`, `sesd` and `unek` are obfuscator output;
+# `data`, `host` and `tree` are not). So short names default to OBFUSCATED and this
+# file is the exception list.
+#
+# Defaulting that way is deliberate. Mistaking a readable name for an obfuscated one
+# costs a needless `field_N`/`method_N` placeholder, and the identity bootstrap gives
+# it its real name back in the `named` namespace anyway. Mistaking an obfuscated name
+# for a readable one leaks a name that churns on every Charles release into the
+# `intermediary` namespace, which is the one thing the three-namespace scheme exists
+# to prevent.
+#
+# Names of five characters or more are always treated as readable and never need
+# listing here.
+
+[classes]
+# Four-letter names used by real nested classes (`SomePanel$Mode`).
+Mode
+Text
+Type
+
+[members]
+# <= 3 characters.
+add
+alt
+bg
+buf
+col
+ctx
+end
+get
+key
+log
+pos
+pub
+put
+run
+sdf
+set
+vf
+
+# Four letters, fields.
+body
+data
+dest
+file
+font
+head
+help
+host
+info
+left
+line
+mode
+name
+node
+path
+port
+root
+rows
+rule
+side
+size
+tags
+tail
+task
+text
+tool
+tree
+type
+warn
+
+# Four letters, methods.
+bind
+call
+draw
+drop
+exit
+from
+init
+item
+keys
+main
+mark
+pack
+read
+save
+show
+skip
+stop
+test
+trim
+view

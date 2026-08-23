@@ -4,6 +4,7 @@ kotlin = "2.4.10"
 tiny-remapper = "0.14.0"
 mapping-io = "0.9.1"
 vineflower = "1.12.0"
+enigma = "4.0.2"
 asm = "9.10.1"
 gson = "2.13.2"
 # mod runtime
@@ -15,6 +16,8 @@ annotations = "26.1.0"
 tiny-remapper = { module = "net.fabricmc:tiny-remapper", version.ref = "tiny-remapper" }
 mapping-io = { module = "net.fabricmc:mapping-io", version.ref = "mapping-io" }
 vineflower = { module = "org.vineflower:vineflower", version.ref = "vineflower" }
+# Enigma ships a shaded `-all` jar; taken non-transitively so its native-classifier deps stay out of the graph.
+enigma-swing = { module = "cuchaz:enigma-swing", version.ref = "enigma" }
 asm = { module = "org.ow2.asm:asm", version.ref = "asm" }
 asm-tree = { module = "org.ow2.asm:asm-tree", version.ref = "asm" }
 asm-commons = { module = "org.ow2.asm:asm-commons", version.ref = "asm" }

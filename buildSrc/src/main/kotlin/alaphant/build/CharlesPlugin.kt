@@ -1,0 +1,239 @@
+package alaphant.build
+
+import org.gradle.api.GradleException
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+import org.gradle.api.tasks.Sync
+import org.gradle.jvm.toolchain.JavaLanguageVersion
+import org.gradle.jvm.toolchain.JavaToolchainService
+import org.gradle.kotlin.dsl.register
+import java.io.File
+
+/**
+ * Owns everything that touches the Charles install: locating it, remapping it, decompiling it, and
+ * indexing it.
+ *
+ * Charles is resolved eagerly and a missing install is a hard error. There is no useful build without
+ * it -- the mod compiles against the remapped jar -- so pretending otherwise only moves the failure
+ * somewhere less obvious.
+ */
+class CharlesPlugin : Plugin<Project> {
+    override fun apply(project: Project): Unit = with(project) {
+        pluginManager.apply("jvm-toolchains")
+
+        val installDir = locateInstall(project)
+        val plist = readPlist(project, installDir)
+        val version = providers.gradleProperty("alaphant.charlesVersion").orNull
+            ?: plist.version
+            ?: throw GradleException(
+                "Could not read the Charles version from ${installDir.parentFile}/Info.plist. " +
+                    "Set alaphant.charlesVersion in gradle.properties."
+            )
+
+        val intermediaryJar = layout.buildDirectory.file(INTERMEDIARY_JAR).get().asFile
+        val namedJar = layout.buildDirectory.file(NAMED_JAR).get().asFile
+
+        // `add`, not `create`: this is a resolved set of facts, not something to configure later,
+        // so there is nothing for Gradle's decoration to do.
+        val charles = CharlesExtension(installDir, version, namedJar, intermediaryJar, plist)
+        extensions.add(CharlesExtension::class.java, "charles", charles)
+        logger.info("Charles $version at $installDir")
+
+        val intermediaryFile = file("mappings/intermediary/$version.tiny")
+        val ledgerFile = file("mappings/ledger.json")
+        val namedDir = file("mappings/named")
+        val readableNames = file("mappings/readable-names.txt")
+        val reflectionSites = file("mappings/reflection-sites.txt")
+        val mergedMappings = layout.buildDirectory.file("mappings/charles-$version-v2.tiny")
+
+        val decompilerClasspath = configurations.create("charlesDecompiler") {
+            isCanBeConsumed = false
+            isCanBeResolved = true
+        }
+
+        val enigmaClasspath = configurations.create("enigmaClasspath") {
+            isCanBeConsumed = false
+            isCanBeResolved = true
+        }
+
+        tasks.register<GenerateIntermediaryTask>("generateIntermediary") {
+            group = MAPPINGS_GROUP
+            description = "Allocates the stable intermediary namespace for Charles $version."
+            officialJar.set(charles.officialJar)
+            this.readableNames.set(readableNames)
+            charlesVersion.set(version)
+            outputMappings.set(intermediaryFile)
+            this.ledgerFile.set(ledgerFile)
+        }
+
+        val bootstrapNames = tasks.register<BootstrapNamesTask>("bootstrapNames") {
+            group = MAPPINGS_GROUP
+            description = "Recovers names the obfuscator failed to hide, writing them into mappings/named."
+            officialJar.set(charles.officialJar)
+            intermediaryMappings.set(intermediaryFile)
+            legacyMappings.set(file("mappings/legacy/charles4.tiny"))
+            this.namedDir.set(namedDir)
+        }
+
+        val mergeMappings = tasks.register<MergeNamedMappingsTask>("mergeMappings") {
+            // The bootstrap writes into the named store rather than producing it, so there is no
+            // dependency to infer -- but if both are asked for in one invocation, order them.
+            mustRunAfter(bootstrapNames)
+            group = MAPPINGS_GROUP
+            description = "Merges the generated intermediary file and the Enigma named store into one tiny v2 file."
+            intermediaryMappings.set(intermediaryFile)
+            this.namedDir.set(namedDir)
+            outputFile.set(mergedMappings)
+        }
+
+        val remapIntermediary = tasks.register<RemapJarTask>("remapIntermediary") {
+            group = MAPPINGS_GROUP
+            description = "Remaps charles.jar from obfuscated names to the stable intermediary namespace."
+            inputJar.set(charles.officialJar)
+            mappings.set(mergeMappings.flatMap { it.outputFile })
+            fromNamespace.set("official")
+            toNamespace.set("intermediary")
+            classpath.from(charles.libraryJars)
+            outputJar.set(intermediaryJar)
+        }
+
+        val remapNamed = tasks.register<RemapJarTask>("remapNamed") {
+            group = MAPPINGS_GROUP
+            description = "Remaps the intermediary jar to human-readable named form. The project compiles against this."
+            inputJar.set(remapIntermediary.flatMap { it.outputJar })
+            mappings.set(mergeMappings.flatMap { it.outputFile })
+            fromNamespace.set("intermediary")
+            toNamespace.set("named")
+            classpath.from(charles.libraryJars)
+            outputJar.set(namedJar)
+        }
+
+        tasks.register<DecompileTask>("decompile") {
+            group = MAPPINGS_GROUP
+            description = "Decompiles the named jar to Java sources for mapping work."
+            inputJar.set(remapNamed.flatMap { it.outputJar })
+            libraries.from(charles.libraryJars)
+            this.decompilerClasspath.from(decompilerClasspath)
+            outputDir.set(layout.buildDirectory.dir("decompiled"))
+        }
+
+        tasks.register<ExtractMetadataTask>("extractMetadata") {
+            group = MAPPINGS_GROUP
+            description = "Indexes class hierarchy, string constants and member xrefs for mapping work packets."
+            inputJar.set(remapNamed.flatMap { it.outputJar })
+            outputDir.set(layout.buildDirectory.dir("metadata"))
+        }
+
+        tasks.register<AnalyzeMappingsTask>("analyzeMappings") {
+            group = MAPPINGS_GROUP
+            description = "Reports mapping coverage per namespace, kind and package."
+            mappings.set(mergeMappings.flatMap { it.outputFile })
+        }
+
+        tasks.register<ValidateMappingsTask>("validateMappings") {
+            group = VERIFY_GROUP
+            description = "Checks the named store for the mistakes that would otherwise pass silently."
+            intermediaryMappings.set(intermediaryFile)
+            this.namedDir.set(namedDir)
+        }
+
+        tasks.register<CheckReflectionSitesTask>("checkReflectionSites") {
+            group = VERIFY_GROUP
+            description = "Fails if Charles loads a renamed class by name and no mixin patches the literal."
+            officialJar.set(charles.officialJar)
+            mappings.set(mergeMappings.flatMap { it.outputFile })
+            handled.set(reflectionSites)
+        }
+
+        val toolchains = extensions.getByType(JavaToolchainService::class.java)
+        val java17 = toolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(17)) }
+
+        tasks.register<EnigmaTask>("enigma") {
+            group = MAPPINGS_GROUP
+            description = "Opens the named mappings in the Enigma GUI, editing intermediary -> named."
+            this.enigmaClasspath.from(enigmaClasspath)
+            inputJar.set(remapIntermediary.flatMap { it.outputJar })
+            libraries.from(charles.libraryJars)
+            mappingsDir.set(namedDir)
+            javaLauncher.set(java17)
+        }
+
+        val assembleModulePath = tasks.register<Sync>("assembleModulePath") {
+            group = RUN_GROUP
+            description = "Assembles Charles' module path with the remapped charles.jar substituted in."
+            from(charles.libraryJars)
+            from(remapNamed.flatMap { it.outputJar }) { rename { CHARLES_JAR } }
+            into(layout.buildDirectory.dir("charles/modules"))
+        }
+
+        tasks.register<CharlesRunTask>("run") {
+            group = RUN_GROUP
+            description = "Runs Charles from the remapped module path."
+            dependsOn(assembleModulePath)
+            modulePath.set(layout.buildDirectory.dir("charles/modules"))
+            jvmOptions.set(plist.jvmOptions)
+            mainModuleAndClass.set(plist.mainModuleAndClass ?: DEFAULT_MAIN)
+            nativeLibraryPath.set(charles.nativeLibraryDir.absolutePath)
+            javaLauncher.set(java17)
+        }
+
+        tasks.register<CharlesInfoTask>("charlesInfo") {
+            group = MAPPINGS_GROUP
+            description = "Prints what the build resolved, so a broken setup is obvious."
+            installDirPath.set(installDir.absolutePath)
+            charlesVersion.set(version)
+            libraryCount.set(charles.libraryJars.size)
+            intermediaryFilePath.set(intermediaryFile.path)
+            namedDirPath.set(namedDir.path)
+            namedJarPath.set(namedJar.path)
+        }
+    }
+
+    private fun locateInstall(project: Project): File {
+        val configured = project.providers.gradleProperty("alaphant.charlesInstall").orNull
+        val candidates = when {
+            configured != null -> listOf(File(configured))
+            else -> listOf(project.file("target"), File(MACOS_INSTALL))
+        }
+
+        candidates.firstOrNull { File(it, CHARLES_JAR).isFile }?.let { return it }
+
+        throw GradleException(
+            buildString {
+                appendLine("No Charles install found. Alaphant patches Charles, so there is nothing to build without it.")
+                appendLine()
+                appendLine("Looked for:")
+                candidates.forEach { appendLine("  ${File(it, CHARLES_JAR).absolutePath}") }
+                appendLine()
+                appendLine("Install Charles 5, or copy its charles.jar into target/, or set")
+                appendLine("  alaphant.charlesInstall=/path/to/Charles.app/Contents/Java")
+                append("in gradle.properties. Charles is never redistributed -- use your own licensed install.")
+            }
+        )
+    }
+
+    /**
+     * Read through `fileContents` rather than `File.readText`, so the configuration cache knows to
+     * throw itself away when a Charles upgrade changes the plist.
+     */
+    private fun readPlist(project: Project, installDir: File): InfoPlist.Config {
+        val contents = installDir.parentFile ?: return InfoPlist.Config(emptyList(), null, null)
+        val plist = File(contents, "Info.plist")
+        val text = project.providers.fileContents(project.layout.file(project.provider { plist })).asText.orNull
+            ?: return InfoPlist.Config(emptyList(), null, null)
+        return InfoPlist.parse(text, contents.parentFile)
+    }
+
+    private companion object {
+        const val CHARLES_JAR = "charles.jar"
+        const val MACOS_INSTALL = "/Applications/Charles.app/Contents/Java"
+        const val MAPPINGS_GROUP = "charles"
+        const val VERIFY_GROUP = "verification"
+        const val RUN_GROUP = "run"
+        const val DEFAULT_MAIN = "com.charlesproxy/com.charlesproxy.main.MainWithClassLoader"
+
+        /** Stable paths: `:mod` and IntelliJ both point straight at these files. */
+        const val INTERMEDIARY_JAR = "charles/charles-intermediary.jar"
+        const val NAMED_JAR = "charles/charles-named.jar"
+    }
+}
