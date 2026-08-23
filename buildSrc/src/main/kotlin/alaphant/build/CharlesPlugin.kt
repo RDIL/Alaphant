@@ -178,25 +178,31 @@ class CharlesPlugin : Plugin<Project> {
             .map { it.split(' ', '\t', '\n').filter(String::isNotBlank) }
             .orElse(emptyList())
 
-        fun registerRun(name: String, describedAs: String, configure: CharlesRunTask.() -> Unit = {}) =
+        val devProfileArgs = listOf(
+            "-Dcharles.config=${File(devProfileDir, CHARLES_CONFIG)}",
+            "-Dcharles.proxyPort=$DEV_PROXY_PORT",
+            "-Dcharles.socksProxyPort=$DEV_SOCKS_PORT",
+        )
+
+        // `defaults` land after the dev profile and before `alaphant.jvmArgs`, so the last `-D` on
+        // the command line is always the user's -- any of these can be turned back off from Gradle.
+        fun registerRun(
+            name: String,
+            describedAs: String,
+            defaults: List<String> = emptyList(),
+            configure: CharlesRunTask.() -> Unit = {},
+        ) =
             tasks.register<CharlesRunTask>(name) {
                 group = RUN_GROUP
                 description = describedAs
                 dependsOn(assembleModulePath)
                 modulePath.set(layout.buildDirectory.dir("charles/modules"))
+                workingDir.set(layout.projectDirectory)
                 jvmOptions.set(plist.jvmOptions)
                 mainModuleAndClass.set(plist.mainModuleAndClass ?: DEFAULT_MAIN)
                 nativeLibraryPath.set(charles.nativeLibraryDir.absolutePath)
                 javaLauncher.set(java17)
-                extraJvmArgs.set(
-                    userJvmArgs.map { extra ->
-                        listOf(
-                            "-Dcharles.config=${File(devProfileDir, CHARLES_CONFIG)}",
-                            "-Dcharles.proxyPort=$DEV_PROXY_PORT",
-                            "-Dcharles.socksProxyPort=$DEV_SOCKS_PORT",
-                        ) + extra
-                    }
-                )
+                extraJvmArgs.set(userJvmArgs.map { extra -> devProfileArgs + defaults + extra })
                 // Charles writes the config file, but not the directory holding it.
                 doFirst { devProfileDir.mkdirs() }
                 configure()
@@ -204,7 +210,11 @@ class CharlesPlugin : Plugin<Project> {
 
         registerRun("run", "Runs Charles from the remapped module path, unpatched.")
 
-        registerRun("runWithMod", "Runs Charles from the remapped module path with the Alaphant agent attached.") {
+        registerRun(
+            "runWithMod",
+            "Runs Charles from the remapped module path with the Alaphant agent attached.",
+            defaults = listOf("-Dmixin.debug.export=true"),
+        ) {
             // By name: `agentJar` is the mod's own packaging and belongs to the root build script,
             // which writes it to the fixed path this task reads -- the same shape as `remapNamed`
             // and `charles.namedJar`.

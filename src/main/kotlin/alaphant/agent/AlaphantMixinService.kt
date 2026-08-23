@@ -4,6 +4,8 @@ package alaphant.agent
 
 import org.spongepowered.asm.launch.platform.container.ContainerHandleVirtual
 import org.spongepowered.asm.launch.platform.container.IContainerHandle
+import org.spongepowered.asm.logging.ILogger
+import org.spongepowered.asm.logging.LoggerAdapterConsole
 import org.spongepowered.asm.mixin.MixinEnvironment
 import org.spongepowered.asm.mixin.transformer.IMixinTransformer
 import org.spongepowered.asm.mixin.transformer.IMixinTransformerFactory
@@ -48,6 +50,9 @@ class AlaphantMixinService : MixinServiceAbstract() {
     override fun getResourceAsStream(name: String): InputStream? =
         javaClass.classLoader.getResourceAsStream(name)
 
+    override fun createLogger(name: String): ILogger =
+        LoggerAdapterConsole(name).setDebugStream(if (VERBOSE) System.out else null)
+
     @Suppress("DEPRECATION")
     override fun wire(phase: MixinEnvironment.Phase, phaseConsumer: IConsumer<MixinEnvironment.Phase>) {
         super.wire(phase, phaseConsumer)
@@ -68,6 +73,10 @@ class AlaphantMixinService : MixinServiceAbstract() {
 
     fun createTransformer(): IMixinTransformer =
         getInternal(IMixinTransformerFactory::class.java).createTransformer()
+
+    private companion object {
+        private val VERBOSE = java.lang.Boolean.getBoolean("mixin.debug.verbose")
+    }
 
     private class AgentClassProvider : IClassProvider {
         private val loader: ClassLoader = AlaphantMixinService::class.java.classLoader

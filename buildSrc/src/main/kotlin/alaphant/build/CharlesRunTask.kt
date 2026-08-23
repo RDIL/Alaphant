@@ -48,6 +48,9 @@ abstract class CharlesRunTask : DefaultTask() {
     abstract val extraJvmArgs: ListProperty<String>
 
     @get:Internal
+    abstract val workingDir: DirectoryProperty
+
+    @get:Internal
     abstract val javaLauncher: Property<JavaLauncher>
 
     @get:Inject
@@ -73,6 +76,7 @@ abstract class CharlesRunTask : DefaultTask() {
         execOps.exec {
             executable = javaLauncher.get().executablePath.asFile.absolutePath
             this.args = args
+            workingDir(this@CharlesRunTask.workingDir.get().asFile)
         }
     }
 }

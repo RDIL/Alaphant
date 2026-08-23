@@ -6,8 +6,9 @@
   "compatibilityLevel": "JAVA_17",
   "target": "@env(DEFAULT)",
   "mixins": [
-    "remappedReflection.MacOSManagerMixin",
-    "devSupport.MacOSImplMixin"
+    "devSupport.MacOSImplMixin",
+    "jwt.MixinAuthorizationUtils$GenericAuthorization",
+    "remappedReflection.MacOSManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
