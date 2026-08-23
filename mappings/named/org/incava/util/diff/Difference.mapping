@@ -1,0 +1,32 @@
+CLASS org/incava/util/diff/class_1570 org/incava/util/diff/Difference
+	COMMENT Verbatim org.incava.util.diff.Difference from jpace/java-diff, the difference record produced by Diff.
+	COMMENT Two pairs of start/end points, one for the "from" collection and one for the "to". An end point of NONE (-1) means the difference was purely a deletion or purely an addition. Upstream's `public static final int NONE = -1` is a compile-time constant, so it is inlined and absent from the class file.
+	COMMENT Source: https://github.com/jpace/java-diff/blob/master/src/main/java/org/incava/diff/Difference.java
+	FIELD field_4243 delStart I
+		COMMENT The point at which the deletion starts.
+	FIELD field_4242 delEnd I
+		COMMENT The point at which the deletion ends.
+	FIELD field_4244 addStart I
+		COMMENT The point at which the addition starts.
+	FIELD field_4245 addEnd I
+		COMMENT The point at which the addition ends.
+	METHOD <init> (IIII)V
+		COMMENT Creates the difference for the given start and end points for the deletion and addition.
+		ARG 1 delStart
+		ARG 2 delEnd
+		ARG 3 addStart
+		ARG 4 addEnd
+	METHOD method_4196 getDeletedStart ()I
+		COMMENT The point at which the deletion starts, if any. A value equal to NONE means this is an addition.
+	METHOD method_4194 getDeletedEnd ()I
+		COMMENT The point at which the deletion ends, if any. A value equal to NONE means this is an addition.
+	METHOD method_4198 getAddedStart ()I
+		COMMENT The point at which the addition starts, if any. A value equal to NONE means this is a deletion.
+	METHOD method_4199 getAddedEnd ()I
+		COMMENT The point at which the addition ends, if any. A value equal to NONE means this is a deletion.
+	METHOD method_4197 setDeleted (I)V
+		COMMENT Sets the point as deleted. The start and end points are widened to include the given line.
+		ARG 1 line
+	METHOD method_4195 setAdded (I)V
+		COMMENT Sets the point as added. The start and end points are widened to include the given line.
+		ARG 1 line

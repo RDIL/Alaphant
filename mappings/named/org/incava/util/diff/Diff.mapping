@@ -1,0 +1,46 @@
+CLASS org/incava/util/diff/class_1569 org/incava/util/diff/Diff
+	COMMENT Verbatim org.incava.util.diff.Diff from jpace/java-diff -- the pre-rename package layout, where Diff carried the whole algorithm; upstream has since split it into org.incava.diff.Differ + Diff.
+	COMMENT Compares two collections and returns the additions, changes and deletions between them, as a list of Difference. A Comparator may be supplied; otherwise element equals() is used.
+	COMMENT Source: https://github.com/jpace/java-diff/blob/master/src/main/java/org/incava/diff/Diff.java
+	FIELD field_4238 a Ljava/util/List;
+		COMMENT The source list, AKA the "from" values.
+	FIELD field_4236 b Ljava/util/List;
+		COMMENT The target list, AKA the "to" values.
+	FIELD field_4239 diffs Ljava/util/List;
+		COMMENT The list of differences, as Difference instances.
+	FIELD field_4240 pending Lorg/incava/util/diff/class_1570;
+		COMMENT The pending, uncommitted difference.
+	FIELD field_4237 comparator Ljava/util/Comparator;
+		COMMENT The comparator used, if any. Null means fall back to element equals().
+	FIELD field_4241 thresh Ljava/util/TreeMap;
+		COMMENT The thresholds. Null until the longest-common-subsequence pass builds it.
+	METHOD <init> ([Ljava/lang/Object;[Ljava/lang/Object;B)V
+		COMMENT Obfuscator-synthesised private overload standing in for upstream Diff(Type[], Type[], Comparator) with a null comparator -- the trailing byte is a signature disambiguator, not an upstream parameter.
+		ARG 1 a
+		ARG 2 b
+	METHOD <init> ([Ljava/lang/Object;[Ljava/lang/Object;)V
+		COMMENT Constructs the Diff object for the two arrays, using the default comparison mechanism between the objects, such as equals and compareTo.
+		ARG 1 a
+		ARG 2 b
+	METHOD <init> (Ljava/util/List;Ljava/util/List;Ljava/util/Comparator;)V
+		COMMENT Constructs the Diff object for the two collections, using the given comparator.
+		ARG 1 a
+		ARG 2 b
+		ARG 3 comp
+	METHOD method_4190 diff ()Ljava/util/List;
+		COMMENT Runs diff and returns the results. Upstream diff(); the obfuscator inlined traverseSequences, getLongestCommonSubsequences, onMatch and the thresh helpers (append, insert, isGreaterThan, isLessThan, getLastValue) into this one body.
+	METHOD method_4191 onANotB (II)V
+		COMMENT Invoked for elements in a and not in b: opens a pending Difference(ai, ai, bi, NONE) or extends its deleted range.
+		ARG 1 ai
+		ARG 2 bi
+	METHOD method_4189 onBNotA (II)V
+		COMMENT Invoked for elements in b and not in a: opens a pending Difference(ai, NONE, bi, bi) or extends its added range.
+		ARG 1 ai
+		ARG 2 bi
+	METHOD method_4193 equals (Ljava/lang/Object;Ljava/lang/Object;)Z
+		COMMENT Compares the two elements using the comparator provided with the constructor, if any. A two-argument overload -- unrelated to Object.equals, which this class does not declare.
+		ARG 1 x
+		ARG 2 y
+	METHOD method_4192 isNonzero (Ljava/lang/Integer;)Z
+		COMMENT Returns whether the Integer is non-null and not zero.
+		ARG 0 i
