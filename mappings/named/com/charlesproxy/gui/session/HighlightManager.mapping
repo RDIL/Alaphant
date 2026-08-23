@@ -1,4 +1,4 @@
-CLASS com/charlesproxy/gui/session/class_423 com/charlesproxy/gui/session/MaybeHighlightManager
+CLASS com/charlesproxy/gui/session/class_423 com/charlesproxy/gui/session/HighlightManager
 	COMMENT [bootstrap] matched to Charles 4's HighlightManager on 8 shared member descriptors (next best in this package scored 5) -- provisional, confirm before dropping the Maybe
 	FIELD field_1278 maybeCategoryConfig Lcom/charlesproxy/config/CategoryConfiguration;
 		COMMENT [bootstrap] carried over from Charles 4's HighlightManager.categoryConfig on a unique descriptor match -- provisional

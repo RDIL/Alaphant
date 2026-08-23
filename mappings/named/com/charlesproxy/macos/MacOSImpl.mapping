@@ -1,10 +1,21 @@
 CLASS com/charlesproxy/macos/class_916 com/charlesproxy/macos/MacOSImpl
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.macos.MacOSImpl"
 	COMMENT [bootstrap] named by an inner class the obfuscator left alone: MacOSImpl$… is in the jar while its outer class is not, and holds a synthetic reference to this type
-	COMMENT [bootstrap] matched to Charles 4's MacOSImpl on 8 shared member descriptors (next best in this package scored 5) -- provisional, confirm before dropping the Maybe
-	FIELD field_2461 maybeProxyEnabled Z
-		COMMENT [bootstrap] carried over from Charles 4's MacOSImpl.proxyEnabled on a unique descriptor match -- provisional
-	METHOD method_2170 maybeRequestToggleFullScreen (Lcom/charlesproxy/macos/class_904;)V
-		COMMENT [bootstrap] carried over from Charles 4's MacOSImpl.requestToggleFullScreen on a unique descriptor match -- provisional
-	METHOD method_2178 maybeSetProxyEnabled (Z)V
-		COMMENT [bootstrap] carried over from Charles 4's MacOSImpl.setProxyEnabled on a unique descriptor match -- provisional
+	FIELD field_2460 LOGGER Lorg/slf4j/Logger;
+	FIELD field_2459 systemProxySettings Ljava/lang/String;
+	FIELD field_2461 proxyEnabled Z
+	FIELD field_2462 propertyChangeSupport Ljava/beans/PropertyChangeSupport;
+	METHOD method_2167 isMacOS ()Z
+	METHOD method_2168 restoreSystemProxySettings ()V
+	METHOD method_2169 setupSystemProxies (IILjava/util/List;)V
+	METHOD method_2170 removeSystemEventListener (Lcom/charlesproxy/macos/class_904;)V
+	METHOD method_2171 addSystemEventListener (Lcom/charlesproxy/macos/class_915;)Lcom/charlesproxy/macos/class_904;
+	METHOD method_2172 getToggleFullscreenAction (Ljava/awt/Window;Lcom/charlesproxy/config/class_116;)Lcom/charlesproxy/macos/MacOSImpl$2;
+	METHOD method_2173 addPropertyChangeListener (Ljava/beans/PropertyChangeListener;)V
+	METHOD method_2174 isProxyEnabled ()Z
+	METHOD method_2175 promptToInstallProxyHelper ()Z
+	METHOD method_2176 handleFullScreenEvent (Lcom/charlesproxy/config/class_116;Ljavax/swing/AbstractAction;Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;
+	METHOD method_2177 requestToggleFullScreen (Ljava/awt/Window;)V
+	METHOD method_2178 setProxyEnabled (Z)V
+	METHOD method_2179 testProxyHelper ()Z
+	METHOD method_2180 saveMacOSProxies ()Z

@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/macos/gui/class_908 com/charlesproxy/macos/gui/IMacOSGuiImpl
+	METHOD method_2164 installEventHandlers (Lcom/charlesproxy/gui/CharlesFrame;)V
+	METHOD method_2163 isHidden ()Z
+	METHOD method_2162 requestForeground ()V

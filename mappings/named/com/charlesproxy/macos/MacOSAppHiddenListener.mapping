@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/macos/class_918 com/charlesproxy/macos/MacOSAppHiddenListener
+	FIELD field_2465 macOsImpl Lcom/charlesproxy/macos/class_916;
+	FIELD field_2466 windowListener Lcom/charlesproxy/macos/class_915;

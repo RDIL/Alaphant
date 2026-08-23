@@ -1,1 +1,2 @@
 CLASS com/charlesproxy/gui/CharlesFrame
+	METHOD bringToFront bringToFront ()V

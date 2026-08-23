@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/macos/class_915 com/charlesproxy/macos/IMacOSWindowShownHiddenListener
+	METHOD method_2046 onCharlesShown ()V
+	METHOD method_2045 onCharlesHidden ()V

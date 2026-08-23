@@ -1,2 +1,7 @@
 CLASS com/charlesproxy/macos/gui/class_909 com/charlesproxy/macos/gui/MacOSGUIImpl
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.macos.gui.MacOSGUIImpl"
+	FIELD field_2451 LOGGER Lorg/slf4j/Logger;
+	FIELD field_2450 hidden Z
+	METHOD method_2164 installEventHandlers (Lcom/charlesproxy/gui/CharlesFrame;)V
+	METHOD method_2163 isHidden ()Z
+	METHOD method_2162 requestForeground ()V

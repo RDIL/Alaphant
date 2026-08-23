@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/macos/gui/class_907 com/charlesproxy/macos/gui/CharlesQuitHandler
+	FIELD field_2448 macOsGuiImpl Lcom/charlesproxy/macos/gui/class_909;
+	FIELD field_2449 charlesFrame Lcom/charlesproxy/gui/CharlesFrame;

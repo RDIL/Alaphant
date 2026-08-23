@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/macos/gui/class_910 com/charlesproxy/macos/gui/MacOSAppHiddenListener
+	FIELD field_2452 macOsGuiImpl Lcom/charlesproxy/macos/gui/class_909;

@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/macos/class_904 com/charlesproxy/macos/SystemEventListenerContainer
+	FIELD field_2444 systemEventListener Ljava/awt/desktop/SystemEventListener;
+	METHOD method_2161 getSystemEventListener ()Ljava/awt/desktop/SystemEventListener;
