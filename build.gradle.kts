@@ -20,14 +20,42 @@ dependencies {
     // Charles' own module path, rather than a hand-maintained list of Maven coordinates.
     compileOnly(files(charles.libraryJars))
 
-    compileOnly(libs.mixin)
     compileOnly(libs.annotations)
+
+    // Bundled into the agent jar, so runtime scope rather than compileOnly. Mixin publishes an empty
+    // POM: ASM, Guava and Gson are its undeclared runtime dependencies and have to be named here.
+    implementation(libs.mixin)
+    implementation(libs.asm)
+    implementation(libs.asm.tree)
+    implementation(libs.asm.commons)
+    implementation(libs.asm.analysis)
+    implementation(libs.asm.util)
+    implementation(libs.guava)
+    implementation(libs.gson)
     implementation(libs.java.jwt)
 
     charlesDecompiler(libs.vineflower)
 
     // Enigma's shaded distribution, non-transitive so its native-classifier deps never resolve.
     enigmaClasspath(variantOf(libs.enigma.swing) { classifier("all") }) { isTransitive = false }
+}
+
+/**
+ * The `-javaagent` jar that patches Charles: the mod, Mixin, and everything Mixin needs, in one
+ * archive on a fixed path. `runWithMod` reads it from there; so can anything launching Charles by
+ * hand. See `AgentJarTask` for why it is assembled rather than shadowed.
+ */
+val agentJar = tasks.register<alaphant.build.AgentJarTask>("agentJar") {
+    group = "build"
+    description = "Bundles the mod and its runtime dependencies into the Charles patching agent."
+    modClasses.from(sourceSets.main.map { it.output })
+    libraries.from(configurations.runtimeClasspath)
+    premainClass.set("alaphant.agent.AlaphantAgent")
+    outputJar.set(charles.agentJar)
+}
+
+tasks.named("assemble") {
+    dependsOn(agentJar)
 }
 
 // The named store is source, not output, so nothing else would ever check it.

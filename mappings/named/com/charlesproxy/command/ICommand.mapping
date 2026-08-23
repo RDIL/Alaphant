@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/command/class_38 com/charlesproxy/command/ICommand
+	METHOD method_138 execute ()Z
+	METHOD method_139 setCharlesContext (Lcom/charlesproxy/CharlesContext;)V
+		ARG 1 charlesContext

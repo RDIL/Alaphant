@@ -7,6 +7,7 @@ vineflower = "1.12.0"
 enigma = "4.0.2"
 asm = "9.10.1"
 gson = "2.13.2"
+guava = "33.4.8-jre"
 # mod runtime
 mixin = "0.8.7"
 java-jwt = "4.6.0"
@@ -21,7 +22,10 @@ enigma-swing = { module = "cuchaz:enigma-swing", version.ref = "enigma" }
 asm = { module = "org.ow2.asm:asm", version.ref = "asm" }
 asm-tree = { module = "org.ow2.asm:asm-tree", version.ref = "asm" }
 asm-commons = { module = "org.ow2.asm:asm-commons", version.ref = "asm" }
+asm-analysis = { module = "org.ow2.asm:asm-analysis", version.ref = "asm" }
+asm-util = { module = "org.ow2.asm:asm-util", version.ref = "asm" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+guava = { module = "com.google.guava:guava", version.ref = "guava" }
 mixin = { module = "org.spongepowered:mixin", version.ref = "mixin" }
 java-jwt = { module = "com.auth0:java-jwt", version.ref = "java-jwt" }
 annotations = { module = "org.jetbrains:annotations", version.ref = "annotations" }

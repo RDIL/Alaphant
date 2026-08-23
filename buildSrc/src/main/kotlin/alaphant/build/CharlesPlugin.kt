@@ -30,9 +30,10 @@ class CharlesPlugin : Plugin<Project> {
 
         val intermediaryJar = layout.buildDirectory.file(INTERMEDIARY_JAR).get().asFile
         val namedJar = layout.buildDirectory.file(NAMED_JAR).get().asFile
+        val agentJar = layout.buildDirectory.file(AGENT_JAR).get().asFile
 
         // `add`, not `create`: resolved facts, with nothing for Gradle's decoration to do.
-        val charles = CharlesExtension(installDir, version, namedJar, intermediaryJar, plist)
+        val charles = CharlesExtension(installDir, version, namedJar, intermediaryJar, agentJar, plist)
         extensions.add(CharlesExtension::class.java, "charles", charles)
         logger.info("Charles $version at $installDir")
 
@@ -162,15 +163,27 @@ class CharlesPlugin : Plugin<Project> {
             into(layout.buildDirectory.dir("charles/modules"))
         }
 
-        tasks.register<CharlesRunTask>("run") {
-            group = RUN_GROUP
-            description = "Runs Charles from the remapped module path."
-            dependsOn(assembleModulePath)
-            modulePath.set(layout.buildDirectory.dir("charles/modules"))
-            jvmOptions.set(plist.jvmOptions)
-            mainModuleAndClass.set(plist.mainModuleAndClass ?: DEFAULT_MAIN)
-            nativeLibraryPath.set(charles.nativeLibraryDir.absolutePath)
-            javaLauncher.set(java17)
+        fun registerRun(name: String, describedAs: String, configure: CharlesRunTask.() -> Unit = {}) =
+            tasks.register<CharlesRunTask>(name) {
+                group = RUN_GROUP
+                description = describedAs
+                dependsOn(assembleModulePath)
+                modulePath.set(layout.buildDirectory.dir("charles/modules"))
+                jvmOptions.set(plist.jvmOptions)
+                mainModuleAndClass.set(plist.mainModuleAndClass ?: DEFAULT_MAIN)
+                nativeLibraryPath.set(charles.nativeLibraryDir.absolutePath)
+                javaLauncher.set(java17)
+                configure()
+            }
+
+        registerRun("run", "Runs Charles from the remapped module path, unpatched.")
+
+        registerRun("runWithMod", "Runs Charles from the remapped module path with the Alaphant agent attached.") {
+            // By name: `agentJar` is the mod's own packaging and belongs to the root build script,
+            // which writes it to the fixed path this task reads -- the same shape as `remapNamed`
+            // and `charles.namedJar`.
+            dependsOn("agentJar")
+            this.agentJar.set(charles.agentJar)
         }
 
         tasks.register<CharlesInfoTask>("charlesInfo") {
@@ -226,8 +239,9 @@ class CharlesPlugin : Plugin<Project> {
         const val RUN_GROUP = "run"
         const val DEFAULT_MAIN = "com.charlesproxy/com.charlesproxy.main.MainWithClassLoader"
 
-        /** Stable paths: `:mod` and IntelliJ both point straight at these files. */
+        /** Stable paths: the root build script and IntelliJ both point straight at these files. */
         const val INTERMEDIARY_JAR = "charles/charles-intermediary.jar"
         const val NAMED_JAR = "charles/charles-named.jar"
+        const val AGENT_JAR = "agent/alaphant-agent.jar"
     }
 }

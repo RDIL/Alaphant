@@ -23,6 +23,15 @@ Mode
 Text
 Type
 
+# Real top-level classes. `Main` is load-bearing: `Info.plist` launches
+# `com.charlesproxy/com.charlesproxy.main.macos.gui.Main` by name, so renaming it leaves the
+# remapped jar with no entry point. The model types sit beside `Session` and `Transaction`, which
+# Charles serialises.
+Flow
+Host
+Main
+Path
+
 [members]
 # <= 3 characters.
 add

@@ -20,6 +20,12 @@ class CharlesExtension(
     val namedJar: File,
     /** The intermediary-namespace jar, which is what Enigma edits against. */
     val intermediaryJar: File,
+    /**
+     * The self-contained `-javaagent` jar that patches Charles. Fixed path for the same reason
+     * [namedJar] has one: `runWithMod` and anything launching Charles by hand both point straight
+     * at it.
+     */
+    val agentJar: File,
     /** JVM options and main class as Charles' own launcher declares them. */
     internal val plist: InfoPlist.Config,
 ) {

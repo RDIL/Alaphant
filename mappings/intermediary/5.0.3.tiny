@@ -132,7 +132,7 @@ c	com/charlesproxy/MUmM	com/charlesproxy/class_19
 	m	()V	sIol	method_52
 	m	()Z	uklp	method_53
 	m	()V	uqbt	method_54
-c	com/charlesproxy/Main	com/charlesproxy/class_20
+c	com/charlesproxy/Main	com/charlesproxy/Main
 	f	Lorg/slf4j/Logger;	EHwQ	field_59
 	f	Lcom/charlesproxy/command/kRuY;	OEyH	field_60
 	f	Z	iScI	field_61
@@ -6616,7 +6616,7 @@ c	com/charlesproxy/macos/vgcf	com/charlesproxy/macos/class_918
 c	com/charlesproxy/main/Ilqp	com/charlesproxy/main/class_919
 	f	Lcom/charlesproxy/main/Main;	EHwQ	field_2467
 	f	Lcom/charlesproxy/gui/SplashWindow;	iScI	field_2468
-c	com/charlesproxy/main/Main	com/charlesproxy/main/class_920
+c	com/charlesproxy/main/Main	com/charlesproxy/main/Main
 	f	Lorg/slf4j/Logger;	EHwQ	field_2469
 	f	Lcom/charlesproxy/gui/CharlesFrame;	jviD	field_2470
 	m	()V	EHwQ	method_55
@@ -6642,7 +6642,6 @@ c	com/charlesproxy/main/kRuY	com/charlesproxy/main/class_922
 c	com/charlesproxy/main/kmft	com/charlesproxy/main/class_923
 	f	Lcom/charlesproxy/main/Main;	EHwQ	field_2476
 	f	Lcom/charlesproxy/CharlesContext;	iScI	field_2477
-c	com/charlesproxy/main/macos/gui/Main	com/charlesproxy/main/macos/gui/class_924
 c	com/charlesproxy/main/vQtF	com/charlesproxy/main/class_925
 	f	Lcom/charlesproxy/main/kmft;	iScI	field_2478
 c	com/charlesproxy/main/vYxU	com/charlesproxy/main/class_926
@@ -6655,7 +6654,7 @@ c	com/charlesproxy/model/DlWI	com/charlesproxy/model/class_929
 c	com/charlesproxy/model/EQXs	com/charlesproxy/model/class_930
 	f	Lcom/charlesproxy/model/OmAF;	iScI	field_2481
 	m	()Lcom/charlesproxy/model/OmAF;	iScI	method_1
-c	com/charlesproxy/model/Flow	com/charlesproxy/model/class_931
+c	com/charlesproxy/model/Flow	com/charlesproxy/model/Flow
 	m	()V	iScI	method_2186
 	m	(IJ)Z	iScI	method_2187
 	m	(IJJ)Z	iScI	method_2188
@@ -9001,19 +9000,17 @@ c	com/xk72/amf/xLtN	com/xk72/amf/class_1217
 	m	()Z	EHwQ	method_3107
 	m	()Ljava/lang/String;	iScI	method_3108
 	m	(Ljava/lang/String;)V	iScI	method_3109
-c	com/xk72/charles/model/Flow	com/xk72/charles/model/class_1218
+c	com/xk72/charles/model/Flow	com/xk72/charles/model/Flow
 	m	()V	iScI	method_3157
 	m	(IJ)Z	iScI	method_3158
 	m	(IJJ)Z	iScI	method_3159
 	m	(JII)V	iScI	method_3160
 	m	(JJI)V	iScI	method_3161
-c	com/xk72/charles/model/Host	com/xk72/charles/model/class_1219
 c	com/xk72/charles/model/Ilqp	com/xk72/charles/model/class_1220
 	f	[I	EHwQ	field_3227
 	f	[I	iScI	field_3228
 c	com/xk72/charles/model/ModelNode	com/xk72/charles/model/ModelNode
 	f	Lcom/xk72/charles/model/ModelNode;	iScI	field_3229
-c	com/xk72/charles/model/Path	com/xk72/charles/model/class_1221
 c	com/xk72/charles/model/Session	com/xk72/charles/model/Session
 	f	Z	EHwQ	field_3230
 c	com/xk72/charles/model/Transaction	com/xk72/charles/model/Transaction
