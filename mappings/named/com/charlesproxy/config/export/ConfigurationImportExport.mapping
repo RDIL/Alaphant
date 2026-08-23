@@ -1,2 +1,5 @@
 CLASS com/charlesproxy/config/export/class_99 com/charlesproxy/config/export/ConfigurationImportExport
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.config.export.ConfigurationImportExport"
+	FIELD field_554 instance Lcom/charlesproxy/config/export/class_99;
+	FIELD field_555 LOGGER Lorg/slf4j/Logger;
+	METHOD method_411 getInstance ()Lcom/charlesproxy/config/export/class_99;

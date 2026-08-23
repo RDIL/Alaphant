@@ -1,0 +1,13 @@
+CLASS com/xk72/charles/model/EditableTransaction
+	FIELD source source Lcom/xk72/charles/model/Transaction;
+	FIELD transaction transaction Lcom/xk72/charles/model/Transaction;
+	METHOD getEarliestStartTime getEarliestStartTime ()Ljava/util/Date;
+	METHOD getEndTime getEndTime ()Ljava/util/Date;
+	METHOD getLatestTime getLatestTime ()Ljava/util/Date;
+	METHOD getSource getSource ()Lcom/xk72/charles/model/Transaction;
+	METHOD getStartTime getStartTime ()Ljava/util/Date;
+	METHOD getTotalRequestSize getTotalRequestSize ()J
+	METHOD getTransaction getTransaction ()Lcom/xk72/charles/model/Transaction;
+	METHOD setSource setSource (Lcom/xk72/charles/model/Transaction;)V
+	METHOD setTransaction setTransaction (Lcom/xk72/charles/model/Transaction;)V
+	METHOD toUrlString toUrlString ()Ljava/lang/String;

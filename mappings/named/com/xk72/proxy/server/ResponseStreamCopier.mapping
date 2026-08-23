@@ -1,2 +1,2 @@
-CLASS com/xk72/proxy/pkg_21/class_1263 com/xk72/proxy/server/ResponseStreamCopier
+CLASS com/xk72/proxy/server/class_1263 com/xk72/proxy/server/ResponseStreamCopier
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.server.ResponseStreamCopier"

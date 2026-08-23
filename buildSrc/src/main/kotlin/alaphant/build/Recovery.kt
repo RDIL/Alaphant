@@ -30,7 +30,7 @@ internal class Recovery(
         for (node in jar.nodes) {
             val intermediaryName = placeholders[node.name] ?: continue
             val literal = loggerLiteral(node) ?: continue
-            val internal = literal.replace('.', '/')
+            val internal = internalNameOf(literal)
 
             if (internal in jar.byName) continue
             if (!plausibleRename(node.name, internal)) {
@@ -42,6 +42,26 @@ internal class Recovery(
         }
 
         logger.lifecycle("  @Slf4j logger literals    : $named classes named" + skippedNote(skipped))
+    }
+
+    /**
+     * Turns a logger literal into an internal name, splitting package from class correctly.
+     *
+     * `com.charlesproxy.tools.MapLocalTool.MapLocalServerSocket` is a *nested* class: replacing every
+     * dot with a slash invents a `MapLocalTool` package, which moves the class out of its real one
+     * and breaks package-private access to the classes it was declared beside. Charles' packages are
+     * lower case throughout, so the first capitalised segment starts the class chain.
+     *
+     * The nesting is then flattened with [flatten], which is where the `$` goes.
+     */
+    private fun internalNameOf(literal: String): String {
+        val segments = literal.split('.')
+        val firstClass = segments.indexOfFirst { it.firstOrNull()?.isUpperCase() == true }
+        if (firstClass < 0) return literal.replace('.', '/')
+
+        val pkg = segments.take(firstClass).joinToString("/")
+        val nested = segments.drop(firstClass).joinToString(NESTING)
+        return if (pkg.isEmpty()) nested else "$pkg/$nested"
     }
 
     /** The string handed to `LoggerFactory.getLogger(String)`, if this class does that exactly once. */
@@ -345,7 +365,15 @@ internal class Recovery(
      * Enigma reads `$` as nesting, so a flat class given a nested name comes back truncated and
      * collides with its siblings. Run the words together instead.
      */
-    private fun flatten(simple: String): String = simple.replace("$", "")
+    /**
+     * Flattens a nested name into one Charles 5 can hold.
+     *
+     * Nested classes are flat in the Charles 5 jar, and a flat class cannot take a `$` name: Enigma
+     * truncates it there, so `MapLocalTool$MapLocalServerSocket` and `MapLocalTool$MapLocalFilter`
+     * both come back as `MapLocalTool` and collide. `__` keeps the boundary visible where plain
+     * concatenation would lose it.
+     */
+    private fun flatten(simple: String): String = simple.replace("$", NESTING)
 
     /** Charles 4's own placeholders (`field_551`, `method_563`) look like names and carry none. */
     private fun isRealCharles4MemberName(member: Charles4Corpus.Member): Boolean =
@@ -395,6 +423,9 @@ internal class Recovery(
     }
 
     companion object {
+        /** Stands in for `$` in a nested class name; see [flatten]. */
+        const val NESTING = "__"
+
         const val SLF4J_FACTORY = "org/slf4j/LoggerFactory"
         const val GET_LOGGER_STRING = "(Ljava/lang/String;)Lorg/slf4j/Logger;"
 

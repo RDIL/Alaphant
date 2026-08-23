@@ -1,2 +1,2 @@
-CLASS com/xk72/pkg_36/class_1556 com/xk72/lib/SerialEventDispatcher
+CLASS com/xk72/lib/class_1556 com/xk72/lib/SerialEventDispatcher
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.lib.SerialEventDispatcher"

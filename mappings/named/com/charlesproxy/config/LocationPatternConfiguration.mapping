@@ -1,2 +1,4 @@
 CLASS com/charlesproxy/config/class_76 com/charlesproxy/config/LocationPatternConfiguration
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.config.LocationPatternConfiguration"
+	METHOD method_344 (Ljava/util/List;)V
+		ARG 1 locationPatterns

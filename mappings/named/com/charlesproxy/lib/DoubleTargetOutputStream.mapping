@@ -1,2 +1,2 @@
-CLASS com/charlesproxy/lib/class_896 com/charlesproxy/lib/MaybeDoubleTargetOutputStream
+CLASS com/charlesproxy/lib/class_896 com/charlesproxy/lib/DoubleTargetOutputStream
 	COMMENT [bootstrap] matched to Charles 4's DoubleTargetOutputStream on 5 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe

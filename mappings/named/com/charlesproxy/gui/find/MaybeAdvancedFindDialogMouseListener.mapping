@@ -1,6 +1,6 @@
 CLASS com/charlesproxy/gui/find/class_236 com/charlesproxy/gui/find/MaybeAdvancedFindDialogMouseListener
 	COMMENT [bootstrap] an inner class the obfuscator left alone, com/charlesproxy/gui/find/AdvancedFindDialog$12$1, is enclosed by this class, so this was originally com/charlesproxy/gui/find/AdvancedFindDialog$12
 	COMMENT [bootstrap] an inner class the obfuscator left alone, com/charlesproxy/gui/find/AdvancedFindDialog$12$2, is enclosed by this class, so this was originally com/charlesproxy/gui/find/AdvancedFindDialog$12
-	COMMENT [bootstrap] matched to Charles 4's AdvancedFindDialogMouseListener on 4 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	COMMENT [bootstrap] matched to Charles 4's AdvancedFindDialog__MouseListener on 4 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
 	FIELD field_859 maybeAdvancedFindDialog Lcom/charlesproxy/gui/find/AdvancedFindDialog;
 		COMMENT [bootstrap] carried over from Charles 4's AdvancedFindDialog$MouseListener.advancedFindDialog on a unique descriptor match -- provisional

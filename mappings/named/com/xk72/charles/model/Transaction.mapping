@@ -1,0 +1,13 @@
+CLASS com/xk72/charles/model/Transaction
+	METHOD getEarliestStartTime getEarliestStartTime ()Ljava/util/Date;
+	METHOD getEndTime getEndTime ()Ljava/util/Date;
+	METHOD getLatestTime getLatestTime ()Ljava/util/Date;
+	METHOD getStartTime getStartTime ()Ljava/util/Date;
+	METHOD getTotalRequestSize getTotalRequestSize ()J
+	METHOD setAlpnProtocol setAlpnProtocol (Ljava/lang/String;)V
+	METHOD setCipherSuite setCipherSuite (Ljava/lang/String;)V
+	METHOD setServerExtensions setServerExtensions (Ljava/util/List;)V
+	METHOD setSslAlert setSslAlert (B)V
+	METHOD setSslProtocol setSslProtocol (Ljava/lang/String;)V
+	METHOD setSslSessionID setSslSessionID ([B)V
+	METHOD toUrlString toUrlString ()Ljava/lang/String;

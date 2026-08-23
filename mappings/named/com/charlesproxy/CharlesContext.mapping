@@ -1,1 +1,8 @@
 CLASS com/charlesproxy/CharlesContext
+	METHOD error error (Ljava/lang/String;)V
+	METHOD error error (Ljava/lang/String;Ljava/lang/String;)V
+	METHOD error error (Ljava/lang/Throwable;)V
+	METHOD getConfiguration getConfiguration ()Lcom/charlesproxy/config/class_59;
+	METHOD getInstance getInstance ()Lcom/charlesproxy/CharlesContext;
+	METHOD getPasswordAuthenticator getPasswordAuthenticator ()Lcom/charlesproxy/security/PasswordAuthenticator;
+	METHOD options options (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I[Ljava/lang/String;Ljava/lang/String;)I

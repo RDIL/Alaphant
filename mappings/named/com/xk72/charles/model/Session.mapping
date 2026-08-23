@@ -1,0 +1,10 @@
+CLASS com/xk72/charles/model/Session
+	FIELD field_3230 isDirty Z
+	FIELD serialVersionUID serialVersionUID J
+	FIELD whenCreated whenCreated J
+	METHOD getWhenCreated getWhenCreated ()J
+	METHOD isDirty isDirty ()Z
+	METHOD setDirty setDirty (Z)V
+		ARG 1 dirty
+	METHOD setWhenCreated setWhenCreated (J)V
+		ARG 1 whenCreated

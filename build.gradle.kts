@@ -58,7 +58,8 @@ tasks.named("assemble") {
     dependsOn(agentJar)
 }
 
-// The named store is source, not output, so nothing else would ever check it.
+// The named store is source, not output, so nothing else would ever check it. `checkLinkage` is
+// here rather than in the plugin for the same reason: it is the gate on what the mappings produce.
 tasks.named("check") {
-    dependsOn("validateMappings")
+    dependsOn("validateMappings", "checkLinkage")
 }

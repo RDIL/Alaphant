@@ -41,7 +41,7 @@ c	com/charlesproxy/InXQ	com/charlesproxy/class_6
 	m	(Z)V	EHwQ	method_9
 	m	(Ljava/lang/String;Z)V	iScI	method_10
 	m	(Z)V	iScI	method_11
-c	com/charlesproxy/Jpqc/Ilqp	com/charlesproxy/pkg_1/class_7
+c	com/charlesproxy/Jpqc/Ilqp	com/charlesproxy/proxy/class_7
 	f	Ljava/net/ServerSocket;	EHwQ	field_25
 	f	Lcom/xk72/proxy/ProxyEvent;	iScI	field_26
 	f	Lcom/xk72/util/myLN;	jviD	field_27
@@ -50,32 +50,32 @@ c	com/charlesproxy/Jpqc/Ilqp	com/charlesproxy/pkg_1/class_7
 	m	(Ljava/lang/String;Lcom/charlesproxy/export/NZfg;Lcom/xk72/proxy/io/NZfg;)Z	iScI	method_13
 	m	(Ljava/lang/String;Ljava/lang/String;Lcom/charlesproxy/export/NZfg;Lcom/xk72/proxy/io/NZfg;)Z	iScI	method_14
 	m	(Ljava/lang/String;Ljava/lang/String;Lcom/xk72/proxy/io/NZfg;)V	iScI	method_15
-c	com/charlesproxy/Jpqc/NZfg	com/charlesproxy/pkg_1/class_8
+c	com/charlesproxy/Jpqc/NZfg	com/charlesproxy/proxy/class_8
 	f	Lorg/slf4j/Logger;	iScI	field_29
-c	com/charlesproxy/Jpqc/YIdt	com/charlesproxy/pkg_1/class_9
+c	com/charlesproxy/Jpqc/YIdt	com/charlesproxy/proxy/class_9
 	f	Lorg/slf4j/Logger;	iScI	field_30
-c	com/charlesproxy/Jpqc/cwUC	com/charlesproxy/pkg_1/class_10
+c	com/charlesproxy/Jpqc/cwUC	com/charlesproxy/proxy/class_10
 	f	Ljava/net/ServerSocket;	iScI	field_31
 	m	()I	iScI	method_16
-c	com/charlesproxy/Jpqc/hsTx	com/charlesproxy/pkg_1/class_11
+c	com/charlesproxy/Jpqc/hsTx	com/charlesproxy/proxy/class_11
 	f	Lcom/charlesproxy/Jpqc/Ilqp;	iScI	field_32
-c	com/charlesproxy/Jpqc/kRuY	com/charlesproxy/pkg_1/class_12
+c	com/charlesproxy/Jpqc/kRuY	com/charlesproxy/proxy/class_12
 	m	(Lcom/xk72/proxy/ProxyEvent;)Z	iScI	method_17
-c	com/charlesproxy/Jpqc/kmft	com/charlesproxy/pkg_1/class_13
-c	com/charlesproxy/Jpqc/vQtF	com/charlesproxy/pkg_1/class_14
+c	com/charlesproxy/Jpqc/kmft	com/charlesproxy/proxy/class_13
+c	com/charlesproxy/Jpqc/vQtF	com/charlesproxy/proxy/class_14
 	f	Lorg/slf4j/Logger;	iScI	field_33
-c	com/charlesproxy/Jpqc/vYxU	com/charlesproxy/pkg_1/class_15
+c	com/charlesproxy/Jpqc/vYxU	com/charlesproxy/proxy/class_15
 	f	Lorg/slf4j/Logger;	iScI	field_34
 	m	()Lcom/charlesproxy/model/OmAF;	EHwQ	method_18
 	m	()V	iScI	method_19
 	m	(Lcom/xk72/proxy/Fields;Lcom/charlesproxy/config/wURA;)Z	iScI	method_20
 	m	(Lcom/xk72/proxy/io/NZfg;)V	iScI	method_21
-c	com/charlesproxy/Jpqc/vgcf	com/charlesproxy/pkg_1/class_16
+c	com/charlesproxy/Jpqc/vgcf	com/charlesproxy/proxy/class_16
 	f	Ljava/net/ServerSocket;	EHwQ	field_35
 	f	Lcom/xk72/proxy/ProxyEvent;	iScI	field_36
 	f	Lcom/xk72/util/myLN;	jviD	field_37
 	m	()I	iScI	method_22
-c	com/charlesproxy/Jpqc/xLtN	com/charlesproxy/pkg_1/class_17
+c	com/charlesproxy/Jpqc/xLtN	com/charlesproxy/proxy/class_17
 	f	Ljava/net/ServerSocket;	iScI	field_38
 	m	()I	iScI	method_23
 c	com/charlesproxy/KmMp	com/charlesproxy/class_18
@@ -149,7 +149,7 @@ c	com/charlesproxy/Main	com/charlesproxy/Main
 	m	()V	jviD	method_62
 	m	(Lcom/charlesproxy/CharlesContext;)V	jviD	method_63
 	m	()V	kJKP	method_64
-c	com/charlesproxy/MkAr/kRuY	com/charlesproxy/pkg_2/class_21
+c	com/charlesproxy/MkAr/kRuY	com/charlesproxy/mozilla/class_21
 	f	Z	EHwQ	field_65
 	f	Lorg/slf4j/Logger;	iScI	field_66
 	f	Ljava/beans/PropertyChangeSupport;	jviD	field_67
@@ -171,9 +171,9 @@ c	com/charlesproxy/MkAr/kRuY	com/charlesproxy/pkg_2/class_21
 	m	()[Ljava/io/File;	mmnC	method_79
 	m	()Ljava/io/File;	sIol	method_80
 	m	()[Ljava/io/File;	uqbt	method_81
-c	com/charlesproxy/MkAr/kmft	com/charlesproxy/pkg_2/class_22
+c	com/charlesproxy/MkAr/kmft	com/charlesproxy/mozilla/class_22
 	f	[Ljava/io/File;	iScI	field_69
-c	com/charlesproxy/MkAr/vQtF	com/charlesproxy/pkg_2/class_23
+c	com/charlesproxy/MkAr/vQtF	com/charlesproxy/mozilla/class_23
 c	com/charlesproxy/NZfg	com/charlesproxy/class_24
 	f	Lcom/charlesproxy/lib/vQtF;	EHwQ	field_70
 	f	Lcom/charlesproxy/lib/vQtF;	Hscg	field_71
@@ -1546,7 +1546,7 @@ c	com/charlesproxy/export/MUmM	com/charlesproxy/export/class_140
 	f	Ljava/lang/String;	uqbt	field_651
 	m	(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V	iScI	method_596
 	m	(Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V	iScI	method_597
-c	com/charlesproxy/export/MkAr/Ilqp	com/charlesproxy/export/pkg_3/class_141
+c	com/charlesproxy/export/MkAr/Ilqp	com/charlesproxy/export/pcap/class_141
 	f	Lcom/charlesproxy/export/MkAr/hsTx;	EHwQ	field_652
 	f	Lorg/slf4j/Logger;	iScI	field_653
 	f	Ljava/util/List;	jviD	field_654
@@ -1556,14 +1556,14 @@ c	com/charlesproxy/export/MkAr/Ilqp	com/charlesproxy/export/pkg_3/class_141
 	m	(Lcom/charlesproxy/export/MkAr/vYxU;)V	iScI	method_600
 	m	(Lcom/charlesproxy/model/OmAF;)Z	iScI	method_601
 	m	(Ljava/util/List;J)Ljava/util/Date;	iScI	method_602
-c	com/charlesproxy/export/MkAr/hsTx	com/charlesproxy/export/pkg_3/class_142
+c	com/charlesproxy/export/MkAr/hsTx	com/charlesproxy/export/pcap/class_142
 	f	Ljava/net/InetAddress;	EHwQ	field_656
 	f	Ljava/net/InetAddress;	iScI	field_657
 	f	I	jviD	field_658
 	f	I	kJKP	field_659
-c	com/charlesproxy/export/MkAr/kRuY	com/charlesproxy/export/pkg_3/class_143
+c	com/charlesproxy/export/MkAr/kRuY	com/charlesproxy/export/pcap/class_143
 	f	Lcom/charlesproxy/export/MkAr/kRuY;	iScI	field_660
-c	com/charlesproxy/export/MkAr/kmft	com/charlesproxy/export/pkg_3/class_144
+c	com/charlesproxy/export/MkAr/kmft	com/charlesproxy/export/pcap/class_144
 	f	Ljava/io/DataInputStream;	EHwQ	field_661
 	f	I	Hscg	field_662
 	f	I	OEyH	field_663
@@ -1580,11 +1580,11 @@ c	com/charlesproxy/export/MkAr/kmft	com/charlesproxy/export/pkg_3/class_144
 	m	(I)I	iScI	method_606
 	m	()I	jviD	method_607
 	m	()I	kJKP	method_608
-c	com/charlesproxy/export/MkAr/vQtF	com/charlesproxy/export/pkg_3/class_145
+c	com/charlesproxy/export/MkAr/vQtF	com/charlesproxy/export/pcap/class_145
 	f	Lorg/slf4j/Logger;	iScI	field_671
 	m	(Ljava/io/File;)Ljava/util/Map;	EHwQ	method_609
 	m	(Ljava/io/File;Lcom/charlesproxy/model/OmAF;)Lcom/charlesproxy/model/OmAF;	iScI	method_595
-c	com/charlesproxy/export/MkAr/vYxU	com/charlesproxy/export/pkg_3/class_146
+c	com/charlesproxy/export/MkAr/vYxU	com/charlesproxy/export/pcap/class_146
 	f	[B	EHwQ	field_672
 	f	Z	Hscg	field_673
 	f	I	OEyH	field_674
@@ -1600,7 +1600,7 @@ c	com/charlesproxy/export/MkAr/vYxU	com/charlesproxy/export/pkg_3/class_146
 	f	Z	uqbt	field_684
 	m	()Ljava/net/InetAddress;	EHwQ	method_610
 	m	()Ljava/net/InetAddress;	iScI	method_611
-c	com/charlesproxy/export/MkAr/vgcf	com/charlesproxy/export/pkg_3/class_147
+c	com/charlesproxy/export/MkAr/vgcf	com/charlesproxy/export/pcap/class_147
 	f	Ljava/lang/Long;	EHwQ	field_685
 	f	Ljava/lang/Integer;	iScI	field_686
 	f	I	jviD	field_687
@@ -3010,7 +3010,7 @@ c	com/charlesproxy/gui/navigator/vYxU	com/charlesproxy/gui/navigator/class_396
 	m	(II)V	iScI	method_1068
 	m	([Ljava/lang/Object;)Z	iScI	method_1070
 c	com/charlesproxy/gui/navigator/vgcf	com/charlesproxy/gui/navigator/class_397
-	m	(Lcom/charlesproxy/gui/navigator/wrMO;)V	iScI	method_1089
+	m	(Lcom/charlesproxy/gui/navigator/wrMO;)V	iScI	method_1084
 c	com/charlesproxy/gui/navigator/wrMO	com/charlesproxy/gui/navigator/class_398
 	m	()V	iScI	method_1087
 c	com/charlesproxy/gui/navigator/xLtN	com/charlesproxy/gui/navigator/class_399
@@ -5297,7 +5297,7 @@ c	com/charlesproxy/gui/transaction/viewers/lib/OkCb	com/charlesproxy/gui/transac
 	m	()Ljava/lang/String;	mmnC	method_1687
 c	com/charlesproxy/gui/transaction/viewers/lib/OwNK	com/charlesproxy/gui/transaction/viewers/lib/class_738
 	m	()Ljava/lang/Class;	EHwQ	method_1688
-	m	()Ljava/lang/Object;	iScI	method_1689
+	m	()Ljava/lang/Object;	iScI	method_1686
 	m	(Ljava/lang/Class;)V	iScI	method_1690
 	m	(Ljava/lang/Object;)V	iScI	method_1691
 	m	()Z	jviD	method_1692
@@ -6012,30 +6012,30 @@ c	com/charlesproxy/gui/transaction/xLtN	com/charlesproxy/gui/transaction/class_8
 	f	Lcom/charlesproxy/gui/transaction/NZfg;	EHwQ	field_2313
 	f	Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer;	iScI	field_2314
 	m	(Ljava/awt/event/MouseEvent;)V	iScI	method_1896
-c	com/charlesproxy/gui/transaction/xvJk/Ilqp	com/charlesproxy/gui/transaction/pkg_7/class_831
+c	com/charlesproxy/gui/transaction/xvJk/Ilqp	com/charlesproxy/gui/transaction/viewers/class_831
 	f	Lcom/charlesproxy/gui/transaction/xvJk/vYxU;	iScI	field_2315
-c	com/charlesproxy/gui/transaction/xvJk/YIdt	com/charlesproxy/gui/transaction/pkg_7/class_832
+c	com/charlesproxy/gui/transaction/xvJk/YIdt	com/charlesproxy/gui/transaction/viewers/class_832
 	f	Ljavax/swing/text/JTextComponent;	iScI	field_2316
 	m	()Ljavax/swing/JComponent;	iScI	method_1461
 	m	(Lcom/charlesproxy/gui/find/NwtP;)V	iScI	method_1462
 	m	()Ljavax/swing/text/JTextComponent;	mmnC	method_1897
-c	com/charlesproxy/gui/transaction/xvJk/cwUC	com/charlesproxy/gui/transaction/pkg_7/class_833
+c	com/charlesproxy/gui/transaction/xvJk/cwUC	com/charlesproxy/gui/transaction/viewers/class_833
 	f	Lcom/charlesproxy/gui/lib/treetable/JTreeTable;	iScI	field_2317
 	m	()Lcom/charlesproxy/gui/lib/treetable/JTreeTable;	Hscg	method_1898
 	m	()Ljavax/swing/JComponent;	iScI	method_1461
 	m	(Lcom/charlesproxy/gui/find/NwtP;)V	iScI	method_1462
 	m	()Z	mmnC	method_1899
-c	com/charlesproxy/gui/transaction/xvJk/hsTx	com/charlesproxy/gui/transaction/pkg_7/class_834
+c	com/charlesproxy/gui/transaction/xvJk/hsTx	com/charlesproxy/gui/transaction/viewers/class_834
 	f	Lcom/charlesproxy/gui/transaction/xvJk/vYxU;	EHwQ	field_2318
 	f	Ljavax/swing/event/DocumentListener;	iScI	field_2319
-c	com/charlesproxy/gui/transaction/xvJk/kRuY	com/charlesproxy/gui/transaction/pkg_7/class_835
+c	com/charlesproxy/gui/transaction/xvJk/kRuY	com/charlesproxy/gui/transaction/viewers/class_835
 	f	Z	iScI	field_2320
 	m	()Ljava/lang/String;	Hscg	method_1900
 	m	()Z	PnWq	method_1901
 	m	()Ljavax/swing/text/JTextComponent;	mmnC	method_1897
 	m	()Z	sIol	method_1698
 	m	()V	uqbt	method_1902
-c	com/charlesproxy/gui/transaction/xvJk/kmft	com/charlesproxy/gui/transaction/pkg_7/class_836
+c	com/charlesproxy/gui/transaction/xvJk/kmft	com/charlesproxy/gui/transaction/viewers/class_836
 	f	Lcom/charlesproxy/model/TransactionSide;	EHwQ	field_2321
 	f	Lcom/charlesproxy/model/hiIw;	iScI	field_2322
 	f	Ljava/lang/String;	jviD	field_2323
@@ -6043,7 +6043,7 @@ c	com/charlesproxy/gui/transaction/xvJk/kmft	com/charlesproxy/gui/transaction/pk
 	m	()Ljava/lang/String;	XauQ	method_1694
 	m	(Ljava/lang/String;)V	iScI	method_1696
 	m	()Lcom/charlesproxy/model/TransactionSide;	kOnx	method_1697
-c	com/charlesproxy/gui/transaction/xvJk/vQtF	com/charlesproxy/gui/transaction/pkg_7/class_837
+c	com/charlesproxy/gui/transaction/xvJk/vQtF	com/charlesproxy/gui/transaction/viewers/class_837
 	f	Lcom/charlesproxy/gui/transaction/viewers/lib/OxgZ;	iScI	field_2324
 	m	()Ljavax/swing/JComponent;	EHwQ	method_1459
 	m	()V	OEyH	method_1460
@@ -6054,7 +6054,7 @@ c	com/charlesproxy/gui/transaction/xvJk/vQtF	com/charlesproxy/gui/transaction/pk
 	m	(Lcom/charlesproxy/gui/find/NwtP;)V	iScI	method_1462
 	m	(Ljava/lang/String;)V	iScI	method_1696
 	m	()Lcom/charlesproxy/model/TransactionSide;	kOnx	method_1697
-c	com/charlesproxy/gui/transaction/xvJk/vYxU	com/charlesproxy/gui/transaction/pkg_7/class_838
+c	com/charlesproxy/gui/transaction/xvJk/vYxU	com/charlesproxy/gui/transaction/viewers/class_838
 	f	Lorg/fife/ui/rsyntaxtextarea/RSyntaxTextArea;	EHwQ	field_2325
 	f	Lorg/slf4j/Logger;	iScI	field_2326
 	f	Lorg/fife/ui/rtextarea/RTextScrollPane;	jviD	field_2327
@@ -6063,7 +6063,7 @@ c	com/charlesproxy/gui/transaction/xvJk/vYxU	com/charlesproxy/gui/transaction/pk
 	m	(Lcom/charlesproxy/gui/transaction/viewers/lib/TransactionSearchEvent;)V	iScI	method_1682
 	m	(Lcom/charlesproxy/gui/utils/rMTb;)V	iScI	method_1903
 	m	()Ljavax/swing/text/JTextComponent;	mmnC	method_1897
-c	com/charlesproxy/gui/transaction/xvJk/vgcf	com/charlesproxy/gui/transaction/pkg_7/class_839
+c	com/charlesproxy/gui/transaction/xvJk/vgcf	com/charlesproxy/gui/transaction/viewers/class_839
 	f	Ljavax/swing/JComponent;	EHwQ	field_2328
 	f	Ljavax/swing/JComponent;	OEyH	field_2329
 	f	Ljavax/swing/JComponent;	iScI	field_2330
@@ -6545,30 +6545,30 @@ c	com/charlesproxy/mJJm	com/charlesproxy/class_903
 c	com/charlesproxy/macos/Ilqp	com/charlesproxy/macos/class_904
 	f	Ljava/awt/desktop/SystemEventListener;	iScI	field_2444
 	m	()Ljava/awt/desktop/SystemEventListener;	iScI	method_2161
-c	com/charlesproxy/macos/MkAr/Ilqp	com/charlesproxy/macos/pkg_9/class_905
+c	com/charlesproxy/macos/MkAr/Ilqp	com/charlesproxy/macos/gui/class_905
 	f	Lcom/charlesproxy/macos/MkAr/kmft;	EHwQ	field_2445
 	f	Lcom/charlesproxy/gui/CharlesFrame;	iScI	field_2446
-c	com/charlesproxy/macos/MkAr/YIdt	com/charlesproxy/macos/pkg_9/class_906
+c	com/charlesproxy/macos/MkAr/YIdt	com/charlesproxy/macos/gui/class_906
 	f	Lcom/charlesproxy/macos/MkAr/kmft;	iScI	field_2447
-c	com/charlesproxy/macos/MkAr/hsTx	com/charlesproxy/macos/pkg_9/class_907
+c	com/charlesproxy/macos/MkAr/hsTx	com/charlesproxy/macos/gui/class_907
 	f	Lcom/charlesproxy/macos/MkAr/kmft;	EHwQ	field_2448
 	f	Lcom/charlesproxy/gui/CharlesFrame;	iScI	field_2449
-c	com/charlesproxy/macos/MkAr/kRuY	com/charlesproxy/macos/pkg_9/class_908
+c	com/charlesproxy/macos/MkAr/kRuY	com/charlesproxy/macos/gui/class_908
 	m	()V	EHwQ	method_2162
 	m	()Z	iScI	method_2163
 	m	(Lcom/charlesproxy/gui/CharlesFrame;)V	iScI	method_2164
-c	com/charlesproxy/macos/MkAr/kmft	com/charlesproxy/macos/pkg_9/class_909
+c	com/charlesproxy/macos/MkAr/kmft	com/charlesproxy/macos/gui/class_909
 	f	Z	EHwQ	field_2450
 	f	Lorg/slf4j/Logger;	iScI	field_2451
 	m	()V	EHwQ	method_2162
 	m	()Z	iScI	method_2163
 	m	(Lcom/charlesproxy/gui/CharlesFrame;)V	iScI	method_2164
-c	com/charlesproxy/macos/MkAr/vQtF	com/charlesproxy/macos/pkg_9/class_910
+c	com/charlesproxy/macos/MkAr/vQtF	com/charlesproxy/macos/gui/class_910
 	f	Lcom/charlesproxy/macos/MkAr/kmft;	iScI	field_2452
-c	com/charlesproxy/macos/MkAr/vYxU	com/charlesproxy/macos/pkg_9/class_911
+c	com/charlesproxy/macos/MkAr/vYxU	com/charlesproxy/macos/gui/class_911
 	f	Lcom/charlesproxy/macos/MkAr/kmft;	EHwQ	field_2453
 	f	Lcom/charlesproxy/gui/CharlesFrame;	iScI	field_2454
-c	com/charlesproxy/macos/MkAr/vgcf	com/charlesproxy/macos/pkg_9/class_912
+c	com/charlesproxy/macos/MkAr/vgcf	com/charlesproxy/macos/gui/class_912
 	f	Lcom/charlesproxy/macos/MkAr/kmft;	EHwQ	field_2455
 	f	Lcom/charlesproxy/gui/CharlesFrame;	iScI	field_2456
 c	com/charlesproxy/macos/hsTx	com/charlesproxy/macos/class_913
@@ -7303,30 +7303,30 @@ c	com/charlesproxy/rMTb	com/charlesproxy/class_977
 	f	Lorg/slf4j/Logger;	iScI	field_2685
 	m	()Ljava/lang/ClassLoader;	EHwQ	method_2525
 	m	()Ljava/util/List;	iScI	method_2526
-c	com/charlesproxy/rkIB/Ilqp	com/charlesproxy/pkg_10/class_978
+c	com/charlesproxy/rkIB/Ilqp	com/charlesproxy/publish/class_978
 	f	Ljava/util/SortedSet;	EHwQ	field_2686
 	f	Ljava/util/List;	iScI	field_2687
 	m	()Ljava/util/Map;	EHwQ	method_2527
 	m	()Ljava/lang/String;	iScI	method_2528
-c	com/charlesproxy/rkIB/kRuY	com/charlesproxy/pkg_10/class_979
+c	com/charlesproxy/rkIB/kRuY	com/charlesproxy/publish/class_979
 	f	Ljava/util/List;	EHwQ	field_2688
 	f	Lorg/slf4j/Logger;	iScI	field_2689
 	m	()V	iScI	method_2529
 	m	(Lcom/xk72/proxy/Fields;Ljava/lang/String;)Ljava/lang/String;	iScI	method_2530
 	m	(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V	iScI	method_2531
-c	com/charlesproxy/rkIB/kmft	com/charlesproxy/pkg_10/class_980
+c	com/charlesproxy/rkIB/kmft	com/charlesproxy/publish/class_980
 	f	Lorg/eclipse/egit/github/core/client/GitHubClient;	EHwQ	field_2690
 	f	Lcom/charlesproxy/rkIB/kRuY;	OEyH	field_2691
 	f	Z	iScI	field_2692
 	f	Lorg/eclipse/egit/github/core/Gist;	jviD	field_2693
 	f	Lcom/charlesproxy/config/eKqY;	kJKP	field_2694
-c	com/charlesproxy/rkIB/vQtF	com/charlesproxy/pkg_10/class_981
+c	com/charlesproxy/rkIB/vQtF	com/charlesproxy/publish/class_981
 	f	Lorg/eclipse/egit/github/core/Gist;	EHwQ	field_2695
 	f	Lcom/charlesproxy/CharlesContext;	iScI	field_2696
 	f	Lcom/charlesproxy/rkIB/kmft;	jviD	field_2697
-c	com/charlesproxy/rkIB/vYxU	com/charlesproxy/pkg_10/class_982
+c	com/charlesproxy/rkIB/vYxU	com/charlesproxy/publish/class_982
 	f	Lcom/charlesproxy/rkIB/kmft;	iScI	field_2698
-c	com/charlesproxy/rkIB/vgcf	com/charlesproxy/pkg_10/class_983
+c	com/charlesproxy/rkIB/vgcf	com/charlesproxy/publish/class_983
 	f	Lcom/charlesproxy/rkIB/vQtF;	iScI	field_2699
 	m	(Z)V	iScI	method_993
 c	com/charlesproxy/rxoO	com/charlesproxy/class_984
@@ -8464,12 +8464,12 @@ c	com/charlesproxy/unsafe/vgcf	com/charlesproxy/unsafe/class_1141
 	m	(Ljava/awt/image/ImageFilter;Ljava/awt/Image;)Ljava/awt/Image;	iScI	method_2955
 	m	([Ljava/net/URL;)Ljava/awt/Image;	iScI	method_2956
 	m	([ZLjava/awt/Image;IIIII)Z	iScI	method_2957
-c	com/charlesproxy/vGmK/kRuY	com/charlesproxy/pkg_12/class_1142
+c	com/charlesproxy/vGmK/kRuY	com/charlesproxy/utils/class_1142
 	f	Lcom/xk72/vGmK/vgcf;	EHwQ	field_3063
 	f	Lorg/slf4j/Logger;	iScI	field_3064
 	m	()Lcom/xk72/vGmK/vgcf;	iScI	method_2958
 	m	(Lcom/charlesproxy/Strings_;)Ljava/lang/String;	iScI	method_2959
-c	com/charlesproxy/vGmK/kmft	com/charlesproxy/pkg_12/class_1143
+c	com/charlesproxy/vGmK/kmft	com/charlesproxy/utils/class_1143
 	f	[Ljava/lang/String;	iScI	field_3065
 	m	(Ljava/io/File;)V	iScI	method_2960
 	m	(Ljava/lang/String;)V	iScI	method_2961
@@ -8730,17 +8730,17 @@ c	com/charlesproxy/xvJk/kmft	com/charlesproxy/pkg_13/class_1173
 c	com/charlesproxy/yLfp	com/charlesproxy/class_1174
 c	com/charlesproxy/yWOr	com/charlesproxy/class_1175
 	f	Ljava/lang/String;	iScI	field_3154
-c	com/xk72/Jpqc/kRuY	com/xk72/pkg_14/class_1176
+c	com/xk72/Jpqc/kRuY	com/xk72/dns/class_1176
 	m	(Ljava/lang/String;)Ljava/net/InetAddress;	EHwQ	method_3049
 	m	(Ljava/lang/String;)[Ljava/net/InetAddress;	iScI	method_3050
-c	com/xk72/Jpqc/kmft	com/xk72/pkg_14/class_1177
+c	com/xk72/Jpqc/kmft	com/xk72/dns/class_1177
 	f	Z	iScI	field_3155
 	m	(Ljava/lang/String;)Ljava/net/InetAddress;	EHwQ	method_3049
 	m	()Z	iScI	method_3051
 	m	(Ljava/lang/String;)[Ljava/net/InetAddress;	iScI	method_3050
 	m	(Z)V	iScI	method_3052
 	m	(Ljava/lang/String;)[Ljava/net/InetAddress;	jviD	method_3053
-c	com/xk72/Jpqc/vQtF	com/xk72/pkg_14/class_1178
+c	com/xk72/Jpqc/vQtF	com/xk72/dns/class_1178
 	f	[Ljava/net/InetAddress;	EHwQ	field_3156
 	f	J	Hscg	field_3157
 	f	Ljava/util/List;	OEyH	field_3158
@@ -9283,7 +9283,7 @@ c	com/xk72/proxy/Fields	com/xk72/proxy/Fields
 c	com/xk72/proxy/Ilqp	com/xk72/proxy/class_1256
 	m	(Lcom/xk72/proxy/vYxU;)V	iScI	method_3278
 	m	(Ljava/lang/String;)Lcom/xk72/proxy/vQtF;	iScI	method_3279
-c	com/xk72/proxy/Jpqc/kRuY	com/xk72/proxy/pkg_20/class_1257
+c	com/xk72/proxy/Jpqc/kRuY	com/xk72/proxy/tunnel/class_1257
 	f	I	Hscg	field_3325
 	f	Ljava/lang/String;	OEyH	field_3326
 	f	Lcom/xk72/proxy/http/cwUC;	PnWq	field_3327
@@ -9293,21 +9293,21 @@ c	com/xk72/proxy/Jpqc/kRuY	com/xk72/proxy/pkg_20/class_1257
 	m	(Lcom/xk72/proxy/http/YIdt;)Ljava/lang/Void;	EHwQ	method_3280
 	m	(Lcom/xk72/proxy/NZfg;)V	iScI	method_3281
 	m	(Lcom/xk72/proxy/ProxyEvent;Lcom/xk72/proxy/NZfg;)Lcom/xk72/proxy/http/kRuY;	iScI	method_3282
-c	com/xk72/proxy/Jpqc/kmft	com/xk72/proxy/pkg_20/class_1258
+c	com/xk72/proxy/Jpqc/kmft	com/xk72/proxy/tunnel/class_1258
 	f	I	OEyH	field_3331
 	f	Ljava/lang/String;	jviD	field_3332
 	f	Ljava/net/InetAddress;	kJKP	field_3333
 	m	(Lcom/xk72/proxy/NZfg;)Ljava/lang/String;	EHwQ	method_3283
 	m	(Lcom/xk72/proxy/ProxyEvent;)Ljava/lang/String;	iScI	method_3284
 	m	(Lcom/xk72/proxy/ProxyEvent;Ljava/lang/String;)V	iScI	method_3285
-c	com/xk72/proxy/MkAr/Ilqp	com/xk72/proxy/pkg_21/class_1259
+c	com/xk72/proxy/MkAr/Ilqp	com/xk72/proxy/server/class_1259
 	f	Lcom/xk72/proxy/MkAr/kRuY;	EHwQ	field_3334
 	f	Lorg/slf4j/Logger;	iScI	field_3335
 	f	Lcom/xk72/proxy/ProxyEvent;	jviD	field_3336
 	m	([BII)V	iScI	method_3286
-c	com/xk72/proxy/MkAr/NZfg	com/xk72/proxy/pkg_21/class_1260
+c	com/xk72/proxy/MkAr/NZfg	com/xk72/proxy/server/class_1260
 	f	Lcom/xk72/proxy/MkAr/cwUC;	iScI	field_3337
-c	com/xk72/proxy/MkAr/YIdt	com/xk72/proxy/pkg_21/class_1261
+c	com/xk72/proxy/MkAr/YIdt	com/xk72/proxy/server/class_1261
 	f	Lcom/xk72/proxy/io/cwUC;	EHwQ	field_3338
 	f	Ljava/net/Socket;	iScI	field_3339
 	f	Lcom/xk72/proxy/io/NZfg;	jviD	field_3340
@@ -9324,7 +9324,7 @@ c	com/xk72/proxy/MkAr/YIdt	com/xk72/proxy/pkg_21/class_1261
 	m	()Ljava/net/InetAddress;	mmnC	method_3296
 	m	()Ljava/net/Socket;	sIol	method_3297
 	m	()Ljava/lang/String;	uqbt	method_3298
-c	com/xk72/proxy/MkAr/cwUC	com/xk72/proxy/pkg_21/class_1262
+c	com/xk72/proxy/MkAr/cwUC	com/xk72/proxy/server/class_1262
 	f	Lorg/slf4j/Logger;	EHwQ	field_3342
 	f	Z	Hscg	field_3343
 	f	Z	OEyH	field_3344
@@ -9347,12 +9347,12 @@ c	com/xk72/proxy/MkAr/cwUC	com/xk72/proxy/pkg_21/class_1262
 	m	(Z)V	mmnC	method_3310
 	m	()I	sIol	method_3311
 	m	()Z	uqbt	method_3312
-c	com/xk72/proxy/MkAr/hsTx	com/xk72/proxy/pkg_21/class_1263
+c	com/xk72/proxy/MkAr/hsTx	com/xk72/proxy/server/class_1263
 	f	Lcom/xk72/proxy/MkAr/kRuY;	EHwQ	field_3350
 	f	Lorg/slf4j/Logger;	iScI	field_3351
 	f	Lcom/xk72/proxy/ProxyEvent;	jviD	field_3352
 	m	([BII)V	iScI	method_3286
-c	com/xk72/proxy/MkAr/kRuY	com/xk72/proxy/pkg_21/class_1264
+c	com/xk72/proxy/MkAr/kRuY	com/xk72/proxy/server/class_1264
 	f	Lcom/xk72/Jpqc/kRuY;	EHwQ	field_3353
 	f	Ljava/util/regex/Pattern;	OEyH	field_3354
 	f	Lcom/xk72/proxy/OwNK;	iScI	field_3355
@@ -9394,14 +9394,14 @@ c	com/xk72/proxy/MkAr/kRuY	com/xk72/proxy/pkg_21/class_1264
 	m	(Lcom/xk72/proxy/ProxyEvent;)V	sIol	method_3344
 	m	(Lcom/xk72/proxy/ProxyEvent;)V	uklp	method_3345
 	m	(Lcom/xk72/proxy/ProxyEvent;)V	uqbt	method_3346
-c	com/xk72/proxy/MkAr/kmft	com/xk72/proxy/pkg_21/class_1265
+c	com/xk72/proxy/MkAr/kmft	com/xk72/proxy/server/class_1265
 	f	Lcom/xk72/proxy/MkAr/kRuY;	iScI	field_3358
 	m	(Ljava/lang/String;Ljava/net/InetAddress;Ljava/lang/String;I)Lcom/xk72/proxy/VttT;	iScI	method_3347
-c	com/xk72/proxy/MkAr/vQtF	com/xk72/proxy/pkg_21/class_1266
+c	com/xk72/proxy/MkAr/vQtF	com/xk72/proxy/server/class_1266
 	f	Lcom/xk72/proxy/MkAr/cwUC;	iScI	field_3359
-c	com/xk72/proxy/MkAr/vYxU	com/xk72/proxy/pkg_21/class_1267
+c	com/xk72/proxy/MkAr/vYxU	com/xk72/proxy/server/class_1267
 	m	()V	iScI	method_3305
-c	com/xk72/proxy/MkAr/vgcf	com/xk72/proxy/pkg_21/class_1268
+c	com/xk72/proxy/MkAr/vgcf	com/xk72/proxy/server/class_1268
 	f	Lcom/xk72/throttle/MkAr/vgcf;	EHwQ	field_3360
 	f	Z	OEyH	field_3361
 	f	Lcom/xk72/proxy/xvJk/kmft;	jviD	field_3362
@@ -9412,7 +9412,7 @@ c	com/xk72/proxy/MkAr/vgcf	com/xk72/proxy/pkg_21/class_1268
 	m	(Ljava/net/InetAddress;IZ)Lcom/xk72/proxy/VttT;	iScI	method_3349
 	m	(Z)V	iScI	method_3350
 	m	(Ljava/lang/String;Ljava/net/InetAddress;Ljava/lang/String;I)Z	jviD	method_3351
-c	com/xk72/proxy/MkAr/xLtN	com/xk72/proxy/pkg_21/class_1269
+c	com/xk72/proxy/MkAr/xLtN	com/xk72/proxy/server/class_1269
 	f	Lcom/xk72/proxy/wrMO;	EHwQ	field_3364
 	f	Ljava/net/Socket;	iScI	field_3365
 	f	Lcom/xk72/proxy/MkAr/cwUC;	jviD	field_3366
@@ -11836,16 +11836,16 @@ c	com/xk72/util/wrMO	com/xk72/util/class_1547
 	m	()J	kJKP	method_4157
 c	com/xk72/util/xLtN	com/xk72/util/class_1548
 	m	(Ljava/io/InputStream;)Ljava/lang/Object;	iScI	method_3221
-c	com/xk72/vGmK/Ilqp	com/xk72/pkg_36/class_1549
+c	com/xk72/vGmK/Ilqp	com/xk72/lib/class_1549
 	m	(Ljava/util/EventListener;Ljava/util/EventObject;)V	iScI	method_2203
-c	com/xk72/vGmK/NZfg	com/xk72/pkg_36/class_1550
+c	com/xk72/vGmK/NZfg	com/xk72/lib/class_1550
 	f	Lcom/xk72/vGmK/Ilqp;	EHwQ	field_4196
 	f	Ljava/util/EventObject;	iScI	field_4197
 	f	Ljava/util/List;	jviD	field_4198
-c	com/xk72/vGmK/NwtP	com/xk72/pkg_36/class_1551
+c	com/xk72/vGmK/NwtP	com/xk72/lib/class_1551
 	f	Z	EHwQ	field_4199
 	f	Ljava/lang/StringBuffer;	iScI	field_4200
-c	com/xk72/vGmK/OwNK	com/xk72/pkg_36/class_1552
+c	com/xk72/vGmK/OwNK	com/xk72/lib/class_1552
 	f	Ljava/util/Stack;	EHwQ	field_4201
 	f	Z	Hscg	field_4202
 	f	Ljava/lang/String;	OEyH	field_4203
@@ -11866,28 +11866,28 @@ c	com/xk72/vGmK/OwNK	com/xk72/pkg_36/class_1552
 	m	(Ljava/lang/String;)Lcom/xk72/vGmK/OwNK;	jviD	method_4168
 	m	()V	kJKP	method_4169
 	m	(Ljava/lang/String;)Lcom/xk72/vGmK/OwNK;	kJKP	method_4170
-c	com/xk72/vGmK/TUFk	com/xk72/pkg_36/class_1553
+c	com/xk72/vGmK/TUFk	com/xk72/lib/class_1553
 	f	Z	EHwQ	field_4208
 	f	Z	iScI	field_4209
 	f	Lcom/xk72/vGmK/nter;	jviD	field_4210
 	m	()V	iScI	method_4171
 	m	(Lorg/xml/sax/InputSource;)V	iScI	method_4172
-c	com/xk72/vGmK/VttT	com/xk72/pkg_36/class_1554
+c	com/xk72/vGmK/VttT	com/xk72/lib/class_1554
 	f	Lcom/xk72/vGmK/TUFk;	iScI	field_4211
-c	com/xk72/vGmK/YIdt	com/xk72/pkg_36/class_1555
-c	com/xk72/vGmK/cwUC	com/xk72/pkg_36/class_1556
+c	com/xk72/vGmK/YIdt	com/xk72/lib/class_1555
+c	com/xk72/vGmK/cwUC	com/xk72/lib/class_1556
 	f	Ljava/lang/Thread;	EHwQ	field_4212
 	f	Lorg/slf4j/Logger;	iScI	field_4213
 	f	Ljava/util/concurrent/BlockingQueue;	jviD	field_4214
 	m	(Ljava/util/EventObject;Lcom/xk72/vGmK/Ilqp;Ljava/util/List;)V	EHwQ	method_4173
 	m	(Ljava/util/EventObject;Lcom/xk72/vGmK/Ilqp;Ljava/util/List;)V	iScI	method_4174
-c	com/xk72/vGmK/fuAl	com/xk72/pkg_36/class_1557
+c	com/xk72/vGmK/fuAl	com/xk72/lib/class_1557
 	f	Ljava/lang/StringBuffer;	EHwQ	field_4215
 	f	Lcom/xk72/vGmK/TUFk;	OEyH	field_4216
 	f	Ljava/util/Stack;	iScI	field_4217
 	f	Z	jviD	field_4218
 	f	Z	kJKP	field_4219
-c	com/xk72/vGmK/hsTx	com/xk72/pkg_36/class_1558
+c	com/xk72/vGmK/hsTx	com/xk72/lib/class_1558
 	f	Ljava/lang/Integer;	EHwQ	field_4220
 	f	Ljava/lang/Integer;	iScI	field_4221
 	f	Ljava/lang/Integer;	jviD	field_4222
@@ -11896,31 +11896,31 @@ c	com/xk72/vGmK/hsTx	com/xk72/pkg_36/class_1558
 	m	()Lcom/xk72/vGmK/hsTx;	iScI	method_4176
 	m	(Lcom/xk72/vGmK/hsTx;)I	iScI	method_4177
 	m	(Ljava/lang/String;)Z	iScI	method_4178
-c	com/xk72/vGmK/kRuY	com/xk72/pkg_36/class_1559
+c	com/xk72/vGmK/kRuY	com/xk72/lib/class_1559
 	f	Ljava/lang/ClassLoader;	iScI	field_4224
 	m	()Ljava/lang/ClassLoader;	iScI	method_4179
 	m	(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/ClassLoader;)V	iScI	method_4180
-c	com/xk72/vGmK/kmft	com/xk72/pkg_36/class_1560
-c	com/xk72/vGmK/mJJm	com/xk72/pkg_36/class_1561
+c	com/xk72/vGmK/kmft	com/xk72/lib/class_1560
+c	com/xk72/vGmK/mJJm	com/xk72/lib/class_1561
 	f	Ljava/lang/ref/WeakReference;	EHwQ	field_4225
 	f	Lcom/xk72/vGmK/YIdt;	iScI	field_4226
-c	com/xk72/vGmK/nter	com/xk72/pkg_36/class_1562
+c	com/xk72/vGmK/nter	com/xk72/lib/class_1562
 	m	(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V	iScI	method_596
 	m	(Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V	iScI	method_597
-c	com/xk72/vGmK/vQtF	com/xk72/pkg_36/class_1563
+c	com/xk72/vGmK/vQtF	com/xk72/lib/class_1563
 	m	()I	EHwQ	method_4181
 	m	()Ljava/lang/String;	iScI	method_4182
 	m	()Ljava/lang/Long;	jviD	method_4183
-c	com/xk72/vGmK/vYxU	com/xk72/pkg_36/class_1564
+c	com/xk72/vGmK/vYxU	com/xk72/lib/class_1564
 	m	(Ljava/util/EventObject;Lcom/xk72/vGmK/Ilqp;Ljava/util/List;)V	iScI	method_4174
-c	com/xk72/vGmK/vgcf	com/xk72/pkg_36/class_1565
+c	com/xk72/vGmK/vgcf	com/xk72/lib/class_1565
 	f	Ljava/util/Map;	EHwQ	field_4227
 	f	Ljava/util/ResourceBundle;	iScI	field_4228
-c	com/xk72/vGmK/wrMO	com/xk72/pkg_36/class_1566
+c	com/xk72/vGmK/wrMO	com/xk72/lib/class_1566
 	f	Ljava/lang/ref/WeakReference;	EHwQ	field_4229
 	f	Lcom/xk72/vGmK/YIdt;	iScI	field_4230
 	m	(Ljava/lang/Object;Ljava/beans/PropertyChangeEvent;)V	iScI	method_1140
-c	com/xk72/vGmK/xLtN	com/xk72/pkg_36/class_1567
+c	com/xk72/vGmK/xLtN	com/xk72/lib/class_1567
 	f	Z	iScI	field_4231
 	m	()Z	iScI	method_4184
 c	com/xk72/xvJk/kRuY	com/xk72/pkg_37/class_1568
@@ -11932,7 +11932,7 @@ c	com/xk72/xvJk/kRuY	com/xk72/pkg_37/class_1568
 	m	()Ljava/lang/String;	iScI	method_4186
 	m	()Ljava/security/Key;	jviD	method_4187
 	m	()[Ljava/security/cert/Certificate;	kJKP	method_4188
-c	org/MkAr/MkAr/MkAr/kRuY	org/pkg_38/pkg_39/pkg_40/class_1569
+c	org/MkAr/MkAr/MkAr/kRuY	org/incava/util/diff/class_1569
 	f	Ljava/util/List;	EHwQ	field_4236
 	f	Ljava/util/Comparator;	OEyH	field_4237
 	f	Ljava/util/List;	iScI	field_4238
@@ -11944,7 +11944,7 @@ c	org/MkAr/MkAr/MkAr/kRuY	org/pkg_38/pkg_39/pkg_40/class_1569
 	m	(II)V	iScI	method_4191
 	m	(Ljava/lang/Integer;)Z	iScI	method_4192
 	m	(Ljava/lang/Object;Ljava/lang/Object;)Z	iScI	method_4193
-c	org/MkAr/MkAr/MkAr/kmft	org/pkg_38/pkg_39/pkg_40/class_1570
+c	org/MkAr/MkAr/MkAr/kmft	org/incava/util/diff/class_1570
 	f	I	EHwQ	field_4242
 	f	I	iScI	field_4243
 	f	I	jviD	field_4244

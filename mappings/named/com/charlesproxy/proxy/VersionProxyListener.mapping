@@ -1,2 +1,2 @@
-CLASS com/charlesproxy/pkg_1/class_8 com/charlesproxy/proxy/VersionProxyListener
+CLASS com/charlesproxy/proxy/class_8 com/charlesproxy/proxy/VersionProxyListener
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.proxy.VersionProxyListener"

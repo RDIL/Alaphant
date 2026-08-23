@@ -1,2 +1,2 @@
-CLASS com/charlesproxy/pkg_12/class_1142 com/charlesproxy/utils/BundleUtils
+CLASS com/charlesproxy/utils/class_1142 com/charlesproxy/utils/BundleUtils
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.utils.BundleUtils"

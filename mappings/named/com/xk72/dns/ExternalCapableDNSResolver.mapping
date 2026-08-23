@@ -1,2 +1,2 @@
-CLASS com/xk72/pkg_14/class_1178 com/xk72/dns/ExternalCapableDNSResolver
+CLASS com/xk72/dns/class_1178 com/xk72/dns/ExternalCapableDNSResolver
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.dns.ExternalCapableDNSResolver"

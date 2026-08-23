@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/model/Flow
+	FIELD bucketEnd bucketEnd [J
+	FIELD bucketStart bucketStart [J
+	FIELD pos pos I

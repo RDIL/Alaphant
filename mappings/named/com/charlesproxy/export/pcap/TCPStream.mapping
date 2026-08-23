@@ -1,2 +1,2 @@
-CLASS com/charlesproxy/export/pkg_3/class_141 com/charlesproxy/export/pcap/TCPStream
+CLASS com/charlesproxy/export/pcap/class_141 com/charlesproxy/export/pcap/TCPStream
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.pcap.TCPStream"

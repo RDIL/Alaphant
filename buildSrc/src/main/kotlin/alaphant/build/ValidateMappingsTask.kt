@@ -74,7 +74,16 @@ abstract class ValidateMappingsTask : DefaultTask() {
                     problems += "$where and $first are both named $name"
                 }
 
-                // 4. Enigma reads `$` as nesting, so a flat class given a nested name comes back
+                // 4. A package is a runtime access boundary. Renaming a class into a different
+                // package takes it away from the package-private members it was written against,
+                // which surfaces as an IllegalAccessError long after the rename. Recovered package
+                // names belong in mappings/package-names.txt, where the whole package moves at once.
+                if (name.substringBeforeLast('/', "") != cls.srcName.substringBeforeLast('/', "")) {
+                    problems += "$where -> $name: a named class cannot change package; " +
+                        "recover the package in mappings/package-names.txt instead"
+                }
+
+                // 5. Enigma reads `$` as nesting, so a flat class given a nested name comes back
                 //    truncated on the next save. Real nested classes are fine.
                 if ('$' in name.substringAfterLast('/') && '$' !in cls.srcName) {
                     problems += "$where -> $name: a flat class cannot take a nested name, Enigma will truncate it"

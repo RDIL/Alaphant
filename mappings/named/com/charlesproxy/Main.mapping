@@ -1,4 +1,6 @@
 CLASS com/charlesproxy/Main
-	COMMENT [bootstrap] matched to Charles 4's Main on 13 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	COMMENT Matched to Charles 4's Main on 13 shared member descriptors; Charles 4 named some of its
+	COMMENT members but not the class, which Charles 5 keeps readable anyway.
 	METHOD method_58 maybeCreateCharlesContext ()Lcom/charlesproxy/CharlesContext;
-		COMMENT [bootstrap] carried over from Charles 4's Main.createCharlesContext on a unique descriptor match -- provisional
+		COMMENT Carried over from Charles 4's Main.createCharlesContext on a unique descriptor match
+		COMMENT -- provisional.

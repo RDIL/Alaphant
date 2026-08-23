@@ -1,0 +1,2 @@
+CLASS com/xk72/charles/model/ModelNode
+	METHOD accept accept (Lcom/xk72/charles/model/class_1223;)V

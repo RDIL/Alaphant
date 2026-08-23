@@ -1,2 +1,6 @@
 CLASS com/charlesproxy/ssl/class_992 com/charlesproxy/ssl/SSLManager
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.ssl.SSLManager"
+	FIELD field_2734 certificateStore Lcom/charlesproxy/ssl/CertificateStore;
+	FIELD field_2736 LOGGER Lorg/slf4j/Logger;
+	METHOD <init> (Lcom/charlesproxy/security/PasswordAuthenticator;Lcom/charlesproxy/ssl/class_1007;)V
+		ARG 1 passwordAuthenticator

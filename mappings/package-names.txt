@@ -1,0 +1,30 @@
+# Obfuscated package segments whose real name is known.
+#
+# `generateIntermediary` turns an obfuscated segment into `pkg_N` because its real name is
+# unknown -- the same reasoning that turns an obfuscated class into `class_N`. When the name is
+# known, `pkg_N` is as wrong as `class_920` was for `Main`, and worse: a package is a runtime
+# access boundary, so recovering it one class at a time in the named store splits the package and
+# turns package-private references into `IllegalAccessError`. Recovering it here moves the whole
+# package at once, and `checkLinkage` proves the result still links.
+#
+# Every name below comes from the fully-qualified class names Charles' Lombok `@Slf4j` loggers
+# leave in the constant pool, and every literal in the package agreed. The count is how many said
+# so. Add an entry only on that kind of evidence: a wrong package name is a rename of every class
+# in it.
+#
+# One entry per segment: `<official package path> = <real segment name>`.
+
+com/charlesproxy/export/MkAr          = pcap      # 3 literal(s) -> com/charlesproxy/export/pcap
+com/charlesproxy/gui/transaction/xvJk = viewers   # 1 literal(s) -> com/charlesproxy/gui/transaction/viewers
+com/charlesproxy/macos/MkAr           = gui       # 1 literal(s) -> com/charlesproxy/macos/gui
+com/charlesproxy/Jpqc                 = proxy     # 4 literal(s) -> com/charlesproxy/proxy
+com/charlesproxy/rkIB                 = publish   # 1 literal(s) -> com/charlesproxy/publish
+com/charlesproxy/vGmK                 = utils     # 1 literal(s) -> com/charlesproxy/utils
+com/charlesproxy/MkAr                 = mozilla   # 1 literal(s) -> com/charlesproxy/mozilla
+com/xk72/Jpqc                         = dns       # 1 literal(s) -> com/xk72/dns
+com/xk72/vGmK                         = lib       # 1 literal(s) -> com/xk72/lib
+com/xk72/proxy/Jpqc                   = tunnel    # 1 literal(s) -> com/xk72/proxy/tunnel
+com/xk72/proxy/MkAr                   = server    # 3 literal(s) -> com/xk72/proxy/server
+org/MkAr                              = incava    # 2 literal(s) -> org/incava/util/diff
+org/MkAr/MkAr                         = util      # 2 literal(s) -> org/incava/util/diff
+org/MkAr/MkAr/MkAr                    = diff      # 2 literal(s) -> org/incava/util/diff

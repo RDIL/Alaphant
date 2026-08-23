@@ -1,2 +1,2 @@
-CLASS com/charlesproxy/tools/class_1025 com/charlesproxy/tools/MapLocalTool/MapLocalServerSocket
+CLASS com/charlesproxy/tools/class_1025 com/charlesproxy/tools/MapLocalTool__MapLocalServerSocket
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.tools.MapLocalTool.MapLocalServerSocket"

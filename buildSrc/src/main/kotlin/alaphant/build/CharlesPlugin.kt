@@ -41,6 +41,7 @@ class CharlesPlugin : Plugin<Project> {
         val ledgerFile = file("mappings/ledger.json")
         val namedDir = file("mappings/named")
         val readableNames = file("mappings/readable-names.txt")
+        val packageNames = file("mappings/package-names.txt")
         val reflectionSites = file("mappings/reflection-sites.txt")
         val mergedMappings = layout.buildDirectory.file("mappings/charles-$version-v2.tiny")
 
@@ -59,6 +60,7 @@ class CharlesPlugin : Plugin<Project> {
             description = "Allocates the stable intermediary namespace for Charles $version."
             officialJar.set(charles.officialJar)
             this.readableNames.set(readableNames)
+            this.packageNames.set(packageNames)
             charlesVersion.set(version)
             outputMappings.set(intermediaryFile)
             this.ledgerFile.set(ledgerFile)
@@ -132,6 +134,13 @@ class CharlesPlugin : Plugin<Project> {
             description = "Checks the named store for the mistakes that would otherwise pass silently."
             intermediaryMappings.set(intermediaryFile)
             this.namedDir.set(namedDir)
+        }
+
+        tasks.register<CheckLinkageTask>("checkLinkage") {
+            group = VERIFY_GROUP
+            description = "Resolves every reference in the remapped jar, so a mapping cannot break Charles silently."
+            inputJar.set(remapNamed.flatMap { it.outputJar })
+            libraries.from(charles.libraryJars)
         }
 
         tasks.register<CheckReflectionSitesTask>("checkReflectionSites") {

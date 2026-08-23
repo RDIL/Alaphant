@@ -1,2 +1,2 @@
-CLASS com/charlesproxy/tools/class_1081 com/charlesproxy/tools/MapLocalTool/MapLocalFilter
+CLASS com/charlesproxy/tools/class_1081 com/charlesproxy/tools/MapLocalTool__MapLocalFilter
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.tools.MapLocalTool.MapLocalFilter"

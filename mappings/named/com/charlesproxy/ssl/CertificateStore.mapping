@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/ssl/CertificateStore
+	CLASS CertificateStoreState

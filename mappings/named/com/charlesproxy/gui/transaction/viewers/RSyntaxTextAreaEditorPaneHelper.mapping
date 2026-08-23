@@ -1,2 +1,2 @@
-CLASS com/charlesproxy/gui/transaction/pkg_7/class_838 com/charlesproxy/gui/transaction/viewers/RSyntaxTextAreaEditorPaneHelper
+CLASS com/charlesproxy/gui/transaction/viewers/class_838 com/charlesproxy/gui/transaction/viewers/RSyntaxTextAreaEditorPaneHelper
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.transaction.viewers.RSyntaxTextAreaEditorPaneHelper"

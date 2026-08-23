@@ -1,0 +1,8 @@
+CLASS com/xk72/charles/model/Path
+	FIELD pathName pathName Ljava/lang/String;
+	FIELD serialVersionUID serialVersionUID J
+	METHOD getFullPathName getFullPathName ()Ljava/lang/String;
+	METHOD getHost getHost ()Lcom/xk72/charles/model/Host;
+	METHOD getPathName getPathName ()Ljava/lang/String;
+	METHOD setPathName setPathName (Ljava/lang/String;)V
+	METHOD toURL toURL ()Ljava/net/URL;

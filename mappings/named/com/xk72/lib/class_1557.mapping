@@ -1,0 +1,11 @@
+CLASS com/xk72/lib/class_1557
+	FIELD field_4218 inCDATA Z
+	METHOD comment comment ([CII)V
+	METHOD endCDATA endCDATA ()V
+	METHOD endDTD endDTD ()V
+	METHOD endElement endElement (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	METHOD endEntity endEntity (Ljava/lang/String;)V
+	METHOD startCDATA startCDATA ()V
+	METHOD startDTD startDTD (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	METHOD startElement startElement (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V
+	METHOD startEntity startEntity (Ljava/lang/String;)V

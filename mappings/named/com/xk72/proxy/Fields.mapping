@@ -1,0 +1,6 @@
+CLASS com/xk72/proxy/Fields
+	FIELD fieldNames fieldNames Ljava/util/List;
+	FIELD fieldValues fieldValues Ljava/util/List;
+	METHOD clone clone ()Ljava/lang/Object;
+	METHOD read read (Lcom/xk72/proxy/io/class_1343;Z)V
+	METHOD reset reset ()V

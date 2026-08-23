@@ -1,5 +1,5 @@
 CLASS com/charlesproxy/gui/find/class_237 com/charlesproxy/gui/find/MaybeAdvancedFindDialogFindCallback
-	COMMENT [bootstrap] matched to Charles 4's AdvancedFindDialogFindCallback on 10 shared member descriptors (next best in this package scored 6) -- provisional, confirm before dropping the Maybe
+	COMMENT [bootstrap] matched to Charles 4's AdvancedFindDialog__FindCallback on 10 shared member descriptors (next best in this package scored 6) -- provisional, confirm before dropping the Maybe
 	FIELD field_860 maybeFindOptions Lcom/charlesproxy/gui/find/FindOptions;
 		COMMENT [bootstrap] carried over from Charles 4's AdvancedFindDialog$FindCallback.findOptions on a unique descriptor match -- provisional
 	FIELD field_863 maybeAdvancedFindDialog Lcom/charlesproxy/gui/find/AdvancedFindDialog;

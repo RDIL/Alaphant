@@ -44,6 +44,12 @@ abstract class GenerateIntermediaryTask : DefaultTask() {
     @get:PathSensitive(PathSensitivity.NONE)
     abstract val readableNames: RegularFileProperty
 
+    /** `mappings/package-names.txt` -- obfuscated package segments whose real name is known. */
+    @get:InputFile
+    @get:Optional
+    @get:PathSensitive(PathSensitivity.NONE)
+    abstract val packageNames: RegularFileProperty
+
     @get:Input
     abstract val charlesVersion: Property<String>
 
@@ -61,11 +67,13 @@ abstract class GenerateIntermediaryTask : DefaultTask() {
             ?.let { NameClassifier.read(it.asFile) }
             ?: NameClassifier(emptySet(), emptySet())
 
+        val recoveredPackages = packageNames.orNull?.let { PackageNames.read(it.asFile) } ?: emptyMap()
+
         val nodes = readClassNodes(officialJar.get().asFile)
         logger.lifecycle("Allocating intermediary names for Charles $version (${nodes.size} classes)")
 
         val ledger = Ledger.read(ledgerFile.get().asFile)
-        val allocation = Allocator(classifier, ledger, version, nodes).allocate()
+        val allocation = Allocator(classifier, recoveredPackages, ledger, version, nodes).allocate()
 
         writeTiny(outputMappings.get().asFile, allocation)
         allocation.writeLedger(ledger, ledgerFile.get().asFile, version)
@@ -187,6 +195,8 @@ internal class Allocation(
  */
 internal class Allocator(
     private val classifier: NameClassifier,
+    /** Official package path -> real segment name, for segments the obfuscator renamed. */
+    private val recoveredPackages: Map<String, String>,
     ledger: Ledger,
     private val version: String,
     private val nodes: List<ClassNode>,
@@ -255,7 +265,9 @@ internal class Allocator(
             for (segment in path.split('/')) {
                 officialPrefix = if (officialPrefix.isEmpty()) segment else "$officialPrefix/$segment"
                 allPackages.add(officialPrefix)
-                if (classifier.isObfuscatedPackageSegment(segment)) {
+                // A recovered name is not an allocation, so it stays out of the ledger: the file
+                // says what the package is, and nothing should carry a stale answer forward.
+                if (officialPrefix !in recoveredPackages && classifier.isObfuscatedPackageSegment(segment)) {
                     packageMap.getOrPut(officialPrefix) { allocate("packages", officialPrefix) }
                 }
             }
@@ -269,7 +281,7 @@ internal class Allocator(
         for (segment in path.split('/')) {
             officialPrefix = if (officialPrefix.isEmpty()) segment else "$officialPrefix/$segment"
             if (out.isNotEmpty()) out.append('/')
-            out.append(packageMap[officialPrefix] ?: segment)
+            out.append(recoveredPackages[officialPrefix] ?: packageMap[officialPrefix] ?: segment)
         }
         return out.toString()
     }
@@ -362,17 +374,28 @@ internal class Allocator(
             out
         }
 
+        // Group over each class' whole supertype closure, not just its own declarations. A class can
+        // implement an interface method with a method it inherits from a superclass that knows
+        // nothing about the interface -- neither declaration is an ancestor of the other, so the only
+        // thing linking them is the class that brings them together. Grouping from the subclass'
+        // point of view catches that; grouping from the declaration's does not, and the two names
+        // then drift apart into an AbstractMethodError.
         for (node in nodes) {
-            for (method in node.methods.orEmpty()) {
-                if (method.name == "<init>" || method.name == "<clinit>") continue
-                if (!classifier.isObfuscatedMemberName(method.name)) continue
-                val key = methodKey(node.name, method.name, method.desc)
-                parent.putIfAbsent(key, key)
-                for (ancestor in ancestors(node.name)) {
-                    val declared = internal.getValue(ancestor).methods.orEmpty()
-                        .any { it.name == method.name && it.desc == method.desc }
-                    if (declared) union(key, methodKey(ancestor, method.name, method.desc))
+            val closure = ancestors(node.name) + node.name
+            val declarations = HashMap<String, MutableList<String>>()
+
+            for (owner in closure) {
+                for (method in internal[owner]?.methods.orEmpty()) {
+                    if (method.name == "<init>" || method.name == "<clinit>") continue
+                    if (!classifier.isObfuscatedMemberName(method.name)) continue
+                    val key = methodKey(owner, method.name, method.desc)
+                    parent.putIfAbsent(key, key)
+                    declarations.getOrPut("${method.name}${method.desc}") { mutableListOf() }.add(key)
                 }
+            }
+
+            for (group in declarations.values) {
+                group.drop(1).forEach { union(group.first(), it) }
             }
         }
 

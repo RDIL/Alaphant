@@ -1,0 +1,10 @@
+CLASS com/xk72/charles/validator/ValidatorTransaction
+	METHOD setErrorCount setErrorCount (I)V
+	METHOD setErrors setErrors (Ljava/util/List;)V
+	METHOD setException setException (Ljava/lang/Exception;)V
+	METHOD setFailed setFailed (Z)V
+	METHOD setSource setSource (Lcom/xk72/charles/model/Transaction;)V
+	METHOD setType setType (Ljava/lang/String;)V
+	METHOD setValid setValid (Z)V
+	METHOD setWarningCount setWarningCount (I)V
+	METHOD setWarnings setWarnings (Ljava/util/List;)V

@@ -1,0 +1,17 @@
+CLASS com/xk72/proxy/http/HttpFields
+	FIELD field_3431 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3432 rawSize J
+	FIELD field_3435 receiveTime J
+	FIELD firstLine firstLine Ljava/lang/String;
+	METHOD getFirstLine getFirstLine ()Ljava/lang/String;
+	METHOD getRawSize getRawSize ()J
+	METHOD getReceiveTime getReceiveTime ()J
+	METHOD getRequestProtocolVersion getRequestProtocolVersion ()Ljava/lang/String;
+	METHOD getResponseStatusDescription getResponseStatusDescription ()Ljava/lang/String;
+	METHOD readFirstLine readFirstLine (Lcom/xk72/proxy/io/class_1343;Z)Z
+	METHOD setConnect setConnect (Ljava/lang/String;ILjava/lang/String;)V
+	METHOD setFirstLine setFirstLine (Ljava/lang/String;)V
+	METHOD setRawSize setRawSize (J)V
+		ARG 1 rawSize
+	METHOD setReceiveTime setReceiveTime (J)V
+	METHOD setRequestFields setRequestFields (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Z)V

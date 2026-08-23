@@ -1,6 +1,8 @@
-CLASS com/charlesproxy/gui/class_281 com/charlesproxy/gui/MaybeActionSwitchboard
+CLASS com/charlesproxy/gui/class_281 com/charlesproxy/gui/ActionSwitchboard
 	COMMENT [bootstrap] matched to Charles 4's ActionSwitchboard on 23 shared member descriptors (next best in this package scored 20) -- provisional, confirm before dropping the Maybe
-	FIELD field_981 maybeCharlesFrame Lcom/charlesproxy/gui/CharlesFrame;
+	FIELD field_981 charlesFrame Lcom/charlesproxy/gui/CharlesFrame;
 		COMMENT [bootstrap] carried over from Charles 4's ActionSwitchboard.charlesFrame on a unique descriptor match -- provisional
 	FIELD field_984 maybeViewMenu Lcom/charlesproxy/gui/menus/ViewMenu;
 		COMMENT [bootstrap] carried over from Charles 4's ActionSwitchboard.viewMenu on a unique descriptor match -- provisional
+	METHOD <init> (Lcom/charlesproxy/gui/CharlesFrame;)V
+		ARG 1 charlesFrame

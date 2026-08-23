@@ -1,2 +1,2 @@
-CLASS com/charlesproxy/pkg_10/class_979 com/charlesproxy/publish/Publisher
+CLASS com/charlesproxy/publish/class_979 com/charlesproxy/publish/Publisher
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.publish.Publisher"

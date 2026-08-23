@@ -1,4 +1,4 @@
-CLASS com/xk72/proxy/io/class_1335 com/xk72/proxy/io/MaybeProxyInputStream
+CLASS com/xk72/proxy/io/class_1335 com/xk72/proxy/io/ProxyInputStream
 	COMMENT [bootstrap] matched to Charles 4's ProxyInputStream on 23 shared member descriptors (next best in this package scored 10) -- provisional, confirm before dropping the Maybe
 	FIELD field_3667 maybeMarkPoint I
 		COMMENT [bootstrap] carried over from Charles 4's ProxyInputStream.markPoint on a unique descriptor match -- provisional

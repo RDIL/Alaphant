@@ -1,2 +1,2 @@
-CLASS com/charlesproxy/export/pkg_3/class_144 com/charlesproxy/export/pcap/PcapFileReader
+CLASS com/charlesproxy/export/pcap/class_144 com/charlesproxy/export/pcap/PcapFileReader
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.pcap.PcapFileReader"

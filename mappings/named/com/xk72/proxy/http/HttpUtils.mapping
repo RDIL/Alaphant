@@ -1,0 +1,6 @@
+CLASS com/xk72/proxy/http/HttpUtils
+	METHOD method_3389 protocolToDefaultPort (Ljava/lang/String;)I
+	METHOD method_3391 isPostOrPut (Ljava/lang/String;)Z
+		ARG 0 method
+	METHOD method_3392 isHttpsOrWss (Ljava/lang/String;)Z
+	CLASS UnsupportedProtocolException
