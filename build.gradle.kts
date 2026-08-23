@@ -9,9 +9,9 @@ plugins {
 group = "alaphant"
 version = "2.0.0-SNAPSHOT"
 
-// Charles 5.0.3 is compiled to class version 61 and ships a Java 17 runtime image.
+// Charles 5.2.1 is compiled to class version 69 and ships a Java 25 runtime image.
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(25)
 }
 
 dependencies {

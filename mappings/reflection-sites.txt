@@ -8,5 +8,5 @@
 # Only list a literal once a mixin actually substitutes it. An entry here with no mixin behind it is
 # worse than no entry at all.
 
-com.charlesproxy.macos.vQtF       # -> com.charlesproxy.macos.MacOSImpl
-com.charlesproxy.macos.MkAr.kmft  # -> com.charlesproxy.macos.gui.MacOSGUIImpl
+com.charlesproxy.macos.UOUV       # -> com.charlesproxy.macos.MacOSImpl
+com.charlesproxy.macos.sdfE.oaSX  # -> com.charlesproxy.macos.gui.MacOSGUIImpl

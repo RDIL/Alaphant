@@ -18,8 +18,9 @@ import alaphant.build.tasks.ValidateMappingsTask
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.Sync
-import org.gradle.jvm.toolchain.JavaLanguageVersion
+import org.gradle.jvm.toolchain.JavaLauncher
 import org.gradle.jvm.toolchain.JavaToolchainService
 import org.gradle.kotlin.dsl.register
 import java.io.File
@@ -195,7 +196,12 @@ class CharlesPlugin : Plugin<Project> {
         }
 
         val toolchains = extensions.getByType(JavaToolchainService::class.java)
-        val java17 = toolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(17)) }
+
+        val charlesLauncher = objects.property(JavaLauncher::class.java)
+        pluginManager.withPlugin("java-base") {
+            val toolchain = extensions.getByType(JavaPluginExtension::class.java).toolchain
+            charlesLauncher.set(toolchains.launcherFor(toolchain))
+        }
 
         tasks.register<EnigmaTask>("enigma") {
             group = MAPPINGS_GROUP
@@ -204,7 +210,7 @@ class CharlesPlugin : Plugin<Project> {
             inputJar.set(remapIntermediary.flatMap { it.outputJar })
             libraries.from(charles.libraryJars)
             mappingsDir.set(namedDir)
-            javaLauncher.set(java17)
+            javaLauncher.set(charlesLauncher)
         }
 
         val assembleModulePath = tasks.register<Sync>("assembleModulePath") {
@@ -244,7 +250,7 @@ class CharlesPlugin : Plugin<Project> {
                 jvmOptions.set(plist.jvmOptions)
                 mainModuleAndClass.set(plist.mainModuleAndClass ?: DEFAULT_MAIN)
                 nativeLibraryPath.set(charles.nativeLibraryDir.absolutePath)
-                javaLauncher.set(java17)
+                javaLauncher.set(charlesLauncher)
                 extraJvmArgs.set(userJvmArgs.map { extra -> devProfileArgs + defaults + extra })
                 // Charles writes the config file, but not the directory holding it.
                 doFirst { devProfileDir.mkdirs() }

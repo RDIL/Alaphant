@@ -16,20 +16,27 @@
 # known instead of a count. Keep that to packages small enough to be certain about, and say so in
 # the comment: a wrong name here is a rename of every class in the package.
 #
+# THIS FILE KEYS ON OFFICIAL NAMES AND GOES ENTIRELY STALE ON A CHARLES UPGRADE. Regenerate it
+# from the new jar before `generateIntermediary` -- see step 6 of docs/charles-upgrade.md.
+# Regenerated for 5.2.1; the obfuscator's segment pool churned wholesale (`MkAr` -> `sdfE`,
+# `xvJk` -> `fuyF`, `Jpqc` -> `tZmD`, `vGmK` -> `eTgW`, `rkIB` -> `RqPz`).
+#
 # One entry per segment: `<official package path> = <real segment name>`.
 
-com/charlesproxy/export/MkAr          = pcap      # 3 literal(s) -> com/charlesproxy/export/pcap
-com/charlesproxy/gui/MkAr             = remote    # sole class is the GUI's RemoteControlProxyListener subclass
-com/charlesproxy/gui/transaction/xvJk = viewers   # 1 literal(s) -> com/charlesproxy/gui/transaction/viewers
-com/charlesproxy/macos/MkAr           = gui       # 1 literal(s) -> com/charlesproxy/macos/gui
-com/charlesproxy/Jpqc                 = proxy     # 4 literal(s) -> com/charlesproxy/proxy
-com/charlesproxy/rkIB                 = publish   # 1 literal(s) -> com/charlesproxy/publish
-com/charlesproxy/vGmK                 = utils     # 1 literal(s) -> com/charlesproxy/utils
-com/charlesproxy/MkAr                 = mozilla   # 1 literal(s) -> com/charlesproxy/mozilla
-com/xk72/Jpqc                         = dns       # 1 literal(s) -> com/xk72/dns
-com/xk72/vGmK                         = lib       # 1 literal(s) -> com/xk72/lib
-com/xk72/proxy/Jpqc                   = tunnel    # 1 literal(s) -> com/xk72/proxy/tunnel
-com/xk72/proxy/MkAr                   = server    # 3 literal(s) -> com/xk72/proxy/server
-org/MkAr                              = incava    # 2 literal(s) -> org/incava/util/diff
-org/MkAr/MkAr                         = util      # 2 literal(s) -> org/incava/util/diff
-org/MkAr/MkAr/MkAr                    = diff      # 2 literal(s) -> org/incava/util/diff
+com/charlesproxy/export/sdfE          = pcap      # 3 literal(s) -> com/charlesproxy/export/pcap
+com/charlesproxy/gui/sdfE             = remote    # sole class is the GUI's RemoteControlProxyListener subclass
+com/charlesproxy/gui/transaction/fuyF = viewers   # 1 literal(s) -> com/charlesproxy/gui/transaction/viewers
+com/charlesproxy/macos/sdfE           = gui       # 1 literal(s) -> com/charlesproxy/macos/gui
+com/charlesproxy/tZmD                 = proxy     # 5 literal(s) -> com/charlesproxy/proxy
+com/charlesproxy/RqPz                 = publish   # 1 literal(s) -> com/charlesproxy/publish
+com/charlesproxy/eTgW                 = utils     # 1 literal(s) -> com/charlesproxy/utils
+com/charlesproxy/sdfE                 = mozilla   # 1 literal(s) -> com/charlesproxy/mozilla
+com/xk72/tZmD                         = dns       # 1 literal(s) -> com/xk72/dns
+com/xk72/eTgW                         = lib       # 1 literal(s) -> com/xk72/lib
+com/xk72/proxy/tZmD                   = tunnel    # 1 literal(s) -> com/xk72/proxy/tunnel
+com/xk72/proxy/sdfE                   = server    # 3 literal(s) -> com/xk72/proxy/server
+org/sdfE                              = incava    # vendored org/incava/util/diff; no logger, recognised by shape
+org/sdfE/sdfE                         = util      # vendored org/incava/util/diff; no logger, recognised by shape
+org/sdfE/sdfE/sdfE                    = diff      # vendored org/incava/util/diff; `oaSX` is the four-int Difference
+org/fuyF                              = swfx      # 1 literal(s) -> org/swfx/swf/SwfMovieClip -- new in 5.2.1
+org/fuyF/tZmD                         = swf       # 1 literal(s) -> org/swfx/swf/SwfMovieClip -- new in 5.2.1

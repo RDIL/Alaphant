@@ -36,10 +36,10 @@ public abstract class MacOSManagerMixin {
 
     @Unique
     private static String alaphant$toNamedClass(final String official) {
-        if ("com.charlesproxy.macos.vQtF".equals(official)) {
+        if ("com.charlesproxy.macos.UOUV".equals(official)) {
             return MacOSImpl.class.getName();
         }
-        if ("com.charlesproxy.macos.MkAr.kmft".equals(official)) {
+        if ("com.charlesproxy.macos.sdfE.oaSX".equals(official)) {
             return MacOSGUIImpl.class.getName();
         }
         return official;

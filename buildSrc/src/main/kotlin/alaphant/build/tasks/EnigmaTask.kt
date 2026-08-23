@@ -34,6 +34,12 @@ import kotlin.collections.iterator
  * Enigma reads and writes the same directory format the store uses, laying files out by *named* name
  * where one exists — the convention generated files follow, so saving over them leaves no duplicates.
  *
+ * This is **Quilt's** Enigma fork, not FabricMC's — Fabric's shades an ASM that cannot read class
+ * version 69. Quilt's GUI has no `--library` option: it resolves anything outside the input jar
+ * through a `ClasspathClassProvider`, so Charles' dependency jars go on the JVM classpath instead of
+ * into arguments. Without them Enigma cannot see external supertypes, and rename propagation across
+ * an inherited method goes quiet rather than failing loudly.
+ *
  * Two things are filed off Enigma's copy of the jar first:
  *
  *  - `module-info.class`: nothing mappable, and `ACC_MODULE` is needless risk for a tool that expects
@@ -77,19 +83,11 @@ abstract class EnigmaTask : DefaultTask() {
 
         execOps.javaexec {
             executable = javaLauncher.get().executablePath.asFile.absolutePath
-            classpath = enigmaClasspath
+            // Enigma's own jar first, so its shaded ASM, Guava and Gson win over Charles' copies.
+            classpath = enigmaClasspath.plus(libraries.filter { it.isFile })
             mainClass.set(MAIN_CLASS)
             maxHeapSize = "4G"
-            args = buildList {
-                add("--jar")
-                add(jar.absolutePath)
-                add("--mappings")
-                add(mappings.absolutePath)
-                libraries.files.filter { it.isFile }.forEach {
-                    add("--library")
-                    add(it.absolutePath)
-                }
-            }
+            args = listOf("--jar", jar.absolutePath, "--mappings", mappings.absolutePath)
         }
     }
 
@@ -164,6 +162,6 @@ abstract class EnigmaTask : DefaultTask() {
     }
 
     private companion object {
-        const val MAIN_CLASS = "cuchaz.enigma.gui.Main"
+        const val MAIN_CLASS = "org.quiltmc.enigma.gui.Main"
     }
 }

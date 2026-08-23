@@ -1,4 +1,0 @@
-CLASS com/charlesproxy/gui/transaction/viewers/lib/class_756
-	COMMENT [bootstrap] matched to Charles 4's h on 4 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
-	FIELD field_2181 maybeBaseTransactionViewer Lcom/charlesproxy/gui/transaction/viewers/lib/class_734;
-		COMMENT [bootstrap] carried over from Charles 4's h.baseTransactionViewer on a unique descriptor match -- provisional
