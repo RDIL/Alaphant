@@ -49,3 +49,4 @@ charles.ico
 # User-supplied Charles jars / native libs, if not using an installed Charles.app
 target/*
 !target/.gitkeep
+.kotlin
