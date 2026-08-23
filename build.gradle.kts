@@ -13,9 +13,8 @@ kotlin {
 }
 
 dependencies {
-    // The remapped Charles jar, at a fixed path so IntelliJ treats it as a library and picks up
-    // renames as soon as `remapNamed` rewrites it. `builtBy` keeps Gradle's task graph honest
-    // without turning it back into a configuration the IDE cannot see through.
+    // A plain file dependency at a fixed path: IntelliJ re-reads it as `remapNamed` rewrites it,
+    // which a configuration would break. `builtBy` keeps the task graph correct.
     compileOnly(files(charles.namedJar).builtBy("remapNamed"))
 
     // Charles' own module path, rather than a hand-maintained list of Maven coordinates.
@@ -27,8 +26,7 @@ dependencies {
 
     charlesDecompiler(libs.vineflower)
 
-    // Enigma's shaded distribution: everything it needs in one jar, taken non-transitively so its
-    // native-classifier dependencies never have to resolve.
+    // Enigma's shaded distribution, non-transitive so its native-classifier deps never resolve.
     enigmaClasspath(variantOf(libs.enigma.swing) { classifier("all") }) { isTransitive = false }
 }
 

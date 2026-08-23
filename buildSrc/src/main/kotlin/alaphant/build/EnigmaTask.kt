@@ -29,18 +29,15 @@ import javax.inject.Inject
  * Opens the named mappings in the Enigma GUI, editing `intermediary -> named` against the
  * intermediary jar.
  *
- * Enigma writes back in the same Enigma directory format it read, so this is the round trip the
- * mapping workflow is built on: agents write `.mapping` files, a human opens the same tree, renames
- * something, and saves — no conversion step and no format drift. It also lays files out by *named*
- * name where one exists, which is the convention the generated files follow, so Enigma saving over
- * a bootstrapped tree does not leave duplicates behind.
+ * Enigma reads and writes the same directory format the store uses, laying files out by *named* name
+ * where one exists — the convention generated files follow, so saving over them leaves no duplicates.
  *
  * Two things are filed off Enigma's copy of the jar first:
  *
- *  - `module-info.class`. It holds nothing mappable, and handing a class file with `ACC_MODULE` to a
- *    tool that expects ordinary classes is needless risk.
- *  - Synthetic methods whose descriptor is also carried by a differently-named ordinary method in
- *    the same class. This gets stuck in a recursive cycle.
+ *  - `module-info.class`: nothing mappable, and `ACC_MODULE` is needless risk for a tool that expects
+ *    ordinary classes.
+ *  - Synthetic methods sharing a descriptor with a differently-named ordinary method in the same
+ *    class, which get Enigma stuck in a recursive cycle.
  */
 abstract class EnigmaTask : DefaultTask() {
     @get:Classpath

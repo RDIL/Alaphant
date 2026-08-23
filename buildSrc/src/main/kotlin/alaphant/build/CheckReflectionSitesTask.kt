@@ -17,17 +17,14 @@ import org.objectweb.asm.tree.MethodInsnNode
 import java.io.File
 
 /**
- * Fails if Charles loads a class by name that the remap renames, and nothing patches the literal.
+ * Fails if Charles loads a class by name that the remap renames, and no mixin patches the literal.
  *
- * Remapping rewrites class names but not string constants, so a `Class.forName("…vQtF")` in a
- * remapped jar looks for a class that no longer exists. This was Charles 4's recurring failure mode:
- * it surfaces at runtime, far from the mapping change that caused it, and only on the code path that
- * happens to hit that lookup. In 5.0.3 there are exactly three such sites, all in
- * `com/charlesproxy/macos`, all patched by one mixin — so the job here is to notice the day Charles
- * adds a fourth.
+ * Remapping rewrites class names but not string constants, so `Class.forName("…vQtF")` looks for a
+ * class that no longer exists — at runtime, far from the mapping change that caused it. 5.0.3 has
+ * three such sites, all in `com/charlesproxy/macos` and all patched by one mixin; the job here is to
+ * notice a fourth.
  *
- * Sites whose argument is computed rather than constant are reported but cannot be checked; they are
- * loading a class chosen at runtime, which the remap does not break in the same way.
+ * Sites whose argument is computed rather than constant are reported but cannot be checked.
  */
 abstract class CheckReflectionSitesTask : DefaultTask() {
     @get:InputFile

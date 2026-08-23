@@ -20,18 +20,15 @@ import org.gradle.api.tasks.PathSensitivity
 import org.gradle.api.tasks.TaskAction
 
 /**
- * Collapses the two halves of the mapping store into the single three-namespace tiny v2 file that
- * the remap tasks and the published `mappingsJar` consume.
+ * Collapses the two halves of the mapping store into the single three-namespace tiny v2 file the
+ * remap tasks consume.
  *
- * `official -> intermediary` comes from the generated tiny file; `intermediary -> named` comes from
- * the Enigma directory, where one file per top-level class is what lets agents work in parallel
- * without stepping on each other. The join key is the intermediary name, which is the whole point of
- * the three-namespace scheme: a Charles upgrade reissues the left column and leaves the right one
- * alone.
+ * `official -> intermediary` comes from the generated tiny file, `intermediary -> named` from the
+ * Enigma directory, joined on the intermediary name — so a Charles upgrade reissues the left column
+ * and leaves the right one alone.
  *
- * Descriptors need translating, not just names — the Enigma store was authored against the
- * intermediary jar, so its member descriptors name intermediary types while the generated file's
- * name official ones.
+ * Descriptors need translating too, not just names: the Enigma store was authored against the
+ * intermediary jar, so it names intermediary types where the generated file names official ones.
  */
 @CacheableTask
 abstract class MergeNamedMappingsTask : DefaultTask() {
@@ -39,7 +36,7 @@ abstract class MergeNamedMappingsTask : DefaultTask() {
     @get:PathSensitive(PathSensitivity.NONE)
     abstract val intermediaryMappings: RegularFileProperty
 
-    /** Enigma directory format, one `.mapping` file per top-level class. Absent until Wave 1b runs. */
+    /** Enigma directory format, one `.mapping` file per top-level class. May not exist yet. */
     @get:InputDirectory
     @get:Optional
     @get:PathSensitive(PathSensitivity.RELATIVE)
@@ -130,8 +127,8 @@ abstract class MergeNamedMappingsTask : DefaultTask() {
                     namedMethod?.let { writeArgs(writer, it) }
                 }
 
-                // Members the Enigma store names but the generated file does not carry, i.e. members
-                // whose official name was already readable. Dropping these silently would lose work.
+                // Members the store names but the generated file omits: their official name was
+                // already readable. Dropping them silently would lose work.
                 namedCls?.let { source ->
                     for (field in source.fields.sortedWith(compareBy({ it.srcName }, { it.srcDesc }))) {
                         if ("${field.srcName}${field.srcDesc}" in seenFields) continue
@@ -161,8 +158,7 @@ abstract class MergeNamedMappingsTask : DefaultTask() {
                 }
             }
 
-            // Classes the Enigma store names but the generated file does not carry: a class whose
-            // official name was already readable, renamed or commented anyway.
+            // Likewise for classes whose official name was already readable.
             for (cls in named.classes.sortedBy { it.srcName }) {
                 if (cls.srcName in emitted) continue
                 if (!writer.visitClass(cls.srcName)) continue

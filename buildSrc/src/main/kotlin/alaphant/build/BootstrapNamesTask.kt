@@ -14,31 +14,25 @@ import java.io.File
 import java.util.zip.ZipFile
 
 /**
- * Recovers names the obfuscator failed to hide, before any agent time is spent.
+ * Recovers names the obfuscator failed to hide.
  *
- * Nothing here guesses from a class' shape or its vibe — every pass has a concrete artefact behind
- * it, and every name it writes carries a `COMMENT` saying which one. Passes run in confidence order
- * and the first one to claim an element wins; a name already in the store, whoever wrote it, is
- * never overwritten.
+ * Every pass has a concrete artefact behind it and writes a `COMMENT` naming that artefact. Passes
+ * run in confidence order, the first to claim an element wins, and an existing name is never
+ * overwritten.
  *
- *  1. **Lombok `@Slf4j` logger literals.** Charles compiles logger names to string constants holding
- *     the original fully-qualified class name, so an obfuscated class states its own name in its own
- *     constant pool. Zero ambiguity.
- *  2. **Inner-class file-name leaks.** The obfuscator renamed outer classes but left the inner class
- *     *files* named after the original outer — `com/charlesproxy/macos/MacOSImpl$2` is in the jar
- *     while `MacOSImpl` is not. The plan expected this to need constrained assignment per package,
- *     but it does not: the inner's synthetic `this$0` field is typed as the real enclosing class, so
- *     the link is direct. That turns 4.3 from "high confidence" into certain.
- *  3. **`module-info` `provides ... with ...`.** Names the *role* of a class rather than the class,
- *     so this pass writes evidence comments and, where the providers agree on a suffix, a `Maybe`
- *     name.
- *  4. **The Charles 4 corpus.** Same product, mostly the same class tree, but Charles 5 moved and
- *     renamed things — so these land as provisional `Maybe`/`maybe` names, matched on descriptor
- *     shape and required to be a mutual best fit within the package.
+ *  1. **Lombok `@Slf4j` logger literals.** The logger name is a string constant holding the original
+ *     fully-qualified class name, so an obfuscated class states its own name. Unambiguous.
+ *  2. **Inner-class file-name leaks.** Inner class *files* kept the original outer name
+ *     (`com/charlesproxy/macos/MacOSImpl$2` is in the jar while `MacOSImpl` is not), and the inner's
+ *     synthetic `this$0` field is typed as the real enclosing class, so the link is direct.
+ *  3. **`module-info` `provides ... with ...`.** Names a *role* rather than a class, so this writes
+ *     evidence comments and, where the providers agree on a suffix, a `Maybe` name.
+ *  4. **The Charles 4 corpus.** Same product, but Charles 5 moved and renamed things — provisional
+ *     `Maybe`/`maybe` names, matched on descriptor shape and required to be a mutual best fit within
+ *     the package.
  *
- * The identity pass the plan lists as 4.1 has nothing to do: the intermediary scheme already passes
- * readable names through verbatim, so all 372 named outer classes and every readable member are
- * correct in the `named` namespace without a single mapping line.
+ * There is no identity pass: the intermediary scheme passes readable names through verbatim, so they
+ * are already correct in the `named` namespace.
  */
 abstract class BootstrapNamesTask : DefaultTask() {
     @get:InputFile
@@ -54,11 +48,7 @@ abstract class BootstrapNamesTask : DefaultTask() {
     @get:PathSensitive(PathSensitivity.NONE)
     abstract val legacyMappings: RegularFileProperty
 
-    /**
-     * Written in place, in the source tree. Deliberately not declared as a task output: this is a
-     * generator you invoke when you want it, and `mergeMappings` consumes the directory as committed
-     * content rather than as something the build produces.
-     */
+    /** Written in place in the source tree; not a task output, since it is committed content. */
     @get:Internal
     abstract val namedDir: DirectoryProperty
 

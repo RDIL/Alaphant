@@ -20,7 +20,7 @@ object InfoPlist {
 
     fun parse(xml: String, appRoot: File): Config {
         val factory = DocumentBuilderFactory.newInstance().apply {
-            // These are local, trusted files, but there is no reason to resolve anything external.
+            // Local, trusted files, but no reason to resolve anything external.
             setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false)
             isExpandEntityReferences = false
         }

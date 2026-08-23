@@ -6,12 +6,9 @@ import java.io.File
 /**
  * The Charles 4 naming corpus, `mappings/legacy/charles4.tiny` (tiny v1).
  *
- * Two things about it are easy to get wrong. It only lists members somebody actually named, so member
- * counts off it are a lower bound. And of its 2276 `CLASS` lines, **1562 are identity mappings** —
- * classes Charles 4 never got a name for, where the second column just repeats the first (or renames
- * only the package). Reading those as names produces gems like `Maybei`. Only 703 lines carry a real
- * class name; the rest are still worth keeping, because their *members* were often named even when
- * the class was not.
+ * It lists only members somebody named, so counts off it are a lower bound. Of its 2276 `CLASS`
+ * lines just 703 carry a real name — the other 1562 repeat the obfuscated name back, and are kept
+ * only because their members were often named anyway.
  */
 internal class Charles4Corpus(
     val entries: List<Entry>,
@@ -56,10 +53,7 @@ internal class Charles4Corpus(
             return Charles4Corpus(byOfficial.values.toList(), classMap)
         }
 
-        /**
-         * A renamed *package* with the same simple name is not a name, and neither is a one- or
-         * two-letter simple name — both are what an identity entry looks like in this file.
-         */
+        /** An identity entry: same simple name with only the package renamed, or a name under 3 chars. */
         private fun isRealName(official: String, named: String): Boolean {
             val simple = named.substringAfterLast('/')
             return simple != official.substringAfterLast('/') && simple.length >= 3
@@ -68,12 +62,9 @@ internal class Charles4Corpus(
 }
 
 /**
- * Puts Charles 4 and Charles 5 descriptors into one comparable form.
- *
- * Both sides are reduced to "types that are readable in Charles 5", with everything else collapsed to
- * `?`. What survives is the part of a signature that is stable across the two releases —
- * `(Lcom/charlesproxy/model/Transaction;L?;)V` — which is enough to tell two classes in the same
- * package apart without pretending we can resolve names we do not have.
+ * Puts Charles 4 and Charles 5 descriptors into one comparable form: types readable in Charles 5 are
+ * kept, everything else collapses to `?` — `(Lcom/charlesproxy/model/Transaction;L?;)V`. That much
+ * is stable across the two releases and enough to tell two classes in a package apart.
  */
 internal class DescriptorTranslator(
     private val corpus: Charles4Corpus,
@@ -112,10 +103,7 @@ internal class DescriptorTranslator(
 
     class Shape(val fields: List<String>, val methods: List<String>)
 
-    /**
-     * How many member descriptors the two agree on, counted as a multiset intersection. Descriptors
-     * that carry no surviving type information at all are worth little, so they score half.
-     */
+    /** Multiset intersection of member descriptors; ones with no surviving type score half. */
     fun score(candidate: Charles4Corpus.Entry, shape: Shape): Int {
         var score = 0
         score += intersect(candidate.fields.map { translate(it.desc) }, shape.fields)

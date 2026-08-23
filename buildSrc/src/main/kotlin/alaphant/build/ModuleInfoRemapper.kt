@@ -64,9 +64,9 @@ internal object ModuleInfoRemapper {
 
     private class NameRemapper(private val classes: Map<String, String>) : Remapper(Opcodes.ASM9) {
         /**
-         * Package renames implied by the class renames. Needed because the module descriptor lists
-         * packages independently of classes, and the intermediary namespace renames obfuscated
-         * package segments (`com/charlesproxy/macos/MkAr` -> `com/charlesproxy/macos/pkg_1`).
+         * Package renames implied by the class renames: the module descriptor lists packages
+         * independently of classes, and obfuscated package segments get renamed too
+         * (`com/charlesproxy/macos/MkAr` -> `com/charlesproxy/macos/pkg_1`).
          */
         private val packages: Map<String, String> = classes.entries
             .mapNotNull { (src, dst) ->

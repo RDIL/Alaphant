@@ -10,10 +10,7 @@ import org.objectweb.asm.tree.LdcInsnNode
 import org.objectweb.asm.tree.MethodInsnNode
 import java.io.File
 
-/**
- * The bootstrap passes. See [BootstrapNamesTask] for what each one is and why it is trusted as much
- * as it is.
- */
+/** The bootstrap passes. [BootstrapNamesTask] documents what each one is and how far to trust it. */
 internal class Recovery(
     private val jar: Jar,
     private val intermediary: IntermediaryIndex,
@@ -81,8 +78,8 @@ internal class Recovery(
             if (hint.substringBeforeLast('/') != enclosing.substringBeforeLast('/')) continue
 
             if ('$' in enclosing.substringAfterLast('/')) {
-                // The leaked name is itself nested and its own outer is missing too, so the pretty
-                // name needs a second inference. Record the evidence rather than guess a name.
+                // The leaked name is itself nested and its own outer is missing too, so a name here
+                // would need a second inference. Record the evidence instead.
                 store.comment(
                     placeholders.getValue(hint),
                     "an inner class the obfuscator left alone, ${node.name}, is enclosed by this class, " +
@@ -95,8 +92,7 @@ internal class Recovery(
             claims.getOrPut(enclosing) { mutableSetOf() }.add(hint)
         }
 
-        // A name that points at two classes, or a class two names point at, is not evidence of
-        // anything; drop both sides rather than pick.
+        // Ambiguous either way round is not evidence; drop both sides rather than pick.
         val byHint = HashMap<String, MutableSet<String>>()
         for ((enclosing, hints) in claims) {
             hints.singleOrNull()?.let { byHint.getOrPut(it) { mutableSetOf() }.add(enclosing) }
@@ -130,7 +126,7 @@ internal class Recovery(
 
     /**
      * The enclosing class an inner class points at: its synthetic `this$N` field, or failing that the
-     * first constructor parameter, which is where javac puts the enclosing instance.
+     * first constructor parameter.
      */
     private fun enclosingHint(node: ClassNode): String? {
         val candidates = LinkedHashSet<String>()
@@ -346,17 +342,12 @@ internal class Recovery(
     private enum class MemberKind { FIELD, METHOD }
 
     /**
-     * Charles 4 named plenty of classes that were nested there but are flat class files here, and
-     * Enigma reads a `$` as nesting rather than as part of a name — a dst of
-     * `MaybeAdvancedFindDialog$MouseListener` comes back as `MaybeAdvancedFindDialog`, silently
-     * colliding with every other inner of the same outer. Run the words together instead.
+     * Enigma reads `$` as nesting, so a flat class given a nested name comes back truncated and
+     * collides with its siblings. Run the words together instead.
      */
     private fun flatten(simple: String): String = simple.replace("$", "")
 
-    /**
-     * Charles 4 left most of its own members unnamed, and its placeholders (`field_551`,
-     * `method_563`) are worse than nothing — they look like a name and carry none.
-     */
+    /** Charles 4's own placeholders (`field_551`, `method_563`) look like names and carry none. */
     private fun isRealCharles4MemberName(member: Charles4Corpus.Member): Boolean =
         member.named != member.official &&
             !CHARLES4_PLACEHOLDER.matches(member.named) &&
@@ -375,9 +366,8 @@ internal class Recovery(
     private fun skippedNote(count: Int) = if (count > 0) " ($count rejected as implausible)" else ""
 
     /**
-     * Would the leaked name plausibly belong to this class? The package has to agree as far as the
-     * readable segments go — the obfuscated tail can differ, because a leaked name carries the
-     * original package too (`macos/MkAr` was `macos/gui`).
+     * The readable package segments have to agree; the obfuscated tail may differ, since a leaked
+     * name carries the original package too (`macos/MkAr` was `macos/gui`).
      */
     private fun plausibleRename(official: String, leaked: String): Boolean {
         val readablePrefix = official.substringBeforeLast('/', "")

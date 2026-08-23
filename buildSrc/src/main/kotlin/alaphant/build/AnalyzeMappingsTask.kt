@@ -15,15 +15,9 @@ import org.gradle.api.tasks.TaskAction
 /**
  * Reports how much of the mapping surface is actually named.
  *
- * The denominator is the thing to get right. Every element in the file has an intermediary name by
- * construction, so counting "has a name" would report 100% forever. What matters is how many
- * elements still carry a **placeholder** — `class_812`, `method_3301` — because that is the work
- * left. Elements Charles never obfuscated are not in the file at all and are not counted either way:
- * they need no work and inflating the percentage with them would be dishonest.
- *
- * (The Charles 4 implementation of this had fall-through `switch` cases with no `break`, so a class
- * visit also incremented the field and method counters. Every coverage number that project ever
- * published was wrong.)
+ * Only elements still carrying a placeholder intermediary name (`class_812`, `method_3301`) count:
+ * everything in the file has *some* intermediary name, and elements Charles never obfuscated are not
+ * in the file at all.
  */
 abstract class AnalyzeMappingsTask : DefaultTask() {
     @get:InputFile
@@ -118,11 +112,7 @@ abstract class AnalyzeMappingsTask : DefaultTask() {
         METHOD("methods", "method_"),
         ;
 
-        /**
-         * A placeholder is an intermediary name whose last path segment is `<prefix><digits>`. Driven
-         * off the actual allocation scheme rather than a substring guess, so a real Charles class
-         * called `SubclassRegistry` is not mistaken for one.
-         */
+        /** `<prefix><digits>` as the last path segment: the allocation scheme, not a substring guess. */
         fun isPlaceholder(intermediary: String): Boolean {
             val simple = intermediary.substringAfterLast('/').substringAfterLast('$')
             return simple.startsWith(prefix) && simple.length > prefix.length &&

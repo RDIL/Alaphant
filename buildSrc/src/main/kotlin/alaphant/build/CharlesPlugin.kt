@@ -10,12 +10,10 @@ import org.gradle.kotlin.dsl.register
 import java.io.File
 
 /**
- * Owns everything that touches the Charles install: locating it, remapping it, decompiling it, and
- * indexing it.
+ * Owns everything that touches the Charles install: locating, remapping, decompiling and indexing it.
  *
- * Charles is resolved eagerly and a missing install is a hard error. There is no useful build without
- * it -- the mod compiles against the remapped jar -- so pretending otherwise only moves the failure
- * somewhere less obvious.
+ * Resolved eagerly, and a missing install is a hard error -- the mod compiles against the remapped
+ * jar, so deferring the failure only hides its cause.
  */
 class CharlesPlugin : Plugin<Project> {
     override fun apply(project: Project): Unit = with(project) {
@@ -33,8 +31,7 @@ class CharlesPlugin : Plugin<Project> {
         val intermediaryJar = layout.buildDirectory.file(INTERMEDIARY_JAR).get().asFile
         val namedJar = layout.buildDirectory.file(NAMED_JAR).get().asFile
 
-        // `add`, not `create`: this is a resolved set of facts, not something to configure later,
-        // so there is nothing for Gradle's decoration to do.
+        // `add`, not `create`: resolved facts, with nothing for Gradle's decoration to do.
         val charles = CharlesExtension(installDir, version, namedJar, intermediaryJar, plist)
         extensions.add(CharlesExtension::class.java, "charles", charles)
         logger.info("Charles $version at $installDir")
@@ -76,8 +73,7 @@ class CharlesPlugin : Plugin<Project> {
         }
 
         val mergeMappings = tasks.register<MergeNamedMappingsTask>("mergeMappings") {
-            // The bootstrap writes into the named store rather than producing it, so there is no
-            // dependency to infer -- but if both are asked for in one invocation, order them.
+            // The bootstrap writes into the named store rather than producing it, so order it by hand.
             mustRunAfter(bootstrapNames)
             group = MAPPINGS_GROUP
             description = "Merges the generated intermediary file and the Enigma named store into one tiny v2 file."
@@ -178,7 +174,7 @@ class CharlesPlugin : Plugin<Project> {
         }
 
         tasks.register<CharlesInfoTask>("charlesInfo") {
-            group = MAPPINGS_GROUP
+            group = CHARLES_GROUP
             description = "Prints what the build resolved, so a broken setup is obvious."
             installDirPath.set(installDir.absolutePath)
             charlesVersion.set(version)
@@ -212,10 +208,7 @@ class CharlesPlugin : Plugin<Project> {
         )
     }
 
-    /**
-     * Read through `fileContents` rather than `File.readText`, so the configuration cache knows to
-     * throw itself away when a Charles upgrade changes the plist.
-     */
+    /** Read through `fileContents` so the configuration cache invalidates when the plist changes. */
     private fun readPlist(project: Project, installDir: File): InfoPlist.Config {
         val contents = installDir.parentFile ?: return InfoPlist.Config(emptyList(), null, null)
         val plist = File(contents, "Info.plist")
@@ -227,7 +220,8 @@ class CharlesPlugin : Plugin<Project> {
     private companion object {
         const val CHARLES_JAR = "charles.jar"
         const val MACOS_INSTALL = "/Applications/Charles.app/Contents/Java"
-        const val MAPPINGS_GROUP = "charles"
+        const val MAPPINGS_GROUP = "mappings"
+        const val CHARLES_GROUP = "charles"
         const val VERIFY_GROUP = "verification"
         const val RUN_GROUP = "run"
         const val DEFAULT_MAIN = "com.charlesproxy/com.charlesproxy.main.MainWithClassLoader"

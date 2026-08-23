@@ -14,12 +14,10 @@ import org.gradle.api.tasks.PathSensitivity
 import org.gradle.api.tasks.TaskAction
 
 /**
- * The correctness gate on the named store. Every check here catches something that is otherwise
- * invisible: the file still parses, the build still succeeds, and the damage shows up later as a
- * confusing jar or a silently dropped mapping.
+ * The correctness gate on the named store. Each check catches something that otherwise parses,
+ * builds, and only surfaces later as a confusing jar or a silently dropped mapping.
  *
- * What it does *not* check is whether a name is any good. Nothing can, which is why the naming
- * conventions lean on `maybe` prefixes and evidence comments instead.
+ * It does not judge whether a name is any good; that is what the `maybe` prefix convention is for.
  */
 abstract class ValidateMappingsTask : DefaultTask() {
     @get:InputFile
@@ -60,8 +58,7 @@ abstract class ValidateMappingsTask : DefaultTask() {
         for (cls in named.classes) {
             val where = cls.srcName
 
-            // 2. The intermediary element it names has to exist. Catches invented IDs, which is the
-            //    likeliest way for generated or hand-written mappings to be quietly wrong.
+            // 2. The intermediary element it names has to exist. Catches invented IDs.
             if (cls.srcName !in knownClasses) {
                 problems += "$where: no such class in the intermediary namespace"
                 continue
@@ -128,8 +125,7 @@ abstract class ValidateMappingsTask : DefaultTask() {
     }
 
     private fun fieldExists(index: IntermediaryIndex, cls: MappingTree.ClassMapping, field: MappingTree.FieldMapping): Boolean {
-        // Members of a class the intermediary file does not carry are readable-name members, which
-        // are legitimate to comment on or rename; there is nothing to check them against.
+        // Readable-name members: legitimate to rename, but nothing to check them against.
         return index.classMap.values.contains(cls.srcName) && field.srcDesc != null
     }
 
@@ -177,8 +173,7 @@ abstract class ValidateMappingsTask : DefaultTask() {
         if (comment.isNullOrBlank()) {
             problems += "$where: a provisional \"$simple\" needs a COMMENT saying what the evidence was"
         }
-        // Guards against a provisional built on an obfuscated stem -- `Maybei`, `maybeA`. A name that
-        // says "probably one letter" is worse than no name.
+        // A provisional built on an obfuscated stem (`Maybei`, `maybeA`) is worse than no name.
         if (simple.removePrefix("maybe").removePrefix("Maybe").length < 3) {
             problems += "$where: \"$simple\" has nothing after the prefix worth keeping"
         }

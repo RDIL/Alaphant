@@ -20,21 +20,18 @@ import java.util.zip.ZipFile
  * Allocates the `intermediary` namespace for one Charles version: official -> intermediary tiny v2,
  * plus the allocation ledger.
  *
- * Scheme (§3.1 of `docs/charles5-plan.md`): readable package segments and readable class names pass
- * through verbatim, obfuscated ones become `pkg_N` / `class_N`, members become `field_N` /
- * `method_N` off separate counters. Only elements that actually get a new name are written — an
- * identity line for `CharlesContext` would carry no information — so a class appears in the output
- * when it is renamed or has at least one renamed member.
+ * Scheme (§3.1 of `docs/charles5-plan.md`): readable package segments and class names pass through
+ * verbatim, obfuscated ones become `pkg_N` / `class_N`, members become `field_N` / `method_N` off
+ * separate counters. Only renamed elements are written, so a class appears when it or one of its
+ * members is renamed.
  *
- * The one subtlety worth knowing: **an override group has to share a single intermediary name.** If
- * `class_5.method_10` overrides `class_3.method_10` and the two get separate IDs, the remap breaks
- * the override and Charles dies with an `AbstractMethodError` somewhere unrelated. So methods are
- * grouped by name+descriptor over the internal type hierarchy and allocated per group. Over-grouping
- * is harmless (names only have to be unique within a class); under-grouping is not.
+ * **An override group has to share one intermediary name.** Give `class_5.method_10` and the
+ * `class_3.method_10` it overrides separate IDs and the remap breaks the override, surfacing as an
+ * unrelated `AbstractMethodError`. So methods are grouped by name+descriptor over the internal type
+ * hierarchy and allocated per group; over-grouping is harmless, under-grouping is not.
  *
- * External overrides need no special handling, which is worth stating because it looks like a hole:
- * an obfuscated-shaped name can never be one. The obfuscator could not rename a method implementing
- * `Runnable.run` either, which is exactly why `run`, `read` and `size` are still readable in the jar.
+ * External overrides need nothing special: the obfuscator could not rename them either, which is why
+ * `run`, `read` and `size` are still readable in the jar.
  */
 abstract class GenerateIntermediaryTask : DefaultTask() {
     @get:InputFile
@@ -402,8 +399,8 @@ internal class Allocator(
     // -- fingerprints ---------------------------------------------------------------------------
 
     /**
-     * Shape hash over intermediary supertypes and member descriptors. Namespace-stable by
-     * construction, so on a Charles bump it answers "did this element actually change?".
+     * Shape hash over intermediary supertypes and member descriptors, so it stays comparable across a
+     * Charles bump: it answers "did this element actually change?".
      */
     private fun fingerprint(node: ClassNode): String {
         val digest = MessageDigest.getInstance("SHA-1")

@@ -8,11 +8,9 @@ import java.io.File
 /**
  * The generated `official -> intermediary` file, in the shape the bootstrap passes need.
  *
- * Everything written into `mappings/named/` is keyed on **intermediary** names and **intermediary**
- * descriptors, because that is what Enigma sees when it opens the intermediary jar. The bootstrap
- * reads the official jar, so every element it finds has to be translated on the way in — keying a
- * generated mapping on an official name produces a file that looks right, parses, and matches
- * nothing.
+ * `mappings/named/` is keyed on intermediary names and descriptors, so everything the bootstrap finds
+ * in the official jar has to be translated on the way in. Keying on an official name produces a file
+ * that parses and matches nothing.
  */
 internal class IntermediaryIndex private constructor(
     private val classes: Map<String, String>,

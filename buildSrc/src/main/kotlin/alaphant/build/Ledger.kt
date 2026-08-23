@@ -5,13 +5,11 @@ import com.google.gson.JsonParser
 import java.io.File
 
 /**
- * The intermediary ID allocation ledger.
+ * The intermediary ID allocation ledger: an ID, once handed out, never means anything else.
  *
- * Its job is that an intermediary name, once handed out, never means anything else. The tiny file
- * next to it already records official -> intermediary for one Charles version; the ledger adds the
- * two things that survive a Charles upgrade: the counters, so a new version cannot reuse a retired
- * number, and, per ID, which version first introduced it plus a shape fingerprint that makes
- * "did this element change?" answerable without a second jar.
+ * The tiny file records official -> intermediary for one version; the ledger adds what survives an
+ * upgrade — the counters, so a retired number is never reused, and per ID the version that
+ * introduced it plus a shape fingerprint.
  */
 internal class Ledger private constructor(
     val counters: MutableMap<String, Int>,

@@ -9,14 +9,12 @@ import java.io.File
 /**
  * In-memory model of `mappings/named/` — the `intermediary -> named` half of the store.
  *
- * Read and written through mapping-io's Enigma directory support, so the files this produces are
- * byte-for-byte the shape Enigma itself writes: laid out by *named* name where one exists, by
- * intermediary name otherwise. That matters because Enigma saving over a generated tree would
- * otherwise leave a second copy of every renamed class behind.
+ * Read and written through mapping-io's Enigma directory support, so files come out in the shape
+ * Enigma itself writes: by *named* name where one exists, by intermediary name otherwise. Otherwise
+ * Enigma saving over a generated tree would leave a second copy of every renamed class behind.
  *
- * Generated content is marked so regenerating is idempotent: [BOOTSTRAP_MARKER] comment lines are
- * dropped on load and re-added by whatever pass still believes them, and a name a human has since
- * changed is never overwritten.
+ * Regeneration is idempotent: [BOOTSTRAP_MARKER] comments are dropped on load and re-added by
+ * whichever pass still believes them, and an existing name is never overwritten.
  */
 internal class NamedStore private constructor(
     private val classes: MutableMap<String, ClassNames>,
@@ -46,15 +44,11 @@ internal class NamedStore private constructor(
     private val claimedNames: MutableSet<String> = classes.values.mapNotNullTo(HashSet()) { it.name }
 
     /**
-     * Records a name, unless the element already has one or the name is already taken.
+     * Records a name unless the element already has one or the name is taken — two classes sharing a
+     * name land in the same Enigma file and collide in the remapped jar. Returns whether it landed.
      *
-     * The uniqueness check is not paranoia: two classes sharing a named name land in the same Enigma
-     * file, collide in the remapped jar, and are invisible in a diff. Returns whether it landed.
-     *
-     * The evidence comment is written either way. Naming and explaining are separate things: a pass
-     * that runs a second time finds the name already there and must still restate its reasoning,
-     * because [load] stripped the previous copy to keep regeneration idempotent. Skipping it there is
-     * how every generated comment in the store quietly disappears on the second run.
+     * The evidence comment is written either way: [load] strips the previous copy, so a pass that
+     * runs again has to restate its reasoning or the comment disappears.
      */
     fun name(intermediary: String, name: String, comment: String): Boolean {
         val cls = forClass(intermediary)
@@ -88,7 +82,7 @@ internal class NamedStore private constructor(
     val namedMemberCount: Int
         get() = classes.values.sumOf { cls -> cls.fields.values.count { it.name != null } + cls.methods.values.count { it.name != null } }
 
-    /** Names already in use, so a proposal cannot collide with a name a human chose. */
+    /** Names already in use, so a proposal cannot collide with an existing one. */
     fun takenClassNames(): Set<String> = classes.values.mapNotNull { it.name }.toSet()
 
     fun write(dir: File) {
@@ -144,9 +138,8 @@ internal class NamedStore private constructor(
         const val NAMED = "named"
 
         /**
-         * Prefixes every comment line a bootstrap pass wrote. Stripped on load, so re-running the
-         * bootstrap refreshes its own reasoning without piling up duplicates or touching a comment a
-         * human typed.
+         * Prefixes every comment line a bootstrap pass wrote. Stripped on load, so a re-run refreshes
+         * its own reasoning without duplicating it or touching a hand-written comment.
          */
         const val BOOTSTRAP_MARKER = "[bootstrap] "
 
