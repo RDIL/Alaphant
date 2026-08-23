@@ -1,3 +1,28 @@
 CLASS com/charlesproxy/gui/CharlesFrame
+	FIELD aboutCharlesAction aboutCharlesAction Ljavax/swing/AbstractAction;
+	FIELD accessControlSettingsAction accessControlSettingsAction Ljavax/swing/Action;
+	FIELD breakpointsIndicatorLabel breakpointsIndicatorLabel Lcom/charlesproxy/gui/StatusPanelLabel;
+	FIELD debugLoggingLabel debugLoggingLabel Lcom/charlesproxy/gui/StatusPanelLabel;
+	FIELD errorLog errorLog Lcom/charlesproxy/gui/frames/LogFrame;
+	FIELD errorLogAction errorLogAction Ljavax/swing/Action;
+	FIELD externalProxySettingsAction externalProxySettingsAction Ljavax/swing/Action;
+	FIELD fullScreenAction fullScreenAction Ljavax/swing/Action;
+	FIELD memoryIndicatorLabel memoryIndicatorLabel Lcom/charlesproxy/gui/StatusPanelLabel;
+	FIELD newSessionAction newSessionAction Ljavax/swing/Action;
+	FIELD preferencesAction preferencesAction Ljavax/swing/Action;
+	FIELD proxySettingsAction proxySettingsAction Ljavax/swing/Action;
+	FIELD quitAction quitAction Ljavax/swing/AbstractAction;
+	FIELD recordingIndicatorLabel recordingIndicatorLabel Lcom/charlesproxy/gui/StatusPanelLabel;
+	FIELD recordingSettingsAction recordingSettingsAction Ljavax/swing/Action;
+	FIELD remoteControlSettingsAction remoteControlSettingsAction Ljavax/swing/Action;
+	FIELD sslSettingsAction sslSettingsAction Ljavax/swing/Action;
+	FIELD statusIndicatorPanel statusIndicatorPanel Ljavax/swing/JPanel;
+	FIELD statusLabel statusLabel Lcom/charlesproxy/gui/StatusPanelLabel;
+	FIELD throttlingIndicatorLabel throttlingIndicatorLabel Lcom/charlesproxy/gui/StatusPanelLabel;
+	FIELD unstableIndicatorLabel unstableIndicatorLabel Lcom/charlesproxy/gui/StatusPanelLabel;
+	FIELD webInterfaceIndicatorLabel webInterfaceIndicatorLabel Lcom/charlesproxy/gui/StatusPanelLabel;
+	METHOD <init> (Lcom/charlesproxy/gui/class_401;)V
+		ARG 1 guiContext
 	METHOD bringToFront bringToFront ()V
+	METHOD init init ()V
 	METHOD startup startup ()V

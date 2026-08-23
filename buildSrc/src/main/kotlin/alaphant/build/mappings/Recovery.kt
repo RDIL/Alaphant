@@ -7,8 +7,6 @@ import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.ModuleVisitor
 import org.objectweb.asm.Opcodes
 import org.objectweb.asm.tree.ClassNode
-import org.objectweb.asm.tree.LdcInsnNode
-import org.objectweb.asm.tree.MethodInsnNode
 import java.io.File
 import kotlin.collections.iterator
 import kotlin.text.iterator
@@ -68,19 +66,7 @@ internal class Recovery(
     }
 
     /** The string handed to `LoggerFactory.getLogger(String)`, if this class does that exactly once. */
-    private fun loggerLiteral(node: ClassNode): String? {
-        val found = mutableSetOf<String>()
-        for (method in node.methods.orEmpty()) {
-            val instructions = method.instructions ?: continue
-            for (insn in instructions) {
-                if (insn !is MethodInsnNode) continue
-                if (insn.owner != SLF4J_FACTORY || insn.name != "getLogger" || insn.desc != GET_LOGGER_STRING) continue
-                val previous = insn.previous as? LdcInsnNode ?: continue
-                (previous.cst as? String)?.let { found.add(it) }
-            }
-        }
-        return found.singleOrNull()
-    }
+    private fun loggerLiteral(node: ClassNode): String? = Slf4j.literalOf(node)
 
     // -- 2. Inner-class file-name leaks -----------------------------------------------------------
 
@@ -428,9 +414,6 @@ internal class Recovery(
     companion object {
         /** Stands in for `$` in a nested class name; see [flatten]. */
         const val NESTING = "__"
-
-        const val SLF4J_FACTORY = "org/slf4j/LoggerFactory"
-        const val GET_LOGGER_STRING = "(Ljava/lang/String;)Lorg/slf4j/Logger;"
 
         /** Charles 4 lived under `com/xk72/charles`; Charles 5 moved that tree to `com/charlesproxy`. */
         fun charles5Name(charles4: String): String =

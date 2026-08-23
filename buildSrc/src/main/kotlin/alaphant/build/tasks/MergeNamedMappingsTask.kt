@@ -65,13 +65,11 @@ abstract class MergeNamedMappingsTask : DefaultTask() {
             intermediary.classes.associate { (it.getDstName(0) ?: it.srcName) to it.srcName }
         )
 
-        var namedClasses = 0
-        var namedMembers = 0
-
         val file = outputFile.get().asFile.also { it.parentFile?.mkdirs() }
         val tinyWriter: MappingWriter = checkNotNull(MappingWriter.create(file.toPath(), MappingFormat.TINY_2_FILE)) {
             "mapping-io has no tiny v2 writer"
         }
+        val emitter = Emitter(tinyWriter, toOfficial)
         tinyWriter.use { writer ->
             writer.visitHeader()
             writer.visitNamespaces(OFFICIAL, listOf(INTERMEDIARY, NAMED))
@@ -85,129 +83,128 @@ abstract class MergeNamedMappingsTask : DefaultTask() {
                 emitted.add(intermediaryName)
 
                 val namedCls = named.getClass(intermediaryName)
-                if (!writer.visitClass(official)) continue
-                writer.visitDstName(MappedElementKind.CLASS, 0, intermediaryName)
-                namedCls?.getDstName(0)?.let {
-                    namedClasses++
-                    writer.visitDstName(MappedElementKind.CLASS, 1, it)
-                }
-                if (!writer.visitElementContent(MappedElementKind.CLASS)) continue
-                namedCls?.comment?.let { writer.visitComment(MappedElementKind.CLASS, it) }
+                if (!emitter.visitClass(official, intermediaryName, namedCls)) continue
 
                 val seenFields = HashSet<String>()
-                for (field in cls.fields.sortedWith(compareBy({ it.srcName }, { it.srcDesc }))) {
-                    val intermediaryMember = field.getDstName(0) ?: field.srcName
-                    val intermediaryDesc = toIntermediary.map(field.srcDesc)
-                    seenFields.add("$intermediaryMember$intermediaryDesc")
-                    val namedField = namedCls?.getField(intermediaryMember, intermediaryDesc)
-                    if (!writer.visitField(field.srcName, field.srcDesc)) continue
-                    writer.visitDstName(MappedElementKind.FIELD, 0, intermediaryMember)
-                    namedField?.getDstName(0)?.let {
-                        namedMembers++
-                        writer.visitDstName(MappedElementKind.FIELD, 1, it)
-                    }
-                    if (!writer.visitElementContent(MappedElementKind.FIELD)) continue
-                    namedField?.comment?.let { writer.visitComment(MappedElementKind.FIELD, it) }
+                for (field in cls.fields.sortedWith(BY_SRC)) {
+                    val member = field.getDstName(0) ?: field.srcName
+                    val desc = toIntermediary.map(field.srcDesc)
+                    seenFields.add("$member$desc")
+                    emitter.visitMember(
+                        MappedElementKind.FIELD, field.srcName, field.srcDesc, member,
+                        namedCls?.getField(member, desc),
+                    )
                 }
 
                 val seenMethods = HashSet<String>()
-                for (method in cls.methods.sortedWith(compareBy({ it.srcName }, { it.srcDesc }))) {
-                    val intermediaryMember = method.getDstName(0) ?: method.srcName
-                    val intermediaryDesc = toIntermediary.map(method.srcDesc)
-                    seenMethods.add("$intermediaryMember$intermediaryDesc")
-                    val namedMethod = namedCls?.getMethod(intermediaryMember, intermediaryDesc)
-                    if (!writer.visitMethod(method.srcName, method.srcDesc)) continue
-                    writer.visitDstName(MappedElementKind.METHOD, 0, intermediaryMember)
-                    namedMethod?.getDstName(0)?.let {
-                        namedMembers++
-                        writer.visitDstName(MappedElementKind.METHOD, 1, it)
-                    }
-                    if (!writer.visitElementContent(MappedElementKind.METHOD)) continue
-                    namedMethod?.comment?.let { writer.visitComment(MappedElementKind.METHOD, it) }
-                    namedMethod?.let { writeArgs(writer, it) }
+                for (method in cls.methods.sortedWith(BY_SRC)) {
+                    val member = method.getDstName(0) ?: method.srcName
+                    val desc = toIntermediary.map(method.srcDesc)
+                    seenMethods.add("$member$desc")
+                    emitter.visitMember(
+                        MappedElementKind.METHOD, method.srcName, method.srcDesc, member,
+                        namedCls?.getMethod(member, desc),
+                    )
                 }
 
-                // Members the store names but the generated file omits: their official name was
-                // already readable. Dropping them silently would lose work.
-                namedCls?.let { source ->
-                    for (field in source.fields.sortedWith(compareBy({ it.srcName }, { it.srcDesc }))) {
-                        if ("${field.srcName}${field.srcDesc}" in seenFields) continue
-                        val officialDesc = toOfficial.map(field.srcDesc) ?: continue
-                        if (!writer.visitField(field.srcName, officialDesc)) continue
-                        writer.visitDstName(MappedElementKind.FIELD, 0, field.srcName)
-                        field.getDstName(0)?.let {
-                            namedMembers++
-                            writer.visitDstName(MappedElementKind.FIELD, 1, it)
-                        }
-                        if (!writer.visitElementContent(MappedElementKind.FIELD)) continue
-                        field.comment?.let { writer.visitComment(MappedElementKind.FIELD, it) }
-                    }
-                    for (method in source.methods.sortedWith(compareBy({ it.srcName }, { it.srcDesc }))) {
-                        if ("${method.srcName}${method.srcDesc}" in seenMethods) continue
-                        val officialDesc = toOfficial.map(method.srcDesc) ?: continue
-                        if (!writer.visitMethod(method.srcName, officialDesc)) continue
-                        writer.visitDstName(MappedElementKind.METHOD, 0, method.srcName)
-                        method.getDstName(0)?.let {
-                            namedMembers++
-                            writer.visitDstName(MappedElementKind.METHOD, 1, it)
-                        }
-                        if (!writer.visitElementContent(MappedElementKind.METHOD)) continue
-                        method.comment?.let { writer.visitComment(MappedElementKind.METHOD, it) }
-                        writeArgs(writer, method)
-                    }
-                }
+                namedCls?.let { emitter.visitUnjoinedMembers(it, seenFields, seenMethods) }
             }
 
             // Likewise for classes whose official name was already readable.
             for (cls in named.classes.sortedBy { it.srcName }) {
                 if (cls.srcName in emitted) continue
-                if (!writer.visitClass(cls.srcName)) continue
-                writer.visitDstName(MappedElementKind.CLASS, 0, cls.srcName)
-                cls.getDstName(0)?.let {
-                    namedClasses++
-                    writer.visitDstName(MappedElementKind.CLASS, 1, it)
-                }
-                if (!writer.visitElementContent(MappedElementKind.CLASS)) continue
-                cls.comment?.let { writer.visitComment(MappedElementKind.CLASS, it) }
-
-                for (field in cls.fields.sortedWith(compareBy({ it.srcName }, { it.srcDesc }))) {
-                    val officialDesc = toOfficial.map(field.srcDesc) ?: continue
-                    if (!writer.visitField(field.srcName, officialDesc)) continue
-                    writer.visitDstName(MappedElementKind.FIELD, 0, field.srcName)
-                    field.getDstName(0)?.let {
-                        namedMembers++
-                        writer.visitDstName(MappedElementKind.FIELD, 1, it)
-                    }
-                    if (!writer.visitElementContent(MappedElementKind.FIELD)) continue
-                    field.comment?.let { writer.visitComment(MappedElementKind.FIELD, it) }
-                }
-                for (method in cls.methods.sortedWith(compareBy({ it.srcName }, { it.srcDesc }))) {
-                    val officialDesc = toOfficial.map(method.srcDesc) ?: continue
-                    if (!writer.visitMethod(method.srcName, officialDesc)) continue
-                    writer.visitDstName(MappedElementKind.METHOD, 0, method.srcName)
-                    method.getDstName(0)?.let {
-                        namedMembers++
-                        writer.visitDstName(MappedElementKind.METHOD, 1, it)
-                    }
-                    if (!writer.visitElementContent(MappedElementKind.METHOD)) continue
-                    method.comment?.let { writer.visitComment(MappedElementKind.METHOD, it) }
-                    writeArgs(writer, method)
-                }
+                if (!emitter.visitClass(cls.srcName, cls.srcName, cls)) continue
+                emitter.visitUnjoinedMembers(cls, emptySet(), emptySet())
             }
 
             writer.visitEnd()
         }
 
-        logger.lifecycle("Merged $namedFiles Enigma file(s): $namedClasses named classes, $namedMembers named members")
+        logger.lifecycle(
+            "Merged $namedFiles Enigma file(s): ${emitter.namedClasses} named classes, " +
+                "${emitter.namedMembers} named members"
+        )
         logger.lifecycle("Wrote ${file.name} (${file.readLines().size} lines)")
     }
 
-    private fun writeArgs(writer: MappingWriter, method: MappingTree.MethodMapping) {
-        for (arg in method.args.sortedBy { it.lvIndex }) {
-            if (!writer.visitMethodArg(arg.argPosition, arg.lvIndex, arg.srcName)) continue
-            arg.getDstName(0)?.let { writer.visitDstName(MappedElementKind.METHOD_ARG, 1, it) }
-            if (!writer.visitElementContent(MappedElementKind.METHOD_ARG)) continue
-            arg.comment?.let { writer.visitComment(MappedElementKind.METHOD_ARG, it) }
+    /**
+     * Writes one element at a time to the tiny stream, joining the generated side to its named
+     * counterpart and tallying what actually carried a name.
+     *
+     * Every element follows the same four beats — visit, intermediary name, named name, content —
+     * and the writer may bail out at either visit, which skips whatever the element contains.
+     */
+    private class Emitter(private val writer: MappingWriter, private val toOfficial: Descriptors) {
+        var namedClasses = 0
+            private set
+        var namedMembers = 0
+            private set
+
+        /** Returns whether the writer wants this class' members. */
+        fun visitClass(official: String, intermediary: String, named: MappingTree.ClassMapping?): Boolean {
+            if (!writer.visitClass(official)) return false
+            writer.visitDstName(MappedElementKind.CLASS, 0, intermediary)
+            named?.getDstName(0)?.let {
+                namedClasses++
+                writer.visitDstName(MappedElementKind.CLASS, 1, it)
+            }
+            if (!writer.visitElementContent(MappedElementKind.CLASS)) return false
+            named?.comment?.let { writer.visitComment(MappedElementKind.CLASS, it) }
+            return true
+        }
+
+        fun visitMember(
+            kind: MappedElementKind,
+            official: String,
+            officialDesc: String?,
+            intermediary: String,
+            named: MappingTree.MemberMapping?,
+        ) {
+            val visited = when (kind) {
+                MappedElementKind.FIELD -> writer.visitField(official, officialDesc)
+                MappedElementKind.METHOD -> writer.visitMethod(official, officialDesc)
+                else -> error("not a member kind: $kind")
+            }
+            if (!visited) return
+            writer.visitDstName(kind, 0, intermediary)
+            named?.getDstName(0)?.let {
+                namedMembers++
+                writer.visitDstName(kind, 1, it)
+            }
+            if (!writer.visitElementContent(kind)) return
+            named?.comment?.let { writer.visitComment(kind, it) }
+            if (named is MappingTree.MethodMapping) visitArgs(named)
+        }
+
+        /**
+         * Members the store names but the generated file omits: their official name was already
+         * readable, so official and intermediary agree and only the descriptor needs translating
+         * back. Dropping them silently would lose work.
+         */
+        fun visitUnjoinedMembers(
+            source: MappingTree.ClassMapping,
+            seenFields: Set<String>,
+            seenMethods: Set<String>,
+        ) {
+            for (field in source.fields.sortedWith(BY_SRC)) {
+                if ("${field.srcName}${field.srcDesc}" in seenFields) continue
+                val officialDesc = toOfficial.map(field.srcDesc) ?: continue
+                visitMember(MappedElementKind.FIELD, field.srcName, officialDesc, field.srcName, field)
+            }
+            for (method in source.methods.sortedWith(BY_SRC)) {
+                if ("${method.srcName}${method.srcDesc}" in seenMethods) continue
+                val officialDesc = toOfficial.map(method.srcDesc) ?: continue
+                visitMember(MappedElementKind.METHOD, method.srcName, officialDesc, method.srcName, method)
+            }
+        }
+
+        private fun visitArgs(method: MappingTree.MethodMapping) {
+            for (arg in method.args.sortedBy { it.lvIndex }) {
+                if (!writer.visitMethodArg(arg.argPosition, arg.lvIndex, arg.srcName)) continue
+                arg.getDstName(0)?.let { writer.visitDstName(MappedElementKind.METHOD_ARG, 1, it) }
+                if (!writer.visitElementContent(MappedElementKind.METHOD_ARG)) continue
+                arg.comment?.let { writer.visitComment(MappedElementKind.METHOD_ARG, it) }
+            }
         }
     }
 
@@ -223,5 +220,8 @@ abstract class MergeNamedMappingsTask : DefaultTask() {
         const val INTERMEDIARY = "intermediary"
         const val NAMED = "named"
         val CLASS_IN_DESCRIPTOR = Regex("""L([^;]+);""")
+
+        /** Emission order for members, so the output file is stable across runs. */
+        val BY_SRC: Comparator<MappingTree.MemberMapping> = compareBy({ it.srcName }, { it.srcDesc })
     }
 }

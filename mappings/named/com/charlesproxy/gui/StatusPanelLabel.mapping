@@ -1,0 +1,13 @@
+CLASS com/charlesproxy/gui/StatusPanelLabel
+	FIELD alt alt Z
+	FIELD backgroundColor backgroundColor Ljava/awt/Color;
+	FIELD etched etched Z
+	FIELD field_783 RED Ljava/awt/Color;
+	FIELD inactiveBackgroundColor inactiveBackgroundColor Ljava/awt/Color;
+	FIELD inactiveTextColor inactiveTextColor Ljava/awt/Color;
+	FIELD lozenge lozenge Z
+	FIELD prominent prominent Z
+	FIELD textColor textColor Ljava/awt/Color;
+	FIELD validateRoot validateRoot Z
+	METHOD paint paint (Ljava/awt/Graphics;)V
+		ARG 1 graphics

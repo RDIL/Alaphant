@@ -2,9 +2,11 @@ package alaphant.build.tasks
 
 import alaphant.build.mappings.PackageNames
 import alaphant.build.mappings.Ledger
+import alaphant.build.mappings.MethodGroups
 import alaphant.build.mappings.ModuleInfoRemapper
 import alaphant.build.mappings.NameClassifier
 import org.gradle.api.DefaultTask
+import org.gradle.api.GradleException
 import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
@@ -64,6 +66,14 @@ abstract class GenerateIntermediaryTask : DefaultTask() {
     @get:OutputFile
     abstract val ledgerFile: RegularFileProperty
 
+    /**
+     * Whether to allocate a whole fresh namespace for a version the ledger has never seen. Off, and
+     * `-Palaphant.allowUnmatchedIntermediary=true` is the only way past [requireMatched].
+     */
+    @get:Input
+    @get:Optional
+    abstract val allowUnmatched: Property<Boolean>
+
     @TaskAction
     fun generate() {
         val version = charlesVersion.get()
@@ -77,6 +87,8 @@ abstract class GenerateIntermediaryTask : DefaultTask() {
         logger.lifecycle("Allocating intermediary names for Charles $version (${nodes.size} classes)")
 
         val ledger = Ledger.read(ledgerFile.get().asFile)
+        requireMatched(ledger, version)
+
         val allocation = Allocator(classifier, recoveredPackages, ledger, version, nodes).allocate()
 
         writeTiny(outputMappings.get().asFile, allocation)
@@ -89,6 +101,47 @@ abstract class GenerateIntermediaryTask : DefaultTask() {
             logger.lifecycle("  methods   ${renamedMethods.pad()} renamed  ${readableMethods.pad()} readable  ($methodGroups override groups)")
         }
         logger.lifecycle("Wrote ${outputMappings.get().asFile.name} and ${ledgerFile.get().asFile.name}")
+    }
+
+    /**
+     * Refuses to allocate over a Charles version the ledger has never seen.
+     *
+     * An ID is only reused when the ledger already records the official name it belongs to *for this
+     * version*, so on a fresh version every element gets a new number — and since `mappings/named/`
+     * is keyed on intermediary names, every name in it is orphaned in the same run. That is the exact
+     * failure the three-namespace scheme exists to prevent, and it is reachable by doing the obvious
+     * thing after an upgrade, so it is a hard stop rather than a warning.
+     *
+     * `matchVersions` is what makes the version known. An empty ledger is the genuine first run and
+     * passes straight through.
+     */
+    private fun requireMatched(ledger: Ledger, version: String) {
+        if (ledger.isEmpty) return
+        if (ledger.lookup("classes", version).isNotEmpty()) return
+
+        if (allowUnmatched.getOrElse(false)) {
+            logger.warn(
+                "Allocating a fresh intermediary namespace for Charles $version. Every name in " +
+                    "mappings/named will be left pointing at an intermediary name that no longer exists."
+            )
+            return
+        }
+
+        throw GradleException(
+            buildString {
+                appendLine("Charles $version is not in mappings/ledger.json.")
+                appendLine()
+                appendLine("Generating now would allocate a fresh ID for every element, and every name in")
+                appendLine("mappings/named is keyed on those IDs -- so the whole named store would be orphaned")
+                appendLine("in one run. The ledger knows: ${ledger.versions.joinToString(", ")}.")
+                appendLine()
+                appendLine("Carry the IDs across first:")
+                appendLine("  ./gradlew matchVersions --previous-jar=/path/to/previous/Charles.app/Contents/Java")
+                appendLine()
+                appendLine("If you really do mean to start the intermediary namespace over:")
+                append("  ./gradlew generateIntermediary -Palaphant.allowUnmatchedIntermediary=true")
+            }
+        )
     }
 
     private fun Int.pad() = toString().padStart(5)
@@ -163,7 +216,7 @@ internal class Allocation(
     fun writeLedger(ledger: Ledger, file: File, version: String) {
         ledger.replace("packages", counters.getValue("packages"), packageMap.map { (official, id) ->
             Ledger.Entry(id = id, official = linkedMapOf(version to official), firstSeen = version)
-        }.sortedBy(::numericSuffix))
+        })
 
         ledger.replace("classes", counters.getValue("classes"), classMap.map { (official, id) ->
             Ledger.Entry(
@@ -172,7 +225,7 @@ internal class Allocation(
                 firstSeen = version,
                 fingerprint = fingerprints[official],
             )
-        }.sortedBy(::numericSuffix))
+        })
 
         for ((kind, records) in listOf("fields" to fields, "methods" to methods)) {
             ledger.replace(kind, counters.getValue(kind), records.map { (key, record) ->
@@ -183,14 +236,11 @@ internal class Allocation(
                     owner = classNames[record.owner] ?: record.owner,
                     desc = mapDescriptor(record.desc),
                 )
-            }.sortedBy(::numericSuffix))
+            })
         }
 
         ledger.write(file, version)
     }
-
-    private fun numericSuffix(entry: Ledger.Entry): Int =
-        entry.id.substringAfterLast('_').toIntOrNull() ?: 0
 }
 
 /**
@@ -214,8 +264,6 @@ internal class Allocator(
     private val methodRecords = LinkedHashMap<String, MemberRecord>()
     private val mappedClassNames = HashMap<String, String>()
     private val allPackages = LinkedHashSet<String>()
-
-    private val internal: Map<String, ClassNode> = nodes.associateBy { it.name }
 
     fun allocate(): Allocation {
         allocatePackages()
@@ -346,62 +394,9 @@ internal class Allocator(
 
     // -- methods --------------------------------------------------------------------------------
 
-    /** Union-find over the override closure; one ID per group. */
+    /** One ID per override group; [MethodGroups] owns the grouping, since the matcher needs it too. */
     private fun allocateMethods(): Map<String, String> {
-        val parent = HashMap<String, String>()
-
-        fun find(key: String): String {
-            var root = key
-            while (parent[root] != null && parent[root] != root) root = parent.getValue(root)
-            parent[key] = root
-            return root
-        }
-
-        fun union(a: String, b: String) {
-            val ra = find(a)
-            val rb = find(b)
-            if (ra == rb) return
-            // Keep the lexicographically smaller key as the root, so grouping is reproducible.
-            if (ra < rb) parent[rb] = ra else parent[ra] = rb
-        }
-
-        val ancestorCache = HashMap<String, Set<String>>()
-        fun ancestors(name: String): Set<String> = ancestorCache.getOrPut(name) {
-            val node = internal[name] ?: return@getOrPut emptySet()
-            val out = LinkedHashSet<String>()
-            for (parentName in listOfNotNull(node.superName) + node.interfaces.orEmpty()) {
-                if (parentName in internal) {
-                    out.add(parentName)
-                    out.addAll(ancestors(parentName))
-                }
-            }
-            out
-        }
-
-        // Group over each class' whole supertype closure, not just its own declarations. A class can
-        // implement an interface method with a method it inherits from a superclass that knows
-        // nothing about the interface -- neither declaration is an ancestor of the other, so the only
-        // thing linking them is the class that brings them together. Grouping from the subclass'
-        // point of view catches that; grouping from the declaration's does not, and the two names
-        // then drift apart into an AbstractMethodError.
-        for (node in nodes) {
-            val closure = ancestors(node.name) + node.name
-            val declarations = HashMap<String, MutableList<String>>()
-
-            for (owner in closure) {
-                for (method in internal[owner]?.methods.orEmpty()) {
-                    if (method.name == "<init>" || method.name == "<clinit>") continue
-                    if (!classifier.isObfuscatedMemberName(method.name)) continue
-                    val key = methodKey(owner, method.name, method.desc)
-                    parent.putIfAbsent(key, key)
-                    declarations.getOrPut("${method.name}${method.desc}") { mutableListOf() }.add(key)
-                }
-            }
-
-            for (group in declarations.values) {
-                group.drop(1).forEach { union(group.first(), it) }
-            }
-        }
+        val groups = MethodGroups.compute(nodes, classifier)
 
         // Allocate walking the jar in sorted order, so the numbering follows the file.
         val ids = HashMap<String, String>()
@@ -410,7 +405,7 @@ internal class Allocator(
                 if (method.name == "<init>" || method.name == "<clinit>") continue
                 if (!classifier.isObfuscatedMemberName(method.name)) continue
                 val key = methodKey(node.name, method.name, method.desc)
-                val root = find(key)
+                val root = groups.rootOf(key) ?: key
                 val record = methodRecords.getOrPut(root) {
                     val owner = root.substringBefore(".${method.name}")
                     MemberRecord(allocate("methods", root), owner, method.name, method.desc)
@@ -421,7 +416,7 @@ internal class Allocator(
         return ids
     }
 
-    private fun methodKey(owner: String, name: String, desc: String) = "$owner.$name$desc"
+    private fun methodKey(owner: String, name: String, desc: String) = MethodGroups.key(owner, name, desc)
 
     // -- fingerprints ---------------------------------------------------------------------------
 

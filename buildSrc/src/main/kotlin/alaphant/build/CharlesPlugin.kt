@@ -5,11 +5,13 @@ import alaphant.build.tasks.BootstrapNamesTask
 import alaphant.build.tasks.CharlesInfoTask
 import alaphant.build.tasks.CharlesRunTask
 import alaphant.build.tasks.CheckLinkageTask
+import alaphant.build.tasks.CheckMatcherTask
 import alaphant.build.tasks.CheckReflectionSitesTask
 import alaphant.build.tasks.DecompileTask
 import alaphant.build.tasks.EnigmaTask
 import alaphant.build.tasks.ExtractMetadataTask
 import alaphant.build.tasks.GenerateIntermediaryTask
+import alaphant.build.tasks.MatchVersionsTask
 import alaphant.build.tasks.MergeNamedMappingsTask
 import alaphant.build.tasks.RemapJarTask
 import alaphant.build.tasks.ValidateMappingsTask
@@ -77,6 +79,22 @@ class CharlesPlugin : Plugin<Project> {
             charlesVersion.set(version)
             outputMappings.set(intermediaryFile)
             this.ledgerFile.set(ledgerFile)
+            allowUnmatched.set(
+                providers.gradleProperty("alaphant.allowUnmatchedIntermediary").map(String::toBoolean)
+            )
+        }
+
+        tasks.register<MatchVersionsTask>("matchVersions") {
+            group = MAPPINGS_GROUP
+            description = "Carries intermediary IDs from a previous Charles release onto $version."
+            officialJar.set(charles.officialJar)
+            newVersion.set(version)
+            previousJar.set(providers.gradleProperty("alaphant.previousCharlesInstall"))
+            this.readableNames.set(readableNames)
+            this.ledgerFile.set(ledgerFile)
+            this.namedDir.set(namedDir)
+            intermediaryDir.set(file("mappings/intermediary"))
+            report.set(layout.buildDirectory.file("reports/mappings/match-$version.txt"))
         }
 
         val bootstrapNames = tasks.register<BootstrapNamesTask>("bootstrapNames") {
@@ -148,6 +166,17 @@ class CharlesPlugin : Plugin<Project> {
             intermediaryMappings.set(intermediaryFile)
             officialJar.set(charles.officialJar)
             this.namedDir.set(namedDir)
+        }
+
+        tasks.register<CheckMatcherTask>("checkMatcher") {
+            group = VERIFY_GROUP
+            description = "Scores the version matcher against a re-obfuscated copy of charles.jar."
+            officialJar.set(charles.officialJar)
+            this.readableNames.set(readableNames)
+            this.ledgerFile.set(ledgerFile)
+            charlesVersion.set(version)
+            scrambledJar.set(layout.buildDirectory.file("charles/charles-scrambled.jar"))
+            report.set(layout.buildDirectory.file("reports/mappings/matcher-self-check.txt"))
         }
 
         tasks.register<CheckLinkageTask>("checkLinkage") {

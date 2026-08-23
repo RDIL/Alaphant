@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/logging/LoggingHandler
+	METHOD close close ()V
+	METHOD flush flush ()V
+	METHOD publish publish (Ljava/util/logging/LogRecord;)V
+		ARG 1 logRecord

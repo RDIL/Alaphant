@@ -62,6 +62,8 @@ tasks.named("assemble") {
 
 // The named store is source, not output, so nothing else would ever check it. `checkLinkage` is
 // here rather than in the plugin for the same reason: it is the gate on what the mappings produce.
+// `checkMatcher` is the only test the version matcher has -- and the one piece of the build whose
+// mistakes are silent, since a wrongly carried ID looks exactly like a correctly carried one.
 tasks.named("check") {
-    dependsOn("validateMappings", "checkLinkage")
+    dependsOn("validateMappings", "checkLinkage", "checkMatcher")
 }
