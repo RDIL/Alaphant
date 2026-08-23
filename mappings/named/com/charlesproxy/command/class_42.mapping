@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/command/class_42
+	FIELD field_411 sslExportType Lcom/charlesproxy/command/SSLCommand$SSLExportType;
+	METHOD <init> (Ljava/lang/String;Lcom/charlesproxy/command/SSLCommand$SSLExportType;)V
+		ARG 2 sslExportType
+	METHOD <init> (Ljava/lang/String;Lcom/charlesproxy/command/SSLCommand$SSLExportType;Ljava/lang/String;)V
+		ARG 2 sslExportType
+	METHOD method_154 getSslExportType ()Lcom/charlesproxy/command/SSLCommand$SSLExportType;

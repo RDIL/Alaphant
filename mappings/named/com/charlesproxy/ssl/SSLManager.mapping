@@ -4,3 +4,4 @@ CLASS com/charlesproxy/ssl/class_992 com/charlesproxy/ssl/SSLManager
 	FIELD field_2736 LOGGER Lorg/slf4j/Logger;
 	METHOD <init> (Lcom/charlesproxy/security/PasswordAuthenticator;Lcom/charlesproxy/ssl/class_1007;)V
 		ARG 1 passwordAuthenticator
+	METHOD method_2583 getCertificateStore ()Lcom/charlesproxy/ssl/CertificateStore;

@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/main/class_919 com/charlesproxy/main/ShowSharewareStatusTask
+	FIELD field_2467 main Lcom/charlesproxy/main/Main;
+	FIELD field_2468 splashWindow Lcom/charlesproxy/gui/SplashWindow;
+	METHOD <init> (Lcom/charlesproxy/main/Main;Lcom/charlesproxy/gui/SplashWindow;)V
+		ARG 1 main
+		ARG 2 splashWindow
+	METHOD run run ()V

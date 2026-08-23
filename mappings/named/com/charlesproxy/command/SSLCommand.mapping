@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/command/SSLCommand
+	CLASS SSLExportType

@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/macos/MacOSNative
+	METHOD beginAppNapActivity beginAppNapActivity ()Z
+	METHOD dumpProxies dumpProxies ()Ljava/util/concurrent/Future;
+	METHOD enableProxies enableProxies (IILjava/lang/String;)Ljava/util/concurrent/Future;
+	METHOD installProxyHelper installProxyHelper ()V
+	METHOD isProxyHelperAvailable isProxyHelperAvailable ()Ljava/util/concurrent/Future;
+	METHOD restoreProxies restoreProxies (Ljava/lang/String;)Ljava/util/concurrent/Future;

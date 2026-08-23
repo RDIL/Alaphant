@@ -1,2 +1,5 @@
 CLASS com/charlesproxy/ssl/CertificateStore
+	METHOD method_2549 getCertificateStoreState ()Lcom/charlesproxy/ssl/CertificateStore$CertificateStoreState;
+	METHOD method_2560 delete ()V
 	CLASS CertificateStoreState
+		FIELD field_2723 UNINITIALISED Lcom/charlesproxy/ssl/CertificateStore$CertificateStoreState;

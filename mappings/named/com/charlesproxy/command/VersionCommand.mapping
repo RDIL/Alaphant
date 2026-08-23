@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/command/class_37 com/charlesproxy/command/VersionCommand
+	FIELD field_397 context Lcom/charlesproxy/CharlesContext;

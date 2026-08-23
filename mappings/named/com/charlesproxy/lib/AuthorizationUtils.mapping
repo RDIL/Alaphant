@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/lib/AuthorizationUtils
+	METHOD method_2059 createBearerAuth (Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$GenericAuthorization;
+	CLASS GenericAuthorization
+	CLASS GenericChallenge
+	CLASS UnsupportedAuthorization
+	CLASS UnsupportedChallenge

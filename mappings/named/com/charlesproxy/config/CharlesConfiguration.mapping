@@ -1,2 +1,3 @@
-CLASS com/charlesproxy/config/class_59
+CLASS com/charlesproxy/config/class_59 com/charlesproxy/config/CharlesConfiguration
 	COMMENT [bootstrap] matched to Charles 4's CharlesConfiguration on 55 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	METHOD method_252 getProtobufConfiguration ()Lcom/charlesproxy/config/class_48;
