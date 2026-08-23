@@ -1,0 +1,27 @@
+[versions]
+kotlin = "2.4.10"
+# mapping toolchain
+tiny-remapper = "0.14.0"
+mapping-io = "0.9.1"
+vineflower = "1.12.0"
+asm = "9.10.1"
+gson = "2.13.2"
+# mod runtime
+mixin = "0.8.7"
+java-jwt = "4.6.0"
+annotations = "26.1.0"
+
+[libraries]
+tiny-remapper = { module = "net.fabricmc:tiny-remapper", version.ref = "tiny-remapper" }
+mapping-io = { module = "net.fabricmc:mapping-io", version.ref = "mapping-io" }
+vineflower = { module = "org.vineflower:vineflower", version.ref = "vineflower" }
+asm = { module = "org.ow2.asm:asm", version.ref = "asm" }
+asm-tree = { module = "org.ow2.asm:asm-tree", version.ref = "asm" }
+asm-commons = { module = "org.ow2.asm:asm-commons", version.ref = "asm" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+mixin = { module = "org.spongepowered:mixin", version.ref = "mixin" }
+java-jwt = { module = "com.auth0:java-jwt", version.ref = "java-jwt" }
+annotations = { module = "org.jetbrains:annotations", version.ref = "annotations" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

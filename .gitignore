@@ -42,8 +42,12 @@ bin/
 .DS_Store
 
 logs
-target
-!target/.gitkeep
-!target/macos_jvm_args.txt
 .mixin.out
 charles.ico
+
+### Alaphant ###
+# User-supplied Charles jars / native libs, if not using an installed Charles.app
+target/*
+!target/.gitkeep
+# build-logic is an included build with its own build dir
+build-logic/build/
