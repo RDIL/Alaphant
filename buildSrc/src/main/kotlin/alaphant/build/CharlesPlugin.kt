@@ -172,6 +172,12 @@ class CharlesPlugin : Plugin<Project> {
             into(layout.buildDirectory.dir("charles/modules"))
         }
 
+        val devProfileDir = layout.buildDirectory.dir(DEV_PROFILE).get().asFile
+
+        val userJvmArgs = providers.gradleProperty("alaphant.jvmArgs")
+            .map { it.split(' ', '\t', '\n').filter(String::isNotBlank) }
+            .orElse(emptyList())
+
         fun registerRun(name: String, describedAs: String, configure: CharlesRunTask.() -> Unit = {}) =
             tasks.register<CharlesRunTask>(name) {
                 group = RUN_GROUP
@@ -182,6 +188,17 @@ class CharlesPlugin : Plugin<Project> {
                 mainModuleAndClass.set(plist.mainModuleAndClass ?: DEFAULT_MAIN)
                 nativeLibraryPath.set(charles.nativeLibraryDir.absolutePath)
                 javaLauncher.set(java17)
+                extraJvmArgs.set(
+                    userJvmArgs.map { extra ->
+                        listOf(
+                            "-Dcharles.config=${File(devProfileDir, CHARLES_CONFIG)}",
+                            "-Dcharles.proxyPort=$DEV_PROXY_PORT",
+                            "-Dcharles.socksProxyPort=$DEV_SOCKS_PORT",
+                        ) + extra
+                    }
+                )
+                // Charles writes the config file, but not the directory holding it.
+                doFirst { devProfileDir.mkdirs() }
                 configure()
             }
 
@@ -247,6 +264,11 @@ class CharlesPlugin : Plugin<Project> {
         const val VERIFY_GROUP = "verification"
         const val RUN_GROUP = "run"
         const val DEFAULT_MAIN = "com.charlesproxy/com.charlesproxy.main.MainWithClassLoader"
+
+        const val DEV_PROFILE = "charles/dev"
+        const val CHARLES_CONFIG = "charles.config"
+        const val DEV_PROXY_PORT = 8899
+        const val DEV_SOCKS_PORT = 8900
 
         /** Stable paths: the root build script and IntelliJ both point straight at these files. */
         const val INTERMEDIARY_JAR = "charles/charles-intermediary.jar"
