@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/export/class_156 com/charlesproxy/export/SessionJSONImporter
+	COMMENT Reads Charles' JSON session format (.chlsj): a top-level array of transactions, each read by TransactionJSONReader.
+	COMMENT Matched to Charles 4's SessionJSONImporter.
+	METHOD method_595 importSession (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;

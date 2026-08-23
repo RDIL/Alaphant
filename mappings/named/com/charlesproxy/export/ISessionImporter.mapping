@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/export/class_153 com/charlesproxy/export/ISessionImporter
+	COMMENT Charles' session-import SPI. Matched to Charles 4's ISessionImporter, whose sole method had this descriptor.
+	COMMENT The no-session overload is a default method that passes null, i.e. 'import into a fresh Session'.
+	METHOD method_648 importSession (Ljava/io/File;)Lcom/charlesproxy/model/class_943;
+	METHOD method_595 importSession (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;

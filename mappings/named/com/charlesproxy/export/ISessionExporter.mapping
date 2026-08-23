@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/export/class_148 com/charlesproxy/export/ISessionExporter
+	COMMENT Charles' session-export SPI: write a whole Session to a file or a stream, and name the file.
+	COMMENT Matched to Charles 4's ISessionExporter -- same four-method shape, minus C4's getDescription().
+	METHOD method_592 getFileExtension ()Ljava/lang/String;
+	METHOD method_613 getFileNameForCurrentDateTime ()Ljava/lang/String;
+		COMMENT Carried over from Charles 4's ISessionExporter.getFileNameForCurrentDateTime. AbstractSessionExporter implements it as SimpleDateFormat("'charles'yyyyMMddHHmm'.<ext>'").
+	METHOD method_614 exportSession (Lcom/charlesproxy/model/class_943;Ljava/io/File;)V
+	METHOD method_593 exportSession (Lcom/charlesproxy/model/class_943;Ljava/io/OutputStream;)V

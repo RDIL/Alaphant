@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/export/class_137 com/charlesproxy/export/ImportedBody
+	COMMENT The (bytes, wasDecoded) pair TransactionJSONReader.readBody returns, immediately split across the Transaction's body and body-decoded setters.
+	COMMENT Matched to Charles 4's unnamed byte[]/boolean holder, produced by the same reader.
+	FIELD field_640 content [B
+	FIELD field_639 decoded Z

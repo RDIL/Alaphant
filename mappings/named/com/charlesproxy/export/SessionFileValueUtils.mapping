@@ -1,0 +1,19 @@
+CLASS com/charlesproxy/export/class_172 com/charlesproxy/export/SessionFileValueUtils
+	COMMENT Scalar formatting and parsing shared by Charles' own session file formats. In Charles 4 this was two classes -- an unnamed formatting helper and AbstractCharlesSessionFileImporter -- and every name below except the two noted comes from one of them.
+	COMMENT The parse side returns a sentinel rather than throwing: -1 for int, null for everything else.
+	METHOD method_695 longToString (J)Ljava/lang/String;
+	METHOD method_696 maybeDurationToString (Ljava/lang/Long;)Ljava/lang/String;
+		COMMENT Body is identical to maybeSpeedToString; the split is inferred from call sites, where this one formats the *Duration attributes. Charles 4 also had two indistinguishable (Long)String methods here and named neither.
+	METHOD method_691 maybeSpeedToString (Ljava/lang/Long;)Ljava/lang/String;
+		COMMENT Body is identical to maybeDurationToString; the split is inferred from call sites, where this one formats the *Speed attributes. Charles 4 also had two indistinguishable (Long)String methods here and named neither.
+	METHOD method_698 netAddressToString (Ljava/net/InetAddress;)Ljava/lang/String;
+	METHOD method_699 getTimeInSystemZone (Ljava/util/Date;)Ljava/lang/String;
+	METHOD method_693 dateToTimeString (Ljava/util/Date;)Ljava/lang/String;
+		COMMENT Emits epoch milliseconds as a decimal string, the encoding parseDateStoredAsLong reads back. Charles 4 named the same slot dateToString.
+	METHOD method_697 hasInvalidXMLCharacters (Ljava/lang/String;)Z
+		COMMENT True when the string contains a character XML 1.0 cannot carry, which is what makes the XML and JSON writers fall back to base64.
+	METHOD method_692 parseInt (Ljava/lang/String;)I
+	METHOD method_702 parseLong (Ljava/lang/String;)Ljava/lang/Long;
+	METHOD method_701 parseDate (Ljava/lang/String;)Ljava/util/Date;
+	METHOD method_694 parseDateStoredAsLong (Ljava/lang/String;)Ljava/util/Date;
+	METHOD method_700 parseNetAddress (Ljava/lang/String;)Ljava/net/InetAddress;

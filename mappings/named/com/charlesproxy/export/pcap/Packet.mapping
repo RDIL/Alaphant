@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/export/pcap/class_143 com/charlesproxy/export/pcap/Packet
+	COMMENT Base type for what PcapFileReader.readPacket returns. The instance below is the end-of-capture sentinel: readPacket returns it on EOF, and PcapSessionImporter loops until it sees it. A null return means 'a packet this importer skips' instead.
+	COMMENT Charles 4 named the same field INSTANCE.
+	FIELD field_660 EOF Lcom/charlesproxy/export/pcap/class_143;

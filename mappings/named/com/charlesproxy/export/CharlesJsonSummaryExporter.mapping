@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/export/class_168 com/charlesproxy/export/CharlesJsonSummaryExporter
+	COMMENT CharlesJsonSessionExporter whose TransactionJSONWriter is configured withoutBodies, i.e. the .chlsj summary variant.
+	COMMENT Matched to Charles 4's CharlesJsonSummaryExporter.
+	METHOD method_659 createTransactionWriter (Lcom/google/gson/stream/JsonWriter;)Lcom/charlesproxy/export/class_158;

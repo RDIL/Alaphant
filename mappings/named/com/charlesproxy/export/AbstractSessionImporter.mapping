@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/export/class_164 com/charlesproxy/export/AbstractSessionImporter
+	COMMENT Empty abstract base for the importers that read Charles' own formats. Charles 4's equivalent (AbstractCharlesSessionFileImporter) also carried the parse* helpers, which in 5.0.3 live in SessionFileValueUtils instead.

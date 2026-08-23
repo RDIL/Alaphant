@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/export/class_173 com/charlesproxy/export/DateTimeUtils
+	COMMENT Matched to Charles 4's DateTimeUtils, which named both of these; 5.0.3 drops its getTimeInZone(Date, ZoneId) overload.
+	METHOD method_704 getTimeInSystemZone (Ljava/util/Date;)Ljava/lang/String;
+	METHOD method_703 dateFromOffsetString (Ljava/lang/String;)Ljava/util/Date;

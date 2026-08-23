@@ -1,0 +1,17 @@
+CLASS com/charlesproxy/export/class_154 com/charlesproxy/export/HttpTraceSessionExporter
+	COMMENT Writes Charles' HTTP trace format (.trace): 'Name: value' lines per transaction, with bodies delimited by a generated '--EOF-<millis>-' marker.
+	COMMENT Matched to Charles 4's HttpTraceSessionExporter -- same PrintStream/PrintWriter pair and the same set of per-type field writers.
+	FIELD field_714 out Ljava/io/PrintStream;
+	FIELD field_713 writer Ljava/io/PrintWriter;
+	METHOD method_592 getFileExtension ()Ljava/lang/String;
+	METHOD method_594 exportSelection (Lcom/charlesproxy/model/class_950;Ljava/io/OutputStream;)V
+	METHOD method_649 writeFieldName (Ljava/lang/String;)V
+	METHOD method_650 writeField (Ljava/lang/String;I)V
+	METHOD method_651 writeField (Ljava/lang/String;Lcom/xk72/proxy/Fields;)V
+	METHOD method_652 writeField (Ljava/lang/String;Ljava/lang/Long;)V
+	METHOD method_653 writeField (Ljava/lang/String;Ljava/lang/String;)V
+	METHOD method_654 writeField (Ljava/lang/String;Ljava/net/InetAddress;)V
+	METHOD method_655 writeField (Ljava/lang/String;Ljava/util/Date;)V
+	METHOD method_656 writeField (Ljava/lang/String;Z)V
+	METHOD method_657 writeField (Ljava/lang/String;[B)V
+	METHOD method_658 generateEofMarker ([B)Ljava/lang/String;

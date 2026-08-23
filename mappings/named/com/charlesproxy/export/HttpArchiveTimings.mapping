@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/export/class_166 com/charlesproxy/export/HttpArchiveTimings
+	COMMENT The send/wait/receive leg of a HAR entry's 'timings' object, held until the entry is complete and then folded into the Transaction's absolute times.
+	COMMENT Matched to Charles 4's unnamed three-Long holder, built by the same HAR reader and applied the same way.
+	FIELD field_725 sendDuration Ljava/lang/Long;
+	FIELD field_724 waitDuration Ljava/lang/Long;
+	FIELD field_726 receiveDuration Ljava/lang/Long;
+	METHOD method_682 applyTo (Lcom/charlesproxy/model/class_955;)V

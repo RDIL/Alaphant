@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/export/class_136 com/charlesproxy/export/CharlesXMLSummaryExporter
+	COMMENT CharlesXMLSessionExporter with writeBody stubbed out, i.e. the .chlsx summary variant that omits request and response bodies.
+	COMMENT Matched to Charles 4's CharlesXMLSummaryExporter.
+	METHOD method_591 writeBody ([BLjava/lang/String;Z)V

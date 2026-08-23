@@ -1,0 +1,38 @@
+CLASS com/charlesproxy/export/class_150 com/charlesproxy/export/SessionSazImporter__FiddlerSessionTimers
+	COMMENT Fiddler's SessionTimers element. Every name below is fixed by SazSessionMetadataHandler, which feeds each setter the identically named XML attribute; toString() confirms clientConnected independently.
+	COMMENT Matched to Charles 4's SessionSazImporter$FiddlerSessionTimers, which named the same 14 fields; 5.0.3 flattens the nesting.
+	FIELD field_696 clientConnected Ljava/lang/String;
+	FIELD field_690 clientBeginRequest Ljava/lang/String;
+	FIELD field_697 clientDoneRequest Ljava/lang/String;
+	FIELD field_698 serverConnected Ljava/lang/String;
+	FIELD field_692 fiddlerBeginRequest Ljava/lang/String;
+	FIELD field_701 serverGotRequest Ljava/lang/String;
+	FIELD field_691 serverBeginResponse Ljava/lang/String;
+	FIELD field_693 serverDoneResponse Ljava/lang/String;
+	FIELD field_703 clientBeginResponse Ljava/lang/String;
+	FIELD field_702 clientDoneResponse Ljava/lang/String;
+	FIELD field_694 gatewayTime J
+	FIELD field_699 dnsTime J
+	FIELD field_695 tcpConnectTime J
+	FIELD field_700 httpsHandshakeTime J
+	METHOD method_626 setClientConnected (Ljava/lang/String;)V
+	METHOD method_618 setClientBeginRequest (Ljava/lang/String;)V
+	METHOD method_629 setClientDoneRequest (Ljava/lang/String;)V
+	METHOD method_632 setServerConnected (Ljava/lang/String;)V
+	METHOD method_622 setFiddlerBeginRequest (Ljava/lang/String;)V
+	METHOD method_634 setServerGotRequest (Ljava/lang/String;)V
+	METHOD method_620 setServerBeginResponse (Ljava/lang/String;)V
+	METHOD method_623 setServerDoneResponse (Ljava/lang/String;)V
+	METHOD method_636 setClientBeginResponse (Ljava/lang/String;)V
+	METHOD method_635 setClientDoneResponse (Ljava/lang/String;)V
+	METHOD method_625 setGatewayTime (J)V
+	METHOD method_617 setDnsTime (J)V
+	METHOD method_628 setTcpConnectTime (J)V
+	METHOD method_631 setHttpsHandshakeTime (J)V
+	METHOD method_624 getClientBeginRequest ()Ljava/lang/String;
+	METHOD method_616 getClientDoneRequest ()Ljava/lang/String;
+	METHOD method_627 getServerBeginResponse ()Ljava/lang/String;
+	METHOD method_630 getClientDoneResponse ()Ljava/lang/String;
+	METHOD method_621 getDnsTime ()J
+	METHOD method_633 getTcpConnectTime ()J
+	METHOD method_619 getHttpsHandshakeTime ()J

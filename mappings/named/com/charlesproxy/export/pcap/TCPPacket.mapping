@@ -1,0 +1,19 @@
+CLASS com/charlesproxy/export/pcap/class_146 com/charlesproxy/export/pcap/TCPPacket
+	COMMENT One IPv4 TCP packet out of a pcap capture. Named by its own exception messages, "TCPPacket sourceAddress invalid length" and "TCPPacket destAddress invalid length".
+	COMMENT The flag fields are fixed by PcapFileReader's read order over TCP header byte 13 (CWR, ECE, URG, ACK, PSH, RST, SYN, FIN); only ACK, RST, SYN and FIN are kept. TCPStream's "SYN" debug line confirms syn independently.
+	FIELD field_681 timestamp J
+	FIELD field_672 sourceAddress [B
+	FIELD field_678 destAddress [B
+	FIELD field_679 sourcePort I
+	FIELD field_674 destPort I
+	FIELD field_683 sequenceNumber I
+	FIELD field_676 ackNumber I
+	FIELD field_677 payload [B
+	FIELD field_682 syn Z
+	FIELD field_673 ack Z
+	FIELD field_684 rst Z
+	FIELD field_675 fin Z
+	FIELD field_680 normalizedSequenceNumber J
+		COMMENT Filled in by TCPStream, not by the reader: the raw sequence number widened past its 32-bit wraparound so it can be used as an absolute offset into the reassembled stream.
+	METHOD method_611 getSourceAddress ()Ljava/net/InetAddress;
+	METHOD method_610 getDestAddress ()Ljava/net/InetAddress;

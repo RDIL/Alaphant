@@ -1,2 +1,0 @@
-CLASS com/charlesproxy/export/class_167 com/charlesproxy/export/MaybeSessionSazImporterFiddlerSession
-	COMMENT [bootstrap] matched to Charles 4's SessionSazImporterFiddlerSession on 5 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe

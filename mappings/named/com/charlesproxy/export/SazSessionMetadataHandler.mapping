@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/export/class_149 com/charlesproxy/export/SazSessionMetadataHandler
+	COMMENT SAX handler for a SAZ 'raw/<n>_m.xml' entry: SessionTimers, SessionFlag and PipeInfo elements into a FiddlerSession.
+	COMMENT Matched to Charles 4's unnamed handler, which held the same importer/FiddlerSession pair and the same (String)J parse helper.
+	FIELD field_688 importer Lcom/charlesproxy/export/class_161;
+	FIELD field_689 fiddlerSession Lcom/charlesproxy/export/class_167;
+	METHOD method_615 parseLong (Ljava/lang/String;)J

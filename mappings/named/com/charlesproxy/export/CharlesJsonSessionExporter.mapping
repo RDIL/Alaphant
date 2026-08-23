@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/export/class_155 com/charlesproxy/export/CharlesJsonSessionExporter
+	COMMENT Writes Charles' JSON session format (.chlsj) as a single array of transactions.
+	COMMENT Matched to Charles 4's CharlesJsonSessionExporter, which held the JsonWriter directly; 5.0.3 delegates per-transaction writing to TransactionJSONWriter.
+	METHOD method_592 getFileExtension ()Ljava/lang/String;
+	METHOD method_594 exportSelection (Lcom/charlesproxy/model/class_950;Ljava/io/OutputStream;)V
+	METHOD method_659 createTransactionWriter (Lcom/google/gson/stream/JsonWriter;)Lcom/charlesproxy/export/class_158;

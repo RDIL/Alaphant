@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/export/class_138 com/charlesproxy/export/CharlesSessionFileExporter
+	COMMENT Writes Charles' native serialized session file (.chls) via ObjectOutputStream.
+	COMMENT Matched to Charles 4's CharlesSessionFileExporter, whose two constants were FILE_TYPE_DESCRIPTION and CHARLES_SESSION_FILE_EXTENSION; 5.0.3 inlines them.
+	METHOD method_592 getFileExtension ()Ljava/lang/String;
+	METHOD method_593 exportSession (Lcom/charlesproxy/model/class_943;Ljava/io/OutputStream;)V
+	METHOD method_594 exportSelection (Lcom/charlesproxy/model/class_950;Ljava/io/OutputStream;)V

@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/export/class_169 com/charlesproxy/export/CharlesXMLSessionExporter
+	COMMENT Writes Charles' XML session format (.chlsx), against https://www.charlesproxy.com/dtd/charles-session-1_2.dtd.
+	COMMENT Matched to Charles 4's CharlesXMLSessionExporter: same XMLPrintWriter field, same writeHeaders/writeBody pair.
+	FIELD field_730 xmlWriter Lcom/xk72/lib/class_1552;
+	METHOD method_592 getFileExtension ()Ljava/lang/String;
+	METHOD method_594 exportSelection (Lcom/charlesproxy/model/class_950;Ljava/io/OutputStream;)V
+	METHOD method_689 writeHeaders (Lcom/xk72/proxy/Fields;)V
+	METHOD method_591 writeBody ([BLjava/lang/String;Z)V

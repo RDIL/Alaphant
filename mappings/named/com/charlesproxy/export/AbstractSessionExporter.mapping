@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/export/class_163 com/charlesproxy/export/AbstractSessionExporter
+	COMMENT Base ISessionExporter: buffers a FileOutputStream into exportSession(Session, OutputStream), and builds the suggested file name from the extension.
+	METHOD method_613 getFileNameForCurrentDateTime ()Ljava/lang/String;
+	METHOD method_614 exportSession (Lcom/charlesproxy/model/class_943;Ljava/io/File;)V

@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/export/pcap/class_147 com/charlesproxy/export/pcap/SequenceNumberTracker
+	COMMENT Widens a TCP stream's 32-bit sequence numbers into monotonically increasing 64-bit offsets, counting each wraparound.
+	COMMENT Matched to Charles 4's unnamed Integer/Long/int holder with the same single (int)long method.
+	FIELD field_686 lastRaw Ljava/lang/Integer;
+	FIELD field_685 highestNormalized Ljava/lang/Long;
+	FIELD field_687 wrapCount I
+	METHOD method_612 normalize (I)J

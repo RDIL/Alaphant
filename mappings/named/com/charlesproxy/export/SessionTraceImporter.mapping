@@ -1,2 +1,14 @@
 CLASS com/charlesproxy/export/class_151 com/charlesproxy/export/SessionTraceImporter
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.SessionTraceImporter"
+	COMMENT named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.SessionTraceImporter"
+	FIELD field_707 LOGGER Lorg/slf4j/Logger;
+	FIELD field_706 in Lcom/xk72/proxy/io/class_1335;
+	FIELD field_705 buffer [B
+	FIELD field_710 lineNumber I
+		COMMENT Reported in "Malformed line near <n>" and incremented once per trace line.
+	FIELD field_704 fieldName Ljava/lang/String;
+	FIELD field_708 fieldValue Ljava/lang/String;
+		COMMENT Set for a 'Name: value' line; null when the line carried a delimited byte block instead.
+	FIELD field_709 fieldBytes [B
+		COMMENT Set for a 'Name:<<marker' delimited block; null for a plain 'Name: value' line.
+	METHOD method_595 importSession (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;
+	METHOD method_637 parseHttpFields ([BZLjava/lang/String;)Lcom/xk72/proxy/http/HttpFields;

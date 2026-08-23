@@ -1,2 +1,12 @@
 CLASS com/charlesproxy/export/class_161 com/charlesproxy/export/SessionSazImporter
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.SessionSazImporter"
+	COMMENT named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.SessionSazImporter"
+	FIELD field_721 LOGGER Lorg/slf4j/Logger;
+	METHOD method_595 importSession (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;
+	METHOD method_675 readRequest (Ljava/io/InputStream;Lcom/charlesproxy/model/class_955;)Z
+		COMMENT Reads a SAZ 'raw/<n>_c.txt' entry -- the client request headers and body.
+	METHOD method_677 readResponse (Ljava/io/InputStream;Lcom/charlesproxy/model/class_955;)Z
+		COMMENT Reads a SAZ 'raw/<n>_s.txt' entry -- the server response headers and body.
+	METHOD method_676 dechunkIfNeeded (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/http/HttpFields;Ljava/io/InputStream;)Ljava/io/InputStream;
+	METHOD method_678 parseFiddlerDate (Ljava/lang/String;)Ljava/util/Date;
+		COMMENT Carried over from Charles 4's SessionSazImporter, which had the same (String)Date helper. Normalises Fiddler's sub-millisecond digits and colon-separated offset, and treats 0001-01-01T00:00:00 as absent.
+	METHOD method_679 getOrCreateTransaction (Ljava/lang/String;Ljava/util/Map;)Lcom/charlesproxy/model/class_955;

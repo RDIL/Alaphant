@@ -1,2 +1,15 @@
 CLASS com/charlesproxy/export/class_152 com/charlesproxy/export/TransactionJSONReader
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.TransactionJSONReader"
+	COMMENT named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.TransactionJSONReader"
+	COMMENT The inverse of TransactionJSONWriter: every method below reads back the object that writer's counterpart emits.
+	FIELD field_712 LOGGER Lorg/slf4j/Logger;
+	FIELD field_711 jsonReader Lcom/xk72/lib/class_1563;
+	METHOD method_641 readTransaction (Lcom/charlesproxy/model/class_955;)V
+	METHOD method_644 readHeader (Ljava/lang/String;)Lcom/xk72/proxy/http/HttpFields;
+	METHOD method_642 readHeaderField (Lcom/xk72/proxy/Fields;)V
+	METHOD method_643 readBody (Lcom/xk72/lib/class_1563;)Lcom/charlesproxy/export/class_137;
+	METHOD method_646 readStringCollection (Ljava/util/function/Supplier;)Ljava/util/Collection;
+	METHOD method_639 readCertificates (Ljava/util/function/Supplier;)Ljava/util/Collection;
+	METHOD method_647 readSslExtensions (Ljava/util/function/Supplier;)Ljava/util/Collection;
+	METHOD method_640 readSslExtension ()Lcom/xk72/proxy/ssl/SSLExtension;
+	METHOD method_638 readBase64 ()[B
+	METHOD method_645 deserializeBase64 (Ljava/lang/String;Ljava/lang/Class;)Ljava/io/Serializable;

@@ -1,0 +1,17 @@
+CLASS com/charlesproxy/export/class_140 com/charlesproxy/export/XMLSessionImportHandler
+	COMMENT SAX handler for XMLSessionImporter. Field names carried over from Charles 4's handler, which named session, transaction, fields, typeInt, name, value, charset, encoding and decoded.
+	COMMENT The two handler callbacks are left as placeholders on purpose: they are declared by com/xk72/lib/class_1562, outside this package.
+	FIELD field_646 session Lcom/charlesproxy/model/class_943;
+	FIELD field_641 transaction Lcom/charlesproxy/model/class_955;
+	FIELD field_645 importer Lcom/charlesproxy/export/class_139;
+		COMMENT The synthetic reference to the enclosing XMLSessionImporter. Charles 4 named the same field xmlSessionImporter.
+	FIELD field_647 sessionElementSeen Z
+		COMMENT Set once the <charles-session> root element is seen; any other root is rejected with "XML document is not a Charles session".
+	FIELD field_648 fields Lcom/xk72/proxy/Fields;
+	FIELD field_643 typeInt I
+		COMMENT 1 while inside <request>, 2 while inside <response>. Charles 4 named it typeInt and had REQUEST_TYPE/RESPONSE_TYPE constants beside it; 5.0.3 inlines them.
+	FIELD field_649 name Ljava/lang/String;
+	FIELD field_642 value Ljava/lang/String;
+	FIELD field_644 charset Ljava/lang/String;
+	FIELD field_651 encoding Ljava/lang/String;
+	FIELD field_650 decoded Z

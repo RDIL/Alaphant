@@ -1,2 +1,6 @@
 CLASS com/charlesproxy/export/class_165 com/charlesproxy/export/SessionZipImporter
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.SessionZipImporter"
+	COMMENT named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.SessionZipImporter"
+	FIELD field_723 LOGGER Lorg/slf4j/Logger;
+	METHOD method_595 importSession (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;
+	METHOD method_681 newTransaction (Ljava/lang/String;)Lcom/charlesproxy/model/class_955;
+		COMMENT The computeIfAbsent lambda body: one Transaction per '<n>-' entry prefix.

@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/export/class_175 com/charlesproxy/export/HttpArchiveSessionExporter
+	COMMENT Writes the HTTP Archive format (.har) version 1.2, creator "Charles Proxy".
+	COMMENT Matched to Charles 4's HttpArchiveSessionExporter -- same org.json JSONWriter helpers over Fields and over the URL-encoded query parser.
+	METHOD method_592 getFileExtension ()Ljava/lang/String;
+	METHOD method_594 exportSelection (Lcom/charlesproxy/model/class_950;Ljava/io/OutputStream;)V
+	METHOD method_716 writeHeaders (Lcom/xk72/proxy/Fields;Lorg/json/JSONWriter;)V
+	METHOD method_714 writeCookies (Lcom/xk72/proxy/Fields;Lorg/json/JSONWriter;)V
+	METHOD method_715 writeQueryString (Lcom/charlesproxy/lib/class_890;Lorg/json/JSONWriter;)V

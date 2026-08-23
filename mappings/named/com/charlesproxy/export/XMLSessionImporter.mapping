@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/export/class_139 com/charlesproxy/export/XMLSessionImporter
+	COMMENT Reads Charles' XML session format (.chlsx) by driving XMLSessionImportHandler over a SAX parse.
+	COMMENT Matched to Charles 4's XMLSessionImporter, which had the same single-method shape and the same handler pairing.
+	METHOD method_595 importSession (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;

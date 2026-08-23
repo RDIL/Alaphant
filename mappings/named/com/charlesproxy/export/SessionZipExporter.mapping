@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/export/class_170 com/charlesproxy/export/SessionZipExporter
+	COMMENT Writes Charles' zipped session format (.chlz): per transaction a '<n>-meta.json' entry plus '<n>-req.<ext>' / '<n>-res.<ext>' body entries ('-enc' when the stored bytes are still encoded).
+	COMMENT Counterpart of SessionZipImporter, which reads exactly those entry names.
+	METHOD method_592 getFileExtension ()Ljava/lang/String;
+	METHOD method_594 exportSelection (Lcom/charlesproxy/model/class_950;Ljava/io/OutputStream;)V
+	METHOD method_690 getFileExtensionForContentType (Lcom/xk72/proxy/Fields;)Ljava/lang/String;

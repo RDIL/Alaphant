@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/export/class_160 com/charlesproxy/export/ISelectionExporter
+	COMMENT An ISessionExporter that can also export a subset of transactions rather than a whole Session.
+	COMMENT The argument type is model/class_950, a ModelNodeVisitor that flattens an array of model nodes into a List<Transaction> -- i.e. what a GUI selection produces. Charles 4 had the same pair of methods as a standalone interface it did not name.
+	METHOD method_674 exportSelection (Lcom/charlesproxy/model/class_950;Ljava/io/File;)V
+	METHOD method_594 exportSelection (Lcom/charlesproxy/model/class_950;Ljava/io/OutputStream;)V

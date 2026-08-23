@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/export/pcap/class_142 com/charlesproxy/export/pcap/TCPStreamKey
+	COMMENT The source/destination address and port tuple identifying one TCP stream; equals and hashCode cover all four, and toString prints '<src>:<sport> -> <dst>:<dport>'.
+	COMMENT Matched to Charles 4's unnamed four-field tuple, which named sourceAddress, sourcePort and their target counterparts.
+	FIELD field_657 sourceAddress Ljava/net/InetAddress;
+	FIELD field_656 destAddress Ljava/net/InetAddress;
+	FIELD field_658 sourcePort I
+	FIELD field_659 destPort I

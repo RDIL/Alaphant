@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/export/class_171 com/charlesproxy/export/AbstractSelectionExporter
+	COMMENT Base ISelectionExporter: implements the Session methods by collecting the Session's transactions into a selection and delegating to exportSelection.
+	METHOD method_593 exportSession (Lcom/charlesproxy/model/class_943;Ljava/io/OutputStream;)V
+	METHOD method_674 exportSelection (Lcom/charlesproxy/model/class_950;Ljava/io/File;)V

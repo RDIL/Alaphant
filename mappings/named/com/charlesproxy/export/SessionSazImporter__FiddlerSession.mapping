@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/export/class_167 com/charlesproxy/export/SessionSazImporter__FiddlerSession
+	COMMENT One session's worth of Fiddler metadata from a SAZ 'raw/<n>_m.xml' entry.
+	COMMENT Matched to Charles 4's SessionSazImporter$FiddlerSession, which named all three fields and all six accessors; 5.0.3 flattens the nesting.
+	FIELD field_728 sessionTimers Lcom/charlesproxy/export/class_150;
+	FIELD field_727 flags Ljava/util/Map;
+	FIELD field_729 pipeReused Z
+	METHOD method_685 getSessionTimers ()Lcom/charlesproxy/export/class_150;
+	METHOD method_686 setSessionTimers (Lcom/charlesproxy/export/class_150;)V
+	METHOD method_687 getFlag (Ljava/lang/String;)Ljava/lang/String;
+	METHOD method_688 setFlag (Ljava/lang/String;Ljava/lang/String;)V
+	METHOD method_683 isPipeReused ()Z
+	METHOD method_684 setPipeReused (Ljava/lang/String;)V

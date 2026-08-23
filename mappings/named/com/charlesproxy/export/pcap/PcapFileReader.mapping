@@ -1,2 +1,21 @@
 CLASS com/charlesproxy/export/pcap/class_144 com/charlesproxy/export/pcap/PcapFileReader
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.pcap.PcapFileReader"
+	COMMENT named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.pcap.PcapFileReader"
+	COMMENT Field names below follow the libpcap global header layout, which the constructor reads in order: magic, version_major, version_minor, thiszone, sigfigs, snaplen, network.
+	FIELD field_665 LOGGER Lorg/slf4j/Logger;
+	FIELD field_661 in Ljava/io/DataInputStream;
+	FIELD field_667 magicNumber J
+	FIELD field_666 swapped Z
+		COMMENT Set when the magic number is the byte-swapped variant, which makes every subsequent readShort/readInt swap.
+	FIELD field_663 versionMajor I
+	FIELD field_668 versionMinor I
+	FIELD field_662 thisZone I
+	FIELD field_664 sigFigs J
+	FIELD field_670 snapLen J
+	FIELD field_669 network J
+		COMMENT libpcap link-layer type. Only 1 (Ethernet) is accepted: "Only Ethernet pcap files are supported".
+	METHOD method_605 readPacket ()Lcom/charlesproxy/export/pcap/class_143;
+	METHOD method_603 close ()V
+	METHOD method_607 readShort ()I
+	METHOD method_608 readInt ()I
+	METHOD method_604 swapShort (I)I
+	METHOD method_606 swapInt (I)I

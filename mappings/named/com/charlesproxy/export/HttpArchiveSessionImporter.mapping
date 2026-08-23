@@ -1,0 +1,16 @@
+CLASS com/charlesproxy/export/class_174 com/charlesproxy/export/HttpArchiveSessionImporter
+	COMMENT Reads the HTTP Archive format (.har): log.entries[], each with request/response/timings.
+	COMMENT Matched to Charles 4's unnamed HAR reader, which had the same (JsonReader)Long, (String,String)[B, (String)Date and (JsonReader)Fields helpers.
+	METHOD method_595 importSession (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;
+	METHOD method_710 parseDate (Ljava/lang/String;)Ljava/util/Date;
+		COMMENT Accepts an ISO-8601 offset date-time, falling back to yyyy-MM-dd'T'HH:mm:ssZ.
+	METHOD method_708 readDuration (Lcom/xk72/lib/class_1563;)Ljava/lang/Long;
+		COMMENT HAR timings are doubles in milliseconds; -1 means 'not applicable' and becomes null.
+	METHOD method_707 normalizeProtocolVersion (Ljava/lang/String;)Ljava/lang/String;
+	METHOD method_705 readHeaders (Lcom/xk72/lib/class_1563;)Lcom/xk72/proxy/Fields;
+	METHOD method_709 readResponse (Lcom/xk72/lib/class_1563;Lcom/charlesproxy/model/class_955;)V
+	METHOD method_706 readPostData (Lcom/xk72/lib/class_1563;Lcom/charlesproxy/model/class_955;)V
+	METHOD method_712 readContent (Lcom/xk72/lib/class_1563;Lcom/charlesproxy/model/class_955;)V
+	METHOD method_711 textToBytes (Ljava/lang/String;Ljava/lang/String;)[B
+		COMMENT Encodes HAR text using the charset from the given content type, defaulting to UTF-8.
+	METHOD method_713 stripPathFromFileName (Ljava/lang/String;)Ljava/lang/String;

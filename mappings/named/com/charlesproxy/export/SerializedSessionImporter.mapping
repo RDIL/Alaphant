@@ -1,2 +1,5 @@
 CLASS com/charlesproxy/export/class_162 com/charlesproxy/export/SerializedSessionImporter
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.SerializedSessionImporter"
+	COMMENT named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.SerializedSessionImporter"
+	FIELD field_722 LOGGER Lorg/slf4j/Logger;
+	METHOD method_595 importSession (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;
+	METHOD method_680 readSession (Ljava/io/InputStream;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;

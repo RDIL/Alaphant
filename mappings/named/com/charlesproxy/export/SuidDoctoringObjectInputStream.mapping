@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/export/class_157 com/charlesproxy/export/SuidDoctoringObjectInputStream
+	COMMENT ObjectInputStream that overwrites a stream class descriptor's private 'suid' field with the local class' serialVersionUID, so old .chls files still deserialize. Named from its own log message, "Failed to doctor resultClassDescriptor".
+	COMMENT Charles 4 had this as readClassDescriptor on SerializedSessionImporter itself; 5.0.3 split it out.

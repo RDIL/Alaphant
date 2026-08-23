@@ -1,2 +1,6 @@
 CLASS com/charlesproxy/export/pcap/class_145 com/charlesproxy/export/pcap/PcapSessionImporter
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.pcap.PcapSessionImporter"
+	COMMENT named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.pcap.PcapSessionImporter"
+	FIELD field_671 LOGGER Lorg/slf4j/Logger;
+	METHOD method_595 importSession (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;
+	METHOD method_609 readStreams (Ljava/io/File;)Ljava/util/Map;
+		COMMENT Groups every TCP packet in the capture by stream, keying on the tuple as seen and falling back to the reversed tuple so both directions land on one TCPStream. Carried over from Charles 4, which had the same (File)Map helper.

@@ -1,2 +1,21 @@
 CLASS com/charlesproxy/export/class_158 com/charlesproxy/export/TransactionJSONWriter
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.TransactionJSONWriter"
+	COMMENT named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.TransactionJSONWriter"
+	FIELD field_716 LOGGER Lorg/slf4j/Logger;
+	FIELD field_715 jsonWriter Lcom/google/gson/stream/JsonWriter;
+	FIELD field_717 includeBodies Z
+		COMMENT Default true; withoutBodies() clears it. The summary exporters and SessionZipExporter (which stores bodies as separate zip entries) are what clear it.
+	FIELD field_718 fullDetail Z
+		COMMENT Default false; withFullDetail() sets it. Gates the SSL handshake detail, WebSocket messages, tags, connection map and serialized flows -- everything only the round-tripping .chlz writer emits.
+	METHOD method_662 withoutBodies ()Lcom/charlesproxy/export/class_158;
+	METHOD method_660 withFullDetail ()Lcom/charlesproxy/export/class_158;
+	METHOD method_663 writeTransaction (Lcom/charlesproxy/model/class_955;)V
+	METHOD method_664 writeHeader (Lcom/xk72/proxy/Fields;)V
+	METHOD method_671 writeBody ([BLjava/lang/String;Z)V
+	METHOD method_667 writeStringField (Ljava/lang/String;Ljava/lang/String;)V
+	METHOD method_669 writeBase64Field (Ljava/lang/String;[B)V
+	METHOD method_668 writeStringArrayField (Ljava/lang/String;Ljava/util/Collection;)V
+	METHOD method_661 writeCertificates (Ljava/lang/String;Ljava/util/Collection;)V
+	METHOD method_670 writeCertificate (Ljava/security/cert/Certificate;)V
+	METHOD method_672 writeSslExtensions (Ljava/lang/String;Ljava/util/Collection;)V
+	METHOD method_665 writeSslExtension (Lcom/xk72/proxy/ssl/SSLExtension;)V
+	METHOD method_666 serializeToBase64 (Ljava/io/Serializable;)Ljava/lang/String;

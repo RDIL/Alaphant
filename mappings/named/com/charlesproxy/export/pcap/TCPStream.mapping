@@ -1,2 +1,14 @@
 CLASS com/charlesproxy/export/pcap/class_141 com/charlesproxy/export/pcap/TCPStream
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.pcap.TCPStream"
+	COMMENT named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.pcap.TCPStream"
+	COMMENT Direction is decided by PcapSessionImporter: the first tuple seen is outbound, the reversed tuple is inbound. The debug lines here print "Out #" and "In #" accordingly.
+	FIELD field_653 LOGGER Lorg/slf4j/Logger;
+	FIELD field_652 key Lcom/charlesproxy/export/pcap/class_142;
+	FIELD field_654 outboundPackets Ljava/util/List;
+	FIELD field_655 inboundPackets Ljava/util/List;
+	METHOD method_599 getKey ()Lcom/charlesproxy/export/pcap/class_142;
+	METHOD method_600 addOutboundPacket (Lcom/charlesproxy/export/pcap/class_146;)V
+	METHOD method_598 addInboundPacket (Lcom/charlesproxy/export/pcap/class_146;)V
+	METHOD method_601 reassembleInto (Lcom/charlesproxy/model/class_943;)Z
+		COMMENT Rebuilds both byte streams from the packet sequence numbers, replays them through ProxyHttp and adds the resulting transactions to the Session. False when either direction never showed a SYN or carried no payload.
+	METHOD method_602 findTimeAtOffset (Ljava/util/List;J)Ljava/util/Date;
+		COMMENT The capture timestamp of the packet covering a given offset into the reassembled stream, used to date the request and response boundaries.
