@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/transaction/editors/amf/class_612 com/charlesproxy/gui/transaction/editors/amf/AMFBodyEditor
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.transaction.editors.amf.AMFBodyEditor"
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: AMFBodyEditor$… is in the jar while its outer class is not, and holds a synthetic reference to this type

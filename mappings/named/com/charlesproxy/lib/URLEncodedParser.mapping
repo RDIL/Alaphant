@@ -1,0 +1,9 @@
+CLASS com/charlesproxy/lib/class_890 com/charlesproxy/lib/URLEncodedParser
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.lib.URLEncodedParser"
+	COMMENT [bootstrap] matched to Charles 4's URLEncodedParser on 6 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_2414 maybeSEPERATOR C
+		COMMENT [bootstrap] carried over from Charles 4's URLEncodedParser.SEPERATOR on a unique descriptor match -- provisional
+	METHOD method_2111 maybeGetQueryFieldsCount ()I
+		COMMENT [bootstrap] carried over from Charles 4's URLEncodedParser.getQueryFieldsCount on a unique descriptor match -- provisional
+	METHOD method_2114 maybeIsUrlEncodedContentType (Lcom/xk72/proxy/Fields;)Z
+		COMMENT [bootstrap] carried over from Charles 4's URLEncodedParser.isUrlEncodedContentType on a unique descriptor match -- provisional

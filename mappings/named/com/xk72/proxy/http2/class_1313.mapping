@@ -1,0 +1,6 @@
+CLASS com/xk72/proxy/http2/class_1313
+	COMMENT [bootstrap] matched to Charles 4's g on 6 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_3581 maybeHttp2Fields Lcom/xk72/proxy/http2/Http2Fields;
+		COMMENT [bootstrap] carried over from Charles 4's g.http2Fields on a unique descriptor match -- provisional
+	METHOD method_3574 maybeGetHttp2Fields ()Lcom/xk72/proxy/http2/Http2Fields;
+		COMMENT [bootstrap] carried over from Charles 4's g.getHttp2Fields on a unique descriptor match -- provisional

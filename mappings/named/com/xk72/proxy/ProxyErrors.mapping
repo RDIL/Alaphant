@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/class_1430 com/xk72/proxy/ProxyErrors
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.ProxyErrors"

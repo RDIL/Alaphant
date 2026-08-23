@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/transaction/class_554 com/charlesproxy/gui/transaction/MaybeTransactionViewersForTypeContainer
+	COMMENT [bootstrap] matched to Charles 4's TransactionViewersForTypeContainer on 28 shared member descriptors (next best in this package scored 6) -- provisional, confirm before dropping the Maybe
+	METHOD method_1325 maybeRegisterTxnViewerMouseListeners (Lcom/charlesproxy/gui/find/class_219;)V
+		COMMENT [bootstrap] carried over from Charles 4's TransactionViewersForTypeContainer.registerTxnViewerMouseListeners on a unique descriptor match -- provisional
+	METHOD method_1332 maybeIsRegistered (Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer;)Z
+		COMMENT [bootstrap] carried over from Charles 4's TransactionViewersForTypeContainer.isRegistered on a unique descriptor match -- provisional

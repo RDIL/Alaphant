@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/tools/rewrite/class_1082
+	COMMENT [bootstrap] matched to Charles 4's b on 14 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_2901 maybeRewriteRuleType I
+		COMMENT [bootstrap] carried over from Charles 4's b.rewriteRuleType on a unique descriptor match -- provisional

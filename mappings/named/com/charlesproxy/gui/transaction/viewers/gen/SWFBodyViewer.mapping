@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/transaction/viewers/gen/class_702 com/charlesproxy/gui/transaction/viewers/gen/SWFBodyViewer
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.transaction.viewers.gen.SWFBodyViewer"
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: SWFBodyViewer$… is in the jar while its outer class is not, and holds a synthetic reference to this type

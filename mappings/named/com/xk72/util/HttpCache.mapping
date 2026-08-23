@@ -1,0 +1,5 @@
+CLASS com/xk72/util/class_1535 com/xk72/util/HttpCache
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: HttpCache$… is in the jar while its outer class is not, and holds a synthetic reference to this type
+	COMMENT [bootstrap] matched to Charles 4's HttpCache on 10 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	METHOD method_4129 maybeClear ()V
+		COMMENT [bootstrap] carried over from Charles 4's HttpCache.clear on a unique descriptor match -- provisional

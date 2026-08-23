@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/config/export/class_99 com/charlesproxy/config/export/ConfigurationImportExport
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.config.export.ConfigurationImportExport"

@@ -1,0 +1,10 @@
+CLASS com/xk72/proxy/forwarding/class_1278
+	COMMENT [bootstrap] matched to Charles 4's b on 5 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_3408 maybeDatagramFowardingProxyServ Lcom/xk72/proxy/forwarding/DatagramForwardingProxyServer;
+		COMMENT [bootstrap] carried over from Charles 4's b.datagramFowardingProxyServ on a unique descriptor match -- provisional
+	FIELD field_3411 maybeCurrentSysTime J
+		COMMENT [bootstrap] carried over from Charles 4's b.currentSysTime on a unique descriptor match -- provisional
+	METHOD method_3368 maybeCloseDatagramChannel ()V
+		COMMENT [bootstrap] carried over from Charles 4's b.closeDatagramChannel on a unique descriptor match -- provisional
+	METHOD method_3370 maybeGetCurrentSysTime ()J
+		COMMENT [bootstrap] carried over from Charles 4's b.getCurrentSysTime on a unique descriptor match -- provisional

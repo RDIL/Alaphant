@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/session/class_433
+	COMMENT [bootstrap] matched to Charles 4's D on 4 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_1301 maybeSessionFrame Lcom/charlesproxy/gui/session/SessionFrame;
+		COMMENT [bootstrap] carried over from Charles 4's D.sessionFrame on a unique descriptor match -- provisional
+	FIELD field_1302 maybeModelNodeHit Lcom/charlesproxy/gui/find/class_219;
+		COMMENT [bootstrap] carried over from Charles 4's D.modelNodeHit on a unique descriptor match -- provisional

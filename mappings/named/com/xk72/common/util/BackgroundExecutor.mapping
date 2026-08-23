@@ -1,0 +1,2 @@
+CLASS com/xk72/common/util/class_1235 com/xk72/common/util/BackgroundExecutor
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.common.util.BackgroundExecutor"

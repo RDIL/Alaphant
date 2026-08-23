@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/class_6 com/charlesproxy/UpdateChecker
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.UpdateChecker"

@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/viewers/json/class_723 com/charlesproxy/gui/transaction/viewers/json/AbstractJSONTreeViewer
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: AbstractJSONTreeViewer$… is in the jar while its outer class is not, and holds a synthetic reference to this type

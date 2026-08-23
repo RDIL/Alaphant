@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/navigator/class_388 com/charlesproxy/gui/navigator/NavigatorJTree
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: NavigatorJTree$… is in the jar while its outer class is not, and holds a synthetic reference to this type

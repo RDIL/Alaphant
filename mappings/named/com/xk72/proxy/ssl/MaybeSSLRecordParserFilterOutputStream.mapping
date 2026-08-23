@@ -1,0 +1,4 @@
+CLASS com/xk72/proxy/ssl/class_1389 com/xk72/proxy/ssl/MaybeSSLRecordParserFilterOutputStream
+	COMMENT [bootstrap] matched to Charles 4's SSLRecordParserFilterOutputStream on 5 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_3881 maybeSslRecordParser Lcom/xk72/proxy/ssl/SSLRecordParser;
+		COMMENT [bootstrap] carried over from Charles 4's SSLRecordParserFilterOutputStream.sslRecordParser on a unique descriptor match -- provisional

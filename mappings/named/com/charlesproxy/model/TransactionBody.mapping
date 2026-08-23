@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/model/class_947 com/charlesproxy/model/TransactionBody
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.model.TransactionBody"

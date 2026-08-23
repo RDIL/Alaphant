@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/websocket/class_1425 com/xk72/proxy/websocket/MaybeIWebsocketExtension
+	COMMENT [bootstrap] matched to Charles 4's IWebsocketExtension on 4 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe

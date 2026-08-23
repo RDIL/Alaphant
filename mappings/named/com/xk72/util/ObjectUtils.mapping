@@ -1,0 +1,2 @@
+CLASS com/xk72/util/class_1528 com/xk72/util/ObjectUtils
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.util.ObjectUtils"

@@ -1,0 +1,8 @@
+CLASS com/xk72/proxy/ssl/class_1369 com/xk72/proxy/ssl/MaybeCharlesHandshakeCompletedListener
+	COMMENT [bootstrap] matched to Charles 4's CharlesHandshakeCompletedListener on 6 shared member descriptors (next best in this package scored 4) -- provisional, confirm before dropping the Maybe
+	FIELD field_3738 maybeProxyEvent Lcom/xk72/proxy/ProxyEvent;
+		COMMENT [bootstrap] carried over from Charles 4's CharlesHandshakeCompletedListener.proxyEvent on a unique descriptor match -- provisional
+	FIELD field_3739 maybeHandshakeCompleted Z
+		COMMENT [bootstrap] carried over from Charles 4's CharlesHandshakeCompletedListener.handshakeCompleted on a unique descriptor match -- provisional
+	METHOD method_3753 maybeAwaitHandshakeCompleted ()Z
+		COMMENT [bootstrap] carried over from Charles 4's CharlesHandshakeCompletedListener.awaitHandshakeCompleted on a unique descriptor match -- provisional

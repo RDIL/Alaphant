@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/viewers/protobuf/class_784 com/charlesproxy/gui/transaction/viewers/protobuf/AbstractProtocolBuffersTreeBodyViewer
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: AbstractProtocolBuffersTreeBodyViewer$… is in the jar while its outer class is not, and holds a synthetic reference to this type

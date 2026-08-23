@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/class_977 com/charlesproxy/PluginManager
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.PluginManager"

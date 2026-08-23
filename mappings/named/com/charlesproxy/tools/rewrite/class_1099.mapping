@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/tools/rewrite/class_1099
+	COMMENT [bootstrap] matched to Charles 4's l on 4 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_2965 maybeRewriteRule Lcom/charlesproxy/tools/rewrite/class_1093;
+		COMMENT [bootstrap] carried over from Charles 4's l.rewriteRule on a unique descriptor match -- provisional
+	FIELD field_2967 maybeRewriteSetPanel Lcom/charlesproxy/tools/rewrite/RewriteSetPanel;
+		COMMENT [bootstrap] carried over from Charles 4's l.rewriteSetPanel on a unique descriptor match -- provisional

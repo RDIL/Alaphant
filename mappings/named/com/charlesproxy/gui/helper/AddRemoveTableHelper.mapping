@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/helper/class_270 com/charlesproxy/gui/helper/AddRemoveTableHelper
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: AddRemoveTableHelper$… is in the jar while its outer class is not, and holds a synthetic reference to this type

@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/session/actions/class_427
+	COMMENT [bootstrap] matched to Charles 4's a on 10 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_1294 maybeExportAction Lcom/charlesproxy/gui/session/actions/AbstractExportAction;
+		COMMENT [bootstrap] carried over from Charles 4's a.exportAction on a unique descriptor match -- provisional

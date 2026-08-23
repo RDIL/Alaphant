@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/diff/viewers/class_598 com/charlesproxy/gui/transaction/diff/viewers/DiffGeneralPanel
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: DiffGeneralPanel$… is in the jar while its outer class is not, and holds a synthetic reference to this type

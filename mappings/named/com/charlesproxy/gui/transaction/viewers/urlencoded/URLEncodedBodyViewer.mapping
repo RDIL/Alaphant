@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/viewers/urlencoded/class_798 com/charlesproxy/gui/transaction/viewers/urlencoded/URLEncodedBodyViewer
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: URLEncodedBodyViewer$… is in the jar while its outer class is not, and holds a synthetic reference to this type

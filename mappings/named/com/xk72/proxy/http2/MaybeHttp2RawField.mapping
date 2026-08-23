@@ -1,0 +1,4 @@
+CLASS com/xk72/proxy/http2/class_1325 com/xk72/proxy/http2/MaybeHttp2RawField
+	COMMENT [bootstrap] matched to Charles 4's Http2RawField on 9 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_3628 maybeSensitive Z
+		COMMENT [bootstrap] carried over from Charles 4's Http2RawField.sensitive on a unique descriptor match -- provisional

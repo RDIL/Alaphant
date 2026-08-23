@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/transaction/editors/class_615 com/charlesproxy/gui/transaction/editors/MaybeHeadersEditor
+	COMMENT [bootstrap] matched to Charles 4's HeadersEditor on 5 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_1782 maybeBetterTextArea Lcom/charlesproxy/gui/lib/BetterTextArea;
+		COMMENT [bootstrap] carried over from Charles 4's HeadersEditor.betterTextArea on a unique descriptor match -- provisional
+	FIELD field_1784 maybeTransaction Lcom/charlesproxy/gui/transaction/editors/class_611;
+		COMMENT [bootstrap] carried over from Charles 4's HeadersEditor.transaction on a unique descriptor match -- provisional

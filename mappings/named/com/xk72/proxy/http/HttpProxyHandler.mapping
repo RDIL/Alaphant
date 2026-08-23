@@ -1,0 +1,11 @@
+CLASS com/xk72/proxy/http/class_1284 com/xk72/proxy/http/HttpProxyHandler
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.http.HttpProxyHandler"
+	COMMENT [bootstrap] matched to Charles 4's HttpProxyHandler on 37 shared member descriptors (next best in this package scored 6) -- provisional, confirm before dropping the Maybe
+	FIELD field_3437 maybeRoute Lcom/xk72/proxy/Connection$Route;
+		COMMENT [bootstrap] carried over from Charles 4's HttpProxyHandler.route on a unique descriptor match -- provisional
+	METHOD method_3398 maybeIsUpgradeWebsocket (Lcom/xk72/proxy/Fields;)Z
+		COMMENT [bootstrap] carried over from Charles 4's HttpProxyHandler.isUpgradeWebsocket on a unique descriptor match -- provisional
+	METHOD method_3410 maybeEstablishTunnelTo (Lcom/xk72/proxy/http/ConnectRemoteConnection;Lcom/xk72/proxy/http/class_1289;)V
+		COMMENT [bootstrap] carried over from Charles 4's HttpProxyHandler.establishTunnelTo on a unique descriptor match -- provisional
+	METHOD method_3416 maybeHandleWebsocketRequest (Lcom/xk72/proxy/class_1355;Lcom/xk72/proxy/http/class_1289;)V
+		COMMENT [bootstrap] carried over from Charles 4's HttpProxyHandler.handleWebsocketRequest on a unique descriptor match -- provisional

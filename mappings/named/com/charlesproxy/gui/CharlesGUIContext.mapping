@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/gui/class_401 com/charlesproxy/gui/CharlesGUIContext
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.CharlesGUIContext"
+	COMMENT [bootstrap] matched to Charles 4's CharlesGUIContext on 11 shared member descriptors (next best in this package scored 9) -- provisional, confirm before dropping the Maybe
+	FIELD field_1241 maybeSplashWindow Lcom/charlesproxy/gui/SplashWindow;
+		COMMENT [bootstrap] carried over from Charles 4's CharlesGUIContext.splashWindow on a unique descriptor match -- provisional
+	METHOD method_1095 maybeGetSplashWindow ()Lcom/charlesproxy/gui/SplashWindow;
+		COMMENT [bootstrap] carried over from Charles 4's CharlesGUIContext.getSplashWindow on a unique descriptor match -- provisional

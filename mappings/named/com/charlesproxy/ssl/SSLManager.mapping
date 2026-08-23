@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/ssl/class_992 com/charlesproxy/ssl/SSLManager
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.ssl.SSLManager"

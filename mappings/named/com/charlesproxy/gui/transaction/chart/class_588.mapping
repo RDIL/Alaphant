@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/transaction/chart/class_588
+	COMMENT [bootstrap] matched to Charles 4's m on 4 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_1723 maybeChartTypeTableModel Lcom/charlesproxy/gui/transaction/chart/ChartTypeTableModel;
+		COMMENT [bootstrap] carried over from Charles 4's m.chartTypeTableModel on a unique descriptor match -- provisional

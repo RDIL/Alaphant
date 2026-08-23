@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/frames/class_659 com/charlesproxy/gui/transaction/frames/AbstractTabbedModelViewFrame
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: AbstractTabbedModelViewFrame$… is in the jar while its outer class is not, and holds a synthetic reference to this type

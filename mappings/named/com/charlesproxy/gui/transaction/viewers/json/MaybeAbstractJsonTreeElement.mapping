@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/transaction/viewers/json/class_718 com/charlesproxy/gui/transaction/viewers/json/MaybeAbstractJsonTreeElement
+	COMMENT [bootstrap] matched to Charles 4's AbstractJsonTreeElement on 17 shared member descriptors (next best in this package scored 4) -- provisional, confirm before dropping the Maybe
+	FIELD field_2105 maybeIndex I
+		COMMENT [bootstrap] carried over from Charles 4's AbstractJsonTreeElement.index on a unique descriptor match -- provisional
+	FIELD field_2106 maybeSiblings [Lcom/charlesproxy/gui/transaction/viewers/json/class_718;
+		COMMENT [bootstrap] carried over from Charles 4's AbstractJsonTreeElement.siblings on a unique descriptor match -- provisional

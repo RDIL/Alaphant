@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/class_35 com/charlesproxy/MaybeIProxyManagerClient
+	COMMENT [bootstrap] matched to Charles 4's IProxyManagerClient on 10 shared member descriptors (next best in this package scored 8) -- provisional, confirm before dropping the Maybe

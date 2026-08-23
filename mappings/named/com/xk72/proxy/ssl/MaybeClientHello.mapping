@@ -1,0 +1,10 @@
+CLASS com/xk72/proxy/ssl/class_1387 com/xk72/proxy/ssl/MaybeClientHello
+	COMMENT [bootstrap] matched to Charles 4's ClientHello on 6 shared member descriptors (next best in this package scored 4) -- provisional, confirm before dropping the Maybe
+	FIELD field_3869 maybeClientProposedSslSessionID [B
+		COMMENT [bootstrap] carried over from Charles 4's ClientHello.clientProposedSslSessionID on a unique descriptor match -- provisional
+	FIELD field_3872 maybeClientProposedCipherSuites [Lcom/xk72/proxy/ssl/class_1392;
+		COMMENT [bootstrap] carried over from Charles 4's ClientHello.clientProposedCipherSuites on a unique descriptor match -- provisional
+	METHOD method_3852 maybeGetClientProposedSslSessionID ()[B
+		COMMENT [bootstrap] carried over from Charles 4's ClientHello.getClientProposedSslSessionID on a unique descriptor match -- provisional
+	METHOD method_3853 maybeGetClientProposedCipherSuites ()[Lcom/xk72/proxy/ssl/class_1392;
+		COMMENT [bootstrap] carried over from Charles 4's ClientHello.getClientProposedCipherSuites on a unique descriptor match -- provisional

@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/gui/navigator/class_391 com/charlesproxy/gui/navigator/MaybeAbstractCharlesNavigator
+	COMMENT [bootstrap] matched to Charles 4's AbstractCharlesNavigator on 9 shared member descriptors (next best in this package scored 4) -- provisional, confirm before dropping the Maybe
+	METHOD method_1068 maybeSetHighlightSelectionPath (II)V
+		COMMENT [bootstrap] carried over from Charles 4's AbstractCharlesNavigator.setHighlightSelectionPath on a unique descriptor match -- provisional
+	METHOD method_1080 maybeDispatchStateChanged ()V
+		COMMENT [bootstrap] carried over from Charles 4's AbstractCharlesNavigator.dispatchStateChanged on a unique descriptor match -- provisional
+	METHOD method_1081 maybeGetMemoryTable ()Lcom/charlesproxy/gui/navigator/class_397;
+		COMMENT [bootstrap] carried over from Charles 4's AbstractCharlesNavigator.getMemoryTable on a unique descriptor match -- provisional

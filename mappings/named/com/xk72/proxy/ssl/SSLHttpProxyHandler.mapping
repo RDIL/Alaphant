@@ -1,0 +1,3 @@
+CLASS com/xk72/proxy/ssl/class_1405 com/xk72/proxy/ssl/SSLHttpProxyHandler
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.ssl.SSLHttpProxyHandler"
+	COMMENT [bootstrap] matched to Charles 4's SSLHttpProxyHandler on 4 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe

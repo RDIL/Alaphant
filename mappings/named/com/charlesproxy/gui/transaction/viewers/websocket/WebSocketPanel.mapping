@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/viewers/websocket/class_806 com/charlesproxy/gui/transaction/viewers/websocket/WebSocketPanel
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: WebSocketPanel$… is in the jar while its outer class is not, and holds a synthetic reference to this type

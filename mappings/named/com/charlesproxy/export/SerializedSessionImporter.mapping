@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/export/class_162 com/charlesproxy/export/SerializedSessionImporter
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.SerializedSessionImporter"

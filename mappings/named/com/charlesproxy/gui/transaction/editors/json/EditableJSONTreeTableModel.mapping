@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/editors/json/class_620 com/charlesproxy/gui/transaction/editors/json/EditableJSONTreeTableModel
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.transaction.editors.json.EditableJSONTreeTableModel"

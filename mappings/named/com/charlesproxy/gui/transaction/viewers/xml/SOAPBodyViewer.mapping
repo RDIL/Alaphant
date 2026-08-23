@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/viewers/xml/class_815 com/charlesproxy/gui/transaction/viewers/xml/SOAPBodyViewer
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: SOAPBodyViewer$… is in the jar while its outer class is not, and holds a synthetic reference to this type

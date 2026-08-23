@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/viewers/gen/class_707 com/charlesproxy/gui/transaction/viewers/gen/FLVBodyViewer
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: FLVBodyViewer$… is in the jar while its outer class is not, and holds a synthetic reference to this type

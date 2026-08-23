@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/tools/breakpoints/class_1057 com/charlesproxy/tools/breakpoints/BreakpointsTreeBuilder
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: BreakpointsTreeBuilder$… is in the jar while its outer class is not, and holds a synthetic reference to this type

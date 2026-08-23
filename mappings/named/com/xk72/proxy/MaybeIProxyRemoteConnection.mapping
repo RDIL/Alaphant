@@ -1,0 +1,4 @@
+CLASS com/xk72/proxy/class_1355 com/xk72/proxy/MaybeIProxyRemoteConnection
+	COMMENT [bootstrap] matched to Charles 4's IProxyRemoteConnection on 14 shared member descriptors (next best in this package scored 10) -- provisional, confirm before dropping the Maybe
+	METHOD method_3474 maybeAddressOrPortAreDifferent (Lcom/xk72/proxy/ProxyEvent;)Z
+		COMMENT [bootstrap] carried over from Charles 4's IProxyRemoteConnection.addressOrPortAreDifferent on a unique descriptor match -- provisional

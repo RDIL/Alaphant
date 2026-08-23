@@ -1,0 +1,5 @@
+CLASS com/xk72/proxy/http2/class_1307 com/xk72/proxy/http2/Http2ProxyHandler/StreamHandler
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.http2.Http2ProxyHandler.StreamHandler"
+	COMMENT [bootstrap] matched to Charles 4's Http2ProxyHandlerStreamHandler on 11 shared member descriptors (next best in this package scored 9) -- provisional, confirm before dropping the Maybe
+	FIELD field_3565 maybeConnection Lcom/xk72/proxy/Connection;
+		COMMENT [bootstrap] carried over from Charles 4's Http2ProxyHandler$StreamHandler.connection on a unique descriptor match -- provisional

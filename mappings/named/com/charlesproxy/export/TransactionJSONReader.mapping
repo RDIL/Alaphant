@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/export/class_152 com/charlesproxy/export/TransactionJSONReader
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.export.TransactionJSONReader"

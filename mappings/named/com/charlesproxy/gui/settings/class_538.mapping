@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/gui/settings/class_538
+	COMMENT [bootstrap] an inner class the obfuscator left alone, com/charlesproxy/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$4, is enclosed by this class, so this was originally com/charlesproxy/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel
+	COMMENT [bootstrap] an inner class the obfuscator left alone, com/charlesproxy/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$5, is enclosed by this class, so this was originally com/charlesproxy/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel
+	COMMENT [bootstrap] matched to Charles 4's ah on 10 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_1577 maybeThrottleSettingsPanel Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel;
+		COMMENT [bootstrap] carried over from Charles 4's ah.throttleSettingsPanel on a unique descriptor match -- provisional
+	METHOD method_1285 maybeGetPanel ()Lcom/charlesproxy/config/class_108;
+		COMMENT [bootstrap] carried over from Charles 4's ah.getPanel on a unique descriptor match -- provisional

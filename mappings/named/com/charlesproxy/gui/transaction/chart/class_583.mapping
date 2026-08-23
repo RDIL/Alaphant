@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/transaction/chart/class_583
+	COMMENT [bootstrap] matched to Charles 4's o on 6 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_1712 maybeRequestEnded Z
+		COMMENT [bootstrap] carried over from Charles 4's o.requestEnded on a unique descriptor match -- provisional

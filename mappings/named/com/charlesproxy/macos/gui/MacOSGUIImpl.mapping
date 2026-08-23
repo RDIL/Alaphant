@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/macos/pkg_9/class_909 com/charlesproxy/macos/gui/MacOSGUIImpl
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.macos.gui.MacOSGUIImpl"

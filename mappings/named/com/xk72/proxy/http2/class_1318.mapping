@@ -1,0 +1,8 @@
+CLASS com/xk72/proxy/http2/class_1318
+	COMMENT [bootstrap] matched to Charles 4's b on 14 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_3609 maybeRawSize J
+		COMMENT [bootstrap] carried over from Charles 4's b.rawSize on a unique descriptor match -- provisional
+	FIELD field_3613 maybeFrameType Lcom/xk72/proxy/http2/Frame$Type;
+		COMMENT [bootstrap] carried over from Charles 4's b.frameType on a unique descriptor match -- provisional
+	METHOD method_3600 maybeSetMaxHeaderTableSize (I)V
+		COMMENT [bootstrap] carried over from Charles 4's b.setMaxHeaderTableSize on a unique descriptor match -- provisional

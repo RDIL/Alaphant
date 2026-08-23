@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/config/class_118 com/charlesproxy/config/ExternalProxyConfiguration
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.config.ExternalProxyConfiguration"

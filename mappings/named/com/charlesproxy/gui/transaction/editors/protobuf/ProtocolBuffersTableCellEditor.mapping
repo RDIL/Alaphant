@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/editors/protobuf/class_634 com/charlesproxy/gui/transaction/editors/protobuf/ProtocolBuffersTableCellEditor
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: ProtocolBuffersTableCellEditor$… is in the jar while its outer class is not, and holds a synthetic reference to this type

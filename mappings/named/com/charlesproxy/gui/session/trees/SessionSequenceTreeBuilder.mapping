@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/session/trees/class_476 com/charlesproxy/gui/session/trees/SessionSequenceTreeBuilder
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: SessionSequenceTreeBuilder$… is in the jar while its outer class is not, and holds a synthetic reference to this type

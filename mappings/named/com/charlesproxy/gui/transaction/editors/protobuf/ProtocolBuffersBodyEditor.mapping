@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/editors/protobuf/class_633 com/charlesproxy/gui/transaction/editors/protobuf/ProtocolBuffersBodyEditor
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.transaction.editors.protobuf.ProtocolBuffersBodyEditor"

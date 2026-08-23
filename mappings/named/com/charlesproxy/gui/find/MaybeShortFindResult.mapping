@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/find/class_225 com/charlesproxy/gui/find/MaybeShortFindResult
+	COMMENT [bootstrap] matched to Charles 4's ShortFindResult on 5 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_835 maybeOptions Lcom/charlesproxy/gui/find/FindOptions;
+		COMMENT [bootstrap] carried over from Charles 4's ShortFindResult.options on a unique descriptor match -- provisional
+	METHOD method_847 maybeGetFindOptions ()Lcom/charlesproxy/gui/find/FindOptions;
+		COMMENT [bootstrap] carried over from Charles 4's ShortFindResult.getFindOptions on a unique descriptor match -- provisional

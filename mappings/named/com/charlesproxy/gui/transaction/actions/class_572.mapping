@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/transaction/actions/class_572
+	COMMENT [bootstrap] matched to Charles 4's k on 5 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_1679 maybeViewAsTypeAction Lcom/charlesproxy/gui/transaction/actions/ViewAsTypeAction;
+		COMMENT [bootstrap] carried over from Charles 4's k.viewAsTypeAction on a unique descriptor match -- provisional

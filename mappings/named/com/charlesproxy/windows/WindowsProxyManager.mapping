@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/windows/class_1169 com/charlesproxy/windows/WindowsProxyManager
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.windows.WindowsProxyManager"

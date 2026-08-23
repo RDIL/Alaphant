@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/transaction/viewers/lib/class_746 com/charlesproxy/gui/transaction/viewers/lib/AbstractScrollPaneTransactionViewer
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.transaction.viewers.lib.AbstractScrollPaneTransactionViewer"
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: AbstractScrollPaneTransactionViewer$… is in the jar while its outer class is not, and holds a synthetic reference to this type
+	COMMENT [bootstrap] matched to Charles 4's AbstractScrollPaneTransactionViewer on 14 shared member descriptors (next best in this package scored 8) -- provisional, confirm before dropping the Maybe

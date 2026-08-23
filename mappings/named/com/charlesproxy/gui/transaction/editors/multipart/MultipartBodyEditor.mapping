@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/editors/multipart/class_629 com/charlesproxy/gui/transaction/editors/multipart/MultipartBodyEditor
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: MultipartBodyEditor$… is in the jar while its outer class is not, and holds a synthetic reference to this type

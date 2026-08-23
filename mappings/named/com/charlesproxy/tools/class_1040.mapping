@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/tools/class_1040
+	COMMENT [bootstrap] matched to Charles 4's d on 4 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_2812 maybeAutoSaveSettingsPanel Lcom/charlesproxy/tools/AutoSaveTool$MySettingsPanel;
+		COMMENT [bootstrap] carried over from Charles 4's d.autoSaveSettingsPanel on a unique descriptor match -- provisional
+	FIELD field_2813 maybeAutoSaveTool Lcom/charlesproxy/tools/AutoSaveTool;
+		COMMENT [bootstrap] carried over from Charles 4's d.autoSaveTool on a unique descriptor match -- provisional

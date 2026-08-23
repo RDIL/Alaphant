@@ -1,0 +1,12 @@
+CLASS com/xk72/throttle/class_1495
+	COMMENT [bootstrap] matched to Charles 4's f on 7 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_4087 maybeBytes [B
+		COMMENT [bootstrap] carried over from Charles 4's f.bytes on a unique descriptor match -- provisional
+	FIELD field_4088 maybeNextAction Lcom/xk72/throttle/LatencyOutputStream$Action;
+		COMMENT [bootstrap] carried over from Charles 4's f.nextAction on a unique descriptor match -- provisional
+	FIELD field_4090 maybeNextInt I
+		COMMENT [bootstrap] carried over from Charles 4's f.nextInt on a unique descriptor match -- provisional
+	METHOD method_4024 maybeWriteInt (I)V
+		COMMENT [bootstrap] carried over from Charles 4's f.writeInt on a unique descriptor match -- provisional
+	METHOD method_4025 maybeWriteBytes ([BII)V
+		COMMENT [bootstrap] carried over from Charles 4's f.writeBytes on a unique descriptor match -- provisional

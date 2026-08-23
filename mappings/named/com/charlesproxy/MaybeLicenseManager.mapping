@@ -1,0 +1,14 @@
+CLASS com/charlesproxy/class_974 com/charlesproxy/MaybeLicenseManager
+	COMMENT [bootstrap] matched to Charles 4's LicenseManager on 64 shared member descriptors (next best in this package scored 4) -- provisional, confirm before dropping the Maybe
+	FIELD field_2631 maybeRegistered Z
+		COMMENT [bootstrap] carried over from Charles 4's LicenseManager.registered on a unique descriptor match -- provisional
+	FIELD field_2644 maybeLicenseType Lcom/charlesproxy/LicenseType;
+		COMMENT [bootstrap] carried over from Charles 4's LicenseManager.licenseType on a unique descriptor match -- provisional
+	METHOD method_2514 maybeCreateInstance ()V
+		COMMENT [bootstrap] carried over from Charles 4's LicenseManager.createInstance on a unique descriptor match -- provisional
+	METHOD method_2515 maybeValidateSignature (J)I
+		COMMENT [bootstrap] carried over from Charles 4's LicenseManager.validateSignature on a unique descriptor match -- provisional
+	METHOD method_2518 maybeMaybeIsValidKey (J)Z
+		COMMENT [bootstrap] carried over from Charles 4's LicenseManager.maybeIsValidKey on a unique descriptor match -- provisional
+	METHOD method_2524 maybeLoopThroughThingies (J)V
+		COMMENT [bootstrap] carried over from Charles 4's LicenseManager.loopThroughThingies on a unique descriptor match -- provisional

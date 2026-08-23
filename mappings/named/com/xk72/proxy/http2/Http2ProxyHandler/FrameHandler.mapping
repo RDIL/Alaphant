@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/http2/class_1315 com/xk72/proxy/http2/Http2ProxyHandler/FrameHandler
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.http2.Http2ProxyHandler.FrameHandler"

@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/config/class_72 com/charlesproxy/config/ConfigLegacyListAdapter
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.config.ConfigLegacyListAdapter"

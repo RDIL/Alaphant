@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/macos/class_913 com/charlesproxy/macos/MacOSManager
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.macos.MacOSManager"

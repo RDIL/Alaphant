@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/pkg_21/class_1262 com/xk72/proxy/server/SocketProxyServer
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.server.SocketProxyServer"

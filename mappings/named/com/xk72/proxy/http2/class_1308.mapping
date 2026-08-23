@@ -1,0 +1,8 @@
+CLASS com/xk72/proxy/http2/class_1308
+	COMMENT [bootstrap] matched to Charles 4's v on 14 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_3570 maybeProxyEvent Lcom/xk72/proxy/ProxyEvent;
+		COMMENT [bootstrap] carried over from Charles 4's v.proxyEvent on a unique descriptor match -- provisional
+	FIELD field_3572 maybeH2OutputStream Lcom/xk72/proxy/http2/Http2OutputStream;
+		COMMENT [bootstrap] carried over from Charles 4's v.h2OutputStream on a unique descriptor match -- provisional
+	METHOD method_3570 maybeGetHttp2OutputStream ()Lcom/xk72/proxy/http2/Http2OutputStream;
+		COMMENT [bootstrap] carried over from Charles 4's v.getHttp2OutputStream on a unique descriptor match -- provisional

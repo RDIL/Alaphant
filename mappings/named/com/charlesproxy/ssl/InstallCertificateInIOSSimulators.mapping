@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/ssl/class_990 com/charlesproxy/ssl/InstallCertificateInIOSSimulators
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.ssl.InstallCertificateInIOSSimulators"

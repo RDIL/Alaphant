@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/session/class_409 com/charlesproxy/gui/session/MaybeHostFocusManager
+	COMMENT [bootstrap] matched to Charles 4's HostFocusManager on 5 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_1258 maybeHostsFocusConfig Lcom/charlesproxy/config/class_76;
+		COMMENT [bootstrap] carried over from Charles 4's HostFocusManager.hostsFocusConfig on a unique descriptor match -- provisional

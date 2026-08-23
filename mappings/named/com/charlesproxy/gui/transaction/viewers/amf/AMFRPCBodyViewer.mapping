@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/viewers/amf/class_695 com/charlesproxy/gui/transaction/viewers/amf/AMFRPCBodyViewer
+	COMMENT [bootstrap] named by an inner class the obfuscator left alone: AMFRPCBodyViewer$… is in the jar while its outer class is not, and holds a synthetic reference to this type

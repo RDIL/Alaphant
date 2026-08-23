@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/class_1354 com/xk72/proxy/MaybeIProxyServer
+	COMMENT [bootstrap] matched to Charles 4's IProxyServer on 50 shared member descriptors (next best in this package scored 46) -- provisional, confirm before dropping the Maybe

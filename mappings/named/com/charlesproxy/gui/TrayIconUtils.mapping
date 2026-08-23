@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/gui/class_185 com/charlesproxy/gui/TrayIconUtils
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.TrayIconUtils"
+	COMMENT [bootstrap] matched to Charles 4's TrayIconUtils on 9 shared member descriptors (next best in this package scored 4) -- provisional, confirm before dropping the Maybe
+	METHOD method_739 maybeIsTrayIconSetUp ()Z
+		COMMENT [bootstrap] carried over from Charles 4's TrayIconUtils.isTrayIconSetUp on a unique descriptor match -- provisional

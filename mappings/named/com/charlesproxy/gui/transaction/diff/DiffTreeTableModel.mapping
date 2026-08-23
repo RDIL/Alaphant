@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/transaction/diff/class_594 com/charlesproxy/gui/transaction/diff/DiffTreeTableModel
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.transaction.diff.DiffTreeTableModel"

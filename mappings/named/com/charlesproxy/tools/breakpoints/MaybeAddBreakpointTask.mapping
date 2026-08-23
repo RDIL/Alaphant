@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/tools/breakpoints/class_1047 com/charlesproxy/tools/breakpoints/MaybeAddBreakpointTask
+	COMMENT [bootstrap] matched to Charles 4's AddBreakpointTask on 4 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_2822 maybeBreakpointsTool Lcom/charlesproxy/tools/breakpoints/BreakpointsTool;
+		COMMENT [bootstrap] carried over from Charles 4's AddBreakpointTask.breakpointsTool on a unique descriptor match -- provisional
+	FIELD field_2823 maybeBreakpoint Lcom/charlesproxy/tools/breakpoints/class_1054;
+		COMMENT [bootstrap] carried over from Charles 4's AddBreakpointTask.breakpoint on a unique descriptor match -- provisional

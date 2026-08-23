@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/find/class_228 com/charlesproxy/gui/find/MaybeHitsTreeModel
+	COMMENT [bootstrap] matched to Charles 4's HitsTreeModel on 6 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe

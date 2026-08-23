@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/pkg_2/class_21 com/charlesproxy/mozilla/MozillaProxySettings
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.mozilla.MozillaProxySettings"

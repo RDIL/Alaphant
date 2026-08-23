@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/class_1271 com/xk72/proxy/SocketRemoteConnection
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.SocketRemoteConnection"

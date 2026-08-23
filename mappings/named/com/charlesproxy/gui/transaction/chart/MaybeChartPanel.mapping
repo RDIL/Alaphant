@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/gui/transaction/chart/class_574 com/charlesproxy/gui/transaction/chart/MaybeChartPanel
+	COMMENT [bootstrap] matched to Charles 4's ChartPanel on 12 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_1693 maybeChartSizeTableModel Lcom/charlesproxy/gui/transaction/chart/ChartSizeTableModel;
+		COMMENT [bootstrap] carried over from Charles 4's ChartPanel.chartSizeTableModel on a unique descriptor match -- provisional
+	FIELD field_1695 maybeFlowChartPanel Lcom/charlesproxy/gui/transaction/chart/FlowChartPanel;
+		COMMENT [bootstrap] carried over from Charles 4's ChartPanel.flowChartPanel on a unique descriptor match -- provisional
+	FIELD field_1696 maybeChartTimelineTableModel Lcom/charlesproxy/gui/transaction/chart/ChartTimelineTableModel;
+		COMMENT [bootstrap] carried over from Charles 4's ChartPanel.chartTimelineTableModel on a unique descriptor match -- provisional
+	FIELD field_1697 maybeChartDurationTableModel Lcom/charlesproxy/gui/transaction/chart/ChartDurationTableModel;
+		COMMENT [bootstrap] carried over from Charles 4's ChartPanel.chartDurationTableModel on a unique descriptor match -- provisional
+	FIELD field_1698 maybeChartTypeTableModel Lcom/charlesproxy/gui/transaction/chart/ChartTypeTableModel;
+		COMMENT [bootstrap] carried over from Charles 4's ChartPanel.chartTypeTableModel on a unique descriptor match -- provisional

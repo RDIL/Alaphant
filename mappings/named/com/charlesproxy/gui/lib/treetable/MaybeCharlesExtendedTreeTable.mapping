@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/lib/treetable/class_352 com/charlesproxy/gui/lib/treetable/MaybeCharlesExtendedTreeTable
+	COMMENT [bootstrap] matched to Charles 4's CharlesExtendedTreeTable on 6 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe

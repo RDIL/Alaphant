@@ -1,0 +1,9 @@
+CLASS com/xk72/proxy/websocket/class_1428 com/xk72/proxy/websocket/WebSocketMessageParser
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.websocket.WebSocketMessageParser"
+	COMMENT [bootstrap] matched to Charles 4's WebSocketMessageParser on 19 shared member descriptors (next best in this package scored 6) -- provisional, confirm before dropping the Maybe
+	FIELD field_3963 maybeMaskBytes [B
+		COMMENT [bootstrap] carried over from Charles 4's WebSocketMessageParser.maskBytes on a unique descriptor match -- provisional
+	FIELD field_3969 maybeMsgSource Lcom/xk72/proxy/websocket/WebSocketMessage$Source;
+		COMMENT [bootstrap] carried over from Charles 4's WebSocketMessageParser.msgSource on a unique descriptor match -- provisional
+	METHOD method_3890 maybeTypeFromInts (II)Lcom/xk72/proxy/websocket/WebSocketMessage$Type;
+		COMMENT [bootstrap] carried over from Charles 4's WebSocketMessageParser.typeFromInts on a unique descriptor match -- provisional

@@ -1,0 +1,6 @@
+CLASS com/xk72/proxy/http/class_1289
+	COMMENT [bootstrap] matched to Charles 4's h on 5 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_3450 maybeConnection Lcom/xk72/proxy/Connection;
+		COMMENT [bootstrap] carried over from Charles 4's h.connection on a unique descriptor match -- provisional
+	FIELD field_3451 maybeProxyEvent Lcom/xk72/proxy/ProxyEvent;
+		COMMENT [bootstrap] carried over from Charles 4's h.proxyEvent on a unique descriptor match -- provisional

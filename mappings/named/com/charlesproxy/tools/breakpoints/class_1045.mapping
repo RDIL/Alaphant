@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/tools/breakpoints/class_1045
+	COMMENT [bootstrap] matched to Charles 4's l on 4 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_2819 maybeBreakpointSettingsBreakpointFormPanel Lcom/charlesproxy/tools/breakpoints/BreakpointsTool$MySettingsPanel$BreakpointFormPanel;
+		COMMENT [bootstrap] carried over from Charles 4's l.breakpointSettingsBreakpointFormPanel on a unique descriptor match -- provisional
+	FIELD field_2820 maybeBreakpointSettingsPanel Lcom/charlesproxy/tools/breakpoints/BreakpointsTool$MySettingsPanel;
+		COMMENT [bootstrap] carried over from Charles 4's l.breakpointSettingsPanel on a unique descriptor match -- provisional

@@ -1,0 +1,2 @@
+CLASS com/xk72/serialization/class_1491 com/xk72/serialization/MaybeSerialization
+	COMMENT [bootstrap] service interface declared in module-info, implemented by CharlesConfigSerialization, CharlesGUISerialization, ToolsSerialization; every provider ends in "Serialization"

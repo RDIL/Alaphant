@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/unsafe/class_1138 com/charlesproxy/unsafe/Termination
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.unsafe.Termination"

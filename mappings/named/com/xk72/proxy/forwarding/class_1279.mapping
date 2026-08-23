@@ -1,0 +1,6 @@
+CLASS com/xk72/proxy/forwarding/class_1279
+	COMMENT [bootstrap] matched to Charles 4's c on 5 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_3413 maybeDatagramForwardingProxyServ Lcom/xk72/proxy/forwarding/DatagramForwardingProxyServer;
+		COMMENT [bootstrap] carried over from Charles 4's c.datagramForwardingProxyServ on a unique descriptor match -- provisional
+	FIELD field_3415 maybeData [B
+		COMMENT [bootstrap] carried over from Charles 4's c.data on a unique descriptor match -- provisional

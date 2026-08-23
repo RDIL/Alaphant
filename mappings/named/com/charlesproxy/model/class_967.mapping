@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/model/class_967
+	COMMENT [bootstrap] matched to Charles 4's c on 4 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_2619 maybeProxyRecordingListener Lcom/charlesproxy/model/class_958;
+		COMMENT [bootstrap] carried over from Charles 4's c.proxyRecordingListener on a unique descriptor match -- provisional
+	FIELD field_2620 maybeProxyEvent Lcom/xk72/proxy/ProxyEvent;
+		COMMENT [bootstrap] carried over from Charles 4's c.proxyEvent on a unique descriptor match -- provisional

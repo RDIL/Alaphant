@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/find/class_223 com/charlesproxy/gui/find/MaybeIFindCallback
+	COMMENT [bootstrap] matched to Charles 4's IFindCallback on 6 shared member descriptors (next best in this package scored 4) -- provisional, confirm before dropping the Maybe
+	METHOD method_841 maybeIsReadyToSearch ()Z
+		COMMENT [bootstrap] carried over from Charles 4's IFindCallback.isReadyToSearch on a unique descriptor match -- provisional

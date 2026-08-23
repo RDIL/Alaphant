@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/session/trees/class_469 com/charlesproxy/gui/session/trees/MaybeAbstractSessionTreeModel
+	COMMENT [bootstrap] matched to Charles 4's AbstractSessionTreeModel on 12 shared member descriptors (next best in this package scored 8) -- provisional, confirm before dropping the Maybe
+	METHOD method_1191 maybeGetChildren (Lcom/charlesproxy/model/class_960;)Lcom/charlesproxy/model/class_960;
+		COMMENT [bootstrap] carried over from Charles 4's AbstractSessionTreeModel.getChildren on a unique descriptor match -- provisional

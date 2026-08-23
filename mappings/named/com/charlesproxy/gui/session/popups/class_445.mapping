@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/session/popups/class_445
+	COMMENT [bootstrap] matched to Charles 4's b on 6 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_1319 maybeModelNodeComparator Lcom/charlesproxy/model/ModelNodeComparator;
+		COMMENT [bootstrap] carried over from Charles 4's b.modelNodeComparator on a unique descriptor match -- provisional
+	FIELD field_1320 maybeModelNodePopupMenu Lcom/charlesproxy/gui/session/popups/AbstractModelNodePopupMenu;
+		COMMENT [bootstrap] carried over from Charles 4's b.modelNodePopupMenu on a unique descriptor match -- provisional

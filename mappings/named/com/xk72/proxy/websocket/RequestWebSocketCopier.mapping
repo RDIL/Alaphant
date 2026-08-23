@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/websocket/class_1421 com/xk72/proxy/websocket/RequestWebSocketCopier
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.websocket.RequestWebSocketCopier"
