@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/config/class_47 com/charlesproxy/config/ToolConfiguration
+	FIELD field_421 configs Ljava/util/Map;
+	METHOD method_163 getConfigs ()Ljava/util/Map;
+	METHOD method_166 setConfigs (Ljava/util/Map;)V

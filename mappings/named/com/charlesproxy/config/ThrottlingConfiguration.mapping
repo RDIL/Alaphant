@@ -1,0 +1,9 @@
+CLASS com/charlesproxy/config/class_63 com/charlesproxy/config/ThrottlingConfiguration
+	COMMENT [bootstrap] matched to Charles 4's ThrottlingConfiguration on 39 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_466 bandwidthDown D
+	FIELD field_472 PRESETS [Lcom/charlesproxy/config/class_114;
+	FIELD field_473 bandwidthUp D
+	METHOD method_257 getBandwidthUp ()D
+	METHOD method_258 setBandwidthUp (D)V
+	METHOD method_268 getBandwidthDown ()D
+	METHOD method_269 setBandwidthDown (D)V

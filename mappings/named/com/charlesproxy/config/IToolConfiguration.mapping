@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/config/class_61 com/charlesproxy/config/IToolConfiguration
+	METHOD init init (Lcom/charlesproxy/config/class_59;)V
+		ARG 1 config

@@ -1,2 +1,4 @@
 CLASS com/charlesproxy/config/class_109
 	METHOD addPropertyChangeListener addPropertyChangeListener (Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 1 other
