@@ -1,5 +1,9 @@
-package alaphant.build
+package alaphant.build.tasks
 
+import alaphant.build.mappings.PackageNames
+import alaphant.build.mappings.Ledger
+import alaphant.build.mappings.ModuleInfoRemapper
+import alaphant.build.mappings.NameClassifier
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.provider.Property

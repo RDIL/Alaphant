@@ -1,8 +1,9 @@
-package alaphant.build
+package alaphant.build.mappings
 
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import java.io.File
+import kotlin.text.iterator
 
 /**
  * The intermediary ID allocation ledger: an ID, once handed out, never means anything else.

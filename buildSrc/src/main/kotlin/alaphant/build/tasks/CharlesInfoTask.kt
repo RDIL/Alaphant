@@ -1,4 +1,4 @@
-package alaphant.build
+package alaphant.build.tasks
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.provider.Property

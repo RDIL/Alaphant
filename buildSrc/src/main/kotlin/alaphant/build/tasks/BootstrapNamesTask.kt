@@ -1,5 +1,9 @@
-package alaphant.build
+package alaphant.build.tasks
 
+import alaphant.build.mappings.Recovery
+import alaphant.build.mappings.IntermediaryIndex
+import alaphant.build.mappings.ModuleInfoRemapper
+import alaphant.build.mappings.NamedStore
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.file.RegularFileProperty

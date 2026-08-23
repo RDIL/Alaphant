@@ -1,10 +1,11 @@
-package alaphant.build
+package alaphant.build.mappings
 
 import net.fabricmc.mappingio.MappedElementKind
 import net.fabricmc.mappingio.format.enigma.EnigmaDirReader
 import net.fabricmc.mappingio.format.enigma.EnigmaDirWriter
 import net.fabricmc.mappingio.tree.MemoryMappingTree
 import java.io.File
+import kotlin.collections.iterator
 
 /**
  * In-memory model of `mappings/named/` — the `intermediary -> named` half of the store.

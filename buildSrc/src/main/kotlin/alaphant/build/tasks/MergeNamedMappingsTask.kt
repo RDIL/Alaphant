@@ -1,4 +1,4 @@
-package alaphant.build
+package alaphant.build.tasks
 
 import net.fabricmc.mappingio.MappedElementKind
 import net.fabricmc.mappingio.MappingReader

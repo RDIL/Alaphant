@@ -1,5 +1,6 @@
-package alaphant.build
+package alaphant.build.mappings
 
+import alaphant.build.tasks.Jar
 import org.objectweb.asm.tree.ClassNode
 import java.io.File
 

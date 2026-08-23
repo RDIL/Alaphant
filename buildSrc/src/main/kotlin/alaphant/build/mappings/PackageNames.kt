@@ -1,4 +1,4 @@
-package alaphant.build
+package alaphant.build.mappings
 
 import java.io.File
 

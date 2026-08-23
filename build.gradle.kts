@@ -1,3 +1,5 @@
+import alaphant.build.tasks.AgentJarTask
+
 plugins {
     id("alaphant.charles")
     alias(libs.plugins.kotlin.jvm)
@@ -45,7 +47,7 @@ dependencies {
  * archive on a fixed path. `runWithMod` reads it from there; so can anything launching Charles by
  * hand. See `AgentJarTask` for why it is assembled rather than shadowed.
  */
-val agentJar = tasks.register<alaphant.build.AgentJarTask>("agentJar") {
+val agentJar = tasks.register<AgentJarTask>("agentJar") {
     group = "build"
     description = "Bundles the mod and its runtime dependencies into the Charles patching agent."
     modClasses.from(sourceSets.main.map { it.output })

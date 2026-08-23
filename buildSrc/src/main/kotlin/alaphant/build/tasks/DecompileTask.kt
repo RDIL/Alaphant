@@ -1,8 +1,10 @@
-package alaphant.build
+package alaphant.build.tasks
 
 import org.gradle.api.DefaultTask
+import org.gradle.api.file.ArchiveOperations
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.file.DirectoryProperty
+import org.gradle.api.file.FileSystemOperations
 import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.tasks.Classpath
 import org.gradle.api.tasks.InputFile
@@ -37,10 +39,10 @@ abstract class DecompileTask : DefaultTask() {
     abstract val execOps: ExecOperations
 
     @get:Inject
-    abstract val fsOps: org.gradle.api.file.FileSystemOperations
+    abstract val fsOps: FileSystemOperations
 
     @get:Inject
-    abstract val archiveOps: org.gradle.api.file.ArchiveOperations
+    abstract val archiveOps: ArchiveOperations
 
     @TaskAction
     fun decompile() {

@@ -1,4 +1,4 @@
-package alaphant.build
+package alaphant.build.mappings
 
 import net.fabricmc.mappingio.MappingReader
 import net.fabricmc.mappingio.tree.MappingTreeView

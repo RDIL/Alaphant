@@ -1,5 +1,6 @@
-package alaphant.build
+package alaphant.build.tasks
 
+import alaphant.build.mappings.ModuleInfoRemapper
 import net.fabricmc.tinyremapper.NonClassCopyMode
 import net.fabricmc.tinyremapper.OutputConsumerPath
 import net.fabricmc.tinyremapper.TinyRemapper

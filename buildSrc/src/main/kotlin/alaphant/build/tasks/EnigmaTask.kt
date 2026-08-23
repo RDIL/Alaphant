@@ -1,5 +1,6 @@
-package alaphant.build
+package alaphant.build.tasks
 
+import alaphant.build.mappings.ModuleInfoRemapper
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.file.DirectoryProperty
@@ -24,6 +25,7 @@ import java.util.zip.ZipEntry
 import java.util.zip.ZipFile
 import java.util.zip.ZipOutputStream
 import javax.inject.Inject
+import kotlin.collections.iterator
 
 /**
  * Opens the named mappings in the Enigma GUI, editing `intermediary -> named` against the

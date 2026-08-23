@@ -1,5 +1,18 @@
 package alaphant.build
 
+import alaphant.build.tasks.AnalyzeMappingsTask
+import alaphant.build.tasks.BootstrapNamesTask
+import alaphant.build.tasks.CharlesInfoTask
+import alaphant.build.tasks.CharlesRunTask
+import alaphant.build.tasks.CheckLinkageTask
+import alaphant.build.tasks.CheckReflectionSitesTask
+import alaphant.build.tasks.DecompileTask
+import alaphant.build.tasks.EnigmaTask
+import alaphant.build.tasks.ExtractMetadataTask
+import alaphant.build.tasks.GenerateIntermediaryTask
+import alaphant.build.tasks.MergeNamedMappingsTask
+import alaphant.build.tasks.RemapJarTask
+import alaphant.build.tasks.ValidateMappingsTask
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -133,6 +146,7 @@ class CharlesPlugin : Plugin<Project> {
             group = VERIFY_GROUP
             description = "Checks the named store for the mistakes that would otherwise pass silently."
             intermediaryMappings.set(intermediaryFile)
+            officialJar.set(charles.officialJar)
             this.namedDir.set(namedDir)
         }
 

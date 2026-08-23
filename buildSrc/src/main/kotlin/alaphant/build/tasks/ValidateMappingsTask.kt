@@ -1,5 +1,7 @@
-package alaphant.build
+package alaphant.build.tasks
 
+import alaphant.build.mappings.IntermediaryIndex
+import alaphant.build.mappings.ModuleInfoRemapper
 import net.fabricmc.mappingio.format.enigma.EnigmaDirReader
 import net.fabricmc.mappingio.tree.MappingTree
 import net.fabricmc.mappingio.tree.MemoryMappingTree
@@ -12,6 +14,8 @@ import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.PathSensitive
 import org.gradle.api.tasks.PathSensitivity
 import org.gradle.api.tasks.TaskAction
+import java.io.File
+import java.util.zip.ZipFile
 
 /**
  * The correctness gate on the named store. Each check catches something that otherwise parses,
@@ -23,6 +27,15 @@ abstract class ValidateMappingsTask : DefaultTask() {
     @get:InputFile
     @get:PathSensitive(PathSensitivity.NONE)
     abstract val intermediaryMappings: RegularFileProperty
+
+    /**
+     * Charles' own jar. Needed because the generated file lists only *renamed* elements, so a class
+     * the obfuscator never touched is absent from it while still being a perfectly good intermediary
+     * name -- the jar is the only place to tell that apart from an invented ID.
+     */
+    @get:InputFile
+    @get:PathSensitive(PathSensitivity.NONE)
+    abstract val officialJar: RegularFileProperty
 
     @get:InputDirectory
     @get:PathSensitive(PathSensitivity.RELATIVE)
@@ -52,13 +65,18 @@ abstract class ValidateMappingsTask : DefaultTask() {
             throw GradleException("mappings/named does not parse as an Enigma directory: ${e.message}", e)
         }
 
-        val knownClasses = intermediary.classMap.values.toSet()
+        // The intermediary namespace is what the generated file renames things to, plus every
+        // readable class it left alone -- those keep their official name in all three namespaces,
+        // and `mergeMappings` carries them through on that basis.
+        val knownClasses = intermediary.classMap.values.toSet() +
+            passthroughClasses(officialJar.get().asFile, intermediary)
         val takenNames = HashMap<String, String>()
 
         for (cls in named.classes) {
             val where = cls.srcName
 
-            // 2. The intermediary element it names has to exist. Catches invented IDs.
+            // 2. The intermediary element it names has to exist. Catches invented IDs, and named
+            //    entries keyed on an obfuscated official name instead of the intermediary one.
             if (cls.srcName !in knownClasses) {
                 problems += "$where: no such class in the intermediary namespace"
                 continue
@@ -99,7 +117,7 @@ abstract class ValidateMappingsTask : DefaultTask() {
                 val key = "${field.srcName}${field.srcDesc}"
                 validateMember(
                     intermediary = intermediary.field(cls.srcName, field.srcName, field.srcDesc ?: "") != null ||
-                        fieldExists(intermediary, cls, field),
+                        fieldExists(knownClasses, cls, field),
                     where = "$where.${field.srcName}",
                     name = field.getDstName(0),
                     comment = field.comment,
@@ -133,9 +151,24 @@ abstract class ValidateMappingsTask : DefaultTask() {
         )
     }
 
-    private fun fieldExists(index: IntermediaryIndex, cls: MappingTree.ClassMapping, field: MappingTree.FieldMapping): Boolean {
+    /**
+     * Every class in the official jar whose name the generator passes through untouched, so its
+     * official name *is* its intermediary name. Classes with no renamed member never reach the
+     * generated file at all, which is why they cannot be looked up there.
+     */
+    private fun passthroughClasses(jar: File, intermediary: IntermediaryIndex): Set<String> =
+        ZipFile(jar).use { zip ->
+            zip.entries().asSequence()
+                .map { it.name }
+                .filter { it.endsWith(".class") && it != ModuleInfoRemapper.MODULE_INFO }
+                .map { it.removeSuffix(".class") }
+                .filter { intermediary.classOf(it).let { mapped -> mapped == null || mapped == it } }
+                .toSet()
+        }
+
+    private fun fieldExists(knownClasses: Set<String>, cls: MappingTree.ClassMapping, field: MappingTree.FieldMapping): Boolean {
         // Readable-name members: legitimate to rename, but nothing to check them against.
-        return index.classMap.values.contains(cls.srcName) && field.srcDesc != null
+        return cls.srcName in knownClasses && field.srcDesc != null
     }
 
     private inline fun validateMember(

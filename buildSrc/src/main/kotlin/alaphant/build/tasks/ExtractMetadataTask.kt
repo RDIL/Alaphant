@@ -1,4 +1,4 @@
-package alaphant.build
+package alaphant.build.tasks
 
 import com.google.gson.stream.JsonWriter
 import org.gradle.api.DefaultTask
