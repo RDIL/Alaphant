@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/ssl/class_1003
+	METHOD <init> (Lcom/charlesproxy/ssl/class_992;)V
+		ARG 1 sslManager

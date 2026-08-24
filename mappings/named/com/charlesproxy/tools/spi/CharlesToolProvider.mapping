@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/tools/spi/CharlesToolProvider com/charlesproxy/tools/spi/CharlesToolProvider
+	METHOD getTools getTools ()Ljava/util/List;

@@ -1,0 +1,3 @@
+CLASS com/xk72/proxy/server/class_1264
+	FIELD field_3353 dnsResolver Lcom/xk72/dns/class_1176;
+	FIELD field_3354 LOCALHOST_PATTERN Ljava/util/regex/Pattern;

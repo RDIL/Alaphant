@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/tools/rewrite/class_1093 com/charlesproxy/tools/rewrite/RewriteRule
+	COMMENT [bootstrap] matched to Charles 4's RewriteRule on 34 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_2937 ACTIONS [Ljava/lang/String;
+	METHOD method_2821 actionDisplay ()Ljava/lang/String;
+	METHOD method_2846 getActionsPool ()[Ljava/lang/String;

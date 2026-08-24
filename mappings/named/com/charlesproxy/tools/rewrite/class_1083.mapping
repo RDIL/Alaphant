@@ -1,6 +1,8 @@
 CLASS com/charlesproxy/tools/rewrite/class_1083
 	COMMENT [bootstrap] matched to Charles 4's r on 4 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
-	METHOD method_2793 maybeSetDebugInErrorLog (Z)V
+	FIELD field_2909 debugInErrorLogCheckbox Ljavax/swing/JCheckBox;
+	METHOD method_2793 setDebugInErrorLog (Z)V
 		COMMENT [bootstrap] carried over from Charles 4's r.setDebugInErrorLog on a unique descriptor match -- provisional
-	METHOD method_2794 maybeIsDebugInErrorLog ()Z
+		ARG 1 enabled
+	METHOD method_2794 isDebugInErrorLog ()Z
 		COMMENT [bootstrap] carried over from Charles 4's r.isDebugInErrorLog on a unique descriptor match -- provisional

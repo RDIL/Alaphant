@@ -1,0 +1,11 @@
+CLASS com/charlesproxy/tools/lib/ToolSettingsPanelAction com/charlesproxy/tools/lib/ToolSettingsPanelAction
+	FIELD dialog dialog Lcom/charlesproxy/gui/settings/SettingsDialog;
+	FIELD showApply showApply Z
+	FIELD tool tool Lcom/charlesproxy/tools/lib/SettingsPanelTool;
+	METHOD <init> (Lcom/charlesproxy/tools/lib/SettingsPanelTool;)V
+		ARG 1 settingsPanelTool
+	METHOD <init> (Lcom/charlesproxy/tools/lib/SettingsPanelTool;Z)V
+		ARG 1 settingsPanelTool
+		ARG 2 showApply
+	METHOD actionPerformed actionPerformed (Ljava/awt/event/ActionEvent;)V
+		ARG 1 actionEvent

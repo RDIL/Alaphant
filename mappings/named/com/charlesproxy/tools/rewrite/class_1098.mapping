@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/rewrite/class_1098
+	METHOD <init> (Lcom/charlesproxy/tools/rewrite/RewriteRulePanel;)V
+		ARG 1 rewriteRulePanel

@@ -1,4 +1,4 @@
-CLASS com/charlesproxy/Main
+CLASS com/charlesproxy/Main com/charlesproxy/Main
 	COMMENT Matched to Charles 4's Main on 13 shared member descriptors; Charles 4 named some of its
 	COMMENT members but not the class, which Charles 5 keeps readable anyway.
 	METHOD method_58 maybeCreateCharlesContext ()Lcom/charlesproxy/CharlesContext;

@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/tools/breakpoints/BreakpointsTool
+	CLASS MySettingsPanel
+		CLASS BreakpointFormPanel BreakpointFormPanel
+			FIELD method method Ljavax/swing/JComboBox;

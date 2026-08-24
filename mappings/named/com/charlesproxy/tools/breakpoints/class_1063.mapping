@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/breakpoints/class_1063
+	METHOD stateChanged stateChanged (Ljavax/swing/event/ChangeEvent;)V
+		ARG 1 changeEvent

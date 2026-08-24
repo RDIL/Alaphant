@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/tools/NoCachingTool com/charlesproxy/tools/NoCachingTool
+	CLASS NoCachingFilter NoCachingFilter

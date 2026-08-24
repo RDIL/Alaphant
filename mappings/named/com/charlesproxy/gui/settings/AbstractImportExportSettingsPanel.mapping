@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/gui/settings/AbstractImportExportSettingsPanel
+	METHOD applyConfiguration applyConfiguration (Lcom/charlesproxy/config/class_61;)V
+		ARG 1 abstractSelectedHostsToolConfiguration
+	METHOD updateConfiguration updateConfiguration (Lcom/charlesproxy/config/class_61;)V
+		ARG 1 abstractSelectedHostsToolConfiguration

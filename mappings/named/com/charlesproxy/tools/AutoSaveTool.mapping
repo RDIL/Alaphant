@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/AutoSaveTool com/charlesproxy/tools/AutoSaveTool
+	FIELD field_2764 autoSaveTimer Ljava/util/Timer;
+	CLASS MySettingsPanel MySettingsPanel

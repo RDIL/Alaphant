@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/MapLocalTool com/charlesproxy/tools/MapLocalTool
+	CLASS MapLocalFormPanel MapLocalFormPanel
+		FIELD localPath localPath Lcom/charlesproxy/gui/lib/PlaceholderTextField;

@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/tools/class_1019
+	FIELD field_2774 reverseProxiesTool Lcom/charlesproxy/tools/ReverseProxiesTool;
+	METHOD <init> (Lcom/charlesproxy/tools/ReverseProxiesTool;)V
+		ARG 1 reverseProxiesTool

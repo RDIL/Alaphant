@@ -82,6 +82,7 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 		ARG 1 tag
 	METHOD addToListAttribute addToListAttribute (Ljava/lang/Object;Ljava/lang/Object;)V
 	METHOD getAlpnProtocol getAlpnProtocol ()Ljava/lang/String;
+	METHOD getAttribute getAttribute (Ljava/lang/Object;)Ljava/lang/Object;
 	METHOD getCipherSuite getCipherSuite ()Ljava/lang/String;
 	METHOD getClientAddress getClientAddress ()Ljava/net/InetAddress;
 	METHOD getClientCertificates getClientCertificates ()Ljava/util/List;
@@ -105,7 +106,9 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD getException getException ()Ljava/lang/Exception;
 	METHOD getExternalProxyProtocol getExternalProxyProtocol ()Ljava/lang/String;
 	METHOD getFile getFile ()Ljava/lang/String;
+	METHOD getHost getHost ()Ljava/lang/String;
 	METHOD getMethod getMethod ()Ljava/lang/String;
+	METHOD getOriginalHost getOriginalHost ()Ljava/lang/String;
 	METHOD getPath getPath ()Ljava/lang/String;
 	METHOD getProposedAlpnProtocols getProposedAlpnProtocols ()Ljava/util/List;
 	METHOD getProposedCipherSuites getProposedCipherSuites ()Ljava/util/List;
@@ -122,9 +125,11 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD getRequestHeader getRequestHeader ()Lcom/xk72/proxy/Fields;
 	METHOD getRequestSize getRequestSize ()J
 	METHOD getResponseBeginTime getResponseBeginTime ()Ljava/util/Date;
+	METHOD getResponseHeader getResponseHeader ()Lcom/xk72/proxy/Fields;
 	METHOD getServerCertificates getServerCertificates ()Ljava/util/List;
 	METHOD getServerExtensions getServerExtensions ()Ljava/util/List;
 	METHOD getSslAlert getSslAlert ()B
+	METHOD getSslDuration getSslDuration ()Ljava/lang/Long;
 	METHOD getSslProtocol getSslProtocol ()Ljava/lang/String;
 	METHOD getSslSessionID getSslSessionID ()[B
 	METHOD getStartTime getStartTime ()Ljava/util/Date;
@@ -136,6 +141,7 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD isMapped isMapped ()Z
 	METHOD isRequestBodyDecoded isRequestBodyDecoded ()Z
 	METHOD isResponseBodyDecoded isResponseBodyDecoded ()Z
+	METHOD isTunnel isTunnel ()Z
 	METHOD isWantResponseBodyDecoded isWantResponseBodyDecoded ()Z
 	METHOD setAlpnProtocol setAlpnProtocol (Ljava/lang/String;)V
 	METHOD setCipherSuite setCipherSuite (Ljava/lang/String;)V
@@ -157,6 +163,7 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD setClientSslSessionID setClientSslSessionID ([B)V
 	METHOD setConnectionAttribute setConnectionAttribute (Ljava/lang/String;Ljava/lang/String;)V
 	METHOD setDefaultPort setDefaultPort (I)V
+	METHOD setDnsDuration setDnsDuration (Ljava/lang/Long;)V
 	METHOD setEndTime setEndTime (Ljava/util/Date;)V
 	METHOD setException setException (Ljava/lang/Exception;)V
 	METHOD setExternalProxyProtocol setExternalProxyProtocol (Ljava/lang/String;)V
@@ -164,6 +171,7 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD setKeptAlive setKeptAlive (Z)V
 	METHOD setMapped setMapped (Z)V
 	METHOD setMethod setMethod (Ljava/lang/String;)V
+	METHOD setOriginalHost setOriginalHost (Ljava/lang/String;)V
 	METHOD setPath setPath (Ljava/lang/String;)V
 	METHOD setPort setPort (I)V
 	METHOD setProposedAlpnProtocols setProposedAlpnProtocols (Ljava/util/List;)V
@@ -177,12 +185,14 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD setRequestBeginTime setRequestBeginTime (Ljava/util/Date;)V
 	METHOD setRequestBodyDecoded setRequestBodyDecoded (Z)V
 	METHOD setRequestCompleteTime setRequestCompleteTime (Ljava/util/Date;)V
+	METHOD setRequestHandshakeSize setRequestHandshakeSize (I)V
 	METHOD setRequestHeader setRequestHeader (Lcom/xk72/proxy/Fields;)V
 	METHOD setRequestSize setRequestSize (J)V
 	METHOD setResponseBodyDecoded setResponseBodyDecoded (Z)V
 	METHOD setServerCertificates setServerCertificates (Ljava/util/List;)V
 	METHOD setServerExtensions setServerExtensions (Ljava/util/List;)V
 	METHOD setSslAlert setSslAlert (B)V
+	METHOD setSslDuration setSslDuration (Ljava/lang/Long;)V
 	METHOD setSslInfo setSslInfo (Lcom/xk72/proxy/ProxyEvent;)V
 	METHOD setSslProtocol setSslProtocol (Ljava/lang/String;)V
 	METHOD setSslSessionID setSslSessionID ([B)V

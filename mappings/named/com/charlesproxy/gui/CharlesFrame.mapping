@@ -24,6 +24,7 @@ CLASS com/charlesproxy/gui/CharlesFrame com/charlesproxy/gui/CharlesFrame
 	METHOD <init> (Lcom/charlesproxy/gui/class_401;)V
 		ARG 1 guiContext
 	METHOD bringToFront bringToFront ()V
+	METHOD getActionSwitchboard getActionSwitchboard ()Lcom/charlesproxy/gui/class_281;
 	METHOD getTopMostOwnedWindow getTopMostOwnedWindow ()Ljava/awt/Window;
 	METHOD init init ()V
 	METHOD startup startup ()V

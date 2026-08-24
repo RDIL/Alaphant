@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/tools/rewrite/class_1096 com/charlesproxy/tools/rewrite/RewriteConfiguration
+	FIELD field_2962 rewrites Ljava/util/List;
+	FIELD field_2963 debugging Z
+	METHOD method_2864 getRewriteSets ()Ljava/util/List;
+	METHOD method_2865 isDebugging ()Z
+	METHOD method_2866 setRewrites (Ljava/util/List;)V
+	METHOD method_2867 setDebugging (Z)V
+		ARG 1 debugging

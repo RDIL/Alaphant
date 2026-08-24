@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/class_1030
+	METHOD <init> (Lcom/charlesproxy/tools/MapLocalTool;Ljava/util/List;Lcom/charlesproxy/tools/class_1076;)V
+		ARG 1 mapLocalTool

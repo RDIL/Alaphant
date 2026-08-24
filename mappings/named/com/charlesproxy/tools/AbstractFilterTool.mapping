@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/AbstractFilterTool com/charlesproxy/tools/AbstractFilterTool
+	METHOD method_2626 (Lcom/charlesproxy/tools/spi/lib/EnabledToolConfiguration;)Z
+		ARG 1 enabledToolConfiguration

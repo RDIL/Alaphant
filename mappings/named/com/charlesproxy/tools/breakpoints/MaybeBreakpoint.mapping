@@ -1,2 +1,0 @@
-CLASS com/charlesproxy/tools/breakpoints/class_1049 com/charlesproxy/tools/breakpoints/MaybeBreakpoint
-	COMMENT [bootstrap] matched to Charles 4's Breakpoint on 12 shared member descriptors (next best in this package scored 9) -- provisional, confirm before dropping the Maybe

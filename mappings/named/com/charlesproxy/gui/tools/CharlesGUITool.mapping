@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/tools/CharlesGUITool com/charlesproxy/gui/tools/CharlesGUITool
+	METHOD getAccelerator getAccelerator ()Ljavax/swing/KeyStroke;
+	METHOD getAction getAction ()Ljavax/swing/Action;

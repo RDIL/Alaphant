@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/CharlesToolFilter com/charlesproxy/tools/CharlesToolFilter
+	METHOD update (Lcom/charlesproxy/config/class_61;)V
+		ARG 1 toolConfig

@@ -1,0 +1,17 @@
+CLASS com/charlesproxy/windows/WindowsProxySettings com/charlesproxy/windows/WindowsProxySettings
+	FIELD PROXY_TYPE_DIRECT PROXY_TYPE_DIRECT I
+	FIELD PROXY_TYPE_PROXY PROXY_TYPE_PROXY I
+	FIELD field_3136 flags I
+	FIELD field_3137 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3138 proxyServer Ljava/lang/String;
+	FIELD field_3139 proxyBypass Ljava/lang/String;
+	METHOD getFlags getFlags ()I
+	METHOD getProxyBypass getProxyBypass ()Ljava/lang/String;
+	METHOD getProxyServer getProxyServer ()Ljava/lang/String;
+	METHOD log log (Ljava/lang/String;)V
+		ARG 1 message
+	METHOD setFlags setFlags (I)V
+		ARG 1 flags
+	METHOD setProxyBypass setProxyBypass (Ljava/lang/String;)V
+	METHOD setProxyServer setProxyServer (Ljava/lang/String;)V
+		ARG 1 proxyServer

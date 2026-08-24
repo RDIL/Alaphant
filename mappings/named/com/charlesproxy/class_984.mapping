@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/class_984
+	METHOD propertyChange propertyChange (Ljava/beans/PropertyChangeEvent;)V

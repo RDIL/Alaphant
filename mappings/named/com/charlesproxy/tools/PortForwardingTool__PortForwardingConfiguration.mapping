@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/tools/class_1020 com/charlesproxy/tools/PortForwardingTool__PortForwardingConfiguration
+	FIELD field_2775 portForwardings Ljava/util/List;
+	FIELD field_2776 active Z
+	METHOD method_2648 getPortForwardings ()Ljava/util/List;
+	METHOD method_2649 isActive ()Z
+	METHOD method_2650 setPortForwardings (Ljava/util/List;)V
+	METHOD method_2651 setActive (Z)V

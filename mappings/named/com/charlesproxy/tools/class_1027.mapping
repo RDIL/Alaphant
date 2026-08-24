@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/class_1027
+	METHOD <init> (Lcom/charlesproxy/tools/PortForwardingTool;)V
+		ARG 1 portForwardingTool

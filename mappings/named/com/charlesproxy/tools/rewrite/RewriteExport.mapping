@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/tools/rewrite/class_1102 com/charlesproxy/tools/rewrite/RewriteExport
+	FIELD field_2972 rewriteSets Ljava/util/List;
+	METHOD method_2869 getRewriteSets ()Ljava/util/List;
+	METHOD method_2870 setRewriteSets (Ljava/util/List;)V

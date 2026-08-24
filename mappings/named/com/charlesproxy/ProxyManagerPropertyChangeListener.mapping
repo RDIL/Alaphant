@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/class_28 com/charlesproxy/ProxyManagerPropertyChangeListener
+	FIELD field_84 proxyManager Lcom/charlesproxy/class_19;
+	METHOD <init> (Lcom/charlesproxy/class_19;)V
+		ARG 1 proxyManager

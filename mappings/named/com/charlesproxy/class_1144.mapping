@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/class_1144
+	FIELD field_3067 socksProxyServer Lcom/xk72/proxy/socks/server/SOCKSProxyServer;
+	METHOD <init> (Lcom/charlesproxy/class_19;Lcom/xk72/proxy/socks/server/SOCKSProxyServer;)V
+		ARG 2 socksProxyServer
+	METHOD propertyChange propertyChange (Ljava/beans/PropertyChangeEvent;)V

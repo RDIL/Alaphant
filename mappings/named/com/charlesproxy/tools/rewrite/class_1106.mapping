@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/tools/rewrite/class_1106
+	FIELD field_2978 rewriteRulePanel Lcom/charlesproxy/tools/rewrite/RewriteRulePanel;
+	METHOD <init> (Lcom/charlesproxy/tools/rewrite/RewriteRulePanel;)V
+		ARG 1 rewriteRulePanel
+	METHOD changedUpdate changedUpdate (Ljavax/swing/event/DocumentEvent;)V
+	METHOD insertUpdate insertUpdate (Ljavax/swing/event/DocumentEvent;)V
+	METHOD removeUpdate removeUpdate (Ljavax/swing/event/DocumentEvent;)V

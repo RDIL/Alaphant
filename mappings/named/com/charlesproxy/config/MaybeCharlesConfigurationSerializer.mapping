@@ -2,5 +2,5 @@ CLASS com/charlesproxy/config/class_131 com/charlesproxy/config/MaybeCharlesConf
 	COMMENT [inferred] implements com.xk72.serialization.class_1486 and serializes CharlesConfiguration under the wire element name "configuration"
 	METHOD method_157 newInstance ()Ljava/lang/Object;
 	METHOD method_158 getName ()Ljava/lang/String;
-	METHOD method_409 maybeGetHandledClass ()Ljava/lang/Class;
+	METHOD method_409 getConfigurationClass ()Ljava/lang/Class;
 		COMMENT [inferred] returns the Class this serializer handles; class_1486 defaults its class set to a singleton of it

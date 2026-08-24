@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/tools/rewrite/RewriteTool
+	CLASS MySettingsPanel MySettingsPanel

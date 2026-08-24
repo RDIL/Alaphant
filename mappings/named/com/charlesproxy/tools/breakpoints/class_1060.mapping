@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/tools/breakpoints/class_1060
+	METHOD actionPerformed actionPerformed (Ljava/awt/event/ActionEvent;)V

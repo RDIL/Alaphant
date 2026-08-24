@@ -2,5 +2,7 @@ CLASS com/xk72/proxy/Fields com/xk72/proxy/Fields
 	FIELD fieldNames fieldNames Ljava/util/List;
 	FIELD fieldValues fieldValues Ljava/util/List;
 	METHOD clone clone ()Ljava/lang/Object;
+	METHOD getField getField (Ljava/lang/String;)Ljava/lang/String;
 	METHOD read read (Lcom/xk72/proxy/io/class_1343;Z)V
+	METHOD removeField removeField (Ljava/lang/String;)V
 	METHOD reset reset ()V

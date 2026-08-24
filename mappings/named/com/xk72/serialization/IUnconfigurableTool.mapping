@@ -1,0 +1,2 @@
+CLASS com/xk72/serialization/class_1480 com/xk72/serialization/IUnconfigurableTool
+	METHOD method_158 getName ()Ljava/lang/String;

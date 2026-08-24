@@ -1,0 +1,5 @@
+CLASS com/xk72/proxy/ssl/class_1388
+	FIELD field_3875 clientSslProtocol Ljava/lang/String;
+	FIELD field_3876 clientSslDuration J
+	FIELD field_3877 clientCipherSuite Ljava/lang/String;
+	FIELD field_3879 clientSslSessionID [B

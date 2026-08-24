@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/class_1145
+	FIELD field_3068 charlesContext Lcom/charlesproxy/CharlesContext;
+	METHOD <init> (Lcom/charlesproxy/CharlesContext;)V
+		ARG 1 charlesContext

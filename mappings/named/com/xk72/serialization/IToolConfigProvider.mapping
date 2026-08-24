@@ -1,0 +1,2 @@
+CLASS com/xk72/serialization/class_1486 com/xk72/serialization/IToolConfigProvider
+	METHOD method_409 getConfigurationClass ()Ljava/lang/Class;

@@ -1,2 +1,4 @@
 CLASS com/charlesproxy/tools/rewrite/class_1095
 	COMMENT [bootstrap] matched to Charles 4's c on 16 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	METHOD <init> (Lcom/charlesproxy/tools/rewrite/class_1103;Lcom/charlesproxy/tools/rewrite/class_1091;)V
+		ARG 1 filter

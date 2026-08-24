@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/BlacklistTool com/charlesproxy/tools/BlacklistTool
+	CLASS BlacklistConfiguration BlacklistConfiguration
+		METHOD method_2636 getErrorReason ()I

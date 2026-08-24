@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/MirrorTool
+	CLASS MySettingsPanel MySettingsPanel
+		FIELD tfPath tfPath Ljavax/swing/JTextField;

@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/rewrite/class_1090
+	METHOD <init> (Lcom/charlesproxy/tools/rewrite/RewriteRulePanel;Ljavax/swing/JPanel;Ljavax/swing/JPanel;Ljavax/swing/JPanel;Ljavax/swing/JLabel;Ljavax/swing/JLabel;)V
+		ARG 1 rewriteRulePanel

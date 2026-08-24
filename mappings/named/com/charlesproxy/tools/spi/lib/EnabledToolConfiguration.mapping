@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/spi/lib/EnabledToolConfiguration com/charlesproxy/tools/spi/lib/EnabledToolConfiguration
+	METHOD isToolEnabled isToolEnabled ()Z
+	METHOD setToolEnabled setToolEnabled (Z)V

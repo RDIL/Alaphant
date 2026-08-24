@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/class_1116
+	METHOD <init> (Lcom/charlesproxy/tools/BlockCookiesTool;)V
+		ARG 1 blockCookiesTool

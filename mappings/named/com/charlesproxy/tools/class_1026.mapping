@@ -1,2 +1,5 @@
 CLASS com/charlesproxy/tools/class_1026
 	COMMENT [bootstrap] matched to Charles 4's B on 4 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	METHOD <init> (Lcom/charlesproxy/tools/PortForwardingTool$MySettingsPanel$PortForwardingFormPanel;)V
+		ARG 1 portForwardingFormPanel
+	METHOD itemStateChanged itemStateChanged (Ljava/awt/event/ItemEvent;)V

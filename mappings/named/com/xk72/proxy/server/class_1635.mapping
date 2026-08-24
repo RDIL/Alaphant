@@ -1,0 +1,3 @@
+CLASS com/xk72/proxy/server/class_1635
+	METHOD newThread newThread (Ljava/lang/Runnable;)Ljava/lang/Thread;
+		ARG 1 runnable

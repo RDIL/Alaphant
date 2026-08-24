@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/tools/PortForwardingTool com/charlesproxy/tools/PortForwardingTool
+	CLASS MySettingsPanel
+		CLASS PortForwardingFormPanel PortForwardingFormPanel
+			FIELD sourceAddressEnabled sourceAddressEnabled Ljavax/swing/JCheckBox;
+			FIELD sourceAddress sourceAddress Ljavax/swing/JTextField;

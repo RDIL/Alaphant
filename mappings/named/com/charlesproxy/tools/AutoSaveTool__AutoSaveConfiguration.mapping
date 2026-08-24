@@ -1,0 +1,26 @@
+CLASS com/charlesproxy/tools/class_1111 com/charlesproxy/tools/AutoSaveTool__AutoSaveConfiguration
+	COMMENT [bootstrap] matched to Charles 4's AutoSaveTool__AutoSaveConfiguration on 12 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_2988 saveLowMem Z
+	FIELD field_2989 savePeriod I
+	FIELD field_2990 enableOnStartup Z
+	FIELD field_2991 startOnMultiple Z
+	FIELD field_2992 savePath Ljava/lang/String;
+	FIELD field_2993 exporter Ljava/lang/String;
+	METHOD method_2881 isSaveLowMem ()Z
+	METHOD method_2882 setExporter (Ljava/lang/String;)V
+		ARG 1 exporter
+	METHOD method_2883 setSaveLowMem (Z)V
+		ARG 1 saveLowMem
+	METHOD method_2884 getSavePeriod ()I
+	METHOD method_2885 isEnableOnStartup ()Z
+	METHOD method_2886 setSavePeriod (I)V
+		ARG 1 savePeriod
+	METHOD method_2887 setSavePath (Ljava/lang/String;)V
+		ARG 1 savePath
+	METHOD method_2888 setEnableOnStartup (Z)V
+		ARG 1 enableOnStartup
+	METHOD method_2889 isStartOnMultiple ()Z
+	METHOD method_2890 setStartOnMultiple (Z)V
+		ARG 1 startOnMultiple
+	METHOD method_2891 getSavePath ()Ljava/lang/String;
+	METHOD method_2892 getExporter ()Ljava/lang/String;

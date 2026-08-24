@@ -1,1 +1,4 @@
-CLASS com/charlesproxy/PlatformManager
+CLASS com/charlesproxy/PlatformManager com/charlesproxy/PlatformManager
+	METHOD method_128 isWindows ()Z
+	METHOD method_129 isMacOS ()Z
+	METHOD method_130 isLinux ()Z

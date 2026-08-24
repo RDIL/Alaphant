@@ -4,3 +4,6 @@ CLASS com/charlesproxy/tools/class_1068
 		COMMENT [bootstrap] carried over from Charles 4's i.mapLocalConfig on a unique descriptor match -- provisional
 	FIELD field_2864 maybeMapLocalTool Lcom/charlesproxy/tools/MapLocalTool;
 		COMMENT [bootstrap] carried over from Charles 4's i.mapLocalTool on a unique descriptor match -- provisional
+	METHOD <init> (Lcom/charlesproxy/tools/MapLocalTool;Ljava/util/List;ILcom/charlesproxy/tools/class_1076;)V
+		ARG 1 mapLocalTool
+		ARG 4 config

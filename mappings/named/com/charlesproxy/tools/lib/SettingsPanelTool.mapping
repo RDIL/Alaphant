@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/tools/lib/SettingsPanelTool com/charlesproxy/tools/lib/SettingsPanelTool
+	METHOD getSettingsPanel getSettingsPanel ()Lcom/charlesproxy/gui/settings/SettingsPanel;
+	METHOD getSettingsPanelActionName getSettingsPanelActionName ()Ljava/lang/String;
+	METHOD hasSettingsPanel hasSettingsPanel ()Z

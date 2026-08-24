@@ -1,4 +1,4 @@
-CLASS com/xk72/proxy/http/HttpFields
+CLASS com/xk72/proxy/http/HttpFields com/xk72/proxy/http/HttpFields
 	FIELD field_3431 LOGGER Lorg/slf4j/Logger;
 	FIELD field_3432 rawSize J
 	FIELD field_3435 receiveTime J

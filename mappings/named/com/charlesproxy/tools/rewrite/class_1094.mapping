@@ -1,0 +1,9 @@
+CLASS com/charlesproxy/tools/rewrite/class_1094
+	METHOD <init> (Lcom/charlesproxy/tools/rewrite/RewriteSetPanel;Lcom/charlesproxy/tools/rewrite/class_1091;)V
+		ARG 1 rewriteSetPanel
+	METHOD changedUpdate changedUpdate (Ljavax/swing/event/DocumentEvent;)V
+		ARG 1 documentEvent
+	METHOD insertUpdate insertUpdate (Ljavax/swing/event/DocumentEvent;)V
+		ARG 1 documentEvent
+	METHOD removeUpdate removeUpdate (Ljavax/swing/event/DocumentEvent;)V
+		ARG 1 documentEvent

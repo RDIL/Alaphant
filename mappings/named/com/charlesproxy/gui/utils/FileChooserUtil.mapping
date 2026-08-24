@@ -1,2 +1,3 @@
 CLASS com/charlesproxy/gui/utils/class_863 com/charlesproxy/gui/utils/FileChooserUtil
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.utils.FileChooserUtil"
+	METHOD method_2036 spawnFilePicker ()Ljavax/swing/JFileChooser;

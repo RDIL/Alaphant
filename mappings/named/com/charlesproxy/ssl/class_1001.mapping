@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/ssl/class_1001
+	METHOD method_2603 getComputerHostname ()Ljava/lang/String;
+	METHOD method_2605 generateCertificate ()V

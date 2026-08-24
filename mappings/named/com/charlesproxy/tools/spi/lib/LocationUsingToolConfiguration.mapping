@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/tools/spi/lib/LocationUsingToolConfiguration com/charlesproxy/tools/spi/lib/LocationUsingToolConfiguration
+	METHOD getUsedLocations getUsedLocations ()Ljava/util/Collection;

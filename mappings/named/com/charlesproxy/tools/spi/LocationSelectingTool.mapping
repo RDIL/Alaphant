@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/spi/LocationSelectingTool com/charlesproxy/tools/spi/LocationSelectingTool
+	METHOD isSelectedLocation (Lcom/xk72/common/net/Location;)Z
+		ARG 1 location

@@ -1,0 +1,3 @@
+CLASS com/xk72/proxy/ssl/SSLHandshakeParser com/xk72/proxy/ssl/SSLHandshakeParser
+	METHOD method_3770 (Lcom/xk72/proxy/ssl/class_1387;)V
+		ARG 1 clientHello

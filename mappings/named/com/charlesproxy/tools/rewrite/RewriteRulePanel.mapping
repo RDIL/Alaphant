@@ -1,0 +1,9 @@
+CLASS com/charlesproxy/tools/rewrite/RewriteRulePanel com/charlesproxy/tools/rewrite/RewriteRulePanel
+	FIELD caseSensitive caseSensitive Ljavax/swing/JCheckBox;
+	FIELD matchHeader matchHeader Ljavax/swing/JTextField;
+	FIELD matchWholeValue matchWholeValue Ljavax/swing/JCheckBox;
+	FIELD newHeader newHeader Ljavax/swing/JTextField;
+	FIELD regexHeader regexHeader Ljavax/swing/JCheckBox;
+	FIELD regexValue regexValue Ljavax/swing/JCheckBox;
+	FIELD replaceAll replaceAll Ljavax/swing/JRadioButton;
+	FIELD replaceFirst replaceFirst Ljavax/swing/JRadioButton;

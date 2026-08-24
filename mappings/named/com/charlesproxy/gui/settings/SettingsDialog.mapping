@@ -1,5 +1,7 @@
-CLASS com/charlesproxy/gui/settings/SettingsDialog
+CLASS com/charlesproxy/gui/settings/SettingsDialog com/charlesproxy/gui/settings/SettingsDialog
 	METHOD setCancelLabel setCancelLabel (Ljava/lang/String;)V
 	METHOD setSaveLabel setSaveLabel (Ljava/lang/String;)V
+	METHOD setShowApply setShowApply (Z)V
+	METHOD setVisible setVisible (Z)V
 	METHOD showAndWait showAndWait ()Z
 	CLASS SubSettingsDialog SubSettingsDialog

@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/class_1078
+	METHOD <init> (Lcom/charlesproxy/tools/DNSSpoofingTool;)V
+		ARG 1 dnsSpoofingTool

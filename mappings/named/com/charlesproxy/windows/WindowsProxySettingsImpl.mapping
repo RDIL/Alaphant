@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/windows/WindowsProxySettingsImpl com/charlesproxy/windows/WindowsProxySettingsImpl
+	METHOD getWindowsConnections getWindowsConnections ()Ljava/util/List;
+	METHOD getWindowsProxy getWindowsProxy (Ljava/lang/String;)Lcom/charlesproxy/windows/WindowsProxySettings;
+	METHOD setWindowsProxy setWindowsProxy (Ljava/lang/String;Lcom/charlesproxy/windows/WindowsProxySettings;)Z
+		ARG 1 windowsProxySettings

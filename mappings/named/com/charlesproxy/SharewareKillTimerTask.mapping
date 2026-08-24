@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/class_1146 com/charlesproxy/SharewareKillTimerTask
+	FIELD field_3069 charlesContext Lcom/charlesproxy/CharlesContext;
+	METHOD <init> (Lcom/charlesproxy/CharlesContext;)V
+		ARG 1 charlesContext

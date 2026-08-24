@@ -1,0 +1,3 @@
+CLASS com/xk72/proxy/reverse/class_1360
+	METHOD <init> (Lcom/xk72/proxy/reverse/ReverseProxyServer;)V
+		ARG 1 reverseProxyServer

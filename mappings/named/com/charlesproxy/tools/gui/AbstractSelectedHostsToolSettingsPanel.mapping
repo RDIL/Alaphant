@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/tools/gui/AbstractSelectedHostsToolSettingsPanel com/charlesproxy/tools/gui/AbstractSelectedHostsToolSettingsPanel
+	FIELD help help Ljava/lang/String;
+	FIELD hostsTable hostsTable Lcom/charlesproxy/gui/helper/LocationsTableHelper;
+	METHOD <init> (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 2 helpText

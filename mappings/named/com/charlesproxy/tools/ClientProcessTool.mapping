@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/tools/ClientProcessTool com/charlesproxy/tools/ClientProcessTool
+	FIELD field_2767 LOGGER Lorg/slf4j/Logger;

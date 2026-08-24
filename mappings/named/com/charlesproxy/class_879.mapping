@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/class_879
+	FIELD field_2395 charlesContext Lcom/charlesproxy/CharlesContext;
+	METHOD <init> (Lcom/charlesproxy/CharlesContext;)V
+		ARG 1 charlesContext
+	METHOD uncaughtException uncaughtException (Ljava/lang/Thread;Ljava/lang/Throwable;)V
+		ARG 1 thread
+		ARG 2 throwable

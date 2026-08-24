@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/tools/spi/AbstractEnabledToolConfiguration com/charlesproxy/tools/spi/AbstractEnabledToolConfiguration
+	CLASS Serialization Serialization
