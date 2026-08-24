@@ -1,0 +1,10 @@
+CLASS com/charlesproxy/gui/lib/BetterTextArea com/charlesproxy/gui/lib/BetterTextArea
+	FIELD lineWrap lineWrap Z
+	FIELD scrollRectToVisibleEnabled scrollRectToVisibleEnabled Z
+	METHOD isLineWrap isLineWrap ()Z
+	METHOD scrollRectToVisible scrollRectToVisible (Ljava/awt/Rectangle;)V
+	METHOD select select (II)V
+	METHOD setLineWrap setLineWrap (Z)V
+	METHOD setSelectionEnd setSelectionEnd (I)V
+	METHOD setSelectionStart setSelectionStart (I)V
+	METHOD setText setText (Ljava/lang/String;)V

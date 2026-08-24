@@ -23,6 +23,7 @@ CLASS com/charlesproxy/gui/CharlesFrame com/charlesproxy/gui/CharlesFrame
 	FIELD webInterfaceIndicatorLabel webInterfaceIndicatorLabel Lcom/charlesproxy/gui/StatusPanelLabel;
 	METHOD <init> (Lcom/charlesproxy/gui/class_401;)V
 		ARG 1 guiContext
+	METHOD addFrame addFrame (Lcom/charlesproxy/gui/lib/class_288;)V
 	METHOD bringToFront bringToFront ()V
 	METHOD getActionSwitchboard getActionSwitchboard ()Lcom/charlesproxy/gui/class_281;
 	METHOD getTopMostOwnedWindow getTopMostOwnedWindow ()Ljava/awt/Window;

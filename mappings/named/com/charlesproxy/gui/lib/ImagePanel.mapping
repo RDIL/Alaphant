@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/gui/lib/ImagePanel com/charlesproxy/gui/lib/ImagePanel
+	FIELD image image Ljava/awt/Image;
+	METHOD clearImage clearImage ()V
+	METHOD getPreferredSize getPreferredSize ()Ljava/awt/Dimension;
+	METHOD imageUpdate imageUpdate (Ljava/awt/Image;IIIII)Z
+	METHOD paint paint (Ljava/awt/Graphics;)V
+	METHOD setImage setImage (Ljava/awt/Image;)V
+	METHOD setImage setImage ([B)V

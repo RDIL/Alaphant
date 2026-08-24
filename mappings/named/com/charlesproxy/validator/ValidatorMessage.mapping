@@ -1,8 +1,31 @@
 CLASS com/charlesproxy/validator/ValidatorMessage com/charlesproxy/validator/ValidatorMessage
+	FIELD field_3078 context Ljava/lang/String;
+	FIELD field_3079 explanation Ljava/lang/String;
+	FIELD field_3080 type Lcom/charlesproxy/validator/ValidatorMessage$Type;
+	FIELD field_3081 line Ljava/lang/Integer;
+	FIELD field_3082 messageId Ljava/lang/String;
+	FIELD field_3083 message Ljava/lang/String;
+	FIELD field_3084 source Ljava/lang/String;
+	METHOD <init> (Lcom/charlesproxy/validator/ValidatorMessage$Type;)V
+		ARG 1 type
 	METHOD method_2975 setMessage (Ljava/lang/String;)V
+		ARG 1 message
+	METHOD method_2976 getContext ()Ljava/lang/String;
+	METHOD method_2977 getExplanation ()Ljava/lang/String;
 	METHOD method_2978 setContext (Ljava/lang/String;)V
+		ARG 1 context
+	METHOD method_2979 getType ()Lcom/charlesproxy/validator/ValidatorMessage$Type;
+	METHOD method_2980 getLine ()Ljava/lang/Integer;
+	METHOD method_2981 setType (Lcom/charlesproxy/validator/ValidatorMessage$Type;)V
+		ARG 1 type
 	METHOD method_2982 setLine (Ljava/lang/Integer;)V
+		ARG 1 line
 	METHOD method_2983 setMessageId (Ljava/lang/String;)V
+		ARG 1 messageId
 	METHOD method_2985 setExplanation (Ljava/lang/String;)V
+		ARG 1 explanation
+	METHOD method_2986 getMessage ()Ljava/lang/String;
 	METHOD method_2987 setSource (Ljava/lang/String;)V
+		ARG 1 source
+	METHOD method_2988 getSource ()Ljava/lang/String;
 	CLASS Type Type

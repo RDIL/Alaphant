@@ -62,6 +62,7 @@ CLASS com/charlesproxy/CharlesContext com/charlesproxy/CharlesContext
 		ARG 2 detail
 	METHOD init init ()V
 	METHOD method_2 createRemoteControlProxyListener ()Lcom/charlesproxy/proxy/class_15;
+	METHOD method_4 createFileManager ()Lcom/charlesproxy/class_24;
 	METHOD method_5 (Lcom/charlesproxy/tools/spi/lib/CharlesTool;)V
 		ARG 1 tool
 	METHOD options options (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I[Ljava/lang/String;Ljava/lang/String;)I

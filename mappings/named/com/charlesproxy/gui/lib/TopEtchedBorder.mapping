@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/lib/TopEtchedBorder com/charlesproxy/gui/lib/TopEtchedBorder
+	METHOD getBorderInsets getBorderInsets (Ljava/awt/Component;)Ljava/awt/Insets;
+	METHOD paintBorder paintBorder (Ljava/awt/Component;Ljava/awt/Graphics;IIII)V

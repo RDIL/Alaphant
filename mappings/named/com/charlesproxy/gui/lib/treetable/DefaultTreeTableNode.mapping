@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/lib/treetable/DefaultTreeTableNode com/charlesproxy/gui/lib/treetable/DefaultTreeTableNode
+	METHOD insertChildAfter insertChildAfter (Ljavax/swing/tree/MutableTreeNode;Ljavax/swing/tree/MutableTreeNode;)V
+	METHOD setValue setValue (Ljava/lang/Object;)V

@@ -1,2 +1,4 @@
 CLASS com/charlesproxy/validator/gui/class_1151
 	COMMENT [bootstrap] matched to Charles 4's g on 15 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	METHOD method_3009 (Lcom/charlesproxy/validator/ValidatorMessage;)Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;
+		ARG 0 message

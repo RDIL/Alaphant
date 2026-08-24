@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/lib/class_301 com/charlesproxy/gui/lib/IDirtyable
+	METHOD isDirty isDirty ()Z
+	METHOD setDirty setDirty ()V

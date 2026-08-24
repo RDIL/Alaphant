@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/lib/PackAwareJDialog com/charlesproxy/gui/lib/PackAwareJDialog
+	METHOD pack pack ()V
+	METHOD packed packed ()V

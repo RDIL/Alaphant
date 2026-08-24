@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/gui/lib/MultiImagePanel com/charlesproxy/gui/lib/MultiImagePanel
+	FIELD font font Ljava/awt/Font;
+	FIELD images images Ljava/util/List;
+	METHOD clearImages clearImages ()V
+	METHOD getPreferredSize getPreferredSize ()Ljava/awt/Dimension;
+	METHOD hasImages hasImages ()Z
+	METHOD paint paint (Ljava/awt/Graphics;)V
+	METHOD setImages setImages (Ljava/util/List;)V

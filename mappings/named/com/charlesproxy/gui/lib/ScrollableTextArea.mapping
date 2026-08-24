@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/gui/lib/ScrollableTextArea com/charlesproxy/gui/lib/ScrollableTextArea
+	METHOD getDocument getDocument ()Ljavax/swing/text/Document;
+	METHOD getText getText ()Ljava/lang/String;
+	METHOD getTextArea getTextArea ()Ljavax/swing/JTextArea;
+	METHOD isEnabled isEnabled ()Z
+	METHOD setEnabled setEnabled (Z)V
+	METHOD setText setText (Ljava/lang/String;)V

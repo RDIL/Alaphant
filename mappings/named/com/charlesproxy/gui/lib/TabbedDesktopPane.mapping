@@ -1,1 +1,2 @@
-CLASS com/charlesproxy/gui/lib/TabbedDesktopPane
+CLASS com/charlesproxy/gui/lib/TabbedDesktopPane com/charlesproxy/gui/lib/TabbedDesktopPane
+	FIELD field_1076 LOGGER Lorg/slf4j/Logger;

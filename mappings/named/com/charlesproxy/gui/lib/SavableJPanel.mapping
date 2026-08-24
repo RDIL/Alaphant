@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/lib/SavableJPanel
+	METHOD isClosed isClosed ()Z

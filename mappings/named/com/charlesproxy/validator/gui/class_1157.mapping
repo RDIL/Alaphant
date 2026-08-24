@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/validator/gui/class_1157
+	FIELD field_3115 pathNode Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;
+	FIELD field_3116 hostNode Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;

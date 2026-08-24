@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/validator/gui/ValidatorSessionFrame com/charlesproxy/validator/gui/ValidatorSessionFrame
+	FIELD repeatAndValidateTransactionAction repeatAndValidateTransactionAction Ljavax/swing/Action;

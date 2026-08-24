@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/gui/session/AbstractSessionFrame
+	FIELD actionSwitchboard actionSwitchboard Lcom/charlesproxy/gui/actions/class_208;
+	METHOD activeNavigator activeNavigator ()Lcom/charlesproxy/gui/navigator/class_391;
+	METHOD setTitleFromName setTitleFromName (Ljava/lang/String;)V
+	METHOD switchSelectionActions switchSelectionActions ()V
+	METHOD updateName updateName ()V
+	METHOD viewModelNode viewModelNode (Lcom/charlesproxy/model/class_960;)V
+	METHOD viewModelNodes viewModelNodes ([Lcom/charlesproxy/model/class_960;)V

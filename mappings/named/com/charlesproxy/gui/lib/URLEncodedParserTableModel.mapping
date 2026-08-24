@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/gui/lib/URLEncodedParserTableModel com/charlesproxy/gui/lib/URLEncodedParserTableModel
+	FIELD parser parser Lcom/charlesproxy/lib/class_890;
+	METHOD getColumnClass getColumnClass (I)Ljava/lang/Class;
+	METHOD getColumnCount getColumnCount ()I
+	METHOD getColumnName getColumnName (I)Ljava/lang/String;
+	METHOD getRowCount getRowCount ()I
+	METHOD getValueAt getValueAt (II)Ljava/lang/Object;

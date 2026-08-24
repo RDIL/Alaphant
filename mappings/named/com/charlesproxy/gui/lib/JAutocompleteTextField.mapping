@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/gui/lib/JAutocompleteTextField com/charlesproxy/gui/lib/JAutocompleteTextField
+	FIELD options options [Ljava/lang/String;
+	METHOD getOptions getOptions ()[Ljava/lang/String;
+	METHOD setOptions setOptions ([Ljava/lang/String;)V
+	METHOD setSelectedOption setSelectedOption (Ljava/lang/String;)V

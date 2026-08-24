@@ -2,4 +2,15 @@ CLASS com/xk72/common/util/class_1235 com/xk72/common/util/BackgroundExecutor
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.common.util.BackgroundExecutor"
 	FIELD field_3254 threadPool Ljava/util/concurrent/ExecutorService;
 	FIELD field_3255 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3256 tasksTimer Ljava/util/Timer;
 	METHOD method_3200 finishBackgroundTasks ()V
+	METHOD method_3201 submitRunnable (Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+	METHOD method_3202 schedule1000 (Ljava/util/TimerTask;)V
+		ARG 0 task
+	METHOD method_3203 initThreadPool ()V
+	METHOD method_3204 execute (Ljava/lang/Runnable;)V
+	METHOD method_3205 schedule2500 (Ljava/util/TimerTask;)V
+		ARG 0 task
+	METHOD method_3206 submitCallable (Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+	METHOD method_3207 initTimer ()V
+	METHOD method_4400 usePlatformThreads ()Z

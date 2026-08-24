@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/lib/ImageInfo
+	FIELD field_1046 IMAGE_MIME_TYPES [Ljava/lang/String;

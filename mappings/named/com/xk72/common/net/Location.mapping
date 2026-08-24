@@ -17,6 +17,7 @@ CLASS com/xk72/common/net/Location com/xk72/common/net/Location
 		ARG 1 protocol
 		ARG 2 host
 		ARG 3 port
+		ARG 4 path
 	METHOD <init> (Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
 		ARG 1 protocol
 		ARG 2 host
@@ -33,13 +34,27 @@ CLASS com/xk72/common/net/Location com/xk72/common/net/Location
 	METHOD getPort getPort ()Ljava/lang/String;
 	METHOD getProtocol getProtocol ()Ljava/lang/String;
 	METHOD getQuery getQuery ()Ljava/lang/String;
+	METHOD hostPart hostPart (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 url
 	METHOD hostPart hostPart (Ljava/lang/String;Z)Ljava/lang/String;
+		ARG 0 url
 	METHOD hostPortPart hostPortPart (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 url
 	METHOD hostPortPart hostPortPart (Ljava/lang/String;Z)Ljava/lang/String;
+		ARG 0 url
 	METHOD parseURL parseURL (Ljava/lang/String;)Lcom/xk72/common/net/Location;
+		ARG 0 url
+	METHOD pathPart pathPart (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 url
 	METHOD pathPart pathPart (Ljava/lang/String;Z)Ljava/lang/String;
+		ARG 0 url
+		ARG 1 nullFallback
+	METHOD portPart portPart (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 url
 	METHOD portPart portPart (Ljava/lang/String;Z)Ljava/lang/String;
+		ARG 0 url
 	METHOD protocolPart protocolPart (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 url
 	METHOD setHost setHost (Ljava/lang/String;)V
 		ARG 1 host
 	METHOD setPath setPath (Ljava/lang/String;)V

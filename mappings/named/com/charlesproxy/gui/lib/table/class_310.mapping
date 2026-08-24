@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/lib/table/class_310
+	METHOD measureColumnValues measureColumnValues (I)Z

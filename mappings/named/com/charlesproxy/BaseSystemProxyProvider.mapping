@@ -1,4 +1,14 @@
 CLASS com/charlesproxy/class_1594 com/charlesproxy/BaseSystemProxyProvider
+	FIELD field_4536 baseProvider Lcom/charlesproxy/class_1594;
+	FIELD field_4537 changeListener Ljava/beans/PropertyChangeSupport;
 	METHOD method_4259 setProxiesEnabled (Z)Z
 		ARG 1 enabled
 	METHOD method_4261 isEnabled ()Z
+	METHOD method_4293 hasProviderForPlatform ()Z
+	METHOD method_4294 fireOnEnableChanged (Ljava/beans/PropertyChangeEvent;)V
+		ARG 1 changeEvent
+	METHOD method_4295 addChangeListener (Ljava/beans/PropertyChangeListener;)V
+		ARG 1 listener
+	METHOD method_4296 setProviderEnabled (Z)Z
+		ARG 1 enabled
+	METHOD method_4297 getProvider ()Lcom/charlesproxy/class_1594;

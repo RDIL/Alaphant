@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/lib/PlaceholderTextField com/charlesproxy/gui/lib/PlaceholderTextField
+	FIELD placeholder placeholder Ljava/lang/String;

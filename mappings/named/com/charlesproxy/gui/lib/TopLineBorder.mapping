@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/lib/TopLineBorder com/charlesproxy/gui/lib/TopLineBorder
+	FIELD color color Ljava/awt/Color;
+	FIELD thickness thickness I
+	METHOD getBorderInsets getBorderInsets (Ljava/awt/Component;)Ljava/awt/Insets;
+	METHOD getBorderInsets getBorderInsets (Ljava/awt/Component;Ljava/awt/Insets;)Ljava/awt/Insets;
+	METHOD paintBorder paintBorder (Ljava/awt/Component;Ljava/awt/Graphics;IIII)V

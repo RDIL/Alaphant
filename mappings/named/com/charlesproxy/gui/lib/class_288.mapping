@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/lib/class_288
+	METHOD getComponent getComponent ()Ljava/awt/Component;
+	METHOD getInitialFocusComponent getInitialFocusComponent ()Ljava/awt/Component;
+	METHOD getTitle getTitle ()Ljava/lang/String;
+	METHOD setClosed setClosed (Z)V
+	METHOD setSelected setSelected (Z)V
