@@ -1,0 +1,7 @@
+CLASS com/xk72/util/class_1526 com/xk72/util/HttpCache__ICharlesNetworkFetcher
+	COMMENT How HttpCache reaches the network; a nest member of HttpCache (NestHost com/xk72/util/class_1535). Charles 4's com/xk72/util/s carries this name on the identical descriptor (URI, long, String) -> the response interface.
+	METHOD method_4089 fetchWithTimeout (Ljava/net/URI;JLjava/lang/String;)Lcom/xk72/util/class_1532;
+		COMMENT Named in the Charles 4 corpus. The two conditional-request parameters are what HttpCache.revalidate reads off the cached entry: its lastModified and its etag.
+		ARG 1 uri
+		ARG 2 ifModifiedSince
+		ARG 4 etag

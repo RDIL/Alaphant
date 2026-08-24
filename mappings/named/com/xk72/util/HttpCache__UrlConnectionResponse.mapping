@@ -1,0 +1,8 @@
+CLASS com/xk72/util/class_1532 com/xk72/util/HttpCache__UrlConnectionResponse
+	COMMENT A final, package-private nest member of HttpCache (NestHost com/xk72/util/class_1535) that adapts a java.net.URLConnection to HttpCache__ICharlesNetworkResponse. HttpCache's fetcher interface (class_1526) declares it as its return type. Was called ICharlesNetworkResponse on a Charles 4 descriptor match, which is wrong twice over: it is a concrete class, not an interface, and it is not the type HttpCache consumers see.
+	FIELD field_4174 responseStatusCode I
+	FIELD field_4175 connection Ljava/net/URLConnection;
+	METHOD method_4108 getResponseStatusCode ()I
+		COMMENT Returns field_4174, the int supplied to the constructor alongside the URLConnection. Declared by HttpCache__ICharlesNetworkResponse, so the name has to match there.
+	METHOD method_4111 disconnect ()V
+		COMMENT Casts the wrapped connection to java.net.HttpURLConnection and calls disconnect(), or does nothing when it is not one. Declared by HttpCache__ICharlesNetworkResponse, so the name has to match there.

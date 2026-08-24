@@ -1,0 +1,16 @@
+CLASS com/xk72/util/class_1540 com/xk72/util/HttpCache__ICharlesNetworkResponse
+	COMMENT The response abstraction HttpCache reads through; a nest member of HttpCache (NestHost com/xk72/util/class_1535). Charles 4's com/xk72/util/v carries this name over all nine of these members, and the sole implementor delegates each one to the matching java.net.URLConnection call. Previously named IReadableResponse, which appears nowhere in the Charles 4 corpus.
+	METHOD method_4108 getResponseStatusCode ()I
+		COMMENT The only implementor returns the int handed to its constructor next to the URLConnection it wraps.
+	METHOD method_4109 getHeaderFieldInt (Ljava/lang/String;)J
+		COMMENT Implementor calls URLConnection.getHeaderFieldInt(String, int) with a fixed default. Charles 4 declared this as (String, int)J; Charles 5 dropped the default parameter.
+	METHOD method_4110 getExpiration ()J
+	METHOD method_4111 disconnect ()V
+		COMMENT The only implementor casts to java.net.HttpURLConnection and calls disconnect().
+	METHOD method_4112 getHeaderField (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Implementor delegates to java.net.URLConnection.getHeaderField(String).
+	METHOD method_4113 getInputStream ()Ljava/io/InputStream;
+	METHOD method_4114 getHeaderFieldList (Ljava/lang/String;)Ljava/util/List;
+		COMMENT Implementor reads URLConnection.getHeaderFields() and returns the entry for the requested name.
+	METHOD method_4115 getDate ()J
+	METHOD method_4116 getLastModified ()J

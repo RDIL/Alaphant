@@ -1,0 +1,18 @@
+CLASS com/xk72/util/class_1547 com/xk72/util/HttpCache__HttpCacheEntry
+	COMMENT One cached response; a nest member of HttpCache, held as the value type of its LinkedHashMap<URI, HttpCacheEntry>. Charles 4's com/xk72/util/u carries this name and three of these four member names on matching descriptors.
+	FIELD field_4192 etag Ljava/lang/String;
+	FIELD field_4193 response Ljava/lang/Object;
+	FIELD field_4194 lastModified J
+	FIELD field_4195 expires J
+		COMMENT Unnamed in the Charles 4 corpus. HttpCache.revalidate returns the entry untouched when System.currentTimeMillis() is below this, so it is an absolute expiry instant rather than a duration.
+	METHOD method_4154 getEtag ()Ljava/lang/String;
+	METHOD method_4155 getResponse ()Ljava/lang/Object;
+		COMMENT Erased return; the declared type is T.
+	METHOD method_4156 getLastModified ()J
+	METHOD method_4157 getExpires ()J
+		COMMENT Unnamed in the Charles 4 corpus; named here for the field it returns.
+	METHOD <init> (Ljava/lang/Object;Ljava/lang/String;JJ)V
+		ARG 1 response
+		ARG 2 etag
+		ARG 3 lastModified
+		ARG 5 expires

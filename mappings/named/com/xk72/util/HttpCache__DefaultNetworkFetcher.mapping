@@ -1,0 +1,7 @@
+CLASS com/xk72/util/class_1530 com/xk72/util/HttpCache__DefaultNetworkFetcher
+	COMMENT The java.net implementation of ICharlesNetworkFetcher, and a nest member of HttpCache. Charles 4's com/xk72/util/w carries this name; there it held CONNECTION_TIMEOUT and READ_TIMEOUT fields, which Charles 5 inlines as constants into setConnectTimeout/setReadTimeout.
+	METHOD method_4089 fetchWithTimeout (Ljava/net/URI;JLjava/lang/String;)Lcom/xk72/util/class_1532;
+		COMMENT Opens uri.toURL().openConnection(), sets the timeouts, applies setIfModifiedSince and the If-None-Match header, connects, then wraps the connection and its response code in HttpCache__UrlConnectionResponse.
+		ARG 1 uri
+		ARG 2 ifModifiedSince
+		ARG 4 etag

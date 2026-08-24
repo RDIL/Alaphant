@@ -1,0 +1,5 @@
+CLASS com/xk72/util/class_1548 com/xk72/util/HttpCache__IInputStreamConsumer
+	COMMENT Turns a fetched body into the cached value; a nest member of HttpCache, whose type parameters are <T, E extends Exception>. Charles 4's com/xk72/util/t carries this name on the identical descriptor. Implemented outside the nest too -- com/xk72/protobuf/class_1246 uses it to parse a protobuf FileDescriptorSet -- so the name has to stay general.
+	METHOD method_3221 withInputStream (Ljava/io/InputStream;)Ljava/lang/Object;
+		COMMENT Named in the Charles 4 corpus. Erased return; the declared type is T.
+		ARG 1 in
