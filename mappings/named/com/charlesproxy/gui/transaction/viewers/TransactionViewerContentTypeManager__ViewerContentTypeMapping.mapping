@@ -1,0 +1,14 @@
+CLASS com/charlesproxy/gui/transaction/viewers/class_688 com/charlesproxy/gui/transaction/viewers/TransactionViewerContentTypeManager__ViewerContentTypeMapping
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_2057 location Lcom/xk72/common/net/Location;
+	FIELD field_2058 enabled Z
+	FIELD field_2059 requestType Lcom/charlesproxy/gui/transaction/viewers/dpAz;
+	FIELD field_2060 responseType Lcom/charlesproxy/gui/transaction/viewers/dpAz;
+	METHOD method_1573 getRequestType ()Lcom/charlesproxy/gui/transaction/viewers/dpAz;
+	METHOD method_1574 setResponseType (Lcom/charlesproxy/gui/transaction/viewers/dpAz;)V
+	METHOD method_1575 setRequestType (Lcom/charlesproxy/gui/transaction/viewers/dpAz;)V
+	METHOD method_1576 setLocation (Lcom/xk72/common/net/Location;)V
+	METHOD method_1577 getResponseType ()Lcom/charlesproxy/gui/transaction/viewers/dpAz;
+	METHOD method_531 isEnabled ()Z
+	METHOD method_534 setEnabled (Z)V
+	METHOD method_535 getLocation ()Lcom/xk72/common/net/Location;

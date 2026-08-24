@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/tools/class_1031 com/charlesproxy/tools/MapLocalTool__MapLocalConfiguration__MapLocalMapping
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_2794 dest Ljava/lang/String;
+	FIELD field_2796 enabled Z
+	FIELD field_2797 caseSensitive Z
+	METHOD method_2668 getSourceLocation ()Lcom/xk72/common/net/Location;
+	METHOD method_2669 setCaseSensitive (Z)V
+	METHOD method_2672 setDest (Ljava/lang/String;)V
+	METHOD method_2673 getDest ()Ljava/lang/String;
+	METHOD method_2674 isCaseSensitive ()Z
+	METHOD method_531 isEnabled ()Z
+	METHOD method_534 setEnabled (Z)V

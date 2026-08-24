@@ -1,1 +1,4 @@
 CLASS com/charlesproxy/tools/class_1069 com/charlesproxy/tools/MirrorTool__Configuration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_2865 savePath Ljava/lang/String;
+	METHOD method_2753 getSavePath ()Ljava/lang/String;

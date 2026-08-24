@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/lib/table/class_318 com/charlesproxy/gui/lib/table/MemoryJTable__ColumnStates
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_1111 listeners Ljava/util/List;
+	METHOD method_1027 getPositions ()[I

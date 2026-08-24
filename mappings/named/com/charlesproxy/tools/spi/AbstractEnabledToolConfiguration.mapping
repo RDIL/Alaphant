@@ -1,2 +1,4 @@
 CLASS com/charlesproxy/tools/spi/AbstractEnabledToolConfiguration com/charlesproxy/tools/spi/AbstractEnabledToolConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
 	CLASS Serialization Serialization
+	FIELD field_2983 toolEnabled Z

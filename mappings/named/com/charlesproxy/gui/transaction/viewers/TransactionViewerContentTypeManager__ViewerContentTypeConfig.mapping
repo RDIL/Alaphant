@@ -1,0 +1,15 @@
+CLASS com/charlesproxy/gui/transaction/viewers/class_684 com/charlesproxy/gui/transaction/viewers/TransactionViewerContentTypeManager__ViewerContentTypeConfig
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	COMMENT [bootstrap] matched to Charles 4's TransactionViewerContentTypeManager__ViewerContentTypeConfig on 9 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_2050 protobufMessageType Ljava/lang/String;
+	FIELD field_2051 type Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+	FIELD field_2052 json Z
+	FIELD field_2053 protobufDelimited Ljava/lang/Boolean;
+	METHOD method_1564 getProtobufMessageType ()Ljava/lang/String;
+	METHOD method_1565 getType ()Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+	METHOD method_1566 setType (Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;)V
+	METHOD method_1567 setProtobufDelimited (Ljava/lang/Boolean;)V
+	METHOD method_1568 setProtobufMessageType (Ljava/lang/String;)V
+	METHOD method_1569 setJson (Z)V
+	METHOD method_1570 isJson ()Z
+	METHOD method_1571 getProtobufDelimited ()Ljava/lang/Boolean;

@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/transaction/viewers/class_761 com/charlesproxy/gui/transaction/viewers/TransactionViewerContentTypeManager__ViewerContentTypeMappingConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_2186 mappings Ljava/util/List;
+	METHOD method_1733 getMappings ()Ljava/util/List;

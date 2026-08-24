@@ -1,2 +1,18 @@
 CLASS com/charlesproxy/tools/breakpoints/class_1049 com/charlesproxy/tools/breakpoints/Breakpoint
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
 	COMMENT [bootstrap] matched to Charles 4's Breakpoint on 12 shared member descriptors (next best in this package scored 9) -- provisional, confirm before dropping the Maybe
+	FIELD field_2825 method Ljava/lang/String;
+	FIELD field_2826 enabled Z
+	FIELD field_2827 location Lcom/xk72/common/net/Location;
+	FIELD field_2828 request Z
+	FIELD field_2829 response Z
+	METHOD method_2705 getMethod ()Ljava/lang/String;
+	METHOD method_2706 setRequest (Z)V
+	METHOD method_2708 setLocation (Lcom/xk72/common/net/Location;)V
+	METHOD method_2709 setMethod (Ljava/lang/String;)V
+	METHOD method_2710 setResponse (Z)V
+	METHOD method_2711 isRequest ()Z
+	METHOD method_2712 isResponse ()Z
+	METHOD method_531 isEnabled ()Z
+	METHOD method_534 setEnabled (Z)V
+	METHOD method_535 getLocation ()Lcom/xk72/common/net/Location;

@@ -1,1 +1,5 @@
 CLASS com/charlesproxy/gui/session/tables/class_455 com/charlesproxy/gui/session/tables/ExtensibleSessionSequenceTableModel__CustomColumns
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_1386 columns Ljava/util/List;
+	METHOD method_1170 getColumns ()Ljava/util/List;
+	METHOD method_1171 setColumns (Ljava/util/List;)V

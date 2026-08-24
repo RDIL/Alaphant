@@ -1,2 +1,14 @@
 CLASS com/charlesproxy/tools/rewrite/class_1091 com/charlesproxy/tools/rewrite/RewriteSet
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
 	COMMENT [bootstrap] matched to Charles 4's RewriteSet on 12 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_2928 name Ljava/lang/String;
+	FIELD field_2929 active Z
+	FIELD field_2930 hosts Lcom/charlesproxy/config/RYgk;
+	FIELD field_2931 rules Ljava/util/List;
+	METHOD method_2807 getHosts ()Lcom/charlesproxy/config/RYgk;
+	METHOD method_2809 setHosts (Lcom/charlesproxy/config/RYgk;)V
+	METHOD method_2811 setName (Ljava/lang/String;)V
+	METHOD method_2813 setActive (Z)V
+	METHOD method_2814 isActive ()Z
+	METHOD method_2815 getName ()Ljava/lang/String;
+	METHOD method_2816 getRules ()Ljava/util/List;

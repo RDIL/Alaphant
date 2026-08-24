@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/gui/session/tables/class_453 com/charlesproxy/gui/session/tables/ExtensibleSessionSequenceTableModel__CustomColumn
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	COMMENT [bootstrap] matched to Charles 4's ExtensibleSessionSequenceTableModel__CustomColumn on 6 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_1383 parameter Ljava/lang/String;
+	FIELD field_1384 type Lcom/charlesproxy/gui/session/tables/ExtensibleSessionSequenceTableModel$ColumnType;
+	FIELD field_1385 displayName Ljava/lang/String;
+	METHOD method_1162 getType ()Lcom/charlesproxy/gui/session/tables/ExtensibleSessionSequenceTableModel$ColumnType;
+	METHOD method_1163 setDisplayName (Ljava/lang/String;)V
+	METHOD method_1165 setType (Lcom/charlesproxy/gui/session/tables/ExtensibleSessionSequenceTableModel$ColumnType;)V
+	METHOD method_1167 setParameter (Ljava/lang/String;)V
+	METHOD method_1168 getParameter ()Ljava/lang/String;
+	METHOD method_1169 getDisplayName ()Ljava/lang/String;

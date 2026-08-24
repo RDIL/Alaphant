@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/tools/BlacklistTool$BlacklistConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_2766 action I
+	METHOD method_2636 getAction ()I
+	METHOD method_2637 setAction (I)V

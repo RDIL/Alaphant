@@ -1,0 +1,17 @@
+CLASS com/charlesproxy/tools/class_1034 com/charlesproxy/tools/MapTool__MapConfiguration__MapMapping
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_2798 destLocation Lcom/xk72/common/net/Location;
+	FIELD field_2799 sourceLocation Lcom/xk72/common/net/Location;
+	FIELD field_4624 preserveBasePath Z
+	FIELD field_4625 enabled Z
+	FIELD field_4626 preserveHostHeader Z
+	METHOD method_2676 getSourceLocation ()Lcom/xk72/common/net/Location;
+	METHOD method_2677 setDestLocation (Lcom/xk72/common/net/Location;)V
+	METHOD method_2680 setSourceLocation (Lcom/xk72/common/net/Location;)V
+	METHOD method_2681 getDestLocation ()Lcom/xk72/common/net/Location;
+	METHOD method_4382 isPreserveHostHeader ()Z
+	METHOD method_4383 isPreserveBasePath ()Z
+	METHOD method_4384 setPreserveHostHeader (Z)V
+	METHOD method_4385 setPreserveBasePath (Z)V
+	METHOD method_531 isEnabled ()Z
+	METHOD method_534 setEnabled (Z)V

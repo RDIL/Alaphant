@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/tools/class_1066 com/charlesproxy/tools/MapTool__MapConfiguration
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_2860 mappings Ljava/util/List;
+	METHOD method_2751 getMappings ()Ljava/util/List;

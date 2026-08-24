@@ -1,3 +1,8 @@
 CLASS com/xk72/common/net/class_1228 com/xk72/common/net/DefaultLocationMatch
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
 	FIELD field_3247 enabled Z
 	FIELD field_3248 location Lcom/xk72/common/net/Location;
+	METHOD method_3178 setLocation (Lcom/xk72/common/net/Location;)V
+	METHOD method_531 isEnabled ()Z
+	METHOD method_534 setEnabled (Z)V
+	METHOD method_535 getLocation ()Lcom/xk72/common/net/Location;

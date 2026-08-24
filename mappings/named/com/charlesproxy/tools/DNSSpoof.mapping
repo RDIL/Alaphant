@@ -1,1 +1,12 @@
 CLASS com/charlesproxy/tools/class_1035 com/charlesproxy/tools/DNSSpoof
+	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
+	FIELD field_2802 address Ljava/lang/String;
+	FIELD field_2803 name Ljava/lang/String;
+	FIELD field_2805 enabled Z
+	METHOD method_2683 getName ()Ljava/lang/String;
+	METHOD method_2684 setAddress (Ljava/lang/String;)V
+	METHOD method_2685 setName (Ljava/lang/String;)V
+	METHOD method_2686 getAddress ()Ljava/lang/String;
+	METHOD method_531 isEnabled ()Z
+	METHOD method_534 setEnabled (Z)V
+	METHOD method_535 getLocation ()Lcom/xk72/common/net/Location;
