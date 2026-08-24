@@ -1,2 +1,47 @@
-CLASS com/charlesproxy/gui/tools/class_547
+CLASS com/charlesproxy/gui/tools/class_547 com/charlesproxy/gui/tools/ModePanel
+	COMMENT The "Enable <tool>" / "Only for selected <locations>" header every tool settings panel
+	COMMENT carries. Not a JPanel itself: it builds one and hands it out through getComponent, and
+	COMMENT lets a panel tie other controls to the checkbox state through bindEnabledState.
+	COMMENT The name is read off its consumers, which the obfuscator did not fully hide -- most hold
+	COMMENT it in a field called pMode, and one calls it modePanel outright.
+	COMMENT Charles 4 had a structurally identical class at tools/gui/c, which the Charles 4 project
+	COMMENT left unnamed, but it did name that class's first JCheckBox enableCheckBox, its
+	COMMENT EventListenerList eventListeners, and its listener methods addChangeListener /
+	COMMENT removeChangeListener -- all three agree with the readings below.
 	FIELD field_1598 panel Ljavax/swing/JPanel;
+	FIELD field_1597 enableCheckBox Ljavax/swing/JCheckBox;
+		COMMENT new JCheckBox("Enable " + name). Agrees with Charles 4.
+	FIELD field_1599 selectedOnlyCheckBox Ljavax/swing/JCheckBox;
+		COMMENT new JCheckBox("Only for selected " + locations), and only present in mode 2. It is
+		COMMENT enabled and disabled to follow enableCheckBox. Charles 4 left this one unnamed.
+	FIELD field_1600 eventListeners Ljavax/swing/event/EventListenerList;
+		COMMENT Agrees with Charles 4.
+	METHOD method_1290 getComponent ()Ljavax/swing/JComponent;
+		COMMENT Hands out the built panel, which is how consumers add it to themselves.
+	METHOD method_1287 isToolEnabled ()Z
+		COMMENT enableCheckBox.isSelected(). Not isEnabled, which would read as the Swing property.
+	METHOD method_1294 setToolEnabled (Z)V
+		COMMENT Selects the box and fires, so binding and the second checkbox follow.
+		ARG 1 enabled
+	METHOD method_1295 isSelectedOnly ()Z
+		COMMENT selectedOnlyCheckBox.isSelected(), i.e. whether the tool is scoped to chosen hosts.
+	METHOD method_1288 setSelectedOnly (Z)V
+		COMMENT Sets the box without firing, unlike setToolEnabled.
+		ARG 1 selectedOnly
+	METHOD method_1296 fireStateChanged ()V
+		COMMENT Re-derives whether selectedOnlyCheckBox is enabled from enableCheckBox, then notifies
+		COMMENT every registered ChangeListener with a ChangeEvent sourced on this.
+	METHOD method_1293 addChangeListener (Ljavax/swing/event/ChangeListener;)V
+		COMMENT Agrees with Charles 4.
+		ARG 1 listener
+	METHOD method_1291 bindEnabledState (Lcom/charlesproxy/gui/helper/class_270;)V
+		COMMENT Ties an AddRemoveTableHelper's enabled state to the checkboxes, so the host table
+		COMMENT greys out with the tool.
+		ARG 1 tableHelper
+	METHOD method_1292 bindEnabledState (Ljava/awt/Component;)V
+		COMMENT The same for a plain component; ThrottleSettingsPanel binds its whole form this way.
+		ARG 1 component
+	METHOD method_1289 ()Z
+		COMMENT Deliberately left unnamed: a private static that only ever returns true, with no
+		COMMENT caller left in 5.2.1. Whatever it guarded is gone, so there is nothing to name it
+		COMMENT after.
