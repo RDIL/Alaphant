@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/session/class_408
+	FIELD field_1256 uiConfig Lcom/charlesproxy/config/UserInterfaceConfiguration;
+	METHOD <init> (Lcom/charlesproxy/gui/session/AbstractSessionFrame;Lcom/charlesproxy/config/UserInterfaceConfiguration;)V
+		ARG 2 uiConfig

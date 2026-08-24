@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/session/tables/PathTableCellRenderer com/charlesproxy/gui/session/tables/PathTableCellRenderer
+	FIELD highlighted highlighted Z
+	FIELD plainText plainText Ljava/lang/String;

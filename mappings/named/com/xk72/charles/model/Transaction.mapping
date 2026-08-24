@@ -1,11 +1,78 @@
-CLASS com/xk72/charles/model/Transaction
+CLASS com/xk72/charles/model/Transaction com/xk72/charles/model/Transaction
+	FIELD alpnProtocol alpnProtocol Ljava/lang/String;
+	FIELD certs certs Ljava/util/List;
+	FIELD cipherSuite cipherSuite Ljava/lang/String;
+	FIELD clientAddress clientAddress Ljava/net/InetAddress;
+	FIELD clientCerts clientCerts Ljava/util/List;
+	FIELD clientCipherSuite clientCipherSuite Ljava/lang/String;
+	FIELD clientExtensions clientExtensions Ljava/util/List;
+	FIELD clientKeptAlive clientKeptAlive Ljava/lang/Boolean;
+	FIELD clientLocalPort clientLocalPort I
+	FIELD clientPort clientPort I
+	FIELD clientProposedAlpnProtocols clientProposedAlpnProtocols Ljava/util/List;
+	FIELD clientProposedCipherSuites clientProposedCipherSuites Ljava/util/List;
+	FIELD clientProposedExtensions clientProposedExtensions Ljava/util/List;
+	FIELD clientProposedSslProtocol clientProposedSslProtocol Ljava/lang/String;
+	FIELD clientProposedSslSessionID clientProposedSslSessionID [B
+	FIELD clientSslProtocol clientSslProtocol Ljava/lang/String;
+	FIELD clientSslSessionID clientSslSessionID [B
+	FIELD connectDuration connectDuration Ljava/lang/Long;
+	FIELD connectionAttributes connectionAttributes Ljava/util/Map;
+	FIELD controlFramesReceived controlFramesReceived I
+	FIELD controlFramesSent controlFramesSent I
+	FIELD dnsDuration dnsDuration Ljava/lang/Long;
+	FIELD keptAlive keptAlive Ljava/lang/Boolean;
+	FIELD messagesDropped messagesDropped Ljava/lang/Boolean;
+	FIELD messages messages Ljava/util/List;
+	FIELD messagesReceived messagesReceived I
+	FIELD messagesSent messagesSent I
+	FIELD notes notes Ljava/lang/String;
+	FIELD port port I
+	FIELD proposedAlpnProtocols proposedAlpnProtocols Ljava/util/List;
+	FIELD proposedCipherSuites proposedCipherSuites Ljava/util/List;
+	FIELD proposedExtensions proposedExtensions Ljava/util/List;
+	FIELD proposedSslProtocol proposedSslProtocol Ljava/lang/String;
+	FIELD proposedSslSessionID proposedSslSessionID [B
+	FIELD protocol protocol Ljava/lang/String;
+	FIELD protocolVersion protocolVersion Ljava/lang/String;
+	FIELD remoteAddress remoteAddress Ljava/net/InetAddress;
+	FIELD remoteLocalPort remoteLocalPort I
+	FIELD requestBeginTime requestBeginTime Ljava/util/Date;
+	FIELD requestBody requestBody [B
+	FIELD requestFlow requestFlow Lcom/xk72/charles/model/Flow;
+	FIELD requestHeader requestHeader Lcom/xk72/proxy/Fields;
+	FIELD responseBeginTime responseBeginTime Ljava/util/Date;
+	FIELD responseFlow responseFlow Lcom/xk72/charles/model/Flow;
+	FIELD scheme scheme Ljava/lang/String;
+	FIELD serialVersionUID serialVersionUID J
+	FIELD serverExtensions serverExtensions Ljava/util/List;
+	FIELD sslAlert sslAlert B
+	FIELD sslDuration sslDuration Ljava/lang/Long;
+	FIELD sslProtocol sslProtocol Ljava/lang/String;
+	FIELD sslSessionID sslSessionID [B
+	FIELD startTime startTime Ljava/util/Date;
+	FIELD transactionEnd transactionEnd J
+	FIELD transactionRequest transactionRequest J
+	FIELD transactionResponse transactionResponse J
+	FIELD transactionStart transactionStart J
+	FIELD tunnel tunnel Ljava/lang/Boolean;
+	FIELD webSocket webSocket Ljava/lang/Boolean;
+	METHOD getClientProposedAlpnProtocols getClientProposedAlpnProtocols ()Ljava/util/List;
+	METHOD getControlFramesSent getControlFramesSent ()I
 	METHOD getEarliestStartTime getEarliestStartTime ()Ljava/util/Date;
 	METHOD getEndTime getEndTime ()Ljava/util/Date;
 	METHOD getLatestTime getLatestTime ()Ljava/util/Date;
+	METHOD getMessagesReceived getMessagesReceived ()I
+	METHOD getRemoteAddress getRemoteAddress ()Ljava/net/InetAddress;
 	METHOD getStartTime getStartTime ()Ljava/util/Date;
 	METHOD getTotalRequestSize getTotalRequestSize ()J
+	METHOD isResponseBodyDecoded isResponseBodyDecoded ()Z
 	METHOD setAlpnProtocol setAlpnProtocol (Ljava/lang/String;)V
 	METHOD setCipherSuite setCipherSuite (Ljava/lang/String;)V
+	METHOD setClientProposedAlpnProtocols setClientProposedAlpnProtocols (Ljava/util/List;)V
+	METHOD setProposedAlpnProtocols setProposedAlpnProtocols (Ljava/util/List;)V
+	METHOD setRemoteAddress setRemoteAddress (Ljava/net/InetAddress;)V
+	METHOD setResponseBodyDecoded setResponseBodyDecoded (Z)V
 	METHOD setServerExtensions setServerExtensions (Ljava/util/List;)V
 	METHOD setSslAlert setSslAlert (B)V
 	METHOD setSslProtocol setSslProtocol (Ljava/lang/String;)V

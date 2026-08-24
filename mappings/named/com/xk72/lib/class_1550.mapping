@@ -1,0 +1,4 @@
+CLASS com/xk72/lib/class_1550
+	FIELD field_4197 event Ljava/util/EventObject;
+	METHOD <init> (Ljava/util/EventObject;Lcom/xk72/lib/class_1549;Ljava/util/List;)V
+		ARG 1 eventObject

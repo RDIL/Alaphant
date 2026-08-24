@@ -1,0 +1,2 @@
+CLASS com/xk72/common/net/class_1229
+	METHOD method_535 getLocation ()Lcom/xk72/common/net/Location;

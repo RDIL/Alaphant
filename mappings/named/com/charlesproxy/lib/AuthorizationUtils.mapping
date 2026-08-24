@@ -1,6 +1,21 @@
-CLASS com/charlesproxy/lib/AuthorizationUtils
+CLASS com/charlesproxy/lib/AuthorizationUtils com/charlesproxy/lib/AuthorizationUtils
+	METHOD method_2050 (Lcom/charlesproxy/lib/AuthorizationUtils$Authorization;)Ljava/lang/String;
+		ARG 0 authorization
+	METHOD method_2052 (Lcom/charlesproxy/lib/AuthorizationUtils$Challenge;)Ljava/lang/String;
+		ARG 0 challenge
+	METHOD method_2054 (Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$Authorization;
+		ARG 0 authHeader
 	METHOD method_2059 createBearerAuth (Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$GenericAuthorization;
-	CLASS GenericAuthorization
-	CLASS GenericChallenge
-	CLASS UnsupportedAuthorization
-	CLASS UnsupportedChallenge
+	CLASS Authorization Authorization
+		METHOD getScheme getScheme ()Ljava/lang/String;
+		METHOD getValue getValue ()Ljava/lang/String;
+	CLASS BasicAuthorization BasicAuthorization
+	CLASS Challenge Challenge
+		METHOD getScheme getScheme ()Ljava/lang/String;
+	CLASS GenericAuthorization GenericAuthorization
+		METHOD getParameters getParameters ()Ljava/util/List;
+	CLASS GenericChallenge GenericChallenge
+		METHOD getParameters getParameters ()Ljava/util/List;
+		METHOD setParseException setParseException (Ljava/lang/Exception;)V
+	CLASS UnsupportedAuthorization UnsupportedAuthorization
+	CLASS UnsupportedChallenge UnsupportedChallenge

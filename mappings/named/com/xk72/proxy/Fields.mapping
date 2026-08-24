@@ -1,4 +1,4 @@
-CLASS com/xk72/proxy/Fields
+CLASS com/xk72/proxy/Fields com/xk72/proxy/Fields
 	FIELD fieldNames fieldNames Ljava/util/List;
 	FIELD fieldValues fieldValues Ljava/util/List;
 	METHOD clone clone ()Ljava/lang/Object;

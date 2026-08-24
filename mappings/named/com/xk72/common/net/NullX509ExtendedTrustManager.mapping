@@ -1,4 +1,4 @@
-CLASS com/xk72/common/net/NullX509ExtendedTrustManager
+CLASS com/xk72/common/net/NullX509ExtendedTrustManager com/xk72/common/net/NullX509ExtendedTrustManager
 	METHOD checkClientTrusted checkClientTrusted ([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
 	METHOD checkClientTrusted checkClientTrusted ([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V
 	METHOD checkClientTrusted checkClientTrusted ([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V

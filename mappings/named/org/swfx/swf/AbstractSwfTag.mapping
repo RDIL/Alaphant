@@ -1,0 +1,4 @@
+CLASS org/swfx/swf/class_1577 org/swfx/swf/AbstractSwfTag
+	FIELD field_4271 length I
+	FIELD field_4272 id I
+	METHOD method_4213 getLength ()I

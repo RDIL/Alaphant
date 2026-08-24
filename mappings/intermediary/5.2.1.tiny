@@ -8809,7 +8809,7 @@ c	com/xk72/RqPz/npZC	com/xk72/pkg_25/class_1442
 	m	(Ljava/lang/Object;)Lcom/xk72/RqPz/VVEV;	awCZ	method_3912
 	m	()Lcom/xk72/RqPz/VVEV;	uPPi	method_3914
 c	com/xk72/RqPz/oaSX	com/xk72/pkg_25/class_1440
-c	com/xk72/ZnxY/UOUV	com/xk72/pkg_34/class_1521
+c	com/xk72/ZnxY/UOUV	com/xk72/json/class_1521
 	f	Ljava/lang/reflect/Field;	IUux	field_4164
 	m	(Ljava/lang/Object;)Ljava/lang/String;	IUux	method_4075
 	m	(Ljava/lang/String;)Ljava/lang/Object;	IUux	method_4076
@@ -8818,12 +8818,12 @@ c	com/xk72/ZnxY/UOUV	com/xk72/pkg_34/class_1521
 	m	(Lorg/json/JSONArray;II)V	IUux	method_4079
 	m	(Lorg/json/JSONArray;ILjava/lang/Object;)V	IUux	method_4080
 	m	(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V	IUux	method_4081
-c	com/xk72/ZnxY/edfX	com/xk72/pkg_34/class_1519
+c	com/xk72/ZnxY/edfX	com/xk72/json/class_1519
 	f	Ljava/util/List;	IUux	field_4163
 	m	(II)V	IUux	method_4072
 	m	(Ljava/lang/String;ILjava/lang/Object;)Lorg/json/JSONObject;	IUux	method_4073
 	m	(Ljava/lang/String;Ljava/lang/String;)V	IUux	method_4074
-c	com/xk72/ZnxY/oaSX	com/xk72/pkg_34/class_1520
+c	com/xk72/ZnxY/oaSX	com/xk72/json/class_1520
 c	com/xk72/amf/Dosw	com/xk72/amf/class_1204
 	m	()Lcom/xk72/amf/qClj;	uPPi	method_3096
 c	com/xk72/amf/KLfM	com/xk72/amf/class_1190

@@ -1,0 +1,3 @@
+CLASS com/xk72/common/net/class_1228 com/xk72/common/net/DefaultLocationMatch
+	FIELD field_3247 enabled Z
+	FIELD field_3248 location Lcom/xk72/common/net/Location;

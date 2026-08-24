@@ -1,0 +1,4 @@
+CLASS org/swfx/pkg_45/class_1588 org/swfx/pkg_45/SwfInputStream
+	METHOD method_4247 readBoolean ()Z
+	METHOD read read ()I
+	METHOD read read ([BII)I

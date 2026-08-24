@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/lib/class_887
+	METHOD end end ()I
+	METHOD end end (I)I
+	METHOD group group ()Ljava/lang/String;
+	METHOD group group (I)Ljava/lang/String;
+	METHOD groupCount groupCount ()I
+	METHOD start start ()I
+	METHOD start start (I)I

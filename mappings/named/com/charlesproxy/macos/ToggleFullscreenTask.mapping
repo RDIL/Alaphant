@@ -1,3 +1,7 @@
 CLASS com/charlesproxy/macos/class_917 com/charlesproxy/macos/ToggleFullscreenTask
 	FIELD field_2463 macOsGuiImpl Lcom/charlesproxy/macos/class_916;
 	FIELD field_2464 window Ljava/awt/Window;
+	METHOD <init> (Lcom/charlesproxy/macos/class_916;Ljava/awt/Window;)V
+		ARG 1 impl
+		ARG 2 window
+	METHOD run run ()V

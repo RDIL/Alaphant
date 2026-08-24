@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/lib/IPRange com/charlesproxy/lib/IPRange
+	METHOD method_2074 (Ljava/net/InetAddress;)Z
+		ARG 1 address
+	CLASS IPRangeFormatException IPRangeFormatException

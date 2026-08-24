@@ -1,0 +1,13 @@
+CLASS com/charlesproxy/lib/SortedArrayList com/charlesproxy/lib/SortedArrayList
+	FIELD comparator comparator Ljava/util/Comparator;
+	FIELD serialVersionUID serialVersionUID J
+	METHOD <init> (Ljava/util/Comparator;)V
+		ARG 1 comparator
+	METHOD addAll addAll (Ljava/util/Collection;)Z
+		ARG 1 collection
+	METHOD addSorted addSorted (Ljava/lang/Object;)I
+	METHOD addSortedIfAbsent addSortedIfAbsent (Ljava/lang/Object;)I
+	METHOD getComparator getComparator ()Ljava/util/Comparator;
+	METHOD indexOf indexOf (Ljava/lang/Object;)I
+	METHOD remove remove (Ljava/lang/Object;)Z
+	METHOD removeSorted removeSorted (Ljava/lang/Object;)I

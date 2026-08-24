@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/lib/class_891 com/charlesproxy/lib/NumberFormatter
+	FIELD field_2416 hoursMinutesSeconds Ljava/text/DateFormat;
+	FIELD field_2418 hoursMinutesSecondsMillis Ljava/text/DateFormat;
+	METHOD method_2130 toHoursMinutesSecondsMaybeWithMillis (Ljava/util/Date;)Ljava/lang/String;
+	METHOD method_2131 useMillis ()Z

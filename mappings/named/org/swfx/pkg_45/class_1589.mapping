@@ -1,0 +1,5 @@
+CLASS org/swfx/pkg_45/class_1589
+	FIELD field_4302 dataInputStream Ljava/io/DataInputStream;
+	METHOD close close ()V
+	METHOD mark mark (I)V
+	METHOD reset reset ()V

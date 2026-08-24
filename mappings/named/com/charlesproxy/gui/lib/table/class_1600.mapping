@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/lib/table/class_1600
+	METHOD setHighlighted setHighlighted (Z)V

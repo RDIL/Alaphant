@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/lib/BNFParser com/charlesproxy/lib/BNFParser
+	CLASS BNFParseEOSException BNFParseEOSException
+	CLASS BNFParseException BNFParseException

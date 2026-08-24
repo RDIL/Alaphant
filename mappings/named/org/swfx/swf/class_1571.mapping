@@ -1,0 +1,7 @@
+CLASS org/swfx/swf/class_1571
+	FIELD field_4248 hasLayout Z
+	FIELD field_4251 ansi Z
+	FIELD field_4252 italic Z
+	FIELD field_4256 shiftJIS Z
+	FIELD field_4257 small Z
+	FIELD field_4264 bold Z

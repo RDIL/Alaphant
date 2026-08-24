@@ -1,0 +1,3 @@
+CLASS com/xk72/amf/AMFExternalizedObject
+	METHOD readExternal readExternal (Lcom/xk72/amf/class_1214;)V
+	METHOD writeExternal writeExternal (Lcom/xk72/amf/class_1189;)V

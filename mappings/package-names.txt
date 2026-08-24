@@ -13,8 +13,10 @@
 #
 # A package holding no literal can still be named, on the weaker basis that its whole contents are
 # identified and a real word serves a reader better than `pkg_N` -- the comment then says what was
-# known instead of a count. Keep that to packages small enough to be certain about, and say so in
-# the comment: a wrong name here is a rename of every class in the package.
+# known instead of a count. Certainty is not the bar; recording the evidence is. Say what it was, so
+# a later reader can weigh a shape-based name differently from a logger-backed one and can re-check
+# it -- naming a package renames every class in it at once, which is a reason to write the reasoning
+# down, not a reason to leave the package as `pkg_N`.
 #
 # THIS FILE KEYS ON OFFICIAL NAMES AND GOES ENTIRELY STALE ON A CHARLES UPGRADE. Regenerate it
 # from the new jar before `generateIntermediary` -- see step 6 of docs/charles-upgrade.md.
@@ -40,3 +42,4 @@ org/sdfE/sdfE                         = util      # vendored org/incava/util/dif
 org/sdfE/sdfE/sdfE                    = diff      # vendored org/incava/util/diff; `oaSX` is the four-int Difference
 org/fuyF                              = swfx      # 1 literal(s) -> org/swfx/swf/SwfMovieClip -- new in 5.2.1
 org/fuyF/tZmD                         = swf       # 1 literal(s) -> org/swfx/swf/SwfMovieClip -- new in 5.2.1
+com/xk72/ZnxY                         = json      # no logger; 3 classes, all org.json (JSONObject/JSONTokener subclasses + static helper)

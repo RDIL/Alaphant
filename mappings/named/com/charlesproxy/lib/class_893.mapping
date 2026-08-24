@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/lib/class_893
+	FIELD field_2423 milliseconds Z
+	METHOD method_2136 setMilliseconds ()V

@@ -1,0 +1,4 @@
+CLASS com/xk72/lib/class_1565
+	METHOD getKeys getKeys ()Ljava/util/Enumeration;
+	METHOD getLocale getLocale ()Ljava/util/Locale;
+	METHOD handleGetObject handleGetObject (Ljava/lang/String;)Ljava/lang/Object;

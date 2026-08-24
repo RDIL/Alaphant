@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/lib/pkg_8/class_886
+	METHOD method_2098 getContentType ()Ljava/lang/String;
+	METHOD method_2100 getFilename ()Ljava/lang/String;

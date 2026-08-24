@@ -1,0 +1,9 @@
+CLASS com/charlesproxy/lib/class_895 com/charlesproxy/lib/AbstractFormBodyBuilder__NameValue
+	FIELD field_2427 value Ljava/lang/Object;
+	FIELD field_2428 name Ljava/lang/String;
+	METHOD method_2143 getValue ()Ljava/lang/Object;
+	METHOD method_2144 getName ()Ljava/lang/String;
+	METHOD method_2145 setValue (Ljava/lang/Object;)V
+		ARG 1 value
+	METHOD method_2146 setName (Ljava/lang/String;)V
+		ARG 1 name

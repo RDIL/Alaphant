@@ -1,4 +1,4 @@
-CLASS com/xk72/charles/model/Path
+CLASS com/xk72/charles/model/Path com/xk72/charles/model/Path
 	FIELD pathName pathName Ljava/lang/String;
 	FIELD serialVersionUID serialVersionUID J
 	METHOD getFullPathName getFullPathName ()Ljava/lang/String;

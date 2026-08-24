@@ -6,4 +6,7 @@ CLASS com/charlesproxy/macos/class_914 com/charlesproxy/macos/IMacOSImpl
 	METHOD method_2171 addSystemEventListener (Lcom/charlesproxy/macos/class_915;)Lcom/charlesproxy/macos/class_904;
 	METHOD method_2172 getToggleFullscreenAction (Ljava/awt/Window;Lcom/charlesproxy/config/class_116;)Lcom/charlesproxy/macos/MacOSImpl$2;
 	METHOD method_2173 addPropertyChangeListener (Ljava/beans/PropertyChangeListener;)V
+		ARG 1 listener
 	METHOD method_2174 isProxyEnabled ()Z
+	METHOD method_4345 (Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V
+		ARG 2 listener

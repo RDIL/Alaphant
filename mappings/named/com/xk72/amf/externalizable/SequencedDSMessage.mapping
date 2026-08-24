@@ -1,0 +1,2 @@
+CLASS com/xk72/amf/externalizable/SequencedDSMessage
+	FIELD serialVersionUID serialVersionUID J

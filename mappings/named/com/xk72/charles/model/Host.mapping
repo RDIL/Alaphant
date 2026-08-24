@@ -1,1 +1,19 @@
-CLASS com/xk72/charles/model/Host
+CLASS com/xk72/charles/model/Host com/xk72/charles/model/Host
+	FIELD actualPort actualPort I
+	FIELD hostName hostName Ljava/lang/String;
+	FIELD http2 http2 Ljava/lang/Boolean;
+	FIELD port port I
+	FIELD protocol protocol Ljava/lang/String;
+	FIELD serialVersionUID serialVersionUID J
+	FIELD tunnel tunnel Ljava/lang/Boolean;
+	METHOD getHostName getHostName ()Ljava/lang/String;
+	METHOD getHttp2 getHttp2 ()Ljava/lang/Boolean;
+	METHOD getPort getPort ()I
+	METHOD getProtocol getProtocol ()Ljava/lang/String;
+	METHOD getTunnel getTunnel ()Ljava/lang/Boolean;
+	METHOD setHttp2 setHttp2 (Ljava/lang/Boolean;)V
+		ARG 1 http2
+	METHOD setPort setPort (I)V
+	METHOD setProtocol setProtocol (Ljava/lang/String;)V
+	METHOD setTunnel setTunnel (Ljava/lang/Boolean;)V
+		ARG 1 tunnel

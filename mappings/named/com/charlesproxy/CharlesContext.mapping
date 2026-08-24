@@ -1,4 +1,4 @@
-CLASS com/charlesproxy/CharlesContext
+CLASS com/charlesproxy/CharlesContext com/charlesproxy/CharlesContext
 	METHOD activate activate ()V
 	METHOD error error (Ljava/lang/String;)V
 	METHOD error error (Ljava/lang/String;Ljava/lang/String;)V
@@ -8,6 +8,7 @@ CLASS com/charlesproxy/CharlesContext
 	METHOD getFileManager getFileManager ()Lcom/charlesproxy/class_176;
 	METHOD getInstance getInstance ()Lcom/charlesproxy/CharlesContext;
 	METHOD getPasswordAuthenticator getPasswordAuthenticator ()Lcom/charlesproxy/security/PasswordAuthenticator;
+	METHOD getProxyManager getProxyManager ()Lcom/charlesproxy/class_19;
 	METHOD getSslManager getSslManager ()Lcom/charlesproxy/ssl/class_992;
 	METHOD getVersionName getVersionName ()Ljava/lang/String;
 	METHOD info info (Ljava/lang/String;Ljava/lang/String;)V

@@ -1,0 +1,3 @@
+CLASS org/swfx/swf/class_1580
+	FIELD field_4278 glyphCount I
+	METHOD method_4218 getGlyphCount ()I

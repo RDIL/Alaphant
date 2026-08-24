@@ -1,8 +1,8 @@
 CLASS com/charlesproxy/macos/class_916 com/charlesproxy/macos/MacOSImpl
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.macos.MacOSImpl"
 	COMMENT [bootstrap] named by an inner class the obfuscator left alone: MacOSImpl$… is in the jar while its outer class is not, and holds a synthetic reference to this type
-	FIELD field_2460 LOGGER Lorg/slf4j/Logger;
 	FIELD field_2459 systemProxySettings Ljava/lang/String;
+	FIELD field_2460 LOGGER Lorg/slf4j/Logger;
 	FIELD field_2461 proxyEnabled Z
 	FIELD field_2462 propertyChangeSupport Ljava/beans/PropertyChangeSupport;
 	METHOD method_2167 isMacOS ()Z
@@ -17,5 +17,6 @@ CLASS com/charlesproxy/macos/class_916 com/charlesproxy/macos/MacOSImpl
 	METHOD method_2176 handleFullScreenEvent (Lcom/charlesproxy/config/class_116;Ljavax/swing/AbstractAction;Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;
 	METHOD method_2177 requestToggleFullScreen (Ljava/awt/Window;)V
 	METHOD method_2178 setProxyEnabled (Z)V
+		ARG 1 proxyEnabled
 	METHOD method_2179 testProxyHelper ()Z
 	METHOD method_2180 saveMacOSProxies ()Z

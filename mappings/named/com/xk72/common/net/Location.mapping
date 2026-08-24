@@ -1,8 +1,11 @@
-CLASS com/xk72/common/net/Location
+CLASS com/xk72/common/net/Location com/xk72/common/net/Location
 	FIELD field_3242 host Ljava/lang/String;
+	FIELD field_3243 query Ljava/lang/String;
 	FIELD field_3244 protocol Ljava/lang/String;
 	FIELD field_3245 port Ljava/lang/String;
 	FIELD field_3246 path Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;)V
+		ARG 1 input
 	METHOD <init> (Ljava/lang/String;Ljava/lang/String;)V
 		ARG 1 protocol
 		ARG 2 host
@@ -10,14 +13,42 @@ CLASS com/xk72/common/net/Location
 		ARG 1 protocol
 		ARG 2 host
 		ARG 3 port
+	METHOD <init> (Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+		ARG 1 protocol
+		ARG 2 host
+		ARG 3 port
 	METHOD <init> (Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+		ARG 1 protocol
+		ARG 2 host
 		ARG 4 path
 	METHOD <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 		ARG 1 protocol
 		ARG 2 host
 		ARG 3 port
 		ARG 4 path
+		ARG 5 query
+	METHOD getHost getHost ()Ljava/lang/String;
+	METHOD getHostAndPort getHostAndPort ()Ljava/lang/String;
+	METHOD getPath getPath ()Ljava/lang/String;
+	METHOD getPort getPort ()Ljava/lang/String;
+	METHOD getProtocol getProtocol ()Ljava/lang/String;
+	METHOD getQuery getQuery ()Ljava/lang/String;
 	METHOD hostPart hostPart (Ljava/lang/String;Z)Ljava/lang/String;
+	METHOD hostPortPart hostPortPart (Ljava/lang/String;)Ljava/lang/String;
+	METHOD hostPortPart hostPortPart (Ljava/lang/String;Z)Ljava/lang/String;
+	METHOD parseURL parseURL (Ljava/lang/String;)Lcom/xk72/common/net/Location;
 	METHOD pathPart pathPart (Ljava/lang/String;Z)Ljava/lang/String;
 	METHOD portPart portPart (Ljava/lang/String;Z)Ljava/lang/String;
 	METHOD protocolPart protocolPart (Ljava/lang/String;)Ljava/lang/String;
+	METHOD setHost setHost (Ljava/lang/String;)V
+		ARG 1 host
+	METHOD setPath setPath (Ljava/lang/String;)V
+		ARG 1 path
+	METHOD setPort setPort (Ljava/lang/String;)V
+		ARG 1 port
+	METHOD setProtocol setProtocol (Ljava/lang/String;)V
+		ARG 1 protocol
+	METHOD setQuery setQuery (Ljava/lang/String;)V
+		ARG 1 query
+	METHOD toCanoncialString toCanoncialString ()Ljava/lang/String;
+	METHOD toHostPattern toHostPattern ()Lcom/xk72/common/net/Location;

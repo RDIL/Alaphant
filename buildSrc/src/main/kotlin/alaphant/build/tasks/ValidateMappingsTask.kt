@@ -215,7 +215,8 @@ abstract class ValidateMappingsTask : DefaultTask() {
         if (comment.isNullOrBlank()) {
             problems += "$where: a provisional \"$simple\" needs a COMMENT saying what the evidence was"
         }
-        // A provisional built on an obfuscated stem (`Maybei`, `maybeA`) is worse than no name.
+        // A provisional needs a real stem: `maybeA` just re-encodes the obfuscated name, so the
+        // prefix is covering an absence of evidence rather than flagging an uncertain reading.
         if (simple.removePrefix("maybe").removePrefix("Maybe").length < 3) {
             problems += "$where: \"$simple\" has nothing after the prefix worth keeping"
         }

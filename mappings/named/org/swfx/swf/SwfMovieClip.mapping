@@ -1,0 +1,2 @@
+CLASS org/swfx/swf/class_1583 org/swfx/swf/SwfMovieClip
+	FIELD field_4727 LOGGER Lorg/slf4j/Logger;

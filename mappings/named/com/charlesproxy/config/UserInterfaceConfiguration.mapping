@@ -1,4 +1,4 @@
-CLASS com/charlesproxy/config/UserInterfaceConfiguration
+CLASS com/charlesproxy/config/UserInterfaceConfiguration com/charlesproxy/config/UserInterfaceConfiguration
 	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
 	COMMENT [bootstrap] matched to Charles 4's UserInterfaceConfiguration on 55 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
 	COMMENT [5.2.1] Charles stopped obfuscating this class, so the intermediary namespace keeps its own name and it needs no rename.
@@ -87,3 +87,4 @@ CLASS com/charlesproxy/config/UserInterfaceConfiguration
 	METHOD method_499 isHighlightTreeChanges ()Z
 	METHOD method_500 isAutoScroll ()Z
 	METHOD method_501 setHighlightTreeChanges (Z)V
+	CLASS QueryParamHighlightStyle QueryParamHighlightStyle

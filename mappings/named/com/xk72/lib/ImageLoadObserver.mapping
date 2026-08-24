@@ -1,0 +1,10 @@
+CLASS com/xk72/lib/class_1567 com/xk72/lib/ImageLoadObserver
+	COMMENT One-shot ImageObserver used as a completion latch: imageUpdate keeps
+	COMMENT returning true until ALLBITS|ERROR|ABORT (0x20|0x40|0x80) arrives, then sets
+	COMMENT the flag, notifies waiters and returns false. Sole caller is the image
+	COMMENT Transferable in com/charlesproxy/gui/transaction/actions (class_569), which
+	COMMENT does prepareImage(img, -1, -1, this) and then
+	COMMENT synchronized (o) { while (!o.isDone()) o.wait(10000); }.
+	FIELD field_4231 done Z
+	METHOD imageUpdate imageUpdate (Ljava/awt/Image;IIIII)Z
+	METHOD method_4184 isDone ()Z

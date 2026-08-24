@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/class_183
+	METHOD <init> (Ljava/awt/CheckboxMenuItem;)V
+		ARG 1 checkbox

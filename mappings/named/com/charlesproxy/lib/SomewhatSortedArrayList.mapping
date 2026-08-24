@@ -1,0 +1,11 @@
+CLASS com/charlesproxy/lib/SomewhatSortedArrayList com/charlesproxy/lib/SomewhatSortedArrayList
+	FIELD comparator comparator Ljava/util/Comparator;
+	FIELD serialVersionUID serialVersionUID J
+	METHOD <init> (Ljava/util/Comparator;)V
+		ARG 1 comparator
+	METHOD add add (Ljava/lang/Object;)Z
+		ARG 1 object
+	METHOD addAll addAll (Ljava/util/Collection;)Z
+		ARG 1 collection
+	METHOD checkSorted checkSorted (I)Z
+	METHOD getComparator getComparator ()Ljava/util/Comparator;

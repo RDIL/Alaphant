@@ -1,0 +1,7 @@
+CLASS org/swfx/swf/class_1582
+	FIELD field_4283 fpsCount I
+	METHOD method_4220 (Ljava/io/InputStream;)Lorg/swfx/pkg_45/class_1589;
+		ARG 1 stream
+	METHOD method_4223 (Ljava/io/InputStream;)Z
+		ARG 0 stream
+	METHOD method_4226 getFpsCount ()I
