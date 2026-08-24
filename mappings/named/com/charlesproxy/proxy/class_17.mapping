@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/proxy/class_17
+	FIELD field_38 socket Ljava/net/ServerSocket;

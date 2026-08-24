@@ -51,4 +51,5 @@ CLASS com/charlesproxy/config/class_59 com/charlesproxy/config/CharlesConfigurat
 	METHOD method_253 getExternalDNSResolverConfiguration ()Lcom/charlesproxy/config/class_67;
 	METHOD method_254 getRegistrationConfiguration ()Lcom/charlesproxy/config/class_79;
 	METHOD method_255 getCategoryConfiguration ()Lcom/charlesproxy/config/CategoryConfiguration;
+	METHOD method_256 getUiConfig ()Lcom/charlesproxy/config/UserInterfaceConfiguration;
 	METHOD method_256 getUserInterfaceConfiguration ()Lcom/charlesproxy/config/class_107;

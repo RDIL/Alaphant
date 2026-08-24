@@ -1,1 +1,2 @@
-CLASS com/xk72/proxy/http/HttpFieldsException
+CLASS com/xk72/proxy/http/HttpFieldsException com/xk72/proxy/http/HttpFieldsException
+	FIELD serialVersionUID serialVersionUID J

@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/proxy/class_7
+	FIELD field_25 socket Ljava/net/ServerSocket;
+	METHOD method_12 getLocalPort ()I

@@ -8,6 +8,7 @@ CLASS com/xk72/proxy/Fields com/xk72/proxy/Fields
 	METHOD addField addField (Ljava/lang/String;Ljava/lang/String;)V
 	METHOD byteLength byteLength (Ljava/lang/String;)I
 	METHOD clone clone ()Ljava/lang/Object;
+	METHOD concat concat (Lcom/xk72/proxy/Fields;)V
 	METHOD get get (Ljava/lang/String;)Ljava/lang/String;
 	METHOD getCookies getCookies ()Ljava/lang/String;
 	METHOD getField getField (Ljava/lang/String;)Ljava/lang/String;
@@ -31,4 +32,7 @@ CLASS com/xk72/proxy/Fields com/xk72/proxy/Fields
 	METHOD setCookies setCookies (Ljava/lang/String;)V
 	METHOD setField setField (ILjava/lang/String;Ljava/lang/String;)V
 	METHOD setField setField (Ljava/lang/String;Ljava/lang/String;)V
+	METHOD setHost setHost (Ljava/lang/String;)V
+	METHOD toByteArray toByteArray ()[B
+	METHOD write write (Ljava/io/ByteArrayOutputStream;)V
 	CLASS ParseException ParseException

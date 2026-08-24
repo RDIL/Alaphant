@@ -1,2 +1,11 @@
 CLASS com/xk72/proxy/http/Protocol com/xk72/proxy/http/Protocol
+	FIELD defaultPort defaultPort I
+	FIELD protocol protocol Ljava/lang/String;
+	FIELD secure secure Z
+	METHOD <init> (Ljava/lang/String;ILjava/lang/String;IZ)V
+		ARG 3 protocol
+		ARG 4 defaultPort
+		ARG 5 secure
 	METHOD defaultPort defaultPort ()I
+	METHOD isSecure isSecure ()Z
+	METHOD protocol protocol ()Ljava/lang/String;

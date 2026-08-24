@@ -2,3 +2,4 @@ CLASS com/xk72/proxy/server/class_1264
 	FIELD field_3353 dnsResolver Lcom/xk72/dns/class_1176;
 	FIELD field_3354 LOCALHOST_PATTERN Ljava/util/regex/Pattern;
 	METHOD method_3323 getDnsResolver ()Lcom/xk72/dns/class_1176;
+	METHOD method_3330 setProxyManager (Lcom/xk72/proxy/class_1272;)V

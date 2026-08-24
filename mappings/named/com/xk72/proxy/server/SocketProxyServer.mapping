@@ -1,3 +1,4 @@
 CLASS com/xk72/proxy/server/class_1262 com/xk72/proxy/server/SocketProxyServer
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.server.SocketProxyServer"
 	FIELD field_3342 LOGGER Lorg/slf4j/Logger;
+	METHOD method_3310 setSupportsHttp2 (Z)V

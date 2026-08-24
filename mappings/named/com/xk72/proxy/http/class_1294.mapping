@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/http/class_1294
+	METHOD method_3463 isNtlmOrNegotiateAuth (Ljava/lang/String;)Z

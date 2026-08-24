@@ -2,4 +2,5 @@ CLASS com/xk72/proxy/class_1430 com/xk72/proxy/ProxyErrors
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.ProxyErrors"
 	FIELD field_3975 LOGGER Lorg/slf4j/Logger;
 	METHOD method_3897 humanErrorMessage (I)Ljava/lang/String;
+		ARG 0 statusCode
 	METHOD method_3900 getErrorStringFromBundle (Ljava/lang/String;)Ljava/lang/String;

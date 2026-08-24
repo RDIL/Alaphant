@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/class_1170 com/charlesproxy/ILoggingEventListener
+	METHOD logMessage logMessage (Ljava/lang/String;)V

@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/model/class_951 com/charlesproxy/model/HasStartTime
+	METHOD method_2247 getStartTime ()Ljava/util/Date;

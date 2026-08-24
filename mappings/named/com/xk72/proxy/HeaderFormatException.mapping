@@ -2,4 +2,8 @@ CLASS com/xk72/proxy/HeaderFormatException com/xk72/proxy/HeaderFormatException
 	FIELD DEFAULT_HTTP_STATUS DEFAULT_HTTP_STATUS I
 	FIELD httpStatus httpStatus I
 	FIELD serialVersionUID serialVersionUID J
+	METHOD <init> (ILjava/lang/String;Ljava/lang/Throwable;)V
+		ARG 1 httpStatus
+		ARG 2 message
+		ARG 3 throwable
 	METHOD getHttpStatus getHttpStatus ()I

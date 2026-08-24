@@ -1,7 +1,14 @@
 CLASS com/xk72/proxy/io/class_1332 com/xk72/proxy/io/StreamCopier
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.io.StreamCopier"
 	COMMENT [bootstrap] matched to Charles 4's StreamCopier on 11 shared member descriptors (next best in this package scored 8) -- provisional, confirm before dropping the Maybe
+	FIELD field_3635 inStream Ljava/io/InputStream;
+	FIELD field_3636 inProgress Z
 	FIELD field_3638 maybeLastTick J
 		COMMENT [bootstrap] carried over from Charles 4's StreamCopier.lastTick on a unique descriptor match -- provisional
-	METHOD method_3617 maybeIsInProgress ()Z
+	FIELD field_3639 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3640 outStream Ljava/io/OutputStream;
+	METHOD <init> (Ljava/io/InputStream;Ljava/io/OutputStream;)V
+		ARG 1 inputStream
+		ARG 2 outputStream
+	METHOD method_3617 isInProgress ()Z
 		COMMENT [bootstrap] carried over from Charles 4's StreamCopier.isInProgress on a unique descriptor match -- provisional

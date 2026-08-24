@@ -1,5 +1,5 @@
 CLASS com/charlesproxy/windows/WindowsIconUtils com/charlesproxy/windows/WindowsIconUtils
-	METHOD method_3031 (Ljava/awt/Window;)Z
+	METHOD method_3031 trySetIcon (Ljava/awt/Window;)Z
 		ARG 0 window
 	METHOD setIconX setIconX (Ljava/awt/Window;Ljava/lang/String;)V
 		ARG 0 window

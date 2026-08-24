@@ -1,1 +1,10 @@
 CLASS com/xk72/proxy/ProxyException com/xk72/proxy/ProxyException
+	FIELD serialVersionUID serialVersionUID J
+	METHOD <init> (Ljava/lang/String;)V
+		ARG 1 message
+	METHOD <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+		ARG 1 message
+		ARG 2 throwable
+	METHOD <init> (Ljava/lang/Throwable;)V
+		ARG 1 throwable
+	METHOD getMessage getMessage ()Ljava/lang/String;

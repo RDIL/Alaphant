@@ -5,3 +5,11 @@ CLASS com/xk72/serialization/class_1484 com/xk72/serialization/SerializationOpti
 	FIELD field_4078 noSerialize Z
 	FIELD field_4079 noDeserialize Z
 	FIELD field_4080 alwaysSerialize Z
+	METHOD method_3999 isNoSerialize ()Z
+	METHOD method_4000 withAsAttribute ()Lcom/xk72/serialization/class_1484;
+	METHOD method_4001 withNonNull ()Lcom/xk72/serialization/class_1484;
+	METHOD method_4002 withAlwaysSerialize ()Lcom/xk72/serialization/class_1484;
+	METHOD method_4003 containsNonNull ()Z
+	METHOD method_4004 isAsAttribute ()Z
+	METHOD method_4005 isAlwaysSerialize ()Z
+	METHOD method_4006 withContainsNonNull ()Lcom/xk72/serialization/class_1484;

@@ -1,0 +1,6 @@
+CLASS com/xk72/proxy/io/class_1331 com/xk72/proxy/io/NoopOutputStream
+	METHOD close close ()V
+	METHOD flush flush ()V
+	METHOD write write (I)V
+	METHOD write write ([B)V
+	METHOD write write ([BII)V

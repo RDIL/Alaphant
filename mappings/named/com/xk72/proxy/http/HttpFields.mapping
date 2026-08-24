@@ -1,22 +1,33 @@
 CLASS com/xk72/proxy/http/HttpFields com/xk72/proxy/http/HttpFields
 	FIELD field_3431 LOGGER Lorg/slf4j/Logger;
 	FIELD field_3432 rawSize J
+	FIELD field_3433 requestFields Lcom/xk72/proxy/http/class_1298;
+	FIELD field_3434 responseFields Lcom/xk72/proxy/http/class_1297;
 	FIELD field_3435 receiveTime J
 	FIELD firstLine firstLine Ljava/lang/String;
+	FIELD serialVersionUID serialVersionUID J
 	METHOD getFirstLine getFirstLine ()Ljava/lang/String;
+	METHOD getHttpVersion getHttpVersion ()D
 	METHOD getRawSize getRawSize ()J
 	METHOD getReceiveTime getReceiveTime ()J
 	METHOD getRequestMethod getRequestMethod ()Ljava/lang/String;
 	METHOD getRequestProtocolVersion getRequestProtocolVersion ()Ljava/lang/String;
 	METHOD getRequestString getRequestString ()Ljava/lang/String;
 	METHOD getResponseProtocolVersion getResponseProtocolVersion ()Ljava/lang/String;
+	METHOD getResponseStatus getResponseStatus ()I
 	METHOD getResponseStatusDescription getResponseStatusDescription ()Ljava/lang/String;
 	METHOD isEmpty isEmpty ()Z
+	METHOD method_3386 getResponseFields ()Lcom/xk72/proxy/http/class_1297;
+	METHOD method_3387 getRequestFields ()Lcom/xk72/proxy/http/class_1298;
 	METHOD readFirstLine readFirstLine (Lcom/xk72/proxy/io/class_1343;Z)Z
+	METHOD readObject readObject (Ljava/io/ObjectInputStream;)V
 	METHOD setConnect setConnect (Ljava/lang/String;ILjava/lang/String;)V
 	METHOD setFirstLine setFirstLine (Ljava/lang/String;)V
 	METHOD setRawSize setRawSize (J)V
 		ARG 1 rawSize
 	METHOD setReceiveTime setReceiveTime (J)V
 	METHOD setRequestFields setRequestFields (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Z)V
+	METHOD setResponseStatus setResponseStatus (ILjava/lang/String;)V
 	METHOD setResponseStatus setResponseStatus (Ljava/lang/String;ILjava/lang/String;)V
+	METHOD writeFirstLine writeFirstLine (Ljava/io/ByteArrayOutputStream;)V
+	METHOD writeObject writeObject (Ljava/io/ObjectOutputStream;)V

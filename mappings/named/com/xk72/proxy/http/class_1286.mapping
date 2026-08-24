@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/http/class_1286
+	FIELD field_3439 ntlmMessage Ljcifs/ntlmssp/NtlmMessage;

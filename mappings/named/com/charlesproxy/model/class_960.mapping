@@ -1,5 +1,6 @@
 CLASS com/charlesproxy/model/class_960
 	COMMENT [bootstrap] matched to Charles 4's ModelNode on 28 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
 	FIELD field_2602 parent Lcom/charlesproxy/model/class_960;
+	FIELD field_2604 descendantChangeListeners Ljava/util/List;
 	FIELD field_2612 dispatcher Lcom/xk72/lib/class_1556;
 	METHOD method_2485 setParent (Lcom/charlesproxy/model/class_960;)V

@@ -1,0 +1,3 @@
+CLASS com/xk72/proxy/http/class_1296 com/xk72/proxy/http/ISupportedProtocolsAndMethods
+	FIELD field_3468 supportedProtocols [Ljava/lang/String;
+	FIELD field_3469 supportedHttpMethods [Ljava/lang/String;

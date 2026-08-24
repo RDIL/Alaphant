@@ -2,4 +2,5 @@ CLASS com/xk72/proxy/class_1271 com/xk72/proxy/SocketRemoteConnection
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.SocketRemoteConnection"
 	FIELD field_3368 inStream Lcom/xk72/proxy/io/class_1335;
 	FIELD field_3370 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3372 remoteConnection Lcom/xk72/proxy/class_1274;
 	FIELD field_3373 outStream Lcom/xk72/proxy/io/class_1330;

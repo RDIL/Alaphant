@@ -81,6 +81,7 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD addTag addTag (Ljava/lang/String;)V
 		ARG 1 tag
 	METHOD addToListAttribute addToListAttribute (Ljava/lang/Object;Ljava/lang/Object;)V
+	METHOD applyProtocol applyProtocol (Lcom/xk72/proxy/http/Protocol;)V
 	METHOD getAlpnProtocol getAlpnProtocol ()Ljava/lang/String;
 	METHOD getAttribute getAttribute (Ljava/lang/Object;)Ljava/lang/Object;
 	METHOD getCipherSuite getCipherSuite ()Ljava/lang/String;

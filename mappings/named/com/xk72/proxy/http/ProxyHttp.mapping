@@ -1,3 +1,6 @@
 CLASS com/xk72/proxy/http/class_1288 com/xk72/proxy/http/ProxyHttp
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.http.ProxyHttp"
 	COMMENT [bootstrap] matched to Charles 4's ProxyHttp on 29 shared member descriptors (next best in this package scored 8) -- provisional, confirm before dropping the Maybe
+	FIELD field_3440 outStream Lcom/xk72/proxy/io/class_1330;
+	FIELD field_3444 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3446 inStream Lcom/xk72/proxy/io/class_1335;

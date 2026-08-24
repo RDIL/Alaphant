@@ -1,2 +1,3 @@
 CLASS com/xk72/proxy/class_1283 com/xk72/proxy/FieldsHelper
 	METHOD method_3377 fieldsByHttpVersion (Ljava/lang/String;)Lcom/xk72/proxy/http/HttpFields;
+		ARG 0 version

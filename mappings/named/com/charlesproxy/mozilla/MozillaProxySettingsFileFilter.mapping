@@ -1,1 +1,2 @@
 CLASS com/charlesproxy/mozilla/class_23 com/charlesproxy/mozilla/MozillaProxySettingsFileFilter
+	METHOD accept accept (Ljava/io/File;)Z

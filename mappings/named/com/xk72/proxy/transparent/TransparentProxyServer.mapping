@@ -1,0 +1,3 @@
+CLASS com/xk72/proxy/transparent/TransparentProxyServer com/xk72/proxy/transparent/TransparentProxyServer
+	METHOD main main ([Ljava/lang/String;)V
+		ARG 0 args

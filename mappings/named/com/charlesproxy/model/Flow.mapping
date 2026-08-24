@@ -1,4 +1,8 @@
-CLASS com/charlesproxy/model/Flow
+CLASS com/charlesproxy/model/Flow com/charlesproxy/model/Flow
 	FIELD bucketEnd bucketEnd [J
 	FIELD bucketStart bucketStart [J
+	FIELD dataSize dataSize [J
 	FIELD pos pos I
+	METHOD populate populate (Lcom/xk72/charles/model/Flow;)V
+	METHOD readExternal readExternal (Ljava/io/ObjectInput;)V
+	METHOD recordObservation recordObservation (JI)V

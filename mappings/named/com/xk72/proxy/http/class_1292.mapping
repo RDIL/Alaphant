@@ -1,0 +1,4 @@
+CLASS com/xk72/proxy/http/class_1292
+	FIELD field_3460 cipherSuites [Lcom/xk72/proxy/ssl/class_1392;
+	METHOD method_3450 setCipherSuites ([Lcom/xk72/proxy/ssl/class_1392;)V
+	METHOD method_3451 getCipherSuites ()[Lcom/xk72/proxy/ssl/class_1392;

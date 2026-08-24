@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/model/class_963
+	FIELD field_2615 proxyEventStatus__ordinals [I
+	FIELD field_2616 transactionSide__ordinals [I
+	FIELD field_2617 websocketMessage__type__ordinals [I

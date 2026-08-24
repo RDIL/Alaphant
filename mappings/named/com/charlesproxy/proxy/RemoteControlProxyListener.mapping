@@ -1,7 +1,12 @@
 CLASS com/charlesproxy/proxy/class_15 com/charlesproxy/proxy/RemoteControlProxyListener
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.proxy.RemoteControlProxyListener"
 	COMMENT Serves the control.charles web interface: receivedRequestURL diverts requests for that host into a local server that answers /recording/start, /recording/stop, /session/clear, /session/export-xml and the rest.
+	FIELD field_34 LOGGER Lorg/slf4j/Logger;
 	METHOD method_18 getTargetSession ()Lcom/charlesproxy/model/class_943;
 		COMMENT The session the /session/export-* handlers serialise. An override point: here the proxy manager's recordingSession, in the GUI subclass the frontmost session window when nothing is recording.
 	METHOD method_19 startRecording ()V
 		COMMENT Serves /recording/start. An override point: here it installs a fresh Session as the proxy manager's recordingSession, in the GUI subclass it records into the frontmost session window.
+	METHOD method_20 (Lcom/xk72/proxy/Fields;Lcom/charlesproxy/config/class_129;)Z
+		ARG 1 remoteControlConfig
+	METHOD method_21 clientAuthRequired (Lcom/xk72/proxy/io/class_1330;)V
+		ARG 0 outStream

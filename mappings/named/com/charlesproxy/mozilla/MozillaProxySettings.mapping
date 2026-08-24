@@ -2,4 +2,5 @@ CLASS com/charlesproxy/mozilla/class_21 com/charlesproxy/mozilla/MozillaProxySet
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.mozilla.MozillaProxySettings"
 	FIELD field_65 enabled Z
 	FIELD field_66 LOGGER Lorg/slf4j/Logger;
+	FIELD field_68 settingsMonitor Lcom/charlesproxy/mozilla/class_22;
 	METHOD method_65 disableProxies ()V
