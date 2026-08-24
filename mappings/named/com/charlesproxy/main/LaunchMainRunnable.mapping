@@ -2,3 +2,4 @@ CLASS com/charlesproxy/main/class_927 com/charlesproxy/main/LaunchMainRunnable
 	FIELD field_2480 main Lcom/charlesproxy/main/Main;
 	METHOD <init> (Lcom/charlesproxy/main/Main;)V
 		ARG 1 main
+	METHOD run run ()V

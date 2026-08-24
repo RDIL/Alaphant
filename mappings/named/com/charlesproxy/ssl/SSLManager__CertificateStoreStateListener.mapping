@@ -1,0 +1,11 @@
+CLASS com/charlesproxy/ssl/class_994 com/charlesproxy/ssl/SSLManager__CertificateStoreStateListener
+	COMMENT [inferred] SSLManager's inner class_998 implementation, captured from the enclosing
+	COMMENT instance. On UNINITIALISED it clears the configured root and client certificates that
+	COMMENT referenced the store; when the store unlocks it reloads them.
+	FIELD field_2741 sslManager Lcom/charlesproxy/ssl/class_992;
+	METHOD <init> (Lcom/charlesproxy/ssl/class_992;)V
+		ARG 1 sslManager
+	METHOD method_1275 certificateStoreStateChanged (Lcom/charlesproxy/ssl/CertificateStore$CertificateStoreState;)V
+		COMMENT [inferred] the class_998 callback; named on the interface, repeated here so the
+		COMMENT override group cannot pick up two different names.
+		ARG 1 state

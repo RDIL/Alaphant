@@ -1,5 +1,71 @@
-CLASS com/charlesproxy/ssl/CertificateStore
+CLASS com/charlesproxy/ssl/CertificateStore com/charlesproxy/ssl/CertificateStore
+	COMMENT the "Charles Secure Store": one password-protected PKCS#12 file holding the user's
+	COMMENT private SSL certificates. Aliases are prefixed "server_" for server certificates and
+	COMMENT "cert_" for client ones, and every mutation rewrites the whole file. Charles 4 had this
+	COMMENT as SSLCertificateStore.
+	FIELD field_2720 storeFile Ljava/io/File;
+		COMMENT SSLManager points this at <config>/ca/imported; Charles 4 called the field importedFile.
+	FIELD field_2717 passwordAuthenticator Lcom/charlesproxy/security/PasswordAuthenticator;
+	FIELD field_2721 password [C
+		COMMENT null exactly when the store is locked -- getCertificateStoreState reads it as the
+		COMMENT difference between LOCKED and UNLOCKED.
+	FIELD field_2716 stateListeners Ljava/util/List;
+	FIELD field_2719 certificateListeners Ljava/util/List;
+	FIELD field_2718 LOGGER Lorg/slf4j/Logger;
+	METHOD <init> (Ljava/io/File;Lcom/charlesproxy/security/PasswordAuthenticator;)V
+		ARG 1 storeFile
+		ARG 2 passwordAuthenticator
 	METHOD method_2549 getCertificateStoreState ()Lcom/charlesproxy/ssl/CertificateStore$CertificateStoreState;
+	METHOD method_2551 addStateListener (Lcom/charlesproxy/ssl/class_998;)Lcom/charlesproxy/ssl/CertificateStore$CertificateStoreState;
+		COMMENT returns the current state as it registers, so a caller cannot miss a change between
+		COMMENT the two calls.
+		ARG 1 listener
+	METHOD method_2544 removeStateListener (Lcom/charlesproxy/ssl/class_998;)V
+		ARG 1 listener
+	METHOD method_2561 fireStateChanged ()V
+	METHOD method_2543 unlockSecureStore ()V
+		COMMENT [charles4] Charles 4's name, and Charles 5's own prompt agrees: "Enter your password to
+		COMMENT unlock the Charles Secure Store". Retries until the authenticator stops offering
+		COMMENT passwords, then announces every entry to the certificate listeners.
+	METHOD method_2557 create ()Z
+		COMMENT prompts for a new password and creates the store; false if the user cancels.
+	METHOD method_2556 create ([C)Z
+		COMMENT [inferred] only valid from UNINITIALISED; a failure deletes the half-written file.
+		ARG 1 password
 	METHOD method_2560 delete ()V
+	METHOD method_2553 save (Ljava/io/File;[CLjava/security/KeyStore;)V
+		ARG 1 storeFile
+		ARG 2 password
+		ARG 3 keyStore
+	METHOD method_2547 requireUnlocked ()V
+		COMMENT [inferred] throws CertificateStoreUninitialisedException when there is no store, and
+		COMMENT tries to unlock before throwing CertificateStoreLockedException.
+	METHOD method_2548 getServerCertificates ()Ljava/util/List;
+	METHOD method_2550 getServerCertificates (Lcom/charlesproxy/ssl/class_989;)Ljava/util/List;
+		COMMENT [inferred] registers the listener and returns the "server_" entries; an empty list
+		COMMENT rather than a throw when the store is missing or locked.
+		ARG 1 listener
+	METHOD method_2552 addServerCertificate (Lcom/xk72/pkg_37/class_1568;)Lcom/xk72/pkg_37/class_1568;
+		ARG 1 entry
+	METHOD method_2545 addClientCertificate (Lcom/xk72/pkg_37/class_1568;)Lcom/xk72/pkg_37/class_1568;
+		ARG 1 entry
+	METHOD method_2555 addEntry (Ljava/lang/String;Lcom/xk72/pkg_37/class_1568;)Lcom/xk72/pkg_37/class_1568;
+		COMMENT [inferred] allocates the first free "<prefix><n>" alias and returns the entry under its
+		COMMENT new alias, which is what the caller stores as CertificateConfiguration.storeAlias.
+		ARG 1 aliasPrefix
+		ARG 2 entry
+	METHOD method_2558 removeEntry (Lcom/xk72/pkg_37/class_1568;)Z
+		ARG 1 entry
+	METHOD method_2554 removeEntry (Ljava/lang/String;)Z
+		ARG 1 alias
+	METHOD method_2546 getEntry (Ljava/lang/String;)Lcom/xk72/pkg_37/class_1568;
+		COMMENT null when the alias is absent or holds no key.
+		ARG 1 alias
 	CLASS CertificateStoreState
 		FIELD field_2723 UNINITIALISED Lcom/charlesproxy/ssl/CertificateStore$CertificateStoreState;
+			COMMENT the store file is missing or empty. Charles 4 called this state DOES_NOT_EXIST.
+		FIELD field_2722 LOCKED Lcom/charlesproxy/ssl/CertificateStore$CertificateStoreState;
+			COMMENT [inferred] the file exists but no password has been supplied. Charles 4 called it
+			COMMENT STORE_LOCKED; renamed here to match UNINITIALISED's style.
+		FIELD field_2724 UNLOCKED Lcom/charlesproxy/ssl/CertificateStore$CertificateStoreState;
+			COMMENT [inferred] the only state in which entries can be read or written.

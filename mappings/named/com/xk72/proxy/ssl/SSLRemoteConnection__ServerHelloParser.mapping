@@ -1,0 +1,19 @@
+CLASS com/xk72/proxy/ssl/class_1376 com/xk72/proxy/ssl/SSLRemoteConnection__ServerHelloParser
+	COMMENT [inferred] SSLRemoteConnection's inner parser for what the upstream server sends back:
+	COMMENT it records the negotiated version, session id, cipher suite, ALPN protocol and server
+	COMMENT extensions on the ProxyEvent and on its Connection.
+	FIELD field_3756 proxyEvent Lcom/xk72/proxy/ProxyEvent;
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1375;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 1 remoteConnection
+		ARG 2 proxyEvent
+	METHOD method_3175 setSslDetails (Lcom/xk72/proxy/ssl/class_1385;)V
+		ARG 1 sslDetails
+	METHOD method_3176 setServerCertificates (Ljava/util/List;)V
+		ARG 1 certificates
+	METHOD method_3743 setHandshakeSize (J)V
+		ARG 1 totalBytes
+	METHOD method_3744 setHandshakeDuration (J)V
+		ARG 1 millis
+	METHOD method_3174 alert (BB)V
+		ARG 1 level
+		ARG 2 description

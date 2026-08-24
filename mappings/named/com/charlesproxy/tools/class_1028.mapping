@@ -1,4 +1,0 @@
-CLASS com/charlesproxy/tools/class_1028
-	FIELD field_2787 blacklistTool Lcom/charlesproxy/tools/BlacklistTool;
-	METHOD <init> (Lcom/charlesproxy/tools/BlacklistTool;)V
-		ARG 1 blacklistTool

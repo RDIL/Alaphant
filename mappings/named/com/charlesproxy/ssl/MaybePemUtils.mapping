@@ -1,0 +1,15 @@
+CLASS com/charlesproxy/ssl/class_1008 com/charlesproxy/ssl/MaybePemUtils
+	COMMENT [inferred] static PEM readers with no instance state, used by the certificate import
+	COMMENT panels. Charles 4 kept the same three inline in ImportCertificateHelper, so there is no
+	COMMENT Charles 4 name for the class.
+	METHOD method_2617 readCertificates (Ljava/io/InputStream;)[Ljava/security/cert/X509Certificate;
+		COMMENT [inferred] reads X.509 certificates until the stream is exhausted; a parse failure
+		COMMENT with bytes still to come is rethrown, one at clean EOF ends the loop.
+		ARG 1 in
+	METHOD method_2618 readCertificates (Ljava/lang/String;)[Ljava/security/cert/X509Certificate;
+		ARG 1 pem
+	METHOD method_2619 readPrivateKey (Ljava/lang/String;Ljava/lang/String;)Ljava/security/PrivateKey;
+		COMMENT [inferred] strips both the PKCS#8 and the RSA PEM headers and reads what is left as a
+		COMMENT PKCS#8 encoded key, so an actual PKCS#1 body would not parse.
+		ARG 1 pem
+		ARG 2 algorithm

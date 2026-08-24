@@ -118,6 +118,8 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD getProtocol getProtocol ()Ljava/lang/String;
 	METHOD getProxyAddress getProxyAddress ()Ljava/net/InetAddress;
 	METHOD getQuery getQuery ()Ljava/lang/String;
+	METHOD getReceivingBuffer getReceivingBuffer ()[B
+	METHOD getReceivingBufferLength getReceivingBufferLength ()I
 	METHOD getRemoteAddress getRemoteAddress ()Ljava/net/InetAddress;
 	METHOD getRemotePort getRemotePort ()I
 	METHOD getRequestBeginTime getRequestBeginTime ()Ljava/util/Date;
@@ -133,6 +135,7 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD getSslProtocol getSslProtocol ()Ljava/lang/String;
 	METHOD getSslSessionID getSslSessionID ()[B
 	METHOD getStartTime getStartTime ()Ljava/util/Date;
+	METHOD getStatus getStatus ()Lcom/xk72/proxy/ProxyEventStatus;
 	METHOD getTags getTags ()Ljava/util/Set;
 	METHOD initWithClientConnection initWithClientConnection (Lcom/xk72/proxy/Connection;Lcom/xk72/proxy/class_1270;)V
 	METHOD initWithTransaction initWithTransaction (Lcom/xk72/proxy/Connection;Lcom/xk72/proxy/ProxyEvent;)V
@@ -144,6 +147,8 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD isTunnel isTunnel ()Z
 	METHOD isWantResponseBodyDecoded isWantResponseBodyDecoded ()Z
 	METHOD setAlpnProtocol setAlpnProtocol (Ljava/lang/String;)V
+	METHOD setAttribute setAttribute (Ljava/lang/Object;Ljava/lang/Object;)V
+	METHOD setBufferResponseBody setBufferResponseBody ()V
 	METHOD setCipherSuite setCipherSuite (Ljava/lang/String;)V
 	METHOD setClientAddress setClientAddress (Ljava/net/InetAddress;)V
 	METHOD setClientCertificates setClientCertificates (Ljava/util/List;)V
@@ -168,6 +173,7 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD setException setException (Ljava/lang/Exception;)V
 	METHOD setExternalProxyProtocol setExternalProxyProtocol (Ljava/lang/String;)V
 	METHOD setFile setFile (Ljava/lang/String;)V
+	METHOD setHost setHost (Ljava/lang/String;)V
 	METHOD setKeptAlive setKeptAlive (Z)V
 	METHOD setMapped setMapped (Z)V
 	METHOD setMethod setMethod (Ljava/lang/String;)V
@@ -181,7 +187,9 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD setProposedSslSessionID setProposedSslSessionID ([B)V
 	METHOD setProtocol setProtocol (Ljava/lang/String;)V
 	METHOD setProtocolVersion setProtocolVersion (Ljava/lang/String;)V
+	METHOD setQuery setQuery (Ljava/lang/String;)V
 	METHOD setRemoteAddress setRemoteAddress (Ljava/net/InetAddress;)V
+	METHOD setRemotePort setRemotePort (I)V
 	METHOD setRequestBeginTime setRequestBeginTime (Ljava/util/Date;)V
 	METHOD setRequestBodyDecoded setRequestBodyDecoded (Z)V
 	METHOD setRequestCompleteTime setRequestCompleteTime (Ljava/util/Date;)V

@@ -57,14 +57,45 @@ CLASS com/xk72/charles/model/Transaction com/xk72/charles/model/Transaction
 	FIELD transactionStart transactionStart J
 	FIELD tunnel tunnel Ljava/lang/Boolean;
 	FIELD webSocket webSocket Ljava/lang/Boolean;
+	METHOD getActualPort getActualPort ()I
+	METHOD getClientAddress getClientAddress ()Ljava/net/InetAddress;
+	METHOD getClientLocalPort getClientLocalPort ()I
+	METHOD getClientPort getClientPort ()I
 	METHOD getClientProposedAlpnProtocols getClientProposedAlpnProtocols ()Ljava/util/List;
+	METHOD getConnectDuration getConnectDuration ()Ljava/lang/Long;
 	METHOD getControlFramesSent getControlFramesSent ()I
+	METHOD getDnsDuration getDnsDuration ()Ljava/lang/Long;
 	METHOD getEarliestStartTime getEarliestStartTime ()Ljava/util/Date;
 	METHOD getEndTime getEndTime ()Ljava/util/Date;
+	METHOD getException getException ()Ljava/lang/Exception;
+	METHOD getFile getFile ()Ljava/lang/String;
+	METHOD getHost getHost ()Ljava/lang/String;
 	METHOD getLatestTime getLatestTime ()Ljava/util/Date;
 	METHOD getMessagesReceived getMessagesReceived ()I
+	METHOD getMethod getMethod ()Ljava/lang/String;
+	METHOD getPath getPath ()Ljava/lang/String;
+	METHOD getPort getPort ()I
+	METHOD getProtocol getProtocol ()Ljava/lang/String;
+	METHOD getProtocolVersion getProtocolVersion ()Ljava/lang/String;
+	METHOD getQuery getQuery ()Ljava/lang/String;
 	METHOD getRemoteAddress getRemoteAddress ()Ljava/net/InetAddress;
+	METHOD getRemoteLocalPort getRemoteLocalPort ()I
+	METHOD getRequestBeginTime getRequestBeginTime ()Ljava/util/Date;
+	METHOD getRequestBody getRequestBody ()[B
+	METHOD getRequestCompleteTime getRequestCompleteTime ()Ljava/util/Date;
+	METHOD getRequestHandshakeSize getRequestHandshakeSize ()I
+	METHOD getRequestHeader getRequestHeader ()Lcom/xk72/proxy/Fields;
+	METHOD getRequestHeaderSize getRequestHeaderSize ()I
+	METHOD getRequestSize getRequestSize ()J
+	METHOD getResponseBeginTime getResponseBeginTime ()Ljava/util/Date;
+	METHOD getResponseBody getResponseBody ()[B
+	METHOD getResponseHandshakeSize getResponseHandshakeSize ()I
+	METHOD getResponseHeader getResponseHeader ()Lcom/xk72/proxy/Fields;
+	METHOD getResponseHeaderSize getResponseHeaderSize ()I
+	METHOD getResponseSize getResponseSize ()J
+	METHOD getSslDuration getSslDuration ()Ljava/lang/Long;
 	METHOD getStartTime getStartTime ()Ljava/util/Date;
+	METHOD getStatus getStatus ()Lcom/xk72/proxy/ProxyEventStatus;
 	METHOD getTotalRequestSize getTotalRequestSize ()J
 	METHOD isResponseBodyDecoded isResponseBodyDecoded ()Z
 	METHOD setAlpnProtocol setAlpnProtocol (Ljava/lang/String;)V

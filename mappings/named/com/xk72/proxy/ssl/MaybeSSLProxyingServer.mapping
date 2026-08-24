@@ -1,0 +1,12 @@
+CLASS com/xk72/proxy/ssl/class_1402 com/xk72/proxy/ssl/MaybeSSLProxyingServer
+	COMMENT [inferred] the interface SSLHttpProxyHandler tests its own proxy server against to find
+	COMMENT out whether a connection should be decrypted. Implemented only by
+	COMMENT SSLProxyingSocketProxyServer. Charles 4 had no name for it.
+	METHOD method_3756 registerConnection (Lcom/xk72/proxy/ProxyEvent;Lcom/xk72/proxy/Connection;)Z
+		COMMENT [inferred] records the connection and returns whether it falls inside the SSL proxying
+		COMMENT locations, so the server can later interrupt exactly the connections whose answer
+		COMMENT would change if the settings changed.
+		ARG 1 proxyEvent
+		ARG 2 connection
+	METHOD method_3755 unregisterConnection (Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 1 proxyEvent

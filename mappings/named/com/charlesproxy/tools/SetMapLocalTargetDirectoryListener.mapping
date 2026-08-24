@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/tools/class_1024 com/charlesproxy/tools/SetMapLocalTargetDirectoryListener
+	METHOD <init> (Lcom/charlesproxy/tools/MapLocalTool$MapLocalFormPanel;)V
+		ARG 1 mapLocalFormPanel

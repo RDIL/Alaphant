@@ -1,7 +1,57 @@
 CLASS com/charlesproxy/ssl/class_992 com/charlesproxy/ssl/SSLManager
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.ssl.SSLManager"
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.ssl.SSLManager".
+	COMMENT Owns the root CA Charles signs with: it picks the configured custom root or the generated
+	COMMENT default, hands it to SSLContextFactory, and regenerates it when it is missing or expired.
 	FIELD field_2734 certificateStore Lcom/charlesproxy/ssl/CertificateStore;
 	FIELD field_2736 LOGGER Lorg/slf4j/Logger;
+	FIELD field_2737 pkcs12CertLoader Lcom/charlesproxy/ssl/class_1007;
+	FIELD field_2739 rootX509Certificate Ljava/security/cert/X509Certificate;
+	FIELD field_2738 caDirPath Ljava/lang/String;
+		COMMENT <config>/ca, which holds the keystore and the three exported certificate files.
+	FIELD field_2732 keyStorePassword [C
+		COMMENT [charles4] a hard-coded constant guarding only the generated default CA's key store.
+	FIELD field_2733 rootCertificateChangeListener Lcom/charlesproxy/ssl/class_993;
+	FIELD field_2735 certificateStoreStateListener Lcom/charlesproxy/ssl/class_994;
 	METHOD <init> (Lcom/charlesproxy/security/PasswordAuthenticator;Lcom/charlesproxy/ssl/class_1007;)V
+		COMMENT also clears the jdk.tls.disabledAlgorithms security property, so Charles can still
+		COMMENT negotiate the weak suites a server under test might insist on.
 		ARG 1 passwordAuthenticator
+		ARG 2 pkcs12CertLoader
 	METHOD method_2583 getCertificateStore ()Lcom/charlesproxy/ssl/CertificateStore;
+	METHOD method_2572 getPkcs12CertLoader ()Lcom/charlesproxy/ssl/class_1007;
+	METHOD method_2571 getRootX509Certificate ()Ljava/security/cert/X509Certificate;
+	METHOD method_2577 applyCertificateStoreState (Lcom/charlesproxy/ssl/CertificateStore$CertificateStoreState;)V
+		COMMENT [inferred] re-resolves the active root: the configured custom certificate from the
+		COMMENT store or from its file, falling back to the generated default when it is absent or
+		COMMENT expired. Also reinstalls the default HttpsURLConnection socket factory.
+		ARG 1 state
+	METHOD method_2578 setX509CertAndPkey (Ljava/security/cert/X509Certificate;Ljava/security/PrivateKey;)V
+		COMMENT [charles4] rejects an expired certificate with CertificateExpiredException before
+		COMMENT handing the pair to SSLContextFactory.
+		ARG 1 certificate
+		ARG 2 privateKey
+	METHOD method_2576 reloadStoreCertificates ()V
+		COMMENT [inferred] registers an SSL context for every server certificate in the store; called
+		COMMENT when the store becomes unlocked.
+	METHOD method_2570 regenerateRootCertificate ()V
+		COMMENT [inferred] deletes the generated CA files and re-resolves, which produces a fresh root.
+	METHOD method_2573 deleteCertificateFiles ()V
+	METHOD method_2585 installDefaultCertificate ()V
+		COMMENT [inferred] loads the generated CA, and on any failure deletes it and tries once more
+		COMMENT before giving up with DefaultCertificateException.
+	METHOD method_2584 installCertificateFromKeyStore ()V
+		COMMENT [inferred] installs the first alias in the generated key store that has both a
+		COMMENT certificate and a key.
+	METHOD method_2574 getOrCreateKeyStore ()Ljava/security/KeyStore;
+		COMMENT [inferred] runs SSLCertificateExportTask first when the key store file is missing, so
+		COMMENT this is where the default root gets generated.
+	METHOD method_2579 exportPkcs12 ([CLjava/io/File;)Z
+		COMMENT [inferred] writes the root and its key as a PKCS#12 under alias "charles"; a null file
+		COMMENT writes to stdout, which is how the command line export works.
+		ARG 1 password
+		ARG 2 target
+	METHOD method_2582 getKeystoreFile ()Ljava/io/File;
+	METHOD method_2580 getPemCertFile ()Ljava/io/File;
+		COMMENT charles-proxy-ssl-proxying-certificate.pem, renaming the legacy .crt onto it first.
+	METHOD method_2581 getCerCertFile ()Ljava/io/File;
+	METHOD method_2575 getLegacyCrtFile ()Ljava/io/File;

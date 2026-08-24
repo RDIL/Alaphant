@@ -1,0 +1,14 @@
+CLASS com/xk72/proxy/ssl/class_1391 com/xk72/proxy/ssl/CharlesX509TrustManager
+	COMMENT an X509TrustManager that delegates but additionally trusts certificates added to it --
+	COMMENT SSLContextFactory uses it to make Charles' own root acceptable to HttpsURLConnection.
+	COMMENT Charles 4's corpus read it the same way.
+	FIELD field_3884 innerTrustManager Ljavax/net/ssl/X509TrustManager;
+	FIELD field_3883 extraAcceptedIssuers Ljava/util/List;
+		COMMENT Charles 4 left this field unnamed; checkServerTrusted short-circuits when the chain's
+		COMMENT root is one of these, and getAcceptedIssuers appends them to the delegate's.
+	FIELD field_3885 acceptedIssuers [Ljava/security/cert/X509Certificate;
+		COMMENT the concatenation, cached until addAcceptedIssuer invalidates it.
+	METHOD <init> (Ljavax/net/ssl/X509TrustManager;)V
+		ARG 1 innerTrustManager
+	METHOD method_3856 addAcceptedIssuer (Ljava/security/cert/X509Certificate;)V
+		ARG 1 certificate

@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/unsafe/class_1140 com/charlesproxy/unsafe/TerminationHook
+	FIELD field_3059 systemHook Lcom/charlesproxy/unsafe/class_1139;
+	METHOD <init> (Lcom/charlesproxy/unsafe/class_1139;)V
+		ARG 1 systemHook
+	METHOD handle (Lsun/misc/Signal;)V
+		ARG 1 signal
+	METHOD method_2951 (Lsun/misc/Signal;)V
+		ARG 1 signal

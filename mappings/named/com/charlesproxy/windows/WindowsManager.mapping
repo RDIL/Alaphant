@@ -1,2 +1,7 @@
 CLASS com/charlesproxy/windows/class_1168 com/charlesproxy/windows/WindowsManager
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.windows.WindowsManager"
+	FIELD field_3140 hasJawt Z
+	FIELD field_3141 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3142 hasCharles Z
+	METHOD method_3032 doesHaveJawt ()Z
+	METHOD method_3033 doesHaveCharles ()Z

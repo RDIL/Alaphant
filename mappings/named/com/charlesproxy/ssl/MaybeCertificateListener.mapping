@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/ssl/class_989 com/charlesproxy/ssl/MaybeCertificateListener
+	COMMENT [inferred] the add/remove callback CertificateStore keeps a List of alongside its
+	COMMENT state listeners (class_998). Charles 4 had this interface as the unnamed
+	COMMENT com.xk72.charles.ssl.g, so the word "Listener" is a reading, not a recovered name.
+	METHOD method_2563 certificateAdded (Lcom/xk72/pkg_37/class_1568;)V
+		COMMENT [inferred] called for every entry CertificateStore loads or imports; the SSLManager
+		COMMENT implementation registers an SSL context for the entry's key and chain.
+		ARG 1 entry
+	METHOD method_2562 certificateRemoved (Lcom/xk72/pkg_37/class_1568;)V
+		COMMENT [inferred] called when an entry leaves the store; the SSLManager implementation
+		COMMENT drops the entry's SSL context from SSLContextFactory's cache.
+		ARG 1 entry

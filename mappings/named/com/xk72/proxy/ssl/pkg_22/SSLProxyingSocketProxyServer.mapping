@@ -1,0 +1,33 @@
+CLASS com/xk72/proxy/ssl/pkg_22/class_1371 com/xk72/proxy/ssl/pkg_22/SSLProxyingSocketProxyServer
+	COMMENT a SocketProxyServer that hands out SSLHttpProxyHandlers and decides per connection
+	COMMENT whether to decrypt. When the SSL settings change it interrupts the connections whose
+	COMMENT answer would now differ, so a settings change takes effect without a restart. Charles 4's
+	COMMENT corpus read the class the same way.
+	FIELD field_3742 decryptSsl Z
+	FIELD field_3744 sslProxyingIncludes Ljava/util/Collection;
+	FIELD field_3745 sslProxyingExcludes Ljava/util/Collection;
+	FIELD field_3743 connections Ljava/util/List;
+		COMMENT Charles 4 left this field unnamed; it holds one record per live connection.
+	METHOD method_3754 setDecryptSsl (Z)V
+		ARG 1 decryptSsl
+	METHOD method_3759 setSslLocations (Ljava/util/Collection;Ljava/util/Collection;)V
+		ARG 1 includes
+		ARG 2 excludes
+	METHOD method_3758 interruptLocations (Ljava/util/Collection;)V
+		COMMENT [charles4] interrupts every live connection matching the given locations.
+		ARG 1 locations
+	METHOD method_3760 interruptChangedConnections ()V
+		COMMENT [inferred] with decryption on, interrupts the connections whose SSL proxying answer no
+		COMMENT longer matches what they were opened under; with it off, interrupts every proxied one.
+	METHOD method_3761 interruptProxiedConnections ()V
+	METHOD method_3762 isSslProxied (Lcom/xk72/proxy/ProxyEvent;)Z
+		ARG 1 proxyEvent
+	METHOD method_3757 isSslProxied (Ljava/lang/String;I)Z
+		COMMENT [charles4] included and not excluded, tested as https://host:port.
+		ARG 1 host
+		ARG 2 port
+	METHOD method_3756 registerConnection (Lcom/xk72/proxy/ProxyEvent;Lcom/xk72/proxy/Connection;)Z
+		ARG 1 proxyEvent
+		ARG 2 connection
+	METHOD method_3755 unregisterConnection (Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 1 proxyEvent

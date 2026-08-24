@@ -1,0 +1,19 @@
+CLASS com/xk72/proxy/ssl/class_1364 com/xk72/proxy/ssl/SSLRequestStreamCopier__HandshakeParser
+	COMMENT [inferred] the inner SSLHandshakeParser SSLRequestStreamCopier drives -- the constructor
+	COMMENT captures the enclosing copier with javac's Objects.requireNonNull-before-super pattern,
+	COMMENT then ignores it and works through the ProxyEvent.
+	FIELD field_3729 proxyEvent Lcom/xk72/proxy/ProxyEvent;
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1370;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 1 streamCopier
+		ARG 2 proxyEvent
+	METHOD method_3176 setServerCertificates (Ljava/util/List;)V
+		COMMENT on the request side the certificates in a type-11 message are the client's, so this
+		COMMENT records them as ProxyEvent.clientCertificates.
+		ARG 1 certificates
+	METHOD method_3743 setHandshakeSize (J)V
+		ARG 1 totalBytes
+	METHOD method_3744 setHandshakeDuration (J)V
+		ARG 1 millis
+	METHOD method_3174 alert (BB)V
+		ARG 1 level
+		ARG 2 description

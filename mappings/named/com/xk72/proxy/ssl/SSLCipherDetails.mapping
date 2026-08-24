@@ -1,0 +1,24 @@
+CLASS com/xk72/proxy/ssl/class_1385 com/xk72/proxy/ssl/SSLCipherDetails
+	COMMENT what SSLHandshakeParser reads out of a ServerHello. Charles 4's corpus had the same five
+	COMMENT fields under these names, and each getter here matches one of them by type and use.
+	FIELD field_3863 sslVersion Lcom/xk72/proxy/ssl/class_1394;
+		COMMENT the legacy_version field of the ServerHello; getSslVersion prefers the
+		COMMENT supported_versions extension when the server sent one, as TLS 1.3 requires.
+	FIELD field_3861 sslSessionId [B
+	FIELD field_3864 alpnProtocol Ljava/lang/String;
+	FIELD field_3865 cipherSuite Ljava/lang/String;
+		COMMENT the JSSE-style id, since SSLHandshakeParser fills it from CipherSuite.getCipherSuiteId.
+	FIELD field_3862 serverExtensions Ljava/util/List;
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1394;[BLjava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+		ARG 1 sslVersion
+		ARG 2 sslSessionId
+		ARG 3 alpnProtocol
+		ARG 4 cipherSuite
+		ARG 5 serverExtensions
+	METHOD method_3842 getSslVersion ()Lcom/xk72/proxy/ssl/class_1394;
+		COMMENT [inferred] reads extension 43 (supported_versions) and falls back to the legacy field
+		COMMENT when it is absent or empty. Charles 4's version returned the field directly.
+	METHOD method_3840 getSslSessionId ()[B
+	METHOD method_3844 getAlpnProtocol ()Ljava/lang/String;
+	METHOD method_3845 getCipherSuite ()Ljava/lang/String;
+	METHOD method_3841 getServerExtensions ()Ljava/util/List;

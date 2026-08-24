@@ -1,0 +1,2 @@
+CLASS com/xk72/throttle/LatentExecutor
+	CLASS ExecutorCancelledException ExecutorCancelledException

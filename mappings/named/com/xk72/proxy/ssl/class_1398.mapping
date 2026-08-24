@@ -1,4 +1,0 @@
-CLASS com/xk72/proxy/ssl/class_1398
-	FIELD field_3908 remoteConnection Lcom/xk72/proxy/ssl/class_1375;
-	METHOD <init> (Lcom/xk72/proxy/ssl/class_1375;Ljava/io/InputStream;)V
-		ARG 1 remoteConnection

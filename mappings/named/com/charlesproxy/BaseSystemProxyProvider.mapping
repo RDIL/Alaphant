@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/class_1594 com/charlesproxy/BaseSystemProxyProvider
+	METHOD method_4259 setProxiesEnabled (Z)Z
+		ARG 1 enabled
+	METHOD method_4261 isEnabled ()Z

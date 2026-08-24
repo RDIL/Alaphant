@@ -1,0 +1,2 @@
+CLASS com/xk72/throttle/ProxyAbortIOException com/xk72/throttle/ProxyAbortIOException
+	FIELD serialVersionUID serialVersionUID J

@@ -1,2 +1,6 @@
 CLASS com/charlesproxy/windows/class_1169 com/charlesproxy/windows/WindowsProxyManager
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.windows.WindowsProxyManager"
+	FIELD field_3144 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3146 windowsProxyListener Ljava/beans/PropertyChangeSupport;
+	METHOD method_3034 disableSystemProxies ()V
+	METHOD method_3036 nativeLibraryAvailable ()Z

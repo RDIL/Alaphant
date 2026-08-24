@@ -1,0 +1,6 @@
+CLASS com/xk72/proxy/ssl/class_1377 com/xk72/proxy/ssl/SSLSnooper__ClientHelloListener
+	COMMENT [inferred] SSLSnooper's private listener: a MaybeSnoopingHandshakeParser that keeps the
+	COMMENT one ClientHello it sees. Its only constructor is private and SSLSnooper is its only user.
+	FIELD field_3757 clientHello Lcom/xk72/proxy/ssl/class_1387;
+	METHOD method_3770 setClientHello (Lcom/xk72/proxy/ssl/class_1387;)V
+		ARG 1 clientHello

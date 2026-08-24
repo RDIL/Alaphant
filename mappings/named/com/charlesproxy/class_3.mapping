@@ -1,2 +1,6 @@
 CLASS com/charlesproxy/class_3
+	FIELD field_21 proxyManager Lcom/xk72/proxy/socks/server/SOCKSProxyServer;
+	METHOD <init> (Lcom/charlesproxy/class_19;Lcom/xk72/proxy/socks/server/SOCKSProxyServer;)V
+		ARG 1 proxyManager
+		ARG 2 socksProxyServer
 	METHOD propertyChange propertyChange (Ljava/beans/PropertyChangeEvent;)V

@@ -1,3 +1,0 @@
-CLASS com/xk72/lib/class_1555
-	METHOD removePropertyChangeListener removePropertyChangeListener (Ljava/beans/PropertyChangeListener;)V
-		ARG 1 propertyChangeListener

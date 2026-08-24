@@ -1,0 +1,8 @@
+CLASS com/xk72/proxy/ssl/class_1398 com/xk72/proxy/ssl/SSLRemoteConnection__InputStream
+	COMMENT [inferred] SSLRemoteConnection's inner input stream, captured from the enclosing
+	COMMENT connection so it can resolve the current underlying stream lazily rather than holding the
+	COMMENT one that existed when it was constructed.
+	FIELD field_3908 remoteConnection Lcom/xk72/proxy/ssl/class_1375;
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1375;Ljava/io/InputStream;)V
+		ARG 1 remoteConnection
+		ARG 2 in

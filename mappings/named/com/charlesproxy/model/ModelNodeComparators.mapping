@@ -1,0 +1,15 @@
+CLASS com/charlesproxy/model/ModelNodeComparators com/charlesproxy/model/ModelNodeComparators
+	FIELD comparator comparator Ljava/util/Comparator;
+	FIELD field_2487 START_TIME Lcom/charlesproxy/model/ModelNodeComparators;
+	FIELD field_2488 DURATION Lcom/charlesproxy/model/ModelNodeComparators;
+	FIELD field_2489 RESPONSE_SIZE Lcom/charlesproxy/model/ModelNodeComparators;
+	FIELD field_2491 STRING Lcom/charlesproxy/model/ModelNodeComparators;
+	FIELD field_2492 END_TIME Lcom/charlesproxy/model/ModelNodeComparators;
+	FIELD field_2493 REQUEST_SIZE Lcom/charlesproxy/model/ModelNodeComparators;
+	FIELD field_2494 SIZE Lcom/charlesproxy/model/ModelNodeComparators;
+	FIELD name name Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;ILjava/lang/String;Ljava/util/Comparator;)V
+		ARG 3 name
+		ARG 4 comparator
+	METHOD getComparator getComparator ()Ljava/util/Comparator;
+	METHOD getName getName ()Ljava/lang/String;

@@ -1,1 +1,107 @@
 CLASS com/xk72/proxy/ssl/TLSExtensionHelper com/xk72/proxy/ssl/TLSExtensionHelper
+	COMMENT renders TLS extensions for display: a name for the extension type and a parsed value for
+	COMMENT the ones it understands, falling back to a hex dump. The per-extension parsers below are
+	COMMENT named after the extension type parse() dispatches to each of them on.
+	METHOD method_3820 parse (Lcom/xk72/proxy/ssl/SSLExtension;Z)Ljava/lang/Object;
+		ARG 1 extension
+		ARG 2 fromClientHello
+	METHOD method_3819 parse (I[BZ)Ljava/lang/Object;
+		COMMENT [inferred] the type switch. supported_versions and key_share parse differently
+		COMMENT depending on the direction: the client sends a list, the server picks one.
+		ARG 1 type
+		ARG 2 data
+		ARG 3 fromClientHello
+	METHOD method_3818 getExtensionName (I)Ljava/lang/String;
+		ARG 1 type
+	METHOD method_3824 getNamedGroupName (I)Ljava/lang/String;
+		COMMENT the supported_groups registry -- sect163k1, secp256r1, x25519 and the rest. Also used
+		COMMENT for the group of a key_share entry.
+		ARG 1 group
+	METHOD method_3813 getEcPointFormatName (I)Ljava/lang/String;
+		ARG 1 format
+	METHOD method_3826 isGrease (I)Z
+		COMMENT [inferred] the RFC 8701 test: both bytes equal and of the form 0x?A.
+		ARG 1 type
+	METHOD method_3828 parseServerName ([B)Ljava/lang/Object;
+		COMMENT extension 0; name type 0 is read as ASCII, anything else as hex.
+		ARG 1 data
+	METHOD method_3832 parseMaxFragmentLength ([B)Ljava/lang/Object;
+		COMMENT extension 1, rendered as 2^9 through 2^12.
+		ARG 1 data
+	METHOD method_3815 parseStatusRequest ([B)Ljava/lang/Object;
+		COMMENT extension 5.
+		ARG 1 data
+	METHOD method_3827 parseSupportedGroups ([B)Ljava/lang/Object;
+		COMMENT extension 10.
+		ARG 1 data
+	METHOD method_3814 parseEcPointFormats ([B)Ljava/lang/Object;
+		COMMENT extension 11.
+		ARG 1 data
+	METHOD method_3816 parseSignatureAlgorithms ([B)Ljava/lang/Object;
+		COMMENT extension 13.
+		ARG 1 data
+	METHOD method_3831 parseAlpnProtocols ([B)Ljava/lang/Object;
+		COMMENT extension 16.
+		ARG 1 data
+	METHOD method_3830 parsePadding ([B)Ljava/lang/Object;
+		COMMENT extension 21; reports the length only.
+		ARG 1 data
+	METHOD method_3825 parseClientSupportedVersions ([B)Ljava/lang/Object;
+		COMMENT extension 43 from a ClientHello: the list the client will accept.
+		ARG 1 data
+	METHOD method_3811 parseServerSupportedVersion ([B)Ljava/lang/Object;
+		COMMENT extension 43 from a ServerHello: the single version chosen, still returned as a list so
+		COMMENT both callers can treat the result the same way.
+		ARG 1 data
+	METHOD method_3817 parseSignatureAlgorithmsCert ([B)Ljava/lang/Object;
+		COMMENT extension 50.
+		ARG 1 data
+	METHOD method_3829 parseClientKeyShares ([B)Ljava/util/List;
+		COMMENT extension 51 from a ClientHello.
+		ARG 1 data
+	METHOD method_3809 parseServerKeyShare ([B)Lcom/xk72/proxy/ssl/class_1406;
+		COMMENT extension 51 from a ServerHello.
+		ARG 1 data
+	METHOD method_3812 parseRenegotiationInfo ([B)Ljava/lang/Object;
+		COMMENT extension 65281.
+		ARG 1 data
+	METHOD method_3822 toHex ([B)Ljava/lang/String;
+		COMMENT also the fallback rendering for any extension with no parser, and for extension 13172
+		COMMENT (next_protocol_negotiation).
+		ARG 1 data
+	METHOD method_3823 toHex ([BII)Ljava/lang/String;
+		ARG 1 data
+		ARG 2 offset
+		ARG 3 length
+	METHOD method_3821 appendHex (Ljava/lang/StringBuilder;[BII)Ljava/lang/StringBuilder;
+		ARG 1 out
+		ARG 2 data
+		ARG 3 offset
+		ARG 4 length
+	METHOD method_3810 hexDigit (I)C
+		ARG 1 nibble
+	CLASS SignatureScheme
+		COMMENT [bootstrap] exact names: the obfuscator renamed the fields but left the strings passed
+		COMMENT to the enum constructor, which is what Enum.name() returns -- and these names are shown
+		COMMENT to the user, since parseSignatureAlgorithms renders each scheme with name().
+		FIELD field_3834 rsa_pkcs1_sha1 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3843 rsa_pkcs1_sha256 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3836 rsa_pkcs1_sha384 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3844 rsa_pkcs1_sha512 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3838 ecdsa_sha1 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3845 ecdsa_secp256r1_sha256 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3839 ecdsa_secp384r1_sha384 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3848 ecdsa_secp521r1_sha512 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3837 rsa_pss_rsae_sha256 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3840 rsa_pss_rsae_sha384 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3852 rsa_pss_rsae_sha512 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3846 rsa_pss_pss_sha256 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3842 rsa_pss_pss_sha384 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3847 rsa_pss_pss_sha512 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3850 ed25519 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3841 ed448 Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		FIELD field_3851 private_use Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+			COMMENT 0xFE00; lookup treats anything at or above it as private use rather than unknown.
+		FIELD field_3849 unknown Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+		METHOD method_3833 fromValue (I)Lcom/xk72/proxy/ssl/TLSExtensionHelper$SignatureScheme;
+			ARG 1 value

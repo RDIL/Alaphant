@@ -3,8 +3,8 @@ CLASS com/xk72/charles/validator/ValidatorMessage
 	FIELD context context Ljava/lang/String;
 	FIELD explanation explanation Ljava/lang/String;
 	FIELD line line Ljava/lang/Integer;
-	FIELD message message Ljava/lang/String;
 	FIELD messageId messageId Ljava/lang/String;
+	FIELD message message Ljava/lang/String;
 	FIELD serialVersionUID serialVersionUID J
 	FIELD source source Ljava/lang/String;
 	FIELD type type Lcom/xk72/charles/validator/ValidatorMessage$Type;
@@ -25,4 +25,4 @@ CLASS com/xk72/charles/validator/ValidatorMessage
 	METHOD setMessage setMessage (Ljava/lang/String;)V
 	METHOD setMessageId setMessageId (Ljava/lang/String;)V
 	METHOD setSource setSource (Ljava/lang/String;)V
-	CLASS Type
+	CLASS Type Type

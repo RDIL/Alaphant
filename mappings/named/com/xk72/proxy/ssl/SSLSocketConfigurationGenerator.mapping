@@ -1,0 +1,65 @@
+CLASS com/xk72/proxy/ssl/SSLSocketConfigurationGenerator com/xk72/proxy/ssl/SSLSocketConfigurationGenerator
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal.
+	COMMENT Produces the sequence of protocol and cipher combinations SSLRemoteConnection tries
+	COMMENT against a server: first what the client itself asked for, then whatever last worked for
+	COMMENT that host, then every combination in turn from strongest to weakest. What worked is
+	COMMENT remembered per host so the walk happens once rather than per connection.
+	FIELD field_3819 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3815 PROTOCOL_CHOICES [[Ljava/lang/String;
+		COMMENT {TLSv1.3, TLSv1.2, TLSv1.1}, then {TLSv1}, then {SSLv3}.
+	FIELD field_3820 SUPPORTED_CIPHERS [Ljava/lang/String;
+		COMMENT the platform's cipher suites minus the ones Charles will not offer even as a last
+		COMMENT resort: NULL encryption, anonymous key exchange, 40-bit export and single DES.
+	FIELD field_3821 SSLV2HELLO_SUPPORTED Z
+	FIELD field_3817 HOST_STATES Ljava/util/Map;
+		COMMENT volatile and replaced wholesale under a lock, so readers never synchronize.
+	FIELD field_3822 request Lcom/xk72/proxy/http/class_1292;
+	FIELD field_3816 clientCipherSuiteIds [Ljava/lang/String;
+		COMMENT the client's proposed suites, filtered to those this JVM can actually offer.
+	FIELD field_3818 state Lcom/xk72/proxy/ssl/SSLSocketConfigurationGenerator$State;
+	FIELD field_3824 nextChoice Lcom/xk72/proxy/ssl/class_1368;
+	FIELD field_3823 currentChoice Lcom/xk72/proxy/ssl/class_1368;
+		COMMENT the choice behind the configuration just handed out, kept so a success can be recorded
+		COMMENT after nextChoice has already moved on.
+	METHOD <init> (Lcom/xk72/proxy/http/class_1292;)V
+		ARG 1 request
+	METHOD method_3805 nextConfiguration (Lcom/xk72/proxy/ProxyEvent;)Lcom/xk72/proxy/ssl/class_1397;
+		COMMENT [inferred] null once the choices are exhausted, which is what ends
+		COMMENT SSLRemoteConnection's retry loop. A configuration the host has already failed with is
+		COMMENT skipped rather than retried.
+		ARG 1 proxyEvent
+	METHOD method_3807 toConfiguration (Lcom/xk72/proxy/ssl/class_1368;)Lcom/xk72/proxy/ssl/class_1397;
+		COMMENT [inferred] turns one point in the choice space into enabled protocols and ciphers;
+		COMMENT null when the choice calls for the client's ciphers and there are none.
+		ARG 1 choice
+	METHOD method_3806 configurationFailed (Lcom/xk72/proxy/ProxyEvent;Lcom/xk72/proxy/ssl/class_1397;)V
+		COMMENT [inferred] records the failure against the host and advances the state, forgetting the
+		COMMENT remembered choice if that is what just failed.
+		ARG 1 proxyEvent
+		ARG 2 configuration
+	METHOD method_3803 configurationSucceeded (Lcom/xk72/proxy/ProxyEvent;)V
+		COMMENT [inferred] remembers the working choice for the host, but only when it was found by
+		COMMENT walking -- a success on the client's own configuration is not worth remembering.
+		ARG 1 proxyEvent
+	METHOD method_4464 resetHostState (Lcom/xk72/proxy/ProxyEvent;)V
+		COMMENT [inferred] called when every configuration failed, so the next attempt starts clean
+		COMMENT rather than inheriting a dead-end history.
+		ARG 1 proxyEvent
+	METHOD method_4463 hostKey (Lcom/xk72/proxy/ProxyEvent;)Ljava/lang/String;
+		ARG 1 proxyEvent
+	METHOD method_4465 getOrCreateHostState (Lcom/xk72/proxy/ProxyEvent;)Lcom/xk72/proxy/ssl/class_1384;
+		ARG 1 proxyEvent
+	CLASS State
+		COMMENT [bootstrap] exact names, recovered from the enum constructor's strings.
+		FIELD field_3831 CLIENT Lcom/xk72/proxy/ssl/SSLSocketConfigurationGenerator$State;
+		FIELD field_3829 REMEMBERED Lcom/xk72/proxy/ssl/SSLSocketConfigurationGenerator$State;
+		FIELD field_3832 ITERATING Lcom/xk72/proxy/ssl/SSLSocketConfigurationGenerator$State;
+		FIELD field_3833 EXHAUSTED Lcom/xk72/proxy/ssl/SSLSocketConfigurationGenerator$State;
+	CLASS CipherChoice
+		COMMENT [bootstrap] exact names, recovered from the enum constructor's strings. Ordinal order is
+		COMMENT the fallback order, so the client's own list is tried before the JVM default and that
+		COMMENT before everything Charles is willing to offer.
+		FIELD field_4718 CLIENT Lcom/xk72/proxy/ssl/SSLSocketConfigurationGenerator$CipherChoice;
+		FIELD field_4719 DEFAULT Lcom/xk72/proxy/ssl/SSLSocketConfigurationGenerator$CipherChoice;
+			COMMENT leaves the socket's enabled ciphers alone.
+		FIELD field_4720 ALL Lcom/xk72/proxy/ssl/SSLSocketConfigurationGenerator$CipherChoice;

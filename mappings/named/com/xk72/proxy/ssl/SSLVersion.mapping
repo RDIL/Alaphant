@@ -1,0 +1,20 @@
+CLASS com/xk72/proxy/ssl/class_1394 com/xk72/proxy/ssl/SSLVersion
+	COMMENT a TLS protocol version as its major/minor pair plus a display name, with the five known
+	COMMENT versions interned as constants. Charles 4's corpus read the class the same way.
+	FIELD field_3895 major I
+	FIELD field_3897 minor I
+	FIELD field_3902 name Ljava/lang/String;
+	FIELD field_3898 SSLv3 Lcom/xk72/proxy/ssl/class_1394;
+	FIELD field_3894 TLSv1 Lcom/xk72/proxy/ssl/class_1394;
+	FIELD field_3899 TLSv1_1 Lcom/xk72/proxy/ssl/class_1394;
+	FIELD field_3900 TLSv1_2 Lcom/xk72/proxy/ssl/class_1394;
+	FIELD field_3896 TLSv1_3 Lcom/xk72/proxy/ssl/class_1394;
+	FIELD field_3901 VERSIONS [Lcom/xk72/proxy/ssl/class_1394;
+	METHOD method_3863 fromVersionNumbers (II)Lcom/xk72/proxy/ssl/class_1394;
+		COMMENT [charles4] returns the interned constant when there is one; major 127 yields a
+		COMMENT "TLSv1.3 - draft N" instance and anything else "SSL vMajor.Minor".
+		ARG 1 major
+		ARG 2 minor
+	METHOD method_3861 getName ()Ljava/lang/String;
+	METHOD method_3862 isKnownVersion ()Z
+		COMMENT [inferred] true only for major 3 with minor 0-4, i.e. one of the five constants.

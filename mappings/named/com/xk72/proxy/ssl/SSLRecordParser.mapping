@@ -1,1 +1,46 @@
 CLASS com/xk72/proxy/ssl/SSLRecordParser com/xk72/proxy/ssl/SSLRecordParser
+	COMMENT a byte-at-a-time TLS record layer parser. It never decrypts: it reads the 5-byte record
+	COMMENT header, decides whether the stream even looks like TLS, and reports each record to its
+	COMMENT listener. Once change_cipher_spec has gone by, record bodies are reported as encrypted
+	COMMENT rather than parsed.
+	FIELD field_3799 listener Lcom/xk72/proxy/ssl/class_1395;
+	FIELD field_3793 state Lcom/xk72/proxy/ssl/SSLRecordParser$State;
+	FIELD field_3796 contentType I
+		COMMENT 20 change_cipher_spec, 21 alert, 22 handshake, 23 application_data.
+	FIELD field_3806 versionMajor I
+	FIELD field_3805 versionMinor I
+	FIELD field_3797 recordLength I
+	FIELD field_3802 recordBytesRead I
+	FIELD field_3800 encrypted Z
+		COMMENT set at the first change_cipher_spec and never cleared, so everything after it is
+		COMMENT reported as an encrypted record.
+	FIELD field_3801 handshakeBuffer Ljava/io/ByteArrayOutputStream;
+		COMMENT accumulates content-type 22 bodies, since one handshake message can span records.
+		COMMENT Charles 4's corpus called this field outputStream.
+	FIELD field_3798 alertLevel B
+	FIELD field_3803 alertDescription B
+	FIELD field_3795 handshakeSize J
+		COMMENT bytes belonging to change_cipher_spec, alert and handshake records. The stream copiers
+		COMMENT subtract this from what they copied so handshake traffic is not counted as body.
+	FIELD field_3804 applicationDataSize J
+		COMMENT also accumulates everything read after the stream turns out not to be TLS.
+	FIELD field_3794 unknownRecordSize J
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1395;)V
+		ARG 1 listener
+	METHOD method_3797 write (I)V
+		ARG 1 b
+	METHOD method_3798 write ([BII)V
+		ARG 1 buffer
+		ARG 2 offset
+		ARG 3 length
+	METHOD method_3796 parseHeaderByte (B)V
+		COMMENT [inferred] advances the header state machine one byte: content type, major, minor, then
+		COMMENT the two length bytes.
+		ARG 1 b
+	METHOD method_3794 isPlausibleRecord ()Z
+		COMMENT [inferred] the check that decides whether this is TLS at all: a known content type,
+		COMMENT major version 3, minor 0-4, and a length within the 32KB record limit. Failing it puts
+		COMMENT the parser into its terminal not-SSL state for the rest of the stream.
+	METHOD method_3799 endOfRecord ()V
+		COMMENT [inferred] dispatches the finished record to the listener by content type.
+	METHOD method_3795 getHandshakeSize ()J

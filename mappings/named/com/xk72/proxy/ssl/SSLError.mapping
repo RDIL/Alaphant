@@ -1,1 +1,11 @@
 CLASS com/xk72/proxy/ssl/class_1386 com/xk72/proxy/ssl/SSLError
+	COMMENT one row of the TLS alert description registry, as listed in SSLErrorsUtil.
+	FIELD field_3867 id B
+	FIELD field_3866 code Ljava/lang/String;
+		COMMENT the RFC spelling, e.g. "handshake_failure".
+	FIELD field_3868 message Ljava/lang/String;
+		COMMENT the human-readable explanation Charles shows for the alert.
+	METHOD <init> (BLjava/lang/String;Ljava/lang/String;)V
+		ARG 1 id
+		ARG 2 code
+		ARG 3 message

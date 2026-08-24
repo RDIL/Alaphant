@@ -1,0 +1,10 @@
+CLASS com/charlesproxy/ssl/class_1002 com/charlesproxy/ssl/CharlesCertificateContainer
+	COMMENT [charles4] Charles 4's com.xk72.charles.ssl.CharlesCertificateContainer: one Certificate
+	COMMENT field, a setter, and a getIOSCertificateArgs() that derives the iOS trust store columns
+	COMMENT from it. Charles 5 inlined Charles 4's separate getSha1/getSha256 helpers into it.
+	FIELD field_2751 certificate Ljava/security/cert/Certificate;
+	METHOD method_2609 getIOSCertificateArgs ()Lcom/charlesproxy/ssl/class_991;
+		COMMENT computes SHA-1 and SHA-256 over the DER encoding, plus the subject principal's
+		COMMENT encoding minus its 3-byte header, all upper-case hex.
+	METHOD method_2610 setCertificate (Ljava/security/cert/Certificate;)V
+		ARG 1 certificate

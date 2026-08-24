@@ -1,4 +1,13 @@
-CLASS com/xk72/charles/validator/ValidatorTransaction
+CLASS com/xk72/charles/validator/ValidatorTransaction com/xk72/charles/validator/ValidatorTransaction
+	METHOD getErrorCount getErrorCount ()I
+	METHOD getErrors getErrors ()Ljava/util/List;
+	METHOD getException getException ()Ljava/lang/Exception;
+	METHOD getType getType ()Ljava/lang/String;
+	METHOD getWarningCount getWarningCount ()I
+	METHOD getWarnings getWarnings ()Ljava/util/List;
+	METHOD isComplete isComplete ()Z
+	METHOD isFailed isFailed ()Z
+	METHOD isValid isValid ()Z
 	METHOD setErrorCount setErrorCount (I)V
 	METHOD setErrors setErrors (Ljava/util/List;)V
 	METHOD setException setException (Ljava/lang/Exception;)V

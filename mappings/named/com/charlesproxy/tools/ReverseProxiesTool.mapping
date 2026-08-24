@@ -1,1 +1,4 @@
 CLASS com/charlesproxy/tools/ReverseProxiesTool com/charlesproxy/tools/ReverseProxiesTool
+	CLASS MySettingsPanel
+		CLASS ReverseProxyFormPanel ReverseProxyFormPanel
+			FIELD sourceAddress sourceAddress Ljavax/swing/JTextField;

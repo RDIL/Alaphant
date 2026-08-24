@@ -1,1 +1,5 @@
 CLASS com/charlesproxy/class_5 com/charlesproxy/SharewareKillTask
+	FIELD field_23 task Lcom/charlesproxy/class_1146;
+	METHOD <init> (Lcom/charlesproxy/class_1146;)V
+		ARG 1 task
+	METHOD run run ()V

@@ -1,0 +1,7 @@
+CLASS com/xk72/proxy/ssl/class_1365 com/xk72/proxy/ssl/SSLRecordParserFilterInputStream
+	COMMENT a FilterInputStream that copies everything read into an SSLRecordParser. Charles 4's
+	COMMENT corpus read it the same way, and Charles 5 agrees: MaybeSSLClientConnection wraps the
+	COMMENT client socket in one of these plus the output-stream twin so the handshake is parsed in
+	COMMENT both directions. Was MaybeSSLRecordParserFilterInputStream; the bootstrap match is
+	COMMENT confirmed.
+	FIELD field_3730 sslRecordParser Lcom/xk72/proxy/ssl/SSLRecordParser;

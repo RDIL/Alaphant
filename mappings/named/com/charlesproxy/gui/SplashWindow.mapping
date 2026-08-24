@@ -1,3 +1,4 @@
 CLASS com/charlesproxy/gui/SplashWindow
 	METHOD setDelay setDelay (I)V
+	METHOD showRegistrationStatus showRegistrationStatus ()V
 	METHOD showSharewareStatus showSharewareStatus ()V

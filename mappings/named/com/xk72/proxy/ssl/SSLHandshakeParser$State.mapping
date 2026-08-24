@@ -1,0 +1,9 @@
+CLASS com/xk72/proxy/ssl/SSLHandshakeParser$State com/xk72/proxy/ssl/SSLHandshakeParser$State
+	COMMENT [bootstrap] exact names, recovered from the strings the enum constructor is called with.
+	FIELD field_3789 READ_TYPE Lcom/xk72/proxy/ssl/SSLHandshakeParser$State;
+	FIELD field_3787 READ_LENGTH_HI Lcom/xk72/proxy/ssl/SSLHandshakeParser$State;
+	FIELD field_3790 READ_LENGTH_MID Lcom/xk72/proxy/ssl/SSLHandshakeParser$State;
+	FIELD field_3791 READ_LENGTH_LOW Lcom/xk72/proxy/ssl/SSLHandshakeParser$State;
+	FIELD field_3788 READ_HELLO Lcom/xk72/proxy/ssl/SSLHandshakeParser$State;
+		COMMENT accumulating the message body -- despite the name it also covers type 11 Certificate
+		COMMENT messages, not just the hellos.

@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/model/class_955 com/charlesproxy/model/Transaction
+	COMMENT [bootstrap] matched to Charles 4's Transaction on 126 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_2538 maybeInterruptableChannel Lcom/xk72/proxy/Connection;
+		COMMENT [bootstrap] carried over from Charles 4's Transaction.interruptableChannel on a unique descriptor match -- provisional
+	METHOD method_2369 humanProxyEventStatus (Lcom/xk72/proxy/ProxyEventStatus;)Ljava/lang/String;
+		ARG 0 proxyEventStatus
+	METHOD method_2370 maybeIsControlFrame (Lcom/xk72/proxy/websocket/WebSocketMessage$Type;)Z
+		COMMENT [bootstrap] carried over from Charles 4's Transaction.isControlFrame on a unique descriptor match -- provisional

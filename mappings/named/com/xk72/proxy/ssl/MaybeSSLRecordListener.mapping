@@ -1,0 +1,28 @@
+CLASS com/xk72/proxy/ssl/class_1395 com/xk72/proxy/ssl/MaybeSSLRecordListener
+	COMMENT [inferred] the callback interface SSLRecordParser drives as it walks the TLS record
+	COMMENT layer; SSLHandshakeParser is its only direct implementation. Charles 4 had it as the
+	COMMENT unnamed com.xk72.proxy.ssl.v, so the class name is a reading of the role.
+	COMMENT The method names below come from the record content types SSLRecordParser switches on:
+	COMMENT 20 change_cipher_spec, 21 alert, 22 handshake, 23 application_data.
+	METHOD method_3792 handshakeSizeChanged (J)V
+		COMMENT the running total of change_cipher_spec, alert and handshake record bytes seen so far,
+		COMMENT reported after each such record.
+		ARG 1 totalBytes
+	METHOD method_3793 handshakeRecord ([B)V
+		COMMENT the reassembled body of a content-type 22 record.
+		ARG 1 body
+	METHOD method_3174 alert (BB)V
+		COMMENT a content-type 21 record; the subclasses treat level 2 as fatal and record the
+		COMMENT description on the ProxyEvent.
+		ARG 1 level
+		ARG 2 description
+	METHOD method_3747 changeCipherSpec ()V
+	METHOD method_3745 applicationData ()V
+	METHOD method_3750 encryptedRecord ()V
+		COMMENT an alert or handshake record arriving after change_cipher_spec, so its body cannot be
+		COMMENT parsed.
+	METHOD method_3749 unknownRecord ()V
+		COMMENT a record whose content type is none of the four known ones.
+	METHOD method_3746 notSslRecord ()V
+		COMMENT the five header bytes did not pass SSLRecordParser's plausibility check, so the stream
+		COMMENT is not TLS at all.

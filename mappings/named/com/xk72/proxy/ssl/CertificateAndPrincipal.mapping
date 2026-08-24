@@ -1,0 +1,11 @@
+CLASS com/xk72/proxy/ssl/class_1367 com/xk72/proxy/ssl/CertificateAndPrincipal
+	COMMENT a (X500Principal, X509Certificate) pair with equals and hashCode; SSLContextFactory keys
+	COMMENT its generated-SSLContext cache on it. Charles 4's corpus read it the same way.
+	FIELD field_3733 principle Ljavax/security/auth/x500/X500Principal;
+		COMMENT Charles 4's corpus spelled it `principle`; kept so the two corpora line up.
+	FIELD field_3732 cert Ljava/security/cert/X509Certificate;
+		COMMENT null for a context generated from a host name alone rather than from an upstream
+		COMMENT certificate, which is why the cache key needs both halves.
+	METHOD <init> (Ljavax/security/auth/x500/X500Principal;Ljava/security/cert/X509Certificate;)V
+		ARG 1 principle
+		ARG 2 cert

@@ -1,0 +1,11 @@
+CLASS com/xk72/proxy/ssl/pkg_22/class_1372 com/xk72/proxy/ssl/pkg_22/SSLProxyingSocketProxyServer__ConnectionRecord
+	COMMENT [inferred] one live connection and the SSL proxying decision it was opened under, so a
+	COMMENT later settings change can tell which connections are now stale. Charles 4 left the class
+	COMMENT unnamed but named all three fields.
+	FIELD field_3747 proxyEvent Lcom/xk72/proxy/ProxyEvent;
+	FIELD field_3746 connection Lcom/xk72/proxy/Connection;
+	FIELD field_3748 isSslProxied Z
+	METHOD <init> (Lcom/xk72/proxy/ProxyEvent;Lcom/xk72/proxy/Connection;Z)V
+		ARG 1 proxyEvent
+		ARG 2 connection
+		ARG 3 isSslProxied

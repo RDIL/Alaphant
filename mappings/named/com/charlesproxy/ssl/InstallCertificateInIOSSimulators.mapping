@@ -1,3 +1,7 @@
 CLASS com/charlesproxy/ssl/class_990 com/charlesproxy/ssl/InstallCertificateInIOSSimulators
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.ssl.InstallCertificateInIOSSimulators"
 	FIELD field_2726 LOGGER Lorg/slf4j/Logger;
+	METHOD method_2564 install ()V
+		COMMENT [inferred] the single entry point: shells out to
+		COMMENT Resources/install-charles-ca-cert-for-iphone-simulator.sh with the five
+		COMMENT IOSCertificateArgs values, in the order that class declares them, as its arguments.

@@ -2,7 +2,7 @@ CLASS com/charlesproxy/class_877
 	COMMENT [bootstrap] matched to Charles 4's E on 5 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
 	FIELD field_2392 maybeProxyManager Lcom/charlesproxy/class_19;
 		COMMENT [bootstrap] carried over from Charles 4's E.proxyManager on a unique descriptor match -- provisional
-	FIELD field_2393 maybeProxyAdapter Lcom/xk72/proxy/ProxyAdapter;
+	FIELD field_2393 proxyAdapter Lcom/xk72/proxy/ProxyAdapter;
 		COMMENT [bootstrap] carried over from Charles 4's E.proxyAdapter on a unique descriptor match -- provisional
-	METHOD method_2047 maybeGetAppropriateAdapter (Lcom/xk72/proxy/ProxyEvent;)Lcom/xk72/proxy/ProxyListener;
+	METHOD method_2047 getAppropriateAdapter (Lcom/xk72/proxy/ProxyEvent;)Lcom/xk72/proxy/ProxyListener;
 		COMMENT [bootstrap] carried over from Charles 4's E.getAppropriateAdapter on a unique descriptor match -- provisional

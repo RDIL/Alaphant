@@ -1,0 +1,26 @@
+CLASS com/charlesproxy/ssl/class_1001 com/charlesproxy/ssl/SSLCertificateExportTask
+	COMMENT [charles4] Charles 4's com.xk72.charles.ssl.SSLCertificateExportTask, which had the same
+	COMMENT three File targets plus a key store password and wrote all three from one call. The
+	COMMENT certificate it builds is the Charles root CA: CN="Charles Proxy CA (<date>, <host>)",
+	COMMENT OU=https://charlesproxy.com/ssl, O=XK72 Ltd, self-signed, keyCertSign only, 365 days.
+	FIELD field_2746 keyStoreTarget Ljava/io/File;
+	FIELD field_2749 rawCertFileTarget Ljava/io/File;
+		COMMENT the .cer target: the DER bytes with no PEM armour, matching Charles 4's
+		COMMENT writeCertBytesWithoutHeader.
+	FIELD field_2750 certFileTarget Ljava/io/File;
+		COMMENT the .pem target: base64 between BEGIN/END CERTIFICATE lines.
+	FIELD field_2747 keyStorePassword [C
+	METHOD method_2605 export ()V
+		COMMENT [charles4] Charles 4 named this export(); it generates the RSA-2048 CA key pair and
+		COMMENT certificate and writes whichever of the three targets are set.
+	METHOD method_2603 getComputerHostName ()Ljava/lang/String;
+		COMMENT [charles4] reads HOSTNAME, then COMPUTERNAME, then shells out to /bin/hostname; the
+		COMMENT result goes into the CA's common name.
+	METHOD method_2606 setKeyStoreTarget (Ljava/io/File;)V
+		ARG 1 keyStoreTarget
+	METHOD method_2604 setRawCertFileTarget (Ljava/io/File;)V
+		ARG 1 rawCertFileTarget
+	METHOD method_2608 setCertFileTarget (Ljava/io/File;)V
+		ARG 1 certFileTarget
+	METHOD method_2607 setKeyStorePassword ([C)V
+		ARG 1 keyStorePassword

@@ -13,5 +13,6 @@ CLASS com/charlesproxy/windows/WindowsProxySettings com/charlesproxy/windows/Win
 	METHOD setFlags setFlags (I)V
 		ARG 1 flags
 	METHOD setProxyBypass setProxyBypass (Ljava/lang/String;)V
+		ARG 1 proxyBypass
 	METHOD setProxyServer setProxyServer (Ljava/lang/String;)V
 		ARG 1 proxyServer

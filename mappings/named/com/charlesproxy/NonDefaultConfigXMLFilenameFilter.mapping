@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/class_975 com/charlesproxy/NonDefaultConfigXMLFilenameFilter
+	METHOD accept accept (Ljava/io/File;Ljava/lang/String;)Z
+		ARG 1 file
+		ARG 2 name

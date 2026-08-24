@@ -1,18 +1,81 @@
 CLASS com/charlesproxy/CharlesContext com/charlesproxy/CharlesContext
+	FIELD CHARLES_SECURE_STORE_PASSWORD_PROPERTY CHARLES_SECURE_STORE_PASSWORD_PROPERTY Ljava/lang/String;
+	FIELD field_10 context Lcom/charlesproxy/CharlesContext;
+	FIELD field_11 config Lcom/charlesproxy/config/class_59;
+	FIELD field_12 charlesVersion Ljava/lang/String;
+	FIELD field_14 sslManager Lcom/charlesproxy/ssl/class_992;
+	FIELD field_15 proxyTools Ljava/lang/String;
+	FIELD field_16 proxyManager Lcom/charlesproxy/class_19;
+	FIELD field_17 loadedProxyTools Ljava/util/List;
+	FIELD field_2 maybeKeystoreFile Lcom/charlesproxy/store/class_1012;
 	FIELD field_3 LOGGER Lorg/slf4j/Logger;
+	FIELD field_4 allTools Ljava/util/List;
+	FIELD field_5 fileStore Lcom/charlesproxy/store/class_1009;
+	FIELD field_6 userTools Ljava/lang/String;
+	FIELD field_7 loadedUserTools Ljava/util/List;
+	FIELD field_8 fileManager Lcom/charlesproxy/class_24;
 	METHOD activate activate ()V
+	METHOD addListener addListener (Lcom/charlesproxy/class_134;)V
+		ARG 1 listener
+	METHOD createProfile createProfile (Ljava/lang/String;)V
+		ARG 1 profileName
+	METHOD deleteProfile deleteProfile (Ljava/lang/String;)V
+		ARG 1 profileName
 	METHOD error error (Ljava/lang/String;)V
+		ARG 1 message
 	METHOD error error (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 1 message
+		ARG 2 detail
 	METHOD error error (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+		ARG 1 message
+		ARG 2 detail
+		ARG 3 throwable
+	METHOD error error (Ljava/lang/String;Ljava/lang/Throwable;)V
+		ARG 1 message
+		ARG 2 throwable
 	METHOD error error (Ljava/lang/Throwable;)V
+		ARG 1 throwable
+	METHOD exit exit (IZ)Z
+		ARG 1 status
+	METHOD getAllTools getAllTools ()Ljava/util/List;
 	METHOD getConfiguration getConfiguration ()Lcom/charlesproxy/config/class_59;
+	METHOD getCurrentProfile getCurrentProfile ()Ljava/lang/String;
 	METHOD getFileManager getFileManager ()Lcom/charlesproxy/class_176;
+	METHOD getFileStore getFileStore ()Lcom/charlesproxy/store/class_1010;
 	METHOD getInstance getInstance ()Lcom/charlesproxy/CharlesContext;
+	METHOD getJavaVersion getJavaVersion ()I
 	METHOD getPasswordAuthenticator getPasswordAuthenticator ()Lcom/charlesproxy/security/PasswordAuthenticator;
+	METHOD getPasswordStore getPasswordStore ()Lcom/charlesproxy/store/class_1012;
+	METHOD getProfiles getProfiles ()Ljava/util/List;
 	METHOD getProxyManager getProxyManager ()Lcom/charlesproxy/class_19;
+	METHOD getProxyTools getProxyTools ()Ljava/util/List;
 	METHOD getSslManager getSslManager ()Lcom/charlesproxy/ssl/class_992;
+	METHOD getTool getTool (Ljava/lang/Class;)Lcom/charlesproxy/tools/spi/lib/CharlesTool;
+		ARG 1 toolClass
+	METHOD getUserTools getUserTools ()Ljava/util/List;
 	METHOD getVersionName getVersionName ()Ljava/lang/String;
+	METHOD info info (Ljava/lang/String;)V
+		ARG 1 message
 	METHOD info info (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 1 message
+		ARG 2 detail
+	METHOD init init ()V
+	METHOD method_2 createRemoteControlProxyListener ()Lcom/charlesproxy/proxy/class_15;
+	METHOD method_5 (Lcom/charlesproxy/tools/spi/lib/CharlesTool;)V
+		ARG 1 tool
 	METHOD options options (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I[Ljava/lang/String;Ljava/lang/String;)I
+		ARG 1 message
+	METHOD removeListener removeListener (Lcom/charlesproxy/class_134;)V
+		ARG 1 listener
+	METHOD renameProfile renameProfile (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 1 profileName
+		ARG 2 newName
+	METHOD restoreProfile restoreProfile (Ljava/lang/String;)V
+		ARG 1 profileName
 	METHOD saveConfig saveConfig ()V
+	METHOD start start ()V
 	METHOD status status (Ljava/lang/String;)V
+		ARG 1 message
+	METHOD stop stop ()V
+	METHOD trace trace (Ljava/lang/String;)V
+		ARG 1 message

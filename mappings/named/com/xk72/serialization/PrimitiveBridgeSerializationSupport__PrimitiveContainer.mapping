@@ -1,0 +1,5 @@
+CLASS com/xk72/serialization/class_1637 com/xk72/serialization/PrimitiveBridgeSerializationSupport__PrimitiveContainer
+	FIELD field_4723 value Ljava/lang/Object;
+	METHOD method_4471 getValue ()Ljava/lang/Object;
+	METHOD method_4472 setValue (Ljava/lang/Object;)V
+		ARG 1 value

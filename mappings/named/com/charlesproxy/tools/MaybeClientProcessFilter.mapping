@@ -1,6 +1,0 @@
-CLASS com/charlesproxy/tools/class_1115 com/charlesproxy/tools/MaybeClientProcessFilter
-	COMMENT [bootstrap] matched to Charles 4's ClientProcessFilter on 7 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
-	FIELD field_2996 maybeClientProcessTool Lcom/charlesproxy/tools/ClientProcessTool;
-		COMMENT [bootstrap] carried over from Charles 4's ClientProcessFilter.clientProcessTool on a unique descriptor match -- provisional
-	FIELD field_2997 maybeIsWindows Z
-		COMMENT [bootstrap] carried over from Charles 4's ClientProcessFilter.isWindows on a unique descriptor match -- provisional

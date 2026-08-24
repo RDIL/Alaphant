@@ -1,0 +1,35 @@
+CLASS com/xk72/proxy/ssl/class_1387 com/xk72/proxy/ssl/ClientHello
+	COMMENT what SSLHandshakeParser reads out of a handshake message of type 1. Charles 4's corpus
+	COMMENT read the class the same way, and Charles 5 confirms it: SSLSnooper returns one of these
+	COMMENT from the first record of a client stream, and every field lines up with a ClientHello
+	COMMENT member. Was MaybeClientHello; the bootstrap match is confirmed.
+	FIELD field_3871 sslVersion Lcom/xk72/proxy/ssl/class_1394;
+		COMMENT the legacy_version field; getSslVersion prefers supported_versions when present.
+	FIELD field_3869 clientProposedSslSessionID [B
+	FIELD field_3872 clientProposedCipherSuites [Lcom/xk72/proxy/ssl/class_1392;
+	FIELD field_3873 clientProposedAlpnProtocols Ljava/util/List;
+		COMMENT from extension 16 (ALPN).
+	FIELD field_3870 sslExtensions Ljava/util/List;
+	FIELD field_3874 serverName Ljava/lang/String;
+		COMMENT [inferred] the SNI host from extension 0, name type 0. SSLHttpProxyHandler passes it
+		COMMENT to SSLContextFactory as the common name of the certificate it forges, which is what
+		COMMENT makes it the server name rather than any other string. Charles 4 left it unnamed.
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1394;[B[Lcom/xk72/proxy/ssl/class_1392;Ljava/util/List;Ljava/util/List;Ljava/lang/String;)V
+		ARG 1 sslVersion
+		ARG 2 clientProposedSslSessionID
+		ARG 3 clientProposedCipherSuites
+		ARG 4 clientProposedAlpnProtocols
+		ARG 5 sslExtensions
+		ARG 6 serverName
+	METHOD method_3850 getSslVersion ()Lcom/xk72/proxy/ssl/class_1394;
+		COMMENT the first entry of getSslVersions, i.e. the client's preferred version.
+	METHOD method_3846 getSslVersions ()Ljava/util/List;
+		COMMENT [inferred] the supported_versions list, falling back to a singleton of the legacy
+		COMMENT field. New in Charles 5; Charles 4 had only the single-version getter.
+	METHOD method_3849 getSupportedVersionsExtension ()Lcom/xk72/proxy/ssl/SSLExtension;
+		COMMENT [inferred] the first extension of type 43.
+	METHOD method_3852 getClientProposedSslSessionID ()[B
+	METHOD method_3853 getClientProposedCipherSuites ()[Lcom/xk72/proxy/ssl/class_1392;
+	METHOD method_3848 getClientProposedAlpnProtocols ()Ljava/util/List;
+	METHOD method_3854 getSslExtensions ()Ljava/util/List;
+	METHOD method_3847 getServerName ()Ljava/lang/String;

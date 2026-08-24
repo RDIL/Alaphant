@@ -6,3 +6,5 @@ CLASS com/xk72/proxy/Fields com/xk72/proxy/Fields
 	METHOD read read (Lcom/xk72/proxy/io/class_1343;Z)V
 	METHOD removeField removeField (Ljava/lang/String;)V
 	METHOD reset reset ()V
+	METHOD setField setField (Ljava/lang/String;Ljava/lang/String;)V
+	CLASS ParseException ParseException

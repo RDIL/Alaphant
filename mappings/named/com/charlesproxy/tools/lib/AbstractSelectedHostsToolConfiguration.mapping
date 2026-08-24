@@ -2,4 +2,5 @@ CLASS com/charlesproxy/tools/lib/AbstractSelectedHostsToolConfiguration com/char
 	METHOD getLocations getLocations ()Lcom/charlesproxy/config/class_76;
 	METHOD selectLocation selectLocation (Lcom/xk72/common/net/Location;)Z
 	METHOD setLocations setLocations (Lcom/charlesproxy/config/class_76;)V
+	METHOD setSelectedHosts setSelectedHosts (Z)V
 	METHOD setUseSelectedLocations setUseSelectedLocations (Z)V

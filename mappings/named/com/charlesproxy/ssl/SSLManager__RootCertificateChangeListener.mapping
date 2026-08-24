@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/ssl/class_993 com/charlesproxy/ssl/SSLManager__RootCertificateChangeListener
+	COMMENT [inferred] SSLManager's inner PropertyChangeListener -- the constructor captures the
+	COMMENT enclosing SSLManager with javac's Objects.requireNonNull-before-super pattern. SSLManager
+	COMMENT registers it on ProxyConfiguration's "sslRootCertificate" property, and it reapplies the
+	COMMENT certificate store state when that property changes.
+	FIELD field_2740 sslManager Lcom/charlesproxy/ssl/class_992;
+	METHOD <init> (Lcom/charlesproxy/ssl/class_992;)V
+		ARG 1 sslManager

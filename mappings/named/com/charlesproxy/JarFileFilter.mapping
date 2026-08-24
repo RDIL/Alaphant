@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/class_18 com/charlesproxy/JarFileFilter
+	METHOD accept accept (Ljava/io/File;)Z
+		ARG 1 file

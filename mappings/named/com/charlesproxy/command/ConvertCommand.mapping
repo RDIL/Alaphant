@@ -3,3 +3,4 @@ CLASS com/charlesproxy/command/class_39 com/charlesproxy/command/ConvertCommand
 	FIELD field_407 context Lcom/charlesproxy/CharlesContext;
 	METHOD <init> ([Ljava/lang/String;)V
 		ARG 1 args
+	METHOD method_4268 outputHelpMessage ()V

@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/class_1174 com/charlesproxy/LogCharlesUpToDateTask
+	METHOD run run ()V

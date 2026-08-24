@@ -1,0 +1,21 @@
+CLASS com/charlesproxy/ssl/class_995 com/charlesproxy/ssl/MaybeCertificateUtils
+	COMMENT [inferred] a holder of static certificate helpers with no instance state. Charles 4 kept
+	COMMENT these same three checks inline in ImportCertificateHelper and the CN reader in
+	COMMENT SSLContextFactory.getCertificateCNText, so there is no Charles 4 name for the class.
+	METHOD method_2588 getCommonName (Ljavax/security/auth/x500/X500Principal;)Ljava/lang/String;
+		COMMENT [inferred] returns the CN RDN of the principal's RFC2253 name, falling back to the
+		COMMENT last RDN and then to toString(). Charles 4 called the equivalent getCertificateCNText.
+		ARG 1 principal
+	METHOD method_2586 keysMatch (Ljava/security/PublicKey;Ljava/security/PrivateKey;)Z
+		COMMENT [inferred] signs 16KB of random bytes with the private key and verifies with the
+		COMMENT public one, i.e. tests that the two are a pair.
+		ARG 1 publicKey
+		ARG 2 privateKey
+	METHOD method_2587 certificateMatchesKey (Ljava/security/cert/Certificate;Ljava/security/PrivateKey;)Z
+		COMMENT [inferred] keysMatch against the certificate's own public key.
+		ARG 1 certificate
+		ARG 2 privateKey
+	METHOD method_2589 chainVerifies ([Ljava/security/cert/Certificate;)Z
+		COMMENT [inferred] verifies each certificate in the array against the next one's public key,
+		COMMENT so the array has to be ordered leaf-first.
+		ARG 1 chain

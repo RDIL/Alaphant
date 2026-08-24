@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/windows/WindowsDDEManager com/charlesproxy/windows/WindowsDDEManager
+	FIELD field_3134 LOGGER Lorg/slf4j/Logger;
+	METHOD activate activate (Ljava/lang/String;)V
+	METHOD execute execute (Ljava/lang/String;)V
+	CLASS Activate Activate
+	CLASS Execute Execute

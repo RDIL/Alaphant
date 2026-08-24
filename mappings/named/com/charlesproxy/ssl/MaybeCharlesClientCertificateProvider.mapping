@@ -1,0 +1,38 @@
+CLASS com/charlesproxy/ssl/class_996 com/charlesproxy/ssl/MaybeCharlesClientCertificateProvider
+	COMMENT [inferred] the class_1403 implementation SSLManager hands to SSLContextFactory in its
+	COMMENT constructor. It answers from ClientSSLCertificatesConfiguration, matching the requested
+	COMMENT host and port against the configured certificate locations.
+	METHOD method_2591 hasClientCertificate (Ljava/lang/String;I)Z
+		COMMENT [inferred] the class_1403 query; true when some configured client certificate matches
+		COMMENT https://host:port.
+		ARG 1 host
+		ARG 2 port
+	METHOD method_2592 addClientCertificates (Ljava/lang/String;ILjava/security/KeyStore;[C)V
+		COMMENT [inferred] the class_1403 population step; loads every matching client certificate
+		COMMENT into the key store SSLContextFactory is about to build a context from.
+		ARG 1 host
+		ARG 2 port
+		ARG 3 keyStore
+		ARG 4 password
+	METHOD method_2590 addConfiguredCertificate (Lcom/charlesproxy/config/class_112;Ljava/lang/String;ILjava/security/KeyStore;[C)Z
+		COMMENT [inferred] loads one configured certificate, from the certificate store when it has a
+		COMMENT store alias and from its PKCS#12 file otherwise.
+		ARG 1 configuredCertificate
+		ARG 2 host
+		ARG 3 port
+		ARG 4 keyStore
+		ARG 5 password
+	METHOD method_2593 addCertificateFromFile (Ljava/lang/String;ILjava/security/KeyStore;[CLcom/charlesproxy/ssl/class_992;Lcom/charlesproxy/ssl/class_999;)Z
+		COMMENT [inferred] the file-backed branch: asks PKCS12CertificateLoader for the entries,
+		COMMENT quoting "connect to host:port" as the reason shown in the password prompt.
+		ARG 1 host
+		ARG 2 port
+		ARG 3 keyStore
+		ARG 4 password
+		ARG 5 sslManager
+		ARG 6 certificateConfiguration
+	METHOD method_2594 addEntry (Ljava/security/KeyStore;[CLcom/xk72/pkg_37/class_1568;)V
+		COMMENT [inferred] stores one entry under the next free numeric alias.
+		ARG 1 keyStore
+		ARG 2 password
+		ARG 3 entry

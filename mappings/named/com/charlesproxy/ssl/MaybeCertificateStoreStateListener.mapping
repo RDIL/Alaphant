@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/ssl/class_998 com/charlesproxy/ssl/MaybeCertificateStoreStateListener
+	COMMENT [inferred] the interface CertificateStore keeps a List of and notifies whenever its
+	COMMENT CertificateStoreState changes; method_2551 returns the current state as it registers a
+	COMMENT listener. Charles 4 had it as the unnamed com.xk72.charles.ssl.i, so "Listener" is a
+	COMMENT reading of the role rather than a recovered name.
+	METHOD method_1275 certificateStoreStateChanged (Lcom/charlesproxy/ssl/CertificateStore$CertificateStoreState;)V
+		COMMENT [inferred] the single callback; SSLManager reloads the root certificate from it.
+		ARG 1 state

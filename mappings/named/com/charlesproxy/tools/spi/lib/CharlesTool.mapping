@@ -2,10 +2,12 @@ CLASS com/charlesproxy/tools/spi/lib/CharlesTool com/charlesproxy/tools/spi/lib/
 	METHOD activate activate (Z)V
 		ARG 1 activated
 	METHOD addToolListener addToolListener (Lcom/charlesproxy/tools/spi/lib/ToolListener;)V
+		ARG 1 toolListener
 	METHOD getConfigurationClass getConfigurationClass ()Ljava/lang/Class;
 	METHOD init init ()V
 	METHOD isActivatable isActivatable ()Z
 	METHOD isActive isActive ()Z
 	METHOD isSupportsActivate isSupportsActivate ()Z
 	METHOD removeToolListener removeToolListener (Lcom/charlesproxy/tools/spi/lib/ToolListener;)V
+		ARG 1 toolListener
 	METHOD update update ()V

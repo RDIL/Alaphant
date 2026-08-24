@@ -1,3 +1,4 @@
 CLASS com/xk72/dns/class_1178 com/xk72/dns/ExternalCapableDNSResolver
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.dns.ExternalCapableDNSResolver"
 	FIELD field_3160 LOGGER Lorg/slf4j/Logger;
+	METHOD method_3056 performLookup (Ljava/lang/String;)[Ljava/net/InetAddress;

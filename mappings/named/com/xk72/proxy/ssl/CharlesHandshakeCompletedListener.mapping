@@ -1,0 +1,20 @@
+CLASS com/xk72/proxy/ssl/class_1369 com/xk72/proxy/ssl/CharlesHandshakeCompletedListener
+	COMMENT SSLRemoteConnection's HandshakeCompletedListener: it copies the negotiated cipher suite
+	COMMENT and protocol onto the request, stores the upstream chain, and releases whoever is waiting
+	COMMENT in awaitHandshakeCompleted. Charles 4's corpus read it the same way, and the field set
+	COMMENT still matches. Was MaybeCharlesHandshakeCompletedListener; the bootstrap match is
+	COMMENT confirmed.
+	FIELD field_3740 sslRemoteConnection Lcom/xk72/proxy/ssl/class_1375;
+	FIELD field_3738 proxyEvent Lcom/xk72/proxy/ProxyEvent;
+	FIELD field_3737 request Lcom/xk72/proxy/http/class_1292;
+		COMMENT [inferred] Charles 4 left this field unnamed; the listener writes the cipher suite and
+		COMMENT protocol onto it.
+	FIELD field_3739 handshakeCompleted Z
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1375;Lcom/xk72/proxy/ProxyEvent;Lcom/xk72/proxy/http/class_1292;)V
+		ARG 1 sslRemoteConnection
+		ARG 2 proxyEvent
+		ARG 3 request
+	METHOD method_3753 awaitHandshakeCompleted ()Z
+		COMMENT waits uninterruptibly -- an InterruptedException only restarts the wait.
+	METHOD handshakeCompleted handshakeCompleted (Ljavax/net/ssl/HandshakeCompletedEvent;)V
+		ARG 1 event

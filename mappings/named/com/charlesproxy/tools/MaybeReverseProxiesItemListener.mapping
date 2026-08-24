@@ -4,3 +4,5 @@ CLASS com/charlesproxy/tools/class_1108 com/charlesproxy/tools/MaybeReverseProxi
 		COMMENT [bootstrap] carried over from Charles 4's ReverseProxiesItemListener.reverseProxyFormPanel on a unique descriptor match -- provisional
 	FIELD field_2985 maybeReverseProxiesSettingsPanel Lcom/charlesproxy/tools/ReverseProxiesTool$MySettingsPanel;
 		COMMENT [bootstrap] carried over from Charles 4's ReverseProxiesItemListener.reverseProxiesSettingsPanel on a unique descriptor match -- provisional
+	METHOD <init> (Lcom/charlesproxy/tools/ReverseProxiesTool$MySettingsPanel$ReverseProxyFormPanel;)V
+		ARG 1 reverseProxyFormPanel

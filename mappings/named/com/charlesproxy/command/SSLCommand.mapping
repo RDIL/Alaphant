@@ -1,2 +1,3 @@
-CLASS com/charlesproxy/command/SSLCommand
+CLASS com/charlesproxy/command/SSLCommand com/charlesproxy/command/SSLCommand
+	METHOD method_148 outputHelpMessage ()V
 	CLASS SSLExportType

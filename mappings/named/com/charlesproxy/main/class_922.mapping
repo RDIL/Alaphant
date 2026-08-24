@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/main/class_922
+	METHOD <init> (Lcom/charlesproxy/main/Main;Lcom/charlesproxy/CharlesContext;)V
+		ARG 2 charlesContext

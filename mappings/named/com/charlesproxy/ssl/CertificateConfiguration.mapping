@@ -1,0 +1,24 @@
+CLASS com/charlesproxy/ssl/class_999 com/charlesproxy/ssl/CertificateConfiguration
+	COMMENT [bootstrap] its own Lombok toString names the class and every field:
+	COMMENT "CertificateConfiguration(name=, added=, fileAlias=, storeAlias=)". Charles 4's
+	COMMENT com.xk72.charles.ssl.CertificateConfiguration had the same four, unobfuscated.
+	FIELD field_2743 name Ljava/lang/String;
+	FIELD field_2742 added Ljava/util/Date;
+	FIELD field_2744 fileAlias Ljava/lang/String;
+		COMMENT deprecated in Charles 5; certificates now live in the certificate store under
+		COMMENT storeAlias, and fileAlias is only read when storeAlias is blank.
+	FIELD field_2745 storeAlias Ljava/lang/String;
+	METHOD method_2597 getName ()Ljava/lang/String;
+	METHOD method_2595 getAdded ()Ljava/util/Date;
+	METHOD method_2600 getFileAlias ()Ljava/lang/String;
+	METHOD method_2602 getStoreAlias ()Ljava/lang/String;
+	METHOD method_2598 setName (Ljava/lang/String;)Lcom/charlesproxy/ssl/class_999;
+		ARG 1 name
+	METHOD method_2599 setAdded (Ljava/util/Date;)Lcom/charlesproxy/ssl/class_999;
+		ARG 1 added
+	METHOD method_2596 setFileAlias (Ljava/lang/String;)Lcom/charlesproxy/ssl/class_999;
+		ARG 1 fileAlias
+	METHOD method_2601 setStoreAlias (Ljava/lang/String;)Lcom/charlesproxy/ssl/class_999;
+		ARG 1 storeAlias
+	METHOD <init> (Lcom/xk72/pkg_37/class_1568;)V
+		ARG 1 entry

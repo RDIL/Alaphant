@@ -1,0 +1,17 @@
+CLASS com/xk72/proxy/ssl/class_1379 com/xk72/proxy/ssl/SSLRemoteConnection__ClientHelloParser
+	COMMENT [inferred] SSLRemoteConnection's inner parser for the ClientHello Charles itself sends
+	COMMENT upstream; it records the proposed version, session id, ALPN list, cipher suites and
+	COMMENT extensions on the ProxyEvent so the UI can show what Charles offered.
+	FIELD field_3764 proxyEvent Lcom/xk72/proxy/ProxyEvent;
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1375;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 1 remoteConnection
+		ARG 2 proxyEvent
+	METHOD method_3770 setClientHello (Lcom/xk72/proxy/ssl/class_1387;)V
+		ARG 1 clientHello
+	METHOD method_3743 setHandshakeSize (J)V
+		ARG 1 totalBytes
+	METHOD method_3744 setHandshakeDuration (J)V
+		ARG 1 millis
+	METHOD method_3174 alert (BB)V
+		ARG 1 level
+		ARG 2 description

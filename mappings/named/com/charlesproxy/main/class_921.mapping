@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/main/class_921
+	METHOD <init> (Lcom/charlesproxy/main/Main;Lcom/charlesproxy/CharlesContext;Ljava/util/List;)V
+		ARG 1 main
+		ARG 2 charlesContext

@@ -1,5 +1,17 @@
 CLASS com/charlesproxy/validator/class_1150
 	COMMENT [bootstrap] matched to Charles 4's ValidatorTransaction on 19 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_3088 warningCount I
+	FIELD field_3090 errorCount I
 	METHOD method_2990 getErrorCount ()I
+	METHOD method_2991 setErrorCount (I)V
+		ARG 1 count
+	METHOD method_2992 setErrors (Ljava/util/List;)V
+	METHOD method_2993 setIsValid (Z)V
 	METHOD method_2994 isValid ()Z
+	METHOD method_2999 setWarningCount (I)V
+		ARG 1 count
+	METHOD method_3001 setException (Ljava/lang/Exception;)V
+	METHOD method_3002 setType (Ljava/lang/String;)V
+	METHOD method_3003 setWarnings (Ljava/util/List;)V
+	METHOD method_3005 setFailed (Z)V
 	METHOD method_3007 getWarningCount ()I

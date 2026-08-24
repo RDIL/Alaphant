@@ -1,0 +1,17 @@
+CLASS com/xk72/proxy/ssl/class_1366 com/xk72/proxy/ssl/MaybeSnoopingHandshakeParser
+	COMMENT [inferred] the SSLHandshakeParser base SSLSnooper reads with: it finishes on the first
+	COMMENT record-level callback of any kind, so a snoop consumes one record and no more. Charles 4
+	COMMENT had no name for it.
+	FIELD field_3731 finished Z
+	METHOD method_3751 isFinished ()Z
+	METHOD method_3748 handshakeMessage (B[B)V
+		ARG 1 messageType
+		ARG 2 body
+	METHOD method_3174 alert (BB)V
+		ARG 1 level
+		ARG 2 description
+	METHOD method_3747 changeCipherSpec ()V
+	METHOD method_3745 applicationData ()V
+	METHOD method_3750 encryptedRecord ()V
+	METHOD method_3749 unknownRecord ()V
+	METHOD method_3746 notSslRecord ()V

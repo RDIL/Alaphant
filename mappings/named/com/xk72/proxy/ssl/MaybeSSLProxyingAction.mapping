@@ -1,0 +1,4 @@
+CLASS com/xk72/proxy/ssl/class_1404 com/xk72/proxy/ssl/MaybeSSLProxyingAction
+	COMMENT [inferred] the functional interface SSLHttpProxyHandler runs between registering and
+	COMMENT unregistering a connection; its single method kept the readable name apply. Charles 4 had
+	COMMENT no counterpart.

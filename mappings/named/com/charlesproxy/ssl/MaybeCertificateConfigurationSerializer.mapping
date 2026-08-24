@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/ssl/class_1000 com/charlesproxy/ssl/MaybeCertificateConfigurationSerializer
+	COMMENT [inferred] implements com.xk72.serialization.class_1474 over CertificateConfiguration,
+	COMMENT the same shape as the Maybe*Serializer classes in com/charlesproxy/config.
+	METHOD method_157 newInstance ()Ljava/lang/Object;

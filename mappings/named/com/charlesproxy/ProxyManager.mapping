@@ -3,5 +3,7 @@ CLASS com/charlesproxy/class_19 com/charlesproxy/ProxyManager
 	COMMENT [bootstrap] matched to Charles 4's ProxyManager on 41 shared member descriptors (next best in this package scored 28) -- provisional, confirm before dropping the Maybe
 	FIELD field_44 maybeChlsContext Lcom/charlesproxy/CharlesContext;
 		COMMENT [bootstrap] carried over from Charles 4's ProxyManager.chlsContext on a unique descriptor match -- provisional
+	METHOD method_31 getCharlesContext ()I
+	METHOD method_38 registerListener (Lcom/xk72/proxy/ProxyListener;)V
 	METHOD method_45 maybeSetThrottling (Z)V
 		COMMENT [bootstrap] carried over from Charles 4's ProxyManager.setThrottling on a unique descriptor match -- provisional

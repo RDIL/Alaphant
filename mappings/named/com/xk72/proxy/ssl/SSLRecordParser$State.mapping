@@ -1,0 +1,15 @@
+CLASS com/xk72/proxy/ssl/SSLRecordParser$State com/xk72/proxy/ssl/SSLRecordParser$State
+	COMMENT [bootstrap] exact names: the obfuscator renamed the fields but left the strings passed to
+	COMMENT the enum constructor, which is what Enum.name() returns. VERISON is Charles' own typo.
+	FIELD field_3811 READ_RECORD_TYPE Lcom/xk72/proxy/ssl/SSLRecordParser$State;
+		COMMENT the initial state, returned to after each record.
+	FIELD field_3812 READ_RECORD_VERISON_MAJOR Lcom/xk72/proxy/ssl/SSLRecordParser$State;
+	FIELD field_3807 READ_RECORD_VERISON_MINOR Lcom/xk72/proxy/ssl/SSLRecordParser$State;
+	FIELD field_3813 READ_RECORD_LENGTH_HI Lcom/xk72/proxy/ssl/SSLRecordParser$State;
+	FIELD field_3809 READ_RECORD_LENGTH_LOW Lcom/xk72/proxy/ssl/SSLRecordParser$State;
+	FIELD field_3814 SKIP_RECORD Lcom/xk72/proxy/ssl/SSLRecordParser$State;
+		COMMENT reading the record body; handshake bodies are buffered on the way past and alert
+		COMMENT bodies have their first two bytes kept, so "skip" understates it.
+	FIELD field_3808 NO_OP Lcom/xk72/proxy/ssl/SSLRecordParser$State;
+		COMMENT terminal, entered when the header fails isPlausibleRecord: the stream is not TLS and
+		COMMENT the rest of it is only counted.

@@ -1,2 +1,5 @@
 CLASS com/charlesproxy/tools/class_1117
+	FIELD field_2999 settingsPanel Lcom/charlesproxy/tools/MirrorTool$MySettingsPanel;
+	METHOD <init> (Lcom/charlesproxy/tools/MirrorTool$MySettingsPanel;)V
+		ARG 1 mySettingsPanel
 	METHOD actionPerformed actionPerformed (Ljava/awt/event/ActionEvent;)V

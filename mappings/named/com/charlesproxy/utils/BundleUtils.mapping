@@ -1,2 +1,5 @@
 CLASS com/charlesproxy/utils/class_1142 com/charlesproxy/utils/BundleUtils
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.utils.BundleUtils"
+	FIELD field_3064 LOGGER Lorg/slf4j/Logger;
+	METHOD method_2958 loadResourceBundle ()Lcom/xk72/lib/class_1565;
+	METHOD method_2959 resolveString (Lcom/charlesproxy/Strings_;)Ljava/lang/String;

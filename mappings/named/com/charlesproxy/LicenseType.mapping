@@ -1,1 +1,4 @@
 CLASS com/charlesproxy/LicenseType com/charlesproxy/LicenseType
+	FIELD field_39 SITE Lcom/charlesproxy/LicenseType;
+	FIELD field_40 USER Lcom/charlesproxy/LicenseType;
+	FIELD field_41 MULTI_SITE Lcom/charlesproxy/LicenseType;

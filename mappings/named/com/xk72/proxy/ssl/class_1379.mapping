@@ -1,4 +1,0 @@
-CLASS com/xk72/proxy/ssl/class_1379
-	FIELD field_3764 proxyEvent Lcom/xk72/proxy/ProxyEvent;
-	METHOD <init> (Lcom/xk72/proxy/ssl/class_1375;Lcom/xk72/proxy/ProxyEvent;)V
-		ARG 1 remoteConnection

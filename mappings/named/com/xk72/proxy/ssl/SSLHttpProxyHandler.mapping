@@ -1,3 +1,22 @@
 CLASS com/xk72/proxy/ssl/class_1405 com/xk72/proxy/ssl/SSLHttpProxyHandler
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.ssl.SSLHttpProxyHandler"
-	COMMENT [bootstrap] matched to Charles 4's SSLHttpProxyHandler on 4 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal
+	COMMENT "com.xk72.proxy.ssl.SSLHttpProxyHandler". Charles 4's corpus used the same name.
+	COMMENT The HttpProxyHandler that decides, per CONNECT, whether to decrypt the tunnel or pass it
+	COMMENT through, and turns SSL handshake failures into messages a user can act on.
+	FIELD field_3912 LOGGER Lorg/slf4j/Logger;
+	METHOD method_3868 withSslProxying (Lcom/xk72/proxy/http/class_1289;Lcom/xk72/proxy/ssl/class_1404;)Ljava/lang/Object;
+		COMMENT [inferred] registers the connection with the proxy server, tags the event as either
+		COMMENT SSL-proxied or tunnelled, runs the action, and unregisters in a finally block. Without
+		COMMENT JSSE it degrades to tunnelling and says so in the transaction notes.
+		ARG 1 connectionState
+		ARG 2 action
+	METHOD method_3867 describeHandshakeFailure (Lcom/xk72/proxy/ProxyEvent;Ljavax/net/ssl/SSLHandshakeException;Z)Lcom/xk72/proxy/ProxyException;
+		COMMENT [inferred] turns "Received fatal alert: <code>" into the SSLErrorsUtil description and
+		COMMENT records the alert id on the event. The boolean picks between the client-side and
+		COMMENT server-side wording.
+		ARG 1 proxyEvent
+		ARG 2 e
+		ARG 3 clientSide
+	METHOD method_3870 addTrustRootCertificateNote (Lcom/xk72/proxy/ProxyEvent;)V
+		COMMENT [inferred] the note shown when the client rejected Charles' forged certificate.
+		ARG 1 proxyEvent

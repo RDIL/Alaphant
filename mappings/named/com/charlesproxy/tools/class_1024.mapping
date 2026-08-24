@@ -1,3 +1,0 @@
-CLASS com/charlesproxy/tools/class_1024
-	METHOD <init> (Lcom/charlesproxy/tools/MapLocalTool$MapLocalFormPanel;)V
-		ARG 1 mapLocalFormPanel

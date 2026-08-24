@@ -1,1 +1,12 @@
 CLASS com/charlesproxy/gui/utils/UIUtils com/charlesproxy/gui/utils/UIUtils
+	FIELD field_2355 LOGGER Lorg/slf4j/Logger;
+	METHOD method_1965 isAquaLookAndFeel ()Z
+	METHOD method_1966 displayFontOptionsChanged (Ljava/lang/String;Ljava/lang/Integer;)V
+	METHOD method_1980 runOnEDT (Ljava/lang/Runnable;)V
+	METHOD method_1986 configureGroupBox (Ljavax/swing/JPanel;Ljava/lang/String;)V
+	METHOD method_1990 fillViewportHeightWith (Ljavax/swing/JTable;)V
+		ARG 0 table
+	METHOD method_1998 isFlatLaf ()Z
+	METHOD method_4327 isWhitespaceOrPeriod (C)Z
+	CLASS HostnameWordAction HostnameWordAction
+	CLASS TreeOptions TreeOptions

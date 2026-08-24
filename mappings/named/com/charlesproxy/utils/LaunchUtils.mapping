@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/utils/class_1143 com/charlesproxy/utils/LaunchUtils
+	METHOD method_2960 openFile (Ljava/io/File;)V
+		ARG 0 file
+	METHOD method_2961 openBrowserWithUrl (Ljava/lang/String;)V
+		ARG 0 url

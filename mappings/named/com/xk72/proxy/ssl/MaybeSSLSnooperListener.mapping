@@ -1,0 +1,5 @@
+CLASS com/xk72/proxy/ssl/class_1400 com/xk72/proxy/ssl/MaybeSSLSnooperListener
+	COMMENT [inferred] a MaybeSSLRecordListener that can say when it has seen enough. SSLSnooper is
+	COMMENT the only user: it feeds a peeked stream through an SSLRecordParser and stops as soon as
+	COMMENT this returns true. Charles 4 had the interface as the unnamed com.xk72.proxy.ssl.K.
+	METHOD method_3751 isFinished ()Z

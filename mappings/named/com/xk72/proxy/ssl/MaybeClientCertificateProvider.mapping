@@ -1,0 +1,14 @@
+CLASS com/xk72/proxy/ssl/class_1403 com/xk72/proxy/ssl/MaybeClientCertificateProvider
+	COMMENT [inferred] how SSLContextFactory asks the Charles side whether a client certificate
+	COMMENT applies to an upstream host, keeping the proxy library free of Charles' configuration
+	COMMENT model. Charles 4 had it as the unnamed com.xk72.proxy.ssl.g.
+	METHOD method_2591 hasClientCertificate (Ljava/lang/String;I)Z
+		ARG 1 host
+		ARG 2 port
+	METHOD method_2592 addClientCertificates (Ljava/lang/String;ILjava/security/KeyStore;[C)V
+		COMMENT called only when hasClientCertificate said yes; the implementation adds entries to the
+		COMMENT key store the caller is about to build a KeyManagerFactory from.
+		ARG 1 host
+		ARG 2 port
+		ARG 3 keyStore
+		ARG 4 password

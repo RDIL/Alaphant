@@ -1,0 +1,2 @@
+CLASS com/xk72/lib/class_1554 com/xk72/lib/CharlesEntityResolver
+	METHOD resolveEntity resolveEntity (Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;

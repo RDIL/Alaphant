@@ -1,0 +1,18 @@
+CLASS com/charlesproxy/ssl/class_1007 com/charlesproxy/ssl/PKCS12CertificateLoader
+	COMMENT [charles4] Charles 4's com.xk72.charles.ssl.PKCS12CertificateLoader: the password-asking
+	COMMENT loader, distinguished from the plain reader by throwing PKCS12CertificateLoaderException
+	COMMENT and by driving PasswordStorePasswordAuthenticator. SSLManager exposes it as method_2572.
+	FIELD field_2754 passwordAuthenticator Lcom/charlesproxy/security/class_987;
+	METHOD <init> (Lcom/charlesproxy/security/PasswordAuthenticator;)V
+		ARG 1 passwordAuthenticator
+	METHOD method_2615 load (Ljava/io/File;Ljava/lang/String;)Ljava/util/Collection;
+		COMMENT names the certificate after the file, then defers to the three-argument load.
+		ARG 1 file
+		ARG 2 purpose
+	METHOD method_2616 load (Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Collection;
+		COMMENT [inferred] retries with a fresh password prompt until the store opens, the store says
+		COMMENT not to retry, or the authenticator runs out of passwords. The purpose is quoted back
+		COMMENT to the user as "Charles is trying to use <purpose>".
+		ARG 1 file
+		ARG 2 name
+		ARG 3 purpose

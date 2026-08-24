@@ -1,0 +1,11 @@
+CLASS com/xk72/proxy/ssl/class_1397 com/xk72/proxy/ssl/SSLClientConfiguration
+	COMMENT [bootstrap] its own toString names both fields: "enabledProtocols = [...], enabledCiphers
+	COMMENT = [...]". Charles 4's corpus used the same class name. SSLSocketConfigurationGenerator
+	COMMENT records which of these combinations a host has already been tried with.
+	FIELD field_3907 enabledProtocols [Ljava/lang/String;
+	FIELD field_3906 enabledCiphers [Ljava/lang/String;
+	METHOD <init> ([Ljava/lang/String;[Ljava/lang/String;)V
+		ARG 1 enabledProtocols
+		ARG 2 enabledCiphers
+	METHOD method_3865 getEnabledProtocols ()[Ljava/lang/String;
+	METHOD method_3864 getEnabledCiphers ()[Ljava/lang/String;

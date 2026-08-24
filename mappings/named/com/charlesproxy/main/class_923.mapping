@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/main/class_923
+	METHOD <init> (Lcom/charlesproxy/main/Main;Lcom/charlesproxy/CharlesContext;)V
+		ARG 1 main
+		ARG 2 charlesContext
+	METHOD run run ()V

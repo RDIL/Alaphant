@@ -1,2 +1,0 @@
-CLASS com/charlesproxy/tools/class_1109 com/charlesproxy/tools/MaybeMapFilter
-	COMMENT [bootstrap] matched to Charles 4's MapFilter on 5 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe

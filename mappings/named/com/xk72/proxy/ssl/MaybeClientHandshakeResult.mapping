@@ -1,0 +1,16 @@
+CLASS com/xk72/proxy/ssl/class_1388 com/xk72/proxy/ssl/MaybeClientHandshakeResult
+	COMMENT [inferred] the mutable holder MaybeSSLClientConnection hands to its handshake listener
+	COMMENT and ALPN selector; both fill it under the object's own monitor and notifyAll, and the
+	COMMENT constructor waits until the duration and the ALPN protocol are both set. Charles 4 had no
+	COMMENT name for it, but four of its fields kept readable names through the obfuscator.
+	FIELD field_3877 clientCipherSuite Ljava/lang/String;
+	FIELD field_3875 clientSslProtocol Ljava/lang/String;
+	FIELD field_3879 clientSslSessionID [B
+	FIELD field_3876 clientSslDuration J
+		COMMENT starts at -1 and is the flag the constructor waits on, so 0 is a real value.
+	FIELD field_3878 clientAlpnProtocol Ljava/lang/String;
+		COMMENT [inferred] set by the ALPN selector rather than the handshake listener; the empty
+		COMMENT string stands for "selector ran, chose nothing" and is normalised to null afterwards.
+	FIELD field_3880 clientCertificates [Ljava/security/cert/Certificate;
+		COMMENT left null when the peer is unverified, which is the normal case since the client
+		COMMENT socket is created with setNeedClientAuth(false).

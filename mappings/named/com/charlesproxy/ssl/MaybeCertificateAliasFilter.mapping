@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/ssl/class_1005 com/charlesproxy/ssl/MaybeCertificateAliasFilter
+	COMMENT [inferred] the functional interface MaybePKCS12KeyStoreReader.readEntries filters key
+	COMMENT store aliases with; its single method kept the readable name accept. Charles 4 had no
+	COMMENT counterpart, so the class name is a reading of its one use.

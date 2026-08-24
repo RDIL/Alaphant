@@ -1,2 +1,4 @@
 CLASS com/charlesproxy/unsafe/class_1138 com/charlesproxy/unsafe/Termination
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.unsafe.Termination"
+	FIELD field_3058 LOGGER Lorg/slf4j/Logger;
+	METHOD method_2949 registerTerminationHook (Lcom/charlesproxy/unsafe/class_1139;)V

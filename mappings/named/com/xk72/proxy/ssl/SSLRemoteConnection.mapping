@@ -1,2 +1,27 @@
 CLASS com/xk72/proxy/ssl/class_1375 com/xk72/proxy/ssl/SSLRemoteConnection
-	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.ssl.SSLRemoteConnection"
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal
+	COMMENT "com.xk72.proxy.ssl.SSLRemoteConnection".
+	COMMENT Charles' connection out to the real server. It wraps the socket's streams in
+	COMMENT SSLRecordParserFilter streams first, so the handshake it performs is parsed as it happens,
+	COMMENT and retries with successively weaker configurations from SSLSocketConfigurationGenerator
+	COMMENT until one handshake succeeds.
+	FIELD field_3751 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3753 serverCertificates [Ljava/security/cert/Certificate;
+	FIELD field_3752 handshakeCompletedListener Lcom/xk72/proxy/ssl/class_1369;
+	FIELD field_3754 ssl Z
+		COMMENT [inferred] whether this connection is actually doing TLS: true for an https protocol,
+		COMMENT or for a CONNECT that SSLHttpProxyHandler decided to proxy.
+	METHOD method_3768 awaitHandshakeCompleted ()Z
+		COMMENT true immediately when no handshake listener was installed.
+	METHOD method_3763 getServerCertificates ()[Ljava/security/cert/Certificate;
+	METHOD method_3769 isSsl ()Z
+	METHOD method_3765 retryWithNextConfiguration (Lcom/xk72/proxy/ssl/SSLSocketConfigurationGenerator;Lcom/xk72/proxy/ProxyEvent;Lcom/xk72/proxy/ssl/class_1397;Ljava/io/IOException;)V
+		COMMENT [inferred] records the failed configuration, drops the socket and reconnects so the
+		COMMENT next configuration gets a fresh connection. An unrecognized_name alert is rethrown
+		COMMENT instead, since retrying cannot help.
+		ARG 1 configurationGenerator
+		ARG 2 proxyEvent
+		ARG 3 failedConfiguration
+		ARG 4 cause
+	METHOD method_3766 isUnrecognizedNameAlert (Ljava/io/IOException;)Z
+		ARG 1 e

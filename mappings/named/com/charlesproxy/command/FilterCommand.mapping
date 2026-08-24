@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/command/class_1591 com/charlesproxy/command/FilterCommand
+	METHOD method_4262 outputHelpMessage ()V

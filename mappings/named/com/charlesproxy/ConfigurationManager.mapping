@@ -1,2 +1,24 @@
 CLASS com/charlesproxy/class_29 com/charlesproxy/ConfigurationManager
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.ConfigurationManager"
+	FIELD field_86 LOGGER Lorg/slf4j/Logger;
+	METHOD method_109 getCharlesDataDirectory ()Ljava/lang/String;
+	METHOD method_110 (Lcom/charlesproxy/config/class_59;)Lcom/charlesproxy/config/export/class_94;
+		ARG 0 config
+	METHOD method_111 getNamedProfile (Ljava/lang/String;)Ljava/io/File;
+		ARG 0 profile
+	METHOD method_113 getProfilesDir ()Ljava/io/File;
+	METHOD method_114 getPackagesDirectory ()Ljava/lang/String;
+	METHOD method_117 createProfile (Lcom/charlesproxy/config/class_59;Ljava/lang/String;Z)V
+		ARG 0 config
+		ARG 1 newName
+		ARG 2 allowOverwrite
+	METHOD method_119 deleteProfile (Ljava/lang/String;)V
+		ARG 0 profileName
+	METHOD method_121 renameProfile (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 0 profileName
+		ARG 1 newName
+	METHOD method_124 (Ljava/lang/String;)V
+		ARG 0 path
+	METHOD method_125 allProfiles ()Ljava/util/List;
+	METHOD method_126 unixResolve (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 path

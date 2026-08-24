@@ -1,0 +1,14 @@
+CLASS com/xk72/proxy/ssl/class_1384 com/xk72/proxy/ssl/SSLSocketConfigurationGenerator__HostState
+	COMMENT [inferred] what SSLSocketConfigurationGenerator remembers per host: which protocol and
+	COMMENT cipher combinations have already been tried, and the choice that last worked. Held in a
+	COMMENT copy-on-write map keyed by host, and every method is synchronized on the instance.
+	FIELD field_3860 triedConfigurations Ljava/util/Set;
+	FIELD field_3859 choice Lcom/xk72/proxy/ssl/class_1368;
+	METHOD method_3839 hasTried (Lcom/xk72/proxy/ssl/class_1397;)Z
+		ARG 1 configuration
+	METHOD method_3836 addTried (Lcom/xk72/proxy/ssl/class_1397;)V
+		ARG 1 configuration
+	METHOD method_4467 reset ()V
+	METHOD method_3837 getChoice ()Lcom/xk72/proxy/ssl/class_1368;
+	METHOD method_3838 setChoice (Lcom/xk72/proxy/ssl/class_1368;)V
+		ARG 1 choice

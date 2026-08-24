@@ -1,0 +1,17 @@
+CLASS com/xk72/proxy/ssl/class_1382 com/xk72/proxy/ssl/MaybeSSLClientConnection__ClientExtensionsParser
+	COMMENT [inferred] the inner parser on the outbound side of the client SSL socket. It watches
+	COMMENT what Charles sends the client, so the ServerHello extensions it sees are recorded as the
+	COMMENT ProxyEvent's client extensions.
+	FIELD field_3857 proxyEvent Lcom/xk72/proxy/ProxyEvent;
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1378;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 1 connection
+		ARG 2 proxyEvent
+	METHOD method_3175 setSslDetails (Lcom/xk72/proxy/ssl/class_1385;)V
+		ARG 1 sslDetails
+	METHOD method_3176 setServerCertificates (Ljava/util/List;)V
+		ARG 1 certificates
+	METHOD method_3743 setHandshakeSize (J)V
+		ARG 1 totalBytes
+	METHOD method_3174 alert (BB)V
+		ARG 1 level
+		ARG 2 description

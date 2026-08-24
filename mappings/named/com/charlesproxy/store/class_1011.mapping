@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/store/class_1011
+	FIELD field_2758 keyStore Ljava/security/KeyStore;
+	FIELD field_2759 secretKeyFactory Ljavax/crypto/SecretKeyFactory;

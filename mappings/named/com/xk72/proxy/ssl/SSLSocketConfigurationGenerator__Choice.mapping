@@ -1,0 +1,17 @@
+CLASS com/xk72/proxy/ssl/class_1368 com/xk72/proxy/ssl/SSLSocketConfigurationGenerator__Choice
+	COMMENT [bootstrap] its own toString names all three fields: "Cipher Choice <n> Protocols Choice
+	COMMENT <n> v2Hello <b>". One point in the fallback space SSLSocketConfigurationGenerator walks
+	COMMENT when a handshake fails.
+	FIELD field_3735 cipherChoice I
+		COMMENT indexes SSLSocketConfigurationGenerator$CipherChoice.
+	FIELD field_3734 protocolsChoice I
+		COMMENT indexes the protocol groups {TLSv1.3,TLSv1.2,TLSv1.1}, {TLSv1}, {SSLv3}.
+	FIELD field_3736 v2Hello Z
+		COMMENT only ever set when the platform lists SSLv2Hello as a supported protocol.
+	METHOD <init> (IIZ)V
+		ARG 1 cipherChoice
+		ARG 2 protocolsChoice
+		ARG 3 v2Hello
+	METHOD method_4466 advance ()Z
+		COMMENT [inferred] steps to the next combination, protocols innermost, and returns false once
+		COMMENT the cipher choices are exhausted.

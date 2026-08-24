@@ -1,0 +1,22 @@
+CLASS com/xk72/proxy/ssl/class_1393 com/xk72/proxy/ssl/SSLResponseStreamCopier__HandshakeParser
+	COMMENT [inferred] the inner SSLHandshakeParser SSLResponseStreamCopier drives, captured from the
+	COMMENT enclosing copier. It stops recording once application data or a non-TLS record has been
+	COMMENT seen, so a renegotiation later in the stream cannot overwrite the original handshake.
+	FIELD field_3893 proxyEvent Lcom/xk72/proxy/ProxyEvent;
+	FIELD field_4721 pastHandshake Z
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1399;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 1 streamCopier
+		ARG 2 proxyEvent
+	METHOD method_3175 setSslDetails (Lcom/xk72/proxy/ssl/class_1385;)V
+		ARG 1 sslDetails
+	METHOD method_3176 setServerCertificates (Ljava/util/List;)V
+		ARG 1 certificates
+	METHOD method_3743 setHandshakeSize (J)V
+		ARG 1 totalBytes
+	METHOD method_3744 setHandshakeDuration (J)V
+		ARG 1 millis
+	METHOD method_3174 alert (BB)V
+		ARG 1 level
+		ARG 2 description
+	METHOD method_3745 applicationData ()V
+	METHOD method_3746 notSslRecord ()V

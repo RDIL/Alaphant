@@ -1,0 +1,10 @@
+CLASS com/charlesproxy/ssl/class_1003 com/charlesproxy/ssl/SSLManager__CertificateListener
+	COMMENT [inferred] SSLManager's inner class_989 implementation, captured from the enclosing
+	COMMENT instance. It forwards store contents to SSLContextFactory so an imported client
+	COMMENT certificate becomes a usable SSL context.
+	METHOD <init> (Lcom/charlesproxy/ssl/class_992;)V
+		ARG 1 sslManager
+	METHOD method_2563 certificateAdded (Lcom/xk72/pkg_37/class_1568;)V
+		ARG 1 entry
+	METHOD method_2562 certificateRemoved (Lcom/xk72/pkg_37/class_1568;)V
+		ARG 1 entry

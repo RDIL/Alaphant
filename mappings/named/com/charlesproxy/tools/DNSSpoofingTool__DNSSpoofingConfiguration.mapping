@@ -1,1 +1,4 @@
 CLASS com/charlesproxy/tools/class_1075 com/charlesproxy/tools/DNSSpoofingTool__DNSSpoofingConfiguration
+	FIELD field_2879 spoofs Ljava/util/List;
+	METHOD method_2760 getSpoofs ()Ljava/util/List;
+	METHOD method_2761 setSpoofs (Ljava/util/List;)V

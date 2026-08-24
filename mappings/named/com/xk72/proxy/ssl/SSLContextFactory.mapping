@@ -1,0 +1,114 @@
+CLASS com/xk72/proxy/ssl/class_1636 com/xk72/proxy/ssl/SSLContextFactory
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal
+	COMMENT "com.xk72.proxy.ssl.SSLContextFactory", and it names itself again in the message
+	COMMENT "SSLContextFactory does not have a CA certificate set". Charles 4 shipped the class
+	COMMENT unobfuscated under the same name.
+	COMMENT This is where SSL proxying actually happens: it mints a certificate per upstream host,
+	COMMENT signed by Charles' root, and hands back an SSLContext serving it.
+	FIELD field_3771 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3777 caCertificate Ljava/security/cert/X509Certificate;
+	FIELD field_3769 caCertificatePrivateKey Ljava/security/PrivateKey;
+	FIELD field_3767 builtSslContexts Ljava/util/Map;
+		COMMENT keyed on CertificateAndPrincipal, so one host reuses one generated certificate.
+	FIELD field_3772 defaultPassword [C
+		COMMENT a hard-coded constant, used only for the in-memory key store of an imported client
+		COMMENT certificate.
+	FIELD field_3773 password [C
+		COMMENT derived by hashing the CA's subject, issuer and serial, so the on-disk key stores are
+		COMMENT unreadable once the root is regenerated.
+	FIELD field_3770 activeAlgorithm Ljava/lang/String;
+		COMMENT "SSL_TLS" where the JDK offers it, otherwise "SSL".
+	FIELD field_3765 defaultKeySize Ljava/lang/Object;
+		COMMENT 2048, boxed because the same parameter also carries an AlgorithmParameterSpec or
+		COMMENT DSAParams when the upstream key is EC, DSA or DH.
+	FIELD field_3768 secureRandom Ljava/security/SecureRandom;
+	FIELD field_3778 sslContext Ljavax/net/ssl/SSLContext;
+		COMMENT the lazily built context used when no client certificate applies.
+	FIELD field_3774 clientCertificateProvider Lcom/xk72/proxy/ssl/class_1403;
+	FIELD field_3775 keyStoreNamePrefix Ljava/io/File;
+		COMMENT the directory generated key stores are cached in; null disables the disk cache.
+	FIELD field_3776 needsToLoadKeyStore Z
+		COMMENT [charles4] Charles 4's name. It gates all three halves of the cache: reading a saved
+		COMMENT key store, writing one, and keeping the context in builtSslContexts.
+	FIELD field_4722 serialNumberCounter Ljava/util/concurrent/atomic/AtomicLong;
+		COMMENT seeded from the class-load time and incremented per certificate, so serials stay
+		COMMENT unique across a run without repeating an earlier run's. Charles 4 called the field
+		COMMENT CLASS_INIT_TIME_CONSTANT, which described the seed rather than the field.
+	METHOD method_3785 setCaCertificate (Ljava/security/cert/X509Certificate;Ljava/security/PrivateKey;)V
+		COMMENT [charles4] also derives the key store password from the certificate.
+		ARG 1 caCertificate
+		ARG 2 caCertificatePrivateKey
+	METHOD method_3778 getPasswordString ()Ljava/lang/String;
+	METHOD method_3779 setClientCertificateProvider (Lcom/xk72/proxy/ssl/class_1403;)V
+		ARG 1 clientCertificateProvider
+	METHOD method_3781 setKeyStoreNamePrefix (Ljava/io/File;)V
+		ARG 1 keyStoreNamePrefix
+	METHOD method_3782 forHostName (Ljava/lang/String;)Ljavax/net/ssl/SSLContext;
+		COMMENT [inferred] the no-upstream-certificate path: invents a subject of
+		COMMENT "CN=<host>, C=NZ, O=XK72 Limited, OU=Charles" valid from 30 days ago for a year.
+		ARG 1 hostName
+	METHOD method_3784 forUpstreamCertificate (Ljava/security/cert/X509Certificate;Ljava/lang/String;)Ljavax/net/ssl/SSLContext;
+		COMMENT [inferred] the impersonating path: keeps the real certificate's subject, validity, key
+		COMMENT algorithm and key size, substituting the CN and subjectAltName when a host name is
+		COMMENT given. Charles 4 left this method unnamed.
+		ARG 1 upstreamCertificate
+		ARG 2 hostName
+	METHOD method_3783 fromHostAndPort (Ljava/lang/String;I)Ljavax/net/ssl/SSLContext;
+		COMMENT [charles4] the client-certificate path: when the provider has a certificate for this
+		COMMENT host and port it builds a context around it, otherwise it returns the shared default.
+		ARG 1 host
+		ARG 2 port
+	METHOD method_3788 newSslContext (Ljavax/security/auth/x500/X500Principal;Ljava/util/Date;Ljava/util/Date;Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Ljavax/net/ssl/SSLContext;
+		COMMENT [inferred] allocates the serial and clamps notAfter to a year out before delegating.
+		ARG 1 subject
+		ARG 2 notBefore
+		ARG 3 notAfter
+		ARG 4 upstreamCertificate
+		ARG 5 hostName
+		ARG 6 keyAlgorithm
+		ARG 7 keyParameters
+	METHOD method_3786 getOrCreateSslContext (Ljavax/security/auth/x500/X500Principal;Ljava/math/BigInteger;Ljava/util/Date;Ljava/util/Date;Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Ljavax/net/ssl/SSLContext;
+		COMMENT [charles4] the whole cache-then-generate path. A saved key store is rejected if its
+		COMMENT chain is short, not X.509, expires further out than a year, or expires within a month
+		COMMENT of a different notAfter than the one asked for.
+		ARG 1 subject
+		ARG 2 serialNumber
+		ARG 3 notBefore
+		ARG 4 notAfter
+		ARG 5 upstreamCertificate
+		ARG 6 hostName
+		ARG 7 keyAlgorithm
+		ARG 8 keyParameters
+	METHOD method_3787 loadKeyStore (Ljavax/security/auth/x500/X500Principal;Ljava/security/cert/X509Certificate;)Ljava/security/KeyStore;
+		ARG 1 subject
+		ARG 2 upstreamCertificate
+	METHOD method_3776 getKeyStoreNameFor (Ljavax/security/auth/x500/X500Principal;Ljava/security/cert/X509Certificate;)Ljava/io/File;
+		COMMENT [charles4] the file name hashes the subject and issuer and includes both the upstream
+		COMMENT and the CA serial, so replacing either invalidates the cache entry.
+		ARG 1 subject
+		ARG 2 upstreamCertificate
+	METHOD method_3789 copyExtension (Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/security/cert/X509Certificate;Lorg/bouncycastle/cert/jcajce/JcaX509v3CertificateBuilder;ZLjava/lang/String;)V
+		COMMENT [inferred] copies one extension from the upstream certificate, dropping the five that
+		COMMENT would point at the real issuer's infrastructure (AIA, policies, both key identifiers,
+		COMMENT CRL distribution points) and appending the host name to subjectAltName.
+		ARG 1 oid
+		ARG 2 upstreamCertificate
+		ARG 3 builder
+		ARG 4 critical
+		ARG 5 hostName
+	METHOD method_3790 maxNotAfter ()Ljava/util/Date;
+		COMMENT [inferred] one year from now, the ceiling every generated certificate is clamped to.
+	METHOD method_3780 addSslContext (Lcom/xk72/pkg_37/class_1568;)V
+		COMMENT [inferred] registers a context serving an imported client certificate, keyed on that
+		COMMENT certificate's own subject. The counterpart of removeSslContext, which Charles 4 named.
+		ARG 1 entry
+	METHOD method_3775 removeSslContext (Lcom/xk72/pkg_37/class_1568;)V
+		ARG 1 entry
+	METHOD method_3791 getOrCreateActiveInstance ()Ljavax/net/ssl/SSLContext;
+	METHOD method_3774 createTrustingSslContext ()Ljavax/net/ssl/SSLContext;
+		COMMENT [inferred] wraps the platform trust managers in CharlesX509TrustManager so Charles'
+		COMMENT own root is accepted; SSLManager installs this as the default HttpsURLConnection
+		COMMENT factory, which is what lets Charles fetch over its own proxy.
+	METHOD method_3777 getTrustManagers ()[Ljavax/net/ssl/TrustManager;
+		COMMENT [charles4] a single NullX509ExtendedTrustManager: Charles deliberately accepts any
+		COMMENT upstream certificate and reports validity to the user instead.

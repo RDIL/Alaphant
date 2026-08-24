@@ -1,0 +1,16 @@
+CLASS com/xk72/proxy/ssl/SSLSnooper com/xk72/proxy/ssl/SSLSnooper
+	COMMENT reads the start of a client stream without consuming it -- it marks the ProxyInputStream,
+	COMMENT parses far enough to answer, then resets.
+	METHOD method_3800 getClientHelloFromInStream (Lcom/xk72/proxy/io/class_1335;)Lcom/xk72/proxy/ssl/class_1387;
+		COMMENT [charles4] Charles 4's corpus used this name for the same method; it throws
+		COMMENT SSLSnooper$NoClientHelloException when the first record is not a ClientHello.
+		ARG 1 in
+	METHOD method_3801 readRecords (Lcom/xk72/proxy/io/class_1335;Lcom/xk72/proxy/ssl/class_1400;)V
+		COMMENT [inferred] feeds the marked stream through an SSLRecordParser until the listener says
+		COMMENT it is finished or the stream ends, then resets the mark in a finally block.
+		ARG 1 in
+		ARG 2 listener
+	METHOD method_3802 readServerCertificates ([B)Ljava/util/List;
+		COMMENT [charles4] parses a type-11 Certificate message body: a 3-byte total length, then
+		COMMENT 3-byte-length-prefixed DER certificates. Any parse failure yields what was read so far.
+		ARG 1 body

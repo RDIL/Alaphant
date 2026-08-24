@@ -1,0 +1,17 @@
+CLASS com/xk72/proxy/ssl/class_1380 com/xk72/proxy/ssl/MaybeSSLClientConnection__ClientCertificateParser
+	COMMENT [inferred] the inner parser on the inbound side of the client SSL socket; it records the
+	COMMENT client's certificates and any fatal alert, and deliberately does nothing with the
+	COMMENT ClientHello or the handshake size, which the outer connection reports itself.
+	FIELD field_3854 proxyEvent Lcom/xk72/proxy/ProxyEvent;
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1378;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 1 connection
+		ARG 2 proxyEvent
+	METHOD method_3176 setServerCertificates (Ljava/util/List;)V
+		ARG 1 certificates
+	METHOD method_3770 setClientHello (Lcom/xk72/proxy/ssl/class_1387;)V
+		ARG 1 clientHello
+	METHOD method_3743 setHandshakeSize (J)V
+		ARG 1 totalBytes
+	METHOD method_3174 alert (BB)V
+		ARG 1 level
+		ARG 2 description

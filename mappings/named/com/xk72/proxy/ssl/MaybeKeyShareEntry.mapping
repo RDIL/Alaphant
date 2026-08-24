@@ -1,0 +1,13 @@
+CLASS com/xk72/proxy/ssl/class_1406 com/xk72/proxy/ssl/MaybeKeyShareEntry
+	COMMENT [inferred] one TLS 1.3 KeyShareEntry -- a named group and its key_exchange bytes.
+	COMMENT TLSExtensionHelper builds these only for extension type 51 (key_share), parsing a list of
+	COMMENT them from a ClientHello and a single one from a ServerHello, and the display name comes
+	COMMENT from the same named-curve table the supported_groups extension uses. Charles 4 had no
+	COMMENT counterpart, so the name comes from the RFC 8446 struct rather than from a corpus.
+	FIELD field_3914 group I
+	FIELD field_3913 groupName Ljava/lang/String;
+	FIELD field_3915 keyExchange [B
+		COMMENT null when the declared length runs past the end of the extension body.
+	METHOD <init> (I[B)V
+		ARG 1 group
+		ARG 2 keyExchange

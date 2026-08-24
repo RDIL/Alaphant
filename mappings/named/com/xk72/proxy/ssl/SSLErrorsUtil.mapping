@@ -1,0 +1,8 @@
+CLASS com/xk72/proxy/ssl/class_1383 com/xk72/proxy/ssl/SSLErrorsUtil
+	COMMENT the static SSLError table and two linear lookups over it. Charles 4's corpus read it the
+	COMMENT same way, down to the method names.
+	FIELD field_3858 SSL_ERRORS [Lcom/xk72/proxy/ssl/class_1386;
+	METHOD method_3834 getById (B)Lcom/xk72/proxy/ssl/class_1386;
+		ARG 1 id
+	METHOD method_3835 getByCodeString (Ljava/lang/String;)Lcom/xk72/proxy/ssl/class_1386;
+		ARG 1 code

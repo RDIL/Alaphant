@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/ssl/class_997 com/charlesproxy/ssl/SSLProxyingLocationSelectingTool
+	COMMENT [charles4] Charles 4's com.xk72.charles.ssl.SSLProxyingLocationSelectingTool: the same
+	COMMENT LocationSelectingTool that reports getName() as "SSL Proxying" and adds or removes
+	COMMENT entries in ProxyConfiguration's SSL location list. Every member it declares already
+	COMMENT carries a readable name from the interface.

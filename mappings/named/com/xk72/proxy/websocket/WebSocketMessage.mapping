@@ -1,1 +1,2 @@
 CLASS com/xk72/proxy/websocket/WebSocketMessage com/xk72/proxy/websocket/WebSocketMessage
+	CLASS Type Type

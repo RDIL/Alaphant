@@ -1,0 +1,6 @@
+CLASS com/xk72/proxy/ssl/class_1370 com/xk72/proxy/ssl/SSLRequestStreamCopier
+	COMMENT a RequestStreamCopier that also feeds everything it copies through an SSLRecordParser, so
+	COMMENT a tunnelled connection Charles is not decrypting still yields handshake detail. The
+	COMMENT handshake bytes are subtracted from the reported body size. Charles 4's corpus read the
+	COMMENT class the same way, down to the field name.
+	FIELD field_3741 sslRecordParser Lcom/xk72/proxy/ssl/SSLRecordParser;

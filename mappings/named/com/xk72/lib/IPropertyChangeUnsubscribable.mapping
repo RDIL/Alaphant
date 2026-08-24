@@ -1,0 +1,3 @@
+CLASS com/xk72/lib/class_1555 com/xk72/lib/IPropertyChangeUnsubscribable
+	METHOD removePropertyChangeListener removePropertyChangeListener (Ljava/beans/PropertyChangeListener;)V
+		ARG 1 propertyChangeListener

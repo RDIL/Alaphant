@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/validator/ValidatorMessage com/charlesproxy/validator/ValidatorMessage
+	METHOD method_2975 setMessage (Ljava/lang/String;)V
+	METHOD method_2978 setContext (Ljava/lang/String;)V
+	METHOD method_2982 setLine (Ljava/lang/Integer;)V
+	METHOD method_2983 setMessageId (Ljava/lang/String;)V
+	METHOD method_2985 setExplanation (Ljava/lang/String;)V
+	METHOD method_2987 setSource (Ljava/lang/String;)V
+	CLASS Type Type

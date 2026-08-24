@@ -1,0 +1,11 @@
+CLASS com/xk72/proxy/ssl/class_1396 com/xk72/proxy/ssl/MaybeSSLClientConnection__HandshakeCompletedListener
+	COMMENT [inferred] the inner HandshakeCompletedListener the client SSL socket notifies; it fills
+	COMMENT the shared result holder under its monitor and wakes the constructor waiting on it.
+	FIELD field_3904 result Lcom/xk72/proxy/ssl/class_1388;
+	FIELD field_3903 handshakeStartTime J
+	METHOD <init> (Lcom/xk72/proxy/ssl/class_1378;Lcom/xk72/proxy/ssl/class_1388;J)V
+		ARG 1 connection
+		ARG 2 result
+		ARG 3 handshakeStartTime
+	METHOD handshakeCompleted handshakeCompleted (Ljavax/net/ssl/HandshakeCompletedEvent;)V
+		ARG 1 event

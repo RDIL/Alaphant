@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/class_880 com/charlesproxy/DisableSystemProxiesConfigurationThread
+	FIELD field_2396 charlesContext Lcom/charlesproxy/CharlesContext;
+	METHOD <init> (Lcom/charlesproxy/CharlesContext;Ljava/lang/String;)V
+		ARG 1 charlesContext
+		ARG 2 threadName
+	METHOD run run ()V

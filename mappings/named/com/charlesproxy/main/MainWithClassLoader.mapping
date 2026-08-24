@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/main/MainWithClassLoader com/charlesproxy/main/MainWithClassLoader
+	METHOD main main ([Ljava/lang/String;)V

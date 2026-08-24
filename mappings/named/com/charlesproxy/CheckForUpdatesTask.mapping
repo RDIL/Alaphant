@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/class_4 com/charlesproxy/CheckForUpdatesTask
+	FIELD field_22 isAuto Z
+		COMMENT TODO: what does this mean?

@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/class_34
+	METHOD <init> (Lcom/charlesproxy/CharlesContext;Lcom/charlesproxy/tools/spi/lib/CharlesTool;)V
+		ARG 1 charlesContext
+		ARG 2 charlesTool

@@ -1,1 +1,3 @@
 CLASS com/charlesproxy/tools/AbstractSimpleFilterTool com/charlesproxy/tools/AbstractSimpleFilterTool
+	METHOD method_2630 getBlurb ()Ljava/lang/String;
+	METHOD method_2631 getHelp ()Ljava/lang/String;

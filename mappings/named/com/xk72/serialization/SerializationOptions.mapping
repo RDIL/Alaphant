@@ -1,0 +1,7 @@
+CLASS com/xk72/serialization/class_1484 com/xk72/serialization/SerializationOptions
+	FIELD field_4075 containsNonNull Z
+	FIELD field_4076 asAttribute Z
+	FIELD field_4077 nonNull Z
+	FIELD field_4078 noSerialize Z
+	FIELD field_4079 noDeserialize Z
+	FIELD field_4080 alwaysSerialize Z

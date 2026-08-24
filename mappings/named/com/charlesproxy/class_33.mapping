@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/class_33
+	FIELD field_391 config Lcom/charlesproxy/config/class_59;
+	METHOD <init> (Lcom/charlesproxy/config/class_59;)V
+		ARG 1 config

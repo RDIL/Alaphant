@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/Strings_ com/charlesproxy/Strings_
+	FIELD key key Ljava/lang/String;
+	METHOD from from (Ljava/util/Properties;)Ljava/lang/String;
+		ARG 1 properties
+	METHOD from from (Ljava/util/ResourceBundle;)Ljava/lang/String;
+		ARG 1 resourceBundle
+	METHOD getKey getKey ()Ljava/lang/String;

@@ -1,0 +1,21 @@
+CLASS com/charlesproxy/ssl/class_991 com/charlesproxy/ssl/IOSCertificateArgs
+	COMMENT [charles4] Charles 4's com.xk72.charles.ssl.IOSCertificateArgs, field for field. The
+	COMMENT hard-coded tset constant decodes to an empty-array plist, and the four constructor
+	COMMENT arguments arrive in the order class_1002 computes them. Together these are the columns
+	COMMENT of the iOS simulator's TrustStore.sqlite3, which is what InstallCertificateInIOSSimulators
+	COMMENT writes them into.
+	FIELD field_2729 certificateSha1 Ljava/lang/String;
+	FIELD field_2727 certificateSha256 Ljava/lang/String;
+	FIELD field_2730 partialCertSubjectHex Ljava/lang/String;
+	FIELD field_2731 tset Ljava/lang/String;
+	FIELD field_2728 fullCertHex Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+		ARG 1 certificateSha1
+		ARG 2 certificateSha256
+		ARG 3 partialCertSubjectHex
+		ARG 4 fullCertHex
+	METHOD method_2567 getCertificateSha1 ()Ljava/lang/String;
+	METHOD method_2565 getCertificateSha256 ()Ljava/lang/String;
+	METHOD method_2568 getPartialCertSubjectHex ()Ljava/lang/String;
+	METHOD method_2569 getTset ()Ljava/lang/String;
+	METHOD method_2566 getFullCertHex ()Ljava/lang/String;

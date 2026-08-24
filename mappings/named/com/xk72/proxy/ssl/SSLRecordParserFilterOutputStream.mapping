@@ -1,0 +1,4 @@
+CLASS com/xk72/proxy/ssl/class_1389 com/xk72/proxy/ssl/SSLRecordParserFilterOutputStream
+	COMMENT the write-side twin of SSLRecordParserFilterInputStream. Was
+	COMMENT MaybeSSLRecordParserFilterOutputStream; the bootstrap match is confirmed.
+	FIELD field_3881 sslRecordParser Lcom/xk72/proxy/ssl/SSLRecordParser;

@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/main/class_925 com/charlesproxy/main/DisplayFontChangeListener
+	METHOD propertyChange propertyChange (Ljava/beans/PropertyChangeEvent;)V
+		ARG 1 propertyChangeEvent

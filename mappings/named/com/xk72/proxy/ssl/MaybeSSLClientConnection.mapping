@@ -1,0 +1,20 @@
+CLASS com/xk72/proxy/ssl/class_1378 com/xk72/proxy/ssl/MaybeSSLClientConnection
+	COMMENT [inferred] the connection back to the client once Charles has taken over the TLS session:
+	COMMENT it wraps the existing connection's socket in a server-mode SSLSocket serving the
+	COMMENT certificate SSLContextFactory forged, and delegates every other Connection method to the
+	COMMENT connection it wrapped. HttpProxyHandler tests for this type to decide whether a request
+	COMMENT is HTTPS. The counterpart of SSLRemoteConnection; Charles 4 left the class unnamed, so
+	COMMENT "client" here is a reading of which side it faces, not a recovered word.
+	FIELD field_3760 delegate Lcom/xk72/proxy/class_1270;
+	FIELD field_3758 sslSocket Ljavax/net/ssl/SSLSocket;
+	FIELD field_3761 in Lcom/xk72/proxy/io/class_1335;
+	FIELD field_3762 out Lcom/xk72/proxy/io/class_1330;
+	FIELD field_3759 alpnProtocol Ljava/lang/String;
+		COMMENT what the ALPN selector agreed with the client: the upstream protocol when the client
+		COMMENT offered it, else "http/1.1" when that was offered, else none.
+	METHOD method_3772 performHandshake (Ljavax/net/ssl/SSLSocket;Ljava/lang/String;)Lcom/xk72/proxy/ssl/class_1388;
+		COMMENT [inferred] installs the handshake listener and the ALPN selector, starts the handshake
+		COMMENT and blocks until both the listener and the selector have reported, then returns what
+		COMMENT they filled in.
+		ARG 1 sslSocket
+		ARG 2 upstreamAlpnProtocol

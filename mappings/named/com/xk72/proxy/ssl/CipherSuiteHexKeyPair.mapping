@@ -1,0 +1,8 @@
+CLASS com/xk72/proxy/ssl/class_1401 com/xk72/proxy/ssl/CipherSuiteHexKeyPair
+	COMMENT the two code-point bytes of a cipher suite, with equals and hashCode, used as the key of
+	COMMENT CipherSuite.knownCipherSuites. Charles 4's corpus read it the same way.
+	FIELD field_3911 hex1 I
+	FIELD field_3910 hex2 I
+	METHOD <init> (II)V
+		ARG 1 hex1
+		ARG 2 hex2
