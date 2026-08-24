@@ -1,1 +1,2 @@
 CLASS com/xk72/proxy/ProxyAbortException com/xk72/proxy/ProxyAbortException
+	FIELD serialVersionUID serialVersionUID J

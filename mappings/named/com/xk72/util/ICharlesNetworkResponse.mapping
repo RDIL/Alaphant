@@ -1,0 +1,7 @@
+CLASS com/xk72/util/class_1532 com/xk72/util/ICharlesNetworkResponse
+	COMMENT [bootstrap] matched to Charles 4's ICharlesNetworkResponse on 5 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_4174 responseStatusCode I
+	METHOD method_4108 getResponseStatusCode ()I
+		COMMENT Returns field_4174, the int supplied to the constructor alongside the URLConnection. Declared by IReadableResponse, so the name has to match there.
+	METHOD method_4111 disconnect ()V
+		COMMENT Delegates straight to java.net.HttpURLConnection.disconnect(). Declared by IReadableResponse, so the name has to match there.

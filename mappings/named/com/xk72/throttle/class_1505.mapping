@@ -1,0 +1,6 @@
+CLASS com/xk72/throttle/class_1505
+	FIELD field_4126 stream Ljava/io/OutputStream;
+	METHOD close close ()V
+	METHOD flush flush ()V
+	METHOD write write ([B)V
+	METHOD write write ([BII)V

@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/class_1615
+	METHOD connect connect (Ljava/net/InetAddress;)Lcom/xk72/proxy/class_1274;

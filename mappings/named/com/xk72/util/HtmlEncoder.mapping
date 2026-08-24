@@ -1,0 +1,4 @@
+CLASS com/xk72/util/class_1534 com/xk72/util/HtmlEncoder
+	METHOD method_4125 encodeHtmlEntities (CLjava/lang/StringBuilder;)V
+		ARG 0 c
+		ARG 1 stringBuilder

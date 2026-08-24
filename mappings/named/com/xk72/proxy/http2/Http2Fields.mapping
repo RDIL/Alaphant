@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/http2/Http2Fields com/xk72/proxy/http2/Http2Fields
+	METHOD newInstance newInstance ()Lcom/xk72/proxy/http2/Http2Fields;

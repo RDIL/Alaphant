@@ -1,0 +1,18 @@
+CLASS com/xk72/proxy/lib/cookies/class_1350
+	METHOD method_3674 setHttpOnly (Z)V
+	METHOD method_3675 getExpires ()Ljava/lang/String;
+	METHOD method_3676 setMaxAge (Ljava/lang/String;)V
+	METHOD method_3677 getComment ()Ljava/lang/String;
+	METHOD method_3678 setPath (Ljava/lang/String;)V
+	METHOD method_3679 isSecure ()Z
+	METHOD method_3680 setExpires (Ljava/lang/String;)V
+	METHOD method_3682 setCookieProperty (Ljava/lang/String;Ljava/lang/String;)V
+	METHOD method_3683 setSecure (Z)V
+	METHOD method_3684 getDomain ()Ljava/lang/String;
+	METHOD method_3686 getPath ()Ljava/lang/String;
+	METHOD method_3687 setDomain (Ljava/lang/String;)V
+	METHOD method_3688 getMaxAge ()Ljava/lang/String;
+	METHOD method_3689 setComment (Ljava/lang/String;)V
+	METHOD method_3691 readCookiePropertyBoolean (Ljava/lang/String;)Z
+	METHOD method_3692 isHttpOnly ()Z
+	METHOD method_3693 readCookieProperty (Ljava/lang/String;)Ljava/lang/String;

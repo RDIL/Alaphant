@@ -1,0 +1,2 @@
+CLASS com/xk72/util/class_1533
+	METHOD method_4118 checkCanWriteToDirectoryForFile (Ljava/io/File;)Z

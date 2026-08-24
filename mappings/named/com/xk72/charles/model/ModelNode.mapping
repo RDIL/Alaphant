@@ -1,3 +1,14 @@
 CLASS com/xk72/charles/model/ModelNode com/xk72/charles/model/ModelNode
+	FIELD children children Ljava/util/List;
+	FIELD field_3229 parent Lcom/xk72/charles/model/ModelNode;
+	FIELD serialVersionUID serialVersionUID J
 	METHOD accept accept (Lcom/xk72/charles/model/class_1223;)V
+	METHOD addChild addChild (Lcom/xk72/charles/model/ModelNode;)V
 	METHOD getChildren getChildren ()Ljava/util/List;
+	METHOD getParent getParent ()Lcom/xk72/charles/model/ModelNode;
+	METHOD isEmpty isEmpty ()Z
+	METHOD readObject readObject (Ljava/io/ObjectInputStream;)V
+	METHOD setParent setParent (Lcom/xk72/charles/model/ModelNode;)V
+		ARG 1 newParent
+	METHOD size size ()I
+	METHOD writeObject writeObject (Ljava/io/ObjectOutputStream;)V

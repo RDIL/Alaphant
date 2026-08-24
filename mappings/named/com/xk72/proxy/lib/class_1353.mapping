@@ -1,0 +1,8 @@
+CLASS com/xk72/proxy/lib/class_1353
+	FIELD field_3704 resolver Lcom/xk72/util/class_1541;
+	METHOD method_3701 isJsonMime (Ljava/lang/String;)Z
+		ARG 0 mime
+	METHOD method_3711 isXmlMime (Ljava/lang/String;)Z
+		ARG 0 mime
+	METHOD method_3714 resolveCharset (Ljava/lang/String;[BII)Ljava/lang/String;
+	METHOD method_3717 isTextMime (Ljava/lang/String;)Z

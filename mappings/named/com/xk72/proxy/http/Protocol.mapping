@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/http/Protocol com/xk72/proxy/http/Protocol
+	METHOD defaultPort defaultPort ()I

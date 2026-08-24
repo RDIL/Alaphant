@@ -14,3 +14,4 @@ CLASS com/xk72/proxy/ssl/SSLSnooper com/xk72/proxy/ssl/SSLSnooper
 		COMMENT [charles4] parses a type-11 Certificate message body: a 3-byte total length, then
 		COMMENT 3-byte-length-prefixed DER certificates. Any parse failure yields what was read so far.
 		ARG 1 body
+	CLASS NoClientHelloException NoClientHelloException

@@ -1,1 +1,2 @@
 CLASS com/xk72/amf/rpc/AMFRPC com/xk72/amf/rpc/AMFRPC
+	CLASS AMFMethodList AMFMethodList

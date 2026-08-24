@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/http2/class_1630 com/xk72/proxy/http2/PooledHttp2Connection
+	FIELD field_4692 LOGGER Lorg/slf4j/Logger;

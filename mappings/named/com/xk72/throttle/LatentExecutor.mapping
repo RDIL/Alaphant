@@ -1,2 +1,3 @@
-CLASS com/xk72/throttle/LatentExecutor
+CLASS com/xk72/throttle/LatentExecutor com/xk72/throttle/LatentExecutor
 	CLASS ExecutorCancelledException ExecutorCancelledException
+	CLASS FatalException FatalException

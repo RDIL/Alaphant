@@ -1,1 +1,6 @@
 CLASS com/xk72/proxy/ProxyEventStatus com/xk72/proxy/ProxyEventStatus
+	FIELD rawValue rawValue I
+	METHOD before before (Lcom/xk72/proxy/ProxyEventStatus;)Z
+		ARG 1 other
+	METHOD getRawValue getRawValue ()I
+	METHOD method_3358 fromInt (I)Lcom/xk72/proxy/ProxyEventStatus;

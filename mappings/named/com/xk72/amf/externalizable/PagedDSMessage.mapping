@@ -1,0 +1,2 @@
+CLASS com/xk72/amf/externalizable/PagedDSMessage com/xk72/amf/externalizable/PagedDSMessage
+	FIELD serialVersionUID serialVersionUID J

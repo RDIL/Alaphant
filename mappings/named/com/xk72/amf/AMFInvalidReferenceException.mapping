@@ -1,0 +1,2 @@
+CLASS com/xk72/amf/AMFInvalidReferenceException com/xk72/amf/AMFInvalidReferenceException
+	FIELD serialVersionUID serialVersionUID J

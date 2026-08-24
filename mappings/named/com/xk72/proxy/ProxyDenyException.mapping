@@ -1,1 +1,2 @@
 CLASS com/xk72/proxy/ProxyDenyException com/xk72/proxy/ProxyDenyException
+	FIELD serialVersionUID serialVersionUID J

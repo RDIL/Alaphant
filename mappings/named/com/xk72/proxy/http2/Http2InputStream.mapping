@@ -1,0 +1,6 @@
+CLASS com/xk72/proxy/http2/class_1316 com/xk72/proxy/http2/Http2InputStream
+	COMMENT [bootstrap] matched to Charles 4's Http2InputStream on 34 shared member descriptors (next best in this package scored 18) -- provisional, confirm before dropping the Maybe
+	FIELD field_3600 maybeH2EndPoint Lcom/xk72/proxy/http2/Http2ProxyHandler$Http2EndPoint;
+		COMMENT [bootstrap] carried over from Charles 4's Http2InputStream.h2EndPoint on a unique descriptor match -- provisional
+	METHOD method_3578 maybeEnsure1OrMoreBytes (I)I
+		COMMENT [bootstrap] carried over from Charles 4's Http2InputStream.ensure1OrMoreBytes on a unique descriptor match -- provisional

@@ -1,0 +1,6 @@
+CLASS com/xk72/proxy/ssl/class_1390 com/xk72/proxy/ssl/JSSEAvailability
+	COMMENT [inferred] a one-shot check for javax.net.ssl.KeyManagerFactory on the class path,
+	COMMENT memoised into a tri-state int (0 unknown, 1 absent, 2 present). A leftover from when JSSE
+	COMMENT was an optional extension rather than part of the JDK. Charles 4 had no name for it.
+	FIELD field_3882 available I
+	METHOD method_3855 isSslAvailable ()Z

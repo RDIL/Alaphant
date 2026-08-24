@@ -1,0 +1,8 @@
+CLASS com/xk72/util/class_1524 com/xk72/util/XMLEscaper
+	FIELD field_4168 CONTROL_CHARACTERS Ljava/util/regex/Pattern;
+	METHOD method_4085 unescape (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 string
+	METHOD method_4086 escape (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 string
+	METHOD method_4087 escapeControlCharacters (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 string

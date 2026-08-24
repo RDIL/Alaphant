@@ -1,0 +1,3 @@
+CLASS com/xk72/util/class_1529
+	METHOD method_4097 getFileExtension (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Returns the substring after the last '.', but only when that dot falls after the last '/' or File.separatorChar; "" otherwise. Nothing to do with MIME types.

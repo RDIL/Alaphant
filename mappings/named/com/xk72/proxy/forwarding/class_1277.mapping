@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/forwarding/class_1277
+	METHOD newThread newThread (Ljava/lang/Runnable;)Ljava/lang/Thread;

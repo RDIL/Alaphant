@@ -5,3 +5,6 @@ CLASS com/xk72/proxy/ssl/class_1365 com/xk72/proxy/ssl/SSLRecordParserFilterInpu
 	COMMENT both directions. Was MaybeSSLRecordParserFilterInputStream; the bootstrap match is
 	COMMENT confirmed.
 	FIELD field_3730 sslRecordParser Lcom/xk72/proxy/ssl/SSLRecordParser;
+	METHOD read read ()I
+	METHOD read read ([B)I
+	METHOD read read ([BII)I

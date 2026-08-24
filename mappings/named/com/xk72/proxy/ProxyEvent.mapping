@@ -99,35 +99,48 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD getClientSslDuration getClientSslDuration ()Ljava/lang/Long;
 	METHOD getClientSslProtocol getClientSslProtocol ()Ljava/lang/String;
 	METHOD getClientSslSessionID getClientSslSessionID ()[B
+	METHOD getConnectDuration getConnectDuration ()Ljava/lang/Long;
 	METHOD getConnection getConnection ()Lcom/xk72/proxy/Connection;
 	METHOD getConnectionAttributes getConnectionAttributes ()Ljava/util/Map;
 	METHOD getDefaultPort getDefaultPort ()I
+	METHOD getDnsDuration getDnsDuration ()Ljava/lang/Long;
 	METHOD getEndTime getEndTime ()Ljava/util/Date;
 	METHOD getException getException ()Ljava/lang/Exception;
 	METHOD getExternalProxyProtocol getExternalProxyProtocol ()Ljava/lang/String;
 	METHOD getFile getFile ()Ljava/lang/String;
 	METHOD getHost getHost ()Ljava/lang/String;
+	METHOD getListAttribute getListAttribute (Ljava/lang/Object;)Ljava/util/List;
 	METHOD getMethod getMethod ()Ljava/lang/String;
 	METHOD getOriginalHost getOriginalHost ()Ljava/lang/String;
 	METHOD getPath getPath ()Ljava/lang/String;
+	METHOD getPort getPort ()I
+	METHOD getPortOrDefault getPortOrDefault ()I
 	METHOD getProposedAlpnProtocols getProposedAlpnProtocols ()Ljava/util/List;
 	METHOD getProposedCipherSuites getProposedCipherSuites ()Ljava/util/List;
 	METHOD getProposedExtensions getProposedExtensions ()Ljava/util/List;
 	METHOD getProposedSslProtocol getProposedSslProtocol ()Ljava/lang/String;
 	METHOD getProposedSslSessionID getProposedSslSessionID ()[B
 	METHOD getProtocol getProtocol ()Ljava/lang/String;
+	METHOD getProtocolVersion getProtocolVersion ()Ljava/lang/String;
 	METHOD getProxyAddress getProxyAddress ()Ljava/net/InetAddress;
+	METHOD getProxyPort getProxyPort ()I
 	METHOD getQuery getQuery ()Ljava/lang/String;
 	METHOD getReceivingBuffer getReceivingBuffer ()[B
 	METHOD getReceivingBufferLength getReceivingBufferLength ()I
 	METHOD getRemoteAddress getRemoteAddress ()Ljava/net/InetAddress;
+	METHOD getRemoteLocalPort getRemoteLocalPort ()I
 	METHOD getRemotePort getRemotePort ()I
 	METHOD getRequestBeginTime getRequestBeginTime ()Ljava/util/Date;
 	METHOD getRequestCompleteTime getRequestCompleteTime ()Ljava/util/Date;
+	METHOD getRequestHandshakeSize getRequestHandshakeSize ()I
 	METHOD getRequestHeader getRequestHeader ()Lcom/xk72/proxy/Fields;
+	METHOD getRequestHeaderSize getRequestHeaderSize ()I
 	METHOD getRequestSize getRequestSize ()J
 	METHOD getResponseBeginTime getResponseBeginTime ()Ljava/util/Date;
+	METHOD getResponseHandshakeSize getResponseHandshakeSize ()I
 	METHOD getResponseHeader getResponseHeader ()Lcom/xk72/proxy/Fields;
+	METHOD getResponseHeaderSize getResponseHeaderSize ()I
+	METHOD getResponseSize getResponseSize ()J
 	METHOD getServerCertificates getServerCertificates ()Ljava/util/List;
 	METHOD getServerExtensions getServerExtensions ()Ljava/util/List;
 	METHOD getSslAlert getSslAlert ()B
@@ -139,6 +152,8 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD getTags getTags ()Ljava/util/Set;
 	METHOD initWithClientConnection initWithClientConnection (Lcom/xk72/proxy/Connection;Lcom/xk72/proxy/class_1270;)V
 	METHOD initWithTransaction initWithTransaction (Lcom/xk72/proxy/Connection;Lcom/xk72/proxy/ProxyEvent;)V
+	METHOD isBufferRequestBody isBufferRequestBody ()Z
+	METHOD isBufferResponseBody isBufferResponseBody ()Z
 	METHOD isClientKeptAlive isClientKeptAlive ()Z
 	METHOD isKeptAlive isKeptAlive ()Z
 	METHOD isMapped isMapped ()Z
@@ -146,8 +161,12 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD isResponseBodyDecoded isResponseBodyDecoded ()Z
 	METHOD isTunnel isTunnel ()Z
 	METHOD isWantResponseBodyDecoded isWantResponseBodyDecoded ()Z
+	METHOD isWebSocket isWebSocket ()Z
+	METHOD method_3357 recalculateFile ()V
+	METHOD removeAttribute removeAttribute (Ljava/lang/Object;)V
 	METHOD setAlpnProtocol setAlpnProtocol (Ljava/lang/String;)V
 	METHOD setAttribute setAttribute (Ljava/lang/Object;Ljava/lang/Object;)V
+	METHOD setBufferRequestBody setBufferRequestBody ()V
 	METHOD setBufferResponseBody setBufferResponseBody ()V
 	METHOD setCipherSuite setCipherSuite (Ljava/lang/String;)V
 	METHOD setClientAddress setClientAddress (Ljava/net/InetAddress;)V
@@ -166,6 +185,7 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD setClientSslDuration setClientSslDuration (Ljava/lang/Long;)V
 	METHOD setClientSslProtocol setClientSslProtocol (Ljava/lang/String;)V
 	METHOD setClientSslSessionID setClientSslSessionID ([B)V
+	METHOD setConnectDuration setConnectDuration (Ljava/lang/Long;)V
 	METHOD setConnectionAttribute setConnectionAttribute (Ljava/lang/String;Ljava/lang/String;)V
 	METHOD setDefaultPort setDefaultPort (I)V
 	METHOD setDnsDuration setDnsDuration (Ljava/lang/Long;)V
@@ -187,26 +207,41 @@ CLASS com/xk72/proxy/ProxyEvent com/xk72/proxy/ProxyEvent
 	METHOD setProposedSslSessionID setProposedSslSessionID ([B)V
 	METHOD setProtocol setProtocol (Ljava/lang/String;)V
 	METHOD setProtocolVersion setProtocolVersion (Ljava/lang/String;)V
+	METHOD setProxyAddress setProxyAddress (Ljava/net/InetAddress;)V
+	METHOD setProxyPort setProxyPort (I)V
 	METHOD setQuery setQuery (Ljava/lang/String;)V
+	METHOD setReceivingBuffer setReceivingBuffer ([B)V
+	METHOD setReceivingBufferLength setReceivingBufferLength (I)V
 	METHOD setRemoteAddress setRemoteAddress (Ljava/net/InetAddress;)V
+	METHOD setRemoteLocalPort setRemoteLocalPort (I)V
 	METHOD setRemotePort setRemotePort (I)V
 	METHOD setRequestBeginTime setRequestBeginTime (Ljava/util/Date;)V
 	METHOD setRequestBodyDecoded setRequestBodyDecoded (Z)V
 	METHOD setRequestCompleteTime setRequestCompleteTime (Ljava/util/Date;)V
 	METHOD setRequestHandshakeSize setRequestHandshakeSize (I)V
 	METHOD setRequestHeader setRequestHeader (Lcom/xk72/proxy/Fields;)V
+	METHOD setRequestHeaderSize setRequestHeaderSize (I)V
 	METHOD setRequestSize setRequestSize (J)V
+	METHOD setResponseBeginTime setResponseBeginTime (Ljava/util/Date;)V
 	METHOD setResponseBodyDecoded setResponseBodyDecoded (Z)V
+	METHOD setResponseHandshakeSize setResponseHandshakeSize (I)V
+	METHOD setResponseHeader setResponseHeader (Lcom/xk72/proxy/Fields;)V
+	METHOD setResponseHeaderSize setResponseHeaderSize (I)V
+	METHOD setResponseSize setResponseSize (J)V
 	METHOD setServerCertificates setServerCertificates (Ljava/util/List;)V
 	METHOD setServerExtensions setServerExtensions (Ljava/util/List;)V
 	METHOD setSslAlert setSslAlert (B)V
 	METHOD setSslDuration setSslDuration (Ljava/lang/Long;)V
 	METHOD setSslInfo setSslInfo (Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 1 e
 	METHOD setSslProtocol setSslProtocol (Ljava/lang/String;)V
 	METHOD setSslSessionID setSslSessionID ([B)V
 	METHOD setStartTime setStartTime (Ljava/util/Date;)V
 	METHOD setStatus setStatus (Lcom/xk72/proxy/ProxyEventStatus;)V
 		ARG 1 status
 	METHOD setTransactionEndIfUnset setTransactionEndIfUnset (Ljava/util/Date;)V
+	METHOD setTunnel setTunnel (Z)V
+	METHOD setWantResponseBodyDecoded setWantResponseBodyDecoded ()V
+	METHOD setWebSocket setWebSocket (Z)V
 	METHOD toLocation toLocation ()Lcom/xk72/common/net/Location;
 	METHOD toURL toURL ()Ljava/net/URL;

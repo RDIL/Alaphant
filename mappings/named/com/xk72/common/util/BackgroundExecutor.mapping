@@ -1,3 +1,5 @@
 CLASS com/xk72/common/util/class_1235 com/xk72/common/util/BackgroundExecutor
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.common.util.BackgroundExecutor"
+	FIELD field_3254 threadPool Ljava/util/concurrent/ExecutorService;
+	FIELD field_3255 LOGGER Lorg/slf4j/Logger;
 	METHOD method_3200 finishBackgroundTasks ()V

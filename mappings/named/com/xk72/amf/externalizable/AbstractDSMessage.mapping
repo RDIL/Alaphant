@@ -1,2 +1,10 @@
-CLASS com/xk72/amf/externalizable/AbstractDSMessage
+CLASS com/xk72/amf/externalizable/AbstractDSMessage com/xk72/amf/externalizable/AbstractDSMessage
+	FIELD serialVersionUID serialVersionUID J
+	METHOD calculateBlazeDSTrailersFlag calculateBlazeDSTrailersFlag (Lcom/xk72/amf/AMFObject;Ljava/lang/String;SS)S
 	METHOD getAlias getAlias ()Ljava/lang/String;
+	METHOD readBlazeDSTrailers readBlazeDSTrailers (Lcom/xk72/amf/class_1214;Lcom/xk72/amf/AMFObject;Ljava/lang/String;SS)V
+	METHOD readDSData readDSData (Lcom/xk72/amf/class_1214;[Ljava/lang/String;Ljava/lang/String;)V
+	METHOD readDSData readDSData (Lcom/xk72/amf/class_1214;[[Ljava/lang/String;Ljava/lang/String;)V
+	METHOD writeBlazeDSTrailers writeBlazeDSTrailers (Lcom/xk72/amf/class_1189;Lcom/xk72/amf/AMFObject;Ljava/lang/String;S)V
+	METHOD writeDSData writeDSData (Lcom/xk72/amf/class_1189;[Ljava/lang/String;Ljava/lang/String;)V
+	METHOD writeDSData writeDSData (Lcom/xk72/amf/class_1189;[[Ljava/lang/String;Ljava/lang/String;)V

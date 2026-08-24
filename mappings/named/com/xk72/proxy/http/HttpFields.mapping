@@ -6,9 +6,12 @@ CLASS com/xk72/proxy/http/HttpFields com/xk72/proxy/http/HttpFields
 	METHOD getFirstLine getFirstLine ()Ljava/lang/String;
 	METHOD getRawSize getRawSize ()J
 	METHOD getReceiveTime getReceiveTime ()J
+	METHOD getRequestMethod getRequestMethod ()Ljava/lang/String;
 	METHOD getRequestProtocolVersion getRequestProtocolVersion ()Ljava/lang/String;
+	METHOD getRequestString getRequestString ()Ljava/lang/String;
 	METHOD getResponseProtocolVersion getResponseProtocolVersion ()Ljava/lang/String;
 	METHOD getResponseStatusDescription getResponseStatusDescription ()Ljava/lang/String;
+	METHOD isEmpty isEmpty ()Z
 	METHOD readFirstLine readFirstLine (Lcom/xk72/proxy/io/class_1343;Z)Z
 	METHOD setConnect setConnect (Ljava/lang/String;ILjava/lang/String;)V
 	METHOD setFirstLine setFirstLine (Ljava/lang/String;)V
@@ -16,3 +19,4 @@ CLASS com/xk72/proxy/http/HttpFields com/xk72/proxy/http/HttpFields
 		ARG 1 rawSize
 	METHOD setReceiveTime setReceiveTime (J)V
 	METHOD setRequestFields setRequestFields (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Z)V
+	METHOD setResponseStatus setResponseStatus (Ljava/lang/String;ILjava/lang/String;)V

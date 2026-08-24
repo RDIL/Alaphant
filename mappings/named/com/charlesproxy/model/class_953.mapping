@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/model/class_953
+	METHOD method_2250 getPathName ()Ljava/lang/String;

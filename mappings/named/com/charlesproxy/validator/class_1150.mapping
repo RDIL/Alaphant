@@ -8,6 +8,9 @@ CLASS com/charlesproxy/validator/class_1150
 	METHOD method_2992 setErrors (Ljava/util/List;)V
 	METHOD method_2993 setIsValid (Z)V
 	METHOD method_2994 isValid ()Z
+	METHOD method_2996 isFailed ()Z
+	METHOD method_2997 getException ()Ljava/lang/Exception;
+	METHOD method_2998 getType ()Ljava/lang/String;
 	METHOD method_2999 setWarningCount (I)V
 		ARG 1 count
 	METHOD method_3001 setException (Ljava/lang/Exception;)V

@@ -1,0 +1,3 @@
+CLASS com/xk72/proxy/websocket/class_1417
+	METHOD method_3885 (Lcom/xk72/proxy/websocket/WebSocketMessage;)V
+		ARG 1 message

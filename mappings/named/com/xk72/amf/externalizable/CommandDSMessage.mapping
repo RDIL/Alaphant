@@ -1,0 +1,2 @@
+CLASS com/xk72/amf/externalizable/CommandDSMessage com/xk72/amf/externalizable/CommandDSMessage
+	FIELD serialVersionUID serialVersionUID J

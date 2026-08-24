@@ -1,1 +1,6 @@
 CLASS com/xk72/proxy/ssl/SSLExtension com/xk72/proxy/ssl/SSLExtension
+	FIELD data data [B
+	FIELD serialVersionUID serialVersionUID J
+	FIELD type type I
+	METHOD getData getData ()[B
+	METHOD getType getType ()I

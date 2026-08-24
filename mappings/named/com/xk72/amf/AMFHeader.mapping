@@ -1,0 +1,10 @@
+CLASS com/xk72/amf/AMFHeader com/xk72/amf/AMFHeader
+	FIELD content content Ljava/lang/Object;
+	FIELD mustUnderstand mustUnderstand Z
+	FIELD name name Ljava/lang/String;
+	METHOD getContent getContent ()Ljava/lang/Object;
+	METHOD getName getName ()Ljava/lang/String;
+	METHOD isMustUnderstand isMustUnderstand ()Z
+	METHOD setContent setContent (Ljava/lang/Object;)V
+	METHOD setMustUnderstand setMustUnderstand (Z)V
+	METHOD setName setName (Ljava/lang/String;)V

@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/http2/Frame com/xk72/proxy/http2/Frame
+	CLASS Type Type

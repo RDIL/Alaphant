@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/http2/StreamTermination
+	CLASS Mode Mode

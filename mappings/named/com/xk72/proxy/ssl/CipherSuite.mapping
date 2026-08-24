@@ -1,29 +1,40 @@
 CLASS com/xk72/proxy/ssl/class_1392 com/xk72/proxy/ssl/CipherSuite
 	COMMENT one entry of the IANA TLS cipher suite registry: the static initialiser registers ~350 of
 	COMMENT them by their two code-point bytes. Charles 4's corpus read the class the same way.
-	FIELD field_3889 hex1 I
-	FIELD field_3890 hex2 I
+	FIELD field_3886 knownCipherSuites Ljava/util/Map;
 	FIELD field_3887 title Ljava/lang/String;
 		COMMENT the IANA name, always TLS_-prefixed; this is what toString returns and what the
 		COMMENT ProxyEvent's proposed-cipher-suite list is built from.
+	FIELD field_3888 TLS_EMPTY_RENEGOTIATION_INFO_SCSV Lcom/xk72/proxy/ssl/class_1392;
+		COMMENT code point 0x00,0xFF, the signalling suite; class_1378 re-adds it alongside the
+		COMMENT negotiated suite when the client offered it.
+	FIELD field_3889 hex1 I
+	FIELD field_3890 hex2 I
 	FIELD field_3891 id Ljava/lang/String;
 		COMMENT the JSSE name, which for the older suites is the same string with an SSL_ prefix
 		COMMENT instead of TLS_ -- register() asserts the two differ only in those first three
 		COMMENT characters. Matched against SSLSocket's negotiated cipher suite.
-	FIELD field_3886 knownCipherSuites Ljava/util/Map;
-	FIELD field_3888 TLS_EMPTY_RENEGOTIATION_INFO_SCSV Lcom/xk72/proxy/ssl/class_1392;
-		COMMENT code point 0x00,0xFF, the signalling suite; class_1378 re-adds it alongside the
-		COMMENT negotiated suite when the client offered it.
-	METHOD method_3859 getCipherSuiteByHexes (II)Lcom/xk72/proxy/ssl/class_1392;
-		COMMENT [charles4] unregistered code points get a synthesised instance rather than null, named
-		COMMENT "TLS_GREASE" when the two bytes match the GREASE pattern and "Unknown Cipher Suite"
-		COMMENT otherwise.
+	METHOD <init> (IILjava/lang/String;)V
 		ARG 1 hex1
 		ARG 2 hex2
-	METHOD method_3860 register (IILjava/lang/String;Ljava/lang/String;)V
+		ARG 3 id
+	METHOD <init> (IILjava/lang/String;Ljava/lang/String;)V
 		ARG 1 hex1
 		ARG 2 hex2
 		ARG 3 title
 		ARG 4 id
-	METHOD method_3858 getTitle ()Ljava/lang/String;
 	METHOD method_3857 getCipherSuiteId ()Ljava/lang/String;
+	METHOD method_3858 getTitle ()Ljava/lang/String;
+	METHOD method_3859 getCipherSuiteByHexes (II)Lcom/xk72/proxy/ssl/class_1392;
+		COMMENT [charles4] unregistered code points get a synthesised instance rather than null, named
+		COMMENT "TLS_GREASE" when the two bytes match the GREASE pattern and "Unknown Cipher Suite"
+		COMMENT otherwise.
+		ARG 0 i
+		ARG 1 hex1
+		ARG 2 hex2
+	METHOD method_3860 register (IILjava/lang/String;Ljava/lang/String;)V
+		ARG 0 i
+		ARG 1 hex1
+		ARG 2 hex2
+		ARG 3 title
+		ARG 4 id

@@ -1,2 +1,3 @@
 CLASS com/charlesproxy/macos/gui/class_906 com/charlesproxy/macos/gui/CharlesOpenFileHandler
 	FIELD field_2447 macOsGuiImpl Lcom/charlesproxy/macos/gui/class_909;
+	METHOD openFiles openFiles (Ljava/awt/desktop/OpenFilesEvent;)V

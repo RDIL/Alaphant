@@ -1,4 +1,4 @@
-CLASS com/xk72/charles/validator/ValidatorMessage
+CLASS com/xk72/charles/validator/ValidatorMessage com/xk72/charles/validator/ValidatorMessage
 	FIELD col col Ljava/lang/Integer;
 	FIELD context context Ljava/lang/String;
 	FIELD explanation explanation Ljava/lang/String;
@@ -17,12 +17,17 @@ CLASS com/xk72/charles/validator/ValidatorMessage
 	METHOD getMessage getMessage ()Ljava/lang/String;
 	METHOD getMessageId getMessageId ()Ljava/lang/String;
 	METHOD getSource getSource ()Ljava/lang/String;
+	METHOD getType getType ()Lcom/xk72/charles/validator/ValidatorMessage$Type;
 	METHOD setCol setCol (Ljava/lang/Integer;)V
 		ARG 1 col
+	METHOD setContext setContext (Ljava/lang/String;)V
+		ARG 1 context
 	METHOD setExplanation setExplanation (Ljava/lang/String;)V
 	METHOD setLine setLine (Ljava/lang/Integer;)V
 		ARG 1 line
 	METHOD setMessage setMessage (Ljava/lang/String;)V
 	METHOD setMessageId setMessageId (Ljava/lang/String;)V
 	METHOD setSource setSource (Ljava/lang/String;)V
+	METHOD setType setType (Lcom/xk72/charles/validator/ValidatorMessage$Type;)V
+		ARG 1 type
 	CLASS Type Type

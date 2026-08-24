@@ -1,0 +1,10 @@
+CLASS com/xk72/amf/AMFBody com/xk72/amf/AMFBody
+	FIELD data data Ljava/lang/Object;
+	FIELD response response Ljava/lang/String;
+	FIELD target target Ljava/lang/String;
+	METHOD getData getData ()Ljava/lang/Object;
+	METHOD getResponse getResponse ()Ljava/lang/String;
+	METHOD getTarget getTarget ()Ljava/lang/String;
+	METHOD setData setData (Ljava/lang/Object;)V
+	METHOD setResponse setResponse (Ljava/lang/String;)V
+	METHOD setTarget setTarget (Ljava/lang/String;)V

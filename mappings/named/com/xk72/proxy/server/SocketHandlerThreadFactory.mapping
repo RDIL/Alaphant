@@ -1,0 +1,5 @@
+CLASS com/xk72/proxy/server/class_1260 com/xk72/proxy/server/SocketHandlerThreadFactory
+	METHOD <init> (Lcom/xk72/proxy/server/class_1262;)V
+		ARG 1 server
+	METHOD newThread newThread (Ljava/lang/Runnable;)Ljava/lang/Thread;
+		ARG 1 runnable

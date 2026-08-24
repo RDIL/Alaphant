@@ -3,27 +3,26 @@ CLASS com/xk72/proxy/ssl/SSLHandshakeParser com/xk72/proxy/ssl/SSLHandshakeParse
 	COMMENT parses ClientHello (type 1), ServerHello (type 2) and Certificate (type 11), and calls
 	COMMENT the protected hooks below. Every other subclass in this package exists to fill one or
 	COMMENT two of those hooks in.
+	FIELD field_3779 messageBody [B
+	FIELD field_3780 durationReported Z
+		COMMENT guards handshakeDuration so only the first change_cipher_spec reports it.
+	FIELD field_3781 messageBytesRead I
+		COMMENT how much of messageBody is filled; a handshake message can span several records.
+	FIELD field_3782 handshakeSize J
 	FIELD field_3783 state Lcom/xk72/proxy/ssl/SSLHandshakeParser$State;
 		COMMENT [charles4] Charles 4's mapping corpus also read this field as `state`.
 	FIELD field_3784 messageType B
 		COMMENT the first byte of the handshake message: 1 ClientHello, 2 ServerHello, 11 Certificate.
 	FIELD field_3785 messageLength I
 		COMMENT the 3-byte length that follows the type byte.
-	FIELD field_3779 messageBody [B
-	FIELD field_3781 messageBytesRead I
-		COMMENT how much of messageBody is filled; a handshake message can span several records.
 	FIELD field_3786 handshakeStartTime J
 		COMMENT set from System.currentTimeMillis() in the constructor and subtracted at
 		COMMENT change_cipher_spec to give the handshake duration. Charles 4's corpus called this
 		COMMENT classInitTime, which does not fit an instance field assigned per parser.
-	FIELD field_3780 durationReported Z
-		COMMENT guards handshakeDuration so only the first change_cipher_spec reports it.
-	FIELD field_3782 handshakeSize J
 	FIELD field_4717 LOGGER Lorg/slf4j/Logger;
-	METHOD method_3770 setClientHello (Lcom/xk72/proxy/ssl/class_1387;)V
-		COMMENT [charles4] Charles 4's corpus named this setClientHello, which matches: it is called
-		COMMENT with the parsed type-1 message.
-		ARG 1 clientHello
+	METHOD method_3174 alert (BB)V
+		ARG 1 level
+		ARG 2 description
 	METHOD method_3175 setSslDetails (Lcom/xk72/proxy/ssl/class_1385;)V
 		COMMENT [charles4] called with the parsed type-2 ServerHello.
 		ARG 1 sslDetails
@@ -40,21 +39,23 @@ CLASS com/xk72/proxy/ssl/SSLHandshakeParser com/xk72/proxy/ssl/SSLHandshakeParse
 		COMMENT [inferred] milliseconds from construction to the first change_cipher_spec; the
 		COMMENT subclasses keep the larger of this and what the ProxyEvent already holds.
 		ARG 1 millis
+	METHOD method_3745 applicationData ()V
+	METHOD method_3746 notSslRecord ()V
+	METHOD method_3747 changeCipherSpec ()V
 	METHOD method_3748 handshakeMessage (B[B)V
 		COMMENT [inferred] one fully reassembled handshake message. A RuntimeException while parsing
 		COMMENT is swallowed to a debug log, so a malformed hello degrades to missing detail rather
 		COMMENT than a failed connection.
 		ARG 1 messageType
 		ARG 2 body
-	METHOD method_3793 handshakeRecord ([B)V
-		ARG 1 body
+	METHOD method_3749 unknownRecord ()V
+	METHOD method_3750 encryptedRecord ()V
+	METHOD method_3770 setClientHello (Lcom/xk72/proxy/ssl/class_1387;)V
+		COMMENT [charles4] Charles 4's corpus named this setClientHello, which matches: it is called
+		COMMENT with the parsed type-1 message.
+		ARG 1 clientHello
 	METHOD method_3792 handshakeSizeChanged (J)V
 		ARG 1 recordBytes
-	METHOD method_3174 alert (BB)V
-		ARG 1 level
-		ARG 2 description
-	METHOD method_3747 changeCipherSpec ()V
-	METHOD method_3745 applicationData ()V
-	METHOD method_3750 encryptedRecord ()V
-	METHOD method_3749 unknownRecord ()V
-	METHOD method_3746 notSslRecord ()V
+	METHOD method_3793 handshakeRecord ([B)V
+		ARG 1 body
+	CLASS State State

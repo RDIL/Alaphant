@@ -1,0 +1,2 @@
+CLASS com/xk72/amf/NotAMFException com/xk72/amf/NotAMFException
+	FIELD serialVersionUID serialVersionUID J

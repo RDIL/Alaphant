@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/http2/class_1304 com/xk72/proxy/http2/Streams
+	COMMENT [bootstrap] matched to Charles 4's y on 10 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members

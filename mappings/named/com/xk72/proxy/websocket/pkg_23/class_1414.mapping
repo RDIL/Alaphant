@@ -1,0 +1,4 @@
+CLASS com/xk72/proxy/websocket/pkg_23/class_1414
+	FIELD field_3927 noContextTakeover Z
+	METHOD <init> (Ljava/util/Map;)V
+		ARG 1 map

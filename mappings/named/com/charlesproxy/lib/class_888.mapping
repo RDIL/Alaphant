@@ -1,2 +1,3 @@
 CLASS com/charlesproxy/lib/class_888
-	METHOD method_2104 maybeUrlEncode (Ljava/lang/String;)Ljava/lang/String;
+	METHOD method_2104 urlEncode (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT java.net.URLEncoder.encode(s, "UTF-8") with '+' replaced by "%20".

@@ -2,7 +2,44 @@ CLASS com/charlesproxy/model/class_955 com/charlesproxy/model/Transaction
 	COMMENT [bootstrap] matched to Charles 4's Transaction on 126 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
 	FIELD field_2538 maybeInterruptableChannel Lcom/xk72/proxy/Connection;
 		COMMENT [bootstrap] carried over from Charles 4's Transaction.interruptableChannel on a unique descriptor match -- provisional
+	METHOD method_2259 getHost ()Ljava/lang/String;
+	METHOD method_2263 getClientPort ()I
+	METHOD method_2264 getDnsDuration ()Ljava/lang/Long;
+	METHOD method_2283 getProposedExtensions ()Ljava/util/List;
+	METHOD method_2286 getResponseHeader ()Lcom/xk72/proxy/Fields;
+	METHOD method_2287 getProtocol ()Ljava/lang/String;
+	METHOD method_2294 getActualPort ()I
+	METHOD method_2295 getResponseHeaderSize ()I
+	METHOD method_2296 getRequestCompleteTime ()Ljava/util/Date;
+	METHOD method_2297 getClientLocalPort ()I
+	METHOD method_2320 getRequestBody ()[B
+	METHOD method_2325 getProposedAlpnProtocols ()Ljava/util/List;
+	METHOD method_2331 getRequestHandshakeSize ()I
+	METHOD method_2333 getControlFramesReceived ()I
+	METHOD method_2334 getNotes ()Ljava/lang/String;
+	METHOD method_2335 getResponseHandshakeSize ()I
+	METHOD method_2342 getSslSessionID ()[B
+	METHOD method_2343 getRemoteAddress ()Ljava/net/InetAddress;
+	METHOD method_2344 getScheme ()Ljava/lang/String;
+	METHOD method_2346 getRequestSizeLong ()J
+	METHOD method_2353 getResponseBody ()[B
+	METHOD method_2355 getProtocolVersion ()Ljava/lang/String;
+	METHOD method_2357 getSslDuration ()Ljava/lang/Long;
+	METHOD method_2359 getConnectionAttributes ()Ljava/util/Map;
 	METHOD method_2369 humanProxyEventStatus (Lcom/xk72/proxy/ProxyEventStatus;)Ljava/lang/String;
 		ARG 0 proxyEventStatus
 	METHOD method_2370 maybeIsControlFrame (Lcom/xk72/proxy/websocket/WebSocketMessage$Type;)Z
 		COMMENT [bootstrap] carried over from Charles 4's Transaction.isControlFrame on a unique descriptor match -- provisional
+	METHOD method_2383 getClientCerts ()Ljava/util/List;
+	METHOD method_2384 getResponseSizeLong ()J
+	METHOD method_2387 getClientProposedAlpnProtocols ()Ljava/util/List;
+	METHOD method_2411 getConnectDuration ()Ljava/lang/Long;
+	METHOD method_2427 getEndTime ()Ljava/util/Date;
+	METHOD method_2428 getClientCipherSuite ()Ljava/lang/String;
+	METHOD method_2434 getServerExtensions ()Ljava/util/List;
+	METHOD method_2435 getRequestBeginTime ()Ljava/util/Date;
+	METHOD method_2439 getPort ()I
+	METHOD method_2441 getSslAlert ()B
+	METHOD method_2447 getResponseBeginTime ()Ljava/util/Date;
+	METHOD method_2448 getRemoteLocalPort ()I
+	METHOD method_2449 getRequestHeader ()Lcom/xk72/proxy/Fields;

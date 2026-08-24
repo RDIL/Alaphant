@@ -1,0 +1,3 @@
+CLASS com/xk72/proxy/server/class_1261
+	FIELD field_3338 inStream Lcom/xk72/proxy/io/class_1335;
+	FIELD field_3340 outStream Lcom/xk72/proxy/io/class_1330;

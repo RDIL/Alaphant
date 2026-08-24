@@ -1,0 +1,5 @@
+CLASS com/xk72/amf/AMFTypedObject com/xk72/amf/AMFTypedObject
+	FIELD classDefinition classDefinition Lcom/xk72/amf/class_1217;
+	FIELD serialVersionUID serialVersionUID J
+	METHOD getClassDefinition getClassDefinition ()Lcom/xk72/amf/class_1217;
+	METHOD isAMF3Object isAMF3Object ()Z

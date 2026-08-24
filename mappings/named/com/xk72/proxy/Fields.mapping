@@ -1,10 +1,34 @@
 CLASS com/xk72/proxy/Fields com/xk72/proxy/Fields
 	FIELD fieldNames fieldNames Ljava/util/List;
 	FIELD fieldValues fieldValues Ljava/util/List;
+	FIELD field_3321 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3322 WINDOWS_TRAILER [B
+	FIELD field_3323 ISO_8859_1 Ljava/nio/charset/Charset;
+	FIELD serialVersionUID serialVersionUID J
+	METHOD addField addField (Ljava/lang/String;Ljava/lang/String;)V
+	METHOD byteLength byteLength (Ljava/lang/String;)I
 	METHOD clone clone ()Ljava/lang/Object;
+	METHOD get get (Ljava/lang/String;)Ljava/lang/String;
+	METHOD getCookies getCookies ()Ljava/lang/String;
 	METHOD getField getField (Ljava/lang/String;)Ljava/lang/String;
+	METHOD getFieldCount getFieldCount ()I
+	METHOD getFieldName getFieldName (I)Ljava/lang/String;
+	METHOD getFieldNames getFieldNames ()Ljava/util/List;
+	METHOD getFieldValue getFieldValue (I)Ljava/lang/String;
+	METHOD getFieldValues getFieldValues ()Ljava/util/List;
+	METHOD getFieldValues getFieldValues (Ljava/lang/String;)[Ljava/lang/String;
+	METHOD getHost getHost ()Ljava/lang/String;
+	METHOD getIntField getIntField (Ljava/lang/String;)I
+	METHOD getIntField getIntField (Ljava/lang/String;I)I
+	METHOD getLongField getLongField (Ljava/lang/String;)J
+	METHOD getLongField getLongField (Ljava/lang/String;J)J
+	METHOD indexOf indexOf (Ljava/lang/String;)I
+	METHOD parse parse (Ljava/lang/String;Z)V
 	METHOD read read (Lcom/xk72/proxy/io/class_1343;Z)V
+	METHOD removeField removeField (I)V
 	METHOD removeField removeField (Ljava/lang/String;)V
 	METHOD reset reset ()V
+	METHOD setCookies setCookies (Ljava/lang/String;)V
+	METHOD setField setField (ILjava/lang/String;Ljava/lang/String;)V
 	METHOD setField setField (Ljava/lang/String;Ljava/lang/String;)V
 	CLASS ParseException ParseException

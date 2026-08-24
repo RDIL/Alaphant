@@ -7,7 +7,8 @@ CLASS com/charlesproxy/CharlesContext com/charlesproxy/CharlesContext
 	FIELD field_15 proxyTools Ljava/lang/String;
 	FIELD field_16 proxyManager Lcom/charlesproxy/class_19;
 	FIELD field_17 loadedProxyTools Ljava/util/List;
-	FIELD field_2 maybeKeystoreFile Lcom/charlesproxy/store/class_1012;
+	FIELD field_2 passwordStore Lcom/charlesproxy/store/class_1012;
+		COMMENT Returned by the unobfuscated getter getPasswordStore(). Holds a keystore-file-backed store, falling back to an in-memory one when that cannot be created.
 	FIELD field_3 LOGGER Lorg/slf4j/Logger;
 	FIELD field_4 allTools Ljava/util/List;
 	FIELD field_5 fileStore Lcom/charlesproxy/store/class_1009;

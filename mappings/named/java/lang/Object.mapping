@@ -1,3 +1,0 @@
-CLASS java/lang/Object
-	METHOD equals (Ljava/lang/Object;)Z
-		ARG 1 other

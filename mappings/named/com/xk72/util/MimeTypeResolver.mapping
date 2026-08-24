@@ -1,0 +1,3 @@
+CLASS com/xk72/util/class_1541 com/xk72/util/MimeTypeResolver
+	FIELD field_4185 defaultMimeTypesMap Lcom/xk72/util/class_1541;
+	METHOD method_4140 fromFileName (Ljava/io/File;)Ljava/lang/String;

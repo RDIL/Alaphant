@@ -1,1 +1,6 @@
 CLASS com/xk72/proxy/forwarding/DatagramForwardingProxyServer com/xk72/proxy/forwarding/DatagramForwardingProxyServer
+	FIELD field_3393 LOGGER Lorg/slf4j/Logger;
+	FIELD field_3394 datagramProxyThread Ljava/lang/Thread;
+	FIELD field_3395 channel Ljava/nio/channels/DatagramChannel;
+	METHOD main main ([Ljava/lang/String;)V
+	METHOD run run ()V

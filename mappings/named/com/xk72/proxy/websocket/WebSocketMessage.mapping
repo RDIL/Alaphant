@@ -1,2 +1,26 @@
 CLASS com/xk72/proxy/websocket/WebSocketMessage com/xk72/proxy/websocket/WebSocketMessage
+	FIELD content content [B
+	FIELD end end Ljava/util/Date;
+	FIELD field_3932 UTF8 Ljava/nio/charset/Charset;
+	FIELD field_3934 stringContentCache Ljava/lang/String;
+	FIELD serialVersionUID serialVersionUID J
+	FIELD source source Lcom/xk72/proxy/websocket/WebSocketMessage$Source;
+	FIELD start start Ljava/util/Date;
+	FIELD type type Lcom/xk72/proxy/websocket/WebSocketMessage$Type;
+	METHOD <init> (Lcom/xk72/proxy/websocket/WebSocketMessage$Source;Ljava/util/Date;Ljava/util/Date;Lcom/xk72/proxy/websocket/WebSocketMessage$Type;[B)V
+		ARG 1 source
+		ARG 2 start
+		ARG 3 end
+		ARG 4 type
+		ARG 5 content
+	METHOD canEqual canEqual (Ljava/lang/Object;)Z
+		ARG 1 other
+	METHOD getContent getContent ()[B
+	METHOD getEnd getEnd ()Ljava/util/Date;
+	METHOD getSource getSource ()Lcom/xk72/proxy/websocket/WebSocketMessage$Source;
+	METHOD getStart getStart ()Ljava/util/Date;
+	METHOD getStringContent getStringContent ()Ljava/lang/String;
+	METHOD getType getType ()Lcom/xk72/proxy/websocket/WebSocketMessage$Type;
+	METHOD setStringContent setStringContent (Ljava/lang/String;)V
+	CLASS Source Source
 	CLASS Type Type

@@ -1,0 +1,5 @@
+CLASS com/xk72/util/class_1523 com/xk72/util/SAXParserUtils
+	METHOD method_4083 disableRemoteFeaturesAndReferenceExpansion (Ljavax/xml/parsers/DocumentBuilderFactory;)V
+		ARG 0 docBuilder
+	METHOD method_4084 disableRemoteFeatures (Ljavax/xml/parsers/SAXParserFactory;)V
+		ARG 0 parserFactory

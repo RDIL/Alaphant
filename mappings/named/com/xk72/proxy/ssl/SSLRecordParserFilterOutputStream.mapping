@@ -2,3 +2,6 @@ CLASS com/xk72/proxy/ssl/class_1389 com/xk72/proxy/ssl/SSLRecordParserFilterOutp
 	COMMENT the write-side twin of SSLRecordParserFilterInputStream. Was
 	COMMENT MaybeSSLRecordParserFilterOutputStream; the bootstrap match is confirmed.
 	FIELD field_3881 sslRecordParser Lcom/xk72/proxy/ssl/SSLRecordParser;
+	METHOD write write (I)V
+	METHOD write write ([B)V
+	METHOD write write ([BII)V

@@ -2,3 +2,8 @@ CLASS com/xk72/throttle/class_1504
 	COMMENT [bootstrap] matched to Charles 4's o on 10 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
 	FIELD field_4123 maybeInStream Lcom/xk72/throttle/class_1503;
 		COMMENT [bootstrap] carried over from Charles 4's o.inStream on a unique descriptor match -- provisional
+	METHOD available available ()I
+	METHOD close close ()V
+	METHOD markSupported markSupported ()Z
+	METHOD reset reset ()V
+	METHOD skip skip (J)J

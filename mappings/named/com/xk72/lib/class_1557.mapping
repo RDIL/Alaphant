@@ -1,5 +1,6 @@
 CLASS com/xk72/lib/class_1557
 	FIELD field_4218 inCDATA Z
+	METHOD characters characters ([CII)V
 	METHOD comment comment ([CII)V
 	METHOD endCDATA endCDATA ()V
 	METHOD endDTD endDTD ()V

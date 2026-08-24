@@ -1,0 +1,2 @@
+CLASS com/xk72/proxy/class_1273
+	METHOD method_3328 setDnsResolver (Lcom/xk72/dns/class_1176;)V

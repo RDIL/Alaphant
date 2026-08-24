@@ -1,4 +1,4 @@
-CLASS com/xk72/charles/model/Session
+CLASS com/xk72/charles/model/Session com/xk72/charles/model/Session
 	FIELD field_3230 isDirty Z
 	FIELD serialVersionUID serialVersionUID J
 	FIELD whenCreated whenCreated J

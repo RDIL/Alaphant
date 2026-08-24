@@ -1,1 +1,2 @@
 CLASS com/xk72/amf/externalizable/AsyncDSMessage com/xk72/amf/externalizable/AsyncDSMessage
+	FIELD serialVersionUID serialVersionUID J

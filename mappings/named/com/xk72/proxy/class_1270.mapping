@@ -1,0 +1,6 @@
+CLASS com/xk72/proxy/class_1270
+	METHOD method_3287 getInputStream ()Lcom/xk72/proxy/io/class_1335;
+	METHOD method_3288 getPort ()I
+	METHOD method_3290 close ()V
+	METHOD method_3294 getOutputStream ()Lcom/xk72/proxy/io/class_1330;
+	METHOD method_3296 getAddress ()Ljava/net/InetAddress;

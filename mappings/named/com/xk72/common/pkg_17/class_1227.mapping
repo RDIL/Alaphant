@@ -1,4 +1,0 @@
-CLASS com/xk72/common/pkg_17/class_1227
-	METHOD method_531 isEnabled ()Z
-	METHOD method_534 setEnabled (Z)V
-		ARG 1 enabled

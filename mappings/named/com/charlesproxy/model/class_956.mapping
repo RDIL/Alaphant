@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/model/class_956
+	METHOD method_2452 isHttp2 ()Z
+	METHOD method_2456 getHostName ()Ljava/lang/String;
+	METHOD method_2463 getPort ()I
+	METHOD method_2465 getProtocol ()Ljava/lang/String;

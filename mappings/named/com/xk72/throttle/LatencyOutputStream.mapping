@@ -1,2 +1,10 @@
 CLASS com/xk72/throttle/LatencyOutputStream com/xk72/throttle/LatencyOutputStream
+	FIELD field_4092 outputStream Ljava/io/OutputStream;
+	METHOD <init> (Lcom/xk72/throttle/class_1510;Ljava/io/OutputStream;)V
+		ARG 2 outputStream
+	METHOD close close ()V
+	METHOD flush flush ()V
+	METHOD write write (I)V
+	METHOD write write ([B)V
+	METHOD write write ([BII)V
 	CLASS Action Action
