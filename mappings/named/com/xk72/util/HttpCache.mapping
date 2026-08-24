@@ -1,5 +1,44 @@
 CLASS com/xk72/util/class_1535 com/xk72/util/HttpCache
-	COMMENT [bootstrap] named by an inner class the obfuscator left alone: HttpCache$… is in the jar while its outer class is not, and holds a synthetic reference to this type
-	COMMENT [bootstrap] matched to Charles 4's HttpCache on 10 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
-	METHOD method_4129 maybeClear ()V
-		COMMENT [bootstrap] carried over from Charles 4's HttpCache.clear on a unique descriptor match -- provisional
+	COMMENT A generic <T, E extends Exception> HTTP response cache with conditional revalidation. Confirmed rather than provisional: the obfuscator left the anonymous inner class HttpCache$1 (this class' backing map) with its outer name intact, and Charles 4's com/xk72/util/r carries this name over ten matching member descriptors.
+	COMMENT The backing map is an access-ordered LinkedHashMap built with initialCapacity 400 and load factor 0.75, whose removeEldestEntry caps it at 100 entries -- an LRU. Charles 4 called that inner class CacheMap.
+	FIELD field_4176 fetcher Lcom/xk72/util/class_1526;
+	FIELD field_4177 misses I
+		COMMENT Incremented on the branch taken when the revalidating response is not a 304.
+	FIELD field_4178 cache Lcom/xk72/util/HttpCache$1;
+		COMMENT Declared as the anonymous LRU subclass, not as java.util.Map -- the generic signature says Map<URI, HttpCacheEntry<T>> but the field descriptor does not.
+	FIELD field_4179 inStreamConsumer Lcom/xk72/util/class_1548;
+	FIELD field_4180 hits I
+		COMMENT Incremented where a cached entry is still inside its expires instant and is returned without touching the network.
+	FIELD field_4181 notModifiedCount I
+		COMMENT Incremented on the branch guarded by a comparison of getResponseStatusCode() against 304.
+	METHOD <init> (Lcom/xk72/util/class_1526;Lcom/xk72/util/class_1548;)V
+		ARG 1 fetcher
+		ARG 2 inStreamConsumer
+	METHOD <init> (Lcom/xk72/util/class_1526;Lcom/xk72/util/class_1548;B)V
+		COMMENT The real constructor. The trailing byte carries no value and is never read; it is an obfuscator disambiguator, so its ARG is deliberately left unnamed.
+		ARG 1 fetcher
+		ARG 2 inStreamConsumer
+	METHOD method_4127 getHitsCount ()I
+	METHOD method_4128 getCacheSize ()I
+		COMMENT Returns cache.size().
+	METHOD method_4129 clear ()V
+		COMMENT Named in the Charles 4 corpus; calls cache.clear(). Was provisional as maybeClear.
+	METHOD method_4130 maybeRevalidate (Ljava/net/URI;Lcom/xk72/util/class_1547;J)Lcom/xk72/util/class_1547;
+		COMMENT Behaviour is certain, the word is not -- Charles 4 left this one unnamed too. Returns the entry unchanged when System.currentTimeMillis() is below its expires; otherwise refetches through the fetcher with the entry's lastModified and etag as the conditional-request parameters, counts a 304 or a miss, and builds a fresh entry whose expires honours Pragma/Cache-Control no-cache, must-revalidate, max-age and Age.
+		ARG 1 uri
+		ARG 2 cached
+		ARG 3 ttlMillis
+	METHOD method_4131 maybeGet (Ljava/net/URI;ZJ)Ljava/lang/Object;
+		COMMENT The public read path, and the only caller of maybeRevalidate. Behaviour is certain, the word is not -- Charles 4 left this one unnamed. Erased return; the declared type is T.
+		ARG 1 uri
+		ARG 2 useCache
+		COMMENT When false the cached entry is not passed to revalidation and the result is not stored, so the call both bypasses and does not populate the cache.
+		ARG 3 ttlMillis
+		COMMENT Passed through to maybeRevalidate, which adds it to the current time to form the new entry's expires.
+	METHOD method_4132 getMaxAge (Ljava/util/List;)J
+		COMMENT Named in the Charles 4 corpus, on the same (List)J descriptor.
+		ARG 0 cacheControlValues
+	METHOD method_4133 getMissesCount ()I
+	METHOD method_4134 get304sCount ()I
+	METHOD method_4135 getCacheKeys ()Ljava/util/List;
+		COMMENT Returns new ArrayList<>(cache.keySet()).
