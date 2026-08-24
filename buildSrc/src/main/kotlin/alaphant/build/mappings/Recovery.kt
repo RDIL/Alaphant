@@ -1,6 +1,6 @@
 package alaphant.build.mappings
 
-import alaphant.build.tasks.Jar
+import alaphant.build.tasks.mappings.Jar
 import org.gradle.api.logging.Logger
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
@@ -11,7 +11,7 @@ import java.io.File
 import kotlin.collections.iterator
 import kotlin.text.iterator
 
-/** The bootstrap passes. [alaphant.build.tasks.BootstrapNamesTask] documents what each one is and how far to trust it. */
+/** The bootstrap passes. [alaphant.build.tasks.mappings.BootstrapNamesTask] documents what each one is and how far to trust it. */
 internal class Recovery(
     private val jar: Jar,
     private val intermediary: IntermediaryIndex,

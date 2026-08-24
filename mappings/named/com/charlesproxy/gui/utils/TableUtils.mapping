@@ -1,0 +1,10 @@
+CLASS com/charlesproxy/gui/utils/TableUtils com/charlesproxy/gui/utils/TableUtils
+	CLASS TableOptions TableOptions
+		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
+		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
+		FIELD field_2350 NoStripes Lcom/charlesproxy/gui/utils/TableUtils$TableOptions;
+		FIELD field_2348 CustomFont Lcom/charlesproxy/gui/utils/TableUtils$TableOptions;
+		FIELD field_2351 ContentTextSize Lcom/charlesproxy/gui/utils/TableUtils$TableOptions;
+		FIELD field_2352 ReadOnly Lcom/charlesproxy/gui/utils/TableUtils$TableOptions;
+		FIELD field_2349 $VALUES [Lcom/charlesproxy/gui/utils/TableUtils$TableOptions;
+			COMMENT javac's synthetic constant array behind values().

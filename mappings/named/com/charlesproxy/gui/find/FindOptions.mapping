@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/gui/find/FindOptions com/charlesproxy/gui/find/FindOptions
+	CLASS Scope Scope
+		FIELD field_815 SESSION Lcom/charlesproxy/gui/find/FindOptions$Scope;
+		FIELD field_814 SELECTION Lcom/charlesproxy/gui/find/FindOptions$Scope;
+		FIELD field_816 PATH Lcom/charlesproxy/gui/find/FindOptions$Scope;
+		FIELD field_817 $VALUES [Lcom/charlesproxy/gui/find/FindOptions$Scope;
+			COMMENT javac's synthetic constant array behind values().

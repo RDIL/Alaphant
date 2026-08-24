@@ -1,1 +1,99 @@
 CLASS com/charlesproxy/gui/session/tables/TransactionField com/charlesproxy/gui/session/tables/TransactionField
+	COMMENT The columns of the session sequence table. Every constant name below is exact: the
+	COMMENT obfuscator leaves the Enum.name() string in <clinit>, where it is the first ldc of the
+	COMMENT group ending in that constant's putstatic. The strings after it are the column header
+	COMMENT and, where the two differ, the long header, which are recorded per constant.
+	FIELD field_1365 ICON Lcom/charlesproxy/gui/session/tables/TransactionField$1;
+		COMMENT Column header "Icon".
+	FIELD field_1340 HTTP_STATUS Lcom/charlesproxy/gui/session/tables/TransactionField$2;
+		COMMENT Column header "Status", shown in full as "Response Status".
+	FIELD field_1367 HTTP_METHOD Lcom/charlesproxy/gui/session/tables/TransactionField$3;
+		COMMENT Column header "Method".
+	FIELD field_1368 HOST Lcom/charlesproxy/gui/session/tables/TransactionField$4;
+		COMMENT Column header "Host".
+	FIELD field_1350 PATH Lcom/charlesproxy/gui/session/tables/TransactionField$5;
+		COMMENT Column header "Path".
+	FIELD field_1372 REQUEST_TIME Lcom/charlesproxy/gui/session/tables/TransactionField$6;
+		COMMENT Column header "Start", shown in full as "Request Start Time".
+	FIELD field_1369 REQUEST_END_TIME Lcom/charlesproxy/gui/session/tables/TransactionField$7;
+		COMMENT Column header "Req End", shown in full as "Request Complete Time".
+	FIELD field_1356 RESPONSE_TIME Lcom/charlesproxy/gui/session/tables/TransactionField$8;
+		COMMENT Column header "Resp Start", shown in full as "Response Start Time".
+	FIELD field_1371 RESPONSE_END_TIME Lcom/charlesproxy/gui/session/tables/TransactionField$9;
+		COMMENT Column header "End", shown in full as "Response End Time".
+	FIELD field_1343 DURATION Lcom/charlesproxy/gui/session/tables/TransactionField$10;
+		COMMENT Column header "Duration".
+	FIELD field_1338 DNS_DURATION Lcom/charlesproxy/gui/session/tables/TransactionField$11;
+		COMMENT Column header "DNS", shown in full as "DNS Duration".
+	FIELD field_1346 CONNECT_DURATION Lcom/charlesproxy/gui/session/tables/TransactionField$12;
+		COMMENT Column header "Connect", shown in full as "Connect Duration".
+	FIELD field_1379 SSL_DURATION Lcom/charlesproxy/gui/session/tables/TransactionField$13;
+		COMMENT Column header "SSL", shown in full as "SSL Handshake Duration".
+	FIELD field_1373 LATENCY Lcom/charlesproxy/gui/session/tables/TransactionField$14;
+		COMMENT Column header "Latency".
+	FIELD field_1339 REQUEST_DURATION Lcom/charlesproxy/gui/session/tables/TransactionField$15;
+		COMMENT Column header "Request", shown in full as "Request Duration".
+	FIELD field_1366 RESPONSE_DURATION Lcom/charlesproxy/gui/session/tables/TransactionField$16;
+		COMMENT Column header "Response", shown in full as "Response Duration".
+	FIELD field_1352 TOTAL_SIZE Lcom/charlesproxy/gui/session/tables/TransactionField$17;
+		COMMENT Column header "Size".
+	FIELD field_1355 REQUEST_HANDSHAKE_SIZE Lcom/charlesproxy/gui/session/tables/TransactionField$18;
+		COMMENT Column header "Req Hshk Size", shown in full as "Request Handshake Size".
+	FIELD field_1378 REQUEST_HEADER_SIZE Lcom/charlesproxy/gui/session/tables/TransactionField$19;
+		COMMENT Column header "Req Hdr Size", shown in full as "Request Header Size".
+	FIELD field_1357 REQUEST_BODY_SIZE Lcom/charlesproxy/gui/session/tables/TransactionField$20;
+		COMMENT Column header "Req Bdy Size", shown in full as "Request Body Size".
+	FIELD field_1361 REQUEST_SIZE Lcom/charlesproxy/gui/session/tables/TransactionField$21;
+		COMMENT Column header "Req Size", shown in full as "Request Size".
+	FIELD field_1351 RESPONSE_HANDSHAKE_SIZE Lcom/charlesproxy/gui/session/tables/TransactionField$22;
+		COMMENT Column header "Resp Hshk Size", shown in full as "Response Handshake Size".
+	FIELD field_1381 RESPONSE_HEADER_SIZE Lcom/charlesproxy/gui/session/tables/TransactionField$23;
+		COMMENT Column header "Resp Hdr Size", shown in full as "Response Header Size".
+	FIELD field_1349 RESPONSE_BODY_SIZE Lcom/charlesproxy/gui/session/tables/TransactionField$24;
+		COMMENT Column header "Resp Bdy Size", shown in full as "Response Body Size".
+	FIELD field_1359 RESPONSE_SIZE Lcom/charlesproxy/gui/session/tables/TransactionField$25;
+		COMMENT Column header "Resp Size", shown in full as "Response Size".
+	FIELD field_1375 PROTOCOL Lcom/charlesproxy/gui/session/tables/TransactionField$26;
+		COMMENT Column header "Protocol".
+	FIELD field_1347 KEPT_ALIVE Lcom/charlesproxy/gui/session/tables/TransactionField$27;
+		COMMENT Column header "Kept Alive".
+	FIELD field_1344 CLIENT_KEPT_ALIVE Lcom/charlesproxy/gui/session/tables/TransactionField$28;
+		COMMENT Column header "Client K/A", shown in full as "Client Kept Alive".
+	FIELD field_1377 CONTENT_TYPE Lcom/charlesproxy/gui/session/tables/TransactionField$29;
+		COMMENT Column header "Content-Type".
+	FIELD field_1348 REQUEST_CONTENT_ENCODING Lcom/charlesproxy/gui/session/tables/TransactionField$30;
+		COMMENT Column header "Req Enc", shown in full as "Request Content Encoding".
+	FIELD field_1363 RESPONSE_CONTENT_ENCODING Lcom/charlesproxy/gui/session/tables/TransactionField$31;
+		COMMENT Column header "Resp Enc", shown in full as "Response Content Encoding".
+	FIELD field_1374 REMOTE_ADDRESS Lcom/charlesproxy/gui/session/tables/TransactionField$32;
+		COMMENT Column header "Remote Address".
+	FIELD field_1360 REMOTE_IP Lcom/charlesproxy/gui/session/tables/TransactionField$33;
+		COMMENT Column header "Remote IP".
+	FIELD field_1341 REMOTE_PORT Lcom/charlesproxy/gui/session/tables/TransactionField$34;
+		COMMENT Column header "Remote Port".
+	FIELD field_1345 CLIENT_ADDRESS Lcom/charlesproxy/gui/session/tables/TransactionField$35;
+		COMMENT Column header "Client Address".
+	FIELD field_1337 CLIENT_IP Lcom/charlesproxy/gui/session/tables/TransactionField$36;
+		COMMENT Column header "Client IP".
+	FIELD field_1353 CLIENT_PORT Lcom/charlesproxy/gui/session/tables/TransactionField$37;
+		COMMENT Column header "Client Port".
+	FIELD field_1380 STATUS Lcom/charlesproxy/gui/session/tables/TransactionField$38;
+		COMMENT Column header "Status".
+	FIELD field_1376 INFO Lcom/charlesproxy/gui/session/tables/TransactionField$39;
+		COMMENT Column header "Info".
+	FIELD field_1342 TAGS Lcom/charlesproxy/gui/session/tables/TransactionField$40;
+		COMMENT Column header "Tags".
+	FIELD field_1354 NOTES Lcom/charlesproxy/gui/session/tables/TransactionField$41;
+		COMMENT Column header "Notes".
+	FIELD field_1364 REFERENCE_DATE Ljava/util/Date;
+		COMMENT A `new Date()` handed to getReferenceValue by the date-valued columns, so the table can size a
+		COMMENT column from a representative value rather than measuring every row.
+	FIELD field_1370 REFERENCE_DURATION Ljava/time/Duration;
+		COMMENT Duration.ofMillis(99999), the widest duration the columns size themselves against.
+	FIELD field_1362 REFERENCE_SIZE Lcom/charlesproxy/gui/lib/class_307;
+		COMMENT The size-column equivalent, wrapping 888888 -- six digits of byte count to size against.
+	FIELD field_1358 $VALUES [Lcom/charlesproxy/gui/session/tables/TransactionField;
+		COMMENT javac's synthetic constant array behind values().
+	METHOD method_1161 toDuration (Ljava/lang/Long;)Ljava/time/Duration;
+		COMMENT Duration.ofMillis, null-propagating, so a missing timing stays a blank cell.
+		ARG 0 millis

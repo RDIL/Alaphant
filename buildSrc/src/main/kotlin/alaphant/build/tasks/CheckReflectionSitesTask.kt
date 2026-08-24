@@ -1,5 +1,6 @@
 package alaphant.build.tasks
 
+import alaphant.build.tasks.mappings.Jar
 import net.fabricmc.mappingio.MappingReader
 import net.fabricmc.mappingio.format.MappingFormat
 import net.fabricmc.mappingio.tree.MemoryMappingTree

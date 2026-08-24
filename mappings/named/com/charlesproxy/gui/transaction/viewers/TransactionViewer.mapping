@@ -1,0 +1,28 @@
+CLASS com/charlesproxy/gui/transaction/viewers/TransactionViewer com/charlesproxy/gui/transaction/viewers/TransactionViewer
+	CLASS ViewerContentType ViewerContentType
+		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
+		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
+		FIELD field_2066 HTML Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT Shown as "HTML".
+		FIELD field_2061 CSS Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT Shown as "CSS".
+		FIELD field_2067 IMAGE Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT Shown as "Image".
+		FIELD field_2068 XML Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT Shown as "XML".
+		FIELD field_2063 JAVASCRIPT Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT Shown as "JavaScript".
+		FIELD field_2070 JSON Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT Shown as "JSON".
+		FIELD field_2062 SWF Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT Shown as "SWF".
+		FIELD field_2064 AMF Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT Shown as "AMF".
+		FIELD field_2072 PROTOBUF Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT Shown as "Protocol Buffers".
+		FIELD field_2071 URL_ENCODED Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT Shown as "URL Encoded".
+		FIELD field_2065 MULTIPART Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT Shown as "Multipart".
+		FIELD field_2069 $VALUES [Lcom/charlesproxy/gui/transaction/viewers/TransactionViewer$ViewerContentType;
+			COMMENT javac's synthetic constant array behind values().

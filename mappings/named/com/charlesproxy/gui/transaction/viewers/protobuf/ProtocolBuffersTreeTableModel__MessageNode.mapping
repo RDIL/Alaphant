@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/transaction/viewers/protobuf/class_790 com/charlesproxy/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel__MessageNode
+	COMMENT [bootstrap] an inner class the obfuscator left alone, com/charlesproxy/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel$MessageNode$1, is enclosed by this class, so this was originally com/charlesproxy/gui/transaction/viewers/protobuf/ProtocolBuffersTreeTableModel$MessageNode
+	COMMENT [bootstrap] matched to Charles 4's D on 12 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members

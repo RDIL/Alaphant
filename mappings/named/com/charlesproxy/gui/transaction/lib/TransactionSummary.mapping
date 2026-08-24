@@ -1,0 +1,19 @@
+CLASS com/charlesproxy/gui/transaction/lib/TransactionSummary com/charlesproxy/gui/transaction/lib/TransactionSummary
+	CLASS Type Type
+		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
+		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
+		FIELD field_2028 HANDSHAKE Lcom/charlesproxy/gui/transaction/lib/TransactionSummary$Type;
+		FIELD field_2026 HEADER Lcom/charlesproxy/gui/transaction/lib/TransactionSummary$Type;
+		FIELD field_2029 BODY Lcom/charlesproxy/gui/transaction/lib/TransactionSummary$Type;
+		FIELD field_2030 TOTAL Lcom/charlesproxy/gui/transaction/lib/TransactionSummary$Type;
+		FIELD field_2027 $VALUES [Lcom/charlesproxy/gui/transaction/lib/TransactionSummary$Type;
+			COMMENT javac's synthetic constant array behind values().
+	CLASS Dimension Dimension
+		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
+		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
+		FIELD field_2023 MIN Lcom/charlesproxy/gui/transaction/lib/TransactionSummary$Dimension;
+		FIELD field_2021 MAX Lcom/charlesproxy/gui/transaction/lib/TransactionSummary$Dimension;
+		FIELD field_2024 TOTAL Lcom/charlesproxy/gui/transaction/lib/TransactionSummary$Dimension;
+		FIELD field_2025 COMPLETED Lcom/charlesproxy/gui/transaction/lib/TransactionSummary$Dimension;
+		FIELD field_2022 $VALUES [Lcom/charlesproxy/gui/transaction/lib/TransactionSummary$Dimension;
+			COMMENT javac's synthetic constant array behind values().

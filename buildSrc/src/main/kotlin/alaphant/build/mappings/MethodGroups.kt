@@ -10,7 +10,7 @@ import org.objectweb.asm.tree.ClassNode
  * surfaces as an `AbstractMethodError` a long way from the mapping that caused it. Two things have
  * to agree about the grouping, which is why it lives here rather than inside either of them:
  *
- *  - [alaphant.build.tasks.GenerateIntermediaryTask] allocates one ID per group.
+ *  - [alaphant.build.tasks.mappings.GenerateIntermediaryTask] allocates one ID per group.
  *  - [VersionMatcher]'s transfer has to land that ID on the *new* jar's group for the same methods,
  *    and the group representative is picked by name — so it is generally a different member of the
  *    group on each side of a Charles bump. Recomputing the grouping on the new jar is the only way

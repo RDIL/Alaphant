@@ -1,0 +1,84 @@
+CLASS com/charlesproxy/gui/settings/class_538 com/charlesproxy/gui/settings/ThrottleSettingsPanel__ThrottleConfigurationPanel
+	COMMENT [bootstrap] an inner class the obfuscator left alone, com/charlesproxy/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$4, is enclosed by this class, so this was originally com/charlesproxy/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel
+	COMMENT [bootstrap] an inner class the obfuscator left alone, com/charlesproxy/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel$5, is enclosed by this class, so this was originally com/charlesproxy/gui/settings/ThrottleSettingsPanel$ThrottleConfigurationPanel
+	COMMENT [bootstrap] matched to Charles 4's ah on 10 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	COMMENT The form behind the Throttle Settings dialog. Every field below is paired with a
+	COMMENT property of config/MaybeThrottleSettings, which is already fully named, by reading the
+	COMMENT load method (setValue) and the save method (writeInto) together: each control is read
+	COMMENT from exactly one getter and written to exactly one setter, so the pairing is exact
+	COMMENT rather than inferred from the labels. The labels agree with it.
+	FIELD field_1570 panel Lcom/charlesproxy/gui/lib/EnableAwareJPanel;
+		COMMENT The form itself, handed out by getPanel. EnableAwareJPanel is what greys the whole
+		COMMENT form out when throttling is switched off.
+	FIELD field_1578 adjusting Z
+		COMMENT Set while the form is being populated programmatically, so the document listeners can
+		COMMENT tell a load from a user edit and not fight the preset combo. Both setValue and
+		COMMENT syncSelectedPreset set and clear it in a finally.
+	FIELD field_1582 bandwidthDownField Ljavax/swing/JTextField;
+		COMMENT Labelled "Bandwidth (kbps):" under the "Download" column; reads getBandwidthDown.
+	FIELD field_1571 bandwidthUpField Ljavax/swing/JTextField;
+		COMMENT The same row under the "Upload" column; reads getBandwidthUp.
+	FIELD field_1574 utilisationDownField Ljavax/swing/JTextField;
+		COMMENT Labelled "Utilisation (%):", download column; reads getUtilisationDown.
+	FIELD field_1585 utilisationUpField Ljavax/swing/JTextField;
+		COMMENT "Utilisation (%):", upload column; reads getUtilisationUp.
+	FIELD field_1583 latencyField Ljavax/swing/JTextField;
+		COMMENT Labelled "Round-trip latency (ms):"; reads getLatency.
+	FIELD field_1580 mtuField Ljavax/swing/JTextField;
+		COMMENT Labelled "MTU (bytes):"; reads getMtu.
+	FIELD field_1569 reliabilityField Ljavax/swing/JTextField;
+		COMMENT Labelled "Reliability (%):", tooltip "Likelihood a connection will fail completely";
+		COMMENT reads getReliability.
+	FIELD field_1575 stabilityField Ljavax/swing/JTextField;
+		COMMENT Labelled "Stability (%):", tooltip "Likelihood a connection will be unstable"; reads
+		COMMENT getStability.
+	FIELD field_1576 lowQualityField Ljavax/swing/JTextField;
+		COMMENT The low end of "Unstable quality range (%):", a split-2 pair; reads getLowQuality.
+	FIELD field_1581 highQualityField Ljavax/swing/JTextField;
+		COMMENT The high end of the same pair; reads getHighQuality.
+	FIELD field_1572 reliabilityBlocksizeCombo Ljavax/swing/JComboBox;
+		COMMENT Sits beside the reliability field, holding Blocksize.values(); its selection is the
+		COMMENT reliabilityBlocksize property, converted both ways by ThrottleSettingsPanel.
+	FIELD field_1584 presetCombo Ljavax/swing/JComboBox;
+		COMMENT Labelled "Throttle preset:". Holds ThrottlingConfiguration.PRESETS plus any
+		COMMENT user-added preset, and drives the rest of the form.
+	FIELD field_1573 addPresetButton Ljavax/swing/JButton;
+		COMMENT new JButton("Add Preset").
+	FIELD field_1579 removePresetButton Ljavax/swing/JButton;
+		COMMENT new JButton("Remove Preset").
+	FIELD field_1577 throttleSettingsPanel Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel;
+		COMMENT javac's synthetic outer-instance reference: assigned from the constructor parameter
+		COMMENT before the super() call, which is the shape only this$0 has. Named for the type
+		COMMENT because validateMappings rejects the digit segment of the real name.
+		COMMENT Supersedes the [bootstrap] reading carried from Charles 4's ah.throttleSettingsPanel,
+		COMMENT which agreed with it.
+	METHOD method_1278 getPanel ()Lcom/charlesproxy/gui/lib/EnableAwareJPanel;
+		COMMENT Returns the form panel.
+	METHOD method_1285 getThrottleSettings ()Lcom/charlesproxy/config/class_108;
+		COMMENT Builds a fresh MaybeThrottleSettings and fills it via writeInto, i.e. the value
+		COMMENT getter for the form.
+		COMMENT This replaces the [bootstrap] reading carried from Charles 4's ah.getPanel, which was
+		COMMENT wrong: the method returns the throttle settings, and it is getPanel above that
+		COMMENT returns a panel.
+	METHOD method_1283 setValue (Lcom/charlesproxy/config/class_108;)V
+		COMMENT Populates every control from the settings, guarded by the adjusting flag, then
+		COMMENT re-syncs the preset combo.
+		ARG 1 settings
+	METHOD method_1279 writeInto (Lcom/charlesproxy/config/class_108;)V
+		COMMENT Parses every control into the settings object, routing each through the enclosing
+		COMMENT panel's prefToInt/prefToDouble so a bad value raises SettingsException against the
+		COMMENT field's display name rather than silently reading as zero.
+		ARG 1 settings
+	METHOD method_1281 reloadPresets ()V
+		COMMENT Clears the preset combo and refills it from ThrottlingConfiguration.PRESETS.
+	METHOD method_1282 addPreset (Lcom/charlesproxy/config/class_77;)V
+		ARG 1 preset
+	METHOD method_1284 removePreset (Ljava/lang/Object;)V
+		COMMENT Takes Object rather than the preset type, matching JComboBox.removeItem.
+		ARG 1 preset
+	METHOD method_1280 updatePresetButtons ()V
+		COMMENT Enables Add Preset only when nothing is selected, and Remove Preset only for a
+		COMMENT user-added preset, i.e. one that is not a built-in ThrottlingPreset.
+	METHOD method_1286 syncSelectedPreset ()V
+		COMMENT Reads the form back, asks the enclosing panel which preset matches, and selects it,
+		COMMENT or clears the selection when the values match none of them or fail to parse.

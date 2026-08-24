@@ -1,0 +1,77 @@
+CLASS com/charlesproxy/gui/utils/FormUtils com/charlesproxy/gui/utils/FormUtils
+	COMMENT MigLayout and multi-line-label factories shared by every settings panel. The layout
+	COMMENT methods each build one MigLayout constraint string, so the name of each is read off the
+	COMMENT constraints it produces; the JTextArea factories all funnel through configureAsLabel.
+	METHOD method_1914 createTitledBorder (Ljava/lang/String;)Ljavax/swing/border/TitledBorder;
+		COMMENT Returns new TitledBorder(title); named after BorderFactory.createTitledBorder.
+		ARG 0 title
+	METHOD method_1920 configureAsLabel (Ljavax/swing/JTextArea;)Ljavax/swing/JTextArea;
+		COMMENT Sets line wrap, non-editable, non-focusable and non-opaque, i.e. turns a JTextArea
+		COMMENT into a wrapping multi-line label. Every factory below returns through it.
+		ARG 0 textArea
+	METHOD method_1908 createLabel (Ljava/lang/String;)Ljavax/swing/JTextArea;
+		COMMENT createLabel(text, 500). Call sites pass resolved bundle strings and add the result
+		COMMENT straight to a panel.
+		ARG 0 text
+	METHOD method_1915 createLabel (Ljava/lang/String;I)Ljavax/swing/JTextArea;
+		COMMENT The plain MyJTextArea case: wrapping label at a fixed preferred width.
+		ARG 0 text
+		ARG 1 preferredWidth
+	METHOD method_1922 createMonospacedLabel (Ljava/lang/String;)Ljavax/swing/JTextArea;
+		COMMENT Its MyJTextArea subclass overrides setFont to force the Monospaced family at the
+		COMMENT inherited size.
+		ARG 0 text
+	METHOD method_1924 createSmallLabel (Ljava/lang/String;)Ljavax/swing/JTextArea;
+		COMMENT createSmallLabel(text, 400). Its subclass overrides setFont to 0.8x size, and the one
+		COMMENT call site the obfuscator left readable assigns it to a field named lProxyEditorHelp,
+		COMMENT so this is the small help text under a control.
+		ARG 0 text
+	METHOD method_1909 createSmallLabel (Ljava/lang/String;I)Ljavax/swing/JTextArea;
+		COMMENT The 0.8x-size label at an explicit preferred width.
+		ARG 0 text
+		ARG 1 preferredWidth
+	METHOD method_1911 createSmallMonospacedLabel (Ljava/lang/String;)Ljavax/swing/JTextArea;
+		COMMENT Its subclass forces Monospaced at 0.8x size, i.e. both of the above at once.
+		ARG 0 text
+	METHOD method_1913 createFormLayout (I)Ljava/awt/LayoutManager;
+		COMMENT MigLayout("wrap, fillx, ins 0", "[<width>lp, fill]") -- one filled column, no insets.
+		ARG 0 columnWidthLp
+	METHOD method_1921 createSettingsLayout ()Ljava/awt/LayoutManager;
+		COMMENT createFormLayout(500), and the layout SettingsPanel installs on itself.
+	METHOD method_1923 createSettingsFormLayout ()Ljava/awt/LayoutManager;
+		COMMENT createFormLayout(400), and the layout AbstractSettingsFormPanel installs on itself.
+	METHOD method_1907 createDialogLayout ()Ljava/awt/LayoutManager;
+		COMMENT MigLayout("wrap, fill, ins dialog", "[fill]") -- the "ins dialog" keyword is what
+		COMMENT distinguishes it from the panel layouts.
+	METHOD method_1916 createVerticalLayout (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Ljava/awt/LayoutManager;
+		COMMENT The builder the rest delegate to: one growing column, wrap, optional filly, and an
+		COMMENT explicit MigLayout gapy keyword.
+		ARG 0 extraConstraints
+		ARG 1 columnConstraints
+		ARG 2 gapY
+		ARG 3 fillVertically
+	METHOD method_1917 createVerticalLayout (Ljava/lang/String;Ljava/lang/String;ZZ)Ljava/awt/LayoutManager;
+		COMMENT Same, choosing between MigLayout gapy "r" (related) and "u" (unrelated).
+		ARG 0 extraConstraints
+		ARG 1 columnConstraints
+		ARG 2 relatedGap
+		ARG 3 fillVertically
+	METHOD method_1918 createUninsetVerticalLayout (Ljava/lang/String;ZZ)Ljava/awt/LayoutManager;
+		COMMENT createVerticalLayout("ins 0", null, related, filly). Its String parameter is dead --
+		COMMENT it is not passed on and not read, so the name records that rather than a purpose.
+		ARG 0 unusedConstraints
+		ARG 1 relatedGap
+		ARG 2 fillVertically
+	METHOD method_1910 createVerticallyUninsetLayout ()Ljava/awt/LayoutManager;
+		COMMENT Insets "ins 0 n 0 n", i.e. top and bottom zeroed, left and right left at the default.
+	METHOD method_1912 createPanelInsetLayout ()Ljava/awt/LayoutManager;
+		COMMENT Insets taken from UIUtils.getPanelInsets(), which is the Aqua-versus-default split.
+	METHOD method_1925 createLabelledLayout ()Ljava/awt/LayoutManager;
+		COMMENT createLabelledLayout(null).
+	METHOD method_1926 createLabelledLayout (Ljava/lang/String;)Ljava/awt/LayoutManager;
+		COMMENT MigLayout("wrap,ins 0,align center", "[label][]") -- the two-column label/field grid.
+		COMMENT Call sites add a JLabel("Source:") and then the value component.
+		ARG 0 extraConstraints
+	METHOD method_1919 addSeparator (Ljavax/swing/JPanel;)V
+		COMMENT Adds a JSeparator spanning the panel width.
+		ARG 0 panel

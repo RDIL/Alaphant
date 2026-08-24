@@ -1,20 +1,21 @@
 package alaphant.build
 
-import alaphant.build.tasks.AnalyzeMappingsTask
-import alaphant.build.tasks.BootstrapNamesTask
-import alaphant.build.tasks.CharlesInfoTask
-import alaphant.build.tasks.CharlesRunTask
-import alaphant.build.tasks.CheckLinkageTask
-import alaphant.build.tasks.CheckMatcherTask
+import alaphant.build.tasks.mappings.AnalyzeMappingsTask
+import alaphant.build.tasks.mappings.BootstrapNamesTask
+import alaphant.build.tasks.dev.CharlesInfoTask
+import alaphant.build.tasks.dev.CharlesRunTask
+import alaphant.build.tasks.mappings.CheckLinkageTask
+import alaphant.build.tasks.mappings.CheckMatcherTask
 import alaphant.build.tasks.CheckReflectionSitesTask
-import alaphant.build.tasks.DecompileTask
-import alaphant.build.tasks.EnigmaTask
-import alaphant.build.tasks.ExtractMetadataTask
-import alaphant.build.tasks.GenerateIntermediaryTask
-import alaphant.build.tasks.MatchVersionsTask
-import alaphant.build.tasks.MergeNamedMappingsTask
-import alaphant.build.tasks.RemapJarTask
-import alaphant.build.tasks.ValidateMappingsTask
+import alaphant.build.tasks.dev.DecompileTask
+import alaphant.build.tasks.mappings.EnigmaTask
+import alaphant.build.tasks.dev.ExtractMetadataTask
+import alaphant.build.tasks.mappings.GenerateIntermediaryTask
+import alaphant.build.tasks.mappings.MatchVersionsTask
+import alaphant.build.tasks.mappings.MergeNamedMappingsTask
+import alaphant.build.tasks.mappings.PruneMappingsTask
+import alaphant.build.tasks.mappings.RemapJarTask
+import alaphant.build.tasks.mappings.ValidateMappingsTask
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -161,9 +162,17 @@ class CharlesPlugin : Plugin<Project> {
             mappings.set(mergeMappings.flatMap { it.outputFile })
         }
 
+        val pruneMappings = tasks.register<PruneMappingsTask>("pruneMappings") {
+            group = MAPPINGS_GROUP
+            description = "Deletes named mappings with no intermediary element behind them."
+            unconsumable.from(fileTree(namedDir) { include("java/**/*.mapping") })
+            this.namedDir.set(namedDir)
+        }
+
         tasks.register<ValidateMappingsTask>("validateMappings") {
             group = VERIFY_GROUP
             description = "Checks the named store for the mistakes that would otherwise pass silently."
+            dependsOn(pruneMappings)
             intermediaryMappings.set(intermediaryFile)
             officialJar.set(charles.officialJar)
             this.namedDir.set(namedDir)

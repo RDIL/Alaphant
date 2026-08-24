@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/gui/transaction/viewers/protobuf/AbstractProtocolBuffersViewer com/charlesproxy/gui/transaction/viewers/protobuf/AbstractProtocolBuffersViewer
+	CLASS ConfigLocation ConfigLocation
+		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
+		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
+		FIELD field_2191 HEADER Lcom/charlesproxy/gui/transaction/viewers/protobuf/AbstractProtocolBuffersViewer$ConfigLocation;
+			COMMENT Shown as "Content-Type header".
+		FIELD field_2190 VIEW_AS_TYPE Lcom/charlesproxy/gui/transaction/viewers/protobuf/AbstractProtocolBuffersViewer$ConfigLocation;
+			COMMENT Shown as "configured 'View As' type".
+		FIELD field_2192 VIEWER_MAPPING Lcom/charlesproxy/gui/transaction/viewers/protobuf/AbstractProtocolBuffersViewer$ConfigLocation;
+			COMMENT Shown as "viewer mapping".
+		FIELD field_2193 $VALUES [Lcom/charlesproxy/gui/transaction/viewers/protobuf/AbstractProtocolBuffersViewer$ConfigLocation;
+			COMMENT javac's synthetic constant array behind values().

@@ -1,0 +1,18 @@
+CLASS com/charlesproxy/gui/lib/class_307 com/charlesproxy/gui/lib/DataSize
+	COMMENT An immutable byte count, wrapped in its own type purely so Swing can dispatch on it:
+	COMMENT TableUtils registers SizeTableCellRenderer as the default renderer for this class, and
+	COMMENT that renderer formats the value through NumberFormatter. Without the wrapper a size
+	COMMENT column would be an indistinguishable Long.
+	COMMENT The name is corroborated rather than certain: Charles 4 had a structurally identical
+	COMMENT class (one long field, a ()J getter, Comparable, equals/hashCode/toString) in
+	COMMENT gui/session/tables, which the Charles 4 project read as DataSize. It left the members
+	COMMENT unnamed, so the names below are established from Charles 5 alone.
+	FIELD field_1091 bytes J
+	METHOD method_997 getBytes ()J
+	METHOD method_999 of (Ljava/lang/Long;)Lcom/charlesproxy/gui/lib/class_307;
+		COMMENT Null-propagating, so a transaction with no measurement for a size column yields a
+		COMMENT blank cell rather than a zero.
+		ARG 0 bytes
+	METHOD method_998 of (Ljava/lang/Integer;)Lcom/charlesproxy/gui/lib/class_307;
+		COMMENT The Integer overload, likewise null-propagating.
+		ARG 0 bytes

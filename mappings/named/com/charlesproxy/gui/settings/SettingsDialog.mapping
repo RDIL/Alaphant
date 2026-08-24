@@ -5,3 +5,12 @@ CLASS com/charlesproxy/gui/settings/SettingsDialog com/charlesproxy/gui/settings
 	METHOD setVisible setVisible (Z)V
 	METHOD showAndWait showAndWait ()Z
 	CLASS SubSettingsDialog SubSettingsDialog
+	CLASS SettingsDialogState SettingsDialogState
+		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
+		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
+		FIELD field_1497 CLOSED Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
+		FIELD field_1495 OPEN Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
+		FIELD field_1498 SAVED Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
+		FIELD field_1499 CANCELLED Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
+		FIELD field_1496 $VALUES [Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
+			COMMENT javac's synthetic constant array behind values().

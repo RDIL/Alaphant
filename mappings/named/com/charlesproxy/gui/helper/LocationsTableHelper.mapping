@@ -1,1 +1,10 @@
 CLASS com/charlesproxy/gui/helper/LocationsTableHelper com/charlesproxy/gui/helper/LocationsTableHelper
+	CLASS Mode Mode
+		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
+		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
+		FIELD field_921 PROTOCOL_HOST_PORT_PATH Lcom/charlesproxy/gui/helper/LocationsTableHelper$Mode;
+		FIELD field_919 PROTOCOL_HOST_PORT Lcom/charlesproxy/gui/helper/LocationsTableHelper$Mode;
+		FIELD field_922 HOST_PORT Lcom/charlesproxy/gui/helper/LocationsTableHelper$Mode;
+		FIELD field_923 HOST Lcom/charlesproxy/gui/helper/LocationsTableHelper$Mode;
+		FIELD field_920 $VALUES [Lcom/charlesproxy/gui/helper/LocationsTableHelper$Mode;
+			COMMENT javac's synthetic constant array behind values().

@@ -1,0 +1,26 @@
+CLASS com/charlesproxy/gui/settings/ThrottleSettingsPanel com/charlesproxy/gui/settings/ThrottleSettingsPanel
+	CLASS Blocksize Blocksize
+		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
+		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
+		FIELD field_1508 ONE_KB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as "  1 KB".
+		FIELD field_1503 TEN_KB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as " 10 KB".
+		FIELD field_1509 HUNDRED_KB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as "100 KB".
+		FIELD field_1510 ONE_MB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as "  1 MB".
+		FIELD field_1505 TEN_MB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as " 10 MB".
+		FIELD field_1511 HUNDRED_MB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as "100 MB".
+		FIELD field_1504 ONE_GB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as "  1 GB".
+		FIELD field_1506 TEN_GB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as " 10 GB".
+		FIELD field_1513 HUNDRED_GB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as "100 GB".
+		FIELD field_1512 ONE_TB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as "  1 TB".
+		FIELD field_1507 $VALUES [Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT javac's synthetic constant array behind values().
