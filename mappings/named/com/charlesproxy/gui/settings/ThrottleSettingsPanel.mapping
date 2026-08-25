@@ -1,52 +1,55 @@
 CLASS com/charlesproxy/gui/settings/ThrottleSettingsPanel com/charlesproxy/gui/settings/ThrottleSettingsPanel
+	FIELD customPresets customPresets Ljava/util/List;
+	FIELD globalConfig globalConfig Lcom/charlesproxy/gui/settings/class_538;
+	FIELD pMode pMode Lcom/charlesproxy/gui/tools/class_547;
 	METHOD method_1263 saveCustomPresets ()V
 		COMMENT Copies the in-progress custom preset list into the live ThrottlingConfiguration and
 		COMMENT saves, so an added or removed preset survives independently of OK/Cancel on the dialog.
+	METHOD method_1264 formatDecimal (D)Ljava/lang/String;
+		COMMENT Renders a double without a redundant ".0", so a whole-number bandwidth shows as "512"
+		COMMENT rather than "512.0". Both call sites are the two bandwidth fields.
+		ARG 0 value
+	METHOD method_1265 blocksizeForValue (I)Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+		COMMENT The reverse of Blocksize.getValue(): finds the constant holding the stored
+		COMMENT reliabilityBlocksize so the combo can be set from a saved configuration.
+		ARG 0 value
 	METHOD method_1266 addPreset (Lcom/charlesproxy/config/class_77;)V
 		COMMENT Forwards to the form's addPreset.
-		ARG 1 preset
-	METHOD method_1268 removePreset (Ljava/lang/Object;)V
-		COMMENT Forwards to the form's removePreset, keeping its Object parameter.
 		ARG 1 preset
 	METHOD method_1267 findMatchingPreset (Lcom/charlesproxy/config/class_108;)Lcom/charlesproxy/config/class_77;
 		COMMENT Scans the built-in PRESETS and then the custom ones for the first whose settings equal
 		COMMENT the argument, returning null when the values match none. This is what lets the preset
 		COMMENT combo follow hand-edited fields.
 		ARG 1 settings
+	METHOD method_1268 removePreset (Ljava/lang/Object;)V
+		COMMENT Forwards to the form's removePreset, keeping its Object parameter.
+		ARG 1 preset
 	METHOD method_1269 isPresetNameTaken (Ljava/lang/String;)Z
 		COMMENT True when either a built-in or a custom preset already uses the name; the Add Preset
 		COMMENT flow checks it before accepting one.
 		ARG 1 name
-	METHOD method_1265 blocksizeForValue (I)Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
-		COMMENT The reverse of Blocksize.getValue(): finds the constant holding the stored
-		COMMENT reliabilityBlocksize so the combo can be set from a saved configuration.
-		ARG 0 value
-	METHOD method_1264 formatDecimal (D)Ljava/lang/String;
-		COMMENT Renders a double without a redundant ".0", so a whole-number bandwidth shows as "512"
-		COMMENT rather than "512.0". Both call sites are the two bandwidth fields.
-		ARG 0 value
 	CLASS Blocksize Blocksize
 		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
 		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
-		FIELD field_1508 ONE_KB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
-			COMMENT Shown as "  1 KB".
 		FIELD field_1503 TEN_KB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
 			COMMENT Shown as " 10 KB".
+		FIELD field_1504 ONE_GB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as "  1 GB".
+		FIELD field_1505 TEN_MB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as " 10 MB".
+		FIELD field_1506 TEN_GB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as " 10 GB".
+		FIELD field_1507 $VALUES [Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT javac's synthetic constant array behind values().
+		FIELD field_1508 ONE_KB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as "  1 KB".
 		FIELD field_1509 HUNDRED_KB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
 			COMMENT Shown as "100 KB".
 		FIELD field_1510 ONE_MB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
 			COMMENT Shown as "  1 MB".
-		FIELD field_1505 TEN_MB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
-			COMMENT Shown as " 10 MB".
 		FIELD field_1511 HUNDRED_MB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
 			COMMENT Shown as "100 MB".
-		FIELD field_1504 ONE_GB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
-			COMMENT Shown as "  1 GB".
-		FIELD field_1506 TEN_GB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
-			COMMENT Shown as " 10 GB".
-		FIELD field_1513 HUNDRED_GB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
-			COMMENT Shown as "100 GB".
 		FIELD field_1512 ONE_TB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
 			COMMENT Shown as "  1 TB".
-		FIELD field_1507 $VALUES [Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
-			COMMENT javac's synthetic constant array behind values().
+		FIELD field_1513 HUNDRED_GB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
+			COMMENT Shown as "100 GB".

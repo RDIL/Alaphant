@@ -2,3 +2,4 @@ CLASS com/charlesproxy/gui/class_189 com/charlesproxy/gui/CharlesGUIFileManager
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.CharlesGUIFileManager"
 	COMMENT [bootstrap] named by an inner class the obfuscator left alone: CharlesGUIFileManager$… is in the jar while its outer class is not, and holds a synthetic reference to this type
 	COMMENT [bootstrap] matched to Charles 4's IconManager on 4 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_762 LOGGER Lorg/slf4j/Logger;

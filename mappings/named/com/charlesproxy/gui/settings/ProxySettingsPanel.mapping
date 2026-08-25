@@ -1,0 +1,11 @@
+CLASS com/charlesproxy/gui/settings/ProxySettingsPanel com/charlesproxy/gui/settings/ProxySettingsPanel
+	METHOD method_1235 init ()[Lcom/charlesproxy/gui/settings/SettingsPanel;
+	METHOD method_1236 updateForms ()V
+	CLASS AbstractIntegrationPanel
+		METHOD updateForm updateForm ()V
+	CLASS MacOSXPanel MacOSXPanel
+	CLASS MozillaFirefoxPanel MozillaFirefoxPanel
+		FIELD profilePath profilePath Ljavax/swing/JTextField;
+	CLASS OptionsPanel OptionsPanel
+	CLASS ProxiesPanel ProxiesPanel
+	CLASS WindowsPanel WindowsPanel

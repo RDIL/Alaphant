@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/gui/tools/EnabledToolSettingsPanel com/charlesproxy/gui/tools/EnabledToolSettingsPanel
+	FIELD blurb blurb Ljava/lang/String;
+	FIELD pMode pMode Lcom/charlesproxy/gui/tools/class_547;
+	METHOD <init> (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 2 blurb
+	METHOD populate populate (Lcom/charlesproxy/tools/spi/lib/EnabledToolConfiguration;)V
+		ARG 1 enabledToolConfiguration

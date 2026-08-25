@@ -1,22 +1,202 @@
 CLASS com/charlesproxy/gui/utils/UIUtils com/charlesproxy/gui/utils/UIUtils
+	COMMENT Look-and-feel and component-styling helpers. Several members are vestigial Quaqua /
+	COMMENT JGoodies hooks whose bodies Charles 5 emptied when it moved to violetlib Aqua and
+	COMMENT FlatLaf. The obfuscator strips parameters that a body no longer reads, so those show
+	COMMENT up as no-arg no-ops whose call sites still evaluate-and-pop the old argument; the
+	COMMENT leftover pop is the only surviving evidence of the original descriptor.
+	FIELD field_2353 REDO_KEYSTROKE Ljavax/swing/KeyStroke;
+		COMMENT Cmd-Shift-Z on macOS, Ctrl-Y elsewhere. Bound to "redo" by installUndoSupport.
+	FIELD field_2354 UNDO_KEYSTROKE Ljavax/swing/KeyStroke;
+		COMMENT Cmd-Z / Ctrl-Z. Bound to "undo" by installUndoSupport.
 	FIELD field_2355 LOGGER Lorg/slf4j/Logger;
+	FIELD field_2356 osVersion Lcom/xk72/lib/class_1558;
+		COMMENT Compared against "10.11" to decide whether the Helvetica Neue substitution is
+		COMMENT needed, so this is the OS version rather than the Java version. The Charles 4
+		COMMENT corpus has the same pair of fields on its UIUtils, named javaVersion/osVersion.
 	METHOD method_1965 isAquaLookAndFeel ()Z
 	METHOD method_1966 displayFontOptionsChanged (Ljava/lang/String;Ljava/lang/Integer;)V
+		ARG 0 displayFont
+		ARG 1 displayFontSize
+	METHOD method_1967 deriveEmptyBorder (Ljava/lang/String;Ljava/lang/String;)V
+		COMMENT Replaces the UIDefaults border at targetKey with an EmptyBorder carrying
+		COMMENT sourceKey's insets, unconditionally. Contrast deriveEmptyBorderIfAbsent, which
+		COMMENT has the same descriptor but only fills targetKey in when it is missing.
+		ARG 0 sourceKey
+		ARG 1 targetKey
+	METHOD method_1968 configureScopeBarTabbedPane (Ljavax/swing/JTabbedPane;)V
+		COMMENT Sets "ScopeBar.tabStyle" to "attached" plus the Quaqua visual-margin properties,
+		COMMENT i.e. the tab bar drawn by gui/laf/ScopeBarTabbedPaneUI. Used for the transaction
+		COMMENT viewer and chart panel tab bars.
+		ARG 0 tabbedPane
+	METHOD method_1969 installUndoSupport (Ljavax/swing/text/JTextComponent;)V
+		COMMENT Attaches an UndoManager as the "com.charlesproxy.UndoManager" client property,
+		COMMENT registers it as an UndoableEditListener, and binds UNDO_KEYSTROKE/REDO_KEYSTROKE.
+		ARG 0 textComponent
+	METHOD method_1970 maybeConfigureMenuBar ()V
+		COMMENT [inferred] Empty no-op. Its one call site is immediately after `new JMenuBar()` in
+		COMMENT CharlesFrame and before any menu is added, and the Charles 4 corpus has an
+		COMMENT unnamed (Ljavax/swing/JMenuBar;)V sibling of the JMenu hook below, so the
+		COMMENT stripped parameter was almost certainly that JMenuBar. What it used to do is lost.
+	METHOD method_1971 maybeEnableLCDTextRendering ()V
+		COMMENT [inferred] Empty no-op apart from a `getstatic Boolean.TRUE; pop` — the stripped
+		COMMENT argument of a callee that was itself stripped to nothing and inlined. That
+		COMMENT constant is exactly the second parameter maybeSetCanRenderLCDText takes, and the
+		COMMENT Charles 4 corpus pairs enableLCDTextRendering(JComponent) with
+		COMMENT setCanRenderLCDText(JComponent, Boolean). Call sites are freshly built panels,
+		COMMENT tabbed panes and text areas, which fits a JComponent parameter.
+	METHOD method_1972 maybeDisableMenuIcons ()V
+		COMMENT [inferred] Empty no-op called once per menu, between `new XMenu(...)` and
+		COMMENT `menuBar.add(...)`, in CharlesFrame and HelpMenu — so the stripped parameter was
+		COMMENT the JMenu. The Charles 4 corpus names the same-shaped (Ljavax/swing/JMenu;)V
+		COMMENT method setJgoodiesDisableIcons, which would explain the empty body: Charles 5 no
+		COMMENT longer ships the JGoodies look and feel. That name is itself inferred, so the
+		COMMENT vendor-neutral form is used here.
 	METHOD method_1973 getPanelInsets ()Ljava/lang/String;
 		COMMENT Returns a MigLayout insets string: "1lp 1lp 2lp 1lp" under Aqua, otherwise the
 		COMMENT "panel" keyword. Only used as the "ins " argument of a MigLayout constraint.
+	METHOD method_1974 restyleSplitPaneDividerForTheme (Lcom/charlesproxy/gui/laf/MyFlatSplitPaneUI;Ljavax/swing/JSplitPane;Lcom/charlesproxy/gui/utils/class_861;)V
+		COMMENT The themeChanged body configureSplitPane registers for its FlatLaf branch: pushes
+		COMMENT the current divider colour into the UI delegate and restates the FlatLaf style.
+		ARG 0 splitPaneUI
+		ARG 1 splitPane
+		ARG 2 event
+	METHOD method_1975 configureTreeTable (Lcom/charlesproxy/gui/lib/treetable/JTreeTable;)V
+		ARG 0 treeTable
+	METHOD method_1976 configureTreeTable (Lcom/charlesproxy/gui/lib/treetable/JTreeTable;Ljava/util/EnumSet;)V
+		COMMENT Adds NotInset to the caller's options before configuring the embedded tree, then
+		COMMENT insets the table itself instead — the tree is inside the table's viewport, so
+		COMMENT insetting both would double the margin.
+		ARG 0 treeTable
+		ARG 1 options
+	METHOD method_1977 installLookAndFeelForTheme (Lcom/charlesproxy/gui/utils/class_861;)V
+		COMMENT The themeChanged body installLookAndFeel registers with a null component, so it
+		COMMENT runs once at startup and again on every appearance change. Picks violetlib Aqua
+		COMMENT on macOS and FlatLaf light/dark elsewhere, installs the MigLayout visual paddings
+		COMMENT and button order for the chosen LaF, then walks Frame.getFrames() calling
+		COMMENT SwingUtilities.updateComponentTreeUI.
+		ARG 0 event
+	METHOD method_1978 applyAwtFontDesktopHints (Ljava/awt/Graphics2D;)V
+		ARG 0 graphics
+	METHOD method_1979 maybeGrowFrameBoundsForTitleBar (Ljava/awt/Rectangle;)Ljava/awt/Rectangle;
+		COMMENT Under Aqua only, returns the rectangle with its height increased by 22 — the
+		COMMENT macOS title-bar height. Applied by CharlesFrame to the main-window bounds read
+		COMMENT back from StartupConfiguration, before they are clamped to the screen, so the
+		COMMENT stored size is being reinterpreted from content area to outer frame. The "why" is
+		COMMENT inferred from that one call site; the arithmetic is not.
+		ARG 0 bounds
 	METHOD method_1980 runOnEDT (Ljava/lang/Runnable;)V
+		ARG 0 runnable
+	METHOD method_1981 substituteSystemFont (Ljava/lang/String;)V
+		COMMENT If the UIDefaults font at key is Helvetica Neue, swaps it for ".System.<size>",
+		COMMENT but only when that synthetic family actually resolves.
+		ARG 0 key
+	METHOD method_1982 installLookAndFeel (Ljava/lang/String;Ljava/lang/Integer;)V
+		COMMENT Entry point, run on the EDT from Main just before CharlesFrame is constructed.
+		COMMENT Registers installLookAndFeelForTheme, then applies the font options.
+		ARG 0 displayFont
+		ARG 1 displayFontSize
+	METHOD method_1983 deriveEmptyBorderIfAbsent (Ljava/lang/String;Ljava/lang/String;)V
+		COMMENT Fills targetKey in from sourceKey's insets only when targetKey has no border yet,
+		COMMENT mirroring the right inset down to the left one so the result is symmetric.
+		COMMENT Contrast deriveEmptyBorder, same descriptor, which always overwrites.
+		ARG 0 sourceKey
+		ARG 1 targetKey
+	METHOD method_1984 configureCheckBox (Ljavax/swing/JCheckBox;)V
+		COMMENT Windows only: clears opacity and tracks the theme background. A no-op elsewhere.
+		ARG 0 checkBox
+	METHOD method_1985 isFrameActive (Ljavax/swing/JComponent;)Z
+		COMMENT True unless the component carries "Frame.active" set to FALSE, and true for null.
+		COMMENT The Charles 4 corpus names its same-descriptor counterpart isComponentInactive,
+		COMMENT i.e. the opposite polarity; the body here reads as "active", and that legacy name
+		COMMENT is itself inferred, so it is not followed.
+		ARG 0 component
 	METHOD method_1986 configureGroupBox (Ljavax/swing/JPanel;Ljava/lang/String;)V
+		ARG 0 panel
+		ARG 1 title
+	METHOD method_1987 configureScrollPane (Ljavax/swing/JScrollPane;)V
+		COMMENT Empty border, and both the pane and its viewport non-opaque. The Charles 4 corpus
+		COMMENT calls the same-descriptor method useEmptyBorder.
+		ARG 0 scrollPane
+	METHOD method_1988 configureSplitPane (Ljavax/swing/JSplitPane;)V
+		COMMENT Thin divider: a client property under Aqua, an explicit size of 1 otherwise, plus
+		COMMENT a MyFlatSplitPaneUI installed under FlatLaf. The Charles 4 corpus calls the
+		COMMENT same-descriptor method setupDividerSizes.
+		ARG 0 splitPane
+	METHOD method_1989 maybeConfigureTabbedPane (Ljavax/swing/JTabbedPane;)V
+		COMMENT [inferred] Body is only setOpaque(false), identical to
+		COMMENT maybeConfigureFramesTabbedPane; the two are told apart solely by their call
+		COMMENT sites, and they need distinct names because they share a descriptor. This one is
+		COMMENT the general case — the breakpoints dialog and AbstractTabbedModelViewFrame.
+		ARG 0 tabbedPane
 	METHOD method_1990 fillViewportHeightWith (Ljavax/swing/JTable;)V
 		ARG 0 table
+	METHOD method_1991 configureTextField (Ljavax/swing/JTextField;)V
+		COMMENT Undo support only. Widely used across the tool settings panels.
+		ARG 0 textField
+	METHOD method_1992 configureTitleToolBar (Ljavax/swing/JToolBar;)V
+		COMMENT Sets "Quaqua.ToolBar.style" to "title" and, under FlatLaf, a BottomLineBorder
+		COMMENT tracking the theme.
+		ARG 0 toolBar
+	METHOD method_1993 restyleToolBarBorderForTheme (Ljavax/swing/JToolBar;Lcom/charlesproxy/gui/utils/class_861;)V
+		COMMENT The themeChanged body configureTitleToolBar registers under FlatLaf: rebuilds the
+		COMMENT BottomLineBorder in the new theme's colour.
+		ARG 0 toolBar
+		ARG 1 event
+	METHOD method_1994 configureTree (Ljavax/swing/JTree;)V
+		ARG 0 tree
+	METHOD method_1995 configureTree (Ljavax/swing/JTree;Ljava/util/EnumSet;)V
+		COMMENT Row height is always raised to the font height plus 6; CustomFont additionally
+		COMMENT swaps in the configured display font, and NotInset suppresses the inset viewStyle.
+		ARG 0 tree
+		ARG 1 options
+	METHOD method_1996 configureTextArea (Ljavax/swing/text/JTextComponent;)V
+		ARG 0 textComponent
+	METHOD method_1997 configureTextArea (Ljavax/swing/text/JTextComponent;Z)V
+		COMMENT The flag selects the monospaced derivation of the configured display font over
+		COMMENT the plain one; callers that pass true are the log, EULA and raw-body views.
+		ARG 0 textComponent
+		ARG 1 monospace
 	METHOD method_1998 isFlatLaf ()Z
+	METHOD method_1999 maybeConfigureFramesTabbedPane (Ljavax/swing/JTabbedPane;)V
+		COMMENT [inferred] Body is only setOpaque(false), identical to maybeConfigureTabbedPane.
+		COMMENT Its one call site is TabbedDesktopPane's own tab strip — the window tabs drawn by
+		COMMENT gui/laf/FramesTabbedPaneUI — which is where the "Frames" in the name comes from.
+		ARG 0 tabbedPane
+	METHOD method_2000 getAwtFontDesktopHints ()Ljava/util/Map;
+		COMMENT The "awt.font.desktophints" desktop property, i.e. the platform's text
+		COMMENT antialiasing RenderingHints. Same name in the Charles 4 corpus.
+	METHOD method_2001 maybeSetCanRenderLCDText ()V
+		COMMENT [inferred] Empty no-op. Its one call site, StatusPanelLabel.setEtched, still
+		COMMENT evaluates `Boolean.valueOf(this.lozenge)` and pops it, so a Boolean parameter was
+		COMMENT stripped; the receiver-shaped `aload_0` beside it would have been dropped without
+		COMMENT trace. That gives (JComponent, Boolean), which is the descriptor the Charles 4
+		COMMENT corpus has for setCanRenderLCDText. macOS-only, and paired with
+		COMMENT maybeEnableLCDTextRendering, whose vestigial Boolean.TRUE is this parameter.
+	METHOD method_2002 substituteSystemFonts ()V
+		COMMENT Runs substituteSystemFont over every UIDefaults key ending in "font" or "Font".
+		COMMENT Only reached under Aqua on macOS 10.11 and later.
 	METHOD method_4327 isWhitespaceOrPeriod (C)Z
+	METHOD method_4328 nextWordBoundary (Ljava/lang/String;I)I
+		COMMENT Treats '.' as a word separator so caret-next-word steps between the labels of a
+		COMMENT hostname. Used by HostnameWordAction.
+		ARG 0 text
+		ARG 1 offset
+	METHOD method_4329 previousWordBoundary (Ljava/lang/String;I)I
+		COMMENT The backwards counterpart of nextWordBoundary.
+		ARG 0 text
+		ARG 1 offset
+	METHOD method_4330 configureHostnameTextField (Ljavax/swing/JTextField;)V
+		COMMENT configureTextField plus the four HostnameWordAction bindings. Callers are the
+		COMMENT external proxy host, external DNS resolver address and location host fields.
+		ARG 0 textField
 	CLASS HostnameWordAction HostnameWordAction
+		FIELD forward forward Z
+		FIELD select select Z
 	CLASS TreeOptions TreeOptions
 		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
 		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
-		FIELD field_2358 CustomFont Lcom/charlesproxy/gui/utils/UIUtils$TreeOptions;
 		FIELD field_2357 NotInset Lcom/charlesproxy/gui/utils/UIUtils$TreeOptions;
+		FIELD field_2358 CustomFont Lcom/charlesproxy/gui/utils/UIUtils$TreeOptions;
 		FIELD field_2359 ContentTextSize Lcom/charlesproxy/gui/utils/UIUtils$TreeOptions;
 		FIELD field_2360 $VALUES [Lcom/charlesproxy/gui/utils/UIUtils$TreeOptions;
 			COMMENT javac's synthetic constant array behind values().

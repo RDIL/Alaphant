@@ -1,0 +1,14 @@
+CLASS com/charlesproxy/gui/settings/ExternalProxySettingsPanel
+	FIELD bAlwaysBypassLocalhost bAlwaysBypassLocalhost Ljavax/swing/JCheckBox;
+	FIELD bRequiresAuthentication bRequiresAuthentication Ljavax/swing/JCheckBox;
+	FIELD fExternalProxyBypass fExternalProxyBypass Ljavax/swing/JTextArea;
+	FIELD fProxyDomain fProxyDomain Ljavax/swing/JTextField;
+	FIELD fProxyPassword fProxyPassword Ljavax/swing/JPasswordField;
+	FIELD fProxyUsername fProxyUsername Ljavax/swing/JTextField;
+	FIELD lExternalProxyBypass lExternalProxyBypass Ljavax/swing/JLabel;
+	FIELD lProxyDomain lProxyDomain Ljavax/swing/JLabel;
+	FIELD lProxyEditorHelp lProxyEditorHelp Ljavax/swing/JTextArea;
+	FIELD lProxyPassword lProxyPassword Ljavax/swing/JLabel;
+	FIELD lProxyUsername lProxyUsername Ljavax/swing/JLabel;
+	FIELD protocolsTable protocolsTable Ljavax/swing/JTable;
+	METHOD updateForm updateForm ()V

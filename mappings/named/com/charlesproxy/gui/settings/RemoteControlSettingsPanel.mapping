@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/settings/RemoteControlSettingsPanel com/charlesproxy/gui/settings/RemoteControlSettingsPanel
+	FIELD bAllowAnonymous bAllowAnonymous Ljavax/swing/JCheckBox;
+	FIELD bEnabled bEnabled Ljavax/swing/JCheckBox;
+	FIELD remoteControlTableModel remoteControlTableModel Lcom/charlesproxy/gui/settings/RemoteControlSettingsPanel$RemoteControlTableModel;
+	FIELD tUsers tUsers Lcom/charlesproxy/gui/helper/class_270;
+	CLASS RemoteControlTableModel RemoteControlTableModel

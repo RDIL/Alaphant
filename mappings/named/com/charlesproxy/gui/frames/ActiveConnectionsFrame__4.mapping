@@ -1,3 +1,10 @@
 CLASS com/charlesproxy/gui/frames/class_259 com/charlesproxy/gui/frames/ActiveConnectionsFrame__4
 	COMMENT [bootstrap] an inner class the obfuscator left alone, com/charlesproxy/gui/frames/ActiveConnectionsFrame$4$1, is enclosed by this class, so this was originally com/charlesproxy/gui/frames/ActiveConnectionsFrame$4
 	COMMENT [bootstrap] an inner class the obfuscator left alone, com/charlesproxy/gui/frames/ActiveConnectionsFrame$4$2, is enclosed by this class, so this was originally com/charlesproxy/gui/frames/ActiveConnectionsFrame$4
+	METHOD <init> (Lcom/charlesproxy/gui/frames/ActiveConnectionsFrame;)V
+		ARG 1 activeConnectionsFrame
+	METHOD method_870 (Ljava/awt/event/MouseEvent;)V
+		ARG 1 mouseEvent
+	METHOD mousePressed mousePressed (Ljava/awt/event/MouseEvent;)V
+	METHOD mouseReleased mouseReleased (Ljava/awt/event/MouseEvent;)V
+		ARG 1 mouseEvent

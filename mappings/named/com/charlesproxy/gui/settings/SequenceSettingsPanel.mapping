@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/settings/SequenceSettingsPanel com/charlesproxy/gui/settings/SequenceSettingsPanel
+	FIELD autoScroll autoScroll Ljavax/swing/JCheckBox;
+	FIELD filterRegex filterRegex Ljavax/swing/JCheckBox;
+	FIELD maxTransactions maxTransactions Ljavax/swing/JTextField;

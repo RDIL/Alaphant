@@ -1,2 +1,5 @@
 CLASS com/charlesproxy/gui/lib/PlaceholderTextField com/charlesproxy/gui/lib/PlaceholderTextField
 	FIELD placeholder placeholder Ljava/lang/String;
+	METHOD getPlaceholder getPlaceholder ()Ljava/lang/String;
+	METHOD setPlaceholder setPlaceholder (Ljava/lang/String;)V
+		ARG 1 placeholder

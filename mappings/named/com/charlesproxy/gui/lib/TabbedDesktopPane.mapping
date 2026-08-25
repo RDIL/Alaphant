@@ -1,2 +1,7 @@
 CLASS com/charlesproxy/gui/lib/TabbedDesktopPane com/charlesproxy/gui/lib/TabbedDesktopPane
+	FIELD field_1075 listeners Ljavax/swing/event/EventListenerList;
 	FIELD field_1076 LOGGER Lorg/slf4j/Logger;
+	METHOD method_982 addChangeListener (Ljavax/swing/event/ChangeListener;)V
+		ARG 1 changeListener
+	METHOD method_985 validate ()V
+	CLASS MyJTabbedPane MyJTabbedPane

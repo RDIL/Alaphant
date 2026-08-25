@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/actions/class_210
+	METHOD switchActions switchActions (Lcom/charlesproxy/gui/actions/class_208;)V

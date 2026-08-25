@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/gui/settings/SettingsException com/charlesproxy/gui/settings/SettingsException
+	FIELD field field Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;)V
+		ARG 1 message
+	METHOD <init> (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 1 field
+		ARG 2 message
+	METHOD getField getField ()Ljava/lang/String;

@@ -1,2 +1,8 @@
-CLASS com/charlesproxy/gui/lib/SavableJPanel
+CLASS com/charlesproxy/gui/lib/SavableJPanel com/charlesproxy/gui/lib/SavableJPanel
 	METHOD isClosed isClosed ()Z
+	METHOD isDirty isDirty ()Z
+	METHOD isPromptToSave isPromptToSave ()Z
+	METHOD saveToFile saveToFile (Ljava/io/File;)V
+		ARG 1 file
+	METHOD setCloseAction setCloseAction (Ljavax/swing/Action;)V
+	METHOD showDontShowPrompt showDontShowPrompt ()Z

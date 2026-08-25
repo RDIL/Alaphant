@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/settings/RootSSLCertificateSettingsPanel com/charlesproxy/gui/settings/RootSSLCertificateSettingsPanel
+	FIELD certificateName certificateName Ljavax/swing/JLabel;
+	FIELD removeButton removeButton Ljavax/swing/JButton;
+	FIELD rootCertificate rootCertificate Lcom/charlesproxy/ssl/class_999;

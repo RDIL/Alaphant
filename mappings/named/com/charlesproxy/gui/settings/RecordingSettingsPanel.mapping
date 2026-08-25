@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/gui/settings/RecordingSettingsPanel com/charlesproxy/gui/settings/RecordingSettingsPanel
+	FIELD field_1490 excludePanel Lcom/charlesproxy/gui/settings/RecordingSettingsPanel$ExcludePanel;
+	FIELD field_1491 limitsPanel Lcom/charlesproxy/gui/settings/RecordingSettingsPanel$LimitsPanel;
+	FIELD field_1492 includePanel Lcom/charlesproxy/gui/settings/RecordingSettingsPanel$IncludePanel;
+	CLASS AbstractRecordingSettingsPanel AbstractRecordingSettingsPanel
+	CLASS ExcludePanel ExcludePanel
+	CLASS IncludePanel IncludePanel
+	CLASS LimitsPanel LimitsPanel

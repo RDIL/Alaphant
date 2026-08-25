@@ -13,9 +13,18 @@ CLASS com/charlesproxy/lib/AuthorizationUtils com/charlesproxy/lib/Authorization
 	CLASS Challenge Challenge
 		METHOD getScheme getScheme ()Ljava/lang/String;
 	CLASS GenericAuthorization GenericAuthorization
+		FIELD parameters parameters Ljava/util/List;
+		FIELD parseException parseException Ljava/lang/Exception;
+		METHOD addParameter (Ljava/lang/String;Ljava/lang/String;)V
+			ARG 1 name
+			ARG 2 value
 		METHOD getParameters getParameters ()Ljava/util/List;
+		METHOD getParseException getParseException ()Ljava/lang/Exception;
+		METHOD setParameters setParameters (Ljava/util/List;)V
+		METHOD setParseException setParseException (Ljava/lang/Exception;)V
 	CLASS GenericChallenge GenericChallenge
 		METHOD getParameters getParameters ()Ljava/util/List;
 		METHOD setParseException setParseException (Ljava/lang/Exception;)V
+	CLASS NameValue NameValue
 	CLASS UnsupportedAuthorization UnsupportedAuthorization
 	CLASS UnsupportedChallenge UnsupportedChallenge

@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/gui/helper/class_265
+	FIELD field_926 supportedMethodsAndProtocols Ljavax/swing/JComboBox;
+	FIELD field_928 form Ljavax/swing/JPanel;
+	METHOD <init> (Ljava/lang/String;Lcom/charlesproxy/gui/helper/LocationsTableHelper$Mode;)V
+		ARG 2 mode

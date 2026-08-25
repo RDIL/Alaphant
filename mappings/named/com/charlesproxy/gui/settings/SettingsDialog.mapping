@@ -1,16 +1,32 @@
 CLASS com/charlesproxy/gui/settings/SettingsDialog com/charlesproxy/gui/settings/SettingsDialog
+	FIELD actionMutex actionMutex Ljava/lang/Object;
+	FIELD cancelButton cancelButton Ljavax/swing/JButton;
+	FIELD cancelLabel cancelLabel Ljava/lang/String;
+	FIELD field_1493 LOGGER Lorg/slf4j/Logger;
+	FIELD panels panels [Lcom/charlesproxy/gui/settings/SettingsPanel;
+	FIELD saveButton saveButton Ljavax/swing/JButton;
+	FIELD saveConfig saveConfig Z
+	FIELD saveLabel saveLabel Ljava/lang/String;
+	FIELD showApply showApply Z
+	FIELD state state Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
+	FIELD tabPane tabPane Ljavax/swing/JTabbedPane;
+	METHOD getCancelLabel getCancelLabel ()Ljava/lang/String;
+	METHOD getSaveLabel getSaveLabel ()Ljava/lang/String;
+	METHOD isShowApply isShowApply ()Z
 	METHOD setCancelLabel setCancelLabel (Ljava/lang/String;)V
+	METHOD setSaveConfig setSaveConfig (Z)V
 	METHOD setSaveLabel setSaveLabel (Ljava/lang/String;)V
 	METHOD setShowApply setShowApply (Z)V
 	METHOD setVisible setVisible (Z)V
 	METHOD showAndWait showAndWait ()Z
-	CLASS SubSettingsDialog SubSettingsDialog
 	CLASS SettingsDialogState SettingsDialogState
 		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
 		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
-		FIELD field_1497 CLOSED Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
 		FIELD field_1495 OPEN Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
-		FIELD field_1498 SAVED Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
-		FIELD field_1499 CANCELLED Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
 		FIELD field_1496 $VALUES [Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
 			COMMENT javac's synthetic constant array behind values().
+		FIELD field_1497 CLOSED Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
+		FIELD field_1498 SAVED Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
+		FIELD field_1499 CANCELLED Lcom/charlesproxy/gui/settings/SettingsDialog$SettingsDialogState;
+	CLASS SubSettingsDialog SubSettingsDialog
+		METHOD showDialog showDialog ()V

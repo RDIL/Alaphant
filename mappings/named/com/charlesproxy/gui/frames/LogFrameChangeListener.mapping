@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/frames/class_1598 com/charlesproxy/gui/frames/LogFrameChangeListener
+	METHOD <init> (Lcom/charlesproxy/gui/frames/LogFrame;)V
+		ARG 1 logFrame

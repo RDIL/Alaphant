@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/frames/class_245 com/charlesproxy/gui/frames/LogFrameFocusAdapter
+	FIELD field_878 logFrame Lcom/charlesproxy/gui/frames/LogFrame;
+	METHOD <init> (Lcom/charlesproxy/gui/frames/LogFrame;)V
+		ARG 1 logFrame

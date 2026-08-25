@@ -1,2 +1,12 @@
 CLASS com/charlesproxy/lib/class_896 com/charlesproxy/lib/DoubleTargetOutputStream
 	COMMENT [bootstrap] matched to Charles 4's DoubleTargetOutputStream on 5 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_2429 target2 Ljava/io/OutputStream;
+	FIELD field_2430 target1 Ljava/io/OutputStream;
+	METHOD <init> (Ljava/io/OutputStream;Ljava/io/OutputStream;)V
+		ARG 1 target1
+		ARG 2 target2
+	METHOD close close ()V
+	METHOD flush flush ()V
+	METHOD write write (I)V
+	METHOD write write ([B)V
+	METHOD write write ([BII)V

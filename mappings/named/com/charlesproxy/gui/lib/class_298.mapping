@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/lib/class_298
+	METHOD propertyChange propertyChange (Ljava/beans/PropertyChangeEvent;)V

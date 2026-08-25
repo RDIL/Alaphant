@@ -1,0 +1,3 @@
+CLASS com/xk72/common/util/class_1239 com/xk72/common/util/BackgroundTaskQueue
+	FIELD field_3259 currentTask Ljava/util/concurrent/Callable;
+	FIELD field_3260 queue Ljava/util/concurrent/BlockingQueue;

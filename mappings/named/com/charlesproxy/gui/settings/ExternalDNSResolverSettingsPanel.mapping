@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/settings/ExternalDNSResolverSettingsPanel com/charlesproxy/gui/settings/ExternalDNSResolverSettingsPanel
+	FIELD externalResolverAddress externalResolverAddress Ljavax/swing/JTextField;
+	FIELD mode mode Lcom/charlesproxy/gui/tools/class_547;

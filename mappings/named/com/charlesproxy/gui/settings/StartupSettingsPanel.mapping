@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/settings/StartupSettingsPanel com/charlesproxy/gui/settings/StartupSettingsPanel
+	FIELD bCheckUpdates bCheckUpdates Ljavax/swing/JCheckBox;
+	FIELD bNewSession bNewSession Ljavax/swing/JCheckBox;
+	FIELD bThrottling bThrottling Ljavax/swing/JCheckBox;

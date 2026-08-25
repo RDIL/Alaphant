@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/actions/class_208 com/charlesproxy/gui/actions/ISwitchboard
+	METHOD method_807 getActionByName (Ljava/lang/String;)Lcom/charlesproxy/gui/actions/class_209;

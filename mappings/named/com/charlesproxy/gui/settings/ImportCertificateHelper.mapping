@@ -1,9 +1,11 @@
 CLASS com/charlesproxy/gui/settings/ImportCertificateHelper com/charlesproxy/gui/settings/ImportCertificateHelper
+	CLASS CertificateSelectedListener CertificateSelectedListener
+	CLASS CertificatesTableModel CertificatesTableModel
 	CLASS ImportPemPanel ImportPemPanel
 		CLASS ErrorType ErrorType
 			COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
 			COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
-			FIELD field_1456 PRIVATE_KEY Lcom/charlesproxy/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType;
 			FIELD field_1455 CERT_CHAIN Lcom/charlesproxy/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType;
+			FIELD field_1456 PRIVATE_KEY Lcom/charlesproxy/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType;
 			FIELD field_1457 $VALUES [Lcom/charlesproxy/gui/settings/ImportCertificateHelper$ImportPemPanel$ErrorType;
 				COMMENT javac's synthetic constant array behind values().

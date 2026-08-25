@@ -1,3 +1,5 @@
 CLASS com/charlesproxy/lib/BNFParser com/charlesproxy/lib/BNFParser
 	CLASS BNFParseEOSException BNFParseEOSException
+		FIELD serialVersionUID serialVersionUID J
 	CLASS BNFParseException BNFParseException
+		FIELD serialVersionUID serialVersionUID J

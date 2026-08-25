@@ -1,2 +1,2 @@
-CLASS com/charlesproxy/gui/settings/SettingsFormPanelTableRowEditor
+CLASS com/charlesproxy/gui/settings/SettingsFormPanelTableRowEditor com/charlesproxy/gui/settings/SettingsFormPanelTableRowEditor
 	CLASS EditListener EditListener

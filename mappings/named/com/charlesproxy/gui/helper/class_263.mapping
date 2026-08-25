@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/helper/class_263
+	METHOD tableChanged tableChanged (Ljavax/swing/event/TableModelEvent;)V

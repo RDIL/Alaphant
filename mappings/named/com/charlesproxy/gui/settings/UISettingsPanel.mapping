@@ -1,0 +1,11 @@
+CLASS com/charlesproxy/gui/settings/UISettingsPanel com/charlesproxy/gui/settings/UISettingsPanel
+	FIELD bAlwaysOnTop bAlwaysOnTop Ljavax/swing/JCheckBox;
+	FIELD bEnableHotkeys bEnableHotkeys Ljavax/swing/JCheckBox;
+	FIELD bHighlightTreeChanges bHighlightTreeChanges Ljavax/swing/JCheckBox;
+	FIELD bMinimiseToTray bMinimiseToTray Ljavax/swing/JCheckBox;
+	FIELD bShowMemoryUsage bShowMemoryUsage Ljavax/swing/JCheckBox;
+	FIELD bShowTrayIcon bShowTrayIcon Ljavax/swing/JCheckBox;
+	FIELD cFont cFont Ljavax/swing/JComboBox;
+	FIELD cFontSize cFontSize Ljavax/swing/JComboBox;
+	FIELD cQueryParamHighlight cQueryParamHighlight Ljavax/swing/JComboBox;
+	METHOD main main ([Ljava/lang/String;)V

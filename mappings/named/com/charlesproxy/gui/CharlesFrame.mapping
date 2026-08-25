@@ -26,6 +26,7 @@ CLASS com/charlesproxy/gui/CharlesFrame com/charlesproxy/gui/CharlesFrame
 	METHOD addFrame addFrame (Lcom/charlesproxy/gui/lib/class_288;)V
 	METHOD bringToFront bringToFront ()V
 	METHOD getActionSwitchboard getActionSwitchboard ()Lcom/charlesproxy/gui/class_281;
+	METHOD getSelectedFrame getSelectedFrame ()Lcom/charlesproxy/gui/lib/class_288;
 	METHOD getTopMostOwnedWindow getTopMostOwnedWindow ()Ljava/awt/Window;
 	METHOD init init ()V
 	METHOD startup startup ()V

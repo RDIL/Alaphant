@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/frames/RegisterFrame com/charlesproxy/gui/frames/RegisterFrame
+	FIELD tName tName Ljavax/swing/JTextField;
+	FIELD tSerial tSerial Ljavax/swing/JTextField;

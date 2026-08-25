@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/gui/settings/ProtobufSettingsPanel com/charlesproxy/gui/settings/ProtobufSettingsPanel
+	FIELD field_1483 protobufCachingPanel Lcom/charlesproxy/gui/settings/ProtobufSettingsPanel$CachingPanel;
+	FIELD field_1484 protobufRegistryPanel Lcom/charlesproxy/gui/settings/ProtobufSettingsPanel$RegistryPanel;
+	CLASS CacheLocationsTableModel
+		METHOD getColumnClass getColumnClass (I)Ljava/lang/Class;
+		METHOD getColumnCount getColumnCount ()I
+		METHOD getColumnName getColumnName (I)Ljava/lang/String;
+		METHOD getRowCount getRowCount ()I
+		METHOD getValueAt getValueAt (II)Ljava/lang/Object;
+		METHOD refresh refresh ()V
+	CLASS CachingPanel CachingPanel
+	CLASS RegistryPanel RegistryPanel

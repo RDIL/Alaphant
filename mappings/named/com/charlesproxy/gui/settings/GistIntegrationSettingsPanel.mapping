@@ -1,0 +1,15 @@
+CLASS com/charlesproxy/gui/settings/GistIntegrationSettingsPanel com/charlesproxy/gui/settings/GistIntegrationSettingsPanel
+	FIELD clearToken clearToken Ljavax/swing/JButton;
+	FIELD enterpriseGitHub enterpriseGitHub Ljavax/swing/JCheckBox;
+	FIELD enterpriseURL enterpriseURL Ljavax/swing/JTextField;
+	FIELD field_1450 githubAuthUrl Ljava/net/URI;
+	FIELD field_1451 LOGGER Lorg/slf4j/Logger;
+	FIELD openGist openGist Ljavax/swing/JCheckBox;
+	FIELD pub pub Ljavax/swing/JRadioButton;
+	FIELD publishLimit publishLimit Ljavax/swing/JTextField;
+	FIELD requestToken requestToken Ljavax/swing/JButton;
+	FIELD requestTokenMessage requestTokenMessage Ljavax/swing/JComponent;
+	FIELD secret secret Ljavax/swing/JRadioButton;
+	FIELD token token Ljavax/swing/JLabel;
+	FIELD tokenMessage tokenMessage Ljavax/swing/JComponent;
+	METHOD saveAuth saveAuth ()V

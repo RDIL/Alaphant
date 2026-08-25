@@ -1,1 +1,6 @@
 CLASS com/charlesproxy/gui/settings/SettingsPanel com/charlesproxy/gui/settings/SettingsPanel
+	FIELD ctx charlesContext Lcom/charlesproxy/CharlesContext;
+	METHOD getTitle getTitle ()Ljava/lang/String;
+	METHOD preSave preSave ()Z
+	METHOD setHelp setHelp (Ljava/lang/String;)V
+	METHOD test test ()V

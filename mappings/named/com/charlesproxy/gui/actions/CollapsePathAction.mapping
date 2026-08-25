@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/gui/actions/CollapsePathAction com/charlesproxy/gui/actions/CollapsePathAction
+	FIELD paths paths [Ljavax/swing/tree/TreePath;
+	FIELD tree tree Ljavax/swing/JTree;
+	METHOD <init> (Ljavax/swing/JTree;[Ljavax/swing/tree/TreePath;)V
+		ARG 1 jTree

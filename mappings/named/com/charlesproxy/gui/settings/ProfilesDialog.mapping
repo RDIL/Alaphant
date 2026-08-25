@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/gui/settings/ProfilesDialog com/charlesproxy/gui/settings/ProfilesDialog
+	CLASS ProfilesTableModel
+		FIELD profiles profiles Ljava/util/List;
+		METHOD getColumnName getColumnName (I)Ljava/lang/String;
+		METHOD getRowCount getRowCount ()I
+		METHOD isCellEditable isCellEditable (II)Z
+		METHOD setValueAt setValueAt (Ljava/lang/Object;II)V

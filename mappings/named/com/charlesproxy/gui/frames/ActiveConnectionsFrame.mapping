@@ -1,1 +1,2 @@
-CLASS com/charlesproxy/gui/frames/ActiveConnectionsFrame
+CLASS com/charlesproxy/gui/frames/ActiveConnectionsFrame com/charlesproxy/gui/frames/ActiveConnectionsFrame
+	FIELD activeTableModel activeTableModel Lcom/charlesproxy/gui/frames/ActiveConnectionsFrame$ActiveTableModel;

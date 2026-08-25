@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/actions/CharlesShowDialogAction com/charlesproxy/gui/actions/CharlesShowDialogAction
+	METHOD createDialog createDialog (Ljava/awt/event/ActionEvent;)Ljava/awt/Window;

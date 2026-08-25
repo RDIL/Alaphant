@@ -1,4 +1,4 @@
 CLASS com/charlesproxy/gui/frames/class_258
 	COMMENT [bootstrap] matched to Charles 4's l on 8 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
-	FIELD field_904 maybeConnection Lcom/xk72/proxy/Connection;
+	FIELD field_904 connection Lcom/xk72/proxy/Connection;
 		COMMENT [bootstrap] carried over from Charles 4's l.connection on a unique descriptor match -- provisional

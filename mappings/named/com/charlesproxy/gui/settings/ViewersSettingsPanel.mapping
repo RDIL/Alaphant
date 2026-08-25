@@ -1,0 +1,13 @@
+CLASS com/charlesproxy/gui/settings/ViewersSettingsPanel com/charlesproxy/gui/settings/ViewersSettingsPanel
+	FIELD bCombineHeadersAndBodyViewers bCombineHeadersAndBodyViewers Ljavax/swing/JCheckBox;
+	FIELD bCombineRequestAndResponse bCombineRequestAndResponse Ljavax/swing/JCheckBox;
+	FIELD bLineWrap bLineWrap Ljavax/swing/JCheckBox;
+	FIELD bShowLineNumbers bShowLineNumbers Ljavax/swing/JCheckBox;
+	FIELD bShowWhitespace bShowWhitespace Ljavax/swing/JCheckBox;
+	FIELD cSpeed cSpeed Ljavax/swing/JComboBox;
+	FIELD cTime cTime Ljavax/swing/JComboBox;
+	FIELD rSessionNavSequenceHorizontal rSessionNavSequenceHorizontal Ljavax/swing/JRadioButton;
+	FIELD rSessionNavSequenceVertical rSessionNavSequenceVertical Ljavax/swing/JRadioButton;
+	FIELD rSessionNavStructureHorizontal rSessionNavStructureHorizontal Ljavax/swing/JRadioButton;
+	FIELD rSessionNavStructureVertical rSessionNavStructureVertical Ljavax/swing/JRadioButton;
+	METHOD main main ([Ljava/lang/String;)V

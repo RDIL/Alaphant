@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/settings/ServerSSLCertificatesSettingsPanel com/charlesproxy/gui/settings/ServerSSLCertificatesSettingsPanel
+	METHOD updateForm updateForm ()V

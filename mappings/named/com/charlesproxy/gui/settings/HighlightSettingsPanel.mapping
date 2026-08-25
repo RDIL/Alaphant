@@ -1,4 +1,4 @@
-CLASS com/charlesproxy/gui/settings/HighlightSettingsPanel
+CLASS com/charlesproxy/gui/settings/HighlightSettingsPanel com/charlesproxy/gui/settings/HighlightSettingsPanel
 	FIELD field_1453 HIGHLIGHT_COLORS [Ljava/awt/Color;
 		COMMENT The highlight palette. Established by hand against Charles 4, where this field kept its
 		COMMENT name; MixinHighlightSettingsPanel replaces the array in <clinit> to add colours.

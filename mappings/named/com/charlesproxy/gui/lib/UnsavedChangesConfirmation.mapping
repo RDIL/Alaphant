@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/lib/class_308 com/charlesproxy/gui/lib/UnsavedChangesConfirmation
+	FIELD field_1092 saveablePanel Lcom/charlesproxy/gui/lib/SavableJPanel;

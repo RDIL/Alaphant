@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/lib/JTableFrame com/charlesproxy/gui/lib/JTableFrame
+	FIELD table table Ljavax/swing/JTable;
+	METHOD makeTable makeTable ()Ljavax/swing/JTable;
+	CLASS 1 JTableFrame__CloseAction

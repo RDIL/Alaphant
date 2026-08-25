@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/frames/class_254 com/charlesproxy/gui/frames/DisposeRegisterFrameListener
+	FIELD field_892 registerFrame Lcom/charlesproxy/gui/frames/RegisterFrame;
+	METHOD <init> (Lcom/charlesproxy/gui/frames/RegisterFrame;)V
+		ARG 1 registerFrame
+	METHOD actionPerformed actionPerformed (Ljava/awt/event/ActionEvent;)V
+		ARG 1 actionEvent

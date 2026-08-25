@@ -1,1 +1,3 @@
-CLASS com/charlesproxy/gui/CharlesEULAFrame
+CLASS com/charlesproxy/gui/CharlesEULAFrame com/charlesproxy/gui/CharlesEULAFrame
+	METHOD addActionListener addActionListener (Ljava/awt/event/ActionListener;)V
+	METHOD removeActionListener removeActionListener (Ljava/awt/event/ActionListener;)V

@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/gui/settings/SSLProxyingPanel com/charlesproxy/gui/settings/SSLProxyingPanel
+	FIELD exclude exclude Lcom/charlesproxy/gui/helper/LocationsTableHelper;
+	FIELD locations locations Lcom/charlesproxy/gui/helper/LocationsTableHelper;
+	FIELD modePanel modePanel Lcom/charlesproxy/gui/tools/class_547;
+	METHOD configure configure (Lcom/charlesproxy/config/class_75;)V
+		ARG 1 config
+	METHOD updateForm updateForm ()V

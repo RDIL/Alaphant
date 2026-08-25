@@ -1,8 +1,25 @@
 CLASS com/charlesproxy/gui/class_281 com/charlesproxy/gui/ActionSwitchboard
 	COMMENT [bootstrap] matched to Charles 4's ActionSwitchboard on 23 shared member descriptors (next best in this package scored 20) -- provisional, confirm before dropping the Maybe
+	FIELD field_973 composeNew Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_974 publishTransactionAction Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_975 sequence Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_976 close Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_977 repeatTransactionAction Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_979 findInSession Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_980 find Lcom/charlesproxy/gui/actions/class_209;
 	FIELD field_981 charlesFrame Lcom/charlesproxy/gui/CharlesFrame;
 		COMMENT [bootstrap] carried over from Charles 4's ActionSwitchboard.charlesFrame on a unique descriptor match -- provisional
+	FIELD field_982 findPrevious Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_983 structure Lcom/charlesproxy/gui/actions/class_209;
 	FIELD field_984 maybeViewMenu Lcom/charlesproxy/gui/menus/ViewMenu;
 		COMMENT [bootstrap] carried over from Charles 4's ActionSwitchboard.viewMenu on a unique descriptor match -- provisional
+	FIELD field_985 clear Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_987 findNext Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_988 compose Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_989 export Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_990 validateTransactionAction Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_991 findPreviousInSection Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_992 advancedRepeatTransactionAction Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_993 findNextInSession Lcom/charlesproxy/gui/actions/class_209;
 	METHOD <init> (Lcom/charlesproxy/gui/CharlesFrame;)V
 		ARG 1 charlesFrame

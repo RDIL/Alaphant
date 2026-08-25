@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/gui/settings/PromptsSettingsPanel com/charlesproxy/gui/settings/PromptsSettingsPanel
+	FIELD bPromptToClearSessions bPromptToClearSessions Ljavax/swing/JCheckBox;
+	FIELD bPromptToSaveSessions bPromptToSaveSessions Ljavax/swing/JCheckBox;
+	FIELD bResetWarnings bResetWarnings Ljavax/swing/JButton;
+	METHOD main main ([Ljava/lang/String;)V

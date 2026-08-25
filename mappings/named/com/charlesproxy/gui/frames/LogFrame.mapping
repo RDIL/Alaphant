@@ -1,1 +1,16 @@
-CLASS com/charlesproxy/gui/frames/LogFrame
+CLASS com/charlesproxy/gui/frames/LogFrame com/charlesproxy/gui/frames/LogFrame
+	FIELD allMessages allMessages Ljava/util/List;
+	FIELD field_4543 LOGGER Lorg/slf4j/Logger;
+	FIELD field_873 LOG_LEVEL Ljava/util/logging/Level;
+	FIELD filterField filterField Lcom/charlesproxy/gui/lib/PlaceholderTextField;
+	FIELD logFile logFile Ljava/io/File;
+	FIELD logFileWriter logFileWriter Ljava/io/BufferedWriter;
+	FIELD logPane logPane Ljavax/swing/JTextArea;
+	METHOD attachToLoggingManager attachToLoggingManager ()V
+	METHOD method_4302 closeLogFile (Ljava/io/Writer;)V
+	METHOD method_4303 anyFilterMatch (Ljava/lang/String;)Z
+		ARG 1 string
+	METHOD method_4306 unmount ()V
+	CLASS 4 CloseAction
+	CLASS 5 SaveAction
+	CLASS 9 FilterTextField
