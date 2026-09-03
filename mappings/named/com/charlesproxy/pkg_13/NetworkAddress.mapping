@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/pkg_13/class_1172 com/charlesproxy/pkg_13/NetworkAddress
+	FIELD field_3152 address Ljava/net/InetAddress;
+	FIELD field_3153 networkInterface Ljava/net/NetworkInterface;
+	METHOD method_3046 getNetworkInterface ()Ljava/net/NetworkInterface;
+	METHOD method_3047 listUsableAddresses ()Ljava/util/List;
+	METHOD method_3048 getNetAddress ()Ljava/net/InetAddress;

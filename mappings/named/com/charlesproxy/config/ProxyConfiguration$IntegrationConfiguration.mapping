@@ -1,4 +1,4 @@
-CLASS com/charlesproxy/config/class_54 com/charlesproxy/config/ProxyConfiguration__IntegrationConfiguration
+CLASS com/charlesproxy/config/class_54 com/charlesproxy/config/ProxyConfiguration$IntegrationConfiguration
 	COMMENT [lombok] class name and property names recovered from the Lombok-generated toString()
 	FIELD field_433 useSOCKS Z
 	FIELD field_434 useHTTP Z

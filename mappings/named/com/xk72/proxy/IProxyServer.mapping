@@ -1,3 +1,5 @@
 CLASS com/xk72/proxy/class_1354 com/xk72/proxy/IProxyServer
 	COMMENT [bootstrap] matched to Charles 4's IProxyServer on 50 shared member descriptors (next best in this package scored 46) -- provisional, confirm before dropping the Maybe
 	FIELD field_3705 listeners Ljava/util/List;
+	METHOD method_3361 appendListener (Lcom/xk72/proxy/ProxyListener;)V
+	METHOD method_3719 removeListener (Lcom/xk72/proxy/ProxyListener;)V

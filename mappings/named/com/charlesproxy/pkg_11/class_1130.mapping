@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/pkg_11/class_1130
+	FIELD field_3035 threadsCount I
+	METHOD method_2932 setThreadsCount (I)V

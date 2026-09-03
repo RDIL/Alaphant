@@ -1,2 +1,6 @@
 CLASS com/charlesproxy/class_977 com/charlesproxy/PluginManager
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.PluginManager"
+	FIELD field_2684 pluginClassLoader Ljava/lang/ClassLoader;
+	FIELD field_2685 LOGGER Lorg/slf4j/Logger;
+	METHOD method_2525 createPluginClassLoader ()Ljava/lang/ClassLoader;
+	METHOD method_2526 loadToolProviders ()Ljava/util/List;

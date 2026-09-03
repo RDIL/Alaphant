@@ -4,3 +4,5 @@ CLASS com/charlesproxy/windows/class_1169 com/charlesproxy/windows/WindowsProxyM
 	FIELD field_3146 windowsProxyListener Ljava/beans/PropertyChangeSupport;
 	METHOD method_3034 disableSystemProxies ()V
 	METHOD method_3036 nativeLibraryAvailable ()Z
+	METHOD method_3037 setupSystemProxies (IILjava/util/List;)V
+	METHOD method_3040 isProxyEnabled ()Z

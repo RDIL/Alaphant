@@ -1,0 +1,20 @@
+CLASS com/charlesproxy/model/class_1610 com/charlesproxy/model/TransactionCaptureFilter
+	FIELD field_4614 excludedSchemes Ljava/util/List;
+	FIELD field_4615 includedContentTypes Ljava/util/List;
+	FIELD field_4616 excludedHosts Ljava/util/List;
+	FIELD field_4617 maxResponseSize Ljava/lang/Long;
+	FIELD field_4618 excludedContentTypes Ljava/util/List;
+	FIELD field_4619 includedSchemes Ljava/util/List;
+	FIELD field_4620 includedHosts Ljava/util/List;
+	METHOD method_4354 excludeScheme (Ljava/lang/String;)V
+	METHOD method_4355 hasAnyNonDefaultConfigurations ()Z
+	METHOD method_4356 setMaxResponseSize (J)V
+	METHOD method_4358 applyFilter (Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_1609;
+	METHOD method_4359 includeContentType (Ljava/lang/String;)V
+	METHOD method_4360 matchesAny (Ljava/util/List;Ljava/lang/String;)Z
+		ARG 0 patterns
+	METHOD method_4361 excludeHost (Ljava/lang/String;)V
+	METHOD method_4362 compilePattern (Ljava/lang/String;)Ljava/util/regex/Pattern;
+	METHOD method_4363 excludeContentType (Ljava/lang/String;)V
+	METHOD method_4364 includeScheme (Ljava/lang/String;)V
+	METHOD method_4365 includeHost (Ljava/lang/String;)V

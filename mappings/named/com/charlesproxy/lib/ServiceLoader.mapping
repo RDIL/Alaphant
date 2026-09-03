@@ -1,1 +1,2 @@
 CLASS com/charlesproxy/lib/class_902 com/charlesproxy/lib/ServiceLoader
+	METHOD method_2160 findAllServicesOfType (Ljava/lang/Class;[Ljava/lang/ClassLoader;)Ljava/util/Iterator;

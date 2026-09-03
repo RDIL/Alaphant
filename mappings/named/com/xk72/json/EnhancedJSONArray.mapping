@@ -1,0 +1,4 @@
+CLASS com/xk72/json/class_1521 com/xk72/json/EnhancedJSONArray
+	FIELD field_4164 myArrayListField Ljava/lang/reflect/Field;
+	METHOD method_4077 castToList (Lorg/json/JSONArray;)Ljava/util/List;
+	METHOD method_4078 removeAt (Lorg/json/JSONArray;I)V

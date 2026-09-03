@@ -4,3 +4,5 @@ CLASS com/charlesproxy/mozilla/class_21 com/charlesproxy/mozilla/MozillaProxySet
 	FIELD field_66 LOGGER Lorg/slf4j/Logger;
 	FIELD field_68 settingsMonitor Lcom/charlesproxy/mozilla/class_22;
 	METHOD method_65 disableProxies ()V
+	METHOD method_71 setupSystemProxies (IILjava/util/List;)V
+	METHOD method_75 isProxyEnabled ()Z

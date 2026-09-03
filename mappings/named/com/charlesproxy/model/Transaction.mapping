@@ -1,45 +1,406 @@
 CLASS com/charlesproxy/model/class_955 com/charlesproxy/model/Transaction
 	COMMENT [bootstrap] matched to Charles 4's Transaction on 126 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
-	FIELD field_2538 maybeInterruptableChannel Lcom/xk72/proxy/Connection;
-		COMMENT [bootstrap] carried over from Charles 4's Transaction.interruptableChannel on a unique descriptor match -- provisional
+	COMMENT Fully recovered: method_2367 (populate) assigns every field from the readable com.xk72.charles.model.Transaction getters, and that class' own populate(Transaction, ...) reads them all back, so each field and Lombok accessor here is pinned to a legacy property name. Cross-checked against charles-session-1_2.dtd and TransactionJSONWriter's JSON keys.
+	FIELD field_2516 responseHandshakeSize I
+	FIELD field_2517 query Ljava/lang/String;
+	FIELD field_2518 tunnel Z
+	FIELD field_2519 controlFramesSent I
+	FIELD field_2520 clientPort I
+	FIELD field_2521 clientSslProtocol Ljava/lang/String;
+	FIELD field_2522 sslSessionID [B
+	FIELD field_2523 responseSize J
+	FIELD field_2524 messages Ljava/util/List;
+		COMMENT Charles 4 named this field `messages` without obfuscation; the accessors are the hand-written getWebSocketMessages/setWebSocketMessages rather than Lombok, so the field name is not pinned by them.
+	FIELD field_2525 status Lcom/xk72/proxy/ProxyEventStatus;
+	FIELD field_2526 serverExtensions Ljava/util/List;
+	FIELD field_2527 clientKeptAlive Ljava/lang/Boolean;
+	FIELD field_2528 lastChangeEventTime J
+		COMMENT Throttle timestamp: TransactionAnnotator only fires a model change event while a body streams in if more than 1000ms has passed since this was last stamped. Name is descriptive, not recovered.
+	FIELD field_2529 requestBody [B
+	FIELD field_2530 responseHeaderSize I
+	FIELD field_2531 cipherSuite Ljava/lang/String;
+	FIELD field_2532 connectionAttributes Ljava/util/Map;
+	FIELD field_2533 serverCertificates Ljava/util/List;
+	FIELD field_2534 clientProposedSslProtocol Ljava/lang/String;
+	FIELD field_2535 file Ljava/lang/String;
+	FIELD field_2536 maxWebSocketMessages I
+		COMMENT Seeded in the constructor from RecordingConfiguration.getMaxWebSocketMessages(); -1 means unlimited, 0 means record none.
+	FIELD field_2537 requestHeader Lcom/xk72/proxy/Fields;
+	FIELD field_2538 interruptableChannel Lcom/xk72/proxy/Connection;
+		COMMENT Charles 4 left getInterruptableChannel unobfuscated, so the property name is recovered rather than inferred.
+	FIELD field_2539 requestHeaderSize I
+	FIELD field_2540 dnsDuration Ljava/lang/Long;
+	FIELD field_2541 requestTransactionBody Lcom/charlesproxy/model/class_947;
+		COMMENT Overflow store for a request body too large to hold in field_2529; Charles 4's corpus read the equivalent field the same way.
+	FIELD field_2542 requestCompleteTime Ljava/util/Date;
+	FIELD field_2543 method Ljava/lang/String;
+		COMMENT The HTTP request method: assigned from HttpFields.getRequestMethod() in updateParsedRequestFields and exported as the `method` attribute in charles-session-1_2.dtd. Charles 4 held it in a field confusingly named `scheme` behind getMethod/setMethod.
+	FIELD field_2544 errorMessage Ljava/lang/String;
+		COMMENT Charles 5 stores the formatted message where Charles 4 stored the Exception itself; TransactionJSONWriter writes it as "errorMessage".
+	FIELD field_2545 host Ljava/lang/String;
+	FIELD field_2546 webSocketMessagesDropped Ljava/lang/Boolean;
+	FIELD field_2547 remoteLocalPort I
+	FIELD field_2548 clientProposedCipherSuites Ljava/util/List;
+	FIELD field_2549 clientExtensions Ljava/util/List;
+	FIELD field_2550 proposedExtensions Ljava/util/List;
+	FIELD field_2551 controlFramesReceived I
+	FIELD field_2552 tags Ljava/util/Set;
+	FIELD field_2553 actualPort I
+	FIELD field_2554 endTime Ljava/util/Date;
+	FIELD field_2555 sslProtocol Ljava/lang/String;
+	FIELD field_2556 notes Ljava/lang/String;
+	FIELD field_2557 clientProposedExtensions Ljava/util/List;
+	FIELD field_2558 connectDuration Ljava/lang/Long;
+	FIELD field_2559 responseBody [B
+	FIELD field_2560 requestBeginTime Ljava/util/Date;
+	FIELD field_2561 keptAlive Ljava/lang/Boolean;
+	FIELD field_2562 responseBodyDecoded Z
+	FIELD field_2563 proposedSslSessionID [B
+	FIELD field_2564 requestHandshakeSize I
+	FIELD field_2565 referees Ljava/util/List;
+	FIELD field_2566 messagesSent I
+	FIELD field_2567 sslAlert B
+	FIELD field_2568 clientLocalPort I
+	FIELD field_2569 requestFlow Lcom/charlesproxy/model/Flow;
+	FIELD field_2570 responseFlow Lcom/charlesproxy/model/Flow;
+	FIELD field_2571 port I
+	FIELD field_2572 requestBodyDecoded Z
+	FIELD field_2573 clientSslSessionID [B
+	FIELD field_2574 path Ljava/lang/String;
+	FIELD field_2575 responseTransactionBody Lcom/charlesproxy/model/class_947;
+		COMMENT Overflow store for a response body too large to hold in field_2559; Charles 4's corpus read the equivalent field the same way.
+	FIELD field_2576 clientAddress Ljava/net/InetAddress;
+	FIELD field_2577 proposedCipherSuites Ljava/util/List;
+	FIELD field_2578 responseHeader Lcom/xk72/proxy/Fields;
+	FIELD field_2579 clientCipherSuite Ljava/lang/String;
+	FIELD field_2580 sslDuration Ljava/lang/Long;
+	FIELD field_2581 clientProposedAlpnProtocols Ljava/util/List;
+	FIELD field_2582 protocol Ljava/lang/String;
+		COMMENT The URL scheme (http/https), not the HTTP method -- see field_2543. TransactionJSONWriter confusingly writes it under the JSON key "scheme".
+	FIELD field_2583 requestSize J
+		COMMENT Charles 4 held the same value in `requestSizeLong` behind getRequestSize()J, keeping a legacy int `requestSize` for old sessions; Charles 5 has only the long, and its Lombok accessors are getRequestSize/setRequestSize.
+	FIELD field_2584 proposedAlpnProtocols Ljava/util/List;
+	FIELD field_2585 messagesReceived I
+	FIELD field_2586 startTime Ljava/util/Date;
+	FIELD field_2587 webSocket Z
+	FIELD field_2588 remoteAddress Ljava/net/InetAddress;
+	FIELD field_2589 protocolVersion Ljava/lang/String;
+	FIELD field_2590 proposedSslProtocol Ljava/lang/String;
+	FIELD field_2591 clientCertificates Ljava/util/List;
+	FIELD field_2592 alpnProtocol Ljava/lang/String;
+	FIELD field_2593 clientProposedSslSessionID [B
+	FIELD field_2594 responseBeginTime Ljava/util/Date;
+	FIELD field_4621 maybeContinuedTransaction Lcom/charlesproxy/model/class_955;
+		COMMENT Set by ProxyRecordingListener.transactionContinues on a freshly created, already-Complete transaction, pointing at the in-flight transaction it stands in for; a comparator in gui/session sorts the holder ahead of its target. Added in 5.2.1, so no Charles 4 counterpart -- provisional.
+	METHOD method_2254 getReferees ()Ljava/util/List;
+	METHOD method_2255 getProposedSslProtocol ()Ljava/lang/String;
+	METHOD method_2256 getDecodedRequestSize ()J
+	METHOD method_2257 setCipherSuite (Ljava/lang/String;)V
+		ARG 1 cipherSuite
+	METHOD method_2258 getProposedCipherSuites ()Ljava/util/List;
 	METHOD method_2259 getHost ()Ljava/lang/String;
+	METHOD method_2260 getMessagesReceived ()I
+	METHOD method_2261 isResponseBodyDecoded ()Z
+	METHOD method_2262 setClientSslProtocol (Ljava/lang/String;)V
+		ARG 1 clientSslProtocol
 	METHOD method_2263 getClientPort ()I
 	METHOD method_2264 getDnsDuration ()Ljava/lang/Long;
+	METHOD method_2265 setActualPort (I)V
+		ARG 1 actualPort
+	METHOD method_2266 setResponseSize (J)V
+		ARG 1 responseSize
+	METHOD method_2267 setResponseFlow (Lcom/charlesproxy/model/Flow;)V
+		ARG 1 responseFlow
+	METHOD method_2268 getBody (Lcom/charlesproxy/model/TransactionSide;)[B
+		ARG 1 side
+	METHOD method_2269 removeReferee (Lcom/charlesproxy/model/class_955;)V
+		ARG 1 referee
+	METHOD method_2270 setResponseHeader (Lcom/xk72/proxy/Fields;)V
+		ARG 1 responseHeader
+	METHOD method_2271 humanProxyEventStatusName (Lcom/xk72/proxy/ProxyEventStatus;)Ljava/lang/String;
+		ARG 0 proxyEventStatus
+	METHOD method_2272 addServerWebSocketMessage (Lcom/xk72/proxy/websocket/WebSocketMessage;)V
+		COMMENT Counts into messagesReceived/controlFramesReceived, i.e. the server-to-client direction.
+		ARG 1 message
+	METHOD method_2273 setClientKeptAlive (Ljava/lang/Boolean;)V
+		ARG 1 clientKeptAlive
+	METHOD method_2274 setConnectDuration (Ljava/lang/Long;)V
+		ARG 1 connectDuration
+	METHOD method_2275 setFile (Ljava/lang/String;)V
+		ARG 1 file
+	METHOD method_2276 setClientAddress (Ljava/net/InetAddress;)V
+		ARG 1 clientAddress
+	METHOD method_2277 setEndTime (Ljava/util/Date;)V
+		ARG 1 endTime
+	METHOD method_2278 collectWebSocketMessages (Ljava/util/List;)V
+		ARG 1 collector
+	METHOD method_2279 setResponseBodyDecoded (Z)V
+		ARG 1 responseBodyDecoded
+	METHOD method_2280 setResponseBody ([B)V
+		ARG 1 responseBody
+	METHOD method_2281 getResponseProtocolVersion ()Ljava/lang/String;
+	METHOD method_2282 getErrorMessage ()Ljava/lang/String;
 	METHOD method_2283 getProposedExtensions ()Ljava/util/List;
+	METHOD method_2285 getMessagesSent ()I
 	METHOD method_2286 getResponseHeader ()Lcom/xk72/proxy/Fields;
 	METHOD method_2287 getProtocol ()Ljava/lang/String;
+	METHOD method_2289 setRequestHandshakeSize (I)V
+		ARG 1 requestHandshakeSize
+	METHOD method_2290 appendNotes (Ljava/lang/String;)V
+		COMMENT Appends on a new line rather than replacing; the plain setter is method_2414.
+		ARG 1 notes
+	METHOD method_2291 setServerCertificates (Ljava/util/List;)V
+		ARG 1 serverCertificates
+	METHOD method_2292 hasResponseBody ()Z
+	METHOD method_2293 updateParsedRequestFields ()V
 	METHOD method_2294 getActualPort ()I
 	METHOD method_2295 getResponseHeaderSize ()I
 	METHOD method_2296 getRequestCompleteTime ()Ljava/util/Date;
 	METHOD method_2297 getClientLocalPort ()I
+	METHOD method_2299 setClientCipherSuite (Ljava/lang/String;)V
+		ARG 1 clientCipherSuite
+	METHOD method_2300 getClientKeptAlive ()Ljava/lang/Boolean;
+	METHOD method_2301 getDecodedResponseBodyStream ()Ljava/io/InputStream;
+	METHOD method_2302 getClientSslSessionID ()[B
+	METHOD method_2303 isTunnel ()Z
+	METHOD method_2305 getDecodedResponseBody ()[B
+	METHOD method_2306 setRemoteLocalPort (I)V
+		ARG 1 remoteLocalPort
+	METHOD method_2307 hasBody (Lcom/charlesproxy/model/TransactionSide;)Z
+		ARG 1 side
+	METHOD method_2308 setQuery (Ljava/lang/String;)V
+		ARG 1 query
+	METHOD method_2309 setResponseBeginTime (Ljava/util/Date;)V
+		ARG 1 responseBeginTime
+	METHOD method_2310 setClientProposedAlpnProtocols (Ljava/util/List;)V
+		ARG 1 clientProposedAlpnProtocols
+	METHOD method_2311 setWebSocket (Z)V
+		ARG 1 webSocket
+	METHOD method_2312 setProposedSslSessionID ([B)V
+		ARG 1 proposedSslSessionID
+	METHOD method_2313 getResponseContentEncoding ()Ljava/lang/String;
+	METHOD method_2315 setResponseHeaderSize (I)V
+		ARG 1 responseHeaderSize
+	METHOD method_2316 setAlpnProtocol (Ljava/lang/String;)V
+		COMMENT Not a plain setter: negotiating "h2" also marks the enclosing connection node as HTTP/2.
+		ARG 1 alpnProtocol
+	METHOD method_2317 setClientCertificates (Ljava/util/List;)V
+		ARG 1 clientCertificates
+	METHOD method_2319 getClientProposedCipherSuites ()Ljava/util/List;
 	METHOD method_2320 getRequestBody ()[B
+	METHOD method_2321 setMessagesReceived (I)V
+		ARG 1 messagesReceived
+	METHOD method_2322 setProtocol (Ljava/lang/String;)V
+		ARG 1 protocol
+	METHOD method_2323 setProposedExtensions (Ljava/util/List;)V
+		ARG 1 proposedExtensions
+	METHOD method_2324 getKeptAlive ()Ljava/lang/Boolean;
 	METHOD method_2325 getProposedAlpnProtocols ()Ljava/util/List;
+	METHOD method_2326 getRequestBodyStream ()Ljava/io/InputStream;
+	METHOD method_2327 getQuery ()Ljava/lang/String;
+	METHOD method_2328 getClientProposedSslProtocol ()Ljava/lang/String;
+	METHOD method_2329 getInterruptableChannel ()Lcom/xk72/proxy/Connection;
+	METHOD method_2330 getRequestHeaderSize ()I
 	METHOD method_2331 getRequestHandshakeSize ()I
+	METHOD method_2332 getSslProtocol ()Ljava/lang/String;
 	METHOD method_2333 getControlFramesReceived ()I
 	METHOD method_2334 getNotes ()Ljava/lang/String;
 	METHOD method_2335 getResponseHandshakeSize ()I
+	METHOD method_2336 getProposedSslSessionID ()[B
+	METHOD method_2337 isRequestBodyEncoded ()Z
+	METHOD method_2338 setControlFramesReceived (I)V
+		ARG 1 controlFramesReceived
+	METHOD method_2339 setErrorMessage (Ljava/lang/String;)V
+		ARG 1 errorMessage
+	METHOD method_2340 hasRequestBody ()Z
+	METHOD method_2341 getServerCertificates ()Ljava/util/List;
 	METHOD method_2342 getSslSessionID ()[B
 	METHOD method_2343 getRemoteAddress ()Ljava/net/InetAddress;
-	METHOD method_2344 getScheme ()Ljava/lang/String;
-	METHOD method_2346 getRequestSizeLong ()J
+	METHOD method_2344 getMethod ()Ljava/lang/String;
+	METHOD method_2345 getWebSocketMessagesDropped ()Ljava/lang/Boolean;
+	METHOD method_2346 getRequestSize ()J
+	METHOD method_2347 getResponseFlow ()Lcom/charlesproxy/model/Flow;
+	METHOD method_2349 getDecodedResponseSize ()J
+	METHOD method_2351 getAlpnProtocol ()Ljava/lang/String;
+	METHOD method_2352 getResponseStatus ()I
 	METHOD method_2353 getResponseBody ()[B
+	METHOD method_2354 getControlFramesSent ()I
 	METHOD method_2355 getProtocolVersion ()Ljava/lang/String;
+	METHOD method_2356 getWebSocketMessages ()Ljava/util/List;
 	METHOD method_2357 getSslDuration ()Ljava/lang/Long;
+	METHOD method_2358 toURL ()Ljava/net/URL;
 	METHOD method_2359 getConnectionAttributes ()Ljava/util/Map;
+	METHOD method_2360 getStatus ()Lcom/xk72/proxy/ProxyEventStatus;
+	METHOD method_2361 setSslAlert (B)V
+		ARG 1 sslAlert
+	METHOD method_2362 setPort (I)V
+		ARG 1 port
+	METHOD method_2363 setRequestSize (J)V
+		ARG 1 requestSize
+	METHOD method_2364 setRequestFlow (Lcom/charlesproxy/model/Flow;)V
+		ARG 1 requestFlow
+	METHOD method_2365 getHeader (Lcom/charlesproxy/model/TransactionSide;)Lcom/xk72/proxy/Fields;
+		ARG 1 side
+	METHOD method_2366 addReferee (Lcom/charlesproxy/model/class_955;)V
+		ARG 1 referee
+	METHOD method_2367 populate (Lcom/xk72/charles/model/Transaction;Lcom/charlesproxy/model/class_949;)V
+		COMMENT Copies a legacy com.xk72.charles.model.Transaction into this one when an old session file is read. The legacy class' own populate(Transaction, ...) is the inverse, and Flow.populate keeps the same name unobfuscated.
+		ARG 1 transaction
+		ARG 2 converter
+	METHOD method_2368 setRequestHeader (Lcom/xk72/proxy/Fields;)V
+		ARG 1 requestHeader
 	METHOD method_2369 humanProxyEventStatus (Lcom/xk72/proxy/ProxyEventStatus;)Ljava/lang/String;
 		ARG 0 proxyEventStatus
 	METHOD method_2370 maybeIsControlFrame (Lcom/xk72/proxy/websocket/WebSocketMessage$Type;)Z
 		COMMENT [bootstrap] carried over from Charles 4's Transaction.isControlFrame on a unique descriptor match -- provisional
-	METHOD method_2383 getClientCerts ()Ljava/util/List;
-	METHOD method_2384 getResponseSizeLong ()J
+		ARG 0 type
+	METHOD method_2371 addClientWebSocketMessage (Lcom/xk72/proxy/websocket/WebSocketMessage;)V
+		COMMENT Counts into messagesSent/controlFramesSent, i.e. the client-to-server direction.
+		ARG 1 message
+	METHOD method_2372 setKeptAlive (Ljava/lang/Boolean;)V
+		ARG 1 keptAlive
+	METHOD method_2373 setDnsDuration (Ljava/lang/Long;)V
+		ARG 1 dnsDuration
+	METHOD method_2374 setPath (Ljava/lang/String;)V
+		ARG 1 path
+	METHOD method_2375 setRemoteAddress (Ljava/net/InetAddress;)V
+		ARG 1 remoteAddress
+	METHOD method_2376 setURL (Ljava/net/URL;)V
+		ARG 1 url
+	METHOD method_2377 setStartTime (Ljava/util/Date;)V
+		ARG 1 startTime
+	METHOD method_2378 setWebSocketMessages (Ljava/util/List;)V
+		ARG 1 messages
+	METHOD method_2379 setConnectionAttributes (Ljava/util/Map;)V
+		ARG 1 connectionAttributes
+	METHOD method_2380 setTags (Ljava/util/Set;)V
+		ARG 1 tags
+	METHOD method_2381 setRequestBodyDecoded (Z)V
+		ARG 1 requestBodyDecoded
+	METHOD method_2382 setRequestBody ([B)V
+		ARG 1 requestBody
+	METHOD method_2383 getClientCertificates ()Ljava/util/List;
+	METHOD method_2384 getResponseSize ()J
+	METHOD method_2385 getClientProposedSslSessionID ()[B
+	METHOD method_2386 setClientProposedSslProtocol (Ljava/lang/String;)V
+		ARG 1 clientProposedSslProtocol
 	METHOD method_2387 getClientProposedAlpnProtocols ()Ljava/util/List;
+	METHOD method_2388 setClientPort (I)V
+		ARG 1 clientPort
+	METHOD method_2389 getDecodedBody (Lcom/charlesproxy/model/TransactionSide;)[B
+		ARG 1 side
+	METHOD method_2390 contentEncodingOf (Lcom/xk72/proxy/Fields;)Ljava/lang/String;
+		COMMENT Normalised Content-Encoding of the given header block, or null when it is absent or "identity". Charles 4 left this private helper unnamed, so the name is descriptive.
+		ARG 0 fields
+	METHOD method_2391 setStatus (Lcom/xk72/proxy/ProxyEventStatus;)V
+		ARG 1 status
+	METHOD method_2392 addWebSocketMessage (Lcom/xk72/proxy/websocket/WebSocketMessage;)V
+		COMMENT The shared body of addClientWebSocketMessage/addServerWebSocketMessage: appends to the message list, trims it to maxWebSocketMessages and sets webSocketMessagesDropped when it has to. Charles 4 left it unnamed, so the name is descriptive.
+		ARG 1 message
+	METHOD method_2393 setWebSocketMessagesDropped (Ljava/lang/Boolean;)V
+		ARG 1 webSocketMessagesDropped
+	METHOD method_2394 setSslDuration (Ljava/lang/Long;)V
+		ARG 1 sslDuration
+	METHOD method_2395 setRequestBeginTime (Ljava/util/Date;)V
+		ARG 1 requestBeginTime
+	METHOD method_2396 setClientProposedCipherSuites (Ljava/util/List;)V
+		ARG 1 clientProposedCipherSuites
+	METHOD method_2397 setSslSessionID ([B)V
+		ARG 1 sslSessionID
+	METHOD method_2398 setClientLocalPort (I)V
+		ARG 1 clientLocalPort
+	METHOD method_2399 getDecodedBodyStream (Lcom/charlesproxy/model/TransactionSide;)Ljava/io/InputStream;
+		ARG 1 side
+	METHOD method_2400 setRequestCompleteTime (Ljava/util/Date;)V
+		ARG 1 requestCompleteTime
+	METHOD method_2401 setProposedCipherSuites (Ljava/util/List;)V
+		ARG 1 proposedCipherSuites
+	METHOD method_2402 setTunnel (Z)V
+		ARG 1 tunnel
+	METHOD method_2403 setClientSslSessionID ([B)V
+		ARG 1 clientSslSessionID
+	METHOD method_2404 getRequestContentEncoding ()Ljava/lang/String;
+	METHOD method_2405 setControlFramesSent (I)V
+		ARG 1 controlFramesSent
+	METHOD method_2406 setHost (Ljava/lang/String;)V
+		ARG 1 host
+	METHOD method_2407 setServerExtensions (Ljava/util/List;)V
+		ARG 1 serverExtensions
+	METHOD method_2408 getCipherSuite ()Ljava/lang/String;
+	METHOD method_2409 getTags ()Ljava/util/Set;
+	METHOD method_2410 getRequestFlow ()Lcom/charlesproxy/model/Flow;
 	METHOD method_2411 getConnectDuration ()Ljava/lang/Long;
+	METHOD method_2412 getClientExtensions ()Ljava/util/List;
+	METHOD method_2413 getDecodedRequestBody ()[B
+	METHOD method_2414 setNotes (Ljava/lang/String;)V
+		ARG 1 notes
+	METHOD method_2416 setRequestHeaderSize (I)V
+		ARG 1 requestHeaderSize
+	METHOD method_2417 statusFromHumanString (Ljava/lang/String;)Lcom/xk72/proxy/ProxyEventStatus;
+		ARG 0 s
+	METHOD method_2418 setProposedAlpnProtocols (Ljava/util/List;)V
+		ARG 1 proposedAlpnProtocols
+	METHOD method_2419 setClientProposedSslSessionID ([B)V
+		ARG 1 clientProposedSslSessionID
+	METHOD method_2420 setProposedSslProtocol (Ljava/lang/String;)V
+		ARG 1 proposedSslProtocol
+	METHOD method_2421 getFile ()Ljava/lang/String;
+	METHOD method_2422 isHttp ()Z
+	METHOD method_2423 isWebSocket ()Z
+	METHOD method_2424 getClientProposedExtensions ()Ljava/util/List;
+	METHOD method_2425 getPath ()Ljava/lang/String;
+	METHOD method_2426 getResponseBodyStream ()Ljava/io/InputStream;
 	METHOD method_2427 getEndTime ()Ljava/util/Date;
 	METHOD method_2428 getClientCipherSuite ()Ljava/lang/String;
+	METHOD method_2429 clearChannel ()V
+	METHOD method_2430 setMessagesSent (I)V
+		ARG 1 messagesSent
+	METHOD method_2431 setProtocolVersion (Ljava/lang/String;)V
+		ARG 1 protocolVersion
+	METHOD method_2432 setClientExtensions (Ljava/util/List;)V
+		ARG 1 clientExtensions
+	METHOD method_2433 getFileName ()Ljava/lang/String;
 	METHOD method_2434 getServerExtensions ()Ljava/util/List;
 	METHOD method_2435 getRequestBeginTime ()Ljava/util/Date;
+	METHOD method_2436 isRequestBodyDecoded ()Z
+	METHOD method_2437 getDecodedRequestBodyStream ()Ljava/io/InputStream;
+	METHOD method_2438 getClientSslProtocol ()Ljava/lang/String;
 	METHOD method_2439 getPort ()I
+	METHOD method_2440 setSslProtocol (Ljava/lang/String;)V
+		ARG 1 sslProtocol
 	METHOD method_2441 getSslAlert ()B
+	METHOD method_2443 setResponseHandshakeSize (I)V
+		ARG 1 responseHandshakeSize
+	METHOD method_2444 setMethod (Ljava/lang/String;)V
+		ARG 1 method
+	METHOD method_2445 setClientProposedExtensions (Ljava/util/List;)V
+		ARG 1 clientProposedExtensions
+	METHOD method_2446 getClientAddress ()Ljava/net/InetAddress;
 	METHOD method_2447 getResponseBeginTime ()Ljava/util/Date;
 	METHOD method_2448 getRemoteLocalPort ()I
 	METHOD method_2449 getRequestHeader ()Lcom/xk72/proxy/Fields;
+	METHOD method_2450 updateFile ()V
+		COMMENT Rebuilds `file` from `path` and `query` after either changes. Charles 4's corpus called the equivalent helper refreshFileName, but it maintains `file`, not the fileName getter.
+	METHOD method_2451 isResponseBodyEncoded ()Z
+	METHOD method_4368 getDecodedRequestBodyAsStringSafely ()Ljava/lang/String;
+		COMMENT As getDecodedRequestBodyAsString, but falls back to the undecoded body when the content encoding cannot be decoded. Used by Copy to Clipboard and the publish exporters. Added in 5.2.1, so no Charles 4 counterpart -- the suffix is descriptive.
+	METHOD method_4369 clearDefaultPort (ILcom/xk72/proxy/http/Protocol;)V
+		COMMENT Lambda body from updateParsedRequestFields: after a CONNECT, drops the explicit port when it is the scheme's default.
+		ARG 1 port
+		ARG 2 protocol
+	METHOD method_4370 bodyAsString ([BLcom/xk72/proxy/Fields;)Ljava/lang/String;
+		COMMENT Decodes the bytes with the charset named by the header block, falling back to ISO-8859-1 then the platform default. Name is descriptive.
+		ARG 0 body
+		ARG 1 fields
+	METHOD method_4371 toUrlString ()Ljava/lang/String;
+	METHOD method_4372 getBodyStream (Lcom/charlesproxy/model/TransactionSide;)Ljava/io/InputStream;
+		ARG 1 side
+	METHOD method_4373 maybeGetContinuedTransaction ()Lcom/charlesproxy/model/class_955;
+		COMMENT See field_4621 -- provisional.
+	METHOD method_4374 getDecodedResponseBodyAsStringSafely ()Ljava/lang/String;
+		COMMENT As getDecodedResponseBodyAsString, but falls back to the undecoded body when the content encoding cannot be decoded. Used by Copy to Clipboard and the publish exporters. Added in 5.2.1, so no Charles 4 counterpart -- the suffix is descriptive.
+	METHOD method_4375 getDecodedResponseBodyAsString ()Ljava/lang/String;
+	METHOD method_4376 getDecodedRequestBodyAsString ()Ljava/lang/String;
+	METHOD method_4377 maybeSetContinuedTransaction (Lcom/charlesproxy/model/class_955;)V
+		COMMENT See field_4621 -- provisional.
+		ARG 1 continuedTransaction

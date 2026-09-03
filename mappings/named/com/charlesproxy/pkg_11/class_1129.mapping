@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/pkg_11/class_1129
+	METHOD method_2923 getProtocolDefaultPortIfPossible (Lcom/charlesproxy/model/class_955;)I
+	METHOD method_2926 endTransactionNow (Lcom/xk72/proxy/ProxyEvent;)V

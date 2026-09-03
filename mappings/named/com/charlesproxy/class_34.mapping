@@ -1,4 +1,5 @@
 CLASS com/charlesproxy/class_34
+	FIELD field_393 tool Lcom/charlesproxy/tools/spi/lib/CharlesTool;
 	METHOD <init> (Lcom/charlesproxy/CharlesContext;Lcom/charlesproxy/tools/spi/lib/CharlesTool;)V
 		ARG 1 charlesContext
 		ARG 2 charlesTool

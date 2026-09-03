@@ -139,6 +139,7 @@ CLASS com/xk72/charles/model/Transaction com/xk72/charles/model/Transaction
 	METHOD getRequestBody getRequestBody ()[B
 	METHOD getRequestCompleteTime getRequestCompleteTime ()Ljava/util/Date;
 	METHOD getRequestContentEncoding getRequestContentEncoding ()Ljava/lang/String;
+	METHOD getRequestFlow getRequestFlow ()Lcom/xk72/charles/model/Flow;
 	METHOD getRequestHandshakeSize getRequestHandshakeSize ()I
 	METHOD getRequestHeader getRequestHeader ()Lcom/xk72/proxy/Fields;
 	METHOD getRequestHeaderSize getRequestHeaderSize ()I
@@ -147,6 +148,7 @@ CLASS com/xk72/charles/model/Transaction com/xk72/charles/model/Transaction
 	METHOD getResponseBody getResponseBody ()[B
 	METHOD getResponseBodyStream getResponseBodyStream ()Ljava/io/InputStream;
 	METHOD getResponseContentEncoding getResponseContentEncoding ()Ljava/lang/String;
+	METHOD getResponseFlow getResponseFlow ()Lcom/xk72/charles/model/Flow;
 	METHOD getResponseHandshakeSize getResponseHandshakeSize ()I
 	METHOD getResponseHeader getResponseHeader ()Lcom/xk72/proxy/Fields;
 	METHOD getResponseHeaderSize getResponseHeaderSize ()I

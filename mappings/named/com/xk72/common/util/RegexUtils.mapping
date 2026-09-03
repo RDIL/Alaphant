@@ -1,1 +1,15 @@
+CLASS com/xk72/common/util/RegexUtils
+	CLASS 1 Cache
+		COMMENT An LRU pattern cache: a LinkedHashMap in access order whose removeEldestEntry caps it at 8096 entries.
+		COMMENT This sits under a nameless container rather than under class_1234 because the obfuscator renamed the outer and left this class' own name alone, so in the intermediary namespace its outer is RegexUtils, which is not a class of its own.
 CLASS com/xk72/common/util/class_1234 com/xk72/common/util/RegexUtils
+	COMMENT [bootstrap] an inner class the obfuscator left alone, com/xk72/common/util/RegexUtils$1, is enclosed by this class (its NestHost is com/xk72/common/util/dpAz), so this was originally com/xk72/common/util/RegexUtils
+	FIELD field_3253 patternCache Ljava/util/Map;
+	METHOD method_3197 wildcardToRegex (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Translates a Charles wildcard pattern into a regex: `*` becomes `.*`, `?` becomes `.`, `[...]` passes through as a character class, and everything else regex-significant is escaped. Charles 4's corpus read it as escapeRegexLikeCharacters, which describes only half of it.
+		ARG 0 wildcard
+	METHOD method_3198 getOrCreateCachedPattern (Ljava/lang/String;)Ljava/util/regex/Pattern;
+		ARG 0 regex
+	METHOD method_3199 getOrCreateCachedPattern (Ljava/lang/String;I)Ljava/util/regex/Pattern;
+		ARG 0 regex
+		ARG 1 flags

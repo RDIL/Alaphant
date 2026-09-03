@@ -4,3 +4,16 @@ CLASS com/charlesproxy/model/class_960
 	FIELD field_2604 descendantChangeListeners Ljava/util/List;
 	FIELD field_2612 dispatcher Lcom/xk72/lib/class_1556;
 	METHOD method_2485 setParent (Lcom/charlesproxy/model/class_960;)V
+	METHOD method_828 toLocation ()Lcom/xk72/common/net/Location;
+	METHOD method_832 accept (Lcom/charlesproxy/model/class_959;)V
+		ARG 1 visitor
+	METHOD method_2218 clear ()V
+		COMMENT Detaches every child depth-first; Transaction overrides it to also release the connection and any spilled body store.
+	METHOD method_2288 getTotalResponseSize ()J
+	METHOD method_2298 deepClone ()V
+		COMMENT Called from clone() to copy the mutable collections a shallow clone would share.
+	METHOD method_2314 getTotalSize ()J
+	METHOD method_2348 getEarliestStartTime ()Ljava/util/Date;
+	METHOD method_2350 getLatestTime ()Ljava/util/Date;
+	METHOD method_2415 getTotalRequestSize ()J
+	METHOD method_2442 getDuration ()J

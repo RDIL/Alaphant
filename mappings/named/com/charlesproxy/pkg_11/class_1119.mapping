@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/pkg_11/class_1119
+	METHOD <init> (Lcom/charlesproxy/pkg_11/class_1134;Lcom/xk72/proxy/http/class_1300;)V
+		ARG 2 remoteConnection
