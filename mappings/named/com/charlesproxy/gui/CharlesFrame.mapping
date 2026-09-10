@@ -3,8 +3,10 @@ CLASS com/charlesproxy/gui/CharlesFrame com/charlesproxy/gui/CharlesFrame
 	FIELD accessControlSettingsAction accessControlSettingsAction Ljavax/swing/Action;
 	FIELD breakpointsIndicatorLabel breakpointsIndicatorLabel Lcom/charlesproxy/gui/StatusPanelLabel;
 	FIELD debugLoggingLabel debugLoggingLabel Lcom/charlesproxy/gui/StatusPanelLabel;
+	FIELD dnsSettingsAction dnsSettingsAction Ljavax/swing/Action;
 	FIELD errorLogAction errorLogAction Ljavax/swing/Action;
 	FIELD errorLog errorLog Lcom/charlesproxy/gui/frames/LogFrame;
+	FIELD externalDnsResolverSettingsAction externalDnsResolverSettingsAction Ljavax/swing/Action;
 	FIELD externalProxySettingsAction externalProxySettingsAction Ljavax/swing/Action;
 	FIELD fullScreenAction fullScreenAction Ljavax/swing/Action;
 	FIELD memoryIndicatorLabel memoryIndicatorLabel Lcom/charlesproxy/gui/StatusPanelLabel;
@@ -29,4 +31,5 @@ CLASS com/charlesproxy/gui/CharlesFrame com/charlesproxy/gui/CharlesFrame
 	METHOD getSelectedFrame getSelectedFrame ()Lcom/charlesproxy/gui/lib/class_288;
 	METHOD getTopMostOwnedWindow getTopMostOwnedWindow ()Ljava/awt/Window;
 	METHOD init init ()V
+	METHOD recreateHelpMenu recreateHelpMenu ()V
 	METHOD startup startup ()V

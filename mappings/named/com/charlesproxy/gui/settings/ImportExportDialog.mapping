@@ -1,3 +1,13 @@
 CLASS com/charlesproxy/gui/settings/ImportExportDialog com/charlesproxy/gui/settings/ImportExportDialog
 	FIELD field_1458 LOGGER Lorg/slf4j/Logger;
 	METHOD save save ()Z
+	CLASS MultiSelectListPanel
+		METHOD getSelectedOptions getSelectedOptions ()Ljava/util/List;
+	CLASS OptionCheckBox OptionCheckBox
+	CLASS SelectAllCheckBox SelectAllCheckBox
+		FIELD children children Ljava/util/List;
+		FIELD dirty dirty Z
+		METHOD getChildren getChildren ()Ljava/util/List;
+		METHOD isDirty isDirty ()Z
+		METHOD setClean setClean ()V
+		METHOD setDirty setDirty ()V

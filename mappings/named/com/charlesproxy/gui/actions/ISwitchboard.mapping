@@ -1,2 +1,4 @@
 CLASS com/charlesproxy/gui/actions/class_208 com/charlesproxy/gui/actions/ISwitchboard
+	METHOD method_806 isSelected (Lcom/charlesproxy/gui/actions/class_210;)Z
 	METHOD method_807 getActionByName (Ljava/lang/String;)Lcom/charlesproxy/gui/actions/class_209;
+		ARG 1 name

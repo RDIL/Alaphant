@@ -1,4 +1,4 @@
-CLASS com/charlesproxy/gui/settings/ExternalProxySettingsPanel
+CLASS com/charlesproxy/gui/settings/ExternalProxySettingsPanel com/charlesproxy/gui/settings/ExternalProxySettingsPanel
 	FIELD bAlwaysBypassLocalhost bAlwaysBypassLocalhost Ljavax/swing/JCheckBox;
 	FIELD bRequiresAuthentication bRequiresAuthentication Ljavax/swing/JCheckBox;
 	FIELD fExternalProxyBypass fExternalProxyBypass Ljavax/swing/JTextArea;

@@ -1,4 +1,5 @@
 CLASS com/charlesproxy/gui/lib/JAutocompleteTextField com/charlesproxy/gui/lib/JAutocompleteTextField
+	FIELD filtering filtering Z
 	FIELD options options [Ljava/lang/String;
 	METHOD getOptions getOptions ()[Ljava/lang/String;
 	METHOD setOptions setOptions ([Ljava/lang/String;)V

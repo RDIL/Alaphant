@@ -1,4 +1,4 @@
-CLASS com/charlesproxy/gui/class_213 com/charlesproxy/gui/MaybeCharlesFrameWindowListener
+CLASS com/charlesproxy/gui/class_213 com/charlesproxy/gui/CharlesFrameWindowListener
 	COMMENT [bootstrap] matched to Charles 4's CharlesFrameWindowListener on 4 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
-	FIELD field_802 maybeFrame Lcom/charlesproxy/gui/CharlesFrame;
+	FIELD field_802 frame Lcom/charlesproxy/gui/CharlesFrame;
 		COMMENT [bootstrap] carried over from Charles 4's CharlesFrameWindowListener.frame on a unique descriptor match -- provisional

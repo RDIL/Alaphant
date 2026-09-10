@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/utils/class_842 com/charlesproxy/gui/utils/IThemeChangeListener
+	METHOD themeChanged themeChanged (Lcom/charlesproxy/gui/utils/class_861;)V

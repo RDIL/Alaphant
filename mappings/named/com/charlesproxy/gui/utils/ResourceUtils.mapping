@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/utils/class_848 com/charlesproxy/gui/utils/ResourceUtils
+	METHOD method_1956 loadImageFrom (Ljava/net/URL;)Ljava/awt/Image;

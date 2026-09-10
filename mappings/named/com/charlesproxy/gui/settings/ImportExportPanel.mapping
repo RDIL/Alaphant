@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/settings/ImportExportPanel com/charlesproxy/gui/settings/ImportExportPanel
+	METHOD doExport doExport ()V
+	METHOD doImport doImport ()V
+	METHOD prepareForImportExportButtons prepareForImportExportButtons (Ljavax/swing/JButton;Ljavax/swing/JButton;)V

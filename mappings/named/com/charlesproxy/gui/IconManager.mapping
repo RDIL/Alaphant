@@ -1,3 +1,6 @@
 CLASS com/charlesproxy/gui/class_403 com/charlesproxy/gui/IconManager
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.IconManager"
+	FIELD field_1245 iconMap Ljava/util/Properties;
 	FIELD field_1246 LOGGER Lorg/slf4j/Logger;
+	METHOD method_1096 getIconForTransactionStatus (Lcom/charlesproxy/model/class_955;)Ljava/lang/String;
+	METHOD method_1098 getIconForProtocol (Ljava/lang/String;)Ljava/lang/String;

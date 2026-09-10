@@ -8,4 +8,5 @@ CLASS com/xk72/proxy/http/Protocol com/xk72/proxy/http/Protocol
 		ARG 5 secure
 	METHOD defaultPort defaultPort ()I
 	METHOD isSecure isSecure ()Z
+	METHOD method_4407 caseInsensitiveTryReadProtocolFromString (Ljava/lang/String;)Ljava/util/Optional;
 	METHOD protocol protocol ()Ljava/lang/String;

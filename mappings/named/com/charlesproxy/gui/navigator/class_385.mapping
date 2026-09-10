@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/navigator/class_385
+	METHOD method_1062 getSorter ()Ljavax/swing/RowSorter;

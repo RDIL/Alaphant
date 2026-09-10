@@ -1,7 +1,26 @@
 CLASS com/charlesproxy/gui/lib/TabbedDesktopPane com/charlesproxy/gui/lib/TabbedDesktopPane
+	FIELD field_1072 panel Ljavax/swing/JPanel;
+	FIELD field_1074 frames Ljava/util/List;
 	FIELD field_1075 listeners Ljavax/swing/event/EventListenerList;
 	FIELD field_1076 LOGGER Lorg/slf4j/Logger;
+	FIELD field_1077 tabbedPane Lcom/charlesproxy/gui/lib/TabbedDesktopPane$MyJTabbedPane;
+	FIELD field_1079 focusedFrameIndex I
+	METHOD method_4309 closeSingle (Lcom/charlesproxy/gui/lib/class_288;)V
+	METHOD method_974 getFocusedFrame ()Ljava/awt/Component;
+	METHOD method_975 setFrameIndexAndFocus (I)V
+	METHOD method_976 removeFrame (Lcom/charlesproxy/gui/lib/class_288;)V
+	METHOD method_978 getTabs ()Ljava/util/List;
+	METHOD method_979 getPanel ()Ljavax/swing/JComponent;
+	METHOD method_980 addFrame (Lcom/charlesproxy/gui/lib/class_288;)V
+	METHOD method_981 addListener (Ljava/awt/event/ContainerListener;)V
 	METHOD method_982 addChangeListener (Ljavax/swing/event/ChangeListener;)V
 		ARG 1 changeListener
+	METHOD method_983 closeAll ()V
+	METHOD method_984 closeAllExcept (Lcom/charlesproxy/gui/lib/class_288;)V
 	METHOD method_985 validate ()V
 	CLASS MyJTabbedPane MyJTabbedPane
+	CLASS TabPopupMenu
+		CLASS 2
+			COMMENT Close Others Action
+		CLASS 3
+			COMMENT Close All Action

@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/settings/class_499
+	FIELD field_1473 importPemPanel Lcom/charlesproxy/gui/settings/ImportCertificateHelper$ImportPemPanel;

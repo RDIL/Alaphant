@@ -1,0 +1,10 @@
+CLASS com/charlesproxy/gui/lib/class_288 com/charlesproxy/gui/lib/ITabPaneTab
+	METHOD addPropertyChangeListener addPropertyChangeListener (Ljava/beans/PropertyChangeListener;)V
+	METHOD addPropertyChangeListener addPropertyChangeListener (Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V
+	METHOD getComponent getComponent ()Ljava/awt/Component;
+	METHOD getInitialFocusComponent getInitialFocusComponent ()Ljava/awt/Component;
+	METHOD getTitle getTitle ()Ljava/lang/String;
+	METHOD removePropertyChangeListener removePropertyChangeListener (Ljava/beans/PropertyChangeListener;)V
+	METHOD removePropertyChangeListener removePropertyChangeListener (Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V
+	METHOD setClosed setClosed (Z)V
+	METHOD setSelected setSelected (Z)V

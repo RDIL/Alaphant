@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/menus/ProxyMenu com/charlesproxy/gui/menus/ProxyMenu
+	METHOD method_1061 logRequiredProxyServerNotActive ()V

@@ -1,5 +1,13 @@
 CLASS com/charlesproxy/gui/SplashWindow com/charlesproxy/gui/SplashWindow
+	FIELD bgHeight bgHeight I
+	FIELD bgWidth bgWidth I
+	FIELD field_4539 LOGGER Lorg/slf4j/Logger;
+	FIELD tracker tracker Ljava/awt/MediaTracker;
+	METHOD loadImage loadImage (Ljava/awt/Image;)V
+	METHOD resize resize ()V
 	METHOD setCloseable setCloseable ()V
 	METHOD setDelay setDelay (I)V
 	METHOD showRegistrationStatus showRegistrationStatus ()V
 	METHOD showSharewareStatus showSharewareStatus ()V
+	METHOD showStatus showStatus (Ljava/lang/String;)V
+	CLASS SplashComponent SplashComponent

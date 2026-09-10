@@ -5,6 +5,7 @@ CLASS com/charlesproxy/gui/class_281 com/charlesproxy/gui/ActionSwitchboard
 	FIELD field_975 sequence Lcom/charlesproxy/gui/actions/class_209;
 	FIELD field_976 close Lcom/charlesproxy/gui/actions/class_209;
 	FIELD field_977 repeatTransactionAction Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_978 saveAs Lcom/charlesproxy/gui/actions/class_209;
 	FIELD field_979 findInSession Lcom/charlesproxy/gui/actions/class_209;
 	FIELD field_980 find Lcom/charlesproxy/gui/actions/class_209;
 	FIELD field_981 charlesFrame Lcom/charlesproxy/gui/CharlesFrame;
@@ -14,6 +15,7 @@ CLASS com/charlesproxy/gui/class_281 com/charlesproxy/gui/ActionSwitchboard
 	FIELD field_984 maybeViewMenu Lcom/charlesproxy/gui/menus/ViewMenu;
 		COMMENT [bootstrap] carried over from Charles 4's ActionSwitchboard.viewMenu on a unique descriptor match -- provisional
 	FIELD field_985 clear Lcom/charlesproxy/gui/actions/class_209;
+	FIELD field_986 save Lcom/charlesproxy/gui/actions/class_209;
 	FIELD field_987 findNext Lcom/charlesproxy/gui/actions/class_209;
 	FIELD field_988 compose Lcom/charlesproxy/gui/actions/class_209;
 	FIELD field_989 export Lcom/charlesproxy/gui/actions/class_209;

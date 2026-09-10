@@ -1,0 +1,9 @@
+CLASS com/charlesproxy/gui/utils/class_847 com/charlesproxy/gui/utils/ThemeUtil
+	METHOD method_1943 registerThemeListeners (Ljavax/swing/JComponent;Lcom/charlesproxy/gui/utils/class_842;)V
+	METHOD method_1944 isSystemInDarkMode ()Z
+	METHOD method_1948 isComponentDarkThemed (Ljavax/swing/JComponent;)Z
+	METHOD method_1950 getNamedColorFrom (Ljavax/swing/JComponent;Ljava/lang/String;Ljava/lang/String;)Ljava/awt/Color;
+		ARG 0 component
+		ARG 1 color
+		ARG 2 uiManagerFallbackName
+	METHOD method_1952 getAquaColorMap (Ljavax/swing/JComponent;)Ljava/util/Map;

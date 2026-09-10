@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/settings/class_494
+	FIELD field_1462 firefoxPanel Lcom/charlesproxy/gui/settings/ProxySettingsPanel$MozillaFirefoxPanel;

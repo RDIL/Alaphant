@@ -1,6 +1,15 @@
 CLASS com/charlesproxy/gui/settings/SettingsPanel com/charlesproxy/gui/settings/SettingsPanel
 	FIELD ctx charlesContext Lcom/charlesproxy/CharlesContext;
+	FIELD help help Ljava/lang/String;
+	FIELD title title Ljava/lang/String;
+	METHOD getHelp getHelp ()Ljava/lang/String;
 	METHOD getTitle getTitle ()Ljava/lang/String;
+	METHOD init init ()V
 	METHOD preSave preSave ()Z
+	METHOD prefToDouble prefToDouble (Ljava/lang/String;Ljava/lang/String;)D
+	METHOD prefToDouble prefToDouble (Ljava/lang/String;Ljava/lang/String;Z)D
+	METHOD prefToDoubleSafe prefToDoubleSafe (Ljava/lang/String;)D
+	METHOD prefToInt prefToInt (Ljava/lang/String;Ljava/lang/String;II)I
+	METHOD prefToIntSafe prefToIntSafe (Ljava/lang/String;)I
 	METHOD setHelp setHelp (Ljava/lang/String;)V
 	METHOD test test ()V

@@ -1,4 +1,4 @@
-CLASS com/charlesproxy/gui/StatusPanelLabel
+CLASS com/charlesproxy/gui/StatusPanelLabel com/charlesproxy/gui/StatusPanelLabel
 	FIELD alt alt Z
 	FIELD backgroundColor backgroundColor Ljava/awt/Color;
 	FIELD etched etched Z
@@ -9,5 +9,9 @@ CLASS com/charlesproxy/gui/StatusPanelLabel
 	FIELD prominent prominent Z
 	FIELD textColor textColor Ljava/awt/Color;
 	FIELD validateRoot validateRoot Z
+	METHOD isValidateRoot isValidateRoot ()Z
+	METHOD method_796 getEffectiveBackgroundColor ()Ljava/awt/Color;
 	METHOD paint paint (Ljava/awt/Graphics;)V
 		ARG 1 graphics
+	METHOD setAlt setAlt (Z)V
+	METHOD setProminent setProminent (Z)V

@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/gui/lib/treetable/JTreeTable com/charlesproxy/gui/lib/treetable/JTreeTable
+	METHOD getTree getTree ()Ljavax/swing/JTree;
+	METHOD setShowVerticalLines setShowVerticalLines (Z)V

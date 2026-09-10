@@ -1,0 +1,22 @@
+CLASS com/charlesproxy/gui/lib/BottomLineBorder com/charlesproxy/gui/lib/BottomLineBorder
+	FIELD color color Ljava/awt/Color;
+	FIELD padding padding I
+	FIELD thickness thickness I
+	METHOD <init> (I)V
+		ARG 1 thickness
+	METHOD <init> (Ljava/awt/Color;)V
+		ARG 1 color
+	METHOD <init> (Ljava/awt/Color;I)V
+		ARG 1 color
+		ARG 2 thickness
+	METHOD <init> (Ljava/awt/Color;II)V
+		ARG 1 color
+		ARG 2 thickness
+		ARG 3 padding
+	METHOD getBorderInsets getBorderInsets (Ljava/awt/Component;)Ljava/awt/Insets;
+	METHOD getBorderInsets getBorderInsets (Ljava/awt/Component;Ljava/awt/Insets;)Ljava/awt/Insets;
+		ARG 1 component
+		ARG 2 insets
+	METHOD paintBorder paintBorder (Ljava/awt/Component;Ljava/awt/Graphics;IIII)V
+		ARG 1 component
+		ARG 2 graphics

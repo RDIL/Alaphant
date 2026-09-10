@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/gui/settings/CertificateChainPanel com/charlesproxy/gui/settings/CertificateChainPanel
+	FIELD certificates certificates [Ljava/security/cert/Certificate;
+	FIELD root root Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;
+	METHOD getCertificates getCertificates ()[Ljava/security/cert/Certificate;
+	METHOD setCertificates setCertificates ([Ljava/security/cert/Certificate;)Lcom/charlesproxy/gui/settings/CertificateChainPanel;

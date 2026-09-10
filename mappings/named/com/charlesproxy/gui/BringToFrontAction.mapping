@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/class_192 com/charlesproxy/gui/BringToFrontAction
+	FIELD field_766 frame Lcom/charlesproxy/gui/CharlesFrame;

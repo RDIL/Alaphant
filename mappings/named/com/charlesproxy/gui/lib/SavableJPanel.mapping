@@ -1,8 +1,31 @@
 CLASS com/charlesproxy/gui/lib/SavableJPanel com/charlesproxy/gui/lib/SavableJPanel
+	FIELD closeAction closeAction Ljavax/swing/Action;
+	FIELD closed closed Z
+	FIELD dirty dirty Z
+	FIELD fileChooser fileChooser Ljavax/swing/JFileChooser;
+	FIELD file file Ljava/io/File;
+	FIELD saveAction saveAction Ljavax/swing/Action;
+	FIELD saveAsAction saveAsAction Ljavax/swing/Action;
+	FIELD selected selected Z
+	FIELD title title Ljava/lang/String;
+	METHOD approveFile approveFile (Ljava/io/File;Ljavax/swing/filechooser/FileFilter;)Ljava/io/File;
+	METHOD close close ()Z
+	METHOD fileChooser fileChooser ()Ljavax/swing/JFileChooser;
+	METHOD getCloseAction getCloseAction ()Ljavax/swing/Action;
+	METHOD getFile getFile ()Ljava/io/File;
+	METHOD getSaveAction getSaveAction ()Ljavax/swing/Action;
+	METHOD getSaveAsAction getSaveAsAction ()Ljavax/swing/Action;
 	METHOD isClosed isClosed ()Z
 	METHOD isDirty isDirty ()Z
 	METHOD isPromptToSave isPromptToSave ()Z
+	METHOD isSelected isSelected ()Z
+	METHOD save save (Z)Z
 	METHOD saveToFile saveToFile (Ljava/io/File;)V
 		ARG 1 file
 	METHOD setCloseAction setCloseAction (Ljavax/swing/Action;)V
+	METHOD setDirty setDirty (Z)V
+	METHOD setPromptToSave setPromptToSave (Z)V
+	METHOD setSaveAction setSaveAction (Ljavax/swing/Action;)V
+	METHOD setSaveAsAction setSaveAsAction (Ljavax/swing/Action;)V
+	METHOD setTitle setTitle (Ljava/lang/String;)V
 	METHOD showDontShowPrompt showDontShowPrompt ()Z

@@ -31,6 +31,7 @@ CLASS com/charlesproxy/gui/settings/ThrottleSettingsPanel com/charlesproxy/gui/s
 	CLASS Blocksize Blocksize
 		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
 		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
+		FIELD displayName displayName Ljava/lang/String;
 		FIELD field_1503 TEN_KB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
 			COMMENT Shown as " 10 KB".
 		FIELD field_1504 ONE_GB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
@@ -53,3 +54,5 @@ CLASS com/charlesproxy/gui/settings/ThrottleSettingsPanel com/charlesproxy/gui/s
 			COMMENT Shown as "  1 TB".
 		FIELD field_1513 HUNDRED_GB Lcom/charlesproxy/gui/settings/ThrottleSettingsPanel$Blocksize;
 			COMMENT Shown as "100 GB".
+		FIELD value value I
+		METHOD getValue getValue ()I

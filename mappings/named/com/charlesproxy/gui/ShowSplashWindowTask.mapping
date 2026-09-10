@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/class_260 com/charlesproxy/gui/ShowSplashWindowTask
+	FIELD field_911 guiContext Lcom/charlesproxy/gui/class_401;

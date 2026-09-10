@@ -1,4 +1,6 @@
 CLASS com/charlesproxy/gui/lib/ScrollableTextArea com/charlesproxy/gui/lib/ScrollableTextArea
+	FIELD maxHeight maxHeight I
+	FIELD textArea textArea Ljavax/swing/JTextArea;
 	METHOD getDocument getDocument ()Ljavax/swing/text/Document;
 	METHOD getText getText ()Ljava/lang/String;
 	METHOD getTextArea getTextArea ()Ljavax/swing/JTextArea;

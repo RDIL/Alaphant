@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/class_868 com/charlesproxy/gui/AlwaysOnTopSettingChangeListener
+	FIELD field_2382 frame Lcom/charlesproxy/gui/CharlesFrame;

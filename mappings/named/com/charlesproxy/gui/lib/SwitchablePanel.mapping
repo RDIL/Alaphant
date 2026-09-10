@@ -1,1 +1,2 @@
 CLASS com/charlesproxy/gui/lib/SwitchablePanel com/charlesproxy/gui/lib/SwitchablePanel
+	METHOD getSelectedIndex getSelectedIndex ()I

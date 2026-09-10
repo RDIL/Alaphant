@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/class_216 com/charlesproxy/gui/ShowHideCharlesLabelAdapter
+	FIELD field_806 menuItem Ljava/awt/MenuItem;

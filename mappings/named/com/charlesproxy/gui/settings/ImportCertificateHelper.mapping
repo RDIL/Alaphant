@@ -2,6 +2,7 @@ CLASS com/charlesproxy/gui/settings/ImportCertificateHelper com/charlesproxy/gui
 	CLASS CertificateSelectedListener CertificateSelectedListener
 	CLASS CertificatesTableModel CertificatesTableModel
 	CLASS ImportPemPanel ImportPemPanel
+		METHOD checkPrivateKey checkPrivateKey ()V
 		CLASS ErrorType ErrorType
 			COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
 			COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
