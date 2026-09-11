@@ -1,4 +1,26 @@
 CLASS com/charlesproxy/lib/BNFParser com/charlesproxy/lib/BNFParser
+	COMMENT A cursor over one header value, reading the token / quoted-string / separator grammar HTTP headers are written in. AuthorizationUtils is its only caller, and uses it to pull the name=value parameters out of a Digest, OAuth or unknown-scheme credential.
+	FIELD field_2398 position I
+	FIELD field_2399 input Ljava/lang/String;
+	METHOD method_2061 readComma ()Z
+		COMMENT Skips whitespace and consumes a "," if one is there. The parameter loops use the return as "there is another parameter".
+	METHOD method_2062 skipLinearWhitespace ()Z
+		COMMENT HTTP linear whitespace: an optional CRLF (or bare CR or LF) line fold, then at least one space or tab, then the rest of the run. False when there was no whitespace to skip, and the position is left alone in that case.
+	METHOD method_2063 readToken ()Ljava/lang/String;
+		COMMENT Everything up to the next separator. An empty result at the end of the input is an end-of-stream exception rather than "", so a caller looping on readComma cannot spin.
+	METHOD method_2064 consume (C)Z
+		COMMENT Advances only when the next character matches, so it doubles as a look-ahead.
+		ARG 1 c
+	METHOD method_2065 isSeparator (I)Z
+		COMMENT The separators set from the HTTP grammar: the bracketing and punctuation characters, quote and backslash, plus space and tab. Takes an int because it is fed straight from peek(), where -1 means end of input.
+		ARG 0 c
+	METHOD method_2066 consume (Ljava/lang/String;)Z
+		COMMENT Case-insensitive, and skips leading whitespace first. Used to test for the "=" between a parameter name and its value.
+		ARG 1 text
+	METHOD method_2067 readTokenOrQuotedString ()Ljava/lang/String;
+		COMMENT Peeks past the whitespace for a quote and falls back to readToken when there is none. Inside a quoted string only backslash-quote is unescaped, and any trailing characters after the closing quote are appended to the value rather than rejected.
+	METHOD method_2068 peek ()I
+		COMMENT -1 at the end of the input, so it never throws on an exhausted cursor.
 	CLASS BNFParseEOSException BNFParseEOSException
 		FIELD serialVersionUID serialVersionUID J
 	CLASS BNFParseException BNFParseException

@@ -1,4 +1,6 @@
 CLASS com/charlesproxy/utils/class_1143 com/charlesproxy/utils/LaunchUtils
+	FIELD field_3065 LINUX_BROWSER_COMMANDS [Ljava/lang/String;
+		COMMENT Tried in order when java.awt.Desktop is unavailable on Linux: x-www-browser, sensible-browser, gnome-www-browser, xdg-open.
 	METHOD method_2960 openFile (Ljava/io/File;)V
 		ARG 0 file
 	METHOD method_2961 openBrowserWithUrl (Ljava/lang/String;)V

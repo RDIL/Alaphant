@@ -1,0 +1,11 @@
+CLASS com/xk72/util/class_1522 com/xk72/util/Debouncer$PendingRun
+	COMMENT The single Runnable a Debouncer submits. It occupies a BackgroundExecutor thread for the whole delay, waiting on its own monitor, and re-reads the deadline each time round so a trigger arriving mid-wait extends it rather than firing a second run. Flat in the jar but a nest member of Debouncer.
+	FIELD field_4165 onEventDispatchThread Z
+		COMMENT Captured from the first trigger of a run, not the last, and decides whether the task is invoked directly or through SwingUtilities.invokeLater.
+	FIELD field_4166 task Lcom/xk72/util/class_1537;
+	FIELD field_4167 deadline J
+		COMMENT Absolute System.currentTimeMillis, and -1 when nothing is scheduled. Reset to -1 inside the lock just before the task runs, so a trigger during the run schedules a fresh one.
+	METHOD method_4082 scheduleFor (JZ)Z
+		COMMENT True when the caller now has to submit this to an executor, false when it is already waiting and only the deadline moved.
+		ARG 1 deadline
+		ARG 3 onEventDispatchThread

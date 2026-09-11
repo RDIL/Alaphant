@@ -1,0 +1,10 @@
+CLASS com/xk72/util/class_1538 com/xk72/util/ListUtils
+	COMMENT Copy-on-write list edits: both methods build a fresh array-backed list rather than mutating the one passed in. ModelNode holds its listener lists this way, so a listener added during a notification cannot disturb the iteration in progress.
+	METHOD method_4136 withRemoved (Ljava/util/List;Ljava/lang/Object;)Ljava/util/List;
+		COMMENT Removes the *last* occurrence, and returns the original list by identity when the element is not present at all.
+		ARG 0 list
+		ARG 1 element
+	METHOD method_4137 withAdded (Ljava/util/List;Ljava/lang/Object;)Lcom/xk72/util/class_1539;
+		COMMENT Appends to the end. Sizes the array in the toArray call, so the copy and the grow are one pass.
+		ARG 0 list
+		ARG 1 element

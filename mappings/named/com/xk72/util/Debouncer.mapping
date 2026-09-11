@@ -1,0 +1,7 @@
+CLASS com/xk72/util/class_1545 com/xk72/util/Debouncer
+	COMMENT [readable consumer] AbstractSessionFrame holds two of these as sequenceFilterDebouncer and structureFilterDebouncer -- field names the obfuscator left alone -- and AddRemoveTableHelper uses a third to hold off a table row filter for 100ms.
+	FIELD field_4189 delayMillis J
+	FIELD field_4190 pendingRun Lcom/xk72/util/class_1522;
+		COMMENT One instance for the life of the Debouncer, reused across triggers rather than allocated per trigger.
+	METHOD method_4151 trigger ()V
+		COMMENT Pushes the deadline out to now plus delayMillis, and submits the pending run to BackgroundExecutor only if it was not already waiting. Records whether the call came from the event dispatch thread so the task can be handed back to it.

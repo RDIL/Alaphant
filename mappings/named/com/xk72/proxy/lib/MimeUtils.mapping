@@ -1,8 +1,64 @@
 CLASS com/xk72/proxy/lib/class_1353 com/xk72/proxy/lib/MimeUtils
 	FIELD field_3704 resolver Lcom/xk72/util/class_1541;
+	FIELD field_4716 TEXT_MIME_TYPES Ljava/util/Set;
+		COMMENT The types isTextMime treats as text that no prefix or suffix rule catches: form-urlencoded, yaml, toml, csv, graphql, sql and x-sh.
+	METHOD method_3699 getMimeType (Lcom/xk72/proxy/Fields;)Ljava/lang/String;
+		COMMENT The Content-Type header with its parameters stripped, so "text/html; charset=utf-8" reads as "text/html".
+		ARG 0 fields
+	METHOD method_3700 resolveCharset (Lcom/xk72/proxy/Fields;[B)Ljava/lang/String;
+		ARG 0 fields
+		ARG 1 body
 	METHOD method_3701 isJsonMime (Ljava/lang/String;)Z
 		ARG 0 mime
+	METHOD method_3702 encode (Ljava/lang/String;Ljava/lang/String;)[B
+		COMMENT Falls back to ISO-8859-1 for a null charset and to the platform default when the named charset is not supported, so it never throws.
+		ARG 0 charset
+		ARG 1 text
+	METHOD method_3703 getFileExtension (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT The canonical extension for a mime type, from charles.mime.types; null when the type is not listed. SessionZipExporter uses it to name the file it writes for a transaction.
+		ARG 0 mime
+	METHOD method_3704 isBinaryMime (Ljava/lang/String;)Z
+		COMMENT image/, video/, audio/ and font/, plus Shockwave Flash, gzip, zip and Apple disk images.
+		ARG 0 mime
+	METHOD method_3705 stripParameters (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Everything before the first ";" in a Content-Type value, trimmed.
+		ARG 0 contentType
+	METHOD method_3706 getContentType (Lcom/xk72/proxy/Fields;)Ljava/lang/String;
+		ARG 0 fields
+	METHOD method_3707 getContentType (Lcom/xk72/proxy/Fields;Ljava/lang/String;)Ljava/lang/String;
+		COMMENT The fallback is returned when there are no fields at all, not when the header is merely absent.
+		ARG 0 fields
+		ARG 1 fallback
+	METHOD method_3708 getMimeType (Lcom/xk72/proxy/Fields;ZLjava/lang/String;)Ljava/lang/String;
+		COMMENT Prefers the declared Content-Type, but treats application/octet-stream and text/plain as uninformative and re-resolves from the path's extension. isRequest suppresses that, because a request body is not described by the URL's extension -- every caller passes transactionSide == REQUEST.
+		ARG 0 fields
+		ARG 1 isRequest
+		ARG 2 path
+	METHOD method_3709 detectCharset (Lcom/xk72/proxy/Fields;[B)Ljava/lang/String;
+		COMMENT Four sources in order: the header's charset parameter, a UTF-32/UTF-16/UTF-8 byte order mark, an in-band declaration (<meta> content-type for text/html, the encoding pseudo-attribute for XML), then UTF-8 if the type is textual at all. Null when nothing says.
+		ARG 0 fields
+		ARG 1 body
+	METHOD method_3710 resolveCharset (Lcom/xk72/proxy/Fields;[BI)Ljava/lang/String;
+		ARG 0 fields
+		ARG 1 body
+		ARG 2 length
 	METHOD method_3711 isXmlMime (Ljava/lang/String;)Z
 		ARG 0 mime
+	METHOD method_3712 getCharsetParameter (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 contentType
+		ARG 1 fallback
+	METHOD method_3713 resolveCharset (Ljava/lang/String;[B)Ljava/lang/String;
+		ARG 0 charset
+		ARG 1 body
 	METHOD method_3714 resolveCharset (Ljava/lang/String;[BII)Ljava/lang/String;
+		COMMENT Despite the name this decodes: it resolves the charset (ISO-8859-1 whenever the requested one is absent, unknown or malformed), decodes the range, and drops a leading BOM when the charset was a UTF one. The other overloads all funnel into it.
+	METHOD method_3715 getCharsetParameter (Lcom/xk72/proxy/Fields;)Ljava/lang/String;
+		ARG 0 fields
+	METHOD method_3716 isJsonOrJavaScriptMime (Ljava/lang/String;)Z
+		COMMENT isJsonMime plus application/x-javascript, application/javascript and text/javascript.
+		ARG 0 mime
 	METHOD method_3717 isTextMime (Ljava/lang/String;)Z
+		ARG 0 mime
+	METHOD method_3718 getCharsetParameter (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Matches a "charset=" parameter anywhere in the Content-Type value with a cached regex, tolerating whitespace around the "=" and stopping at the next ";", then unquotes the result.
+		ARG 0 contentType

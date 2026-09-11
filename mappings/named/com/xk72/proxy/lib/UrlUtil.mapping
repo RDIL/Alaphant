@@ -1,1 +1,17 @@
 CLASS com/xk72/proxy/lib/UrlUtil com/xk72/proxy/lib/UrlUtil
+	FIELD field_3694 DUMMY_HANDLER Lcom/xk72/proxy/lib/UrlUtil$DummyHandler;
+		COMMENT Supplied to every URL this class builds so construction never consults the JDK's handler registry. That is what lets Charles model a URL whose protocol the JVM has no handler for, at the price of a URL that cannot be opened or asked for its default port.
+	METHOD method_3647 newUrl (Ljava/lang/String;)Ljava/net/URL;
+		ARG 0 spec
+	METHOD method_3648 newUrl (Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Ljava/net/URL;
+		COMMENT Wraps MalformedURLException in a RuntimeException, so callers assembling a URL from parts they trust do not have to declare it.
+		ARG 0 protocol
+		ARG 1 host
+		ARG 2 port
+		ARG 3 file
+	METHOD method_3649 newUrl (Ljava/net/URI;)Ljava/net/URL;
+		COMMENT Rejects a relative URI up front rather than letting it fail later as a malformed URL.
+		ARG 0 uri
+	METHOD method_3650 getDefaultPort (Ljava/net/URL;)I
+		COMMENT Answers from Charles' own Protocol enum first, because a URL built here carries the dummy handler and its getDefaultPort throws. -1 when neither source knows.
+		ARG 0 url

@@ -1,0 +1,9 @@
+CLASS com/xk72/util/class_1527 com/xk72/util/StringMatcher
+	COMMENT The one string comparison behind every Charles filter that offers Case sensitive / Match whole value / Regex checkboxes. HighlightManager passes those three straight through as isCaseSensitive(), isMatchWholeValue() and isRegex(), which is where the parameter names come from.
+	METHOD method_4090 matches (Ljava/lang/String;Ljava/lang/String;ZZZ)Z
+		COMMENT Two blanks match each other, and a blank on one side only never matches. Regex goes through RegexUtils' pattern cache with CASE_INSENSITIVE set from caseSensitive, and matchWholeValue picks Matcher.matches over Matcher.find; without regex it is equals/equalsIgnoreCase or contains.
+		ARG 0 pattern
+		ARG 1 value
+		ARG 2 caseSensitive
+		ARG 3 matchWholeValue
+		ARG 4 regex

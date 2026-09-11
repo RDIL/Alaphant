@@ -1,2 +1,20 @@
 CLASS com/xk72/util/class_1528 com/xk72/util/ObjectUtils
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.util.ObjectUtils"
+	FIELD field_4170 NO_PARAMETERS [Ljava/lang/Class;
+		COMMENT An empty Class[] held to pass as the parameter list of a no-argument getMethod lookup.
+	FIELD field_4171 log Lorg/slf4j/Logger;
+	METHOD method_4091 copyProperties (Ljava/lang/Object;Ljava/lang/Object;)V
+		COMMENT Walks every public instance setXxx(T) on the source's class, finds the matching getXxx/isXxx, and copies the value across. Logs "Found setter method {}" and "Copied property: {}" as it goes.
+		ARG 0 source
+		ARG 1 destination
+	METHOD method_4092 findGetter (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Method;
+		COMMENT Takes a setter name and derives the getter from it, trying "get" + suffix then "is" + suffix, and accepting only a non-static non-abstract method whose return type is the setter's parameter type.
+		ARG 0 type
+		ARG 1 propertyType
+		ARG 2 setterName
+	METHOD method_4094 cloneAll (Ljava/util/List;)Ljava/util/List;
+		COMMENT Copies a list element-wise through ICharlesCloneable.clone(), preserving nulls.
+		ARG 0 list
+	METHOD method_4095 contains ([Ljava/lang/Object;Ljava/lang/Object;)Z
+		ARG 0 array
+		ARG 1 value

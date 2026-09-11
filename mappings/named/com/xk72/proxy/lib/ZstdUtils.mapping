@@ -1,1 +1,7 @@
 CLASS com/xk72/proxy/lib/class_1634 com/xk72/proxy/lib/ZstdUtils
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.xk72.proxy.lib.ZstdUtils"
+	FIELD field_4714 log Lorg/slf4j/Logger;
+	FIELD field_4715 available Z
+		COMMENT Set in the static initialiser and never again: true only if System.loadLibrary("zstd-jni-1.5.7-7") succeeded.
+	METHOD method_4459 isAvailable ()Z
+		COMMENT CompressionUtils consults this before handing a stream to ZstdInputStream, and treats a false as an unsupported content encoding.

@@ -1,0 +1,35 @@
+CLASS com/xk72/util/class_1529 com/xk72/util/StringUtils
+	COMMENT Plain string operations, and the base half of a two-class split -- MaybeTextUtils is its only subclass and adds the Charles-specific formatting. Named for what the members do; the obfuscator left only getFileExtension and removeFileExtension, so the class' own word is not recovered.
+	METHOD method_4097 getFileExtension (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Returns the substring after the last '.', but only when that dot falls after the last '/' or File.separatorChar; "" otherwise. Nothing to do with MIME types. Complement of removeFileExtension.
+	METHOD method_4098 replaceIgnoreCase (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Finds occurrences against a lowercased copy of both sides but splices from the original, so the surrounding text keeps its case and only the matched runs are replaced.
+		ARG 0 text
+		ARG 1 search
+		ARG 2 replacement
+	METHOD method_4099 isBlank (Ljava/lang/String;)Z
+		COMMENT Null-safe String.isBlank.
+		ARG 0 text
+	METHOD method_4100 formatByteCount (J)Ljava/lang/String;
+		COMMENT Decimal units, not binary: divides by 1000 and suffixes B/KB/MB/GB. This is what makes Charles' size columns disagree with a file manager that counts in 1024s.
+		ARG 0 bytes
+	METHOD method_4101 getDottedFileExtension (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT getFileExtension with the dot put back, or "" when there is no extension -- shaped for appending to a temp file name, which is IOUtils.writeAtomically's only use of it.
+		ARG 0 fileName
+	METHOD method_4102 hash (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Digests the UTF-8 bytes with the named MessageDigest algorithm and renders the result as lowercase hex. An unknown algorithm becomes an IllegalArgumentException rather than a checked one.
+		ARG 0 text
+		ARG 1 algorithm
+	METHOD method_4103 replace (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Literal, case-sensitive replacement of every occurrence. Predates String.replace(CharSequence, CharSequence) and returns the input untouched when there is no match.
+		ARG 0 text
+		ARG 1 search
+		ARG 2 replacement
+	METHOD method_4104 removeFileExtension (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Returns the substring before the last '.', but only when that dot falls after the last '/' or File.separatorChar; returns the input unchanged otherwise. Callers such as SaveTransactionsAction and SavableJPanel strip the extension before appending a new one.
+	METHOD method_4105 normaliseLineEndings (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Folds CRLF and lone CR onto LF, in that order so a CRLF does not become two newlines.
+		ARG 0 text
+	METHOD method_4106 capitalise (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Uppercases the first character only, leaving the rest alone. Empty strings pass through.
+		ARG 0 text

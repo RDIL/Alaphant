@@ -70,6 +70,11 @@ abstract class ValidateMappingsTask : DefaultTask() {
         // and `mergeMappings` carries them through on that basis.
         val knownClasses = intermediary.classMap.values.toSet() +
             passthroughClasses(officialJar.get().asFile, intermediary)
+        // Outers that exist only as the left-hand half of a nested name. The obfuscator sometimes
+        // renames an outer class and leaves an anonymous inner's own name alone, so the jar holds
+        // `com/xk72/common/util/RegexUtils$1` with no `RegexUtils` anywhere. Enigma writes the inner
+        // under a container line for the outer, which names nothing and has nothing behind it.
+        val nestContainers = knownClasses.mapNotNullTo(HashSet()) { it.substringBeforeLast('$', "").ifEmpty { null } }
         val takenNames = HashMap<String, String>()
 
         for (cls in named.classes) {
@@ -78,6 +83,9 @@ abstract class ValidateMappingsTask : DefaultTask() {
             // 2. The intermediary element it names has to exist. Catches invented IDs, and named
             //    entries keyed on an obfuscated official name instead of the intermediary one.
             if (cls.srcName !in knownClasses) {
+                // A nameless container for an inner class whose outer does not exist is Enigma
+                // bookkeeping, not a mapping -- it renames nothing, so there is nothing to check.
+                if (cls.srcName in nestContainers && cls.getDstName(0).let { it == null || it == cls.srcName }) continue
                 problems += "$where: no such class in the intermediary namespace"
                 continue
             }
@@ -99,12 +107,6 @@ abstract class ValidateMappingsTask : DefaultTask() {
                 if (name.substringBeforeLast('/', "") != cls.srcName.substringBeforeLast('/', "")) {
                     problems += "$where -> $name: a named class cannot change package; " +
                         "recover the package in mappings/package-names.txt instead"
-                }
-
-                // 5. Enigma reads `$` as nesting, so a flat class given a nested name comes back
-                //    truncated on the next save. Real nested classes are fine.
-                if ('$' in name.substringAfterLast('/') && '$' !in cls.srcName) {
-                    problems += "$where -> $name: a flat class cannot take a nested name, Enigma will truncate it"
                 }
 
                 // 5. A provisional name has to carry its reasoning, or it is just a guess with a
@@ -197,8 +199,11 @@ abstract class ValidateMappingsTask : DefaultTask() {
 
     private fun checkIdentifier(name: String, where: String, problems: MutableList<String>) {
         for (segment in name.split('/')) {
-            for (part in segment.split('$')) {
+            for ((index, part) in segment.split('$').withIndex()) {
                 if (part.isEmpty()) continue
+                // `Foo$1` is an anonymous inner class: a legal binary name whose suffix is a
+                // counter rather than an identifier, and not something a mapping can rename.
+                if (index > 0 && part.all { it.isDigit() }) continue
                 if (!IDENTIFIER.matches(part)) {
                     problems += "$where: \"$part\" is not a valid Java identifier"
                 } else if (part in JAVA_KEYWORDS) {

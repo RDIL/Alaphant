@@ -1,0 +1,5 @@
+CLASS com/xk72/util/class_1542 com/xk72/util/IFileWriter
+	COMMENT The callback IOUtils.writeAtomically hands a temp file to. All three implementors serialise something into the file they are given -- the configuration XML, an exported configuration, and a file-chooser save.
+	COMMENT The I-prefix follows this package's own surviving names (IRunnable, ICharlesCloneable); the rest of the name is from what the interface does, not from a recovered literal.
+	METHOD method_132 write (Ljava/io/File;)V
+		ARG 1 file

@@ -1,0 +1,10 @@
+CLASS com/xk72/util/class_1531 com/xk72/util/StringConverter
+	COMMENT Turns a string into an instance of an arbitrary target type by reflection. Paired with ConversionException, whose name the obfuscator left alone in this package.
+	FIELD field_4172 WRAPPER_TYPES Ljava/util/HashMap;
+		COMMENT Primitive class to boxed class, so convert(s, int.class) is answered by Integer.
+	FIELD field_4173 STRING_PARAMETER [Ljava/lang/Class;
+		COMMENT A one-element Class[] of String.class, reused as the signature for both the (String) constructor and the valueOf(String) lookup.
+	METHOD method_4107 convert (Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+		COMMENT Null in, null out; an empty string is also null, which is how a cleared editor field reads back as absent rather than as a zero. String and Object pass through, then a (String) constructor is tried, then a static valueOf(String). Only a failure inside the target's own code propagates immediately -- everything else is held back and reported together as "Could not convert String to <type>".
+		ARG 0 value
+		ARG 1 type

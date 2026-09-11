@@ -1,3 +1,14 @@
 CLASS com/xk72/util/class_1541 com/xk72/util/MimeTypeResolver
+	FIELD field_4183 extensionsByMimeType Ljava/util/Map;
+		COMMENT Reverse of mimeTypesByExtension, and only ever holds the first (canonical) extension listed for a type.
+	FIELD field_4184 mimeTypesByExtension Ljava/util/Map;
+		COMMENT Built from charles.mime.types, one line per type: the type followed by its extensions.
 	FIELD field_4185 defaultMimeTypesMap Lcom/xk72/util/class_1541;
+	METHOD method_4138 toFileExtension (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Null when the type is not in charles.mime.types, unlike the fromFileName direction which falls back to application/octet-stream.
+		ARG 1 mimeType
+	METHOD method_4139 getDefaultMimeTypesMap ()Lcom/xk72/util/class_1541;
 	METHOD method_4140 fromFileName (Ljava/io/File;)Ljava/lang/String;
+		ARG 1 file
+	METHOD method_4141 fromFileName (Ljava/lang/String;)Ljava/lang/String;
+		ARG 1 fileName

@@ -1,0 +1,12 @@
+CLASS com/xk72/util/class_1544 com/xk72/util/SerializationUtils
+	COMMENT Reads and writes a whole object graph as one Charles XML file -- the configuration, an exported configuration, and the Rewrite tool's export all go through here.
+	FIELD field_4187 serializationSupport Lcom/xk72/serialization/pkg_26/class_1463;
+		COMMENT One shared registry of serializers and converters, handed to a fresh serializer for each read and write.
+	FIELD field_4188 UTF8 Ljava/nio/charset/Charset;
+	METHOD method_4149 read (Ljava/io/File;)Ljava/lang/Object;
+		COMMENT Sniffs the first 80 characters for the "<?charles serialisation-version='2.0' ?>" processing instruction and refuses anything else as "Unexpected XML serialization format", then rewinds and deserialises from the top.
+		ARG 0 file
+	METHOD method_4150 write (Ljava/io/File;Ljava/lang/Object;)V
+		COMMENT Emits the XML declaration and the charles serialisation-version processing instruction that read() looks for, then the graph.
+		ARG 0 file
+		ARG 1 object

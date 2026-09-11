@@ -1,0 +1,25 @@
+CLASS com/xk72/util/class_1543 com/xk72/util/MaybeTextUtils
+	COMMENT Provisional. The final subclass of StringUtils, adding the operations that convert between strings and something else: list join/split for multi-line text fields, percent-encoding for file names, and display text for an exception. What it does is clear from its members and call sites; the word Charles used for it is not recovered, and the split from StringUtils has no visible rationale beyond the two being in different layers.
+	FIELD field_4186 UTF8 Ljava/nio/charset/Charset;
+	METHOD method_4142 splitOnCommasAndWhitespace (Ljava/lang/String;)Ljava/util/List;
+		COMMENT Tokenises on "," space tab CR and LF, and returns null rather than an empty list when nothing is left. The proxy bypass-domain text areas read their value through this and write it back through joinWithNewlines.
+		ARG 0 text
+	METHOD method_4143 decodeFileName (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Inverse of encodeAsFileName: reads %XX pairs back into bytes and decodes the lot as UTF-8. Returns the input untouched when there is no '%' at all.
+		ARG 0 fileName
+	METHOD method_4144 isSafeFileNameCharacter (C)Z
+		COMMENT ASCII letters and digits plus space ( ) - . _ and nothing else -- deliberately narrower than any one filesystem so a name survives all of them.
+		ARG 0 c
+	METHOD method_4145 toDisplayName (Ljava/lang/Class;)Ljava/lang/String;
+		COMMENT The simple name with a trailing "Exception" or "Error" trimmed off, so SocketTimeoutException reads as "SocketTimeout" in an error message.
+		ARG 0 type
+	METHOD method_4146 toErrorMessage (Ljava/lang/Exception;)Ljava/lang/String;
+		COMMENT toDisplayName of the class, and the message after a colon when there is one. ErrorMessageUtil.toErrorMessage -- a name the obfuscator left alone -- is this same body with Charles' own proxy exceptions special-cased, which is where the name comes from.
+		ARG 0 exception
+	METHOD method_4147 encodeAsFileName (Ljava/lang/String;Z)Ljava/lang/String;
+		COMMENT Percent-encodes the UTF-8 bytes of anything isSafeFileNameCharacter rejects, and returns the input by identity when nothing needs encoding. keepPathSeparators turns '/' into File.separatorChar instead of encoding it, which is how callers building a host/port/path tree keep the directory structure; every caller naming a single file passes false.
+		ARG 0 text
+		ARG 1 keepPathSeparators
+	METHOD method_4148 joinWithNewlines (Ljava/util/List;)Ljava/lang/String;
+		COMMENT "" for a null list, and no trailing newline. Paired with splitOnCommasAndWhitespace around multi-line text fields.
+		ARG 0 list

@@ -1,6 +1,25 @@
 CLASS com/xk72/util/class_1533 com/xk72/util/IOUtils
 	METHOD method_4118 checkCanWriteToDirectoryForFile (Ljava/io/File;)Z
 		ARG 0 file
+	METHOD method_4119 writeAtomically (Ljava/io/File;Lcom/xk72/util/class_1542;)V
+		COMMENT Runs the writer against a "charles" temp file beside the destination, keeping its extension, then Files.move()s it over the destination with ATOMIC_MOVE, falling back to REPLACE_EXISTING. The temp file is deleted on any failure.
+		ARG 0 file
+		ARG 1 writer
+	METHOD method_4120 copyFile (Ljava/io/File;Ljava/io/File;)V
+		ARG 0 source
+		ARG 1 destination
 	METHOD method_4121 streamThroughInChunks (Ljava/io/InputStream;Ljava/io/OutputStream;)V
 		ARG 0 inputStream
 		ARG 1 outputStream
+	METHOD method_4122 readFully (Ljava/io/InputStream;Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Drains the stream into a String through an InputStreamReader, in 64KB chunks.
+		ARG 0 inputStream
+		ARG 1 charsetName
+	METHOD method_4123 readFully (Ljava/io/InputStream;Ljava/nio/charset/Charset;)Ljava/lang/String;
+		COMMENT As the String-charset overload, but a null charset means the platform default.
+		ARG 0 inputStream
+		ARG 1 charset
+	METHOD method_4124 readFully (Ljava/io/InputStream;[B)I
+		COMMENT Reads until the buffer is full or the stream ends, returning how many bytes landed. A single InputStream.read is allowed to return short, which is what this exists to paper over.
+		ARG 0 inputStream
+		ARG 1 buffer

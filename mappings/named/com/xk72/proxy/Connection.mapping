@@ -1,8 +1,9 @@
 CLASS com/xk72/proxy/Connection com/xk72/proxy/Connection
 	FIELD field_3292 proxyServer Lcom/xk72/proxy/server/class_1262;
-	FIELD field_3295 maybeManuallyTerminated Z
+	FIELD field_3295 manuallyTerminated Z
 	FIELD field_3303 connectionType Lcom/xk72/proxy/Connection$Type;
 	METHOD method_3276 getConnectionType ()Lcom/xk72/proxy/Connection$Type;
-	METHOD method_3277 maybeIsManuallyTerminated ()Z
+	METHOD method_3277 isManuallyTerminated ()Z
+		COMMENT TransactionAnnotator.transactionComplete notes "Transaction was manually terminated" on the transaction exactly when this returns true, and the only writer sets it immediately before closing both sockets.
 	CLASS Route Route
 	CLASS Type Type

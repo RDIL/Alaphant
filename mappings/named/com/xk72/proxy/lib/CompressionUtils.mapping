@@ -1,1 +1,12 @@
 CLASS com/xk72/proxy/lib/CompressionUtils com/xk72/proxy/lib/CompressionUtils
+	METHOD method_3694 decompress (Ljava/io/InputStream;Ljava/lang/String;)Ljava/io/InputStream;
+		COMMENT Expects an encoding already put through normaliseContentEncoding. The deflate branch sniffs the first two bytes for a valid zlib header and, when they are not one, pushes a synthetic 0x78 0x01 header in front of the raw stream -- servers that send bare deflate are common enough to be worth handling.
+		ARG 0 inputStream
+		ARG 1 contentEncoding
+	METHOD method_3695 normaliseContentEncoding (Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Folds the x- aliases and case variants onto the five names the decompress methods switch on: gzip, compress, deflate, br, zstd. Anything unrecognised is returned unchanged, and fails later as an UnsupportedContentEncodingException.
+		ARG 0 contentEncoding
+	METHOD method_3696 decompress ([BLjava/lang/String;)[B
+		COMMENT Returns what it managed to decode when the stream fails part way through, and only raises ContentEncodingException if nothing at all came out -- a truncated response body still shows its readable prefix.
+		ARG 0 body
+		ARG 1 contentEncoding

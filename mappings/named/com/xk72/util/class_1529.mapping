@@ -1,5 +1,0 @@
-CLASS com/xk72/util/class_1529
-	METHOD method_4097 getFileExtension (Ljava/lang/String;)Ljava/lang/String;
-		COMMENT Returns the substring after the last '.', but only when that dot falls after the last '/' or File.separatorChar; "" otherwise. Nothing to do with MIME types. Complement of removeFileExtension.
-	METHOD method_4104 removeFileExtension (Ljava/lang/String;)Ljava/lang/String;
-		COMMENT Returns the substring before the last '.', but only when that dot falls after the last '/' or File.separatorChar; returns the input unchanged otherwise. Callers such as SaveTransactionsAction and SavableJPanel strip the extension before appending a new one.

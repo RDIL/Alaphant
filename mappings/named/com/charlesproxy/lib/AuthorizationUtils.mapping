@@ -1,11 +1,44 @@
 CLASS com/charlesproxy/lib/AuthorizationUtils com/charlesproxy/lib/AuthorizationUtils
-	METHOD method_2050 (Lcom/charlesproxy/lib/AuthorizationUtils$Authorization;)Ljava/lang/String;
+	COMMENT Parses and re-renders the Authorization request header and the WWW-Authenticate challenge that provokes it. createBearerAuth kept its own name through the obfuscator, and the create*/parse*/format* naming below follows it.
+	METHOD method_2048 parseChallenge (Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$GenericChallenge;
+		COMMENT Basic, Digest and OAuth get their parameters parsed; NTLM, Negotiate and Bearer are recognised by name but carry no parsed parameters, and every other scheme falls through to the same UnsupportedChallenge. Throws rather than returning null when the header itself is absent.
+		ARG 0 challengeHeader
+	METHOD method_2049 createAuthForUnknownScheme (Ljava/lang/String;Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$GenericAuthorization;
+		COMMENT Speculatively parses the credentials as name=value parameters, and downgrades to UnsupportedAuthorization only if that parse failed -- so an unknown scheme that happens to use the usual grammar still shows its parameters in the Authentication viewer.
+		ARG 0 scheme
+		ARG 1 credentials
+	METHOD method_2050 formatAuthorization (Lcom/charlesproxy/lib/AuthorizationUtils$Authorization;)Ljava/lang/String;
+		COMMENT The inverse of parseAuthorization, for a credential the user has edited. Parsed parameters win over the raw value when both are present, and a scheme with neither renders as the bare scheme.
 		ARG 0 authorization
-	METHOD method_2052 (Lcom/charlesproxy/lib/AuthorizationUtils$Challenge;)Ljava/lang/String;
+	METHOD method_2051 formatBasicAuthorization (Lcom/charlesproxy/lib/AuthorizationUtils$BasicAuthorization;)Ljava/lang/String;
+		COMMENT Re-encodes userId:password as base64 rather than reusing the credentials the header arrived with, so an edit to either field takes effect. Encodes as UTF-8, where the decode side reads the platform default.
+		ARG 0 basicAuthorization
+	METHOD method_2052 formatChallenge (Lcom/charlesproxy/lib/AuthorizationUtils$Challenge;)Ljava/lang/String;
 		ARG 0 challenge
-	METHOD method_2054 (Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$Authorization;
+	METHOD method_2053 parseAuthorization (Lcom/xk72/proxy/Fields;)Lcom/charlesproxy/lib/AuthorizationUtils$Authorization;
+		COMMENT Null when the request carries no Authorization header at all, where the String overload throws on a null argument.
+		ARG 0 fields
+	METHOD method_2054 parseAuthorization (Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$Authorization;
 		ARG 0 authHeader
+	METHOD method_2055 createParameterisedAuth (Ljava/lang/String;Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$GenericAuthorization;
+		COMMENT Only attempts the parameter parse when the credentials contain a "=" or a ",", so an opaque token is left as the raw value. A parse failure is recorded on the result as its parseException rather than thrown, leaving a usable object behind.
+		ARG 0 scheme
+		ARG 1 credentials
+	METHOD method_2056 formatParameters (Ljava/util/List;)Ljava/lang/String;
+		COMMENT Renders name="value" pairs separated by ", ", quoting every value whether or not it needs it and escaping embedded quotes.
+		ARG 0 parameters
+	METHOD method_2057 createBasicAuth (Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$BasicAuthorization;
+		COMMENT Base64-decodes the credentials and splits on the first colon. Null when the base64 is malformed; a decode with no colon at all is kept as a user id with no password.
+		ARG 0 credentials
+	METHOD method_2058 createParameterisedChallenge (Ljava/lang/String;Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$GenericChallenge;
+		COMMENT The challenge counterpart of createParameterisedAuth, but parses unconditionally -- a challenge always carries parameters.
+		ARG 0 scheme
+		ARG 1 parameters
 	METHOD method_2059 createBearerAuth (Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$GenericAuthorization;
+		ARG 0 token
+	METHOD method_2060 createUnsupportedChallenge (Ljava/lang/String;Ljava/lang/String;)Lcom/charlesproxy/lib/AuthorizationUtils$UnsupportedChallenge;
+		ARG 0 scheme
+		ARG 1 parameters
 	CLASS Authorization Authorization
 		METHOD getScheme getScheme ()Ljava/lang/String;
 		METHOD getValue getValue ()Ljava/lang/String;
