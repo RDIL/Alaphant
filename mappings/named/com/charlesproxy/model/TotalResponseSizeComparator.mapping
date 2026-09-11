@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/model/class_945 com/charlesproxy/model/TotalResponseSizeComparator
+	COMMENT compare() is Long.compare on ModelNode.getTotalResponseSize(). Backs ModelNodeComparators.RESPONSE_SIZE ("Response Size"); Charles 4's corpus agrees. Was the placeholder name PackagePrivateModelNodeComparator.

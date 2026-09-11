@@ -1,0 +1,15 @@
+CLASS com/charlesproxy/model/class_1609 com/charlesproxy/model/TransactionCaptureFilter__FilterResult
+	COMMENT Record returned by TransactionCaptureFilter.applyFilter; NestHost is class_1610. ConvertCommand prints it as "Removed <removed> transaction(s), kept <kept>.". The accessors are named as record components rather than getters, since that is what javac generates.
+	FIELD field_4609 removed I
+	FIELD field_4610 transactions Ljava/util/List;
+		COMMENT The transactions that were removed, not the ones kept.
+	FIELD field_4611 kept I
+	FIELD field_4612 removedSize J
+		COMMENT Summed getTotalSize() of the removed transactions.
+	METHOD <init> (IIJLjava/util/List;)V
+		ARG 1 removed
+		ARG 2 kept
+		ARG 3 removedSize
+		ARG 5 transactions
+	METHOD method_4352 removed ()I
+	METHOD method_4353 kept ()I

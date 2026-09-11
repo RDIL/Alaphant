@@ -1,2 +1,0 @@
-CLASS com/charlesproxy/model/class_973 com/charlesproxy/model/MaybeTransactionAnnotator
-	COMMENT [bootstrap] matched to Charles 4's TransactionAnnotator on 28 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe

@@ -1,0 +1,46 @@
+CLASS com/charlesproxy/model/class_943 com/charlesproxy/model/Session
+	COMMENT Root of one recording. Owns two transient indexes -- host key to Host node, and canonical URL to Transaction -- that let an arriving transaction find its place in the tree and its referrer.
+	FIELD field_2495 whenCreated J
+	FIELD field_2496 transactionWeakRefMap Ljava/util/Map;
+	FIELD field_2497 hostsByKey Ljava/util/Map;
+		COMMENT Keyed by Host.toHostKey, so a Host node is created once per protocol/host/port/tunnel combination.
+	FIELD field_2498 dirty Z
+	METHOD method_2204 indexByUrl (Lcom/charlesproxy/model/class_955;)V
+		COMMENT Stores a weak reference to the transaction under its URL-decoded canonical URL, for the referrer lookup. HTTP transactions only.
+		ARG 1 transaction
+	METHOD method_2205 getOrCreatePathFor (Lcom/charlesproxy/model/class_955;)Lcom/charlesproxy/model/class_953;
+		COMMENT Finds or creates the Host node for the transaction, then walks its path segments creating Path children, and returns the node the transaction itself should hang off.
+		ARG 1 transaction
+	METHOD method_2206 setWhenCreated (J)V
+		ARG 1 whenCreated
+	METHOD method_2207 addTransactionsFrom (Lcom/charlesproxy/model/class_943;)V
+		COMMENT Re-homes every transaction of another session into this one, used when importing.
+		ARG 1 session
+	METHOD method_2208 addTransaction (Lcom/charlesproxy/model/class_955;)V
+		COMMENT Indexes the transaction, links it to its referrer, applies the HTML referee correction and attaches it under its path.
+		ARG 1 transaction
+	METHOD method_2209 linkReferrer (Lcom/charlesproxy/model/class_955;Lcom/charlesproxy/model/class_955;)V
+		ARG 1 transaction
+		ARG 2 referrer
+	METHOD method_2210 addEditableTransaction (Lcom/charlesproxy/model/class_969;)V
+		ARG 1 editableTransaction
+	METHOD method_2211 addTransactionsFrom (Ljava/util/List;)V
+		ARG 1 nodes
+	METHOD method_2212 setDirty (Z)V
+		ARG 1 dirty
+	METHOD method_2213 getWhenCreated ()J
+	METHOD method_2214 findReferrer (Lcom/charlesproxy/model/class_955;)Lcom/charlesproxy/model/class_955;
+		COMMENT Resolves the Referer request header against the URL index, never returning the transaction itself.
+		ARG 1 transaction
+	METHOD method_2215 unlinkHtmlFromReferrer (Lcom/charlesproxy/model/class_955;)V
+		COMMENT A text/html response is a page rather than a sub-resource of the page that linked to it, so it is dropped again from its referrer referee list.
+		ARG 1 transaction
+	METHOD method_2216 attachToPath (Lcom/charlesproxy/model/class_955;)V
+		ARG 1 transaction
+	METHOD method_2217 isDirty ()Z
+	METHOD method_4378 finishTransaction (Ljava/util/Date;Lcom/charlesproxy/model/class_955;)V
+		COMMENT Lambda body of finishInProgressTransactions.
+		ARG 0 now
+		ARG 1 transaction
+	METHOD method_4379 finishInProgressTransactions ()V
+		COMMENT Closes off every transaction still running when recording stopped, stamping end times and appending "Recording stopped while transaction was in progress" to its notes.

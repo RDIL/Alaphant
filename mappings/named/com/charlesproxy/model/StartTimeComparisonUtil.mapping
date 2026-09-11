@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/model/class_929 com/charlesproxy/model/StartTimeComparisonUtil
+	METHOD method_2185 compareStartTimes (Lcom/charlesproxy/model/class_951;Lcom/charlesproxy/model/class_951;)I
+		COMMENT Charles 4's corpus named this method compareStartTimes; the body is HasStartTime.getStartTime().compareTo(...) with nulls first.
+		ARG 0 a
+		ARG 1 b

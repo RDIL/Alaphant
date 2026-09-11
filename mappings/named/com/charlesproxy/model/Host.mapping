@@ -1,0 +1,33 @@
+CLASS com/charlesproxy/model/class_956 com/charlesproxy/model/Host
+	COMMENT A host node in the Structure tree, the root of a Path subtree. Identified exactly by the two legacy-model converters, which map it to and from the readable com.xk72.charles.model.Host.
+	FIELD field_2595 isTunnel Z
+	FIELD field_2596 port I
+	FIELD field_2597 isHttp2 Z
+	FIELD field_2598 protocol Ljava/lang/String;
+	FIELD field_2599 hostName Ljava/lang/String;
+	FIELD field_2600 actualPort I
+	METHOD method_2452 isHttp2 ()Z
+	METHOD method_2453 setActualPort (I)V
+	METHOD method_2454 setHostName (Ljava/lang/String;)V
+		COMMENT Assigns hostName; was named setHost. Legacy Host.setHostName is the counterpart LegacyModelConverter reads from.
+		ARG 1 hostName
+	METHOD method_2455 setHttp2 (Z)V
+		ARG 1 isHttp2
+	METHOD method_2456 getHostName ()Ljava/lang/String;
+	METHOD method_2457 getActualPort ()I
+	METHOD method_2458 setPort (I)V
+		ARG 1 port
+	METHOD method_2459 toHostKey (Lcom/charlesproxy/model/class_955;)Ljava/lang/String;
+		COMMENT Builds protocol[:tunnel]://hostName:port from a Transaction, the key Session uses to find or create the Host node for it.
+		ARG 0 transaction
+	METHOD method_2460 toHostKey (Lcom/charlesproxy/model/class_956;)Ljava/lang/String;
+		COMMENT The same key built from an existing Host node.
+		ARG 0 host
+	METHOD method_2461 setProtocol (Ljava/lang/String;)V
+		ARG 1 protocol
+	METHOD method_2462 setTunnel (Z)V
+		COMMENT Was named setIsTunnel; legacy Host.setTunnel is the counterpart LegacyModelConverter reads from.
+		ARG 1 isTunnel
+	METHOD method_2463 getPort ()I
+	METHOD method_2464 isTunnel ()Z
+	METHOD method_2465 getProtocol ()Ljava/lang/String;

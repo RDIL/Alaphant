@@ -1,0 +1,92 @@
+CLASS com/charlesproxy/model/class_960 com/charlesproxy/model/ModelNode
+	COMMENT [bootstrap] matched to Charles 4's ModelNode on 28 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
+	FIELD field_2602 parent Lcom/charlesproxy/model/class_960;
+	FIELD field_2603 attributes Ljava/util/Map;
+	FIELD field_2604 descendantChangeListeners Ljava/util/List;
+	FIELD field_2608 children Ljava/util/List;
+	FIELD field_2609 listenerLock Ljava/lang/Object;
+	FIELD field_2610 childListeners Ljava/util/List;
+	FIELD field_2612 dispatcher Lcom/xk72/lib/class_1556;
+	FIELD field_4603 childAddedCallback Lcom/xk72/lib/class_1549;
+	FIELD field_4604 desendantRemovedCallback Lcom/xk72/lib/class_1549;
+	FIELD field_4605 descendantChangedCallback Lcom/xk72/lib/class_1549;
+	FIELD field_4606 childChangedCallback Lcom/xk72/lib/class_1549;
+	FIELD field_4607 childRemovedCallback Lcom/xk72/lib/class_1549;
+	FIELD field_4608 desendantAddedCallback Lcom/xk72/lib/class_1549;
+	METHOD method_1175 remove ()V
+		COMMENT Detaches this node from the tree entirely: clear() its children, then remove itself from its parent. TransactionCaptureFilter calls it on every transaction it filtered out.
+	METHOD method_2218 clear ()V
+		COMMENT Detaches every child depth-first; Transaction overrides it to also release the connection and any spilled body store.
+	METHOD method_2288 getTotalResponseSize ()J
+	METHOD method_2298 deepClone ()V
+		COMMENT Called from clone() to copy the mutable collections a shallow clone would share.
+	METHOD method_2314 getTotalSize ()J
+	METHOD method_2348 getEarliestStartTime ()Ljava/util/Date;
+	METHOD method_2350 getLatestTime ()Ljava/util/Date;
+	METHOD method_2415 getTotalRequestSize ()J
+	METHOD method_2442 getDuration ()J
+	METHOD method_2474 getChildren ()Ljava/util/List;
+	METHOD method_2475 removeDescendantChangeListener (Lcom/charlesproxy/model/class_939;)V
+		ARG 1 listener
+	METHOD method_2476 removeChildListener (Lcom/charlesproxy/model/class_970;)V
+		ARG 1 listener
+	METHOD method_2477 withoutListener (Ljava/util/List;Ljava/lang/Object;)Ljava/util/List;
+		COMMENT Copy-on-write removal; returns the list unchanged when absent and null when it would become empty, which is how the listener fields stay null for the common unlistened node.
+		ARG 0 listeners
+		ARG 1 listener
+	METHOD method_2478 fireModelChanged (Lcom/charlesproxy/model/ModelEvent;)V
+		COMMENT Notifies this node's child listeners, then every ancestor's descendant listeners.
+		ARG 1 modelEvent
+	METHOD method_2479 addDescendantChangeListener (Lcom/charlesproxy/model/class_939;)V
+		ARG 1 listener
+	METHOD method_2480 addChildListener (Lcom/charlesproxy/model/class_970;)V
+		ARG 1 listener
+	METHOD method_2481 setAttribute (Ljava/lang/String;Ljava/lang/Object;)V
+		ARG 1 name
+		ARG 2 value
+	METHOD method_2482 setAttribute (Ljava/lang/String;Ljava/lang/Object;Z)V
+		COMMENT No-ops when the value is unchanged; fires a ModelEvent only when asked to.
+		ARG 1 name
+		ARG 2 value
+		ARG 3 fireEvent
+	METHOD method_2483 withListener (Ljava/util/List;Ljava/lang/Object;)Ljava/util/List;
+		COMMENT Copy-on-write addition, starting from a singletonList so a node with one listener allocates nothing further.
+		ARG 0 listeners
+		ARG 1 listener
+	METHOD method_2484 getParent ()Lcom/charlesproxy/model/class_960;
+	METHOD method_2485 setParent (Lcom/charlesproxy/model/class_960;)V
+	METHOD method_2486 getAttribute (Ljava/lang/String;)Ljava/lang/Object;
+		ARG 1 name
+	METHOD method_2487 sortChildren (Z)V
+		COMMENT Sorts children by earliest start time through EarliestStartTimeKeyComparator, recursing when asked.
+		ARG 1 recursive
+	METHOD method_2488 removeAttribute (Ljava/lang/String;)V
+		ARG 1 name
+	METHOD method_2489 isChildless ()Z
+	METHOD method_828 toLocation ()Lcom/xk72/common/net/Location;
+	METHOD method_829 removeChild (Lcom/charlesproxy/model/class_960;)Z
+		COMMENT Returns whether the child was present; fires childRemoved on this node and descendantRemoved up the parent chain.
+		ARG 1 child
+	METHOD method_832 accept (Lcom/charlesproxy/model/class_959;)V
+		ARG 1 visitor
+	METHOD method_833 addChild (Lcom/charlesproxy/model/class_960;)V
+		COMMENT Legacy name: com.xk72.charles.model.ModelNode.addChild. Ignores a child already present.
+		ARG 1 child
+	METHOD method_4346 dispatchModelChanged (Lcom/charlesproxy/model/class_970;Lcom/charlesproxy/model/ModelEvent;)V
+		ARG 0 listener
+		ARG 1 modelEvent
+	METHOD method_4347 dispatchModelDescendantChanged (Lcom/charlesproxy/model/class_939;Lcom/charlesproxy/model/ModelEvent;)V
+		ARG 0 listener
+		ARG 1 modelEvent
+	METHOD method_4348 dispatchModelChildRemoved (Lcom/charlesproxy/model/class_970;Lcom/charlesproxy/model/ModelEvent;)V
+		ARG 0 listener
+		ARG 1 modelEvent
+	METHOD method_4349 dispatchModelDescendantRemoved (Lcom/charlesproxy/model/class_939;Lcom/charlesproxy/model/ModelEvent;)V
+		ARG 0 listener
+		ARG 1 modelEvent
+	METHOD method_4350 dispatchModelChildAdded (Lcom/charlesproxy/model/class_970;Lcom/charlesproxy/model/ModelEvent;)V
+		ARG 0 listener
+		ARG 1 modelEvent
+	METHOD method_4351 dispatchModelDescendantAdded (Lcom/charlesproxy/model/class_939;Lcom/charlesproxy/model/ModelEvent;)V
+		ARG 0 listener
+		ARG 1 modelEvent

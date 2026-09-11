@@ -1,3 +1,0 @@
-CLASS com/charlesproxy/model/class_949
-	METHOD method_2242 (Lcom/xk72/charles/validator/ValidatorTransaction;)Lcom/charlesproxy/validator/class_1150;
-		ARG 1 validatorTransaction

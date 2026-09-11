@@ -1,4 +1,10 @@
 CLASS com/charlesproxy/validator/gui/class_1151
 	COMMENT [bootstrap] matched to Charles 4's g on 15 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
-	METHOD method_3009 (Lcom/charlesproxy/validator/ValidatorMessage;)Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;
+	FIELD field_3098 failureNode Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;
+	FIELD field_3099 statusNode Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;
+	FIELD field_3100 warningsNode Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;
+	FIELD field_3101 urlNode Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;
+	FIELD field_3102 contentTypeNode Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;
+	FIELD field_3103 errorsNode Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;
+	METHOD method_3009 nodeFromMessage (Lcom/charlesproxy/validator/ValidatorMessage;)Lcom/charlesproxy/gui/lib/treetable/DefaultTreeTableNode;
 		ARG 0 message

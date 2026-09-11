@@ -1,0 +1,55 @@
+CLASS com/charlesproxy/model/class_973 com/charlesproxy/model/TransactionAnnotator
+	COMMENT [bootstrap] matched to Charles 4's TransactionAnnotator on 28 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
+	FIELD field_2625 TRANSACTION_PROPERTIES Ljava/lang/String;
+	METHOD method_2496 finaliseResponseBody (Lcom/charlesproxy/model/class_955;)V
+		COMMENT The response-side counterpart of finaliseRequestBody.
+		ARG 0 transaction
+	METHOD method_2497 receivedRequestHeader (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 0 transaction
+		ARG 1 event
+	METHOD method_2498 receivingResponseBody (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;[BI)V
+		ARG 0 transaction
+		ARG 1 event
+	METHOD method_2499 receivingResponseWebSocketMessage (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/websocket/WebSocketMessage;)V
+		ARG 0 transaction
+		ARG 1 webSocketMessage
+	METHOD method_2500 receivedRequest (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 0 transaction
+		ARG 1 event
+	METHOD method_2501 connectingToRemote (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 0 transaction
+		ARG 1 event
+	METHOD method_2502 receivedResponse (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 0 transaction
+		ARG 1 event
+	METHOD method_2503 transactionComplete (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;)V
+		COMMENT Named for ProxyRecordingListener.transactionComplete, its only caller. Compacts both bodies, notes a manual termination and releases the channel.
+		ARG 0 transaction
+		ARG 1 event
+	METHOD method_2504 webSocketEstablished ()V
+	METHOD method_2505 finaliseRequestBody (Lcom/charlesproxy/model/class_955;)V
+		COMMENT Compacts the request TransactionBody and copies it onto the transaction if it never spilled to disk.
+		ARG 0 transaction
+	METHOD method_2506 setupTransactionDetailsFromEvent (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 0 transaction
+		ARG 1 event
+	METHOD method_2507 receivingRequestBody (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;[BI)V
+		ARG 0 transaction
+	METHOD method_2508 receivingRequestWebSocketMessage (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/websocket/WebSocketMessage;)V
+		ARG 0 transaction
+		ARG 1 webSocketMessage
+	METHOD method_2509 receivedResponseHeader (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 0 transaction
+		ARG 1 event
+	METHOD method_2510 resolvingRemote (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 0 transaction
+		ARG 1 event
+	METHOD method_2511 connectedToRemote (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 0 transaction
+		ARG 1 event
+	METHOD method_2512 responseWebSocketMessageParsingAborted (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 0 transaction
+		ARG 1 event
+	METHOD method_2513 requestWebSocketMessageParsingAborted (Lcom/charlesproxy/model/class_955;Lcom/xk72/proxy/ProxyEvent;)V
+		ARG 0 transaction
+		ARG 1 event

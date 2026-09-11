@@ -1,0 +1,21 @@
+CLASS com/charlesproxy/model/class_949 com/charlesproxy/model/LegacyModelConverter
+	COMMENT Rebuilds a current-model Session from a deserialized com.xk72.charles.model one, which is how SerializedSessionImporter reads a session file written by an older Charles. The map keeps node identity stable so a Transaction referenced twice converts once.
+	COMMENT Transaction.populate names its parameter of this type "converter" -- that name survived obfuscation. com.xk72.charles.model.class_1224 is the mirror image, converting current to legacy.
+	FIELD field_2511 converted Ljava/util/Map;
+	METHOD method_2236 convertEditableTransaction (Lcom/xk72/charles/model/EditableTransaction;)Lcom/charlesproxy/model/class_969;
+		ARG 1 editableTransaction
+	METHOD method_2237 convertHost (Lcom/xk72/charles/model/Host;)Lcom/charlesproxy/model/class_956;
+		ARG 0 host
+	METHOD method_2238 convertNode (Lcom/xk72/charles/model/ModelNode;)Lcom/charlesproxy/model/class_960;
+		COMMENT Dispatches on the legacy node type, memoizes the result and converts the children recursively.
+		ARG 1 modelNode
+	METHOD method_2239 convertPath (Lcom/xk72/charles/model/Path;)Lcom/charlesproxy/model/class_953;
+		ARG 0 path
+	METHOD method_2240 convertSession (Lcom/xk72/charles/model/Session;)Lcom/charlesproxy/model/class_943;
+		ARG 1 session
+	METHOD method_2241 convertTransaction (Lcom/xk72/charles/model/Transaction;)Lcom/charlesproxy/model/class_955;
+		ARG 1 transaction
+	METHOD method_2242 convertValidatorTransaction (Lcom/xk72/charles/validator/ValidatorTransaction;)Lcom/charlesproxy/validator/class_1150;
+		ARG 1 validatorTransaction
+	METHOD method_2243 convertValidatorMessages (Ljava/util/List;)Ljava/util/List;
+		ARG 0 messages

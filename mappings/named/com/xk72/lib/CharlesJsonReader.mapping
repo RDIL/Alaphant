@@ -1,0 +1,2 @@
+CLASS com/xk72/lib/class_1563 com/xk72/lib/CharlesJsonReader
+	METHOD method_4182 readString ()Ljava/lang/String;

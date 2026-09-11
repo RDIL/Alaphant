@@ -2,7 +2,7 @@ CLASS com/charlesproxy/config/class_77 com/charlesproxy/config/MaybeThrottlePres
 	COMMENT [inferred] MaybeThrottleSettings plus a name; serialized under the element name "throttlePreset", held in ThrottlingConfiguration.customPresets, and extended by ThrottlingPreset for the built-ins
 	FIELD field_509 name Ljava/lang/String;
 	METHOD method_348 getName ()Ljava/lang/String;
-	METHOD method_349 maybeHasSameSettings (Lcom/charlesproxy/config/class_108;)Z
+	METHOD method_349 allSettingsMatch (Lcom/charlesproxy/config/class_108;)Z
 		COMMENT [inferred] compares every inherited throttle parameter against another MaybeThrottleSettings, ignoring the name
 	METHOD method_350 canEqual (Ljava/lang/Object;)Z
 	METHOD method_351 setName (Ljava/lang/String;)V

@@ -1,2 +1,6 @@
 CLASS com/xk72/util/class_1533 com/xk72/util/IOUtils
 	METHOD method_4118 checkCanWriteToDirectoryForFile (Ljava/io/File;)Z
+		ARG 0 file
+	METHOD method_4121 streamThroughInChunks (Ljava/io/InputStream;Ljava/io/OutputStream;)V
+		ARG 0 inputStream
+		ARG 1 outputStream

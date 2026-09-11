@@ -1,4 +1,11 @@
 CLASS com/charlesproxy/model/class_958 com/charlesproxy/model/ProxyRecordingListener
 	COMMENT [bootstrap] matched to Charles 4's ProxyRecordingListener on 5 shared member descriptors (next best in this package scored 0) -- provisional, confirm before dropping the Maybe
-	METHOD method_1 maybeGetSession ()Lcom/charlesproxy/model/class_943;
+	FIELD field_2601 EMPTY_OBJECT Ljava/lang/Object;
+	METHOD method_1 getSession ()Lcom/charlesproxy/model/class_943;
 		COMMENT [bootstrap] carried over from Charles 4's ProxyRecordingListener.getSession on a unique descriptor match -- provisional
+	METHOD method_2472 createTransactionIfAbsent (Lcom/xk72/proxy/ProxyEvent;)Z
+		COMMENT Creates the Transaction for this event, annotates it from the event and attaches it under its path, unless the event already carries one. Returns whether it created one.
+		ARG 1 proxyEvent
+	METHOD method_2473 getTransaction (Lcom/xk72/proxy/ProxyEvent;)Lcom/charlesproxy/model/class_955;
+		COMMENT The Transaction stored on the event under the "com.charlesproxy.model.Transaction" attribute, re-resolved against this listener's session for a tunnelled event.
+		ARG 1 proxyEvent

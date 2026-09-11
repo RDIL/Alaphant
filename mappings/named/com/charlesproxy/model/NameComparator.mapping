@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/model/class_965 com/charlesproxy/model/NameComparator
+	COMMENT Singleton comparing ModelNode.toString() case-insensitively, except that two Hosts are compared on getHostName(). Backs ModelNodeComparators.STRING ("Name").
+	COMMENT Named for the surviving field name below rather than Charles 4's guess of HostNameComparator, which does not describe the general toString() path.
+	FIELD field_2618 nameComparator Lcom/charlesproxy/model/class_965;

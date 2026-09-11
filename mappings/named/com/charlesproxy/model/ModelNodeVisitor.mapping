@@ -1,0 +1,15 @@
+CLASS com/charlesproxy/model/class_959 com/charlesproxy/model/ModelNodeVisitor
+	COMMENT The interface ModelNode.accept() dispatches to: one overload per concrete node type. Dropped the maybe prefix -- accept(class_959) pins the role exactly, and the overload set covers precisely the five ModelNode subclasses plus the two validator ones.
+	METHOD method_837 visit (Lcom/charlesproxy/model/class_955;)V
+		ARG 1 transaction
+	METHOD method_839 visit (Lcom/charlesproxy/model/class_969;)V
+		ARG 1 editableTransaction
+	METHOD method_840 visit (Lcom/charlesproxy/validator/class_1150;)V
+		ARG 1 validatorTransaction
+	METHOD method_2466 visit (Lcom/charlesproxy/model/class_943;)V
+		ARG 1 session
+	METHOD method_2467 visit (Lcom/charlesproxy/model/class_953;)V
+		ARG 1 path
+	METHOD method_2468 visit (Lcom/charlesproxy/model/class_956;)V
+		ARG 1 host
+	METHOD method_2470 visit (Lcom/charlesproxy/validator/class_1149;)V

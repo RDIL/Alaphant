@@ -18,3 +18,6 @@ CLASS com/charlesproxy/model/class_1610 com/charlesproxy/model/TransactionCaptur
 	METHOD method_4363 excludeContentType (Ljava/lang/String;)V
 	METHOD method_4364 includeScheme (Ljava/lang/String;)V
 	METHOD method_4365 includeHost (Ljava/lang/String;)V
+	METHOD method_4357 pruneEmptyNodes (Lcom/charlesproxy/model/class_960;)Z
+		COMMENT Depth-first sweep removing Host and Path nodes left with no transactions under them after filtering; returns whether the subtree still holds one.
+		ARG 0 node

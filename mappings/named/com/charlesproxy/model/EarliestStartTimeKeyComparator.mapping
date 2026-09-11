@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/model/class_1612 com/charlesproxy/model/EarliestStartTimeKeyComparator
+	COMMENT The CachingKeyComparator singleton keyed on ModelNode.getEarliestStartTime(); ModelNode.sortChildren() uses it, which is why the key is cached -- getEarliestStartTime walks the whole subtree.
+	FIELD field_4622 INSTANCE Lcom/charlesproxy/model/class_1612;

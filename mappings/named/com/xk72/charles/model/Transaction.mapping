@@ -24,6 +24,8 @@ CLASS com/xk72/charles/model/Transaction com/xk72/charles/model/Transaction
 	FIELD dnsDuration dnsDuration Ljava/lang/Long;
 	FIELD endTime endTime Ljava/util/Date;
 	FIELD exception exception Ljava/lang/Exception;
+	FIELD field_3231 rawPath Ljava/lang/String;
+	FIELD field_3232 query Ljava/lang/String;
 	FIELD host host Ljava/lang/String;
 	FIELD keptAlive keptAlive Ljava/lang/Boolean;
 	FIELD messagesDropped messagesDropped Ljava/lang/Boolean;
@@ -103,6 +105,7 @@ CLASS com/xk72/charles/model/Transaction com/xk72/charles/model/Transaction
 	METHOD getControlFramesSent getControlFramesSent ()I
 	METHOD getDecodedRequestBody getDecodedRequestBody ()[B
 	METHOD getDecodedRequestBodyAsString getDecodedRequestBodyAsString ()Ljava/lang/String;
+	METHOD getDecodedRequestBodyStream getDecodedRequestBodyStream ()Ljava/io/InputStream;
 	METHOD getDecodedRequestSize getDecodedRequestSize ()J
 	METHOD getDecodedResponseBody getDecodedResponseBody ()[B
 	METHOD getDecodedResponseBodyAsString getDecodedResponseBodyAsString ()Ljava/lang/String;
@@ -137,6 +140,7 @@ CLASS com/xk72/charles/model/Transaction com/xk72/charles/model/Transaction
 	METHOD getRemoteLocalPort getRemoteLocalPort ()I
 	METHOD getRequestBeginTime getRequestBeginTime ()Ljava/util/Date;
 	METHOD getRequestBody getRequestBody ()[B
+	METHOD getRequestBodyStream getRequestBodyStream ()Ljava/io/InputStream;
 	METHOD getRequestCompleteTime getRequestCompleteTime ()Ljava/util/Date;
 	METHOD getRequestContentEncoding getRequestContentEncoding ()Ljava/lang/String;
 	METHOD getRequestFlow getRequestFlow ()Lcom/xk72/charles/model/Flow;
@@ -180,6 +184,7 @@ CLASS com/xk72/charles/model/Transaction com/xk72/charles/model/Transaction
 	METHOD isRequestBodyEncoded isRequestBodyEncoded ()Z
 	METHOD isResponseBodyDecoded isResponseBodyDecoded ()Z
 	METHOD isResponseBodyEncoded isResponseBodyEncoded ()Z
+	METHOD method_3162 recalculateFile ()V
 	METHOD populate populate (Lcom/charlesproxy/model/class_955;Lcom/xk72/charles/model/class_1224;)V
 	METHOD readObject readObject (Ljava/io/ObjectInputStream;)V
 	METHOD setActualPort setActualPort (I)V
@@ -252,3 +257,4 @@ CLASS com/xk72/charles/model/Transaction com/xk72/charles/model/Transaction
 	METHOD toURL toURL ()Ljava/net/URL;
 	METHOD toUrlString toUrlString ()Ljava/lang/String;
 	METHOD updateParsedRequestFields updateParsedRequestFields ()V
+	METHOD writeObject writeObject (Ljava/io/ObjectOutputStream;)V

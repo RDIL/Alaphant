@@ -1,0 +1,9 @@
+CLASS com/charlesproxy/model/class_933 com/charlesproxy/model/Flow__Data
+	COMMENT One bandwidth bucket returned by Flow.getData(); NestHost is Flow. The constructor is called with (bucketStart, bucketEnd, dataSize) straight out of Flow's three parallel arrays, and FlowChartPanel plots dataSize * 1000 / (1 + bucketEnd - bucketStart) as bytes per second.
+	FIELD field_2483 bucketEnd J
+	FIELD field_2484 bucketStart J
+	FIELD field_2485 dataSize J
+	METHOD <init> (JJJ)V
+		ARG 1 bucketStart
+		ARG 3 bucketEnd
+		ARG 5 dataSize

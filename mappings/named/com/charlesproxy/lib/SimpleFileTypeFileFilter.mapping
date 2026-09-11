@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/lib/class_898 com/charlesproxy/lib/SimpleFileTypeFileFilter
+	FIELD field_2436 name Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 1 extension
+		ARG 2 name
+	METHOD <init> ([Ljava/lang/String;Ljava/lang/String;)V
+		ARG 1 extensions
+		ARG 2 name
+	METHOD accept (Ljava/io/File;)Z
+		ARG 1 file
+	METHOD method_2152 setName (Ljava/lang/String;)V
+	METHOD method_2155 addAcceptableExtension (Ljava/lang/String;)V

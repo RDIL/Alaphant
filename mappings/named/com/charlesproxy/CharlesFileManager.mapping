@@ -1,1 +1,18 @@
 CLASS com/charlesproxy/class_24 com/charlesproxy/CharlesFileManager
+	FIELD field_70 legacyCharlesSessionFilter Lcom/charlesproxy/lib/class_898;
+	FIELD field_71 harFileFilter Lcom/charlesproxy/lib/class_898;
+	FIELD field_72 httpTraceFilter Lcom/charlesproxy/lib/class_898;
+	FIELD field_73 fiddlerSessionFilter Lcom/charlesproxy/lib/class_898;
+	FIELD field_75 newCharlesSessionFilter Lcom/charlesproxy/lib/class_898;
+	FIELD field_76 amfDumpsFilter Lcom/charlesproxy/lib/class_898;
+	FIELD field_77 jsonDumpsFilter Lcom/charlesproxy/lib/class_898;
+	FIELD field_78 csvFilter Lcom/charlesproxy/lib/class_898;
+	FIELD field_79 xmlSessionFilter Lcom/charlesproxy/lib/class_898;
+	FIELD field_80 charlesJsonSessionFilter Lcom/charlesproxy/lib/class_898;
+	FIELD field_81 libpcapFilter Lcom/charlesproxy/lib/class_898;
+	METHOD method_103 fromSessionTrace (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;
+	METHOD method_104 fromJson (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;
+	METHOD method_105 fromPcap (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;
+	METHOD method_87 fromHar (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;
+	METHOD method_88 fromXml (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;
+	METHOD method_89 fromSaz (Ljava/io/File;Lcom/charlesproxy/model/class_943;)Lcom/charlesproxy/model/class_943;

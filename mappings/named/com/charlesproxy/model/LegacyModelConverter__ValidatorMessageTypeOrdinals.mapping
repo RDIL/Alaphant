@@ -1,0 +1,3 @@
+CLASS com/charlesproxy/model/class_952 com/charlesproxy/model/LegacyModelConverter__ValidatorMessageTypeOrdinals
+	COMMENT Synthetic switch-map holder javac emitted for the switch over the legacy ValidatorMessage.Type in LegacyModelConverter.convertValidatorMessages. NestHost says class_949; named to match the ValidatorMessageOrdinals / WebSocketMessageTypeOrdinals holders in com/xk72/charles/model.
+	FIELD field_2514 ordinals [I

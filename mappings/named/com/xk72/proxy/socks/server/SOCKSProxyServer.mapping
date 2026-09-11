@@ -1,1 +1,4 @@
 CLASS com/xk72/proxy/socks/server/SOCKSProxyServer com/xk72/proxy/socks/server/SOCKSProxyServer
+	METHOD method_3734 setEnableSOCKSTransparentHTTPProxying (Z)V
+	METHOD method_3736 setSocksTransparentHTTPProxyPorts ([I)V
+	METHOD method_3737 setIsDefaultSOCKSTransparentHTTPProxyPorts (Z)V

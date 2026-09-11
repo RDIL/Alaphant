@@ -1,1 +1,4 @@
 CLASS com/charlesproxy/model/TransactionSide com/charlesproxy/model/TransactionSide
+	METHOD toWord toWord ()Ljava/lang/String;
+	FIELD field_2499 RESPONSE Lcom/charlesproxy/model/TransactionSide;
+	FIELD field_2500 REQUEST Lcom/charlesproxy/model/TransactionSide;

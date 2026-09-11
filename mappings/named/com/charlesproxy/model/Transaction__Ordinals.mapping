@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/model/class_963 com/charlesproxy/model/Transaction__Ordinals
+	COMMENT Synthetic switch-map holder javac emitted for the switches in Transaction over ProxyEventStatus, TransactionSide and WebSocketMessage.Type. NestHost is class_955.
+	FIELD field_2615 proxyEventStatus__ordinals [I
+	FIELD field_2616 transactionSide__ordinals [I
+	FIELD field_2617 websocketMessage__type__ordinals [I

@@ -1,0 +1,4 @@
+CLASS com/xk72/lib/class_1549 com/xk72/lib/EventReciever
+	METHOD invoke invoke (Ljava/util/EventListener;Ljava/util/EventObject;)V
+		ARG 1 eventListener
+		ARG 2 event

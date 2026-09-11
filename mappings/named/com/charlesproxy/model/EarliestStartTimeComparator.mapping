@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/model/class_928 com/charlesproxy/model/EarliestStartTimeComparator
+	COMMENT Ascending by ModelNode.getEarliestStartTime() with nulls first, tie-broken by walking Transaction.maybeGetContinuedTransaction().
+	COMMENT Backs ModelNodeComparators.START_TIME ("Start Time"), the only constant not wrapped in a ReversedComparator.
+	COMMENT Previously named ModelNodeComparator here; that name belongs to what is now the ModelNodeComparators enum (Charles 4 called the enum ModelNodeComparator). Charles 4's corpus named this class EarliestStartTimeComparator.

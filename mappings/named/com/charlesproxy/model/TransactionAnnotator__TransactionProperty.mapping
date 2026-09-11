@@ -1,0 +1,9 @@
+CLASS com/charlesproxy/model/class_972 com/charlesproxy/model/TransactionAnnotator__TransactionProperty
+	COMMENT A name/value pair queued on a ProxyEvent under TransactionAnnotator.TRANSACTION_PROPERTIES; TransactionAnnotator drains the list and replays each one through ModelNode.setAttribute. NestHost is class_973. Charles 4 held the same two fields on com/xk72/charles/model/H.
+	FIELD field_2623 value Ljava/io/Serializable;
+	FIELD field_2624 name Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;Ljava/io/Serializable;)V
+		ARG 1 name
+		ARG 2 value
+	METHOD method_2494 getValue ()Ljava/io/Serializable;
+	METHOD method_2495 getName ()Ljava/lang/String;

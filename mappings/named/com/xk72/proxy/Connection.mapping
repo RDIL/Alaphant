@@ -1,6 +1,8 @@
 CLASS com/xk72/proxy/Connection com/xk72/proxy/Connection
 	FIELD field_3292 proxyServer Lcom/xk72/proxy/server/class_1262;
+	FIELD field_3295 maybeManuallyTerminated Z
 	FIELD field_3303 connectionType Lcom/xk72/proxy/Connection$Type;
 	METHOD method_3276 getConnectionType ()Lcom/xk72/proxy/Connection$Type;
+	METHOD method_3277 maybeIsManuallyTerminated ()Z
 	CLASS Route Route
 	CLASS Type Type

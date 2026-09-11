@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/model/class_930 com/charlesproxy/model/ProxyRecordingListenerWithSession
+	COMMENT A ProxyRecordingListener bound to one Session, which it returns from getSession(). Attached to a ProxyEvent under the "com.charlesproxy.ProxyManager.RECORDING_LISTENER" attribute and used by the pcap importer. Charles 4's corpus used this name.
+	FIELD field_2481 session Lcom/charlesproxy/model/class_943;
+	METHOD <init> (Lcom/charlesproxy/model/class_943;)V
+		ARG 1 session

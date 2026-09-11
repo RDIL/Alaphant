@@ -1,0 +1,14 @@
+CLASS com/charlesproxy/model/class_969 com/charlesproxy/model/EditableTransaction
+	COMMENT A source Transaction paired with an editable clone of it; every ModelNode aggregate it overrides delegates to the clone, while getStartTime and toLocation come from the source.
+	COMMENT Identified exactly by the two legacy-model converters, which map it to and from the readable com.xk72.charles.model.EditableTransaction; the member names below are that class's.
+	COMMENT method_1097 returns the edit icon if the class_960 is an instance of this
+	FIELD field_2621 source Lcom/charlesproxy/model/class_955;
+	FIELD field_2622 transaction Lcom/charlesproxy/model/class_955;
+	METHOD <init> (Lcom/charlesproxy/model/class_955;)V
+		ARG 1 source
+	METHOD method_2491 setSource (Lcom/charlesproxy/model/class_955;)V
+		ARG 1 source
+	METHOD method_2492 getTransaction ()Lcom/charlesproxy/model/class_955;
+	METHOD method_2493 setTransaction (Lcom/charlesproxy/model/class_955;)V
+		COMMENT Detaches the previous edit clone before reparenting the new one under this node.
+		ARG 1 transaction

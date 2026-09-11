@@ -1,6 +1,7 @@
 CLASS com/charlesproxy/class_1594 com/charlesproxy/BaseSystemProxyProvider
 	FIELD field_4536 baseProvider Lcom/charlesproxy/class_1594;
 	FIELD field_4537 changeListener Ljava/beans/PropertyChangeSupport;
+	METHOD method_4258 getHumanName ()Ljava/lang/String;
 	METHOD method_4259 setProxiesEnabled (Z)Z
 		ARG 1 enabled
 	METHOD method_4261 isEnabled ()Z

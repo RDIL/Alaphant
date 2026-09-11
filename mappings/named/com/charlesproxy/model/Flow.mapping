@@ -3,6 +3,26 @@ CLASS com/charlesproxy/model/Flow com/charlesproxy/model/Flow
 	FIELD bucketStart bucketStart [J
 	FIELD dataSize dataSize [J
 	FIELD pos pos I
+	METHOD getData getData ()Ljava/util/List;
+	METHOD method_2186 growBuckets ()V
+		COMMENT Doubles the three parallel arrays when the next bucket would not fit.
+	METHOD method_2187 isBeforeBucket (IJ)Z
+		ARG 1 index
+		ARG 2 time
+	METHOD method_2188 needsNewBucket (IJJ)Z
+		COMMENT Starts a new bucket once the gap since the last observation is long enough relative to the rate already recorded, so a burst stays in one bucket and an idle period breaks it.
+		ARG 1 index
+		ARG 2 time
+		ARG 4 size
+	METHOD method_2189 addToBucket (JII)V
+		ARG 1 time
+		ARG 3 size
+		ARG 4 index
+	METHOD method_2190 startBucket (JJI)V
+		ARG 1 time
+		ARG 3 size
+		ARG 5 index
 	METHOD populate populate (Lcom/xk72/charles/model/Flow;)V
+		ARG 1 flow
 	METHOD readExternal readExternal (Ljava/io/ObjectInput;)V
 	METHOD recordObservation recordObservation (JI)V

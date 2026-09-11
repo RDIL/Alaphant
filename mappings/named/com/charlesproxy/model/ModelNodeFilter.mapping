@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/model/class_971 com/charlesproxy/model/ModelNodeFilter
+	COMMENT Predicate deciding whether a node survives the session tree filter. The implementors are the keyword and regex filters behind the Sequence and Structure filter fields in AbstractSessionFrame, which holds one in a field it builds from sequenceKeywordFilter / structureFilter.
+	METHOD method_1119 matches (Lcom/charlesproxy/model/class_960;)Z
+		ARG 1 node

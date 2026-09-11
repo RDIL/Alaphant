@@ -1,0 +1,14 @@
+CLASS com/charlesproxy/model/class_953 com/charlesproxy/model/Path
+	COMMENT One path segment in the Structure tree. Identified exactly: LegacyModelConverter converts com.xk72.charles.model.Path to this class and com.xk72.charles.model.class_1224 converts it back, and every member below lines up with a readable member of that legacy class.
+	FIELD field_2515 pathName Ljava/lang/String;
+	METHOD method_2248 getOrCreateChildPath (Ljava/lang/String;)Lcom/charlesproxy/model/class_953;
+		COMMENT Returns the child Path with this name, creating and attaching one if there is none.
+		ARG 1 pathName
+	METHOD method_2249 getHost ()Lcom/charlesproxy/model/class_956;
+		COMMENT Walks up the parent chain to the enclosing Host, or null. Legacy name: Path.getHost.
+	METHOD method_2250 getPathName ()Ljava/lang/String;
+	METHOD method_2251 toURL ()Ljava/net/URL;
+	METHOD method_2252 setPathName (Ljava/lang/String;)V
+		ARG 1 pathName
+	METHOD method_2253 getFullPathName ()Ljava/lang/String;
+		COMMENT Slash-joined path from the enclosing Host down to this node. Legacy name: Path.getFullPathName.

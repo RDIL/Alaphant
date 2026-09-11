@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/model/class_961 com/charlesproxy/model/LatestTimeComparator
+	COMMENT compare() is ModelNode.getLatestTime().compareTo(...) with nulls first. Backs ModelNodeComparators.END_TIME ("End Time"); Charles 4's corpus agrees.

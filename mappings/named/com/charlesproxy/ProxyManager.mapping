@@ -3,6 +3,8 @@ CLASS com/charlesproxy/class_19 com/charlesproxy/ProxyManager
 	COMMENT [bootstrap] matched to Charles 4's ProxyManager on 41 shared member descriptors (next best in this package scored 28) -- provisional, confirm before dropping the Maybe
 	FIELD field_44 charlesContext Lcom/charlesproxy/CharlesContext;
 		COMMENT [bootstrap] carried over from Charles 4's ProxyManager.chlsContext on a unique descriptor match -- provisional
+	FIELD field_47 proxySession Lcom/charlesproxy/model/class_943;
+	FIELD field_49 listeners Lcom/xk72/proxy/class_1275;
 	FIELD field_50 throttlingRandomManager Lcom/xk72/throttle/class_1508;
 	FIELD field_51 LOGGER Lorg/slf4j/Logger;
 	FIELD field_55 dnsResolver Lcom/xk72/dns/class_1177;
@@ -11,5 +13,6 @@ CLASS com/charlesproxy/class_19 com/charlesproxy/ProxyManager
 	METHOD method_38 registerListener (Lcom/xk72/proxy/ProxyListener;)V
 	METHOD method_45 maybeSetThrottling (Z)V
 		COMMENT [bootstrap] carried over from Charles 4's ProxyManager.setThrottling on a unique descriptor match -- provisional
+	METHOD method_49 getProxySession ()Lcom/charlesproxy/model/class_943;
 	METHOD method_51 tryBindSOCKSProxyPort ()Z
 	METHOD method_53 tryBindProxyPort ()Z

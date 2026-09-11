@@ -1,1 +1,2 @@
 CLASS com/charlesproxy/validator/ValidatorException com/charlesproxy/validator/ValidatorException
+	FIELD serialVersionUID serialVersionUID J

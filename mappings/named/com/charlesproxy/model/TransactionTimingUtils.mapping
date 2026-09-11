@@ -1,0 +1,34 @@
+CLASS com/charlesproxy/model/class_938 com/charlesproxy/model/TransactionTimingUtils
+	COMMENT The derived timings and speeds Charles shows in the transaction Summary tab. Charles 4's corpus named the class; each method name below is the wire name CharlesXMLSessionExporter writes for its value, cross-checked against the TransactionField column constants and the HAR timings block.
+	METHOD method_2194 getOverallSpeed (Lcom/charlesproxy/model/class_955;)Ljava/lang/Long;
+		COMMENT Bytes per second over getDuration(). XML overallSpeed, JSON speeds.overall.
+		ARG 0 transaction
+	METHOD method_2195 getLatency (Lcom/charlesproxy/model/class_955;Ljava/lang/Long;)Ljava/lang/Long;
+		COMMENT responseBeginTime minus requestCompleteTime, or minus startTime and the setup time when the request never completed. XML latency, TransactionField.LATENCY, HAR wait.
+		ARG 0 transaction
+		ARG 1 fallback
+	METHOD method_2196 maybeGetSetupDuration (Lcom/charlesproxy/model/class_955;Ljava/lang/Long;)Ljava/lang/Long;
+		COMMENT requestBeginTime minus startTime, less the DNS, connect and SSL durations -- the pre-request time not attributable to any of those. Private and never exported, so the name is inferred from the arithmetic and from getDuration subtracting it.
+		ARG 0 transaction
+		ARG 1 fallback
+	METHOD method_2197 getEndTimeOrNow (Lcom/charlesproxy/model/class_955;)Ljava/util/Date;
+		COMMENT endTime if set, otherwise now for a transaction still in flight and null for one in a terminal status. Charles 4's corpus used this name and the body still matches.
+		ARG 0 transaction
+	METHOD method_2198 getDuration (Lcom/charlesproxy/model/class_955;Ljava/lang/Long;)Ljava/lang/Long;
+		COMMENT getEndTimeOrNow minus startTime, less maybeGetSetupDuration. XML duration, TransactionField.DURATION.
+		ARG 0 transaction
+		ARG 1 fallback
+	METHOD method_2199 getResponseSpeed (Lcom/charlesproxy/model/class_955;)Ljava/lang/Long;
+		COMMENT XML responseSpeed, JSON speeds.response.
+		ARG 0 transaction
+	METHOD method_2200 getRequestDuration (Lcom/charlesproxy/model/class_955;Ljava/lang/Long;)Ljava/lang/Long;
+		COMMENT XML requestDuration, TransactionField.REQUEST_DURATION, HAR send.
+		ARG 0 transaction
+		ARG 1 fallback
+	METHOD method_2201 getRequestSpeed (Lcom/charlesproxy/model/class_955;)Ljava/lang/Long;
+		COMMENT XML requestSpeed, JSON speeds.request.
+		ARG 0 transaction
+	METHOD method_2202 getResponseDuration (Lcom/charlesproxy/model/class_955;Ljava/lang/Long;)Ljava/lang/Long;
+		COMMENT XML responseDuration, TransactionField.RESPONSE_DURATION, HAR receive.
+		ARG 0 transaction
+		ARG 1 fallback

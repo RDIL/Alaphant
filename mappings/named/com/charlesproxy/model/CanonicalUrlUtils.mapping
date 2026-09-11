@@ -1,0 +1,10 @@
+CLASS com/charlesproxy/model/class_937 com/charlesproxy/model/CanonicalUrlUtils
+	COMMENT Builds the normalised URL string Session keys its Referer lookup map on. Unlike Transaction.toUrlString it always emits a port -- defaulting it from the protocol when the transaction has none -- and substitutes "/" for an empty file, so the same resource reached two ways produces one key.
+	COMMENT Name is inferred from that role; Charles 4 had the same class (com/xk72/charles/model/J) but never named it.
+	METHOD method_2192 toCanonicalUrlString (Lcom/charlesproxy/model/class_955;)Ljava/lang/String;
+		ARG 0 transaction
+	METHOD method_2193 toCanonicalUrlString (Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+		ARG 0 protocol
+		ARG 1 host
+		ARG 2 port
+		ARG 3 file

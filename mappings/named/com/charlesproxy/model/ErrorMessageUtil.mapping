@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/model/class_968 com/charlesproxy/model/ErrorMessageUtil
+	METHOD method_2490 toErrorMessage (Ljava/lang/Exception;)Ljava/lang/String;
+		COMMENT The string TransactionAnnotator stores as the transaction error message: the bare message for Charles's own proxy exceptions, otherwise the simple class name prefixed to it.
+		ARG 0 exception

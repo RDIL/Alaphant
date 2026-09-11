@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/model/class_967 com/charlesproxy/model/ProxyRecordingListener__ProxyEventTimerTask
+	COMMENT TimerTask that hands one deferred ProxyEvent back to its ProxyRecordingListener. NestHost is class_958, so it was an inner class of ProxyRecordingListener; Charles 4 held the same pair of fields on com/xk72/charles/model/c.
+	FIELD field_2619 proxyRecordingListener Lcom/charlesproxy/model/class_958;
+	FIELD field_2620 proxyEvent Lcom/xk72/proxy/ProxyEvent;

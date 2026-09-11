@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/model/class_935 com/charlesproxy/model/ReversedComparator
+	COMMENT compare(a, b) returns comparator.compare(b, a) -- the bytecode stores the two casts into swapped slots. Not a nesting comparator; it was previously named NestedModelNodeComparator.
+	COMMENT ModelNodeComparators wraps every constant except START_TIME in one of these, so the size/time columns sort descending by default. Charles 4's corpus named it ReversedComparator with the same field name.
+	FIELD field_2486 comparator Ljava/util/Comparator;

@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/model/class_957 com/charlesproxy/model/AbstractModelNodeVisitor
+	COMMENT Base ModelNodeVisitor: the container overloads (Session, Path, Host, class_1149) are final and just recurse into getChildren(); the leaf overloads are empty and meant to be overridden.
+	METHOD method_2469 visitChildren (Lcom/charlesproxy/model/class_960;)V
+		COMMENT Synchronizes on the node and calls accept(this) on each child.
+		ARG 1 node
+	METHOD method_2471 visitAll ([Lcom/charlesproxy/model/class_960;)V
+		ARG 1 nodes

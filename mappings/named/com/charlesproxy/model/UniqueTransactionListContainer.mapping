@@ -1,0 +1,16 @@
+CLASS com/charlesproxy/model/class_950 com/charlesproxy/model/UniqueTransactionListContainer
+	COMMENT A ModelNodeVisitor that collects every Transaction under the visited nodes exactly once, using the Set below to deduplicate. Either appends to the list or feeds the consumer, depending on which constructor was used.
+	COMMENT Charles 4's corpus named the class and both collection fields the same way.
+	FIELD field_2512 uniqueTransactions Ljava/util/Set;
+	FIELD field_2513 transactions Ljava/util/List;
+	FIELD field_4613 consumer Ljava/util/function/Consumer;
+	METHOD <init> (Ljava/util/List;)V
+		ARG 1 transactions
+	METHOD <init> (Ljava/util/function/Consumer;)V
+		ARG 1 consumer
+	METHOD method_2244 collectReferees (Lcom/charlesproxy/model/class_955;)V
+		COMMENT Transitively adds the transaction referee graph to the list, skipping any already seen.
+		ARG 1 transaction
+	METHOD method_2245 visitAll ([Lcom/charlesproxy/model/class_960;)V
+		ARG 1 nodes
+	METHOD method_2246 getTransactions ()Ljava/util/List;

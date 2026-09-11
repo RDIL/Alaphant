@@ -16,6 +16,7 @@ CLASS com/charlesproxy/config/class_59 com/charlesproxy/config/CharlesConfigurat
 	FIELD field_461 externalDNSResolverConfiguration Lcom/charlesproxy/config/class_67;
 	FIELD field_462 registrationConfiguration Lcom/charlesproxy/config/class_79;
 	FIELD field_463 categoryConfiguration Lcom/charlesproxy/config/CategoryConfiguration;
+	FIELD field_464 uiConfig Lcom/charlesproxy/config/UserInterfaceConfiguration;
 	FIELD field_464 userInterfaceConfiguration Lcom/charlesproxy/config/class_107;
 	METHOD method_160 canEqual (Ljava/lang/Object;)Z
 	METHOD method_223 getGistConfiguration ()Lcom/charlesproxy/config/class_80;

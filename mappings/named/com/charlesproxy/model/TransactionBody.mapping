@@ -1,2 +1,48 @@
 CLASS com/charlesproxy/model/class_947 com/charlesproxy/model/TransactionBody
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.model.TransactionBody"
+	COMMENT Holds one request or response body, buffering it in memory up to 100 KiB and spilling to a temp file beyond that. A Cleaner deletes the temp file when the body is collected, and the decoded bytes are cached behind a SoftReference.
+	FIELD field_2502 tempfileReaper Ljava/lang/ref/Cleaner;
+	FIELD field_2503 recordingLimit I
+	FIELD field_2504 smallInMemoryBody [B
+	FIELD field_2505 cachedBytes Ljava/lang/ref/SoftReference;
+	FIELD field_2506 LOGGER Lorg/slf4j/Logger;
+	FIELD field_2507 buffer Ljava/io/ByteArrayOutputStream;
+	FIELD field_2508 file Ljava/io/File;
+	FIELD field_2509 size I
+		COMMENT Bytes accepted so far, counted against recordingLimit and used to decide when to spill.
+	FIELD field_2510 tempDirectory Ljava/io/File;
+	METHOD method_2219 hasBody ()Z
+	METHOD method_2220 deleteInitialBodyFile (Ljava/io/File;)V
+		COMMENT Cleaner lambda registered by the byte-array constructor.
+		ARG 0 file
+	METHOD method_2221 writeToNewTempFile ([B)Ljava/io/File;
+		ARG 0 body
+	METHOD method_2222 flushBuffer ()V
+	METHOD method_2223 getBytes ()[B
+		COMMENT Reads the whole body back, from the buffer, the SoftReference cache or the temp file.
+	METHOD method_2224 getTempDirectory ()Ljava/io/File;
+		COMMENT Creates a single deleteOnExit directory under the system temp dir on first use.
+	METHOD method_2225 compact ()V
+		COMMENT Once the body is complete, collapses the growable buffer into a plain byte array.
+	METHOD method_2226 readFile (Ljava/io/File;)[B
+		ARG 0 file
+	METHOD method_2227 handleException (Ljava/io/IOException;)V
+		ARG 0 e
+	METHOD method_2228 willSwapToDisk ([B)Z
+	METHOD method_2229 append ([BI)V
+		COMMENT Appends to the temp file, spills the in-memory buffer to a new one when this chunk would cross 100 KiB, or buffers in memory.
+		ARG 1 body
+		ARG 2 length
+	METHOD method_2230 writeChunk ([BILjava/io/OutputStream;)V
+		COMMENT Truncates the chunk at the recording limit, advances the size counter and drops the decoded cache.
+		ARG 1 body
+		ARG 2 length
+		ARG 3 out
+	METHOD method_2231 isInMemory ()Z
+	METHOD method_2232 deleteSpilledBodyFile (Ljava/io/File;)V
+		COMMENT Cleaner lambda registered by append when it spills to disk.
+		ARG 0 file
+	METHOD method_2233 getStream ()Ljava/io/InputStream;
+	METHOD method_2234 discard ()V
+		COMMENT Closes the buffer, deletes any temp file and drops every reference to the body.
+	METHOD method_2235 createTempFile ()Ljava/io/File;

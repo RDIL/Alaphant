@@ -1,1 +1,6 @@
 CLASS com/charlesproxy/model/ModelEvent com/charlesproxy/model/ModelEvent
+	FIELD peripheralChange peripheralChange Z
+	FIELD serialVersionUID serialVersionUID J
+	FIELD subject subject Lcom/charlesproxy/model/class_960;
+	METHOD getSubject getSubject ()Lcom/charlesproxy/model/class_960;
+	METHOD isPeripheralChange isPeripheralChange ()Z

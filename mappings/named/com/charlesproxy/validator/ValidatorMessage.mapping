@@ -8,6 +8,7 @@ CLASS com/charlesproxy/validator/ValidatorMessage com/charlesproxy/validator/Val
 	FIELD field_3084 source Ljava/lang/String;
 	METHOD <init> (Lcom/charlesproxy/validator/ValidatorMessage$Type;)V
 		ARG 1 type
+	METHOD method_2973 getColumnNumber ()Ljava/lang/Integer;
 	METHOD method_2975 setMessage (Ljava/lang/String;)V
 		ARG 1 message
 	METHOD method_2976 getContext ()Ljava/lang/String;

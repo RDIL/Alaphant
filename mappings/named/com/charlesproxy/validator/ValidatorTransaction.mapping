@@ -1,8 +1,9 @@
-CLASS com/charlesproxy/validator/class_1150
+CLASS com/charlesproxy/validator/class_1150 com/charlesproxy/validator/ValidatorTransaction
 	COMMENT [bootstrap] matched to Charles 4's ValidatorTransaction on 19 shared member descriptors; Charles 4 had no name for the class itself, only for some of its members
 	FIELD field_3088 warningCount I
 	FIELD field_3090 errorCount I
 	FIELD field_3091 exception Ljava/lang/Exception;
+	FIELD field_3092 baseTransaction Lcom/charlesproxy/model/class_955;
 	FIELD field_3093 isValid Z
 	FIELD field_3094 type Ljava/lang/String;
 	FIELD field_3095 failed Z

@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/model/class_1608 com/charlesproxy/model/CachingKeyComparator__Comparator
+	COMMENT The Comparator CachingKeyComparator.newComparator() returns; NestHost is class_1611. compare() runs each node through computeIfAbsent on the key cache and then defers to the owner's compareKeys.
+	FIELD field_4601 keyCache Ljava/util/Map;
+	FIELD field_4602 owner Lcom/charlesproxy/model/class_1611;

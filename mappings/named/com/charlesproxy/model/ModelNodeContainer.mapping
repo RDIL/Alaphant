@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/model/class_936 com/charlesproxy/model/ModelNodeContainer
+	COMMENT Base class for the synthetic grouping nodes that sit at the bottom of the session tree root -- "Unfocused" and "Encrypted" in gui/session/trees. RootNodesList keeps every one of these after the real nodes and orders them among themselves by the ordinal below, and AbstractSessionFrame drops them from multi-selection popups.
+	COMMENT Named for ContainerPopupMenu, which is the popup Charles shows for one of these and whose own name and "container" field survived obfuscation.
+	METHOD method_1173 getContainerOrder ()I
+		COMMENT Fixed sort position within the container block -- 10 for Unfocused, 20 for Encrypted.

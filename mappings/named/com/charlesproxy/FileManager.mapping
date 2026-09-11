@@ -1,1 +1,2 @@
 CLASS com/charlesproxy/class_176 com/charlesproxy/FileManager
+	METHOD method_82 getDefaultFilter ()Lcom/charlesproxy/lib/class_898;

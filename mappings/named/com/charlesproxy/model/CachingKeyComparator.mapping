@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/model/class_1611 com/charlesproxy/model/CachingKeyComparator
+	COMMENT Supplies a Comparator that sorts nodes on a derived key, extracting each node's key at most once into a per-comparator HashMap. A Schwartzian transform, so an expensive key such as an aggregate over a whole subtree is not recomputed on every comparison.
+	COMMENT Name describes the mechanism; Charles 5.2.1 introduced the class and there is no Charles 4 counterpart to corroborate the word.
+	METHOD method_4320 extractKey (Lcom/charlesproxy/model/class_960;)Ljava/lang/Object;
+		ARG 1 node
+	METHOD method_4321 compareKeys (Ljava/lang/Object;Ljava/lang/Object;)I
+		ARG 1 a
+		ARG 2 b
+	METHOD method_4366 newComparator ()Lcom/charlesproxy/model/class_1608;
+		COMMENT Each call gets a fresh cache, so a stale key never survives a re-sort.
+	METHOD method_4367 sort (Ljava/util/List;)V
+		ARG 1 nodes
