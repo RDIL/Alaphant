@@ -1,0 +1,4 @@
+CLASS com/charlesproxy/gui/utils/class_841 com/charlesproxy/gui/utils/FileChooserUtil$SavableFileWriter
+	COMMENT Adapts an ISavable to the IFileWriter that IOUtils.writeAtomically takes, carrying the chosen FileFilter across since IFileWriter.write only passes a file. Flat in the jar but a nest member of FileChooserUtil.
+	FIELD field_2333 fileFilter Ljavax/swing/filechooser/FileFilter;
+	FIELD field_2334 savable Lcom/charlesproxy/gui/utils/class_852;

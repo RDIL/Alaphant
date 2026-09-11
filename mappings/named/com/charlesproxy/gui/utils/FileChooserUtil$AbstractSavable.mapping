@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/utils/class_855 com/charlesproxy/gui/utils/FileChooserUtil$AbstractSavable
+	COMMENT Leaves only save() to implement: no pre-chosen file or filter, no path adjustment, nothing after the write. Every override is final, so a subclass that wants one of those has to implement ISavable directly. Flat in the jar but a nest member of FileChooserUtil.

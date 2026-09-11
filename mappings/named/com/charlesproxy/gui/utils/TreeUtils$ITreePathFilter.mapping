@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/utils/class_849 com/charlesproxy/gui/utils/TreeUtils$ITreePathFilter
+	COMMENT Decides which paths a recursive expand or collapse actually acts on; the walk still descends through a rejected path. Flat in the jar but a nest member of TreeUtils, whose own accept method kept its name.

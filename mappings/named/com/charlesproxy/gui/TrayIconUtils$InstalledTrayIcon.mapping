@@ -1,0 +1,8 @@
+CLASS com/charlesproxy/gui/class_203 com/charlesproxy/gui/TrayIconUtils$InstalledTrayIcon
+	COMMENT Everything removeTrayIcon has to undo, held together so installTrayIcon can hand it over in one field. Flat in the jar but a nest member of TrayIconUtils.
+	FIELD field_785 showHideWindowListener Ljava/awt/event/WindowAdapter;
+		COMMENT Keeps the Show/Hide Charles item's label right as the frame is iconified and restored.
+	FIELD field_787 showHideComponentListener Ljava/awt/event/ComponentAdapter;
+		COMMENT The same label, for the shown/hidden half that window events do not cover.
+	FIELD field_788 macOSSystemEventListener Lcom/charlesproxy/macos/class_904;
+		COMMENT Null off macOS.

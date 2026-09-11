@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/gui/utils/class_861 com/charlesproxy/gui/utils/ThemeChangeEvent
+	COMMENT What IThemeChangeListener is handed. Constructed fresh for each delivery, including the immediate one ThemeUtil.applyAndRegisterThemeListener makes at registration time.
+	FIELD field_2373 dark Z
+	FIELD field_2374 component Ljavax/swing/JComponent;
+		COMMENT Null for a listener registered without one, which on macOS means it is never called and elsewhere means it is called with a null component.
+	METHOD method_2033 isDark ()Z
+	METHOD method_2034 getComponent ()Ljavax/swing/JComponent;

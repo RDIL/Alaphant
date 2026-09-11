@@ -1,0 +1,55 @@
+CLASS com/charlesproxy/gui/utils/class_845 com/charlesproxy/gui/utils/TreeUtils
+	COMMENT Bulk expansion and collapse of a JTree, saving and restoring that state, and keeping two trees expanded in step.
+	FIELD field_2340 ACCEPT_ALL Lcom/charlesproxy/gui/utils/class_849;
+	METHOD method_1927 expandRoot (Ljavax/swing/JTree;)V
+		COMMENT One level only -- the root's children are shown, their children are not.
+		ARG 0 tree
+	METHOD method_1928 translatePathByRow (Ljavax/swing/tree/TreePath;Ljavax/swing/JTree;Ljavax/swing/JTree;)Ljavax/swing/tree/TreePath;
+		COMMENT Maps a path between two trees by visible row number, so it only agrees with the other tree while both are expanded identically. The cheap half of linkExpansion's pair.
+		ARG 0 path
+		ARG 1 from
+		ARG 2 to
+	METHOD method_1929 expandAll (Ljavax/swing/JTree;)V
+		ARG 0 tree
+	METHOD method_1930 linkExpansion (Ljavax/swing/JTree;Ljavax/swing/JTree;Z)V
+		COMMENT Registers a TreeExpansionListener on each tree pointing at the other, so expanding a node in one expands its counterpart. byModelPath picks translatePathByModel over translatePathByRow.
+		ARG 0 tree
+		ARG 1 otherTree
+		ARG 2 byModelPath
+	METHOD method_1931 setExpandedRecursively (Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;Z)V
+		ARG 0 tree
+		ARG 1 path
+		ARG 2 expand
+	METHOD method_1932 setExpandedRecursively (Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;ZILcom/charlesproxy/gui/utils/class_849;)V
+		ARG 0 tree
+		ARG 1 path
+		ARG 2 expand
+		ARG 3 depthLimit
+		ARG 4 filter
+	METHOD method_1933 setExpandedRecursively (Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;ZILcom/charlesproxy/gui/utils/class_849;Ljava/util/Set;)V
+		COMMENT Depth-first and children-before-self, so collapsing a subtree does not hide the nodes still to be visited. The visited set guards against a model whose nodes are shared between branches, where the recursion would otherwise not terminate.
+		ARG 0 tree
+		ARG 1 path
+		ARG 2 expand
+		ARG 3 depthLimit
+		ARG 4 filter
+		ARG 5 visited
+	METHOD method_1934 setExpandedFromRoot (Ljavax/swing/JTree;ZILcom/charlesproxy/gui/utils/class_849;)V
+		ARG 0 tree
+		ARG 1 expand
+		ARG 2 depthLimit
+		ARG 3 filter
+	METHOD method_1935 acceptAll (Ljavax/swing/tree/TreePath;)Z
+		COMMENT The lambda body behind ACCEPT_ALL.
+		ARG 0 path
+	METHOD method_1936 translatePathByModel (Ljavax/swing/tree/TreePath;Ljavax/swing/JTree;Ljavax/swing/JTree;)Ljavax/swing/tree/TreePath;
+		COMMENT Walks the path down the source model recording each child index, then follows those same indices down the target model. Null as soon as either side does not have that child, so two trees of different shape simply do not link.
+		ARG 0 path
+		ARG 1 from
+		ARG 2 to
+	METHOD method_1937 restoreExpansionState ([ZLjavax/swing/JTree;)V
+		COMMENT Row-indexed, so it is only meaningful against a tree whose model has not changed shape since captureExpansionState. Expanding row by row shifts the rows below it, which is why the two halves have to be used as a pair.
+		ARG 0 state
+		ARG 1 tree
+	METHOD method_1938 captureExpansionState (Ljavax/swing/JTree;)[Z
+		ARG 0 tree

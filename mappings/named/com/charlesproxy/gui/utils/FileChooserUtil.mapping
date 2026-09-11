@@ -1,3 +1,21 @@
 CLASS com/charlesproxy/gui/utils/class_863 com/charlesproxy/gui/utils/FileChooserUtil
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.utils.FileChooserUtil"
+	COMMENT The whole Save flow: one reused JFileChooser, the extension and overwrite prompting around it, and the atomic write at the end. Callers supply an ISavable rather than driving the chooser themselves.
+	FIELD field_2376 fileChooser Ljavax/swing/JFileChooser;
+		COMMENT One instance for the process, so the chooser reopens where the user left it. spawnFilePicker resets the parts that are per-use; anything it does not reset carries over between saves.
+	FIELD field_2377 log Lorg/slf4j/Logger;
+	METHOD method_2035 getFilePicker ()Ljavax/swing/JFileChooser;
+		COMMENT The existing chooser without the reset spawnFilePicker does, and null before the first one is created.
 	METHOD method_2036 spawnFilePicker ()Ljavax/swing/JFileChooser;
+	METHOD method_2037 save (Ljavax/swing/JFileChooser;Lcom/charlesproxy/gui/utils/class_852;)Z
+		ARG 0 fileChooser
+		ARG 1 savable
+	METHOD method_2038 save (Ljavax/swing/JFileChooser;Ljava/lang/String;Lcom/charlesproxy/gui/utils/class_852;)Z
+		COMMENT Loops until the user picks a destination with a usable extension or cancels: a name with no extension is completed from the chosen file type, or rejected with "Please choose a file type and try again" when the filter cannot supply one; a name with an extension re-selects the matching filter. An existing file prompts Replace/Cancel. The write itself goes through IOUtils.writeAtomically, so a failing save cannot truncate the previous file. Returns false on every path -- the caller learns nothing from the return, only from ISavable.saved.
+		ARG 0 fileChooser
+		ARG 1 fileName
+		ARG 2 savable
+	METHOD method_4336 setFileName (Ljavax/swing/JFileChooser;Ljava/lang/String;)V
+		COMMENT Pre-fills the name field by reflecting for setFileName on the chooser's UI delegate, because JFileChooser has no such method. Every exception is swallowed, so on a look and feel without it the field is simply left empty.
+		ARG 0 fileChooser
+		ARG 1 fileName

@@ -1,0 +1,23 @@
+CLASS com/charlesproxy/gui/utils/class_865 com/charlesproxy/gui/utils/FontUtils
+	COMMENT Resolves the fonts Charles draws with, folding the user's Display Font and Display Font Size preferences over whatever the look and feel supplies.
+	COMMENT The ".System." prefix these methods keep checking for is the macOS system font as the Aqua look and feel names it; a matching ".Monospaced.System." family exists alongside it, which is why the monospaced conversion is a string rewrite rather than a plain family swap.
+	METHOD method_2039 getMonospacedFont (Ljava/lang/String;)Ljava/awt/Font;
+		COMMENT getFont put through toMonospaced. The key is a UIManager prefix such as "TextArea", not a font name.
+		ARG 0 uiKey
+	METHOD method_2040 makeFontMonospaced (Ljava/awt/Component;)V
+		COMMENT Only acts on a component already using the macOS system font, and leaves any other font alone.
+		ARG 0 component
+	METHOD method_2041 toMonospaced (Ljava/awt/Font;)Ljava/awt/Font;
+		COMMENT Returns the font unchanged when it is monospaced already, and preserves FontUIResource-ness so the result is still treated as look-and-feel supplied.
+		ARG 0 font
+	METHOD method_2042 scaleFont (Ljava/awt/Font;F)Ljava/awt/Font;
+		COMMENT The macOS system font encodes its size in the family name, so scaling it means rebuilding the name rather than calling deriveFont.
+		ARG 0 font
+		ARG 1 factor
+	METHOD method_2043 getFont (Ljava/lang/String;)Ljava/awt/Font;
+		COMMENT Takes the style and size from UIManager's "<uiKey>.font", then overrides the family with the user's Display Font and the size with Display Font Size when either is set. Falls back to Sans-serif at 11pt when the look and feel has no such font.
+		ARG 0 uiKey
+	METHOD method_2044 getFontHeight (Ljavax/swing/JComponent;Ljava/awt/Font;)I
+		COMMENT Measured against the component rather than the toolkit, so it picks up that component's own graphics configuration. Callers add their own padding before using it as a row height.
+		ARG 0 component
+		ARG 1 font

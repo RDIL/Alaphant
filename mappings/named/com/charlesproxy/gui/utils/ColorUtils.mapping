@@ -1,0 +1,9 @@
+CLASS com/charlesproxy/gui/utils/class_856 com/charlesproxy/gui/utils/ColorUtils
+	FIELD field_2364 TRANSPARENT Ljava/awt/Color;
+	METHOD method_2008 getBrightness (Ljava/awt/Color;)I
+		COMMENT Rec. 601 luma -- 0.299R + 0.587G + 0.114B -- rounded to 0-255. Used to decide whether a colour needs light or dark text over it.
+		ARG 0 color
+	METHOD method_2009 getTransparent ()Ljava/awt/Color;
+	METHOD method_2010 toPlainColor (Ljava/awt/Color;)Ljava/awt/Color;
+		COMMENT Copies a ColorUIResource into a plain Color of the same value, and passes anything else through. A UIResource is treated by Swing as "the look and feel put this here", so it is silently replaced on a theme change -- copying it is how a colour read from UIDefaults survives being set on a component.
+		ARG 0 color

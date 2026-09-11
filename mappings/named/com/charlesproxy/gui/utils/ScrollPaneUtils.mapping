@@ -1,0 +1,5 @@
+CLASS com/charlesproxy/gui/utils/class_850 com/charlesproxy/gui/utils/ScrollPaneUtils
+	METHOD method_1957 linkScrolling (Ljavax/swing/JScrollPane;Ljavax/swing/JScrollPane;)V
+		COMMENT Ties both scrollbars of each pane to the other's, in both directions -- the side-by-side halves of the diff viewer scroll together this way. One listener serves all four scrollbars and guards against the echo.
+		ARG 0 first
+		ARG 1 second

@@ -1,6 +1,34 @@
 CLASS com/charlesproxy/gui/class_185 com/charlesproxy/gui/TrayIconUtils
 	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.TrayIconUtils"
-	COMMENT [bootstrap] matched to Charles 4's TrayIconUtils on 9 shared member descriptors (next best in this package scored 4) -- provisional, confirm before dropping the Maybe
+	COMMENT Builds the system tray icon and its whole popup menu, and keeps the icon's artwork in step with the recording and throttling state. An instance exists only to carry the three fields that choose the artwork; everything callers touch is static.
+	FIELD field_746 recording Z
+	FIELD field_747 installedTrayIcon Lcom/charlesproxy/gui/class_203;
+		COMMENT Non-null exactly while the icon is in the tray, so it doubles as the "is it installed" flag and as the handle removeTrayIcon needs to unregister the listeners. Volatile because the menu item listeners run off the event dispatch thread.
 	FIELD field_748 LOGGER Lorg/slf4j/Logger;
-	METHOD method_739 maybeIsTrayIconSetUp ()Z
-		COMMENT [bootstrap] carried over from Charles 4's TrayIconUtils.isTrayIconSetUp on a unique descriptor match -- provisional
+	FIELD field_749 throttling Z
+	FIELD field_750 iconWidth I
+		COMMENT Measured once from a throwaway TrayIcon at install time, since AWT only reports the tray's preferred size that way. 0 when it could not be measured, which getImage reads as "use the unsuffixed artwork".
+	METHOD method_737 getImage ()Ljava/awt/Image;
+		COMMENT Prefers artwork drawn for the measured width, falls back to the unsuffixed set and scales it, and leaves the 22px case alone because that is the size the base artwork is already drawn at. On a hi-dpi display it scales to twice the width and lets AWT halve it back, so the icon stays sharp.
+	METHOD method_738 removeTrayIcon (Lcom/charlesproxy/gui/CharlesFrame;)V
+		COMMENT Unregisters the window, component and macOS system-event listeners that installTrayIcon attached to the frame, which is why the handle has to keep all three.
+		ARG 0 charlesFrame
+	METHOD method_739 isTrayIconSetUp ()Z
+	METHOD method_740 installTrayIcon (Lcom/charlesproxy/gui/CharlesFrame;)V
+		COMMENT Does nothing if an icon is already installed or the platform has no system tray. The menu is assembled in place: Show/Hide Charles, the Recording, Throttling and Breakpoints toggles, then whichever of the Windows, macOS and Firefox proxy toggles are available, External Proxy Servers, and Quit. Each toggle both sends changes and listens for them, so the menu follows state changed from anywhere else in the app. An AWTException is logged and swallowed, leaving Charles running without a tray icon.
+		ARG 0 charlesFrame
+	METHOD method_741 displayWarning (Ljava/lang/String;Ljava/lang/String;)V
+		COMMENT Skipped entirely on macOS, where notifications go through the OS instead, and silently dropped when no tray icon is installed.
+		ARG 0 caption
+		ARG 1 text
+	METHOD method_742 loadIcon (ZZI)Ljava/awt/Image;
+		COMMENT Tries the platform-specific artwork first and falls back to the generic set.
+		ARG 0 recording
+		ARG 1 throttling
+		ARG 2 size
+	METHOD method_743 getIconPath (ZZIZ)Ljava/lang/String;
+		COMMENT icons/menubar[win][<size>]/recording[_off][_throttling].png. The "win" segment only appears when platformSpecific is set and a Charles-branded Windows tray icon is present, and the size segment is omitted at size 0.
+		ARG 0 recording
+		ARG 1 throttling
+		ARG 2 size
+		ARG 3 platformSpecific

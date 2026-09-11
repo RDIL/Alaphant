@@ -1,0 +1,12 @@
+CLASS com/charlesproxy/gui/utils/class_853 com/charlesproxy/gui/utils/FocusUtils
+	METHOD method_2003 isAncestorOf (Ljava/awt/Component;Ljava/awt/Component;)Z
+		COMMENT True when they are the same component as well as when one contains the other, which is what makes addFocusWithinListener fire for the container itself.
+		ARG 0 ancestor
+		ARG 1 component
+	METHOD method_2004 addFocusWithinListener (Ljava/awt/Component;Ljava/awt/event/FocusListener;)Lcom/charlesproxy/gui/utils/class_866;
+		COMMENT Reports focus entering and leaving a whole subtree, which a plain FocusListener on the container cannot do. Watches the KeyboardFocusManager's focusOwner globally rather than the component, so the returned IDisposable has to be called or the listener outlives the component.
+		ARG 0 component
+		ARG 1 focusListener
+	METHOD method_2005 removeFocusOwnerListener (Ljava/beans/PropertyChangeListener;)V
+		COMMENT The lambda body behind the IDisposable addFocusWithinListener returns.
+		ARG 0 listener

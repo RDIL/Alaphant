@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/utils/class_851 com/charlesproxy/gui/utils/ScrollPaneUtils$ScrollLink
+	COMMENT The AdjustmentListener behind linkScrolling. Flat in the jar but a nest member of ScrollPaneUtils.
+	FIELD field_2361 first Ljavax/swing/JScrollPane;
+	FIELD field_2362 adjusting Z
+		COMMENT Guards the echo: moving the other pane fires its listener too, which would otherwise move this one straight back.
+	FIELD field_2363 second Ljavax/swing/JScrollPane;

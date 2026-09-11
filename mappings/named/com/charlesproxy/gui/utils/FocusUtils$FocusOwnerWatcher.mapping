@@ -1,0 +1,6 @@
+CLASS com/charlesproxy/gui/utils/class_844 com/charlesproxy/gui/utils/FocusUtils$FocusOwnerWatcher
+	COMMENT Turns global focusOwner changes into focusGained/focusLost on the watched subtree, synthesising FocusEvents whose source is the newly focused component rather than the watched one. Flat in the jar but a nest member of FocusUtils.
+	FIELD field_2337 focusedWithin Ljava/util/concurrent/atomic/AtomicBoolean;
+		COMMENT Held so that focus moving between two components inside the subtree does not read as a loss followed by a gain.
+	FIELD field_2338 component Ljava/awt/Component;
+	FIELD field_2339 focusListener Ljava/awt/event/FocusListener;

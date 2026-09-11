@@ -1,0 +1,53 @@
+CLASS com/charlesproxy/gui/utils/class_857 com/charlesproxy/gui/utils/DialogUtils
+	COMMENT [nest] the obfuscator renamed this class but left two of its nest members alone -- its NestMembers attribute lists com/charlesproxy/gui/utils/DialogUtils$4 and DialogUtils$3 -- so the original name is exact.
+	COMMENT Every dialog Charles opens modally goes through here: one builder that parents, packs and positions it, and a family of show* entry points over that.
+	METHOD method_2011 createDialog (Ljava/lang/String;Ljava/awt/Component;Ljavax/swing/JToolBar;Ljava/awt/Component;Ljava/awt/Point;)Lcom/charlesproxy/gui/utils/DialogUtils$3;
+		COMMENT Parents to relativeTo's window ancestor, or to the main CharlesFrame when there is none, and only if that window is a Frame. The toolbar goes north and joins the title bar under Aqua, south everywhere else. Positioning walks up the ancestor chain: it centres the dialog on location, and if that would land it outside the desktop margin it retries centred on each parent in turn, leaving the dialog where pack() put it if none fits.
+		ARG 0 title
+		ARG 1 content
+		ARG 2 toolBar
+		ARG 3 relativeTo
+		ARG 4 location
+	METHOD method_2012 lockMinimumSize (Ljavax/swing/JDialog;)V
+		COMMENT Pins the minimum size to the packed size, so the user can grow a dialog but never shrink it below its layout.
+		ARG 0 dialog
+	METHOD method_2013 showDialog (Ljava/awt/Component;Ljava/awt/Component;Ljava/awt/Point;)Ljavax/swing/JDialog;
+		COMMENT Untitled and with no toolbar. Blocks until dismissed -- createDialog builds a modal dialog.
+		ARG 0 content
+		ARG 1 relativeTo
+		ARG 2 location
+	METHOD method_2014 withScreenMargin (Ljava/awt/Rectangle;)Ljava/awt/Rectangle;
+		COMMENT The desktop bounds inset by 50px on every side, used as the test for "this position is usable" so a dialog is never placed hard against a screen edge.
+		ARG 0 bounds
+	METHOD method_2015 showOkCancelDialog (Ljava/lang/String;Ljava/awt/Component;Ljava/awt/Component;Ljava/awt/event/ActionListener;[Ljavax/swing/JButton;Ljava/awt/Component;)Lcom/charlesproxy/gui/utils/DialogUtils$3;
+		COMMENT Wraps the content in the standard button row -- extra buttons left, then Cancel and OK tagged so MigLayout puts them in platform order. OK becomes the root pane's default button and is the only one that runs okListener; Cancel just disposes. Escape closes, but Enter is left to the default button.
+		ARG 0 title
+		ARG 1 content
+		ARG 2 initialFocus
+		ARG 3 okListener
+		ARG 4 extraButtons
+		ARG 5 relativeTo
+	METHOD method_2016 showOkCancelDialog (Ljava/lang/String;Ljava/awt/Component;Ljava/awt/event/ActionListener;Ljava/awt/Component;)Ljavax/swing/JDialog;
+		ARG 0 title
+		ARG 1 content
+		ARG 2 okListener
+		ARG 3 relativeTo
+	METHOD method_2017 showDialog (Ljava/lang/String;Ljava/awt/Component;Ljavax/swing/JToolBar;Ljava/awt/Component;Ljava/awt/Point;)Lcom/charlesproxy/gui/utils/DialogUtils$3;
+		COMMENT A dialog with no button row, so both Escape and Enter close it.
+		ARG 0 title
+		ARG 1 content
+		ARG 2 toolBar
+		ARG 3 relativeTo
+		ARG 4 location
+	METHOD method_2018 configureDialog (Ljavax/swing/JDialog;)V
+		COMMENT DISPOSE_ON_CLOSE plus lockMinimumSize. Applied by createDialog to everything it builds.
+		ARG 0 dialog
+	METHOD method_2019 installDisposeKeys ([Ljavax/swing/KeyStroke;Ljavax/swing/JDialog;)V
+		COMMENT Binds each keystroke in the root pane's WHEN_ANCESTOR_OF_FOCUSED_COMPONENT map, so it fires wherever focus is inside the dialog.
+		ARG 0 keyStrokes
+		ARG 1 dialog
+	METHOD method_2020 installEscapeToClose (Ljavax/swing/JDialog;)V
+		ARG 0 dialog
+	METHOD method_2021 installEscapeAndEnterToClose (Ljavax/swing/JDialog;)V
+		COMMENT For a dialog with no OK button to claim Enter.
+		ARG 0 dialog

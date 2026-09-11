@@ -1,0 +1,17 @@
+CLASS com/charlesproxy/gui/utils/class_852 com/charlesproxy/gui/utils/FileChooserUtil$ISavable
+	COMMENT What a caller hands FileChooserUtil.save: where to write, and how. Flat in the jar but a nest member of FileChooserUtil. The I-prefix follows this package's IThemeChangeListener.
+	METHOD method_988 getFileFilter ()Ljavax/swing/filechooser/FileFilter;
+		COMMENT Non-null only alongside a non-null getFile, since it is read in the same breath and never consulted once the dialog has run.
+	METHOD method_989 save (Ljava/io/File;Ljavax/swing/filechooser/FileFilter;)V
+		COMMENT Called inside IOUtils.writeAtomically, so the file handed over is a temp file that is moved into place afterwards -- an implementation must not assume the path it sees is the one the user chose.
+		ARG 1 file
+		ARG 2 fileFilter
+	METHOD method_990 getFile ()Ljava/io/File;
+		COMMENT A non-null answer skips the file dialog entirely, which is how "save again to the same place" is expressed.
+	METHOD method_991 saved (Ljava/io/File;)V
+		COMMENT After a successful write, with the real destination rather than the temp file. Not called when the save failed or the user cancelled.
+		ARG 1 file
+	METHOD method_992 adjustFile (Ljava/io/File;Ljavax/swing/filechooser/FileFilter;)Ljava/io/File;
+		COMMENT A chance to rewrite the chosen path before the extension and overwrite checks run against it.
+		ARG 1 file
+		ARG 2 fileFilter

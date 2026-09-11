@@ -1,2 +1,13 @@
 CLASS com/charlesproxy/gui/utils/class_848 com/charlesproxy/gui/utils/ResourceUtils
-	METHOD method_1956 loadImageFrom (Ljava/net/URL;)Ljava/awt/Image;
+	COMMENT Loading bundled images at the right resolution for the display.
+	FIELD field_2347 hiDpi Ljava/lang/Boolean;
+		COMMENT Computed once on first use and cached for the process, so moving the window to a display of a different scale does not change the answer.
+	METHOD method_1953 isHiDpi ()Z
+		COMMENT True when the default screen's default transform scales x by more than 1. Only the default screen is consulted.
+	METHOD method_1954 loadImage (Ljava/lang/String;)Ljava/awt/Image;
+		COMMENT Tries "<name>@2x.<ext>" first on a hi-dpi display and falls back to the plain name. Resolved against CharlesFrame, so the path is relative to com/charlesproxy/gui. Null when neither exists.
+		ARG 0 resourceName
+	METHOD method_1955 withScaleSuffix (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Inserts "@<scale>" before the extension, or appends it when there is none. loadImageFrom builds the 1.25x, 1.5x and 2x variants this way, where loadImage hard-codes "@2x".
+		ARG 0 fileName
+		ARG 1 scale

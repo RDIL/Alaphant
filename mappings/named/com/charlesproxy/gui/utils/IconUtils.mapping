@@ -1,1 +1,44 @@
 CLASS com/charlesproxy/gui/utils/class_858 com/charlesproxy/gui/utils/IconUtils
+	COMMENT [bootstrap] named by its own Lombok @Slf4j logger literal "com.charlesproxy.gui.utils.IconUtils"
+	COMMENT Icons live at icons/<set>/<name>.png (or .gif) under com/charlesproxy/gui, with @1.25x, @1.5x and @2x variants alongside for non-macOS hi-dpi.
+	FIELD field_2365 DARK_THEME_FILTER Ljavax/swing/GrayFilter;
+		COMMENT GrayFilter(brighter, 100) -- lightens an icon drawn for a light background so it reads against a dark one.
+	FIELD field_2366 DISABLED_FILTER Ljavax/swing/GrayFilter;
+		COMMENT GrayFilter(brighter, 50), the milder version, used for a button's disabled icon.
+	FIELD field_2367 cache Ljava/util/Map;
+		COMMENT Keyed "<name>/<set>". A ConcurrentHashMap filled through computeIfAbsent, and never evicted -- an icon loaded once is held for the process.
+	FIELD field_4588 log Lorg/slf4j/Logger;
+	METHOD method_2022 getThemedIcon (Ljava/lang/String;Ljava/lang/String;)Ljavax/swing/ImageIcon;
+		COMMENT getIcon, brightened when the system is in dark mode. Decided from the system setting rather than a component, so it is the right call only where no component is to hand.
+		ARG 0 name
+		ARG 1 iconSet
+	METHOD method_2024 getIcon (Ljava/lang/String;Ljava/lang/String;)Ljavax/swing/ImageIcon;
+		COMMENT Cached. Tries .png and falls back to .gif; a miss is cached as null, so a missing icon is only looked up once.
+		ARG 0 name
+		ARG 1 iconSet
+	METHOD method_2026 getTreeIcon (Ljava/lang/String;Ljavax/swing/JComponent;)Ljavax/swing/ImageIcon;
+		COMMENT Picks between the "tree" and "treebold" icon sets by the component's own theme -- two drawn variants rather than a filter over one.
+		ARG 0 name
+		ARG 1 component
+	METHOD method_2027 setButtonIcon (Ljavax/swing/AbstractButton;Ljava/lang/String;Ljava/lang/String;)V
+		COMMENT A macOS template icon is set and left alone, because Aqua recolours it itself. Otherwise the button gets a filtered disabled icon and a theme listener that swaps the enabled icon for its brightened version in dark mode.
+		ARG 0 button
+		ARG 1 name
+		ARG 2 iconSet
+	METHOD method_2028 updateButtonIconForTheme (Ljavax/swing/AbstractButton;Ljavax/swing/ImageIcon;Lcom/charlesproxy/gui/utils/class_861;)V
+		COMMENT Listener body behind setButtonIcon.
+		ARG 0 button
+		ARG 1 icon
+		ARG 2 event
+	METHOD method_2029 brightenForDarkTheme (Ljavax/swing/Icon;)Ljavax/swing/ImageIcon;
+		COMMENT Null for anything that is not an ImageIcon, so a caller passing a painted Icon silently loses it.
+		ARG 0 icon
+	METHOD method_2030 withScaleSuffix (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+		COMMENT Inserts the suffix before the extension. Same shape as ResourceUtils.withScaleSuffix but takes the "@" as part of the suffix.
+		ARG 0 path
+		ARG 1 scale
+	METHOD method_4325 loadIcon (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljavax/swing/ImageIcon;
+		COMMENT On macOS the single image is used and the OS scales it; elsewhere the @1.25x/@1.5x/@2x siblings are gathered into one multi-resolution image. Retries up to three times while the load status is ERRORED, then warns.
+		ARG 0 name
+		ARG 1 iconSet
+		ARG 2 extension

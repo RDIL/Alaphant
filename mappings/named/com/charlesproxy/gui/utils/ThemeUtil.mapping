@@ -1,9 +1,46 @@
 CLASS com/charlesproxy/gui/utils/class_847 com/charlesproxy/gui/utils/ThemeUtil
+	COMMENT Light/dark theme detection and notification. The two platforms work quite differently: on macOS the Aqua look and feel publishes the appearance per component as the "Aqua.appearance" client property, so a listener is attached to the component and a null component gets no notifications at all; everywhere else there is one global OsThemeDetector and listeners are kept in two parallel lists here.
+	FIELD field_2344 listenerComponents Ljava/util/List;
+		COMMENT Positionally parallel to listeners. Never pruned, so a component registered here is held for the life of the process.
+	FIELD field_2345 listeners Ljava/util/List;
+	FIELD field_2346 detectorRegistered Z
+		COMMENT Guards the single OsThemeDetector registration; the per-listener state is the two lists.
+	METHOD method_1939 getSeparatorColor ()Ljava/awt/Color;
+		COMMENT The divider colour for split panes and bottom-line borders. Under Aqua it comes from the appearance's named "separator" colour, elsewhere from UIManager's SplitPane.darkShadow.
+	METHOD method_1940 applyForegroundFromTextArea (Lcom/charlesproxy/gui/utils/class_861;)V
+		COMMENT Listener body behind applyTextAreaForeground.
+		ARG 0 event
+	METHOD method_1941 notifyListeners (Ljava/lang/Boolean;)V
+		COMMENT Lambda body run on the event dispatch thread when the OS theme changes. Copies both lists first, so a listener that registers another one during notification does not disturb the walk.
+		ARG 0 dark
+	METHOD method_1942 applyTextAreaColours (Ljavax/swing/JComponent;)V
+		COMMENT Makes a component follow the theme's text-area background and foreground, re-applied on every theme change. Sets opaque, unlike applyTextAreaForeground.
+		ARG 0 component
 	METHOD method_1943 registerThemeListeners (Ljavax/swing/JComponent;Lcom/charlesproxy/gui/utils/class_842;)V
 	METHOD method_1944 isSystemInDarkMode ()Z
+	METHOD method_1945 onAquaAppearanceChanged (Lcom/charlesproxy/gui/utils/class_842;Ljava/beans/PropertyChangeEvent;)V
+		COMMENT Lambda body for the macOS path: turns an "Aqua.appearance" property change into a ThemeChangeEvent.
+		ARG 0 listener
+		ARG 1 event
+	METHOD method_1946 applyColoursFromTextArea (Lcom/charlesproxy/gui/utils/class_861;)V
+		COMMENT Listener body behind applyTextAreaColours. Reads the colours off a throwaway JTextArea rather than UIManager, so it gets whatever the look and feel would actually have given one, and puts them through ColorUtils.toPlainColor so they survive the next theme change.
+		ARG 0 event
+	METHOD method_1947 onOsThemeChanged (Ljava/lang/Boolean;)V
+		COMMENT Lambda body registered with OsThemeDetector; hands off to the event dispatch thread.
+		ARG 0 dark
 	METHOD method_1948 isComponentDarkThemed (Ljavax/swing/JComponent;)Z
+		COMMENT Under Aqua this is per component and read reflectively off the appearance object, defaulting to light when the component has no appearance yet. Under any other look and feel the component is irrelevant and the system setting answers.
+		ARG 0 component
+	METHOD method_1949 applyAndRegisterThemeListener (Ljavax/swing/JComponent;Lcom/charlesproxy/gui/utils/class_842;)V
+		COMMENT Fires the listener once straight away with the current theme before registering it, which is what lets a caller express "style this, and restyle it whenever the theme changes" in one call.
+		ARG 0 component
+		ARG 1 listener
 	METHOD method_1950 getNamedColorFrom (Ljavax/swing/JComponent;Ljava/lang/String;Ljava/lang/String;)Ljava/awt/Color;
 		ARG 0 component
 		ARG 1 color
 		ARG 2 uiManagerFallbackName
+	METHOD method_1951 applyTextAreaForeground (Ljavax/swing/JComponent;)V
+		COMMENT The foreground half of applyTextAreaColours. UIUtils uses it for check boxes on Windows, where the background has to stay as the look and feel painted it.
+		ARG 0 component
 	METHOD method_1952 getAquaColorMap (Ljavax/swing/JComponent;)Ljava/util/Map;
+		ARG 0 component

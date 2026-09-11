@@ -1,0 +1,7 @@
+CLASS com/charlesproxy/gui/utils/class_840 com/charlesproxy/gui/utils/WindowUtils
+	COMMENT Placing a window on a multi-monitor desktop.
+	METHOD method_1905 getVirtualScreenBounds ()Ljava/awt/Rectangle;
+		COMMENT The union of every screen's bounds, so a saved window position can be tested against the desktop as a whole rather than one display.
+	METHOD method_1906 centreOnOwnerOrScreen (Ljava/awt/Window;)V
+		COMMENT Over a visible owner it centres horizontally but keeps the owner's y, so a dialog appears at the top of its parent rather than over the middle of it. With no visible owner it centres fully on the first screen, not on the one the pointer is on.
+		ARG 0 window

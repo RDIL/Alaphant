@@ -1,0 +1,2 @@
+CLASS com/charlesproxy/gui/utils/class_866 com/charlesproxy/gui/utils/FocusUtils$IDisposable
+	COMMENT A registration handle -- dispose() undoes whatever set it up. Flat in the jar but a nest member of FocusUtils, and the only thing that hands one out is addFocusWithinListener. The I-prefix follows this package's IThemeChangeListener.

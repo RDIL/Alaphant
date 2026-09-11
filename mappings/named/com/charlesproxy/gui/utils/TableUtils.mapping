@@ -1,4 +1,27 @@
 CLASS com/charlesproxy/gui/utils/TableUtils com/charlesproxy/gui/utils/TableUtils
+	METHOD method_1958 terminateEditOnFocusLost (Ljavax/swing/JTable;)V
+		COMMENT Commits an in-progress cell edit when the table loses focus instead of discarding it.
+		ARG 0 table
+	METHOD method_1959 configureTreeTable (Lcom/charlesproxy/gui/lib/treetable/JTreeTable;ZZ)V
+		COMMENT The JTreeTable-only tail of configureTable: the embedded JTree needs its own font, has to be non-opaque for the stripes to show through, and gets the expand/collapse context menu.
+		ARG 0 treeTable
+		ARG 1 striped
+		ARG 2 customFont
+	METHOD method_1960 stopCellEditing (Ljava/awt/Container;)Z
+		COMMENT Walks the whole container tree and commits every table edit under it, returning false if any cell editor refused. Used before an action that would otherwise read stale model values.
+		ARG 0 container
+	METHOD method_1961 configureTable (Ljavax/swing/JTable;)V
+		ARG 0 table
+	METHOD method_1962 configureTable (Ljavax/swing/JTable;Ljava/util/EnumSet;)V
+		COMMENT Charles' whole table house style in one call: stripes, intercell spacing, a row height derived from the font, the default renderers for DataSize, Duration, Date and Number, and a theme listener for the colours.
+		ARG 0 table
+		ARG 1 options
+	METHOD method_1963 sizeColumnsToContent (Ljavax/swing/JTable;)Z
+		COMMENT Measures the header and up to 100 rows per column and sets min, preferred and max width from that, capped at 300px. Columns whose widths are no longer at Swing's defaults are taken to have been sized by the user and skipped, which is what makes this safe to call repeatedly; the return says whether any column was actually touched. A model implementing the table-column-metadata interface can override any of the measurements.
+		ARG 0 table
+	METHOD method_1964 configureHeaderRenderers (Ljavax/swing/JTable;)V
+		COMMENT Gives each column a header renderer whose alignment matches its cell renderer's, so a right-aligned numeric column gets a right-aligned heading. Skips any column with a header renderer the look and feel did not install.
+		ARG 0 table
 	CLASS TableOptions TableOptions
 		COMMENT Enum constant names are exact: the obfuscator leaves the Enum.name() string in
 		COMMENT <clinit>, as the first ldc of the group ending in each putstatic.
